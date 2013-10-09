@@ -8,15 +8,17 @@ Gem::Specification.new do |spec|
   spec.version       = Rubycritic::VERSION
   spec.authors       = ["Guilherme Simoes"]
   spec.email         = ["guilherme.rdems@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = <<-EOF
+    Ruby Critic is a tool that detects and reports smells in Ruby classes, modules and methods.
+  EOF
+  spec.summary       = "Ruby code smell detector"
+  spec.homepage      = "https://github.com/GuilhermeSimoes/rubycritic"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  spec.files         = Dir.glob("{lib}/**/*") + %w[LICENSE.txt README.md]
+  spec.executables   = Dir.glob("{bin}/*").map { |f| File.basename(f) }
+  spec.test_files    = `git ls-files -- test/*`.split("\n")
+  spec.require_path  = "lib"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
