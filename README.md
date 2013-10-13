@@ -1,21 +1,41 @@
-# Rubycritic
+Ruby Critic
+===========
 
-TODO: Write a gem description
+Ruby Critic is a tool that detects and reports smells in Ruby code.
 
-## Installation
+Installation
+------------
 
 Add this line to your application's Gemfile:
 
-    gem "rubycritic"
+```ruby
+gem "rubycritic"
+```
 
 And then execute:
 
-    $ bundle
+```bash
+$ bundle
+```
 
-Or install it yourself as:
+Or just install it yourself:
 
-    $ gem install rubycritic
+```bash
+$ gem install rubycritic
+```
 
-## Usage
+Usage
+-----
 
-TODO: Write usage instructions here
+Running `rubycritic` with no arguments will check all Ruby source files in the
+current directory:
+
+```bash
+$ rubycritic
+```
+
+Alternatively you can pass `rubycritic` a list of files and directories to check:
+
+```bash
+$ rubycritic app lib/foo.rb
+```
