@@ -3,3 +3,16 @@ Attribute:
   enabled: false
 IrresponsibleModule:
   enabled: false
+UncommunicativeMethodName:
+  reject:
+  - !ruby/regexp /^[a-z]$/
+  - !ruby/regexp /[0-9]$/
+UncommunicativeParameterName:
+  reject:
+  - !ruby/regexp /^.$/
+  - !ruby/regexp /[0-9]$/
+  - !ruby/regexp /^_/
+UncommunicativeVariableName:
+  reject:
+  - !ruby/regexp /^.$/
+  - !ruby/regexp /[0-9]$/
