@@ -8,6 +8,7 @@ module Rubycritic
 
     attribute :context
     attribute :locations
+    attribute :message
     attribute :metric
     attribute :score
   end
