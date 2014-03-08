@@ -23,6 +23,11 @@ describe Rubycritic::SmellAdapter::Flog do
     smell.message.must_equal "has a complexity of 8"
   end
 
+  it "has smells with types" do
+    smell = @adapter.smells.first
+    smell.type.must_equal "Complexity"
+  end
+
   it "has smells with scores" do
     smell = @adapter.smells.first
     smell.score.must_be_kind_of Numeric

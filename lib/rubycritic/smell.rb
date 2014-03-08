@@ -10,6 +10,7 @@ module Rubycritic
     attribute :locations
     attribute :message
     attribute :score
+    attribute :type
   end
 
 end

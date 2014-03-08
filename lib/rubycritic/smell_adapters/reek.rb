@@ -20,7 +20,8 @@ module Rubycritic
         locations = smell_locations(smell.source, smell.lines)
         message   = smell.message
         context   = smell.context
-        Smell.new(:locations => locations, :context => context, :message => message)
+        type      = smell.subclass
+        Smell.new(:locations => locations, :context => context, :message => message, :type => type)
       end
 
       def smell_locations(file_path, file_lines)

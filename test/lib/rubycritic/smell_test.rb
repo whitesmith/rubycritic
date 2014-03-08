@@ -7,11 +7,13 @@ describe Rubycritic::Smell do
     @context = "#bar"
     @message = "This smells"
     @score = 0
+    @type = :complexity
     @smell = Rubycritic::Smell.new(
       :locations => @locations,
       :context => @context,
       :message => @message,
-      :score => @score
+      :score => @score,
+      :type => @type
     )
   end
 
@@ -29,5 +31,9 @@ describe Rubycritic::Smell do
 
   it "has a score reader" do
     @smell.score.must_equal @score
+  end
+
+  it "has a type reader" do
+    @smell.type.must_equal @type
   end
 end

@@ -23,6 +23,11 @@ describe Rubycritic::SmellAdapter::Reek do
     smell.message.must_equal "has boolean parameter 'reek'"
   end
 
+  it "has smells with types" do
+    smell = @adapter.smells.first
+    smell.type.must_equal "BooleanParameter"
+  end
+
   context "when analysing files with smells ignored in config.reek" do
     before do
       sample_path = "test/samples/reek/not_smelly.rb"
