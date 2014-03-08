@@ -8,7 +8,6 @@ describe Rubycritic::Smell do
     @message = "This smells"
     @score = 0
     @smell = Rubycritic::Smell.new(
-      :metric => :abc,
       :locations => @locations,
       :context => @context,
       :message => @message,

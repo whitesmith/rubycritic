@@ -20,7 +20,7 @@ module Rubycritic
         locations = smell_locations(smell.source, smell.lines)
         message   = smell.message
         context   = smell.context
-        Smell.new(:metric => :reek, :locations => locations, :context => context, :message => message)
+        Smell.new(:locations => locations, :context => context, :message => message)
       end
 
       def smell_locations(file_path, file_lines)

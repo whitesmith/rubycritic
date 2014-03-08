@@ -20,7 +20,7 @@ module Rubycritic
 
       def create_smell(context, score)
         location = method_location(context)
-        Smell.new(:metric => :flog, :locations => [location], :context => context, :score => score)
+        Smell.new(:locations => [location], :context => context, :score => score)
       end
 
       def method_location(context)
