@@ -15,7 +15,7 @@ describe Rubycritic::SmellAdapter::Flog do
 
   it "has smells with locations" do
     smell = @adapter.smells.first
-    smell.location.path.must_equal @sample_path
+    smell.locations.first.path.must_equal @sample_path
   end
 
   it "has smells with scores" do

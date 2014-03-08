@@ -7,7 +7,7 @@ module Rubycritic
     include Virtus.model
 
     attribute :context
-    attribute :location
+    attribute :locations
     attribute :metric
     attribute :score
   end
