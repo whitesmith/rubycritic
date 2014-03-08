@@ -3,32 +3,34 @@ require "rubycritic/analysers/reek"
 require "rubycritic/smell_adapters/reek"
 
 describe Rubycritic::SmellAdapter::Reek do
-  before do
-    @sample_path = "test/samples/reek/smelly.rb"
-    reek = Rubycritic::Analyser::Reek.new(@sample_path)
-    @adapter = Rubycritic::SmellAdapter::Reek.new(reek)
+  context "when analysing a smelly file" do
+    before do
+      @sample_path = "test/samples/reek/smelly.rb"
+      reek = Rubycritic::Analyser::Reek.new(@sample_path)
+      @adapter = Rubycritic::SmellAdapter::Reek.new(reek)
+    end
+
+    it "detects smells" do
+      @adapter.smells.wont_be_empty
+    end
+
+    it "has smells with locations" do
+      smell = @adapter.smells.first
+      smell.locations.first.path.must_equal @sample_path
+    end
+
+    it "has smells with messages" do
+      smell = @adapter.smells.first
+      smell.message.must_equal "has boolean parameter 'reek'"
+    end
+
+    it "has smells with types" do
+      smell = @adapter.smells.first
+      smell.type.must_equal "BooleanParameter"
+    end
   end
 
-  it "detects smells" do
-    @adapter.smells.wont_be_empty
-  end
-
-  it "has smells with locations" do
-    smell = @adapter.smells.first
-    smell.locations.first.path.must_equal @sample_path
-  end
-
-  it "has smells with messages" do
-    smell = @adapter.smells.first
-    smell.message.must_equal "has boolean parameter 'reek'"
-  end
-
-  it "has smells with types" do
-    smell = @adapter.smells.first
-    smell.type.must_equal "BooleanParameter"
-  end
-
-  context "when analysing files with smells ignored in config.reek" do
+  context "when analysing a file with smells ignored in config.reek" do
     before do
       sample_path = "test/samples/reek/not_smelly.rb"
       reek = Rubycritic::Analyser::Reek.new(sample_path)
