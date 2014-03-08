@@ -20,7 +20,8 @@ module Rubycritic
 
       def create_smell(context, score)
         location = method_location(context)
-        Smell.new(:locations => [location], :context => context, :score => score)
+        message  = "has a complexity of #{score.round}"
+        Smell.new(:locations => [location], :context => context, :message => message, :score => score)
       end
 
       def method_location(context)

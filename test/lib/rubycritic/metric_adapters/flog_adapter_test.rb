@@ -18,6 +18,11 @@ describe Rubycritic::SmellAdapter::Flog do
     smell.locations.first.path.must_equal @sample_path
   end
 
+  it "has smells with messages" do
+    smell = @adapter.smells.first
+    smell.message.must_equal "has a complexity of 8"
+  end
+
   it "has smells with scores" do
     smell = @adapter.smells.first
     smell.score.must_be_kind_of Numeric
