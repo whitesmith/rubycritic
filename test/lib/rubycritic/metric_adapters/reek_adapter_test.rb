@@ -6,7 +6,7 @@ describe Rubycritic::SmellAdapter::Reek do
   context "when analysing a smelly file" do
     before do
       @sample_path = "test/samples/reek/smelly.rb"
-      reek = Rubycritic::Analyser::Reek.new(@sample_path)
+      reek = Rubycritic::Analyser::Reek.new([@sample_path])
       @adapter = Rubycritic::SmellAdapter::Reek.new(reek)
     end
 

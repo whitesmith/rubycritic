@@ -12,7 +12,7 @@ module Rubycritic
 
       def initialize(paths)
         super(DEFAULT_OPTIONS)
-        flog(paths)
+        flog(*paths)
       end
     end
 

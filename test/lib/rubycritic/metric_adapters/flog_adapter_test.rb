@@ -5,7 +5,7 @@ require "rubycritic/smell_adapters/flog"
 describe Rubycritic::SmellAdapter::Flog do
   before do
     @sample_path = "test/samples/flog/smelly.rb"
-    flog = Rubycritic::Analyser::Flog.new(@sample_path)
+    flog = Rubycritic::Analyser::Flog.new([@sample_path])
     @adapter = Rubycritic::SmellAdapter::Flog.new(flog)
   end
 
