@@ -13,7 +13,7 @@ module Rubycritic
     attribute :type
 
     def paths
-      locations.map(&:path)
+      @paths ||= locations.map(&:path).uniq
     end
 
     def <=>(other)

@@ -16,9 +16,9 @@ describe Rubycritic::Smell do
 
   it "has a paths reader" do
     path = "./foo"
-    line = "42"
-    location = Rubycritic::Location.new("./foo", "42")
-    smell = Rubycritic::Smell.new(:locations => [location])
+    location1 = Rubycritic::Location.new("./foo", "42")
+    location2 = Rubycritic::Location.new("./foo", "23")
+    smell = Rubycritic::Smell.new(:locations => [location1, location2])
     smell.paths.must_equal [path]
   end
 
