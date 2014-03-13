@@ -13,19 +13,9 @@ describe Rubycritic::SmellAdapter::Flog do
     @adapter.smells.wont_be_empty
   end
 
-  it "has smells with locations" do
-    smell = @adapter.smells.first
-    smell.locations.first.path.must_equal @sample_path
-  end
-
   it "has smells with messages" do
     smell = @adapter.smells.first
     smell.message.must_equal "has a complexity of 8"
-  end
-
-  it "has smells with types" do
-    smell = @adapter.smells.first
-    smell.type.must_equal "Complexity"
   end
 
   it "has smells with scores" do
