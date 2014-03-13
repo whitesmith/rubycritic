@@ -1,11 +1,17 @@
+require "pathname"
+
 module Rubycritic
 
   class Location
-    attr_reader :path, :line
+    attr_reader :line
 
     def initialize(path, line)
-      @path = path
+      @path = Pathname.new(path)
       @line = line
+    end
+
+    def path
+      @path.to_s
     end
 
     def to_s
