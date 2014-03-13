@@ -15,6 +15,10 @@ module Rubycritic
     def paths
       locations.map(&:path)
     end
+
+    def <=>(other)
+      locations <=> other.locations
+    end
   end
 
 end

@@ -39,4 +39,11 @@ describe Rubycritic::Smell do
     smell = Rubycritic::Smell.new(:type => type)
     smell.type.must_equal type
   end
+
+  it "is sortable" do
+    location1 = Rubycritic::Location.new("./foo", 42)
+    location2 = Rubycritic::Location.new("./bar", 23)
+    location3 = Rubycritic::Location.new("./bar", 16)
+    [location1, location2, location3].sort.must_equal [location3, location2, location1]
+  end
 end
