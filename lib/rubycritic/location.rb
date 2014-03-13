@@ -14,6 +14,10 @@ module Rubycritic
       @path.to_s
     end
 
+    def file
+      @path.basename.to_s
+    end
+
     def to_s
       "#{path}:#{line}"
     end

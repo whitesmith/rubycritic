@@ -12,6 +12,10 @@ describe Rubycritic::Location do
     @location.path.must_equal @path
   end
 
+  it "has a file name" do
+    @location.file.must_equal "foo"
+  end
+
   it "has a line number" do
     @location.line.must_equal @line
   end
