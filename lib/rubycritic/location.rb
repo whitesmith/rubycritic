@@ -21,6 +21,16 @@ module Rubycritic
     def to_s
       "#{path}:#{line}"
     end
+
+    def <=>(other)
+      state <=> other.state
+    end
+
+    protected
+
+    def state
+      [@path, @line]
+    end
   end
 
 end
