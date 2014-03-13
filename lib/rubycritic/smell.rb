@@ -11,6 +11,10 @@ module Rubycritic
     attribute :message
     attribute :score
     attribute :type
+
+    def paths
+      locations.map(&:path)
+    end
   end
 
 end
