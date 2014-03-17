@@ -22,6 +22,10 @@ module Rubycritic
       "#{path}:#{line}"
     end
 
+    def ==(other)
+      self.class == other.class && state == other.state
+    end
+
     def <=>(other)
       state <=> other.state
     end

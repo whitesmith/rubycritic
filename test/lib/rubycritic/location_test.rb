@@ -22,6 +22,12 @@ describe Rubycritic::Location do
     end
   end
 
+  it "is comparable" do
+    location1 = Rubycritic::Location.new("./foo", 42)
+    location2 = Rubycritic::Location.new("./foo", 42)
+    location1.must_equal location2
+  end
+
   it "is sortable" do
     location1 = Rubycritic::Location.new("./foo", 42)
     location2 = Rubycritic::Location.new("./bar", 23)
