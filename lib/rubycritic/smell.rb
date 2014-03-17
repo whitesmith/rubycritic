@@ -16,6 +16,10 @@ module Rubycritic
       @pathnames ||= locations.map(&:pathname).uniq
     end
 
+    def located_in?(other_location)
+      locations.any? { |location| location == other_location }
+    end
+
     def <=>(other)
       locations <=> other.locations
     end

@@ -46,4 +46,12 @@ describe Rubycritic::Smell do
     location3 = Rubycritic::Location.new("./bar", 16)
     [location1, location2, location3].sort.must_equal [location3, location2, location1]
   end
+
+  describe "#located_in?" do
+    it "returns true if the smell has a location that matches the location passed as argument" do
+      location = Rubycritic::Location.new("./foo", "42")
+      smell = Rubycritic::Smell.new(:locations => [location])
+      smell.located_in?(location).must_equal true
+    end
+  end
 end
