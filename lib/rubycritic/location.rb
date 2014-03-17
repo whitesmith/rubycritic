@@ -6,16 +6,16 @@ module Rubycritic
     attr_reader :line
 
     def initialize(path, line)
-      @path = Pathname.new(path)
+      @pathname = Pathname.new(path)
       @line = line
     end
 
     def path
-      @path.to_s
+      @pathname.to_s
     end
 
     def file
-      @path.basename.to_s
+      @pathname.basename.to_s
     end
 
     def to_s
@@ -29,7 +29,7 @@ module Rubycritic
     protected
 
     def state
-      [@path, @line]
+      [@pathname, @line]
     end
   end
 
