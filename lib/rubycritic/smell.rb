@@ -12,8 +12,8 @@ module Rubycritic
     attribute :score
     attribute :type
 
-    def paths
-      @paths ||= locations.map(&:path).uniq
+    def pathnames
+      @pathnames ||= locations.map(&:pathname).uniq
     end
 
     def <=>(other)

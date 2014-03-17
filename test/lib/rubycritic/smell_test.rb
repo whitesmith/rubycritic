@@ -14,12 +14,12 @@ describe Rubycritic::Smell do
     smell.locations.must_equal [location]
   end
 
-  it "has a paths reader" do
-    path = "./foo"
+  it "has a pathnames reader" do
+    path = Pathname.new("./foo")
     location1 = Rubycritic::Location.new("./foo", "42")
     location2 = Rubycritic::Location.new("./foo", "23")
     smell = Rubycritic::Smell.new(:locations => [location1, location2])
-    smell.paths.must_equal [path]
+    smell.pathnames.must_equal [path]
   end
 
   it "has a message reader" do

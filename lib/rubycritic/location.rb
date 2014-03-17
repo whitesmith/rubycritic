@@ -3,7 +3,7 @@ require "pathname"
 module Rubycritic
 
   class Location
-    attr_reader :line
+    attr_reader :pathname, :line
 
     def initialize(path, line)
       @pathname = Pathname.new(path)
