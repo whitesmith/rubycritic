@@ -22,6 +22,11 @@ describe Rubycritic::SourceLocator do
     Rubycritic::SourceLocator.new(["."]).source_files.must_equal files
   end
 
+  it "deals with non-existent files" do
+    files = ["non_existent_dir1/non_existent_file1.rb", "non_existent_file0.rb"]
+    Rubycritic::SourceLocator.new(files).source_files.must_equal []
+  end
+
   after do
     Dir.chdir(@original_dir)
   end
