@@ -7,24 +7,35 @@ describe Rubycritic::SourceLocator do
     Dir.chdir("test/samples/location")
   end
 
-  it "finds a single file" do
-    file = ["file0.rb"]
-    Rubycritic::SourceLocator.new(file).source_files.must_equal file
+  describe "#paths" do
+    it "finds a single path" do
+      paths = ["file0.rb"]
+      Rubycritic::SourceLocator.new(paths).paths.must_equal paths
+    end
+
+    it "finds multiple paths" do
+      paths = ["dir1/file1.rb", "file0.rb"]
+      Rubycritic::SourceLocator.new(paths).paths.must_equal paths
+    end
+
+    it "finds all the paths" do
+      paths = ["dir1/file1.rb", "file0.rb"]
+      Rubycritic::SourceLocator.new(["."]).paths.must_equal paths
+    end
+
+    it "deals with non-existent paths" do
+      paths = ["non_existent_dir1/non_existent_file1.rb", "non_existent_file0.rb"]
+      Rubycritic::SourceLocator.new(paths).paths.must_equal []
+    end
   end
 
-  it "finds multiple files" do
-    files = ["dir1/file1.rb", "file0.rb"]
-    Rubycritic::SourceLocator.new(files).source_files.must_equal files
-  end
-
-  it "finds all the files" do
-    files = ["dir1/file1.rb", "file0.rb"]
-    Rubycritic::SourceLocator.new(["."]).source_files.must_equal files
-  end
-
-  it "deals with non-existent files" do
-    files = ["non_existent_dir1/non_existent_file1.rb", "non_existent_file0.rb"]
-    Rubycritic::SourceLocator.new(files).source_files.must_equal []
+  describe "#pathnames" do
+    it "finds a single path" do
+      path = "file0.rb"
+      paths = [path]
+      result = [Pathname.new(path)]
+      Rubycritic::SourceLocator.new(paths).pathnames.must_equal result
+    end
   end
 
   after do
