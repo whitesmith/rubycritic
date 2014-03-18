@@ -3,13 +3,14 @@ require "erb"
 module Rubycritic
 
   class LineGenerator
+    LINE_NUMBER_PADDING = 3
     TEMPLATES_DIR = File.expand_path("../templates", __FILE__)
     NORMAL_TEMPLATE = ERB.new(File.read(File.join(TEMPLATES_DIR, "line.html.erb")))
     SMELLY_TEMPLATE = ERB.new(File.read(File.join(TEMPLATES_DIR, "smelly_line.html.erb")))
 
     def initialize(text, number, smells)
       @text = text.chomp
-      @number = number
+      @number = number.to_s.rjust(LINE_NUMBER_PADDING)
       @smells = smells
       @template =
         if @smells.empty?
