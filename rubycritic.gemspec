@@ -15,8 +15,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/GuilhermeSimoes/rubycritic"
   spec.license       = "MIT"
 
-  spec.files         = Dir.glob("{lib}/**/*") + %w[LICENSE.txt README.md]
-  spec.executables   = Dir.glob("{bin}/*").map { |f| File.basename(f) }
+  spec.files         = `git ls-files`.split("\n")
+  spec.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   spec.test_files    = `git ls-files -- test/*`.split("\n")
   spec.require_path  = "lib"
 
