@@ -23,6 +23,10 @@ module Rubycritic
     def <=>(other)
       locations <=> other.locations
     end
+
+    def to_s
+      "(#{type}) #{context} #{message}"
+    end
   end
 
 end
