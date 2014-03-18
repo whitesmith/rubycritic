@@ -1,3 +1,4 @@
+require "cgi"
 require "erb"
 
 module Rubycritic
@@ -9,7 +10,7 @@ module Rubycritic
     SMELLY_TEMPLATE = ERB.new(File.read(File.join(TEMPLATES_DIR, "smelly_line.html.erb")))
 
     def initialize(text, number, smells)
-      @text = text.chomp
+      @text = CGI::escapeHTML(text.chomp)
       @number = number.to_s.rjust(LINE_NUMBER_PADDING)
       @smells = smells
       @template =
