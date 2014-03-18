@@ -18,6 +18,7 @@ module Rubycritic
     end
   end.parse!
 
+  ARGV << "." if ARGV.empty?
   Rubycritic.new(ARGV).critique
   exit 0
 
