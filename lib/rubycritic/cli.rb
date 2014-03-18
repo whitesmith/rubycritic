@@ -4,7 +4,7 @@ require "rubycritic"
 module Rubycritic
 
   OptionParser.new do |opts|
-    opts.banner = "Usage: rubycritic [options] [path]"
+    opts.banner = "Usage: rubycritic [options] [paths]"
 
     opts.on_tail("-v", "--version", "Show this version") do
       require "rubycritic/version"
@@ -18,7 +18,7 @@ module Rubycritic
     end
   end.parse!
 
-  # Do something here!
+  Rubycritic.new(ARGV).critique
   exit 0
 
 end
