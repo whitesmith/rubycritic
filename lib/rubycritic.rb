@@ -2,7 +2,7 @@ require "rubycritic/source_locator"
 require "rubycritic/analysers/reek"
 require "rubycritic/smell_adapters/reek"
 require "rubycritic/smells_aggregator"
-require "rubycritic/report_generators/report_generator"
+require "rubycritic/report_generators/reporter"
 
 module Rubycritic
 
@@ -16,7 +16,7 @@ module Rubycritic
     end
 
     def critique
-      ReportGenerator.new(@source.pathnames, @aggregator.smelly_pathnames).generate_report
+      Reporter.new(@source.pathnames, @aggregator.smelly_pathnames).generate_report
     end
   end
 

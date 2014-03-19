@@ -3,9 +3,8 @@ require "erb"
 
 module Rubycritic
 
-  class LineGenerator
+  class LineGenerator < BaseGenerator
     LINE_NUMBER_PADDING = 3
-    TEMPLATES_DIR = File.expand_path("../templates", __FILE__)
     NORMAL_TEMPLATE = ERB.new(File.read(File.join(TEMPLATES_DIR, "line.html.erb")))
     SMELLY_TEMPLATE = ERB.new(File.read(File.join(TEMPLATES_DIR, "smelly_line.html.erb")))
 

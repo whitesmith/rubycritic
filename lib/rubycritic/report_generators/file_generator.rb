@@ -3,20 +3,14 @@ require "rubycritic/report_generators/line_generator"
 
 module Rubycritic
 
-  class FileGenerator
+  class FileGenerator < BaseGenerator
     LINE_NUMBER_OFFSET = 1
-    REPORT_DIR = File.expand_path("tmp/rubycritic", Dir.getwd)
-    TEMPLATES_DIR = File.expand_path("../templates", __FILE__)
     FILE_TEMPLATE = ERB.new(File.read(File.join(TEMPLATES_DIR, "file.html.erb")))
     LAYOUT_TEMPLATE = ERB.new(File.read(File.join(TEMPLATES_DIR, "layouts", "application.html.erb")))
 
     def initialize(pathname, smells)
       @pathname = pathname
       @smells = smells
-    end
-
-    def file_pathname
-      File.join(file_directory, file_name)
     end
 
     def file_directory
@@ -40,16 +34,7 @@ module Rubycritic
       end
 
       file_body = FILE_TEMPLATE.result(self.get_binding { file_code })
-
       LAYOUT_TEMPLATE.result(self.get_binding { file_body })
-    end
-
-    def stylesheet_path
-      File.join(REPORT_DIR, "assets/stylesheets/application.css")
-    end
-
-    def get_binding
-      binding
     end
   end
 
