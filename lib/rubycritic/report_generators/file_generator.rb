@@ -24,11 +24,24 @@ module Rubycritic
     end
 
     def file_name
-      "#{@pathname.basename.sub_ext('')}.html"
+      "#{analysed_file_name}.html"
     end
 
-    def output
-      output ||= file_content
+    def analysed_file_name
+      @pathname.basename.sub_ext('').to_s
+    end
+
+    def render
+      file_code = ""
+      File.readlines(@pathname).each.with_index(LINE_NUMBER_OFFSET) do |line_text, line_number|
+        location = Location.new(@pathname, line_number)
+        line_smells = @smells.select { |smell| smell.located_in?(location) }
+        file_code << LineGenerator.new(line_text, line_number, line_smells).render
+      end
+
+      file_body = FILE_TEMPLATE.result(self.get_binding { file_code })
+
+      LAYOUT_TEMPLATE.result(self.get_binding { file_body })
     end
 
     def stylesheet_path
@@ -37,21 +50,6 @@ module Rubycritic
 
     def get_binding
       binding
-    end
-
-    private
-
-    def file_content
-      file_code = ""
-      File.readlines(@pathname).each.with_index(LINE_NUMBER_OFFSET) do |line_text, line_number|
-        location = Location.new(@pathname, line_number)
-        line_smells = @smells.select { |smell| smell.located_in?(location) }
-        file_code << LineGenerator.new(line_text, line_number, line_smells).output
-      end
-
-      file_body = FILE_TEMPLATE.result(self.get_binding { file_code })
-
-      LAYOUT_TEMPLATE.result(self.get_binding { file_body })
     end
   end
 

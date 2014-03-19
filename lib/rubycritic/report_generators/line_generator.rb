@@ -21,8 +21,8 @@ module Rubycritic
         end
     end
 
-    def output
-      @output ||= @template.result(binding).delete("\n") + "\n"
+    def render
+      @template.result(binding).delete("\n") + "\n"
     end
   end
 
