@@ -8,7 +8,7 @@ module Rubycritic
     LAYOUT_TEMPLATE = ERB.new(File.read(File.join(TEMPLATES_DIR, "layouts", "application.html.erb")))
 
     def initialize(file_generators)
-      @file_generators = file_generators
+      @file_generators = file_generators.sort { |a, b| a.analysed_file_name <=> b.analysed_file_name }
     end
 
     def file_directory
