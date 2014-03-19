@@ -1,6 +1,7 @@
 require "fileutils"
 require "rubycritic/report_generators/base_generator"
 require "rubycritic/report_generators/file_generator"
+require "rubycritic/report_generators/index_generator"
 
 module Rubycritic
 
@@ -25,7 +26,15 @@ module Rubycritic
     private
 
     def generators
-      @source_pathnames.map do |pathname|
+      file_generators + [index_generator]
+    end
+
+    def index_generator
+      IndexGenerator.new(file_generators)
+    end
+
+    def file_generators
+      @file_generators ||= @source_pathnames.map do |pathname|
         file_smells = @smelly_pathnames[pathname]
         FileGenerator.new(pathname, file_smells)
       end

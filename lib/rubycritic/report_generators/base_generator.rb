@@ -24,6 +24,10 @@ module Rubycritic
       File.join(REPORT_DIR, "assets/stylesheets/application.css")
     end
 
+    def index_path
+      File.join(REPORT_DIR, "index.html")
+    end
+
     def get_binding
       binding
     end
