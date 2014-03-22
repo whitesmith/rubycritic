@@ -1,7 +1,7 @@
-require "fileutils"
 require "rubycritic/report_generators/base_generator"
 require "rubycritic/report_generators/file_generator"
 require "rubycritic/report_generators/index_generator"
+require "fileutils"
 
 module Rubycritic
 

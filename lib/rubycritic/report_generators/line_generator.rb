@@ -1,5 +1,6 @@
-require "cgi"
 require "erb"
+require "rubycritic/report_generators/base_generator"
+require "cgi"
 
 module Rubycritic
 

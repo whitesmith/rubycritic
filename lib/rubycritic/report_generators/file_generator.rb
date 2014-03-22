@@ -1,4 +1,5 @@
 require "erb"
+require "rubycritic/report_generators/base_generator"
 require "rubycritic/report_generators/line_generator"
 
 module Rubycritic
