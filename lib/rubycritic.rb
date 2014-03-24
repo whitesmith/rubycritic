@@ -7,8 +7,8 @@ require "rubycritic/report_generators/reporter"
 module Rubycritic
 
   class Rubycritic
-    def initialize(paths)
-      @source = SourceLocator.new(paths)
+    def initialize(dirs)
+      @source = SourceLocator.new(dirs)
 
       analyser = Analyser::Reek.new(@source.paths)
       smell_adapters = [ SmellAdapter::Reek.new(analyser) ]
