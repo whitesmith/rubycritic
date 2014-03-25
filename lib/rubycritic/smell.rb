@@ -23,6 +23,7 @@ module Rubycritic
     def ==(other)
       self.class == other.class && state == other.state
     end
+    alias_method :eql?, :==
 
     def <=>(other)
       locations <=> other.locations
@@ -30,6 +31,10 @@ module Rubycritic
 
     def to_s
       "(#{type}) #{context} #{message}"
+    end
+
+    def hash
+      state.hash
     end
 
     protected
