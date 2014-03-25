@@ -54,4 +54,16 @@ describe Rubycritic::Smell do
       smell.located_in?(location).must_equal true
     end
   end
+
+  it "is comparable" do
+    attributes = {
+      :context => "#bar",
+      :message => "This smells",
+      :score => 0,
+      :type => :complexity
+    }
+    smell1 = Rubycritic::Smell.new(attributes)
+    smell2 = Rubycritic::Smell.new(attributes)
+    smell1.must_equal smell2
+  end
 end
