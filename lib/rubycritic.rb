@@ -1,6 +1,5 @@
 require "rubycritic/source_locator"
-require "rubycritic/analysers/reek"
-require "rubycritic/smell_adapters/reek"
+require "rubycritic/analysers_runner"
 require "rubycritic/smells_aggregator"
 require "rubycritic/report_generators/reporter"
 
@@ -9,14 +8,12 @@ module Rubycritic
   class Rubycritic
     def initialize(dirs)
       @source = SourceLocator.new(dirs)
-
-      analyser = Analyser::Reek.new(@source.paths)
-      smell_adapters = [ SmellAdapter::Reek.new(analyser) ]
-      @aggregator = SmellsAggregator.new(smell_adapters)
     end
 
     def critique
-      Reporter.new(@source.pathnames, @aggregator.smelly_pathnames).generate_report
+      smell_adapters = AnalysersRunner.new(@source.paths).run
+      smelly_pathnames = SmellsAggregator.new(smell_adapters).smelly_pathnames
+      Reporter.new(@source.pathnames, smelly_pathnames).generate_report
     end
   end
 
