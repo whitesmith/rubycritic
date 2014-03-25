@@ -23,6 +23,10 @@ module Rubycritic
     def self.system_names
       systems.join(", ")
     end
+
+    def travel_to_head
+      raise NotImplementedError.new("You must implement the travel_to_head method.")
+    end
   end
 
 end
