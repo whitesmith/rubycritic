@@ -1,4 +1,12 @@
 .smelly {
   display: inline;
+  background-color: #FFE7C8;
+}
+
+.smell {
   background-color: #FFC8C8;
+}
+
+.smell.old {
+  background-color: #DFDFDF;
 }

@@ -11,6 +11,7 @@ module Rubycritic
     attribute :message
     attribute :score
     attribute :type
+    attribute :status
 
     def pathnames
       @pathnames ||= locations.map(&:pathname).uniq
