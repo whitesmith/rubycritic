@@ -11,6 +11,10 @@ module Rubycritic
       "Git"
     end
 
+    def has_revision?
+      head_reference && $?.success?
+    end
+
     def travel_to_head
       if uncommited_changes?
         stashed_changes = `git stash` && $?.success?

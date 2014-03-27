@@ -1,4 +1,3 @@
-require "rubycritic/source_control_systems/source_control_system"
 require "rubycritic/smelly_pathnames_serializer"
 require "rubycritic/source_locator"
 require "rubycritic/analysers_runner"
@@ -10,9 +9,9 @@ module Rubycritic
   class RevisionComparator
     SNAPSHOTS_DIR = File.expand_path("tmp/rubycritic/snapshots", Dir.getwd)
 
-    def initialize(paths)
+    def initialize(paths, source_control_system)
       @paths = paths
-      @source_control_system = SourceControlSystem.create
+      @source_control_system = source_control_system
     end
 
     def compare

@@ -24,6 +24,10 @@ module Rubycritic
       systems.join(", ")
     end
 
+    def has_revision?
+      raise NotImplementedError.new("You must implement the has_revision? method.")
+    end
+
     def travel_to_head
       raise NotImplementedError.new("You must implement the travel_to_head method.")
     end
