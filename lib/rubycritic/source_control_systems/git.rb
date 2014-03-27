@@ -20,6 +20,10 @@ module Rubycritic
       `git stash pop` if stashed_changes
     end
 
+    def head_reference
+      `git rev-parse --verify HEAD`.chomp
+    end
+
     private
 
     def uncommited_changes?

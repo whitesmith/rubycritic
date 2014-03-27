@@ -27,6 +27,10 @@ module Rubycritic
     def travel_to_head
       raise NotImplementedError.new("You must implement the travel_to_head method.")
     end
+
+    def head_reference
+      raise NotImplementedError.new("You must implement the head_reference method.")
+    end
   end
 
 end
