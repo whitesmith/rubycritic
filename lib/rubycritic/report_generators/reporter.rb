@@ -21,6 +21,7 @@ module Rubycritic
         end
       end
       FileUtils.cp_r(ASSETS_DIR, BaseGenerator::REPORT_DIR)
+      index_generator.file_href
     end
 
     private
@@ -30,7 +31,7 @@ module Rubycritic
     end
 
     def index_generator
-      IndexGenerator.new(file_generators)
+      @index_generator ||= IndexGenerator.new(file_generators)
     end
 
     def file_generators

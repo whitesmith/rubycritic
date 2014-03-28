@@ -4,6 +4,10 @@ module Rubycritic
     REPORT_DIR = File.expand_path("tmp/rubycritic", Dir.getwd)
     TEMPLATES_DIR = File.expand_path("../templates", __FILE__)
 
+    def file_href
+      "file://#{file_pathname}"
+    end
+
     def file_pathname
       File.join(file_directory, file_name)
     end
