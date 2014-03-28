@@ -1,6 +1,5 @@
 require "test_helper"
 require "rubycritic/source_locator"
-require "pathname"
 
 describe Rubycritic::SourceLocator do
   before do
