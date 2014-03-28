@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
     Ruby Critic is a tool that detects and reports smells in Ruby classes, modules and methods.
   EOF
   spec.summary       = "Ruby code smell detector"
-  spec.homepage      = "https://github.com/GuilhermeSimoes/rubycritic"
+  spec.homepage      = "https://github.com/whitesmith/rubycritic"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split("\n")
