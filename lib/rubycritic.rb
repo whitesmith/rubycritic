@@ -14,18 +14,13 @@ module Rubycritic
     end
 
     def critique
-      smell_adapters = AnalysersRunner.new(@source.paths).run
-      smelly_pathnames = SmellsAggregator.new(smell_adapters).smelly_pathnames
-      Reporter.new(@source.pathnames, smelly_pathnames).generate_report
-    end
-
-    def compare
       if @source_control_system.has_revision?
         smelly_pathnames = RevisionComparator.new(@source.paths, @source_control_system).compare
-        Reporter.new(@source.pathnames, smelly_pathnames).generate_report
       else
-        critique
+        smell_adapters = AnalysersRunner.new(@source.paths).run
+        smelly_pathnames = SmellsAggregator.new(smell_adapters).smelly_pathnames
       end
+      Reporter.new(@source.pathnames, smelly_pathnames).generate_report
     end
   end
 
