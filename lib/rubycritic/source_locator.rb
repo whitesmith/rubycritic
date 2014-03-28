@@ -1,7 +1,8 @@
 module Rubycritic
 
   class SourceLocator
-    RUBY_FILES = File.join("**", "*.rb")
+    RUBY_EXTENSION = ".rb"
+    RUBY_FILES = File.join("**", "*#{RUBY_EXTENSION}")
 
     def initialize(dirs)
       @dirs = dirs
@@ -21,7 +22,7 @@ module Rubycritic
       @dirs.map do |path|
         if File.directory?(path)
           Pathname.glob(RUBY_FILES)
-        elsif File.exists?(path)
+        elsif File.exists?(path) && File.extname(path) == RUBY_EXTENSION
           Pathname.new(path)
         end
       end.flatten.compact.sort

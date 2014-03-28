@@ -1,5 +1,6 @@
 require "test_helper"
 require "rubycritic/source_locator"
+require "pathname"
 
 describe Rubycritic::SourceLocator do
   before do
@@ -23,8 +24,13 @@ describe Rubycritic::SourceLocator do
       Rubycritic::SourceLocator.new(["."]).paths.must_equal paths
     end
 
-    it "deals with non-existent paths" do
+    it "ignores non-existent paths" do
       paths = ["non_existent_dir1/non_existent_file1.rb", "non_existent_file0.rb"]
+      Rubycritic::SourceLocator.new(paths).paths.must_equal []
+    end
+
+    it "ignores existent paths that do not match the Ruby extension" do
+      paths = ["file_with_no_extension", "file_with_different_extension.py"]
       Rubycritic::SourceLocator.new(paths).paths.must_equal []
     end
   end
