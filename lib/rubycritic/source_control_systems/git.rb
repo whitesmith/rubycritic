@@ -15,6 +15,10 @@ module Rubycritic
       head_reference && $?.success?
     end
 
+    def head_reference
+      `git rev-parse --verify HEAD`.chomp
+    end
+
     def travel_to_head
       if uncommited_changes?
         stashed_changes = `git stash` && $?.success?
@@ -22,10 +26,6 @@ module Rubycritic
       yield
     ensure
       `git stash pop` if stashed_changes
-    end
-
-    def head_reference
-      `git rev-parse --verify HEAD`.chomp
     end
 
     private
