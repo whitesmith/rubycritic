@@ -13,7 +13,7 @@ describe Rubycritic::SourceLocator do
       Rubycritic::SourceLocator.new(paths).paths.must_equal paths
     end
 
-    it "finds multiple paths" do
+    it "finds files through multiple paths" do
       paths = ["dir1/file1.rb", "file0.rb"]
       Rubycritic::SourceLocator.new(paths).paths.must_equal paths
     end
@@ -23,12 +23,12 @@ describe Rubycritic::SourceLocator do
       Rubycritic::SourceLocator.new(["."]).paths.must_equal paths
     end
 
-    it "ignores non-existent paths" do
+    it "ignores paths to non-existent files" do
       paths = ["non_existent_dir1/non_existent_file1.rb", "non_existent_file0.rb"]
       Rubycritic::SourceLocator.new(paths).paths.must_equal []
     end
 
-    it "ignores existent paths that do not match the Ruby extension" do
+    it "ignores paths to files that do not match the Ruby extension" do
       paths = ["file_with_no_extension", "file_with_different_extension.py"]
       Rubycritic::SourceLocator.new(paths).paths.must_equal []
     end
