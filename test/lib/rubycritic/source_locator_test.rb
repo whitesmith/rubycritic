@@ -19,7 +19,7 @@ describe Rubycritic::SourceLocator do
     end
 
     it "finds all the paths" do
-      paths = ["./dir1/file1.rb", "./file0.rb"]
+      paths = ["dir1/file1.rb", "file0.rb"]
       Rubycritic::SourceLocator.new(["."]).paths.must_equal paths
     end
 
