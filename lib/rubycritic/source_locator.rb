@@ -23,7 +23,7 @@ module Rubycritic
     def expand_paths
       @user_paths.map do |path|
         if File.directory?(path)
-          Pathname.glob(RUBY_FILES)
+          Pathname.glob(File.join(path, RUBY_FILES))
         elsif File.exists?(path) && File.extname(path) == RUBY_EXTENSION
           Pathname.new(path)
         end
