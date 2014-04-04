@@ -12,8 +12,8 @@ module Rubycritic
       @source_control_system = SourceControlSystem.create
     end
 
-    def critique(dirs)
-      source = SourceLocator.new(dirs)
+    def critique(paths)
+      source = SourceLocator.new(paths)
       if @source_control_system.has_revision?
         smelly_pathnames = RevisionComparator.new(source.paths, @source_control_system).compare
       else

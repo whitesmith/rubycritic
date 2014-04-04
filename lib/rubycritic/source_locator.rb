@@ -6,8 +6,8 @@ module Rubycritic
     RUBY_EXTENSION = ".rb"
     RUBY_FILES = File.join("**", "*#{RUBY_EXTENSION}")
 
-    def initialize(dirs)
-      @dirs = dirs
+    def initialize(paths)
+      @user_paths = paths
     end
 
     def pathnames
@@ -21,7 +21,7 @@ module Rubycritic
     private
 
     def expand_paths
-      @dirs.map do |path|
+      @user_paths.map do |path|
         if File.directory?(path)
           Pathname.glob(RUBY_FILES)
         elsif File.exists?(path) && File.extname(path) == RUBY_EXTENSION
