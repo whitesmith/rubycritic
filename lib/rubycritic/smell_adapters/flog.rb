@@ -32,7 +32,7 @@ module Rubycritic
 
       def method_location(context)
         line = @flog.method_locations[context]
-        file_path, file_line = line.split(':')
+        file_path, file_line = line.split(":")
         Location.new(file_path, file_line)
       end
     end
