@@ -31,7 +31,7 @@ module Rubycritic
       File.readlines(@pathname).each.with_index(LINE_NUMBER_OFFSET) do |line_text, line_number|
         location = Location.new(@pathname, line_number)
         line_smells = @smells.select { |smell| smell.located_in?(location) }
-        file_code << LineGenerator.new(line_text, line_number, line_smells).render
+        file_code << LineGenerator.new(line_text, line_smells).render
       end
 
       file_body = FILE_TEMPLATE.result(self.get_binding { file_code })
