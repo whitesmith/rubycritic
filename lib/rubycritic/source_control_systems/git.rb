@@ -21,17 +21,28 @@ module Rubycritic
 
     def travel_to_head
       if uncommited_changes?
-        stashed_changes = `git stash` && $?.success?
+        stash_successful = stash_changes
       end
       yield
     ensure
-      `git stash pop` if stashed_changes
+      `git stash pop` if stash_successful
     end
 
     private
 
     def uncommited_changes?
       !`git status --porcelain`.empty?
+    end
+
+    def stash_changes
+      stashes_count_before = stashes_count
+      `git stash`
+      stashes_count_after = stashes_count
+      stashes_count_after > stashes_count_before
+    end
+
+    def stashes_count
+      `git stash list`.split("\n").length
     end
   end
 
