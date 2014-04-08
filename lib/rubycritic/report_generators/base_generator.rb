@@ -24,20 +24,24 @@ module Rubycritic
       raise NotImplementedError.new("You must implement the render file_name method.")
     end
 
+    def get_binding
+      binding
+    end
+
     def javascript_path(file)
-      File.join(REPORT_DIR, "assets/javascripts/#{file}.js")
+      asset_path(File.join("javascripts", "#{file}.js"))
     end
 
     def stylesheet_path(file)
-      File.join(REPORT_DIR, "assets/stylesheets/#{file}.css")
+      asset_path(File.join("stylesheets", "#{file}.css"))
+    end
+
+    def asset_path(file)
+      File.join(REPORT_DIR, "assets", file)
     end
 
     def index_path
       File.join(REPORT_DIR, "index.html")
-    end
-
-    def get_binding
-      binding
     end
   end
 
