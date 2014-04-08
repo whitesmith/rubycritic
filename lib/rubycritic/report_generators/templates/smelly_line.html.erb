@@ -1,1 +1,7 @@
-<div class="smelly"><%= @text %><% @smells.each { |smell| %><span class="smell <%= smell.status %>"> # <%= smell %><span><% } %></div>
+<%= @text %>
+
+<ul class="nocode smells js-smells">
+<% @smells.each do |smell| %>
+  <li class="smell <%= smell.status %>"><span class="description"><%= smell %></span></li>
+<% end %>
+</ul>

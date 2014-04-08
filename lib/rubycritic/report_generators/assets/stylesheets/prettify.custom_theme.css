@@ -1,0 +1,68 @@
+/* Pretty printing styles. Used with prettify.js. */
+
+/* SPAN elements with the classes below are added by prettyprint. */
+.pln { /* plain text */
+    color: #000;
+}
+
+.str { /* string content */
+    color: #690;
+}
+
+.kwd { /* a keyword */
+    color: #07a;
+}
+
+.com { /* a comment */
+    color: #800;
+}
+
+.typ { /* a type name */
+    color: #905;
+}
+
+.lit { /* a literal value */
+    color: #a67f59;
+}
+
+.pun, .opn, .clo { /* punctuation, lisp open bracket, lisp close bracket */
+    color: #660;
+}
+
+.tag { /* a markup tag name */
+    color: #008;
+}
+
+.atn { /* a markup attribute name */
+    color: #606;
+}
+
+.atv { /* a markup attribute value */
+    color: #080;
+}
+
+.dec, .var { /* a declaration; a variable name */
+    color: #a67f59;
+}
+
+.fun { /* a function name */
+    color: red;
+}
+
+/* Put a border around prettyprinted code snippets. */
+.prettyprint {
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    white-space: pre-wrap;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+.prettyprint ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #EEEBE9;
+    padding-left: 66px;
+}
+
+.prettyprint li {
+    color: #999;
+}

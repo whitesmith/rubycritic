@@ -24,8 +24,12 @@ module Rubycritic
       raise NotImplementedError.new("You must implement the render file_name method.")
     end
 
-    def stylesheet_path
-      File.join(REPORT_DIR, "assets/stylesheets/application.css")
+    def javascript_path(file)
+      File.join(REPORT_DIR, "assets/javascripts/#{file}.js")
+    end
+
+    def stylesheet_path(file)
+      File.join(REPORT_DIR, "assets/stylesheets/#{file}.css")
     end
 
     def index_path

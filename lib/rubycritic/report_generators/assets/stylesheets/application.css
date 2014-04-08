@@ -1,12 +1,26 @@
-.smelly {
-  display: inline;
-  background-color: #FFE7C8;
+.smells {
+  margin: 2px 0 22px 0;
+  padding-left: 0;
+  border: 1px solid #000;
+  background-color: #DDD;
+  white-space: normal;
+  list-style-type: disc;
 }
 
 .smell {
-  background-color: #FFC8C8;
+  margin: 5px 5px 5px 30px;
+  font-size: 24px;
+}
+
+.smell.new {
+  color: #F00;
 }
 
 .smell.old {
-  background-color: #DFDFDF;
+  color: #FA0;
+}
+
+.smell .description {
+  color: #000;
+  font-size: initial;
 }
