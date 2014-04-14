@@ -1,8 +1,12 @@
+require "rubycritic/report_generators/view_helpers"
+
 module Rubycritic
 
   class BaseGenerator
     REPORT_DIR = File.expand_path("tmp/rubycritic", Dir.getwd)
     TEMPLATES_DIR = File.expand_path("../templates", __FILE__)
+
+    include ViewHelpers
 
     def file_href
       "file://#{file_pathname}"
@@ -28,25 +32,10 @@ module Rubycritic
       binding
     end
 
-    def javascript_path(file)
-      asset_path(File.join("javascripts", "#{file}.js"))
-    end
+    private
 
-    def stylesheet_path(file)
-      asset_path(File.join("stylesheets", "#{file}.css"))
-    end
-
-    def asset_path(file)
-      File.join(REPORT_DIR, "assets", file)
-    end
-
-    def smell_location_path(location)
-      pathname = location.pathname
-      File.join(REPORT_DIR, File.dirname(pathname), "#{pathname.basename.sub_ext("")}.html#L#{location.line}")
-    end
-
-    def index_path
-      File.join(REPORT_DIR, "index.html")
+    def root_directory
+      REPORT_DIR
     end
   end
 
