@@ -23,7 +23,7 @@ module Rubycritic
     end
 
     def analysed_file_name
-      @pathname.basename.sub_ext("").to_s
+      @pathname.basename.sub_ext("")
     end
 
     def render
