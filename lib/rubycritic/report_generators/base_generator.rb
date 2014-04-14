@@ -21,7 +21,7 @@ module Rubycritic
     end
 
     def render
-      raise NotImplementedError.new("You must implement the render file_name method.")
+      raise NotImplementedError.new("You must implement the render method.")
     end
 
     def get_binding
