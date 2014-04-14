@@ -34,8 +34,8 @@ module Rubycritic
         file_code << LineGenerator.new(line_text, line_smells).render
       end
 
-      file_body = FILE_TEMPLATE.result(self.get_binding { file_code })
-      LAYOUT_TEMPLATE.result(self.get_binding { file_body })
+      file_body = FILE_TEMPLATE.result(get_binding { file_code })
+      LAYOUT_TEMPLATE.result(get_binding { file_body })
     end
   end
 
