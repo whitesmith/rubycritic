@@ -66,3 +66,7 @@
 .prettyprint li {
     color: #999;
 }
+
+li.highlight {
+    background-color: #FFC;
+}
