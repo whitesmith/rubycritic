@@ -25,7 +25,7 @@ module Rubycritic
       end
 
       def smell_locations(file_path, file_lines)
-        file_lines.uniq.map do |file_line|
+        file_lines.uniq.sort.map do |file_line|
           Location.new(file_path, file_line)
         end
       end
