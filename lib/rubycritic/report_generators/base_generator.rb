@@ -40,6 +40,11 @@ module Rubycritic
       File.join(REPORT_DIR, "assets", file)
     end
 
+    def smell_location_path(location)
+      pathname = location.pathname
+      File.join(REPORT_DIR, File.dirname(pathname), "#{pathname.basename.sub_ext("")}.html#L#{location.line}")
+    end
+
     def index_path
       File.join(REPORT_DIR, "index.html")
     end
