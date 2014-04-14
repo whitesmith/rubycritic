@@ -10,16 +10,8 @@ module Rubycritic
       @line = line
     end
 
-    def path
-      @pathname.to_s
-    end
-
-    def file
-      @pathname.basename.to_s
-    end
-
     def to_s
-      "#{path}:#{line}"
+      "#{pathname}:#{line}"
     end
 
     def ==(other)

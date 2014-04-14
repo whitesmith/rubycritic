@@ -9,12 +9,8 @@ describe Rubycritic::Location do
       @location = Rubycritic::Location.new(@path, @line)
     end
 
-    it "has a file path" do
-      @location.path.must_equal @path
-    end
-
-    it "has a file name" do
-      @location.file.must_equal "foo"
+    it "has a pathname" do
+      @location.pathname.must_equal Pathname.new(@path)
     end
 
     it "has a line number" do
