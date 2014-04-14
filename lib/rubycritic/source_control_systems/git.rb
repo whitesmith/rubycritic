@@ -20,29 +20,33 @@ module Rubycritic
     end
 
     def travel_to_head
-      if uncommited_changes?
-        stash_successful = stash_changes
-      end
+      stash_successful = stash_changes
       yield
     ensure
-      `git stash pop` if stash_successful
+      travel_to_original_state if stash_successful
     end
 
     private
 
-    def uncommited_changes?
-      !`git status --porcelain`.empty?
-    end
-
     def stash_changes
+      return false if everything_commmited?
+
       stashes_count_before = stashes_count
       `git stash`
       stashes_count_after = stashes_count
       stashes_count_after > stashes_count_before
     end
 
+    def everything_commmited?
+      `git status --porcelain`.empty?
+    end
+
     def stashes_count
       `git stash list`.split("\n").length
+    end
+
+    def travel_to_original_state
+      `git stash pop`
     end
   end
 
