@@ -48,6 +48,15 @@ describe Rubycritic::Smell do
     end
   end
 
+  describe "#has_multiple_locations?" do
+    it "returns true if the smell has more than one location" do
+      location1 = Rubycritic::Location.new("./foo", "42")
+      location2 = Rubycritic::Location.new("./foo", "23")
+      smell = Rubycritic::Smell.new(:locations => [location1, location2])
+      smell.has_multiple_locations?.must_equal true
+    end
+  end
+
   it "is comparable" do
     attributes = {
       :context => "#bar",
