@@ -8,7 +8,7 @@ describe Rubycritic::SourceLocator do
   end
 
   describe "#paths" do
-    it "finds a single path" do
+    it "finds a single file" do
       paths = ["file0.rb"]
       Rubycritic::SourceLocator.new(paths).paths.must_equal paths
     end
@@ -18,7 +18,7 @@ describe Rubycritic::SourceLocator do
       Rubycritic::SourceLocator.new(paths).paths.must_equal paths
     end
 
-    it "finds all the paths" do
+    it "finds all the files" do
       paths = ["dir1/file1.rb", "file0.rb"]
       Rubycritic::SourceLocator.new(["."]).paths.must_equal paths
     end
@@ -40,7 +40,7 @@ describe Rubycritic::SourceLocator do
   end
 
   describe "#pathnames" do
-    it "finds a single path" do
+    it "finds a single file" do
       path = "file0.rb"
       paths = [path]
       result = [Pathname.new(path)]

@@ -2,7 +2,7 @@ require "test_helper"
 require "rubycritic/smells_aggregator"
 
 describe Rubycritic::SmellsAggregator do
-  context "when when analysing smelly files" do
+  context "when analysing smelly files" do
     before do
       @location1 = Rubycritic::Location.new("./foo", "42")
       @location2 = Rubycritic::Location.new("./bar", "23")
