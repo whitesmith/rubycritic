@@ -1,9 +1,12 @@
+require "rubycritic/active_support/methods"
 require "rubycritic/analysers/reek"
 require "rubycritic/smell_adapters/reek"
 
 module Rubycritic
 
   class AnalysersRunner
+    include ActiveSupport
+
     ANALYSERS = ["Reek"]
 
     def initialize(paths)
@@ -18,8 +21,8 @@ module Rubycritic
 
     def run_analysers_and_instantiate_adapters
       ANALYSERS.map do |analyser_name|
-        analyser = Object.const_get("Rubycritic::Analyser::#{analyser_name}").new(@paths)
-        Object.const_get("Rubycritic::SmellAdapter::#{analyser_name}").new(analyser)
+        analyser = constantize("Rubycritic::Analyser::#{analyser_name}").new(@paths)
+        constantize("Rubycritic::SmellAdapter::#{analyser_name}").new(analyser)
       end
     end
   end
