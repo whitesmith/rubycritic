@@ -11,12 +11,12 @@ module Rubycritic
     end
 
     def run
-      smell_adapters
+      run_analysers_and_instantiate_adapters
     end
 
     private
 
-    def smell_adapters
+    def run_analysers_and_instantiate_adapters
       ANALYSERS.map do |analyser_name|
         analyser = Object.const_get("Rubycritic::Analyser::#{analyser_name}").new(@paths)
         Object.const_get("Rubycritic::SmellAdapter::#{analyser_name}").new(analyser)
