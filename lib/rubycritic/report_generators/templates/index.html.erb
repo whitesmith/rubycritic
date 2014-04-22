@@ -6,9 +6,9 @@
 </thead>
 <tbody>
   <% @file_generators.each do |file_generator| %>
-  <tr>
-    <td><a href="<%= file_generator.file_pathname %>"><%= file_generator.analysed_file_name %></a></td>
-  </tr>
+    <tr>
+      <td><a href="<%= file_generator.file_pathname %>"><%= file_generator.analysed_file_name %></a></td>
+    </tr>
   <% end %>
 </tbody>
 </table>
