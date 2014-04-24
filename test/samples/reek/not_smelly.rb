@@ -1,7 +1,14 @@
-class Perfumed
-  attr_reader :perfume
+class Perfume
+  attr_reader :perfumed
 
-  def ignoresRubyStyle(oneParameter)
+  def ignoreRubyStyle(oneParameter)
     oneVariable = oneParameter
+  end
+
+  def allowNestingIteratorsTwoLevelsDeep
+    loop do
+      loop do
+      end
+    end
   end
 end
