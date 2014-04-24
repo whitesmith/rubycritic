@@ -18,15 +18,21 @@ describe Rubycritic::SourceLocator do
       Rubycritic::SourceLocator.new(paths).paths.must_equal paths
     end
 
+    it "finds all the files inside a given directory" do
+      initial_paths = ["dir1"]
+      final_paths = ["dir1/file1.rb"]
+      Rubycritic::SourceLocator.new(initial_paths).paths.must_equal final_paths
+    end
+
     it "finds all the files" do
       initial_paths = ["."]
       final_paths = ["dir1/file1.rb", "file0.rb"]
       Rubycritic::SourceLocator.new(initial_paths).paths.must_equal final_paths
     end
 
-    it "finds all the files inside a given directory" do
-      initial_paths = ["dir1"]
-      final_paths = ["dir1/file1.rb"]
+    it "cleans paths of consecutive slashes and useless dots" do
+      initial_paths = [".//file0.rb"]
+      final_paths = ["file0.rb"]
       Rubycritic::SourceLocator.new(initial_paths).paths.must_equal final_paths
     end
 

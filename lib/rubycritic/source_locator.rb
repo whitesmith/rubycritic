@@ -23,15 +23,11 @@ module Rubycritic
     def expand_paths
       @user_paths.map do |path|
         if File.directory?(path)
-          Pathname.glob(files_contained_in(path))
+          Pathname.glob(File.join(path, RUBY_FILES))
         elsif File.exists?(path) && File.extname(path) == RUBY_EXTENSION
           Pathname.new(path)
         end
-      end.flatten.compact.sort
-    end
-
-    def files_contained_in(path)
-      (path == ".") ? RUBY_FILES : File.join(path, RUBY_FILES)
+      end.flatten.compact.map(&:cleanpath).sort
     end
   end
 
