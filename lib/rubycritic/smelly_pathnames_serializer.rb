@@ -8,7 +8,7 @@ module Rubycritic
     end
 
     def load
-      Marshal.load(File.read(@file_name))
+      Marshal.load(File.binread(@file_name))
     end
 
     def dump(smelly_pathnames)
