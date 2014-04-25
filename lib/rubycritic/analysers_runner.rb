@@ -1,4 +1,6 @@
 require "rubycritic/active_support/methods"
+require "rubycritic/analysers/flay"
+require "rubycritic/smell_adapters/flay"
 require "rubycritic/analysers/reek"
 require "rubycritic/smell_adapters/reek"
 
@@ -7,7 +9,7 @@ module Rubycritic
   class AnalysersRunner
     include ActiveSupport
 
-    ANALYSERS = ["Reek"]
+    ANALYSERS = ["Flay", "Reek"]
 
     def initialize(paths)
       @paths = paths
