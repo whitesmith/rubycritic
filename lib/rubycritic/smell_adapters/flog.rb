@@ -19,8 +19,9 @@ module Rubycritic
       private
 
       def create_smell(context, score)
-        location = method_location(context)
+        location = smell_location(context)
         message  = "has a complexity of #{score.round}"
+
         Smell.new(
           :locations => [location],
           :context => context,
@@ -30,7 +31,7 @@ module Rubycritic
         )
       end
 
-      def method_location(context)
+      def smell_location(context)
         line = @flog.method_locations[context]
         file_path, file_line = line.split(":")
         Location.new(file_path, file_line)

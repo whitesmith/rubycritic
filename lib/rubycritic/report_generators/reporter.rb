@@ -35,9 +35,9 @@ module Rubycritic
     end
 
     def file_generators
-      @file_generators ||= @source_pathnames.map do |pathname|
-        file_smells = @smelly_pathnames[pathname]
-        FileGenerator.new(pathname, file_smells)
+      @file_generators ||= @source_pathnames.map do |file_pathname|
+        file_smells = @smelly_pathnames[file_pathname]
+        FileGenerator.new(file_pathname, file_smells)
       end
     end
   end

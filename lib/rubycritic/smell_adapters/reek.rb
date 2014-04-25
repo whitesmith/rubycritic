@@ -18,16 +18,17 @@ module Rubycritic
 
       def create_smell(smell)
         locations = smell_locations(smell.source, smell.lines)
-        message   = smell.message
         context   = smell.context
+        message   = smell.message
         type      = smell.subclass
+
         Smell.new(:locations => locations, :context => context, :message => message, :type => type)
       end
 
       def smell_locations(file_path, file_lines)
-        file_lines.uniq.sort.map do |file_line|
+        file_lines.uniq.map do |file_line|
           Location.new(file_path, file_line)
-        end
+        end.sort
       end
     end
 
