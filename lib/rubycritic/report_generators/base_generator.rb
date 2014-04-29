@@ -17,15 +17,15 @@ module Rubycritic
     end
 
     def file_directory
-      raise NotImplementedError.new("You must implement the file_directory method.")
+      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
     end
 
     def file_name
-      raise NotImplementedError.new("You must implement the file_name method.")
+      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
     end
 
     def render
-      raise NotImplementedError.new("You must implement the render method.")
+      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
     end
 
     def get_binding

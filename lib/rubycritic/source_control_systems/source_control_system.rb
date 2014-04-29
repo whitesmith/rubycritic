@@ -25,15 +25,15 @@ module Rubycritic
     end
 
     def has_revision?
-      raise NotImplementedError.new("You must implement the has_revision? method.")
+      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
     end
 
     def head_reference
-      raise NotImplementedError.new("You must implement the head_reference method.")
+      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
     end
 
     def travel_to_head
-      raise NotImplementedError.new("You must implement the travel_to_head method.")
+      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
     end
   end
 
