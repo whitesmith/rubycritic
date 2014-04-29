@@ -18,8 +18,8 @@ module Rubycritic
       File.join(root_directory, "#{pathname.sub_ext('.html')}#L#{location.line}")
     end
 
-    def index_path
-      File.join(root_directory, "index.html")
+    def code_index_path
+      File.join(root_directory, "code_index.html")
     end
 
     # Includers must override

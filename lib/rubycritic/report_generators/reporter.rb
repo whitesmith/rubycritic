@@ -1,6 +1,6 @@
 require "rubycritic/report_generators/base_generator"
 require "rubycritic/report_generators/file_generator"
-require "rubycritic/report_generators/index_generator"
+require "rubycritic/report_generators/code_index_generator"
 require "fileutils"
 
 module Rubycritic
@@ -22,17 +22,17 @@ module Rubycritic
         end
       end
       FileUtils.cp_r(ASSETS_DIR, BaseGenerator::REPORT_DIR)
-      index_generator.file_href
+      code_index_generator.file_href
     end
 
     private
 
     def generators
-      file_generators + [index_generator]
+      [code_index_generator] + file_generators
     end
 
-    def index_generator
-      @index_generator ||= IndexGenerator.new(file_generators)
+    def code_index_generator
+      @code_index_generator ||= CodeIndexGenerator.new(file_generators)
     end
 
     def file_generators
