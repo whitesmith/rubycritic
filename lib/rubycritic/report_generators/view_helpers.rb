@@ -21,6 +21,11 @@ module Rubycritic
     def index_path
       File.join(root_directory, "index.html")
     end
+
+    # Includers must override
+    def root_directory
+      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
+    end
   end
 
 end
