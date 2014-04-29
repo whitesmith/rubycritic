@@ -1,3 +1,5 @@
-<button id="js-toggle-smells">Toggle Smells</button>
+<% if file_has_smells? %>
+  <button id="js-toggle-smells">Toggle Smells</button>
+<% end %>
 
 <code class="prettyprint linenums lang-ruby file-code js-file-code"><%= yield %></code>
