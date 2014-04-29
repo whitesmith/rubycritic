@@ -25,7 +25,7 @@ html {
 .project-nav {
   float: left;
   margin-left: 100px;
-  line-height: 2.2em;
+  line-height: 2.5em;
 }
 
 .project-nav-item {
@@ -34,11 +34,39 @@ html {
   text-decoration: none;
 }
 
+.code-table,
+.smells-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.code-table th,
+.smells-table th {
+  text-align: left;
+  padding-bottom: 8px;
+  border-bottom: 1px solid silver;
+  font-size: 1.55em;
+  font-weight: normal;
+}
+
+.code-table td,
+.smells-table td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.code-table tr td:first-child,
+.code-table tr th:first-child,
+.smells-table tr td:first-child,
+.smells-table tr th:first-child {
+  padding-left: 60px;
+}
+
 .button {
   margin: 0;
   padding: 0.5em 1em;
   border: 1px solid black;
-  font-size: 14px;
+  font-size: 0.9em;
   border-radius: 0.2em;
   cursor: pointer;
   transition-property: background-color;
@@ -48,19 +76,19 @@ html {
 
 .file-header {
   position: relative;
+  padding: 0 0 10px 60px;
+  border-bottom: 1px solid silver;
 }
 
 .file-name {
   margin: 0;
-  padding: 10px 0 10px 60px;
-  border-bottom: 1px solid silver;
   font-weight: normal;
 }
 
 .smells-toggle-button {
   position: absolute;
   right: 64px;
-  top: 32px;
+  top: 22px;
   border-color: silver;
   background-color: #EEEBE9;
 }
