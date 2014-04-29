@@ -24,6 +24,10 @@ module Rubycritic
       systems.join(", ")
     end
 
+    def self.supported?
+      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
+    end
+
     def has_revision?
       raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
     end
