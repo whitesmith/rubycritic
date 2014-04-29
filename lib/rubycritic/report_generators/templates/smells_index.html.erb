@@ -1,0 +1,20 @@
+<table>
+<thead>
+  <tr>
+    <th>Smell</th>
+    <th>Locations</th>
+  </tr>
+</thead>
+<tbody>
+  <% @smells.each do |smell| %>
+    <tr>
+      <td><%= smell.type %></td>
+      <td>
+        <% smell.locations.each do |location| %>
+          <a href="<%= smell_location_path(location) %>"><%= location %></a>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

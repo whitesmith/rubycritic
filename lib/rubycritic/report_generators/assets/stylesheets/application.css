@@ -1,13 +1,36 @@
+.group:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 html {
   overflow-y: scroll;
 }
 
+.project-header {
+  padding: 20px 0 20px 60px;
+}
+
 .logo {
-  text-align: center;
+  float: left;
+  margin: 0;
 }
 
 .logo-link {
   color: black;
+  text-decoration: none;
+}
+
+.project-nav {
+  float: left;
+  margin-left: 100px;
+  line-height: 2.2em;
+}
+
+.project-nav-item {
+  color: black;
+  margin-right: 40px;
   text-decoration: none;
 }
 

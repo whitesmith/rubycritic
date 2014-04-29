@@ -1,6 +1,7 @@
 require "rubycritic/report_generators/base_generator"
 require "rubycritic/report_generators/file_generator"
 require "rubycritic/report_generators/code_index_generator"
+require "rubycritic/report_generators/smells_index_generator"
 require "fileutils"
 
 module Rubycritic
@@ -28,11 +29,15 @@ module Rubycritic
     private
 
     def generators
-      [code_index_generator] + file_generators
+      [code_index_generator, smells_index_generator] + file_generators
     end
 
     def code_index_generator
       @code_index_generator ||= CodeIndexGenerator.new(file_generators)
+    end
+
+    def smells_index_generator
+      @smells_index_generator ||= SmellsIndexGenerator.new(@smells)
     end
 
     def file_generators
