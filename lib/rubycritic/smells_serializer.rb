@@ -2,7 +2,7 @@ require "fileutils"
 
 module Rubycritic
 
-  class SmellyPathnamesSerializer
+  class SmellsSerializer
     def initialize(file_name)
       @file_name = file_name
     end
@@ -11,12 +11,10 @@ module Rubycritic
       Marshal.load(File.binread(@file_name))
     end
 
-    def dump(smelly_pathnames)
+    def dump(smells)
       create_file_directory
-      # HACK It's not possible to Marshal procs or lambdas.
-      smelly_pathnames.default = []
       File.open(@file_name, "w+") do |file|
-        Marshal.dump(smelly_pathnames, file)
+        Marshal.dump(smells, file)
       end
     end
 

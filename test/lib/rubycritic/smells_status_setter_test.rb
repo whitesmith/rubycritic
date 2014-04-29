@@ -3,19 +3,19 @@ require "rubycritic/smell"
 require "rubycritic/smells_status_setter"
 
 describe Rubycritic::SmellsStatusSetter do
-  describe "#smelly_pathnames" do
+  describe "#smells" do
     before do
       @smell = Rubycritic::Smell.new(:context => "#bar")
-      @smelly_pathnames = { "file0.rb" => [@smell] }
+      @smells = [@smell]
     end
 
     it "marks old smells" do
-      Rubycritic::SmellsStatusSetter.new(@smelly_pathnames, @smelly_pathnames).smelly_pathnames
+      Rubycritic::SmellsStatusSetter.new(@smells, @smells).smells
       @smell.status.must_equal :old
     end
 
     it "marks new smells" do
-      Rubycritic::SmellsStatusSetter.new({}, @smelly_pathnames).smelly_pathnames
+      Rubycritic::SmellsStatusSetter.new([], @smells).smells
       @smell.status.must_equal :new
     end
   end

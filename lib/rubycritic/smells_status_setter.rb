@@ -1,20 +1,17 @@
 module Rubycritic
 
   class SmellsStatusSetter
-    def initialize(smelly_pathnames_before, smelly_pathnames_now)
-      @smelly_pathnames_before = smelly_pathnames_before
-      @smelly_pathnames_now = smelly_pathnames_now
+    def initialize(smells_before, smells_now)
+      @smells_before = smells_before || []
+      @smells_now = smells_now
     end
 
-    def smelly_pathnames
-      @smelly_pathnames_now.each do |pathname, smells_now|
-        smells_before = @smelly_pathnames_before[pathname] || []
-        old_smells = smells_now & smells_before
-        set_status(old_smells, :old)
-        new_smells = smells_now - smells_before
-        set_status(new_smells, :new)
-      end
-      @smelly_pathnames_now
+    def smells
+      old_smells = @smells_now & @smells_before
+      set_status(old_smells, :old)
+      new_smells = @smells_now - @smells_before
+      set_status(new_smells, :new)
+      @smells_now
     end
 
     private

@@ -1,4 +1,4 @@
-require "rubycritic/smelly_pathnames_serializer"
+require "rubycritic/smells_serializer"
 require "rubycritic/source_locator"
 require "rubycritic/analysers_runner"
 require "rubycritic/smells_aggregator"
@@ -9,38 +9,30 @@ module Rubycritic
   class RevisionComparator
     SNAPSHOTS_DIR = File.expand_path("tmp/rubycritic/snapshots", Dir.getwd)
 
-    def initialize(paths, source_control_system)
-      @paths = paths
+    def initialize(smells, source_control_system)
+      @smells_now = smells
       @source_control_system = source_control_system
     end
 
-    def compare
-      SmellsStatusSetter.new(smelly_pathnames_before, smelly_pathnames_now).smelly_pathnames
+    def smells
+      SmellsStatusSetter.new(smells_before, @smells_now).smells
     end
 
     private
 
-    def smelly_pathnames_before
-      serializer = SmellyPathnamesSerializer.new(revision_file)
+    def smells_before
+      serializer = SmellsSerializer.new(revision_file)
       if File.file?(revision_file)
         serializer.load
       else
-        smelly_pathnames = nil
+        smells = nil
         @source_control_system.travel_to_head do
-          smelly_pathnames = smelly_pathnames(paths_of_tracked_files)
+          smell_adapters = AnalysersRunner.new(paths_of_tracked_files).run
+          smells = SmellsAggregator.new(smell_adapters).smells
         end
-        serializer.dump(smelly_pathnames)
-        smelly_pathnames
+        serializer.dump(smells)
+        smells
       end
-    end
-
-    def smelly_pathnames_now
-      smelly_pathnames(@paths)
-    end
-
-    def smelly_pathnames(paths)
-      smell_adapters = AnalysersRunner.new(paths).run
-      SmellsAggregator.new(smell_adapters).smelly_pathnames
     end
 
     def revision_file

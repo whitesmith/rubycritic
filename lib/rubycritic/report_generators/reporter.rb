@@ -8,9 +8,10 @@ module Rubycritic
   class Reporter
     ASSETS_DIR = File.expand_path("../assets", __FILE__)
 
-    def initialize(source_pathnames, smelly_pathnames)
+    def initialize(source_pathnames, smells)
       @source_pathnames = source_pathnames
-      @smelly_pathnames = smelly_pathnames
+      @smells = smells
+      @smelly_pathnames = pathnames_to_files_with_smells
     end
 
     def generate_report
@@ -39,6 +40,16 @@ module Rubycritic
         file_smells = @smelly_pathnames[file_pathname]
         FileGenerator.new(file_pathname, file_smells)
       end
+    end
+
+    def pathnames_to_files_with_smells
+      pathnames = Hash.new { |hash, key| hash[key] = [] }
+      @smells.each do |smell|
+        smell.pathnames.each do |path|
+          pathnames[path] << smell
+        end
+      end
+      pathnames
     end
   end
 
