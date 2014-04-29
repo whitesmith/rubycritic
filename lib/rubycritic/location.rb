@@ -10,6 +10,10 @@ module Rubycritic
       @line = line
     end
 
+    def file_name
+      @pathname.basename.sub_ext("").to_s
+    end
+
     def to_s
       "#{pathname}:#{line}"
     end
