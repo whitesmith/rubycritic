@@ -1,5 +1,9 @@
-<% if file_has_smells? %>
-  <button id="js-toggle-smells">Toggle Smells</button>
-<% end %>
+<div class="file-header">
+  <h2 class="file-name"><%= analysed_file_name %></h2>
+
+  <% if file_has_smells? %>
+    <button id="js-toggle-smells" class="smells-toggle-button button">Toggle Smells</button>
+  <% end %>
+</div>
 
 <code class="prettyprint linenums lang-ruby file-code js-file-code"><%= yield %></code>

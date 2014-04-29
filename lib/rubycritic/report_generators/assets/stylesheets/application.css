@@ -1,8 +1,52 @@
+.logo {
+  text-align: center;
+}
+
+.logo-link {
+  color: black;
+  text-decoration: none;
+}
+
+.button {
+  margin: 0;
+  padding: 0.5em 1em;
+  border: 1px solid black;
+  font-size: 14px;
+  border-radius: 0.2em;
+  cursor: pointer;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.file-header {
+  position: relative;
+}
+
+.file-name {
+  margin: 0;
+  padding: 10px 0 10px 60px;
+  border-bottom: 1px solid silver;
+  font-weight: normal;
+}
+
+.smells-toggle-button {
+  position: absolute;
+  right: 64px;
+  top: 32px;
+  border-color: silver;
+  background-color: #EEEBE9;
+}
+
+.smells-toggle-button:hover {
+  background-color: #D1CFCD;
+}
+
 .smells {
   margin: 2px 0 22px 0;
   padding-left: 0;
   border: 1px solid #000;
-  background-color: #DDD;
+  background-color: #EEEBE9;
   white-space: normal;
   list-style-type: disc;
 }

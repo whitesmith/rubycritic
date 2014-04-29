@@ -3,14 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>RubyCritic</title>
+        <title>Ruby Critic</title>
         <link href="<%= stylesheet_path(:application) %>" media="screen, projection, print" rel="stylesheet" type="text/css">
         <link href="<%= stylesheet_path(:'prettify.custom_theme') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <h1><a href="<%= index_path %>">RubyCritic</a></h1>
+        <h1 class="logo"><a href="<%= index_path %>" class="logo-link">Ruby Critic</a></h1>
         <%= yield %>
         <script src="<%= javascript_path(:'jquery-2.1.0') %>"></script>
         <script src="<%= javascript_path(:prettify) %>"></script>
