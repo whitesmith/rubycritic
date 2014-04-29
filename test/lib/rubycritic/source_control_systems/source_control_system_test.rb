@@ -19,7 +19,8 @@ describe Rubycritic::SourceControlSystem do
 
     describe "when no source control system is found" do
       it "raises an error" do
-        proc { Rubycritic::SourceControlSystem.create }.must_raise RuntimeError
+        error = proc { Rubycritic::SourceControlSystem.create }.must_raise RuntimeError
+        error.message.must_match "Rubycritic requires a Git repository."
       end
     end
   end
