@@ -11,7 +11,7 @@
       <td><%= smell.type %></td>
       <td>
         <% smell.locations.each do |location| %>
-          <a href="<%= smell_location_path(location) %>"><%= location %></a>
+          <a href="<%= smell_location_path(location) %>"><%= location.file_name %></a>
         <% end %>
       </td>
     </tr>
