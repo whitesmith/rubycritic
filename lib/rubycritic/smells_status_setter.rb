@@ -3,7 +3,7 @@ module Rubycritic
   class SmellsStatusSetter
     def initialize(smells_before, smells_now)
       @smells_before = smells_before || []
-      @smells_now = smells_now
+      @smells_now = smells_now || []
     end
 
     def smells
