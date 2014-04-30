@@ -1,3 +1,4 @@
+require "rubycritic/configuration"
 require "rubycritic/source_locator"
 require "rubycritic/analysers_runner"
 require "rubycritic/smells_aggregator"

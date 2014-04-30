@@ -4,7 +4,6 @@ require "rubycritic/report_generators/view_helpers"
 module Rubycritic
 
   class BaseGenerator
-    REPORT_DIR = File.expand_path("tmp/rubycritic", Dir.getwd)
     TEMPLATES_DIR = File.expand_path("../templates", __FILE__)
     LAYOUT_TEMPLATE = ERB.new(File.read(File.join(TEMPLATES_DIR, "layouts", "application.html.erb")))
 
@@ -37,7 +36,7 @@ module Rubycritic
     private
 
     def root_directory
-      REPORT_DIR
+      ::Rubycritic.configuration.root
     end
   end
 

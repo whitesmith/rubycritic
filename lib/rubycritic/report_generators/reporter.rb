@@ -22,7 +22,7 @@ module Rubycritic
           file.write(generator.render)
         end
       end
-      FileUtils.cp_r(ASSETS_DIR, BaseGenerator::REPORT_DIR)
+      FileUtils.cp_r(ASSETS_DIR, ::Rubycritic.configuration.root)
       code_index_generator.file_href
     end
 

@@ -7,7 +7,7 @@ require "rubycritic/smells_status_setter"
 module Rubycritic
 
   class RevisionComparator
-    SNAPSHOTS_DIR = File.expand_path("tmp/rubycritic/snapshots", Dir.getwd)
+    SNAPSHOTS_DIR_NAME = "snapshots"
 
     def initialize(smells, source_control_system)
       @smells_now = smells
@@ -36,7 +36,11 @@ module Rubycritic
     end
 
     def revision_file
-      @revision_file ||= File.join(SNAPSHOTS_DIR, @source_control_system.head_reference)
+      @revision_file ||= File.join(
+        ::Rubycritic.configuration.root,
+        SNAPSHOTS_DIR_NAME,
+        @source_control_system.head_reference
+      )
     end
 
     def paths_of_tracked_files
