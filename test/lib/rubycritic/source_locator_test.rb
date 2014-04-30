@@ -3,7 +3,7 @@ require "rubycritic/source_locator"
 
 describe Rubycritic::SourceLocator do
   before do
-    @original_dir = Dir.pwd
+    @original_dir = Dir.getwd
     Dir.chdir("test/samples/location")
   end
 
