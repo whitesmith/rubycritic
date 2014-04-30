@@ -10,10 +10,6 @@ module Rubycritic
       @file_generators = file_generators.sort { |a, b| a.analysed_file_name <=> b.analysed_file_name }
     end
 
-    def file_directory
-      REPORT_DIR
-    end
-
     def file_name
       "code_index.html"
     end

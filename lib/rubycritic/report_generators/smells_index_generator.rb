@@ -10,10 +10,6 @@ module Rubycritic
       @smells = smells.sort { |a, b| a.type <=> b.type }
     end
 
-    def file_directory
-      REPORT_DIR
-    end
-
     def file_name
       "smells_index.html"
     end

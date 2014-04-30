@@ -19,7 +19,7 @@ module Rubycritic
     end
 
     def file_directory
-      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
+      root_directory
     end
 
     def file_name
