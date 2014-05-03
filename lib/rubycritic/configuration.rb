@@ -7,7 +7,11 @@ module Rubycritic
     attr_reader :root
 
     def initialize
-      @root = File.expand_path("tmp/rubycritic")
+      self.root = "tmp/rubycritic"
+    end
+
+    def root=(path)
+      @root = File.expand_path(path)
     end
   end
 end
