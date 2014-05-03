@@ -10,7 +10,7 @@ module Rubycritic
       configuration.root = path
     end
 
-    opts.on_tail("-v", "--version", "Show this version") do
+    opts.on_tail("-v", "--version", "Show gem's version") do
       require "rubycritic/version"
       puts VERSION
       exit 0
