@@ -7,7 +7,7 @@ module Rubycritic
 
     def initialize(path, line)
       @pathname = Pathname.new(path)
-      @line = line
+      @line = line.to_i
     end
 
     def file_name

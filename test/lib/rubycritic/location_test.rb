@@ -5,7 +5,7 @@ describe Rubycritic::Location do
   describe "attribute readers" do
     before do
       @path = "./foo.rb"
-      @line = 42
+      @line = "42"
       @location = Rubycritic::Location.new(@path, @line)
     end
 
@@ -14,7 +14,7 @@ describe Rubycritic::Location do
     end
 
     it "has a line number" do
-      @location.line.must_equal @line
+      @location.line.must_equal @line.to_i
     end
 
     it "has a file name" do
