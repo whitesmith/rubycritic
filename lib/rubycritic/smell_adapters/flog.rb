@@ -4,14 +4,18 @@ module Rubycritic
   module SmellAdapter
 
     class Flog
+      HIGH_COMPLEXITY_SCORE_THRESHOLD = 25
+      VERY_HIGH_COMPLEXITY_SCORE_THRESHOLD = 60
+
       def initialize(flog)
         @flog = flog
       end
 
       def smells
         smells = []
-        @flog.each_by_score do |class_method, score|
-          smells << create_smell(class_method, score)
+        @flog.each_by_score do |class_method, original_score|
+          score = original_score.round
+          smells << create_smell(class_method, score) if score >= HIGH_COMPLEXITY_SCORE_THRESHOLD
         end
         smells
       end
@@ -20,14 +24,20 @@ module Rubycritic
 
       def create_smell(context, score)
         location = smell_location(context)
-        message  = "has a complexity of #{score.round}"
+        message  = "has a flog score of #{score}"
+        type     =
+          if score >= VERY_HIGH_COMPLEXITY_SCORE_THRESHOLD
+            "VeryHighComplexity"
+          else
+            "HighComplexity"
+          end
 
         Smell.new(
           :locations => [location],
           :context => context,
           :message => message,
           :score => score,
-          :type => "Complexity"
+          :type => type
         )
       end
 
