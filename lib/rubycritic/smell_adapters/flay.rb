@@ -17,11 +17,8 @@ module Rubycritic
       private
 
       def create_smell(structural_hash, nodes)
-        is_identical = @flay.identical[structural_hash]
-        similarity   = is_identical ? "Identical" : "Similar"
-
         locations = smell_locations(nodes)
-        context   = "#{similarity} code"
+        context   = "#{similarity(structural_hash)} code"
         message   = "found in #{nodes.size} nodes"
         score     = @flay.masses[structural_hash]
 
@@ -38,6 +35,14 @@ module Rubycritic
         nodes.map do |node|
           Location.new(node.file, node.line)
         end.sort
+      end
+
+      def similarity(structural_hash)
+        if @flay.identical[structural_hash]
+          "Identical"
+        else
+          "Similar"
+        end
       end
     end
 
