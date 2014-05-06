@@ -25,12 +25,7 @@ module Rubycritic
       def create_smell(context, score)
         location = smell_location(context)
         message  = "has a flog score of #{score}"
-        type     =
-          if score >= VERY_HIGH_COMPLEXITY_SCORE_THRESHOLD
-            "VeryHighComplexity"
-          else
-            "HighComplexity"
-          end
+        type     = type(score)
 
         Smell.new(
           :locations => [location],
@@ -45,6 +40,14 @@ module Rubycritic
         line = @flog.method_locations[context]
         file_path, file_line = line.split(":")
         Location.new(file_path, file_line)
+      end
+
+      def type(score)
+        if score >= VERY_HIGH_COMPLEXITY_SCORE_THRESHOLD
+          "VeryHighComplexity"
+        else
+          "HighComplexity"
+        end
       end
     end
 
