@@ -4,7 +4,7 @@ require "rubycritic/report_generators/base_generator"
 module Rubycritic
 
   class CodeIndexGenerator < BaseGenerator
-    TEMPLATE = ERB.new(File.read(File.join(TEMPLATES_DIR, "code_index.html.erb")))
+    TEMPLATE = erb_template("code_index.html.erb")
 
     def initialize(file_generators)
       @file_generators = file_generators.sort { |a, b| a.analysed_file_name <=> b.analysed_file_name }

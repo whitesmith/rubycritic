@@ -5,8 +5,8 @@ require "cgi"
 module Rubycritic
 
   class LineGenerator < BaseGenerator
-    NORMAL_TEMPLATE = ERB.new(File.read(File.join(TEMPLATES_DIR, "line.html.erb")))
-    SMELLY_TEMPLATE = ERB.new(File.read(File.join(TEMPLATES_DIR, "smelly_line.html.erb")))
+    NORMAL_TEMPLATE = erb_template("line.html.erb")
+    SMELLY_TEMPLATE = erb_template("smelly_line.html.erb")
 
     def initialize(text, smells)
       @text = CGI::escapeHTML(text.chomp)

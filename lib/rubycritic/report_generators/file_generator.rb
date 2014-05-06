@@ -6,7 +6,7 @@ module Rubycritic
 
   class FileGenerator < BaseGenerator
     LINE_NUMBER_OFFSET = 1
-    TEMPLATE = ERB.new(File.read(File.join(TEMPLATES_DIR, "file.html.erb")))
+    TEMPLATE = erb_template("file.html.erb")
 
     def initialize(pathname, smells)
       @pathname = pathname
