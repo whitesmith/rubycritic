@@ -23,12 +23,12 @@ module Rubycritic
       private
 
       def create_smell(context, score)
-        location = smell_location(context)
-        message  = "has a flog score of #{score}"
-        type     = type(score)
+        locations = smell_locations(context)
+        message   = "has a flog score of #{score}"
+        type      = type(score)
 
         Smell.new(
-          :locations => [location],
+          :locations => locations,
           :context => context,
           :message => message,
           :score => score,
@@ -36,10 +36,10 @@ module Rubycritic
         )
       end
 
-      def smell_location(context)
+      def smell_locations(context)
         line = @flog.method_locations[context]
         file_path, file_line = line.split(":")
-        Location.new(file_path, file_line)
+        [Location.new(file_path, file_line)]
       end
 
       def type(score)
