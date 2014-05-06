@@ -14,6 +14,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "Ruby code smell detector"
   spec.homepage      = "https://github.com/whitesmith/rubycritic"
   spec.license       = "MIT"
+  spec.required_ruby_version = ">= 1.9.3"
 
   spec.files         = `git ls-files`.split("\n")
   spec.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
