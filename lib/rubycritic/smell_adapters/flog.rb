@@ -23,16 +23,12 @@ module Rubycritic
       private
 
       def create_smell(context, score)
-        locations = smell_locations(context)
-        message   = "has a flog score of #{score}"
-        type      = type(score)
-
         Smell.new(
-          :locations => locations,
-          :context => context,
-          :message => message,
-          :score => score,
-          :type => type
+          :locations => smell_locations(context),
+          :context   => context,
+          :message   => "has a flog score of #{score}",
+          :score     => score,
+          :type      => type(score)
         )
       end
 

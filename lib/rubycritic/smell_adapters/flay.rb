@@ -17,17 +17,12 @@ module Rubycritic
       private
 
       def create_smell(structural_hash, nodes)
-        locations = smell_locations(nodes)
-        context   = "#{similarity(structural_hash)} code"
-        message   = "found in #{nodes.size} nodes"
-        score     = @flay.masses[structural_hash]
-
         Smell.new(
-          :locations => locations,
-          :context => context,
-          :message => message,
-          :score => score,
-          :type => "DuplicateCode"
+          :locations => smell_locations(nodes),
+          :context   => "#{similarity(structural_hash)} code",
+          :message   => "found in #{nodes.size} nodes",
+          :score     => @flay.masses[structural_hash],
+          :type      => "DuplicateCode"
         )
       end
 
