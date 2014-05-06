@@ -32,12 +32,6 @@ module Rubycritic
     def get_binding
       binding
     end
-
-    private
-
-    def root_directory
-      ::Rubycritic.configuration.root
-    end
   end
 
 end

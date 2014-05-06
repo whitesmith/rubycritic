@@ -26,9 +26,8 @@ module Rubycritic
       File.join(root_directory, "smells_index.html")
     end
 
-    # Includers must override
     def root_directory
-      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
+      ::Rubycritic.configuration.root
     end
   end
 
