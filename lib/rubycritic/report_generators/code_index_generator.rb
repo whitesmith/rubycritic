@@ -22,10 +22,6 @@ module Rubycritic
     def file_path(path)
       File.join(root_directory, path.sub_ext(".html"))
     end
-
-    def analysed_file_name(pathname)
-      pathname.basename.sub_ext("")
-    end
   end
 
 end

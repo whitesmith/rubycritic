@@ -33,10 +33,6 @@ module Rubycritic
       LAYOUT_TEMPLATE.result(get_binding { file_body })
     end
 
-    def analysed_file_name
-      @pathname.basename.sub_ext("")
-    end
-
     def file_has_smells?
       !@smells.empty?
     end
