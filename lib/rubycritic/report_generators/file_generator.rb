@@ -18,7 +18,7 @@ module Rubycritic
     end
 
     def file_name
-      "#{analysed_file_name}.html"
+      @pathname.basename.sub_ext(".html")
     end
 
     def render
