@@ -2,12 +2,14 @@
 <thead>
   <tr>
     <th>Name</th>
+    <th>Smells</th>
   </tr>
 </thead>
 <tbody>
   <% @source_pathnames.each do |pathname| %>
     <tr>
       <td><a href="<%= file_path(pathname) %>"><%= analysed_file_name(pathname) %></a></td>
+      <td><%= smells_count(pathname) %></td>
     </tr>
   <% end %>
 </tbody>

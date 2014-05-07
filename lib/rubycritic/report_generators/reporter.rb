@@ -33,7 +33,7 @@ module Rubycritic
     end
 
     def code_index_generator
-      @code_index_generator ||= CodeIndexGenerator.new(@source_pathnames)
+      @code_index_generator ||= CodeIndexGenerator.new(@source_pathnames, @smelly_pathnames)
     end
 
     def smells_index_generator
