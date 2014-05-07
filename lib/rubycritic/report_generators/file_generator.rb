@@ -21,10 +21,6 @@ module Rubycritic
       "#{analysed_file_name}.html"
     end
 
-    def analysed_file_name
-      @pathname.basename.sub_ext("")
-    end
-
     def render
       file_code = ""
       File.readlines(@pathname).each.with_index(LINE_NUMBER_OFFSET) do |line_text, line_number|
@@ -35,6 +31,10 @@ module Rubycritic
 
       file_body = TEMPLATE.result(get_binding { file_code })
       LAYOUT_TEMPLATE.result(get_binding { file_body })
+    end
+
+    def analysed_file_name
+      @pathname.basename.sub_ext("")
     end
 
     def file_has_smells?
