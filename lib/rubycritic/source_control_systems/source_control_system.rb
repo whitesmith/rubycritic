@@ -39,6 +39,10 @@ module Rubycritic
     def travel_to_head
       raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
     end
+
+    def revisions_count(file)
+      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
+    end
   end
 
 end
