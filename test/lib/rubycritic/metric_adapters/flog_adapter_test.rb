@@ -15,7 +15,7 @@ describe Rubycritic::SmellAdapter::Flog do
 
   it "has smells with messages" do
     smell = @adapter.smells.first
-    smell.message.must_be_kind_of String
+    smell.message.must_be_instance_of String
   end
 
   it "has smells with scores" do
