@@ -4,8 +4,8 @@ require "rubycritic/smell_adapters/flay"
 
 describe Rubycritic::SmellAdapter::Flay do
   before do
-    sample_path = "test/samples/flay/smelly.rb"
-    flay = Rubycritic::Analyser::Flay.new([sample_path])
+    sample_paths = ["test/samples/flay/smelly.rb"]
+    flay = Rubycritic::Analyser::Flay.new(sample_paths)
     @adapter = Rubycritic::SmellAdapter::Flay.new(flay)
   end
 

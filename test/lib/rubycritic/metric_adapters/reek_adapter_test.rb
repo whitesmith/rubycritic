@@ -5,8 +5,8 @@ require "rubycritic/smell_adapters/reek"
 describe Rubycritic::SmellAdapter::Reek do
   context "when analysing a smelly file" do
     before do
-      sample_path = "test/samples/reek/smelly.rb"
-      reek = Rubycritic::Analyser::Reek.new([sample_path])
+      sample_paths = ["test/samples/reek/smelly.rb"]
+      reek = Rubycritic::Analyser::Reek.new(sample_paths)
       @adapter = Rubycritic::SmellAdapter::Reek.new(reek)
     end
 
@@ -22,8 +22,8 @@ describe Rubycritic::SmellAdapter::Reek do
 
   context "when analysing a file with smells ignored in config.reek" do
     before do
-      sample_path = "test/samples/reek/not_smelly.rb"
-      reek = Rubycritic::Analyser::Reek.new([sample_path])
+      sample_paths = ["test/samples/reek/not_smelly.rb"]
+      reek = Rubycritic::Analyser::Reek.new(sample_paths)
       @adapter = Rubycritic::SmellAdapter::Reek.new(reek)
     end
 

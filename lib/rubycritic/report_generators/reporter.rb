@@ -50,8 +50,8 @@ module Rubycritic
     def pathnames_to_files_with_smells
       pathnames = Hash.new { |hash, key| hash[key] = [] }
       @smells.each do |smell|
-        smell.pathnames.each do |path|
-          pathnames[path] << smell
+        smell.pathnames.each do |pathname|
+          pathnames[pathname] << smell
         end
       end
       pathnames
