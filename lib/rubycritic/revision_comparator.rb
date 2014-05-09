@@ -1,7 +1,6 @@
 require "rubycritic/smells_serializer"
 require "rubycritic/source_locator"
 require "rubycritic/analysers_runner"
-require "rubycritic/smells_aggregator"
 require "rubycritic/smells_status_setter"
 
 module Rubycritic
@@ -27,8 +26,7 @@ module Rubycritic
       else
         smells = nil
         @source_control_system.travel_to_head do
-          smell_adapters = AnalysersRunner.new(paths_of_tracked_files).run
-          smells = SmellsAggregator.new(smell_adapters).smells
+          smells = AnalysersRunner.new(paths_of_tracked_files).run
         end
         serializer.dump(smells)
         smells
