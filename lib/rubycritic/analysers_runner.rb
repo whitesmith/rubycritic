@@ -5,7 +5,6 @@ require "rubycritic/analysers/reek"
 require "rubycritic/smell_adapters/flay"
 require "rubycritic/smell_adapters/flog"
 require "rubycritic/smell_adapters/reek"
-require "rubycritic/smells_aggregator"
 
 module Rubycritic
 
@@ -19,7 +18,7 @@ module Rubycritic
     end
 
     def run
-      SmellsAggregator.new(smell_adapters).smells
+      aggregate_smells(smell_adapters)
     end
 
     private
@@ -29,6 +28,10 @@ module Rubycritic
         analyser = constantize("Rubycritic::Analyser::#{analyser_name}").new(@paths)
         constantize("Rubycritic::SmellAdapter::#{analyser_name}").new(analyser)
       end
+    end
+
+    def aggregate_smells(smell_adapters)
+      smell_adapters.map(&:smells).flatten.sort
     end
   end
 
