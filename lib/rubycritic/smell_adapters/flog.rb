@@ -10,6 +10,7 @@ module Rubycritic
 
       def initialize(paths)
         @flog = ::Rubycritic::Analyser::Flog.new
+        @flog.flog(*paths)
       end
 
       def smells

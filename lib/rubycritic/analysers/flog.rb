@@ -10,9 +10,8 @@ module Rubycritic
         :methods => true
       }
 
-      def initialize(paths)
+      def initialize
         super(DEFAULT_OPTIONS)
-        flog(*paths)
       end
     end
 
