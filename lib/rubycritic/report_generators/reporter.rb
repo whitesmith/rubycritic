@@ -1,5 +1,6 @@
 require "rubycritic/report_generators/base_generator"
 require "rubycritic/report_generators/file_generator"
+require "rubycritic/report_generators/overview_generator"
 require "rubycritic/report_generators/code_index_generator"
 require "rubycritic/report_generators/smells_index_generator"
 require "fileutils"
@@ -23,13 +24,17 @@ module Rubycritic
         end
       end
       FileUtils.cp_r(ASSETS_DIR, ::Rubycritic.configuration.root)
-      code_index_generator.file_href
+      overview_generator.file_href
     end
 
     private
 
     def generators
-      [code_index_generator, smells_index_generator] + file_generators
+      [overview_generator, code_index_generator, smells_index_generator] + file_generators
+    end
+
+    def overview_generator
+      @overview_generator ||= OverviewGenerator.new
     end
 
     def code_index_generator

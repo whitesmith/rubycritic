@@ -3,21 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ruby Critic</title>
+    <title>RubyCritic</title>
     <link href="<%= stylesheet_path(:application) %>" media="screen, projection, print" rel="stylesheet" type="text/css">
     <link href="<%= stylesheet_path(:'prettify.custom_theme') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <header class="project-header group">
-      <h1 class="logo"><a href="<%= code_index_path %>" class="logo-link">Ruby Critic</a></h1>
+      <h1 class="logo"><a href="<%= overview_path %>" class="logo-link">RubyCritic</a></h1>
       <nav class="project-nav">
+        <a href="<%= overview_path %>" class="project-nav-item">Overview</a>
         <a href="<%= code_index_path %>" class="project-nav-item">Code</a>
         <a href="<%= smells_index_path %>" class="project-nav-item">Smells</a>
       </nav>
     </header>
     <%= yield %>
     <script src="<%= javascript_path(:'jquery-2.1.0') %>"></script>
+    <script src="<%= javascript_path(:'highcharts.src') %>"></script>
     <script src="<%= javascript_path(:prettify) %>"></script>
     <script src="<%= javascript_path(:application) %>"></script>
   </body>
