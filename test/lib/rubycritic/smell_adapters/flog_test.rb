@@ -1,12 +1,10 @@
 require "test_helper"
-require "rubycritic/analysers/flog"
 require "rubycritic/smell_adapters/flog"
 
 describe Rubycritic::SmellAdapter::Flog do
   before do
     sample_paths = ["test/samples/flog/smelly.rb"]
-    flog = Rubycritic::Analyser::Flog.new(sample_paths)
-    @adapter = Rubycritic::SmellAdapter::Flog.new(flog)
+    @adapter = Rubycritic::SmellAdapter::Flog.new(sample_paths)
   end
 
   it "detects smells" do

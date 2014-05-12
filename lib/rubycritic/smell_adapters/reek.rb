@@ -1,11 +1,12 @@
+require "rubycritic/analysers/reek"
 require "rubycritic/smell"
 
 module Rubycritic
   module SmellAdapter
 
     class Reek
-      def initialize(reek)
-        @reek = reek
+      def initialize(paths)
+        @reek = ::Rubycritic::Analyser::Reek.new(paths)
       end
 
       def smells

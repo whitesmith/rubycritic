@@ -1,12 +1,10 @@
 require "test_helper"
-require "rubycritic/analysers/flay"
 require "rubycritic/smell_adapters/flay"
 
 describe Rubycritic::SmellAdapter::Flay do
   before do
     sample_paths = ["test/samples/flay/smelly.rb"]
-    flay = Rubycritic::Analyser::Flay.new(sample_paths)
-    @adapter = Rubycritic::SmellAdapter::Flay.new(flay)
+    @adapter = Rubycritic::SmellAdapter::Flay.new(sample_paths)
   end
 
   it "detects smells" do

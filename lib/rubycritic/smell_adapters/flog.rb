@@ -1,3 +1,4 @@
+require "rubycritic/analysers/flog"
 require "rubycritic/smell"
 
 module Rubycritic
@@ -7,8 +8,8 @@ module Rubycritic
       HIGH_COMPLEXITY_SCORE_THRESHOLD = 25
       VERY_HIGH_COMPLEXITY_SCORE_THRESHOLD = 60
 
-      def initialize(flog)
-        @flog = flog
+      def initialize(paths)
+        @flog = ::Rubycritic::Analyser::Flog.new
       end
 
       def smells
