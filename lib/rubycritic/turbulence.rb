@@ -13,9 +13,9 @@ module Rubycritic
     def data
       @paths.zip(churn, complexity).map do |path_info|
         {
-          name: path_info[0],
-          x: path_info[1],
-          y: path_info[2]
+          :name => path_info[0],
+          :x => path_info[1],
+          :y => path_info[2]
         }
       end
     end
