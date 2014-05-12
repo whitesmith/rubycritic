@@ -34,6 +34,11 @@ html {
   text-decoration: none;
 }
 
+.chart-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .code-table,
 .smells-table {
   width: 100%;

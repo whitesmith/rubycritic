@@ -10,9 +10,10 @@ module Rubycritic
   class Reporter
     ASSETS_DIR = File.expand_path("../assets", __FILE__)
 
-    def initialize(source_pathnames, smells)
+    def initialize(source_pathnames, smells, turbulence_data)
       @source_pathnames = source_pathnames
       @smells = smells
+      @turbulence_data = turbulence_data
       @smelly_pathnames = pathnames_to_files_with_smells
     end
 
@@ -34,7 +35,7 @@ module Rubycritic
     end
 
     def overview_generator
-      @overview_generator ||= OverviewGenerator.new
+      @overview_generator ||= OverviewGenerator.new(@turbulence_data)
     end
 
     def code_index_generator
