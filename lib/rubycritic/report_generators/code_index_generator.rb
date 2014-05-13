@@ -7,7 +7,7 @@ module Rubycritic
     TEMPLATE = erb_template("code_index.html.erb")
 
     def initialize(source_pathnames, smelly_pathnames)
-      @source_pathnames = source_pathnames.sort { |a, b| a.basename <=> b.basename }
+      @source_pathnames = source_pathnames
       @smelly_pathnames = smelly_pathnames
     end
 
