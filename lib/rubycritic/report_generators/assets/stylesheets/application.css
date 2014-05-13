@@ -46,15 +46,14 @@ html {
 
 .analysis-index-table th {
   text-align: left;
-  padding-bottom: 8px;
+  padding: 8px 10px;
   border-bottom: 1px solid silver;
   font-size: 1.55em;
   font-weight: normal;
 }
 
 .analysis-index-table td {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 12px 10px;
 }
 
 .analysis-index-table .first-cell {
