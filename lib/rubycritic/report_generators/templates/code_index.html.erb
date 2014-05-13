@@ -1,14 +1,16 @@
-<table class="code-table">
+<table class="analysis-index-table">
 <thead>
   <tr>
-    <th>Name</th>
+    <th class="first-cell">Name</th>
     <th>Smells</th>
   </tr>
 </thead>
 <tbody>
   <% @source_pathnames.each do |pathname| %>
     <tr>
-      <td><a href="<%= file_path(pathname) %>"><%= analysed_file_name(pathname) %></a></td>
+      <td class="first-cell">
+        <a href="<%= file_path(pathname) %>"><%= analysed_file_name(pathname) %></a>
+      </td>
       <td><%= smells_count(pathname) %></td>
     </tr>
   <% end %>

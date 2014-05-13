@@ -1,14 +1,14 @@
-<table class="smells-table">
+<table class="analysis-index-table">
 <thead>
   <tr>
-    <th>Smell</th>
+    <th class="first-cell">Smell</th>
     <th>Locations</th>
   </tr>
 </thead>
 <tbody>
   <% @smells.each do |smell| %>
     <tr>
-      <td><%= smell.type %></td>
+      <td class="first-cell"><%= smell.type %></td>
       <td>
         <% smell.locations.each do |location| %>
           <a href="<%= smell_location_path(location) %>"><%= location.file_name %></a>

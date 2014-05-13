@@ -39,14 +39,12 @@ html {
   margin: 0 auto;
 }
 
-.code-table,
-.smells-table {
+.analysis-index-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.code-table th,
-.smells-table th {
+.analysis-index-table th {
   text-align: left;
   padding-bottom: 8px;
   border-bottom: 1px solid silver;
@@ -54,16 +52,12 @@ html {
   font-weight: normal;
 }
 
-.code-table td,
-.smells-table td {
+.analysis-index-table td {
   padding-top: 12px;
   padding-bottom: 12px;
 }
 
-.code-table tr td:first-child,
-.code-table tr th:first-child,
-.smells-table tr td:first-child,
-.smells-table tr th:first-child {
+.analysis-index-table .first-cell {
   padding-left: 60px;
 }
 
