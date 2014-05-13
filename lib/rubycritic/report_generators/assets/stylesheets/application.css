@@ -52,6 +52,11 @@ html {
   font-weight: normal;
 }
 
+.sortable-table th:hover {
+  background-color: #ECECEC;
+  cursor: pointer;
+}
+
 .analysis-index-table td {
   padding: 12px 10px;
 }
