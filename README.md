@@ -8,25 +8,39 @@ RubyCritic
 RubyCritic is a gem that wraps around static analysis gems such as [Reek][1]
 and [Flay][2] to provide a quality report of your Ruby code.
 
-For example, given the following code:
+This gem provides features such as:
 
-```ruby
-class Dirty
-  def awful(x, y, offset = 0, log = false)
-    puts @screen.title
-    @screen = widgets.map {|w| w.each {|key| key += 3}}
-    puts @screen.contents
+1. An overview of your project:
+
+  ![RubyCritic overview screenshot](http://i.imgur.com/OrOflfj.png)
+
+2. An index of the project files with their respective number of smells:
+
+  ![RubyCritic code index screenshot](http://i.imgur.com/Hx2y2cG.png)
+
+3. An index of the smells detected:
+
+  ![RubyCritic smells index screenshot](http://i.imgur.com/ogXYIwR.png)
+
+4. Finally, when analysing code like the following:
+
+  ```ruby
+  class Dirty
+    def awful(x, y)
+      if y
+        @screen = widgets.map {|w| w.each {|key| key += 3}}
+      end
+    end
   end
-end
-```
+  ```
 
-It turns something like this:
+  It basically turns something like this:
 
-![Reek output screenshot](http://i.imgur.com/xLtEDOb.png)
+  ![Reek output screenshot](http://i.imgur.com/tCgZX9I.png)
 
-Into this:
+  Into something like this:
 
-![RubyCritic output screenshot](http://i.imgur.com/SpZ2SJN.png)
+  ![RubyCritic file code screenshot](http://i.imgur.com/88ApcGd.png)
 
 Installation
 ------------
