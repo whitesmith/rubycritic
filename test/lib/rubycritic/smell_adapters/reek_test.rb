@@ -1,5 +1,5 @@
 require "test_helper"
-require "rubycritic/smell_adapters/reek"
+require "rubycritic/adapters/smell/reek"
 
 describe Rubycritic::SmellAdapter::Reek do
   context "when analysing a smelly file" do

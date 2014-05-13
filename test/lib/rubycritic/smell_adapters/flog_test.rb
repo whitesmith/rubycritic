@@ -1,5 +1,5 @@
 require "test_helper"
-require "rubycritic/smell_adapters/flog"
+require "rubycritic/adapters/smell/flog"
 
 describe Rubycritic::SmellAdapter::Flog do
   before do

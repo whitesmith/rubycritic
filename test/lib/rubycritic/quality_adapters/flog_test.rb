@@ -1,6 +1,6 @@
 require "test_helper"
 require "rubycritic/analysers/flog"
-require "rubycritic/quality_adapters/flog"
+require "rubycritic/adapters/complexity/flog"
 
 describe Rubycritic::QualityAdapter::Flog do
   before do

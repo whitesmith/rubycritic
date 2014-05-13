@@ -1,5 +1,5 @@
 require "test_helper"
-require "rubycritic/smell_adapters/flay"
+require "rubycritic/adapters/smell/flay"
 
 describe Rubycritic::SmellAdapter::Flay do
   before do

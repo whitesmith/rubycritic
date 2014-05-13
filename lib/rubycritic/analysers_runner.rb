@@ -1,7 +1,7 @@
 require "rubycritic/active_support/methods"
-require "rubycritic/smell_adapters/flay"
-require "rubycritic/smell_adapters/flog"
-require "rubycritic/smell_adapters/reek"
+require "rubycritic/adapters/smell/flay"
+require "rubycritic/adapters/smell/flog"
+require "rubycritic/adapters/smell/reek"
 
 module Rubycritic
 
