@@ -1,5 +1,4 @@
 require "rubycritic/analysers/churn"
-require "rubycritic/analysers/flog"
 require "rubycritic/quality_adapters/flog"
 
 module Rubycritic
