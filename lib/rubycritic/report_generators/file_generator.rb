@@ -33,10 +33,6 @@ module Rubycritic
       file_body = TEMPLATE.result(get_binding { file_code })
       LAYOUT_TEMPLATE.result(get_binding { file_body })
     end
-
-    def file_has_smells?
-      !@smells.empty?
-    end
   end
 
 end

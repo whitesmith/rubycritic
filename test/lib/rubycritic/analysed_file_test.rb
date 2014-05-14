@@ -32,4 +32,13 @@ describe Rubycritic::AnalysedFile do
       @smell.complexity.must_equal @complexity
     end
   end
+
+  describe "#has_smells?" do
+    it "returns true if the analysed_file has at least one smell" do
+      analysed_file = Rubycritic::AnalysedFile.new(:smells => [SmellDouble.new])
+      analysed_file.has_smells?.must_equal true
+    end
+  end
 end
+
+class SmellDouble; end

@@ -9,6 +9,10 @@ module Rubycritic
     attribute :smells
     attribute :churn
     attribute :complexity
+
+    def has_smells?
+      !smells.empty?
+    end
   end
 
 end
