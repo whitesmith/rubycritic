@@ -1,5 +1,6 @@
 require "optparse"
 require "rubycritic"
+require "rubycritic/orchestrator"
 
 module Rubycritic
 
@@ -23,7 +24,7 @@ module Rubycritic
   end.parse!
 
   ARGV << "." if ARGV.empty?
-  puts "New critique at #{Rubycritic.new.critique(ARGV)}"
+  puts "New critique at #{Orchestrator.new.critique(ARGV)}"
   exit 0
 
 end
