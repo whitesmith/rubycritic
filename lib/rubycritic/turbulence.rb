@@ -24,7 +24,7 @@ module Rubycritic
     end
 
     def complexity
-      @complexity ||= QualityAdapter::Flog.new(@paths).complexity
+      @complexity ||= ComplexityAdapter::Flog.new(@paths).complexity
     end
   end
 

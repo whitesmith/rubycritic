@@ -2,10 +2,10 @@ require "test_helper"
 require "rubycritic/analysers/flog"
 require "rubycritic/adapters/complexity/flog"
 
-describe Rubycritic::QualityAdapter::Flog do
+describe Rubycritic::ComplexityAdapter::Flog do
   before do
     sample_paths = ["test/samples/flog/smelly.rb", "test/samples/flog/smelly2.rb"]
-    @adapter = Rubycritic::QualityAdapter::Flog.new(sample_paths)
+    @adapter = Rubycritic::ComplexityAdapter::Flog.new(sample_paths)
   end
 
   describe "#complexity" do

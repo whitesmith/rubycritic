@@ -1,5 +1,5 @@
 module Rubycritic
-  module QualityAdapter
+  module ComplexityAdapter
 
     class Flog
       def initialize(paths)
