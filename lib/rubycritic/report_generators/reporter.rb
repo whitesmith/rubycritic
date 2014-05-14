@@ -1,4 +1,3 @@
-require "rubycritic/report_generators/base_generator"
 require "rubycritic/report_generators/file_generator"
 require "rubycritic/report_generators/overview_generator"
 require "rubycritic/report_generators/code_index_generator"
