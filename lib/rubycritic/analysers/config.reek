@@ -5,6 +5,8 @@ IrresponsibleModule:
   enabled: false
 NestedIterators:
   max_allowed_nesting: 2
+TooManyStatements:
+  enabled: false
 UncommunicativeMethodName:
   reject:
   - !ruby/regexp /^[a-z]$/

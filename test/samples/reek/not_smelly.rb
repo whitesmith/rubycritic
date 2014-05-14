@@ -11,4 +11,13 @@ class Perfume
       end
     end
   end
+
+  def method_with_too_many_statements
+    do_something
+    do_something
+    do_something
+    do_something
+    do_something
+    do_something
+  end
 end
