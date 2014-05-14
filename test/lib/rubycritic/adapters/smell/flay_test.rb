@@ -13,10 +13,10 @@ describe Rubycritic::SmellAdapter::Flay do
 
   it "has smells with messages" do
     smell = @adapter.smells.first
-    smell.message.must_equal "found in 2 nodes"
+    smell.message.must_be_instance_of String
   end
 
-  it "has smells with messages" do
+  it "has smells with scores" do
     smell = @adapter.smells.first
     smell.score.must_be_kind_of Numeric
   end
