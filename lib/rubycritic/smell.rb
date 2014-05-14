@@ -17,7 +17,7 @@ module Rubycritic
       pathnames.any? { |pathname| pathname == other_pathname }
     end
 
-    def located_in?(other_location)
+    def at_location?(other_location)
       locations.any? { |location| location == other_location }
     end
 

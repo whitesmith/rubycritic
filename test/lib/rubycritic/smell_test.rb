@@ -32,11 +32,11 @@ describe Rubycritic::Smell do
     smell.type.must_equal type
   end
 
-  describe "#located_in?" do
+  describe "#at_location?" do
     it "returns true if the smell has a location that matches the location passed as argument" do
       location = Rubycritic::Location.new("./foo", "42")
       smell = Rubycritic::Smell.new(:locations => [location])
-      smell.located_in?(location).must_equal true
+      smell.at_location?(location).must_equal true
     end
   end
 
