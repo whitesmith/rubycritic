@@ -19,8 +19,8 @@ module Rubycritic
       LAYOUT_TEMPLATE.result(get_binding { index_body })
     end
 
-    def file_path(path)
-      File.join(root_directory, path.sub_ext(".html"))
+    def file_path(pathname)
+      File.join(root_directory, pathname.sub_ext(".html"))
     end
   end
 
