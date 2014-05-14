@@ -1,5 +1,5 @@
 require "rubycritic/analysers/flog"
-require "rubycritic/smell"
+require "rubycritic/core/smell"
 
 module Rubycritic
   module SmellAdapter

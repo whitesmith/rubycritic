@@ -1,5 +1,5 @@
 require "virtus"
-require "rubycritic/location"
+require "rubycritic/core/location"
 
 module Rubycritic
 

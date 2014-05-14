@@ -1,5 +1,5 @@
 require "test_helper"
-require "rubycritic/analysed_file"
+require "rubycritic/core/analysed_file"
 
 describe Rubycritic::AnalysedFile do
   describe "attribute readers" do

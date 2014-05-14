@@ -1,5 +1,5 @@
 require "test_helper"
-require "rubycritic/smell"
+require "rubycritic/core/smell"
 
 describe "Array of Smells" do
   it "is sortable" do

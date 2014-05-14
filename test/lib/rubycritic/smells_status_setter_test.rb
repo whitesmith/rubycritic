@@ -1,5 +1,5 @@
 require "test_helper"
-require "rubycritic/smell"
+require "rubycritic/core/smell"
 require "rubycritic/smells_status_setter"
 
 describe Rubycritic::SmellsStatusSetter do

@@ -1,5 +1,5 @@
 require "test_helper"
-require "rubycritic/smell"
+require "rubycritic/core/smell"
 
 describe Rubycritic::Smell do
   describe "attribute readers" do

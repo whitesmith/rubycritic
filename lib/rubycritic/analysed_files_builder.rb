@@ -1,4 +1,4 @@
-require "rubycritic/analysed_file"
+require "rubycritic/core/analysed_file"
 
 module Rubycritic
 

@@ -1,5 +1,5 @@
 require "test_helper"
-require "rubycritic/location"
+require "rubycritic/core/location"
 
 describe Rubycritic::Location do
   describe "attribute readers" do
