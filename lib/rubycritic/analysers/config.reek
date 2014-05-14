@@ -3,6 +3,8 @@ Attribute:
   enabled: false
 IrresponsibleModule:
   enabled: false
+NestedIterators:
+  max_allowed_nesting: 2
 UncommunicativeMethodName:
   reject:
   - !ruby/regexp /^[a-z]$/
@@ -16,5 +18,3 @@ UncommunicativeVariableName:
   reject:
   - !ruby/regexp /^.$/
   - !ruby/regexp /[0-9]$/
-NestedIterators:
-  max_allowed_nesting: 2
