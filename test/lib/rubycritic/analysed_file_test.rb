@@ -33,6 +33,13 @@ describe Rubycritic::AnalysedFile do
     end
   end
 
+  describe "#name" do
+    it "returns the name of the file" do
+      analysed_file = Rubycritic::AnalysedFile.new(:pathname => Pathname.new("foo/bar.rb"))
+      analysed_file.name.must_equal "bar"
+    end
+  end
+
   describe "#has_smells?" do
     it "returns true if the analysed_file has at least one smell" do
       analysed_file = Rubycritic::AnalysedFile.new(:smells => [SmellDouble.new])

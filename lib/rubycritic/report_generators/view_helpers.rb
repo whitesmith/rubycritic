@@ -33,10 +33,6 @@ module Rubycritic
     def root_directory
       ::Rubycritic.configuration.root
     end
-
-    def analysed_file_name(pathname)
-      pathname.basename.sub_ext("")
-    end
   end
 
 end

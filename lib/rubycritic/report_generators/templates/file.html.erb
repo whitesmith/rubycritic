@@ -1,5 +1,5 @@
 <div class="file-header">
-  <h2 class="file-name"><%= analysed_file_name(@pathname) %></h2>
+  <h2 class="file-name"><%= @analysed_file.name %></h2>
 
   <% if @analysed_file.has_smells? %>
     <button id="js-toggle-smells" class="smells-toggle-button button">Toggle Smells</button>
