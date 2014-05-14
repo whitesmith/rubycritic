@@ -2,34 +2,41 @@ require "test_helper"
 require "rubycritic/smell"
 
 describe Rubycritic::Smell do
-  it "has a context reader" do
-    context = "#bar"
-    smell = Rubycritic::Smell.new(:context => context)
-    smell.context.must_equal context
-  end
+  describe "attribute readers" do
+    before do
+      @locations = [Rubycritic::Location.new("./foo", "42")]
+      @context = "#bar"
+      @message = "This smells"
+      @score = 0
+      @type = :complexity
+      @smell = Rubycritic::Smell.new(
+        :locations => @locations,
+        :context   => @context,
+        :message   => @message,
+        :score     => @score,
+        :type      => @type
+      )
+    end
 
-  it "has a locations reader" do
-    location = Rubycritic::Location.new("./foo", "42")
-    smell = Rubycritic::Smell.new(:locations => [location])
-    smell.locations.must_equal [location]
-  end
+    it "has a context reader" do
+      @smell.context.must_equal @context
+    end
 
-  it "has a message reader" do
-    message = "This smells"
-    smell = Rubycritic::Smell.new(:message => message)
-    smell.message.must_equal message
-  end
+    it "has a locations reader" do
+      @smell.locations.must_equal @locations
+    end
 
-  it "has a score reader" do
-    score = 0
-    smell = Rubycritic::Smell.new(:score => score)
-    smell.score.must_equal score
-  end
+    it "has a message reader" do
+      @smell.message.must_equal @message
+    end
 
-  it "has a type reader" do
-    type = :complexity
-    smell = Rubycritic::Smell.new(:type => type)
-    smell.type.must_equal type
+    it "has a score reader" do
+      @smell.score.must_equal @score
+    end
+
+    it "has a type reader" do
+      @smell.type.must_equal @type
+    end
   end
 
   describe "#at_location?" do
