@@ -46,7 +46,7 @@ module Rubycritic
     end
 
     def stashes_count
-      `git stash list`.split("\n").length
+      `git stash list`.count("\n")
     end
 
     def travel_to_original_state
