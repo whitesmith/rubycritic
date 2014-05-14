@@ -7,7 +7,7 @@ module Rubycritic
     TEMPLATE = erb_template("smells_index.html.erb")
 
     def initialize(smells)
-      @smells = smells.sort { |a, b| a.type <=> b.type }
+      @smells = smells
     end
 
     def file_name
