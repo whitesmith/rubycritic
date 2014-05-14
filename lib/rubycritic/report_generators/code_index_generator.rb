@@ -6,9 +6,8 @@ module Rubycritic
   class CodeIndexGenerator < BaseGenerator
     TEMPLATE = erb_template("code_index.html.erb")
 
-    def initialize(source_pathnames, smelly_pathnames)
-      @source_pathnames = source_pathnames
-      @smelly_pathnames = smelly_pathnames
+    def initialize(analysed_files)
+      @analysed_files = analysed_files
     end
 
     def file_name
@@ -22,10 +21,6 @@ module Rubycritic
 
     def file_path(path)
       File.join(root_directory, path.sub_ext(".html"))
-    end
-
-    def smells_count(pathname)
-      (@smelly_pathnames[pathname] || []).length
     end
   end
 

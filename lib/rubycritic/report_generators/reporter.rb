@@ -9,11 +9,9 @@ module Rubycritic
   class Reporter
     ASSETS_DIR = File.expand_path("../assets", __FILE__)
 
-    def initialize(source_pathnames, smells, turbulence_data)
-      @source_pathnames = source_pathnames
+    def initialize(analysed_files, smells)
+      @analysed_files = analysed_files
       @smells = smells
-      @turbulence_data = turbulence_data
-      @smelly_pathnames = pathnames_to_files_with_smells
     end
 
     def generate_report
@@ -34,32 +32,21 @@ module Rubycritic
     end
 
     def overview_generator
-      @overview_generator ||= OverviewGenerator.new(@turbulence_data)
+      @overview_generator ||= OverviewGenerator.new(@analysed_files)
     end
 
     def code_index_generator
-      @code_index_generator ||= CodeIndexGenerator.new(@source_pathnames, @smelly_pathnames)
+      CodeIndexGenerator.new(@analysed_files)
     end
 
     def smells_index_generator
-      @smells_index_generator ||= SmellsIndexGenerator.new(@smells)
+      SmellsIndexGenerator.new(@smells)
     end
 
     def file_generators
-      @file_generators ||= @source_pathnames.map do |file_pathname|
-        file_smells = @smelly_pathnames[file_pathname]
-        FileGenerator.new(file_pathname, file_smells)
+      @analysed_files.map do |analysed_file|
+        FileGenerator.new(analysed_file)
       end
-    end
-
-    def pathnames_to_files_with_smells
-      pathnames = Hash.new { |hash, key| hash[key] = [] }
-      @smells.each do |smell|
-        smell.pathnames.each do |pathname|
-          pathnames[pathname] << smell
-        end
-      end
-      pathnames
     end
   end
 

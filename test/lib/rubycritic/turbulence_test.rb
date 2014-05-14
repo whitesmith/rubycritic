@@ -1,27 +1,18 @@
 require "test_helper"
 require "rubycritic/turbulence"
-require "rubycritic/source_control_systems/source_control_system"
+require "ostruct"
 
 describe Rubycritic::Turbulence do
-  before do
-    @sample_path = "test/samples/flog/smelly.rb"
-    @sample_paths = [@sample_path]
-    @source_control_system = SourceControlSystemDouble.new
-  end
-
   describe "#data" do
-    it "returns an array of hashes containing the path, churn and complexity of each file" do
-      data = Rubycritic::Turbulence.new(@sample_paths, @source_control_system).data
-      data_instance = data.first
-      data_instance[:name].must_equal @sample_path
-      data_instance[:x].must_equal 1 # churn
-      data_instance[:y].must_be_kind_of Numeric # complexity
+    it "returns json data that maps pathname, churn and complexity to name, x and y" do
+      files = [AnalysedFileDouble.new(:pathname => "./foo.rb", :churn => 1, :complexity => 2)]
+      turbulence_data = Rubycritic::Turbulence.new(files).data
+      instance_parsed_json = JSON.parse(turbulence_data).first
+      instance_parsed_json["name"].must_equal "./foo.rb"
+      instance_parsed_json["x"].must_equal 1
+      instance_parsed_json["y"].must_equal 2
     end
   end
 end
 
-class SourceControlSystemDouble < Rubycritic::SourceControlSystem
-  def revisions_count(file)
-    1 # churn
-  end
-end
+class AnalysedFileDouble < OpenStruct; end

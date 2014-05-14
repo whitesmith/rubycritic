@@ -1,30 +1,20 @@
-require "rubycritic/analysers/churn"
-require "rubycritic/adapters/complexity/flog"
+require "json"
 
 module Rubycritic
 
   class Turbulence
-    def initialize(paths, source_control_system)
-      @paths = paths
-      @source_control_system = source_control_system
+    def initialize(analysed_files)
+      @analysed_files = analysed_files
     end
 
     def data
-      @paths.zip(churn, complexity).map do |path_info|
+      @analysed_files.map do |analysed_file|
         {
-          :name => path_info[0],
-          :x => path_info[1],
-          :y => path_info[2]
+          :name => analysed_file.pathname,
+          :x => analysed_file.churn,
+          :y => analysed_file.complexity
         }
-      end
-    end
-
-    def churn
-      @churn ||= Analyser::Churn.new(@paths, @source_control_system).churn
-    end
-
-    def complexity
-      @complexity ||= ComplexityAdapter::Flog.new(@paths).complexity
+      end.to_json
     end
   end
 

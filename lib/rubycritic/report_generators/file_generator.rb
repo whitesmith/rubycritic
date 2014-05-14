@@ -8,9 +8,10 @@ module Rubycritic
     LINE_NUMBER_OFFSET = 1
     TEMPLATE = erb_template("file.html.erb")
 
-    def initialize(pathname, smells)
-      @pathname = pathname
-      @smells = smells
+    def initialize(analysed_file)
+      @analysed_file = analysed_file
+      @pathname = @analysed_file.pathname
+      @smells = @analysed_file.smells
     end
 
     def file_directory

@@ -6,12 +6,12 @@
   </tr>
 </thead>
 <tbody>
-  <% @source_pathnames.each do |pathname| %>
+  <% @analysed_files.each do |analysed_file| %>
     <tr>
       <td class="first-cell">
-        <a href="<%= file_path(pathname) %>"><%= analysed_file_name(pathname) %></a>
+        <a href="<%= file_path(analysed_file.pathname) %>"><%= analysed_file_name(analysed_file.pathname) %></a>
       </td>
-      <td><%= smells_count(pathname) %></td>
+      <td><%= analysed_file.smells.length %></td>
     </tr>
   <% end %>
 </tbody>

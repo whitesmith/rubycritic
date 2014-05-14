@@ -1,4 +1,3 @@
-require "rubycritic/turbulence"
 require "rubycritic/report_generators/reporter"
 
 module Rubycritic
@@ -13,9 +12,11 @@ module Rubycritic
       smells = AnalysersRunner.new(source.paths).smells
       if @source_control_system.has_revision?
         smells = RevisionComparator.new(smells, @source_control_system).smells
-        turbulence_data = Turbulence.new(source.paths, @source_control_system).data
+        churn = Analyser::Churn.new(source.paths, @source_control_system).churn
       end
-      Reporter.new(source.pathnames, smells, turbulence_data).generate_report
+      complexity = ComplexityAdapter::Flog.new(source.paths).complexity
+      analysed_files = AnalysedFilesBuilder.new(source.pathnames, smells, churn, complexity).analysed_files
+      Reporter.new(analysed_files, smells).generate_report
     end
   end
 
