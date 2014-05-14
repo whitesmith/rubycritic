@@ -26,7 +26,7 @@ module Rubycritic
       else
         smells = nil
         @source_control_system.travel_to_head do
-          smells = AnalysersRunner.new(paths_of_tracked_files).run
+          smells = AnalysersRunner.new(paths_of_tracked_files).smells
         end
         serializer.dump(smells)
         smells

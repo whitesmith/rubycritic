@@ -5,7 +5,7 @@ class Perfume
     oneVariable = oneParameter
   end
 
-  def allowNestingIteratorsTwoLevelsDeep
+  def allow_nesting_iterators_two_levels_deep
     loop do
       loop do
       end

@@ -10,12 +10,12 @@ module Rubycritic
       @initial_paths = paths
     end
 
-    def pathnames
-      @pathnames ||= expand_paths
-    end
-
     def paths
       @paths ||= pathnames.map(&:to_s)
+    end
+
+    def pathnames
+      @pathnames ||= expand_paths
     end
 
     private

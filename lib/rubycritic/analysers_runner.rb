@@ -14,7 +14,7 @@ module Rubycritic
       @paths = paths
     end
 
-    def run
+    def smells
       aggregate_smells(smell_adapters)
     end
 
