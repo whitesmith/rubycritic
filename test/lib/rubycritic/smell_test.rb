@@ -14,14 +14,6 @@ describe Rubycritic::Smell do
     smell.locations.must_equal [location]
   end
 
-  it "has a pathnames reader" do
-    path = Pathname.new("./foo")
-    location1 = Rubycritic::Location.new("./foo", "42")
-    location2 = Rubycritic::Location.new("./foo", "23")
-    smell = Rubycritic::Smell.new(:locations => [location1, location2])
-    smell.pathnames.must_equal [path]
-  end
-
   it "has a message reader" do
     message = "This smells"
     smell = Rubycritic::Smell.new(:message => message)
@@ -45,6 +37,16 @@ describe Rubycritic::Smell do
       location = Rubycritic::Location.new("./foo", "42")
       smell = Rubycritic::Smell.new(:locations => [location])
       smell.located_in?(location).must_equal true
+    end
+  end
+
+  describe "#at_pathname?" do
+    it "returns true if the smell has a pathname that matches the pathname passed as argument" do
+      path = "./foo"
+      pathname = Pathname.new(path)
+      location = Rubycritic::Location.new(path, "42")
+      smell = Rubycritic::Smell.new(:locations => [location])
+      smell.at_pathname?(pathname).must_equal true
     end
   end
 

@@ -13,8 +13,8 @@ module Rubycritic
     attribute :type
     attribute :status
 
-    def pathnames
-      @pathnames ||= locations.map(&:pathname).uniq
+    def at_pathname?(other_pathname)
+      pathnames.any? { |pathname| pathname == other_pathname }
     end
 
     def located_in?(other_location)
@@ -46,6 +46,12 @@ module Rubycritic
 
     def state
       [@context, @message, @score, @type]
+    end
+
+    private
+
+    def pathnames
+      @pathnames ||= locations.map(&:pathname).uniq
     end
   end
 

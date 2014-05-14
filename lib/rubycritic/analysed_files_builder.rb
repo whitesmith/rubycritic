@@ -24,10 +24,10 @@ module Rubycritic
 
     private
 
-    def file_smells(file_pathname)
+    def file_smells(pathname)
       file_smells = []
       @smells.each do |smell|
-        file_smells << smell if smell.pathnames.any? { |pathname| pathname == file_pathname }
+        file_smells << smell if smell.at_pathname?(pathname)
       end
       file_smells
     end
