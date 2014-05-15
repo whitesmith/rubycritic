@@ -1,4 +1,4 @@
-require "rubycritic/report_generators/file_generator"
+require "rubycritic/report_generators/code_file"
 require "fileutils"
 
 module Rubycritic
@@ -12,7 +12,7 @@ module Rubycritic
       end
 
       def generate_report
-        file_generator = FileGenerator.new(@analysed_file)
+        file_generator = Generator::CodeFile.new(@analysed_file)
         FileUtils.mkdir_p(file_generator.file_directory)
         File.open(file_generator.file_pathname, "w+") do |file|
           file.write(file_generator.render)

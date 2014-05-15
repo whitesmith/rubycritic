@@ -1,7 +1,7 @@
-require "rubycritic/report_generators/file_generator"
-require "rubycritic/report_generators/overview_generator"
-require "rubycritic/report_generators/code_index_generator"
-require "rubycritic/report_generators/smells_index_generator"
+require "rubycritic/report_generators/overview"
+require "rubycritic/report_generators/smells_index"
+require "rubycritic/report_generators/code_index"
+require "rubycritic/report_generators/code_file"
 require "fileutils"
 
 module Rubycritic
@@ -33,20 +33,20 @@ module Rubycritic
       end
 
       def overview_generator
-        @overview_generator ||= OverviewGenerator.new(@analysed_files)
+        @overview_generator ||= Generator::Overview.new(@analysed_files)
       end
 
       def code_index_generator
-        CodeIndexGenerator.new(@analysed_files)
+        Generator::CodeIndex.new(@analysed_files)
       end
 
       def smells_index_generator
-        SmellsIndexGenerator.new(@smells)
+        Generator::SmellsIndex.new(@smells)
       end
 
       def file_generators
         @analysed_files.map do |analysed_file|
-          FileGenerator.new(analysed_file)
+          Generator::CodeFile.new(analysed_file)
         end
       end
     end
