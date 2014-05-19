@@ -10,11 +10,11 @@
   </head>
   <body>
     <header class="project-header group">
-      <h1 class="logo"><a href="<%= overview_path %>" class="logo-link">RubyCritic</a></h1>
+      <h1 class="logo"><a href="<%= file_path('overview') %>" class="logo-link">RubyCritic</a></h1>
       <nav class="project-nav">
-        <a href="<%= overview_path %>" class="project-nav-item">Overview</a>
-        <a href="<%= code_index_path %>" class="project-nav-item">Code</a>
-        <a href="<%= smells_index_path %>" class="project-nav-item">Smells</a>
+        <a href="<%= file_path('overview') %>" class="project-nav-item">Overview</a>
+        <a href="<%= file_path('code_index') %>" class="project-nav-item">Code</a>
+        <a href="<%= file_path('smells_index') %>" class="project-nav-item">Smells</a>
       </nav>
     </header>
     <%= yield %>
