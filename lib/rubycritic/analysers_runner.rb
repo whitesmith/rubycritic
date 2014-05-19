@@ -27,7 +27,7 @@ module Rubycritic
     end
 
     def aggregate_smells(smell_adapters)
-      smell_adapters.flat_map(&:smells).sort
+      smell_adapters.flat_map(&:smells)
     end
   end
 

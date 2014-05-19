@@ -30,10 +30,6 @@ module Rubycritic
     end
     alias_method :eql?, :==
 
-    def <=>(other)
-      locations <=> other.locations
-    end
-
     def to_s
       "(#{type}) #{context} #{message}"
     end
