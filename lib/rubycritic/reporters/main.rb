@@ -1,28 +1,21 @@
+require "rubycritic/reporters/base"
 require "rubycritic/report_generators/overview"
 require "rubycritic/report_generators/smells_index"
 require "rubycritic/report_generators/code_index"
 require "rubycritic/report_generators/code_file"
-require "fileutils"
 
 module Rubycritic
   module Reporter
 
-    class Main
-      ASSETS_DIR = File.expand_path("../../report_generators/assets", __FILE__)
-
+    class Main < Base
       def initialize(analysed_files, smells)
         @analysed_files = analysed_files
         @smells = smells
       end
 
       def generate_report
-        generators.each do |generator|
-          FileUtils.mkdir_p(generator.file_directory)
-          File.open(generator.file_pathname, "w+") do |file|
-            file.write(generator.render)
-          end
-        end
-        FileUtils.cp_r(ASSETS_DIR, ::Rubycritic.configuration.root)
+        create_directories_and_files(generators)
+        copy_assets_to_report_directory
         overview_generator.file_href
       end
 

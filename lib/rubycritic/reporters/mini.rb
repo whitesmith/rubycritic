@@ -1,23 +1,18 @@
+require "rubycritic/reporters/base"
 require "rubycritic/report_generators/code_file"
-require "fileutils"
 
 module Rubycritic
   module Reporter
 
-    class Mini
-      ASSETS_DIR = File.expand_path("../../report_generators/assets", __FILE__)
-
+    class Mini < Base
       def initialize(analysed_file)
         @analysed_file = analysed_file
       end
 
       def generate_report
         file_generator = Generator::CodeFile.new(@analysed_file)
-        FileUtils.mkdir_p(file_generator.file_directory)
-        File.open(file_generator.file_pathname, "w+") do |file|
-          file.write(file_generator.render)
-        end
-        FileUtils.cp_r(ASSETS_DIR, ::Rubycritic.configuration.root)
+        create_directories_and_files(file_generator)
+        copy_assets_to_report_directory
         file_generator.file_href
       end
     end
