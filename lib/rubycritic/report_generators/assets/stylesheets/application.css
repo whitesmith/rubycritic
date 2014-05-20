@@ -51,6 +51,7 @@ html {
   border-bottom: 1px solid silver;
   font-size: 1.55em;
   font-weight: normal;
+  background-color: white;
 }
 
 .sortable-table th:hover {
