@@ -1,6 +1,8 @@
 ---
 Attribute:
   enabled: false
+DuplicateMethodCall:
+  max_calls: 2
 IrresponsibleModule:
   enabled: false
 NestedIterators:

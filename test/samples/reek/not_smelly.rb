@@ -20,4 +20,16 @@ class Perfume
     do_something
     do_something
   end
+
+  def allow_up_to_two_duplicate_method_calls
+    respond_to do |format|
+      if success
+        format.html { redirect_to some_path }
+        format.js { head :ok }
+      else
+        format.html { redirect_to :back, status: :bad_request }
+        format.js { render status: :bad_request }
+      end
+    end
+  end
 end
