@@ -39,13 +39,13 @@ html {
   margin: 0 auto;
 }
 
-.analysis-index-table {
+.index-table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
 }
 
-.analysis-index-table th {
+.index-table th {
   text-align: left;
   padding: 8px 10px;
   border-bottom: 1px solid silver;
@@ -59,11 +59,11 @@ html {
   cursor: pointer;
 }
 
-.analysis-index-table td {
+.index-table td {
   padding: 12px 10px;
 }
 
-.analysis-index-table .first-cell {
+.index-table .first-cell {
   padding-left: 60px;
 }
 
