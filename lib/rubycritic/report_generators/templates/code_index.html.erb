@@ -2,9 +2,9 @@
 <thead>
   <tr>
     <th class="first-cell">Name</th>
-    <th title="Number of times a file has changed">Churn</th>
-    <th title="Overall amount of code in a file">Complexity</th>
-    <th>Smells</th>
+    <th class="numeric-cell" title="Number of times a file has changed">Churn</th>
+    <th class="numeric-cell" title="Overall amount of code in a file">Complexity</th>
+    <th class="numeric-cell">Smells</th>
   </tr>
 </thead>
 <tbody>
@@ -13,9 +13,9 @@
       <td class="first-cell">
         <a href="<%= file_path(analysed_file.pathname) %>"><%= analysed_file.name %></a>
       </td>
-      <td><%= analysed_file.churn %></td>
-      <td><%= analysed_file.complexity %></td>
-      <td><%= analysed_file.smells.length %></td>
+      <td class="numeric-cell"><%= analysed_file.churn %></td>
+      <td class="numeric-cell"><%= analysed_file.complexity %></td>
+      <td class="numeric-cell"><%= analysed_file.smells.length %></td>
     </tr>
   <% end %>
 </tbody>
