@@ -67,6 +67,10 @@ html {
   padding-left: 60px;
 }
 
+.index-table .last-cell {
+  padding-right: 60px;
+}
+
 .index-table .numeric-cell {
   text-align: right;
 }

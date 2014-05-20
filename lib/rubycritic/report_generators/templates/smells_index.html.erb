@@ -2,14 +2,14 @@
 <thead>
   <tr>
     <th class="first-cell">Smell</th>
-    <th>Locations</th>
+    <th class="last-cell">Locations</th>
   </tr>
 </thead>
 <tbody>
   <% @smells.each do |smell| %>
     <tr>
       <td class="first-cell"><%= smell.type %></td>
-      <td>
+      <td class="last-cell">
         <% smell.locations.each do |location| %>
           <a href="<%= smell_location_path(location) %>"><%= location.file_name %></a>
         <% end %>
