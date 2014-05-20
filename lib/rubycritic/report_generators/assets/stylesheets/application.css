@@ -54,6 +54,12 @@ html {
   background-color: white;
 }
 
+.sortable-table .headerSortUp,
+.sortable-table .headerSortDown {
+  border: 1px solid silver;
+  border-bottom: 0;
+}
+
 .sortable-table th:hover {
   background-color: #ECECEC;
   cursor: pointer;
