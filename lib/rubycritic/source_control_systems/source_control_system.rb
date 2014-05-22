@@ -1,3 +1,5 @@
+require "shellwords"
+
 module Rubycritic
 
   class SourceControlSystem

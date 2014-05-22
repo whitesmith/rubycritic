@@ -27,7 +27,7 @@ module Rubycritic
     end
 
     def revisions_count(file)
-      `git log --follow --format=oneline #{file}`.count("\n")
+      `git log --follow --format=oneline #{file.shellescape}`.count("\n")
     end
 
     private
