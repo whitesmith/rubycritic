@@ -16,7 +16,7 @@ module Rubycritic
       def generate_report
         create_directories_and_files(generators)
         copy_assets_to_report_directory
-        overview_generator.file_href
+        report_location
       end
 
       private
@@ -41,6 +41,10 @@ module Rubycritic
         @analysed_files.map do |analysed_file|
           Generator::CodeFile.new(analysed_file)
         end
+      end
+
+      def report_location
+        overview_generator.file_href
       end
     end
 

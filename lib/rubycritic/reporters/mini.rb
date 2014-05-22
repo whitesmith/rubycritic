@@ -10,9 +10,18 @@ module Rubycritic
       end
 
       def generate_report
-        file_generator = Generator::CodeFile.new(@analysed_file)
         create_directories_and_files(file_generator)
         copy_assets_to_report_directory
+        report_location
+      end
+
+      private
+
+      def file_generator
+        @file_generator ||= Generator::CodeFile.new(@analysed_file)
+      end
+
+      def report_location
         file_generator.file_href
       end
     end
