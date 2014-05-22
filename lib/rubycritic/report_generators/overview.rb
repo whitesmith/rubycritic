@@ -1,4 +1,3 @@
-require "erb"
 require "rubycritic/report_generators/base"
 require "rubycritic/turbulence"
 
