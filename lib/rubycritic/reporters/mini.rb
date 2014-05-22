@@ -1,5 +1,5 @@
 require "rubycritic/reporters/base"
-require "rubycritic/report_generators/code_file"
+require "rubycritic/report_generators/current_code_file"
 
 module Rubycritic
   module Reporter
@@ -18,7 +18,7 @@ module Rubycritic
       private
 
       def file_generator
-        @file_generator ||= Generator::CodeFile.new(@analysed_file)
+        @file_generator ||= Generator::CurrentCodeFile.new(@analysed_file)
       end
 
       def report_location
