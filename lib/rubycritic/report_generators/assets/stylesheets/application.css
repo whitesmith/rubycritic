@@ -81,6 +81,10 @@ html {
   text-align: right;
 }
 
+.index-table .centered-cell {
+  text-align: center;
+}
+
 .button {
   margin: 0;
   padding: 0.5em 1em;
