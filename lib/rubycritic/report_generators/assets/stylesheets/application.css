@@ -54,6 +54,16 @@ html {
   background-color: white;
 }
 
+.index-table .circle {
+  width: 28px;
+  height: 28px;
+}
+
+.index-table .circled-rating {
+  display: inline-block;
+  line-height: 28px;
+}
+
 .sortable-table .headerSortUp,
 .sortable-table .headerSortDown {
   border: 1px solid silver;
@@ -97,27 +107,66 @@ html {
   transition-duration: 0.5s;
 }
 
+.circle {
+  display: block;
+  border-radius: 50%;
+}
+
+.circled-rating {
+  text-align: center;
+  color: white;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+}
+
 .file-header {
   position: relative;
   padding: 0 0 10px 60px;
   border-bottom: 1px solid silver;
 }
 
-.rating {
+.file-header .circle {
+  width: 50px;
+  height: 50px;
+}
+
+.file-header .circled-rating {
   float: left;
-  font-size: 26px;
+  line-height: 50px;
+  font-size: 32px;
+}
+
+.rating-a {
+  background-color: #2ECC40;
+}
+
+.rating-b {
+  background-color: #2ECC40;
+}
+
+.rating-c {
+  background-color: #FFDC00;
+}
+
+.rating-d {
+  background-color: #FF851B;
+}
+
+.rating-f {
+  background-color: #FF4136;
 }
 
 .file-name {
   float: left;
   margin: 0 0 0 20px;
+  line-height: 50px;
   font-weight: normal;
 }
 
 .smells-toggle-button {
   position: absolute;
   right: 64px;
-  top: 22px;
+  bottom: -17px;
   border-color: silver;
   background-color: #EEEBE9;
 }
