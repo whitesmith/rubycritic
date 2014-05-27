@@ -103,8 +103,14 @@ html {
   border-bottom: 1px solid silver;
 }
 
+.rating {
+  float: left;
+  font-size: 26px;
+}
+
 .file-name {
-  margin: 0;
+  float: left;
+  margin: 0 0 0 20px;
   font-weight: normal;
 }
 

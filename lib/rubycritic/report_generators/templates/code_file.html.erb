@@ -1,4 +1,5 @@
-<div class="file-header">
+<div class="file-header group">
+  <span class="rating"><%= @analysed_file.rating %></span>
   <h2 class="file-name"><%= @analysed_file.name %></h2>
 
   <% if @analysed_file.has_smells? %>
