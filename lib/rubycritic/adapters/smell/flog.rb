@@ -38,7 +38,8 @@ module Rubycritic
           :context   => context,
           :message   => "has a flog score of #{score}",
           :score     => score,
-          :type      => type(score)
+          :type      => type(score),
+          :cost      => 1
         )
       end
 

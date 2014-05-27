@@ -7,11 +7,12 @@ module Rubycritic
     include Virtus.model
 
     attribute :context
+    attribute :cost
     attribute :locations
     attribute :message
     attribute :score
-    attribute :type
     attribute :status
+    attribute :type
 
     def at_location?(other_location)
       locations.any? { |location| location == other_location }

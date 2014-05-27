@@ -1,4 +1,5 @@
 require "virtus"
+require "rubycritic/core/rating"
 
 module Rubycritic
 
@@ -17,6 +18,14 @@ module Rubycritic
 
     def path
       @path ||= pathname.to_s
+    end
+
+    def cost
+      @cost ||= smells.map(&:cost).inject(0, :+)
+    end
+
+    def rating
+      @rating ||= Rating.from_cost(cost)
     end
 
     def has_smells?

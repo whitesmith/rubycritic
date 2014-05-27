@@ -41,6 +41,14 @@ describe Rubycritic::AnalysedFile do
     end
   end
 
+  describe "#cost" do
+    it "returns the remediation cost of fixing the analysed_file" do
+      smells = [SmellDouble.new(:cost => 1), SmellDouble.new(:cost => 2)]
+      analysed_file = Rubycritic::AnalysedFile.new(:smells => smells)
+      analysed_file.cost.must_equal 3
+    end
+  end
+
   describe "#has_smells?" do
     it "returns true if the analysed_file has at least one smell" do
       analysed_file = Rubycritic::AnalysedFile.new(:smells => [SmellDouble.new])
@@ -49,4 +57,4 @@ describe Rubycritic::AnalysedFile do
   end
 end
 
-class SmellDouble; end
+class SmellDouble < OpenStruct; end

@@ -39,7 +39,8 @@ module Rubycritic
           :context   => "#{similarity(structural_hash)} code",
           :message   => "found in #{nodes.size} nodes",
           :score     => @flay.masses[structural_hash],
-          :type      => "DuplicateCode"
+          :type      => "DuplicateCode",
+          :cost      => 2
         )
       end
 
