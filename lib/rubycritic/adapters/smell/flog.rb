@@ -9,7 +9,7 @@ module Rubycritic
       VERY_HIGH_COMPLEXITY_SCORE_THRESHOLD = 60
 
       def initialize(paths)
-        @flog = ::Rubycritic::Analyser::Flog.new
+        @flog = Analyser::Flog.new
         @flog.flog(*paths)
       end
 

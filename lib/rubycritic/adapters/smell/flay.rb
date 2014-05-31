@@ -6,7 +6,7 @@ module Rubycritic
 
     class Flay
       def initialize(paths)
-        @flay = ::Rubycritic::Analyser::Flay.new(paths)
+        @flay = Analyser::Flay.new(paths)
       end
 
       def smells

@@ -3,7 +3,7 @@ module Rubycritic
 
     class Flog
       def initialize(paths)
-        @flog = ::Rubycritic::Analyser::Flog.new
+        @flog = Analyser::Flog.new
         @paths = paths
       end
 

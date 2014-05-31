@@ -6,7 +6,7 @@ module Rubycritic
 
     class Reek
       def initialize(paths)
-        @reek = ::Rubycritic::Analyser::Reek.new(paths)
+        @reek = Analyser::Reek.new(paths)
       end
 
       def smells
