@@ -1,6 +1,6 @@
 require "optparse"
 require "rubycritic"
-require "rubycritic/orchestrators/main"
+require "rubycritic/reporters/main"
 
 module Rubycritic
 
@@ -24,7 +24,9 @@ module Rubycritic
   end.parse!
 
   ARGV << "." if ARGV.empty?
-  puts "New critique at #{Orchestrator::Main.new.critique(ARGV)}"
+  analysed_files = Orchestrator.new.critique(ARGV)
+  report_location = Reporter::Main.new(analysed_files).generate_report
+  puts "New critique at #{report_location}"
   exit 0
 
 end

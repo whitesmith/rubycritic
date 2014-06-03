@@ -1,4 +1,5 @@
 require "rubycritic/configuration"
+require "rubycritic/orchestrator"
 require "rubycritic/source_locator"
 require "rubycritic/analysers_runner"
 require "rubycritic/source_control_systems/source_control_system"
