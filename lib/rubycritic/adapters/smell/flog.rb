@@ -39,7 +39,7 @@ module Rubycritic
           :message   => "has a flog score of #{score}",
           :score     => score,
           :type      => type(score),
-          :cost      => 1
+          :cost      => cost(score)
         )
       end
 
@@ -55,6 +55,10 @@ module Rubycritic
         else
           "HighComplexity"
         end
+      end
+
+      def cost(score)
+        score / 25
       end
     end
 

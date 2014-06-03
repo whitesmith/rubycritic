@@ -34,13 +34,14 @@ module Rubycritic
       end
 
       def create_smell(structural_hash, nodes)
+        mass = @flay.masses[structural_hash]
         Smell.new(
           :locations => smell_locations(nodes),
           :context   => "#{similarity(structural_hash)} code",
           :message   => "found in #{nodes.size} nodes",
-          :score     => @flay.masses[structural_hash],
+          :score     => mass,
           :type      => "DuplicateCode",
-          :cost      => 2
+          :cost      => cost(mass)
         )
       end
 
@@ -56,6 +57,10 @@ module Rubycritic
         else
           "Similar"
         end
+      end
+
+      def cost(mass)
+        mass / 30
       end
     end
 
