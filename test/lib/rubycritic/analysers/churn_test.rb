@@ -1,6 +1,6 @@
 require "test_helper"
 require "rubycritic/analysers/churn"
-require "rubycritic/source_control_systems/source_control_system"
+require "rubycritic/source_control_systems/base"
 
 describe Rubycritic::Analyser::Churn do
   before do
@@ -20,7 +20,7 @@ end
 
 class AnalysedFileDouble < OpenStruct; end
 
-class SourceControlSystemDouble < Rubycritic::SourceControlSystem
+class SourceControlSystemDouble < Rubycritic::SourceControlSystem::Base
   def revisions_count(file)
     1 # churn
   end

@@ -2,7 +2,7 @@ module Rubycritic
 
   class Orchestrator
     def initialize
-      @source_control_system = SourceControlSystem.create
+      @source_control_system = SourceControlSystem::Base.create
     end
 
     def critique(paths)
