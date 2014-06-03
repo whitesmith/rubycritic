@@ -6,12 +6,11 @@ module Rubycritic
       @smells_now = smells_now
     end
 
-    def smells
+    def set
       old_smells = @smells_now & @smells_before
       set_status(old_smells, :old)
       new_smells = @smells_now - @smells_before
       set_status(new_smells, :new)
-      @smells_now
     end
 
     private

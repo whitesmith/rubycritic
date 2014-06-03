@@ -1,4 +1,4 @@
-require "rubycritic/smells_serializer"
+require "rubycritic/serializer"
 require "rubycritic/source_locator"
 require "rubycritic/analysers_runner"
 require "rubycritic/smells_status_setter"
@@ -8,28 +8,34 @@ module Rubycritic
   class RevisionComparator
     SNAPSHOTS_DIR_NAME = "snapshots"
 
-    def initialize(smells, source_control_system)
-      @smells_now = smells
+    def initialize(analysed_files, source_control_system)
+      @analysed_files_now = analysed_files
       @source_control_system = source_control_system
     end
 
-    def smells
-      SmellsStatusSetter.new(smells_before, @smells_now).smells
+    def set_statuses
+      SmellsStatusSetter.new(
+        analysed_files_before.flat_map(&:smells),
+        @analysed_files_now.flat_map(&:smells)
+      ).set
     end
 
     private
 
-    def smells_before
-      serializer = SmellsSerializer.new(revision_file)
+    def analysed_files_before
+      serializer = Serializer.new(revision_file)
       if File.file?(revision_file)
         serializer.load
       else
-        smells = nil
-        @source_control_system.travel_to_head do
-          smells = AnalysersRunner.new(paths_of_tracked_files).smells
+        source = SourceLocator.new(["."])
+        analysed_files = source.pathnames.map do |pathname|
+          AnalysedFile.new(:pathname => pathname, :smells => [])
         end
-        serializer.dump(smells)
-        smells
+        @source_control_system.travel_to_head do
+          AnalysersRunner.new(analysed_files, @source_control_system).run
+        end
+        serializer.dump(analysed_files)
+        analysed_files
       end
     end
 
@@ -39,10 +45,6 @@ module Rubycritic
         SNAPSHOTS_DIR_NAME,
         @source_control_system.head_reference
       )
-    end
-
-    def paths_of_tracked_files
-      SourceLocator.new(["."]).paths
     end
   end
 

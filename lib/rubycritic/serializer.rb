@@ -2,7 +2,7 @@ require "fileutils"
 
 module Rubycritic
 
-  class SmellsSerializer
+  class Serializer
     def initialize(file_name)
       @file_name = file_name
     end

@@ -18,7 +18,7 @@ module Rubycritic
       end
       AnalysersRunner.new(analysed_files, @source_control_system).run
       if @source_control_system.has_revision?
-        # @smells = RevisionComparator.new(@smells, @source_control_system).smells
+        RevisionComparator.new(analysed_files, @source_control_system).set_statuses
       end
       analysed_files
     end
