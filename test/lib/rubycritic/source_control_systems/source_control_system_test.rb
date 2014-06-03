@@ -16,12 +16,5 @@ describe Rubycritic::SourceControlSystem do
         system.must_be_instance_of Rubycritic::SourceControlSystem::Git
       end
     end
-
-    describe "when no source control system is found" do
-      it "creates a source control system double" do
-        system = Rubycritic::SourceControlSystem::Base.create
-        system.must_be_instance_of Rubycritic::SourceControlSystem::Double
-      end
-    end
   end
 end
