@@ -15,7 +15,8 @@ module Rubycritic
         if supported_system
           supported_system.new
         else
-          raise "Rubycritic requires a #{system_names} repository."
+          puts "Rubycritic requires a #{system_names} repository."
+          Double.new
         end
       end
 
@@ -51,4 +52,5 @@ module Rubycritic
   end
 end
 
+require "rubycritic/source_control_systems/double"
 require "rubycritic/source_control_systems/git"
