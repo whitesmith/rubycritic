@@ -6,7 +6,7 @@ module Rubycritic
 
     class Mini < Base
       def generate_report
-        Reporter::Mini.new(@analysed_files.first).generate_report
+        Reporter::Mini.new(@analysed_files).generate_report
       end
     end
 

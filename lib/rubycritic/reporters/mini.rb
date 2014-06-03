@@ -5,8 +5,8 @@ module Rubycritic
   module Reporter
 
     class Mini < Base
-      def initialize(analysed_file)
-        @analysed_file = analysed_file
+      def initialize(analysed_files)
+        @analysed_file = analysed_files.first
       end
 
       def generate_report
