@@ -4,7 +4,7 @@ require "rubycritic/adapters/complexity/flog"
 
 describe Rubycritic::ComplexityAdapter::Flog do
   before do
-    @analysed_files = [AnalysedFileDouble.new(:path => "test/samples/flog/smelly2.rb")]
+    @analysed_files = [AnalysedFileDouble.new(:path => "test/samples/flog/complex.rb")]
     Rubycritic::ComplexityAdapter::Flog.new(@analysed_files).complexity
   end
 
