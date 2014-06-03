@@ -4,11 +4,11 @@ require "rubycritic/core/analysed_file"
 describe Rubycritic::AnalysedFile do
   describe "attribute readers" do
     before do
-      @pathname = Pathname.new("./foo")
+      @pathname = Pathname.new("foo/bar.rb")
       @smells = []
       @churn = 1
       @complexity = 2
-      @smell = Rubycritic::AnalysedFile.new(
+      @analysed_file = Rubycritic::AnalysedFile.new(
         :pathname   => @pathname,
         :smells     => @smells,
         :churn      => @churn,
@@ -17,26 +17,27 @@ describe Rubycritic::AnalysedFile do
     end
 
     it "has a pathname reader" do
-      @smell.pathname.must_equal @pathname
+      @analysed_file.pathname.must_equal @pathname
     end
 
     it "has a smells reader" do
-      @smell.smells.must_equal @smells
+      @analysed_file.smells.must_equal @smells
     end
 
     it "has a churn reader" do
-      @smell.churn.must_equal @churn
+      @analysed_file.churn.must_equal @churn
     end
 
     it "has a complexity reader" do
-      @smell.complexity.must_equal @complexity
+      @analysed_file.complexity.must_equal @complexity
     end
-  end
 
-  describe "#name" do
-    it "returns the name of the file" do
-      analysed_file = Rubycritic::AnalysedFile.new(:pathname => Pathname.new("foo/bar.rb"))
-      analysed_file.name.must_equal "bar"
+    it "has a name reader" do
+      @analysed_file.name.must_equal "bar"
+    end
+
+    it "has a path reader" do
+      @analysed_file.path.must_equal @pathname.to_s
     end
   end
 

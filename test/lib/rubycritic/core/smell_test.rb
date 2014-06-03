@@ -56,15 +56,17 @@ describe Rubycritic::Smell do
     end
   end
 
-  it "is comparable" do
-    attributes = {
-      :context => "#bar",
-      :message => "This smells",
-      :score => 0,
-      :type => :complexity
-    }
-    smell1 = Rubycritic::Smell.new(attributes)
-    smell2 = Rubycritic::Smell.new(attributes)
-    smell1.must_equal smell2
+  describe "#==" do
+    it "returns true if two smells have the same base attributes" do
+      attributes = {
+        :context => "#bar",
+        :message => "This smells",
+        :score => 0,
+        :type => :complexity
+      }
+      smell1 = Rubycritic::Smell.new(attributes)
+      smell2 = Rubycritic::Smell.new(attributes)
+      smell1.must_equal smell2
+    end
   end
 end
