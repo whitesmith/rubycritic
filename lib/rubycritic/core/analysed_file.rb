@@ -14,6 +14,10 @@ module Rubycritic
       pathname.basename.sub_ext("").to_s
     end
 
+    def path
+      pathname.to_s
+    end
+
     def has_smells?
       !smells.empty?
     end

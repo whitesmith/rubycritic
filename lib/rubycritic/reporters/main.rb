@@ -8,9 +8,9 @@ module Rubycritic
   module Reporter
 
     class Main < Base
-      def initialize(analysed_files, smells)
+      def initialize(analysed_files)
         @analysed_files = analysed_files
-        @smells = smells
+        @smells = analysed_files.flat_map(&:smells).uniq
       end
 
       def generate_report

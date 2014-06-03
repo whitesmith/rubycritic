@@ -4,14 +4,14 @@ require "rubycritic/adapters/complexity/flog"
 
 describe Rubycritic::ComplexityAdapter::Flog do
   before do
-    sample_paths = ["test/samples/flog/smelly.rb", "test/samples/flog/smelly2.rb"]
-    @adapter = Rubycritic::ComplexityAdapter::Flog.new(sample_paths)
+    @analysed_files = [AnalysedFileDouble.new(:path => "test/samples/flog/smelly2.rb")]
+    Rubycritic::ComplexityAdapter::Flog.new(@analysed_files).complexity
   end
 
   describe "#complexity" do
-    it "return an array containing the complexity of each file" do
-      @adapter.complexity.each do |file_complexity|
-        file_complexity.must_be_kind_of Numeric
+    it "calculates the complexity of each file and adds it to analysed_files" do
+      @analysed_files.each do |analysed_file|
+        analysed_file.complexity.must_be_kind_of Numeric
       end
     end
   end

@@ -2,13 +2,15 @@ module Rubycritic
   module Analyser
 
     class Churn
-      def initialize(paths, source_control_system)
-        @paths = paths
+      def initialize(analysed_files, source_control_system)
+        @analysed_files = analysed_files
         @source_control_system = source_control_system
       end
 
       def churn
-        @paths.map { |path| @source_control_system.revisions_count(path) }
+        @analysed_files.each do |analysed_file|
+          analysed_file.churn = @source_control_system.revisions_count(analysed_file.path)
+        end
       end
     end
 

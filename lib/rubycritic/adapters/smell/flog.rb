@@ -8,21 +8,29 @@ module Rubycritic
       HIGH_COMPLEXITY_SCORE_THRESHOLD = 25
       VERY_HIGH_COMPLEXITY_SCORE_THRESHOLD = 60
 
-      def initialize(paths)
+      def initialize(analysed_files)
         @flog = Analyser::Flog.new
-        @flog.flog(*paths)
+        @analysed_files = analysed_files
       end
 
       def smells
-        smells = []
-        @flog.each_by_score do |class_method, original_score|
-          score = original_score.round
-          smells << create_smell(class_method, score) if score >= HIGH_COMPLEXITY_SCORE_THRESHOLD
+        @analysed_files.each do |analysed_file|
+          add_smells_to(analysed_file)
         end
-        smells
       end
 
       private
+
+      def add_smells_to(analysed_file)
+        @flog.reset
+        @flog.flog(analysed_file.path)
+        @flog.each_by_score do |class_method, original_score|
+          score = original_score.round
+          if score >= HIGH_COMPLEXITY_SCORE_THRESHOLD
+            analysed_file.smells << create_smell(class_method, score)
+          end
+        end
+      end
 
       def create_smell(context, score)
         Smell.new(

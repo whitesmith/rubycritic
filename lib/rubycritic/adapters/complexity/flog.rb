@@ -2,16 +2,16 @@ module Rubycritic
   module ComplexityAdapter
 
     class Flog
-      def initialize(paths)
+      def initialize(analysed_files)
         @flog = Analyser::Flog.new
-        @paths = paths
+        @analysed_files = analysed_files
       end
 
       def complexity
-        @paths.map do |path|
+        @analysed_files.each do |analysed_file|
           @flog.reset
-          @flog.flog(path)
-          @flog.total_score.round
+          @flog.flog(analysed_file.path)
+          analysed_file.complexity = @flog.total_score.round
         end
       end
     end

@@ -5,17 +5,33 @@ module Rubycritic
   module SmellAdapter
 
     class Flay
-      def initialize(paths)
-        @flay = Analyser::Flay.new(paths)
+      def initialize(analysed_files)
+        @analysed_files = analysed_files
+        @flay = Analyser::Flay.new(analysed_files.map(&:path))
+        @smells = Hash.new { |hash, key| hash[key] = [] }
       end
 
       def smells
-        @flay.hashes.map do |structural_hash, nodes|
-          create_smell(structural_hash, nodes)
-        end
+        find_smells
+        add_smells_to_analysed_files
       end
 
       private
+
+      def find_smells
+        @flay.hashes.each do |structural_hash, nodes|
+          smell = create_smell(structural_hash, nodes)
+          nodes.map(&:file).uniq.each do |file|
+            @smells[file] << smell
+          end
+        end
+      end
+
+      def add_smells_to_analysed_files
+        @analysed_files.each do |analysed_file|
+          analysed_file.smells += @smells[analysed_file.path]
+        end
+      end
 
       def create_smell(structural_hash, nodes)
         Smell.new(

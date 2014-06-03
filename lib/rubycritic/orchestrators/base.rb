@@ -8,13 +8,15 @@ module Rubycritic
 
       def critique(paths)
         source = SourceLocator.new(paths)
-        @smells = AnalysersRunner.new(source.paths).smells
-        if @source_control_system.has_revision?
-          @smells = RevisionComparator.new(@smells, @source_control_system).smells
-          churn = Analyser::Churn.new(source.paths, @source_control_system).churn
+        @analysed_files = source.pathnames.map do |pathname|
+          AnalysedFile.new(:pathname => pathname, :smells => [])
         end
-        complexity = ComplexityAdapter::Flog.new(source.paths).complexity
-        @analysed_files = AnalysedFilesBuilder.new(source.pathnames, @smells, churn, complexity).analysed_files
+        AnalysersRunner.new(@analysed_files).run
+        ComplexityAdapter::Flog.new(@analysed_files).complexity
+        if @source_control_system.has_revision?
+          # @smells = RevisionComparator.new(@smells, @source_control_system).smells
+          Analyser::Churn.new(@analysed_files, @source_control_system).churn
+        end
         generate_report
       end
 

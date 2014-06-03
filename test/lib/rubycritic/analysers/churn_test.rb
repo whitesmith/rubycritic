@@ -4,17 +4,21 @@ require "rubycritic/source_control_systems/source_control_system"
 
 describe Rubycritic::Analyser::Churn do
   before do
-    sample_paths = ["path_to_some_file.rb"]
-    source_control_system = SourceControlSystemDouble.new
-    @churn = Rubycritic::Analyser::Churn.new(sample_paths, source_control_system)
+    @analysed_files = [AnalysedFileDouble.new(:path => "path_to_some_file.rb")]
+    @source_control_system = SourceControlSystemDouble.new
   end
 
   describe "#churn" do
-    it "returns an array containing the number of times each file has changed" do
-      @churn.churn.must_equal [1]
+    it "calculates the churn of each file and adds it to analysed_files" do
+      Rubycritic::Analyser::Churn.new(@analysed_files, @source_control_system).churn
+      @analysed_files.each do |analysed_file|
+        analysed_file.churn.must_equal 1
+      end
     end
   end
 end
+
+class AnalysedFileDouble < OpenStruct; end
 
 class SourceControlSystemDouble < Rubycritic::SourceControlSystem
   def revisions_count(file)

@@ -10,24 +10,14 @@ module Rubycritic
 
     ANALYSERS = ["Flay", "Flog", "Reek"]
 
-    def initialize(paths)
-      @paths = paths
+    def initialize(analysed_files)
+      @analysed_files = analysed_files
     end
 
-    def smells
-      aggregate_smells(smell_adapters)
-    end
-
-    private
-
-    def smell_adapters
+    def run
       ANALYSERS.map do |analyser_name|
-        constantize("Rubycritic::SmellAdapter::#{analyser_name}").new(@paths)
+        constantize("Rubycritic::SmellAdapter::#{analyser_name}").new(@analysed_files).smells
       end
-    end
-
-    def aggregate_smells(smell_adapters)
-      smell_adapters.flat_map(&:smells)
     end
   end
 

@@ -5,17 +5,23 @@ module Rubycritic
   module SmellAdapter
 
     class Reek
-      def initialize(paths)
-        @reek = Analyser::Reek.new(paths)
+      def initialize(analysed_files)
+        @analysed_files = analysed_files
       end
 
       def smells
-        @reek.smells.map do |smell|
-          create_smell(smell)
+        @analysed_files.each do |analysed_file|
+          add_smells_to(analysed_file)
         end
       end
 
       private
+
+      def add_smells_to(analysed_file)
+        Analyser::Reek.new(analysed_file.path).smells.each do |smell|
+          analysed_file.smells << create_smell(smell)
+        end
+      end
 
       def create_smell(smell)
         Smell.new(

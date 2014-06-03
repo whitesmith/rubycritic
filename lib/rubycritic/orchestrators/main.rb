@@ -6,7 +6,7 @@ module Rubycritic
 
     class Main < Base
       def generate_report
-        Reporter::Main.new(@analysed_files, @smells).generate_report
+        Reporter::Main.new(@analysed_files).generate_report
       end
     end
 

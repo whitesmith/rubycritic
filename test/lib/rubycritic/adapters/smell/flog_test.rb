@@ -3,21 +3,24 @@ require "rubycritic/adapters/smell/flog"
 
 describe Rubycritic::SmellAdapter::Flog do
   before do
-    sample_paths = ["test/samples/flog/smelly.rb"]
-    @adapter = Rubycritic::SmellAdapter::Flog.new(sample_paths)
+    @analysed_file = AnalysedFileDouble.new(:path => "test/samples/flog/smelly.rb", :smells => [])
+    analysed_files = [@analysed_file]
+    Rubycritic::SmellAdapter::Flog.new(analysed_files).smells
   end
 
-  it "detects smells" do
-    @adapter.smells.wont_be_empty
+  it "detects smells and adds them to analysed_files" do
+    @analysed_file.smells.wont_be_empty
   end
 
-  it "has smells with messages" do
-    smell = @adapter.smells.first
+  it "creates smells with messages" do
+    smell = @analysed_file.smells.first
     smell.message.must_be_instance_of String
   end
 
-  it "has smells with scores" do
-    smell = @adapter.smells.first
+  it "creates smells with scores" do
+    smell = @analysed_file.smells.first
     smell.score.must_be_kind_of Numeric
   end
 end
+
+class AnalysedFileDouble < OpenStruct; end
