@@ -1,3 +1,5 @@
+require "rubycritic/analysers/flog"
+
 module Rubycritic
   module ComplexityAdapter
 

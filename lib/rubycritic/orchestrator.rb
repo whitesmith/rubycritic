@@ -1,3 +1,9 @@
+require "rubycritic/source_control_systems/base"
+require "rubycritic/source_locator"
+require "rubycritic/analysers_runner"
+require "rubycritic/revision_comparator"
+require "rubycritic/core/analysed_file"
+
 module Rubycritic
 
   class Orchestrator
