@@ -11,11 +11,11 @@ module Rubycritic
     attribute :complexity
 
     def name
-      pathname.basename.sub_ext("").to_s
+      @name ||= pathname.basename.sub_ext("").to_s
     end
 
     def path
-      pathname.to_s
+      @path ||= pathname.to_s
     end
 
     def has_smells?
