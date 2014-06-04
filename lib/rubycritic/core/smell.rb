@@ -13,10 +13,6 @@ module Rubycritic
     attribute :type
     attribute :status
 
-    def at_pathname?(other_pathname)
-      pathnames.any? { |pathname| pathname == other_pathname }
-    end
-
     def at_location?(other_location)
       locations.any? { |location| location == other_location }
     end
@@ -42,12 +38,6 @@ module Rubycritic
 
     def state
       [@context, @message, @score, @type]
-    end
-
-    private
-
-    def pathnames
-      @pathnames ||= locations.map(&:pathname).uniq
     end
   end
 

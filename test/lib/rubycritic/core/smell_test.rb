@@ -47,16 +47,6 @@ describe Rubycritic::Smell do
     end
   end
 
-  describe "#at_pathname?" do
-    it "returns true if the smell has a pathname that matches the pathname passed as argument" do
-      path = "./foo"
-      pathname = Pathname.new(path)
-      location = Rubycritic::Location.new(path, "42")
-      smell = Rubycritic::Smell.new(:locations => [location])
-      smell.at_pathname?(pathname).must_equal true
-    end
-  end
-
   describe "#has_multiple_locations?" do
     it "returns true if the smell has more than one location" do
       location1 = Rubycritic::Location.new("./foo", "42")
