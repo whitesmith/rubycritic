@@ -19,7 +19,7 @@ module Rubycritic
     end
 
     def ==(other)
-      self.class == other.class && state == other.state
+      state == other.state
     end
 
     def <=>(other)
