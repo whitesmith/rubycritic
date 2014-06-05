@@ -27,8 +27,8 @@ module Rubycritic
         travel_to_original_state if stash_successful
       end
 
-      def revisions_count(file)
-        `git log --follow --format=oneline #{file.shellescape}`.count("\n")
+      def revisions_count(path)
+        `git log --follow --format=oneline #{path.shellescape}`.count("\n")
       end
 
       private

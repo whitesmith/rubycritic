@@ -21,7 +21,7 @@ end
 class AnalysedFileDouble < OpenStruct; end
 
 class SourceControlSystemDouble < Rubycritic::SourceControlSystem::Base
-  def revisions_count(file)
+  def revisions_count(path)
     1 # churn
   end
 end

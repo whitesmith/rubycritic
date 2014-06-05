@@ -44,7 +44,7 @@ module Rubycritic
         raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
       end
 
-      def revisions_count(file)
+      def revisions_count(path)
         raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
       end
     end

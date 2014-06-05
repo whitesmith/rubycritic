@@ -2,7 +2,7 @@ module Rubycritic
   module SourceControlSystem
 
     class Double < Base
-      def revisions_count(file)
+      def revisions_count(path)
         "N/A"
       end
 
