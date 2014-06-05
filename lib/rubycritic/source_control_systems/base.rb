@@ -47,6 +47,10 @@ module Rubycritic
       def revisions_count(path)
         raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
       end
+
+      def date_of_last_commit(path)
+        raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
+      end
     end
 
   end

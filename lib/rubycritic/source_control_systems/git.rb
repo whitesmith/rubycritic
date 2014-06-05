@@ -31,6 +31,10 @@ module Rubycritic
         `git log --follow --format=oneline #{path.shellescape}`.count("\n")
       end
 
+      def date_of_last_commit(path)
+        `git log -1 --date=iso --format=%ad #{path.shellescape}`.chomp!
+      end
+
       private
 
       def stash_changes
