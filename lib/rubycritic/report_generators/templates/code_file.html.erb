@@ -4,7 +4,7 @@
 
   <span class="file-committed-at">
   <% if @analysed_file.committed_at %>
-    Updated on <%= @analysed_file.committed_at %></span>
+    Updated <%= timeago_tag(@analysed_file.committed_at) %></span>
   <% else %>
     Never committed
   <% end %>

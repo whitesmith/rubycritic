@@ -3,6 +3,10 @@ require "pathname"
 module Rubycritic
 
   module ViewHelpers
+    def timeago_tag(time)
+      "<time class='js-timeago' datetime='#{time}'>#{time}</time>"
+    end
+
     def javascript_tag(file)
       "<script src='" + asset_path(File.join("javascripts", "#{file}.js")) + "'></script>"
     end
