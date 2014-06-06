@@ -8,6 +8,7 @@ module Rubycritic
     attribute :pathname
     attribute :smells
     attribute :churn
+    attribute :committed_at
     attribute :complexity
 
     def name

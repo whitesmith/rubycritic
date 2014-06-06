@@ -10,6 +10,7 @@ module Rubycritic
       def churn
         @analysed_files.each do |analysed_file|
           analysed_file.churn = @source_control_system.revisions_count(analysed_file.path)
+          analysed_file.committed_at = @source_control_system.date_of_last_commit(analysed_file.path)
         end
       end
     end
