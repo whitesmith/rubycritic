@@ -4,29 +4,43 @@ require "rubycritic/reporters/main"
 
 module Rubycritic
 
-  OptionParser.new do |opts|
-    opts.banner = "Usage: rubycritic [options] [paths]"
+  class Cli
+    STATUS_SUCCESS = 0
 
-    opts.on("-p", "--path [PATH]", "Set path where report will be saved (tmp/rubycritic by default)") do |path|
-      configuration.root = path
+    def initialize(argv)
+      @argv = argv
+      @argv << "." if @argv.empty?
+      @main_command = true
     end
 
-    opts.on_tail("-v", "--version", "Show gem's version") do
-      require "rubycritic/version"
-      puts VERSION
-      exit 0
-    end
+    def execute
+      OptionParser.new do |opts|
+        opts.banner = "Usage: rubycritic [options] [paths]"
 
-    opts.on_tail("-h", "--help", "Show this message") do
-      puts opts
-      exit 0
-    end
-  end.parse!
+        opts.on("-p", "--path [PATH]", "Set path where report will be saved (tmp/rubycritic by default)") do |path|
+          configuration.root = path
+        end
 
-  ARGV << "." if ARGV.empty?
-  analysed_files = Orchestrator.new.critique(ARGV)
-  report_location = Reporter::Main.new(analysed_files).generate_report
-  puts "New critique at #{report_location}"
-  exit 0
+        opts.on_tail("-v", "--version", "Show gem's version") do
+          require "rubycritic/version"
+          puts "RubyCritic #{VERSION}"
+          @main_command = false
+        end
+
+        opts.on_tail("-h", "--help", "Show this message") do
+          puts opts
+          @main_command = false
+        end
+      end.parse!(@argv)
+
+      if @main_command
+        analysed_files = Orchestrator.new.critique(@argv)
+        report_location = Reporter::Main.new(analysed_files).generate_report
+        puts "New critique at #{report_location}"
+      end
+
+      STATUS_SUCCESS
+    end
+  end
 
 end
