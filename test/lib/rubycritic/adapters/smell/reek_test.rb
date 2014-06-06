@@ -10,7 +10,7 @@ describe Rubycritic::SmellAdapter::Reek do
     end
 
     it "detects smells and adds them to analysed_files" do
-      @analysed_file.smells.wont_be_empty
+      @analysed_file.smells.length.must_equal 1
     end
 
     it "creates smells with messages" do
