@@ -3,8 +3,8 @@ require "pathname"
 module Rubycritic
 
   module ViewHelpers
-    def javascript_path(file)
-      asset_path(File.join("javascripts", "#{file}.js"))
+    def javascript_tag(file)
+      "<script src='" + asset_path(File.join("javascripts", "#{file}.js")) + "'></script>"
     end
 
     def stylesheet_path(file)

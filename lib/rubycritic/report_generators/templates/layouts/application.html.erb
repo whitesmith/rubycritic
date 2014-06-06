@@ -18,12 +18,12 @@
       </nav>
     </header>
     <%= yield %>
-    <script src="<%= javascript_path(:'jquery-2.1.0') %>"></script>
-    <script src="<%= javascript_path(:'jquery.tablesorter-2.0') %>"></script>
-    <script src="<%= javascript_path(:'jquery.floatThead-v1.2.7') %>"></script>
-    <script src="<%= javascript_path(:'highcharts.src-4.0.1') %>"></script>
-    <script src="<%= javascript_path(:'jquery.scrollTo-1.4.11') %>"></script>
-    <script src="<%= javascript_path(:'prettify-4-Mar-2013') %>"></script>
-    <script src="<%= javascript_path(:application) %>"></script>
+    <%= javascript_tag(:'jquery-2.1.0') %>
+    <%= javascript_tag(:'jquery.tablesorter-2.0') %>
+    <%= javascript_tag(:'jquery.floatThead-v1.2.7') %>
+    <%= javascript_tag(:'highcharts.src-4.0.1') %>
+    <%= javascript_tag(:'jquery.scrollTo-1.4.11') %>
+    <%= javascript_tag(:'prettify-4-Mar-2013') %>
+    <%= javascript_tag(:application) %>
   </body>
 </html>
