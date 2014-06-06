@@ -163,6 +163,13 @@ html {
   font-weight: normal;
 }
 
+.file-committed-at {
+  float: left;
+  margin: 20px 0 0 28px;
+  font-size: 13px;
+  color: #666666;
+}
+
 .smells-toggle-button {
   position: absolute;
   right: 64px;
