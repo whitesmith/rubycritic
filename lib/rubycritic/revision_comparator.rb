@@ -1,5 +1,5 @@
 require "rubycritic/serializer"
-require "rubycritic/source_locator"
+require "rubycritic/files_initializer"
 require "rubycritic/analysers_runner"
 require "rubycritic/smells_status_setter"
 
@@ -27,10 +27,7 @@ module Rubycritic
       if File.file?(revision_file)
         serializer.load
       else
-        source = SourceLocator.new(["."])
-        analysed_files = source.pathnames.map do |pathname|
-          AnalysedFile.new(:pathname => pathname, :smells => [])
-        end
+        analysed_files = FilesInitializer.init(["."])
         @source_control_system.travel_to_head do
           AnalysersRunner.new(analysed_files, @source_control_system).run
         end
