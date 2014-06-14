@@ -10,12 +10,12 @@ describe Rubycritic::SmellsStatusSetter do
     end
 
     it "marks old smells" do
-      Rubycritic::SmellsStatusSetter.new(@smells, @smells).set
+      Rubycritic::SmellsStatusSetter.set(@smells, @smells)
       @smell.status.must_equal :old
     end
 
     it "marks new smells" do
-      Rubycritic::SmellsStatusSetter.new([], @smells).set
+      Rubycritic::SmellsStatusSetter.set([], @smells)
       @smell.status.must_equal :new
     end
   end

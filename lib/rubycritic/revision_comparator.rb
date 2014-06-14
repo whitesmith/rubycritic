@@ -14,10 +14,10 @@ module Rubycritic
     end
 
     def set_statuses
-      SmellsStatusSetter.new(
+      SmellsStatusSetter.set(
         analysed_files_before.flat_map(&:smells),
         @analysed_files_now.flat_map(&:smells)
-      ).set
+      )
     end
 
     private
