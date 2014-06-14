@@ -3,18 +3,18 @@ require "fileutils"
 module Rubycritic
 
   class Serializer
-    def initialize(file_name)
-      @file_name = file_name
+    def initialize(file)
+      @file = file
     end
 
     def load
-      Marshal.load(File.binread(@file_name))
+      Marshal.load(File.binread(@file))
     end
 
-    def dump(smells)
+    def dump(content)
       create_file_directory
-      File.open(@file_name, "w+") do |file|
-        Marshal.dump(smells, file)
+      File.open(@file, "w+") do |file|
+        Marshal.dump(content, file)
       end
     end
 
@@ -25,7 +25,7 @@ module Rubycritic
     end
 
     def file_directory
-      File.dirname(@file_name)
+      File.dirname(@file)
     end
   end
 
