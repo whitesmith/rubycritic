@@ -8,7 +8,7 @@ module Rubycritic
       TEMPLATE = erb_template("overview.html.erb")
 
       def initialize(analysed_files)
-        @turbulence_data = Turbulence.new(analysed_files).data
+        @turbulence_data = Turbulence.data(analysed_files)
       end
 
       def file_name
