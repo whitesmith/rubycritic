@@ -1,4 +1,5 @@
 require "test_helper"
+require "rubycritic/version"
 
 describe "Rubycritic version" do
   it "is defined" do
