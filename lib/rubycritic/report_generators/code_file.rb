@@ -11,7 +11,6 @@ module Rubycritic
       def initialize(analysed_file)
         @analysed_file = analysed_file
         @pathname = @analysed_file.pathname
-        @smells = @analysed_file.smells
       end
 
       def file_directory
@@ -26,7 +25,7 @@ module Rubycritic
         file_code = ""
         File.readlines(@pathname).each.with_index(LINE_NUMBER_OFFSET) do |line_text, line_number|
           location = Location.new(@pathname, line_number)
-          line_smells = @smells.select { |smell| smell.at_location?(location) }
+          line_smells = @analysed_file.smells_at_location(location)
           file_code << Line.new(line_text, line_smells).render
         end
 

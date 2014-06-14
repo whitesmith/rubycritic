@@ -31,6 +31,10 @@ module Rubycritic
     def has_smells?
       !smells.empty?
     end
+
+    def smells_at_location(location)
+      smells.select { |smell| smell.at_location?(location) }
+    end
   end
 
 end

@@ -1,5 +1,7 @@
 require "test_helper"
 require "rubycritic/core/analysed_file"
+require "rubycritic/core/smell"
+require "rubycritic/core/location"
 
 describe Rubycritic::AnalysedFile do
   describe "attribute readers" do
@@ -53,6 +55,15 @@ describe Rubycritic::AnalysedFile do
     it "returns true if the analysed_file has at least one smell" do
       analysed_file = Rubycritic::AnalysedFile.new(:smells => [SmellDouble.new])
       analysed_file.has_smells?.must_equal true
+    end
+  end
+
+  describe "#smells_at_location" do
+    it "returns the smells of an analysed_file at a certain location" do
+      location = Rubycritic::Location.new("./foo", "42")
+      smells = [Rubycritic::Smell.new(:locations => [location])]
+      analysed_file = Rubycritic::AnalysedFile.new(:smells => smells)
+      analysed_file.smells_at_location(location).must_equal smells
     end
   end
 end
