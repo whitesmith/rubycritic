@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "flay", "2.4.0"
   spec.add_runtime_dependency "flog", "4.2.0"
   spec.add_runtime_dependency "reek", "1.3.6"
+  spec.add_runtime_dependency "code_analyzer", "0.4.5"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"

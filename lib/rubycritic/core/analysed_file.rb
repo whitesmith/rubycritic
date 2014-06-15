@@ -11,6 +11,7 @@ module Rubycritic
     attribute :churn
     attribute :committed_at
     attribute :complexity
+    attribute :methods_count
 
     def name
       @name ||= pathname.basename.sub_ext("").to_s
@@ -26,6 +27,12 @@ module Rubycritic
 
     def rating
       @rating ||= Rating.from_cost(cost)
+    end
+
+    def complexity_per_method
+      complexity.fdiv(methods_count).round(1)
+    rescue ZeroDivisionError
+      "N/A"
     end
 
     def has_smells?

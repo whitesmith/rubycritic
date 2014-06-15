@@ -3,6 +3,7 @@ require "rubycritic/adapters/smell/flog"
 require "rubycritic/adapters/smell/reek"
 require "rubycritic/adapters/complexity/flog"
 require "rubycritic/analysers/churn"
+require "rubycritic/analysers/stats"
 
 module Rubycritic
 
@@ -20,6 +21,7 @@ module Rubycritic
       end
       ComplexityAdapter::Flog.new(@analysed_files).complexity
       Analyser::Churn.new(@analysed_files, @source_control_system).churn
+      Analyser::Stats.new(@analysed_files).stats
     end
   end
 
