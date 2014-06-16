@@ -175,6 +175,20 @@ html {
   color: #666666;
 }
 
+.file-stats {
+  clear: both;
+  margin-left: 68px;
+  width: 300px;
+}
+
+.file-stat {
+  float: left;
+  margin: 3px;
+  width: 130px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
 .smells-toggle-button {
   position: absolute;
   right: 64px;

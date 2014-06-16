@@ -10,6 +10,21 @@
   <% end %>
   </span>
 
+  <div class="file-stats group">
+    <div class="file-stat">
+      <%= @analysed_file.complexity %> complexity
+    </div>
+    <div class="file-stat">
+      <%= @analysed_file.complexity_per_method %> complexity per method
+    </div>
+    <div class="file-stat">
+      <%= @analysed_file.churn %> churn
+    </div>
+    <div class="file-stat">
+      <%= @analysed_file.methods_count %> methods
+    </div>
+  </div>
+
   <% if @analysed_file.has_smells? %>
     <button id="js-toggle-smells" class="smells-toggle-button button">Toggle Smells</button>
   <% end %>
