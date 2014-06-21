@@ -16,11 +16,11 @@ This gem provides features such as:
 
 2. An index of the project files with their respective number of smells:
 
-  ![RubyCritic code index screenshot](http://i.imgur.com/Hx2y2cG.png)
+  ![RubyCritic code index screenshot](http://i.imgur.com/0ETNrX7.png)
 
 3. An index of the smells detected:
 
-  ![RubyCritic smells index screenshot](http://i.imgur.com/ogXYIwR.png)
+  ![RubyCritic smells index screenshot](http://i.imgur.com/5CpPt9v.png)
 
 4. Finally, when analysing code like the following:
 
@@ -36,7 +36,7 @@ This gem provides features such as:
 
   It basically turns something like this:
 
-  ![Reek output screenshot](http://i.imgur.com/tCgZX9I.png)
+  ![Reek output screenshot](http://i.imgur.com/KLVrhMm.png)
 
   Into something like this:
 
