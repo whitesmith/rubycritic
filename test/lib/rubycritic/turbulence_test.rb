@@ -1,6 +1,5 @@
 require "test_helper"
 require "rubycritic/turbulence"
-require "ostruct"
 
 describe Rubycritic::Turbulence do
   describe "#data" do
