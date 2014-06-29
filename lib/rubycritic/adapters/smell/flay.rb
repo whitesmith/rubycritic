@@ -16,6 +16,10 @@ module Rubycritic
           nodes.map(&:file).uniq.each do |file|
             @analysed_files[file].smells << smell
           end
+
+          nodes.each do |node|
+            @analysed_files[node.file].duplication += node.mass
+          end
         end
       end
 

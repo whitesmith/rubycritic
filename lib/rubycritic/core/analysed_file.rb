@@ -11,6 +11,7 @@ module Rubycritic
     attribute :churn
     attribute :committed_at
     attribute :complexity
+    attribute :duplication
     attribute :methods_count
 
     def name
