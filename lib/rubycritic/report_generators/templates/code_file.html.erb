@@ -23,6 +23,9 @@
     <div class="file-stat">
       <%= @analysed_file.methods_count %> methods
     </div>
+    <div class="file-stat">
+      <%= @analysed_file.duplication %> duplication
+    </div>
   </div>
 
   <% if @analysed_file.has_smells? %>

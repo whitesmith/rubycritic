@@ -4,6 +4,7 @@
     <th class="first-cell">Name</th>
     <th class="numeric-cell" title="Number of times a file has changed">Churn</th>
     <th class="numeric-cell" title="Overall amount of code in a file">Complexity</th>
+    <th class="numeric-cell" title="Amount of code that is similar to other code">Duplication</th>
     <th class="numeric-cell">Smells</th>
     <th class="centered-cell last-cell">Rating</th>
   </tr>
@@ -16,6 +17,7 @@
       </td>
       <td class="numeric-cell"><%= analysed_file.churn %></td>
       <td class="numeric-cell"><%= analysed_file.complexity %></td>
+      <td class="numeric-cell"><%= analysed_file.duplication %></td>
       <td class="numeric-cell"><%= analysed_file.smells.length %></td>
       <td class="centered-cell last-cell"><span class="rating-<%= analysed_file.rating.to_s.downcase %> circled-rating circle"><%= analysed_file.rating %></td>
     </tr>
