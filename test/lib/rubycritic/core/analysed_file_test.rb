@@ -46,7 +46,7 @@ describe Rubycritic::AnalysedFile do
   describe "#cost" do
     it "returns the remediation cost of fixing the analysed_file" do
       smells = [SmellDouble.new(:cost => 1), SmellDouble.new(:cost => 2)]
-      analysed_file = Rubycritic::AnalysedFile.new(:smells => smells)
+      analysed_file = Rubycritic::AnalysedFile.new(:smells => smells, :complexity => 0)
       analysed_file.cost.must_equal 3
     end
   end
