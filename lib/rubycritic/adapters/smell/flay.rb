@@ -60,7 +60,7 @@ module Rubycritic
       end
 
       def cost(mass)
-        mass / 30
+        mass / 25
       end
     end
 
