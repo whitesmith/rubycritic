@@ -36,11 +36,11 @@ This gem provides features such as:
 
   It basically turns something like this:
 
-  ![Reek output screenshot](http://i.imgur.com/KLVrhMm.png)
+  ![Reek output screenshot](http://i.imgur.com/tCgZX9I.png)
 
   Into something like this:
 
-  ![RubyCritic file code screenshot](http://i.imgur.com/88ApcGd.png)
+  ![RubyCritic file code screenshot](http://i.imgur.com/KLVrhMm.png)
 
 Installation
 ------------
