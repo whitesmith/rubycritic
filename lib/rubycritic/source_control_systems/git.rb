@@ -17,7 +17,7 @@ module Rubycritic
       end
 
       def head_reference
-        `git rev-parse --verify HEAD`.chomp
+        `git rev-parse --verify HEAD`.chomp!
       end
 
       def travel_to_head
