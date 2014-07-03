@@ -34,6 +34,12 @@ module Rubycritic
         raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
       end
 
+      private
+
+      def root_directory
+        ::Rubycritic.configuration.root
+      end
+
       def get_binding
         binding
       end

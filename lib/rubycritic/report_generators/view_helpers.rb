@@ -27,8 +27,10 @@ module Rubycritic
       File.join(root_directory, "#{location.pathname.sub_ext('.html')}#L#{location.line}")
     end
 
+    private
+
     def root_directory
-      ::Rubycritic.configuration.root
+      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
     end
   end
 
