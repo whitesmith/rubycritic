@@ -14,7 +14,7 @@ module Rubycritic
       end
 
       def file_directory
-        File.join(root_directory, @pathname.dirname)
+        root_directory + @pathname.dirname
       end
 
       def file_name

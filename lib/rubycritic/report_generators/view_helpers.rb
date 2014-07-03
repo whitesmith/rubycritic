@@ -8,23 +8,23 @@ module Rubycritic
     end
 
     def javascript_tag(file)
-      "<script src='" + asset_path(File.join("javascripts", "#{file}.js")) + "'></script>"
+      "<script src='" + asset_path("javascripts", "#{file}.js").to_s + "'></script>"
     end
 
     def stylesheet_path(file)
-      asset_path(File.join("stylesheets", "#{file}.css"))
+      asset_path("stylesheets", "#{file}.css")
     end
 
-    def asset_path(file)
-      File.join(root_directory, "assets", file)
+    def asset_path(*fragments)
+      ([root_directory, "assets"] + fragments).reduce(:+)
     end
 
     def file_path(file)
-      File.join(root_directory, file)
+      root_directory + file
     end
 
     def smell_location_path(location)
-      File.join(root_directory, "#{location.pathname.sub_ext('.html')}#L#{location.line}")
+      root_directory + "#{location.pathname.sub_ext('.html')}#L#{location.line}"
     end
 
     private
