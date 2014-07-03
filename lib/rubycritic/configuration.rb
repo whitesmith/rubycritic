@@ -13,11 +13,12 @@ module Rubycritic
     end
 
     def root=(path)
-      @root = if Pathname(path).relative?
-                File.expand_path(path)
-              else
-                path
-              end
+      @root =
+        if Pathname(path).relative?
+          File.expand_path(path)
+        else
+          path
+        end
     end
   end
 end
