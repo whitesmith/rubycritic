@@ -13,7 +13,7 @@
   <% @analysed_files.each do |analysed_file| %>
     <tr>
       <td class="first-cell">
-        <a href="<%= file_path(analysed_file.pathname) %>"><%= analysed_file.name %></a>
+        <a href="<%= file_path(analysed_file.pathname.sub_ext('.html')) %>"><%= analysed_file.name %></a>
       </td>
       <td class="numeric-cell"><%= analysed_file.churn %></td>
       <td class="numeric-cell"><%= analysed_file.complexity %></td>

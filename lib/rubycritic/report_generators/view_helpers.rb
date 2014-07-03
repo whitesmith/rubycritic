@@ -20,7 +20,7 @@ module Rubycritic
     end
 
     def file_path(file)
-      File.join(root_directory, Pathname(file).sub_ext(".html"))
+      File.join(root_directory, file)
     end
 
     def smell_location_path(location)
