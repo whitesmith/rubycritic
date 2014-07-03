@@ -80,6 +80,18 @@ Alternatively you can pass `rubycritic` a list of files and directories to check
 $ rubycritic app lib/foo.rb
 ```
 
+By default, RubyCritic generates its report in `tmp/rubycritic`. You can customize the output directory using the `path` option. You can use relative paths:
+
+```bash
+rubycritic --path tmp/custom_dir        # outputs to tmp/custom_dir
+```
+
+Or full paths:
+
+```bash
+rubycritic --path $HOME/tmp/custom_dir  # outputs to $HOME/tmp/custom_dir
+```
+
 For a full list of the command-line options run:
 
 ```bash
