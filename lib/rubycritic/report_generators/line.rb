@@ -8,7 +8,10 @@ module Rubycritic
       NORMAL_TEMPLATE = erb_template("line.html.erb")
       SMELLY_TEMPLATE = erb_template("smelly_line.html.erb")
 
-      def initialize(text, smells)
+      attr_reader :file_directory
+
+      def initialize(file_directory, text, smells)
+        @file_directory = file_directory
         @text = CGI::escapeHTML(text.chomp)
         @smells = smells
         @template =

@@ -16,18 +16,26 @@ module Rubycritic
     end
 
     def asset_path(*fragments)
-      ([root_directory, "assets"] + fragments).reduce(:+)
+      relative_path(([root_directory, "assets"] + fragments).reduce(:+))
     end
 
     def file_path(file)
-      root_directory + file
+      relative_path(root_directory + file)
     end
 
     def smell_location_path(location)
-      root_directory + "#{location.pathname.sub_ext('.html')}#L#{location.line}"
+      relative_path(root_directory + "#{location.pathname.sub_ext('.html')}#L#{location.line}")
     end
 
     private
+
+    def relative_path(pathname)
+      pathname.relative_path_from(file_directory)
+    end
+
+    def file_directory
+      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
+    end
 
     def root_directory
       raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
