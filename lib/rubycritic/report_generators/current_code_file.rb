@@ -5,7 +5,7 @@ module Rubycritic
 
     class CurrentCodeFile < CodeFile
       def file_directory
-        root_directory
+        @file_directory ||= root_directory
       end
 
       def file_name

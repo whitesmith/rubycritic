@@ -14,7 +14,7 @@ module Rubycritic
       end
 
       def file_directory
-        root_directory + @pathname.dirname
+        @file_directory ||= root_directory + @pathname.dirname
       end
 
       def file_name

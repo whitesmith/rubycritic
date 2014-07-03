@@ -23,7 +23,7 @@ module Rubycritic
       end
 
       def file_directory
-        root_directory
+        @file_directory ||= root_directory
       end
 
       def file_name
