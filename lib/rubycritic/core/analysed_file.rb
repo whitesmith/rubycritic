@@ -31,9 +31,11 @@ module Rubycritic
     end
 
     def complexity_per_method
-      complexity.fdiv(methods_count).round(1)
-    rescue ZeroDivisionError
-      "N/A"
+      if methods_count == 0
+        "N/A"
+      else
+        complexity.fdiv(methods_count).round(1)
+      end
     end
 
     def has_smells?
