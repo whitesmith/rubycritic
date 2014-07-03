@@ -18,7 +18,7 @@ module Rubycritic
         opts.banner = "Usage: rubycritic [options] [paths]"
 
         opts.on("-p", "--path [PATH]", "Set path where report will be saved (tmp/rubycritic by default)") do |path|
-          configuration.root = path
+          ::Rubycritic.configuration.root = path
         end
 
         opts.on_tail("-v", "--version", "Show gem's version") do
