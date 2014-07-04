@@ -22,7 +22,7 @@ module Rubycritic
     end
 
     def smell_location_path(location)
-      relative_path(root_directory + "#{location.pathname.sub_ext('.html')}#L#{location.line}")
+      file_path("#{location.pathname.sub_ext('.html')}#L#{location.line}")
     end
 
     private
