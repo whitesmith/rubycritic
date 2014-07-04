@@ -1,4 +1,5 @@
 require "erb"
+require "pathname"
 require "rubycritic/report_generators/view_helpers"
 
 module Rubycritic

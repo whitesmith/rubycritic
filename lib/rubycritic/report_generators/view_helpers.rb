@@ -1,5 +1,3 @@
-require "pathname"
-
 module Rubycritic
 
   module ViewHelpers
