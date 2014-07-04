@@ -51,6 +51,22 @@ describe Rubycritic::AnalysedFile do
     end
   end
 
+  describe "#complexity_per_method" do
+    context "when the file has no methods" do
+      it "returns a placeholder" do
+        analysed_file = Rubycritic::AnalysedFile.new(:complexity => 0, :methods_count => 0)
+        analysed_file.complexity_per_method.must_equal "N/A"
+      end
+    end
+
+    context "when the file has at least one method" do
+      it "returns the average complexity per method" do
+        analysed_file = Rubycritic::AnalysedFile.new(:complexity => 10, :methods_count => 2)
+        analysed_file.complexity_per_method.must_equal 5
+      end
+    end
+  end
+
   describe "#has_smells?" do
     it "returns true if the analysed_file has at least one smell" do
       analysed_file = Rubycritic::AnalysedFile.new(:smells => [SmellDouble.new])
