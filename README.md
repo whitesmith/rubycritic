@@ -5,8 +5,10 @@ RubyCritic
 [![Build Status](https://travis-ci.org/whitesmith/rubycritic.svg?branch=master)](https://travis-ci.org/whitesmith/rubycritic)
 [![Code Climate](http://img.shields.io/codeclimate/github/whitesmith/rubycritic.svg)](https://codeclimate.com/github/whitesmith/rubycritic)
 
+<img src="http://i.imgur.com/66HACCD.png" alt="RubyCritic Icon" align="right" />
 RubyCritic is a gem that wraps around static analysis gems such as [Reek][1]
 and [Flay][2] to provide a quality report of your Ruby code.
+
 
 This gem provides features such as:
 
