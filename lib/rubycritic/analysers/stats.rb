@@ -1,4 +1,5 @@
-require "code_analyzer"
+require "ripper"
+require "sexp_processor"
 
 module Rubycritic
   module Analyser
@@ -19,7 +20,7 @@ module Rubycritic
       def methods_count(path)
         content = File.read(path)
         node = parse_content(content)
-        node.grep_nodes_count(sexp_type: [:def, :defs])
+        node.count_nodes_of_type(:def, :defs)
       end
 
       def parse_content(content)
@@ -27,5 +28,26 @@ module Rubycritic
       end
     end
 
+  end
+end
+
+class Sexp
+  def count_nodes_of_type(*sexp_types)
+    count = 0
+    recursive_children do |child|
+      count += 1 if sexp_types.include?(child.sexp_type)
+    end
+    count
+  end
+
+  def recursive_children
+    children.each do |child|
+      yield child
+      child.recursive_children { |grand_child| yield grand_child }
+    end
+  end
+
+  def children
+    find_all { | sexp | Sexp === sexp }
   end
 end
