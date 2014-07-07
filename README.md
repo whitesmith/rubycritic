@@ -9,7 +9,6 @@ RubyCritic
 RubyCritic is a gem that wraps around static analysis gems such as [Reek][1]
 and [Flay][2] to provide a quality report of your Ruby code.
 
-
 This gem provides features such as:
 
 1. An overview of your project:
@@ -82,16 +81,17 @@ Alternatively you can pass `rubycritic` a list of files and directories to check
 $ rubycritic app lib/foo.rb
 ```
 
-By default, RubyCritic generates its report in `tmp/rubycritic`. You can customize the output directory using the `path` option. You can use relative paths:
+By default, RubyCritic generates its report in `tmp/rubycritic`. You can customize the output directory using the `path` option. You can use paths relative to the current working directory:
 
 ```bash
-rubycritic --path tmp/custom_dir        # outputs to tmp/custom_dir
+pwd                                # /home/user/projects/foo
+rubycritic --path tmp/custom_dir   # outputs to /home/user/projects/foo/tmp/custom_dir
 ```
 
 Or full paths:
 
 ```bash
-rubycritic --path $HOME/tmp/custom_dir  # outputs to $HOME/tmp/custom_dir
+rubycritic --path /home/custom_dir # outputs to /home/custom_dir
 ```
 
 For a full list of the command-line options run:
