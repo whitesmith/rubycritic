@@ -1,5 +1,4 @@
-require "ripper"
-require "sexp_processor"
+require "parser/current"
 
 module Rubycritic
   module Analyser
@@ -24,30 +23,27 @@ module Rubycritic
       end
 
       def parse_content(content)
-        Sexp.from_array(Ripper::SexpBuilder.new(content).parse)[1]
+        Parser::CurrentRuby.parse(content)
       end
     end
 
   end
 end
 
-class Sexp
-  def count_nodes_of_type(*sexp_types)
+class Parser::AST::Node
+  def count_nodes_of_type(*types)
     count = 0
     recursive_children do |child|
-      count += 1 if sexp_types.include?(child.sexp_type)
+      count += 1 if types.include?(child.type)
     end
     count
   end
 
   def recursive_children
     children.each do |child|
+      next unless child.is_a?(Parser::AST::Node)
       yield child
       child.recursive_children { |grand_child| yield grand_child }
     end
-  end
-
-  def children
-    find_all { | sexp | Sexp === sexp }
   end
 end
