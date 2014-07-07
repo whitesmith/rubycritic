@@ -1,4 +1,7 @@
 class Example
-  def one_method
+  def self.one_class_method
+  end
+
+  def one_instance_method
   end
 end

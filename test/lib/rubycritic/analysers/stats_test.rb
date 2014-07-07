@@ -9,7 +9,7 @@ describe Rubycritic::Analyser::Stats do
   it "calculates the number of methods of each file and adds it to analysed_files" do
     Rubycritic::Analyser::Stats.new(@analysed_files).stats
     @analysed_files.each do |analysed_file|
-      analysed_file.methods_count.must_equal 1
+      analysed_file.methods_count.must_equal 2
     end
   end
 end
