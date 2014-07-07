@@ -1,4 +1,5 @@
 require "parser/current"
+require "rubycritic/analysers/ast_node"
 
 module Rubycritic
   module Analyser
@@ -23,27 +24,9 @@ module Rubycritic
       end
 
       def parse_content(content)
-        Parser::CurrentRuby.parse(content)
+        Parser::CurrentRuby.parse(content) || AST::EmptyNode.new
       end
     end
 
-  end
-end
-
-class Parser::AST::Node
-  def count_nodes_of_type(*types)
-    count = 0
-    recursive_children do |child|
-      count += 1 if types.include?(child.type)
-    end
-    count
-  end
-
-  def recursive_children
-    children.each do |child|
-      next unless child.is_a?(Parser::AST::Node)
-      yield child
-      child.recursive_children { |grand_child| yield grand_child }
-    end
   end
 end
