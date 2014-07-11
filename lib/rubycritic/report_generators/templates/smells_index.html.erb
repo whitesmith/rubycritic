@@ -2,18 +2,20 @@
 <thead>
   <tr>
     <th class="first-cell">Smell</th>
-    <th class="last-cell">Locations</th>
+    <th>Locations</th>
+    <th class="centered-cell last-cell" title="Code smells introduced recently are marked as new. There's still time before they are committed!">Status</th>
   </tr>
 </thead>
 <tbody>
   <% @smells.each do |smell| %>
     <tr>
       <td class="first-cell"><%= smell.type %></td>
-      <td class="last-cell">
+      <td>
         <% smell.locations.each do |location| %>
           <a href="<%= smell_location_path(location) %>"><%= location.file_name %></a>
         <% end %>
       </td>
+      <td class="centered-cell last-cell"><%= smell.status %></td>
     </tr>
   <% end %>
 </tbody>
