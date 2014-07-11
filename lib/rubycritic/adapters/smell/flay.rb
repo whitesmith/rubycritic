@@ -10,7 +10,7 @@ module Rubycritic
         @flay = Analyser::Flay.new(@analysed_files.keys)
       end
 
-      def smells
+      def run
         @flay.hashes.each do |structural_hash, nodes|
           smell = create_smell(structural_hash, nodes)
           nodes.map(&:file).uniq.each do |file|

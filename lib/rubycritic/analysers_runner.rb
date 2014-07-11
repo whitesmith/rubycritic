@@ -8,7 +8,13 @@ require "rubycritic/analysers/stats"
 module Rubycritic
 
   class AnalysersRunner
-    SMELL_ANALYSERS = [SmellAdapter::Flay, SmellAdapter::Flog, SmellAdapter::Reek]
+    ANALYSERS = [
+      SmellAdapter::Flay,
+      SmellAdapter::Flog,
+      SmellAdapter::Reek,
+      ComplexityAdapter::Flog,
+      Analyser::Stats
+    ]
 
     def initialize(analysed_files, source_control_system)
       @analysed_files = analysed_files
@@ -16,12 +22,10 @@ module Rubycritic
     end
 
     def run
-      SMELL_ANALYSERS.map do |analyser|
-        analyser.new(@analysed_files).smells
+      ANALYSERS.map do |analyser|
+        analyser.new(@analysed_files).run
       end
-      ComplexityAdapter::Flog.new(@analysed_files).complexity
-      Analyser::Churn.new(@analysed_files, @source_control_system).churn
-      Analyser::Stats.new(@analysed_files).stats
+      Analyser::Churn.new(@analysed_files, @source_control_system).run
     end
   end
 

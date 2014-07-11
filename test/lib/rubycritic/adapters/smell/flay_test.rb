@@ -11,7 +11,7 @@ describe Rubycritic::SmellAdapter::Flay do
       :duplication => 0
     )
     analysed_files = [@analysed_file]
-    Rubycritic::SmellAdapter::Flay.new(analysed_files).smells
+    Rubycritic::SmellAdapter::Flay.new(analysed_files).run
   end
 
   it "detects smells and adds them to analysed_files" do

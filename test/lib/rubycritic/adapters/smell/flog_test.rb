@@ -5,7 +5,7 @@ describe Rubycritic::SmellAdapter::Flog do
   before do
     @analysed_file = AnalysedFileDouble.new(:path => "test/samples/flog/smelly.rb", :smells => [])
     analysed_files = [@analysed_file]
-    Rubycritic::SmellAdapter::Flog.new(analysed_files).smells
+    Rubycritic::SmellAdapter::Flog.new(analysed_files).run
   end
 
   it "detects smells and adds them to analysed_files" do

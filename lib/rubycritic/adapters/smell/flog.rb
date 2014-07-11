@@ -13,7 +13,7 @@ module Rubycritic
         @analysed_files = analysed_files
       end
 
-      def smells
+      def run
         @analysed_files.each do |analysed_file|
           add_smells_to(analysed_file)
         end

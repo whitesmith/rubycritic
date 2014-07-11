@@ -9,7 +9,7 @@ module Rubycritic
         @analysed_files = analysed_files
       end
 
-      def complexity
+      def run
         @analysed_files.each do |analysed_file|
           @flog.reset
           @flog.flog(analysed_file.path)
