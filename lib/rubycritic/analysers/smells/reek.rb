@@ -1,10 +1,10 @@
-require "rubycritic/analysers/reek"
+require "rubycritic/analysers/adapters/reek"
 require "rubycritic/core/smell"
 
 module Rubycritic
-  module SmellAdapter
+  module Analyser
 
-    class Reek
+    class ReekSmells
       def initialize(analysed_files)
         @analysed_files = analysed_files
       end
@@ -18,7 +18,7 @@ module Rubycritic
       private
 
       def add_smells_to(analysed_file)
-        Analyser::Reek.new(analysed_file.path).smells.each do |smell|
+        Reek.new(analysed_file.path).smells.each do |smell|
           analysed_file.smells << create_smell(smell)
         end
       end

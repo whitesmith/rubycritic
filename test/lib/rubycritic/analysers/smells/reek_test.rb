@@ -1,12 +1,12 @@
 require "test_helper"
-require "rubycritic/adapters/smell/reek"
+require "rubycritic/analysers/smells/reek"
 
-describe Rubycritic::SmellAdapter::Reek do
+describe Rubycritic::Analyser::ReekSmells do
   context "when analysing a smelly file" do
     before do
       @analysed_file = AnalysedFileDouble.new(:path => "test/samples/reek/smelly.rb", :smells => [])
       analysed_files = [@analysed_file]
-      Rubycritic::SmellAdapter::Reek.new(analysed_files).run
+      Rubycritic::Analyser::ReekSmells.new(analysed_files).run
     end
 
     it "detects smells and adds them to analysed_files" do
@@ -23,7 +23,7 @@ describe Rubycritic::SmellAdapter::Reek do
     before do
       @analysed_file = AnalysedFileDouble.new(:path => "test/samples/reek/not_smelly.rb", :smells => [])
       analysed_files = [@analysed_file]
-      Rubycritic::SmellAdapter::Reek.new(analysed_files).run
+      Rubycritic::Analyser::ReekSmells.new(analysed_files).run
     end
 
     it "does not detect smells and does not add them to analysed files" do

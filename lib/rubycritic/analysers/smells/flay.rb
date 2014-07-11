@@ -1,13 +1,13 @@
-require "rubycritic/analysers/flay"
+require "rubycritic/analysers/adapters/flay"
 require "rubycritic/core/smell"
 
 module Rubycritic
-  module SmellAdapter
+  module Analyser
 
-    class Flay
+    class FlaySmells
       def initialize(analysed_files)
         @analysed_files = paths_to_analysed_files(analysed_files)
-        @flay = Analyser::Flay.new(@analysed_files.keys)
+        @flay = Flay.new(@analysed_files.keys)
       end
 
       def run

@@ -1,9 +1,9 @@
 require "test_helper"
-require "rubycritic/adapters/smell/flay"
+require "rubycritic/analysers/smells/flay"
 require "rubycritic/core/analysed_file"
 require "pathname"
 
-describe Rubycritic::SmellAdapter::Flay do
+describe Rubycritic::Analyser::FlaySmells do
   before do
     @analysed_file = Rubycritic::AnalysedFile.new(
       :pathname => Pathname.new("test/samples/flay/smelly.rb"),
@@ -11,7 +11,7 @@ describe Rubycritic::SmellAdapter::Flay do
       :duplication => 0
     )
     analysed_files = [@analysed_file]
-    Rubycritic::SmellAdapter::Flay.new(analysed_files).run
+    Rubycritic::Analyser::FlaySmells.new(analysed_files).run
   end
 
   it "detects smells and adds them to analysed_files" do

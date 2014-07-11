@@ -1,11 +1,11 @@
-require "rubycritic/analysers/flog"
+require "rubycritic/analysers/adapters/flog"
 
 module Rubycritic
-  module ComplexityAdapter
+  module Analyser
 
-    class Flog
+    class Complexity
       def initialize(analysed_files)
-        @flog = Analyser::Flog.new
+        @flog = Flog.new
         @analysed_files = analysed_files
       end
 

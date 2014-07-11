@@ -1,11 +1,11 @@
 require "test_helper"
-require "rubycritic/adapters/smell/flog"
+require "rubycritic/analysers/smells/flog"
 
-describe Rubycritic::SmellAdapter::Flog do
+describe Rubycritic::Analyser::FlogSmells do
   before do
     @analysed_file = AnalysedFileDouble.new(:path => "test/samples/flog/smelly.rb", :smells => [])
     analysed_files = [@analysed_file]
-    Rubycritic::SmellAdapter::Flog.new(analysed_files).run
+    Rubycritic::Analyser::FlogSmells.new(analysed_files).run
   end
 
   it "detects smells and adds them to analysed_files" do

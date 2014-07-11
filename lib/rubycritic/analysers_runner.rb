@@ -1,7 +1,7 @@
-require "rubycritic/adapters/smell/flay"
-require "rubycritic/adapters/smell/flog"
-require "rubycritic/adapters/smell/reek"
-require "rubycritic/adapters/complexity/flog"
+require "rubycritic/analysers/smells/flay"
+require "rubycritic/analysers/smells/flog"
+require "rubycritic/analysers/smells/reek"
+require "rubycritic/analysers/complexity"
 require "rubycritic/analysers/churn"
 require "rubycritic/analysers/stats"
 
@@ -9,10 +9,10 @@ module Rubycritic
 
   class AnalysersRunner
     ANALYSERS = [
-      SmellAdapter::Flay,
-      SmellAdapter::Flog,
-      SmellAdapter::Reek,
-      ComplexityAdapter::Flog,
+      Analyser::FlaySmells,
+      Analyser::FlogSmells,
+      Analyser::ReekSmells,
+      Analyser::Complexity,
       Analyser::Stats
     ]
 

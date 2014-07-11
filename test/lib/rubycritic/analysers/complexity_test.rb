@@ -1,11 +1,10 @@
 require "test_helper"
-require "rubycritic/analysers/flog"
-require "rubycritic/adapters/complexity/flog"
+require "rubycritic/analysers/complexity"
 
-describe Rubycritic::ComplexityAdapter::Flog do
+describe Rubycritic::Analyser::Complexity do
   before do
     @analysed_files = [AnalysedFileDouble.new(:path => "test/samples/flog/complex.rb")]
-    Rubycritic::ComplexityAdapter::Flog.new(@analysed_files).run
+    Rubycritic::Analyser::Complexity.new(@analysed_files).run
   end
 
   it "calculates the complexity of each file and adds it to analysed_files" do

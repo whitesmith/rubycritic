@@ -1,15 +1,15 @@
-require "rubycritic/analysers/flog"
+require "rubycritic/analysers/adapters/flog"
 require "rubycritic/core/smell"
 
 module Rubycritic
-  module SmellAdapter
+  module Analyser
 
-    class Flog
+    class FlogSmells
       HIGH_COMPLEXITY_SCORE_THRESHOLD = 25
       VERY_HIGH_COMPLEXITY_SCORE_THRESHOLD = 60
 
       def initialize(analysed_files)
-        @flog = Analyser::Flog.new
+        @flog = Flog.new
         @analysed_files = analysed_files
       end
 
