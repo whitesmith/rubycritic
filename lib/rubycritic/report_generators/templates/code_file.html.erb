@@ -3,11 +3,11 @@
   <h2 class="file-name"><%= @analysed_file.name %></h2>
 
   <span class="file-committed-at">
-  <% if @analysed_file.committed_at %>
-    Updated <%= timeago_tag(@analysed_file.committed_at) %></span>
-  <% else %>
-    Never committed
-  <% end %>
+    <% if @analysed_file.committed_at %>
+      Updated <%= timeago_tag(@analysed_file.committed_at) %>
+    <% else %>
+      Never committed
+    <% end %>
   </span>
 
   <div class="file-stats group">

@@ -19,7 +19,7 @@
       <td class="numeric-cell"><%= analysed_file.complexity %></td>
       <td class="numeric-cell"><%= analysed_file.duplication %></td>
       <td class="numeric-cell"><%= analysed_file.smells.length %></td>
-      <td class="centered-cell last-cell"><span class="rating-<%= analysed_file.rating.to_s.downcase %> circled-rating circle"><%= analysed_file.rating %></td>
+      <td class="centered-cell last-cell"><span class="rating-<%= analysed_file.rating.to_s.downcase %> circled-rating circle"><%= analysed_file.rating %></span></td>
     </tr>
   <% end %>
 </tbody>
