@@ -1,4 +1,4 @@
-require "test_helper"
+require "analysers_test_helper"
 require "rubycritic/analysers/churn"
 require "rubycritic/source_control_systems/base"
 
@@ -22,8 +22,6 @@ describe Rubycritic::Analyser::Churn do
     end
   end
 end
-
-class AnalysedFileDouble < OpenStruct; end
 
 class SourceControlSystemDouble < Rubycritic::SourceControlSystem::Base
   def revisions_count(path)

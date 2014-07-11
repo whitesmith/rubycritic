@@ -1,4 +1,4 @@
-require "test_helper"
+require "analysers_test_helper"
 require "rubycritic/analysers/complexity"
 
 describe Rubycritic::Analyser::Complexity do
@@ -13,5 +13,3 @@ describe Rubycritic::Analyser::Complexity do
     end
   end
 end
-
-class AnalysedFileDouble < OpenStruct; end

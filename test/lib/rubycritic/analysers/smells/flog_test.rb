@@ -1,4 +1,4 @@
-require "test_helper"
+require "analysers_test_helper"
 require "rubycritic/analysers/smells/flog"
 
 describe Rubycritic::Analyser::FlogSmells do
@@ -22,5 +22,3 @@ describe Rubycritic::Analyser::FlogSmells do
     smell.score.must_be_kind_of Numeric
   end
 end
-
-class AnalysedFileDouble < OpenStruct; end

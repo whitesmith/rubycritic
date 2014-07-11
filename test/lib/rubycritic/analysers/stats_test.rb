@@ -1,4 +1,4 @@
-require "test_helper"
+require "analysers_test_helper"
 require "rubycritic/analysers/stats"
 
 describe Rubycritic::Analyser::Stats do
@@ -18,5 +18,3 @@ describe Rubycritic::Analyser::Stats do
     end
   end
 end
-
-class AnalysedFileDouble < OpenStruct; end

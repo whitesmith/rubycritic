@@ -1,4 +1,4 @@
-require "test_helper"
+require "analysers_test_helper"
 require "rubycritic/analysers/smells/reek"
 
 describe Rubycritic::Analyser::ReekSmells do
@@ -31,5 +31,3 @@ describe Rubycritic::Analyser::ReekSmells do
     end
   end
 end
-
-class AnalysedFileDouble < OpenStruct; end
