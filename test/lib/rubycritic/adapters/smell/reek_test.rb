@@ -23,7 +23,7 @@ describe Rubycritic::SmellAdapter::Reek do
     before do
       @analysed_file = AnalysedFileDouble.new(:path => "test/samples/reek/not_smelly.rb", :smells => [])
       analysed_files = [@analysed_file]
-      Rubycritic::SmellAdapter::Reek.new(analysed_files)
+      Rubycritic::SmellAdapter::Reek.new(analysed_files).smells
     end
 
     it "does not detect smells and does not add them to analysed files" do

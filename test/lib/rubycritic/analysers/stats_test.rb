@@ -18,3 +18,5 @@ describe Rubycritic::Analyser::Stats do
     end
   end
 end
+
+class AnalysedFileDouble < OpenStruct; end

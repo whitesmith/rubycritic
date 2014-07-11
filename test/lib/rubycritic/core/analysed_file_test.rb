@@ -1,7 +1,6 @@
 require "test_helper"
 require "rubycritic/core/analysed_file"
 require "rubycritic/core/smell"
-require "rubycritic/core/location"
 
 describe Rubycritic::AnalysedFile do
   describe "attribute readers" do

@@ -14,3 +14,5 @@ describe Rubycritic::ComplexityAdapter::Flog do
     end
   end
 end
+
+class AnalysedFileDouble < OpenStruct; end
