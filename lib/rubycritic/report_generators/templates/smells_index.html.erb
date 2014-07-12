@@ -1,4 +1,4 @@
-<table id="js-index-table" class="index-table sortable-table">
+<table id="js-index-table" class="smells-index-table index-table sortable-table">
 <thead>
   <tr>
     <th class="first-cell">Smell</th>
@@ -15,7 +15,7 @@
           <a href="<%= smell_location_path(location) %>"><%= location.file_name %></a>
         <% end %>
       </td>
-      <td class="centered-cell last-cell"><%= smell.status %></td>
+      <td class="centered-cell last-cell"><span class="status-<%= smell.status %> circled-text circle"><%= smell.status %></span></td>
     </tr>
   <% end %>
 </tbody>

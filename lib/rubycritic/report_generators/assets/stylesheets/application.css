@@ -59,7 +59,7 @@ html {
   height: 28px;
 }
 
-.index-table .circled-rating {
+.index-table .circled-text {
   display: inline-block;
   line-height: 28px;
 }
@@ -112,7 +112,7 @@ html {
   border-radius: 50%;
 }
 
-.circled-rating {
+.circled-text {
   text-align: center;
   color: white;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -122,6 +122,18 @@ html {
   -ms-user-select: none;
   user-select: none;
   cursor: default;
+}
+
+.smells-index-table .circled-text {
+  font-size: 10px;
+}
+
+.status-old {
+  background-color: #FFDC00;
+}
+
+.status-new {
+  background-color: #FF4136;
 }
 
 .file-header {
@@ -135,7 +147,7 @@ html {
   height: 50px;
 }
 
-.file-header .circled-rating {
+.file-header .circled-text {
   float: left;
   line-height: 50px;
   font-size: 32px;
