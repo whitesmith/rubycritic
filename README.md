@@ -1,13 +1,12 @@
 RubyCritic
-===========
+==========
 
 [![Gem Version](https://badge.fury.io/rb/rubycritic.svg)](http://badge.fury.io/rb/rubycritic)
 [![Build Status](https://travis-ci.org/whitesmith/rubycritic.svg?branch=master)](https://travis-ci.org/whitesmith/rubycritic)
 [![Code Climate](http://img.shields.io/codeclimate/github/whitesmith/rubycritic.svg)](https://codeclimate.com/github/whitesmith/rubycritic)
 
 <img src="http://i.imgur.com/66HACCD.png" alt="RubyCritic Icon" align="right" />
-RubyCritic is a gem that wraps around static analysis gems such as [Reek][1]
-and [Flay][2] to provide a quality report of your Ruby code.
+RubyCritic is a gem that wraps around static analysis gems such as [Reek][1], [Flay][2] and [Flog][3] to provide a quality report of your Ruby code.
 
 This gem provides features such as:
 
@@ -43,8 +42,8 @@ This gem provides features such as:
 
   ![RubyCritic file code screenshot](http://i.imgur.com/KLVrhMm.png)
 
-Installation
-------------
+Getting Started
+---------------
 
 RubyCritic can be installed with the following command:
 
@@ -81,24 +80,39 @@ Alternatively you can pass `rubycritic` a list of files and directories to check
 $ rubycritic app lib/foo.rb
 ```
 
-By default, RubyCritic generates its report in `tmp/rubycritic`. You can customize the output directory using the `path` option. You can use paths relative to the current working directory:
-
-```bash
-pwd                                # /home/user/projects/foo
-rubycritic --path tmp/custom_dir   # outputs to /home/user/projects/foo/tmp/custom_dir
-```
-
-Or full paths:
-
-```bash
-rubycritic --path /home/custom_dir # outputs to /home/custom_dir
-```
-
 For a full list of the command-line options run:
 
 ```bash
 $ rubycritic --help
 ```
 
+| Command flag             | Description                             |
+|--------------------------|-----------------------------------------|
+| `-v/--version`           | Displays the current version and exits. |
+| `-p/--path`              | Customizes the output directory.        |
+
+Alternative Usage Methods
+-------------------------
+
+If you're fond of Guard you might like [guard-rubycritic][4]. It automatically analyses your Ruby files as they are modified.
+
+For continuous integration, you can give [Jenkins CI][5] a spin. With it, you can easily build your own (poor-man's) Code Climate!
+
+Improving RubyCritic
+--------------------
+
+RubyCritic doesn't have to remain a second choice to other code quality analysis services. Together, we can improve it and continue to build on the great code metric tools that are available in the Ruby ecosystem.
+
+Arguably, the [better_errors gem][6] only got popular after receiving a [(pretty awesome) Pull Request][7] that changed its page design.
+
+Similarly, Pull Requests that improve the look and feel of the gem, that tweak the calculation of ratings or that fix existing issues will be most welcome. This is my first gem, so just commenting on an issue and giving some insight into how something should work will be appreciated. No contribution is too small.
+
+See RubyCritic's [contribution guidelines](CONTRIBUTING.md) about how to proceed.
+
 [1]: https://github.com/troessner/reek
 [2]: https://github.com/seattlerb/flay
+[3]: https://github.com/seattlerb/flog
+[4]: https://github.com/whitesmith/guard-rubycritic
+[5]: http://jenkins-ci.org/
+[6]: https://github.com/charliesome/better_errors
+[7]: https://github.com/charliesome/better_errors/pull/22
