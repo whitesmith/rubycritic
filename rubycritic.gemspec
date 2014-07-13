@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "virtus", "~> 1.0"
   spec.add_runtime_dependency "flay", "2.4.0"
-  spec.add_runtime_dependency "flog", "4.2.0"
+  spec.add_runtime_dependency "flog", "4.2.1"
   spec.add_runtime_dependency "reek", "1.3.8"
   spec.add_runtime_dependency "parser", "~> 2.1"
 
