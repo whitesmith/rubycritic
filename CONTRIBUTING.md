@@ -10,7 +10,7 @@ RubyCritic is open source and contributions from the community are encouraged! N
 Writing some Code
 -----------------
 
-If you want to squash a bug or add a new feature, follow these guidelines:
+If you want to squash a bug or add a new feature, please:
 
 1. Fork the project.
 
@@ -31,14 +31,14 @@ Each commit should do one thing and one thing only. For example, all whitespace 
 8. [Hide the sausage making][3]. Squash, split and reorder commits if necessary (`git rebase -i`).
 For a more in-depth look at interactive rebasing, be sure to check [how to rewrite history][4].
 
-9. Push to the branch to GitHub (`git push origin my-new-feature`).
+9. Push the branch to GitHub (`git push origin my-new-feature`).
 
 10. Create a new [Pull Request][5] and send it to be merged with the master branch.
 
 Improving the Documentation
 ---------------------------
 
-You are encouraged to clarify how something works or to simply fix a typo. Please include `[ci skip]` on a new line in your commit message. This will signal [Travis][2] that running the test suite is not necessary for these changes.
+You are welcome to clarify how something works or simply fix a typo. Please include `[ci skip]` on a new line in each of your commit messages. This will signal [Travis][2] that running the test suite is not necessary for these changes.
 
 Reporting a Bug
 ---------------
@@ -65,4 +65,4 @@ If you are experiencing unexpected behavior and, after having read Rubycritic's 
 [3]: http://sethrobertson.github.io/GitBestPractices/#sausage
 [4]: http://git-scm.com/book/en/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages
 [5]: https://help.github.com/articles/creating-a-pull-request
-[6]: https://github.com/whitesmith/rubycritic/issues
+[6]: https://github.com/whitesmith/rubycritic/search?type=Issues
