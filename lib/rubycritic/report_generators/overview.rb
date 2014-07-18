@@ -1,5 +1,5 @@
 require "rubycritic/report_generators/base"
-require "rubycritic/turbulence"
+require "rubycritic/report_generators/turbulence"
 
 module Rubycritic
   module Generator

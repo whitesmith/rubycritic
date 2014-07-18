@@ -1,5 +1,5 @@
 require "test_helper"
-require "rubycritic/turbulence"
+require "rubycritic/report_generators/turbulence"
 
 describe Rubycritic::Turbulence do
   describe "#data" do
