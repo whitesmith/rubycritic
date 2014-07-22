@@ -25,6 +25,8 @@ module Rubycritic
 
       def parse_content(content)
         Parser::CurrentRuby.parse(content) || AST::EmptyNode.new
+      rescue Parser::SyntaxError => error
+        AST::EmptyNode.new
       end
     end
 

@@ -17,4 +17,12 @@ describe Rubycritic::Analyser::Stats do
       analysed_file.methods_count.must_equal 0
     end
   end
+
+  context "when a file is unparsable" do
+    it "does not blow up" do
+      analysed_file = AnalysedFileDouble.new(:path => "test/samples/stats/unparsable_example.rb")
+      Rubycritic::Analyser::Stats.new([analysed_file]).run
+      analysed_file.methods_count.must_equal 0
+    end
+  end
 end
