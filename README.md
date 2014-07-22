@@ -96,14 +96,14 @@ Alternative Usage Methods
 
 If you're fond of Guard you might like [guard-rubycritic][4]. It automatically analyses your Ruby files as they are modified.
 
-For continuous integration, you can give [Jenkins CI][5] a spin. With it, you can easily build your own (poor-man's) Code Climate!
+For continuous integration, you can give [Jenkins CI][5] a spin. With it, you can [easily build your own (poor-man's) Code Climate][6]!
 
 Improving RubyCritic
 --------------------
 
 RubyCritic doesn't have to remain a second choice to other code quality analysis services. Together, we can improve it and continue to build on the great code metric tools that are available in the Ruby ecosystem.
 
-Arguably, the [better_errors gem][6] only got popular after receiving a [(pretty awesome) Pull Request][7] that changed its page design.
+Arguably, the [better_errors gem][7] only got popular after receiving a [(pretty awesome) Pull Request][8] that changed its page design.
 
 Similarly, Pull Requests that improve the look and feel of the gem, that tweak the calculation of ratings or that fix existing issues will be most welcome. This is my first gem, so just commenting on an issue and giving some insight into how something should work will be appreciated. No contribution is too small.
 
@@ -114,5 +114,6 @@ See RubyCritic's [contribution guidelines](CONTRIBUTING.md) about how to proceed
 [3]: https://github.com/seattlerb/flog
 [4]: https://github.com/whitesmith/guard-rubycritic
 [5]: http://jenkins-ci.org/
-[6]: https://github.com/charliesome/better_errors
-[7]: https://github.com/charliesome/better_errors/pull/22
+[6]: https://github.com/whitesmith/rubycritic/wiki/Building-your-own-Code-Climate
+[7]: https://github.com/charliesome/better_errors
+[8]: https://github.com/charliesome/better_errors/pull/22
