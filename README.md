@@ -107,7 +107,7 @@ Arguably, the [better_errors gem][7] only got popular after receiving a [(pretty
 
 Similarly, Pull Requests that improve the look and feel of the gem, that tweak the calculation of ratings or that fix existing issues will be most welcome. This is my first gem, so just commenting on an issue and giving some insight into how something should work will be appreciated. No contribution is too small.
 
-See RubyCritic's [contribution guidelines](CONTRIBUTING.md) about how to proceed.
+See RubyCritic's [contributing guidelines](CONTRIBUTING.md) about how to proceed.
 
 [1]: https://github.com/troessner/reek
 [2]: https://github.com/seattlerb/flay
