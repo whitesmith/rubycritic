@@ -22,7 +22,7 @@ module Rubycritic
     end
 
     def run
-      ANALYSERS.map do |analyser|
+      ANALYSERS.each do |analyser|
         analyser.new(@analysed_files).run
       end
       Analyser::Churn.new(@analysed_files, @source_control_system).run
