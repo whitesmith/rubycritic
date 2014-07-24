@@ -10,7 +10,6 @@ module Rubycritic
     class Main < Base
       def initialize(analysed_files)
         @analysed_files = analysed_files
-        @smells = analysed_files.flat_map(&:smells).uniq
       end
 
       def generate_report
@@ -34,13 +33,17 @@ module Rubycritic
       end
 
       def smells_index_generator
-        Generator::SmellsIndex.new(@smells)
+        Generator::SmellsIndex.new(smells)
       end
 
       def file_generators
         @analysed_files.map do |analysed_file|
           Generator::CodeFile.new(analysed_file)
         end
+      end
+
+      def smells
+        @analysed_files.flat_map(&:smells).uniq
       end
 
       def report_location
