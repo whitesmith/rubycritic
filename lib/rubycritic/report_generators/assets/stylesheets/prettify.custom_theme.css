@@ -60,6 +60,7 @@
 /* Specify class=linenums on a pre to get line numbering */
 .prettyprint ol.linenums {
     padding-left: 60px;
+    background: white;
 }
 
 .prettyprint li {

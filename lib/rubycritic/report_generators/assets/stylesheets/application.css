@@ -9,6 +9,7 @@
 html {
   overflow-y: scroll;
   font-family: 'Source Sans Pro';
+  background-color: #efefef;
 }
 
 .project-header {
@@ -46,15 +47,17 @@ html {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
+  background-color: white;
 }
 
 .index-table th {
   text-align: left;
   padding: 8px 10px;
-  border-bottom: 1px solid silver;
+  border: 1px solid transparent;
+  border-bottom-color: silver;
   font-size: 1.55em;
   font-weight: normal;
-  background-color: white;
+  background-color: #efefef;
 }
 
 .index-table .circle {
@@ -70,11 +73,18 @@ html {
 .sortable-table .headerSortUp,
 .sortable-table .headerSortDown {
   border: 1px solid silver;
-  border-bottom: 0;
+  border-bottom-color: transparent;
+  background-color: white;
+}
+
+.sortable-table .headerSortUp:hover,
+.sortable-table .headerSortDown:hover {
+  background-color: rgba(0, 0, 0, 0.025);
+  cursor: pointer;
 }
 
 .sortable-table th:hover {
-  background-color: #ECECEC;
+  background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
@@ -83,11 +93,11 @@ html {
 }
 
 .index-table .first-cell {
-  padding-left: 60px;
+  padding-left: 30px;
 }
 
 .index-table .last-cell {
-  padding-right: 60px;
+  padding-right: 30px;
 }
 
 .index-table .numeric-cell {
@@ -118,8 +128,8 @@ html {
 .circled-text {
   text-align: center;
   color: white;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.25em;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -128,11 +138,13 @@ html {
 }
 
 .smells-index-table .circled-text {
-  font-size: 10px;
+  font-size: 0.75em;
+  text-transform: uppercase;
 }
 
 .status-old {
   background-color: #FFDC00;
+  color: #B3B3B3;
 }
 
 .status-new {
@@ -153,7 +165,8 @@ html {
 .file-header .circled-text {
   float: left;
   line-height: 50px;
-  font-size: 32px;
+  font-size: 2.25em;
+  font-weight: 800;
 }
 
 .rating-a {
