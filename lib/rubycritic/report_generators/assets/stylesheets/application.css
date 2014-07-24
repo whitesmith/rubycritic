@@ -1,3 +1,5 @@
+@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
 .group:after {
   content: '';
   display: table;
@@ -6,6 +8,7 @@
 
 html {
   overflow-y: scroll;
+  font-family: 'Source Sans Pro';
 }
 
 .project-header {
