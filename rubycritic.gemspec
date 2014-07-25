@@ -8,10 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Rubycritic::VERSION
   spec.authors       = ["Guilherme Simoes"]
   spec.email         = ["guilherme.rdems@gmail.com"]
-  spec.description   = <<-EOF
-    Ruby Critic is a tool that detects and reports smells in Ruby classes, modules and methods.
-  EOF
-  spec.summary       = "Ruby code smell detector"
+  spec.description   = "RubyCritic is a tool that wraps around various static analysis gems "\
+    "to provide a quality report of your Ruby code."
+  spec.summary       = "RubyCritic is a Ruby code quality reporter"
   spec.homepage      = "https://github.com/whitesmith/rubycritic"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 1.9.3"
