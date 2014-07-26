@@ -6,6 +6,7 @@ module Rubycritic
   class AnalysedModule
     include Virtus.model
 
+    attribute :name
     attribute :pathname
     attribute :smells,        Array,   :default => []
     attribute :churn
@@ -13,10 +14,6 @@ module Rubycritic
     attribute :complexity
     attribute :duplication,   Integer, :default => 0
     attribute :methods_count
-
-    def name
-      @name ||= pathname.basename.sub_ext("").to_s
-    end
 
     def path
       @path ||= pathname.to_s

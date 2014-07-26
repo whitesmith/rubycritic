@@ -5,11 +5,13 @@ require "rubycritic/core/smell"
 describe Rubycritic::AnalysedModule do
   describe "attribute readers" do
     before do
-      @pathname = Pathname.new("foo/bar.rb")
+      @name = "Foo"
+      @pathname = Pathname.new("foo.rb")
       @smells = []
       @churn = 1
       @complexity = 2
       @analysed_module = Rubycritic::AnalysedModule.new(
+        :name       => @name,
         :pathname   => @pathname,
         :smells     => @smells,
         :churn      => @churn,
@@ -17,8 +19,16 @@ describe Rubycritic::AnalysedModule do
       )
     end
 
+    it "has a name reader" do
+      @analysed_module.name.must_equal @name
+    end
+
     it "has a pathname reader" do
       @analysed_module.pathname.must_equal @pathname
+    end
+
+    it "has a path reader" do
+      @analysed_module.path.must_equal @pathname.to_s
     end
 
     it "has a smells reader" do
@@ -31,14 +41,6 @@ describe Rubycritic::AnalysedModule do
 
     it "has a complexity reader" do
       @analysed_module.complexity.must_equal @complexity
-    end
-
-    it "has a name reader" do
-      @analysed_module.name.must_equal "bar"
-    end
-
-    it "has a path reader" do
-      @analysed_module.path.must_equal @pathname.to_s
     end
   end
 
