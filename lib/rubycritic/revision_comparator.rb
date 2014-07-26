@@ -2,6 +2,7 @@ require "rubycritic/serializer"
 require "rubycritic/files_initializer"
 require "rubycritic/analysers_runner"
 require "rubycritic/smells_status_setter"
+require "rubycritic/version"
 
 module Rubycritic
 
@@ -40,6 +41,7 @@ module Rubycritic
       @revision_file ||= File.join(
         ::Rubycritic.configuration.root,
         SNAPSHOTS_DIR_NAME,
+        VERSION,
         @source_control_system.head_reference
       )
     end
