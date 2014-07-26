@@ -16,16 +16,16 @@ module Rubycritic
       Analyser::Stats
     ]
 
-    def initialize(analysed_files, source_control_system)
-      @analysed_files = analysed_files
+    def initialize(analysed_modules, source_control_system)
+      @analysed_modules = analysed_modules
       @source_control_system = source_control_system
     end
 
     def run
       ANALYSERS.each do |analyser|
-        analyser.new(@analysed_files).run
+        analyser.new(@analysed_modules).run
       end
-      Analyser::Churn.new(@analysed_files, @source_control_system).run
+      Analyser::Churn.new(@analysed_modules, @source_control_system).run
     end
   end
 

@@ -1,5 +1,5 @@
 require "rubycritic/source_control_systems/base"
-require "rubycritic/files_initializer"
+require "rubycritic/modules_initializer"
 require "rubycritic/analysers_runner"
 require "rubycritic/revision_comparator"
 
@@ -11,12 +11,12 @@ module Rubycritic
     end
 
     def critique(paths)
-      analysed_files = FilesInitializer.init(paths)
-      AnalysersRunner.new(analysed_files, @source_control_system).run
+      analysed_modules = ModulesInitializer.init(paths)
+      AnalysersRunner.new(analysed_modules, @source_control_system).run
       if @source_control_system.has_revision?
-        RevisionComparator.new(analysed_files, @source_control_system).set_statuses
+        RevisionComparator.new(analysed_modules, @source_control_system).set_statuses
       end
-      analysed_files
+      analysed_modules
     end
   end
 

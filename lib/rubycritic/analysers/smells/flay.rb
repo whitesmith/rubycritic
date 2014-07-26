@@ -5,30 +5,30 @@ module Rubycritic
   module Analyser
 
     class FlaySmells
-      def initialize(analysed_files)
-        @analysed_files = paths_to_analysed_files(analysed_files)
-        @flay = Flay.new(@analysed_files.keys)
+      def initialize(analysed_modules)
+        @analysed_modules = paths_to_analysed_modules(analysed_modules)
+        @flay = Flay.new(@analysed_modules.keys)
       end
 
       def run
         @flay.hashes.each do |structural_hash, nodes|
           smell = create_smell(structural_hash, nodes)
           nodes.map(&:file).uniq.each do |file|
-            @analysed_files[file].smells << smell
+            @analysed_modules[file].smells << smell
           end
 
           nodes.each do |node|
-            @analysed_files[node.file].duplication += node.mass
+            @analysed_modules[node.file].duplication += node.mass
           end
         end
       end
 
       private
 
-      def paths_to_analysed_files(analysed_files)
+      def paths_to_analysed_modules(analysed_modules)
         paths = {}
-        analysed_files.each do |analysed_file|
-          paths[analysed_file.path] = analysed_file
+        analysed_modules.each do |analysed_module|
+          paths[analysed_module.path] = analysed_module
         end
         paths
       end

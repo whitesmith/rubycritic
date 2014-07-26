@@ -6,8 +6,8 @@ module Rubycritic
     class CodeIndex < Base
       TEMPLATE = erb_template("code_index.html.erb")
 
-      def initialize(analysed_files)
-        @analysed_files = analysed_files
+      def initialize(analysed_modules)
+        @analysed_modules = analysed_modules
       end
 
       def file_name

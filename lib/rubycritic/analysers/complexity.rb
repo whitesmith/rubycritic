@@ -4,16 +4,16 @@ module Rubycritic
   module Analyser
 
     class Complexity
-      def initialize(analysed_files)
+      def initialize(analysed_modules)
         @flog = Flog.new
-        @analysed_files = analysed_files
+        @analysed_modules = analysed_modules
       end
 
       def run
-        @analysed_files.each do |analysed_file|
+        @analysed_modules.each do |analysed_module|
           @flog.reset
-          @flog.flog(analysed_file.path)
-          analysed_file.complexity = @flog.total_score.round
+          @flog.flog(analysed_module.path)
+          analysed_module.complexity = @flog.total_score.round
         end
       end
     end

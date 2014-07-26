@@ -3,7 +3,7 @@ require "rubycritic/core/rating"
 
 module Rubycritic
 
-  class AnalysedFile
+  class AnalysedModule
     include Virtus.model
 
     attribute :pathname

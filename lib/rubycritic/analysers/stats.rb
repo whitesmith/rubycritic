@@ -5,13 +5,13 @@ module Rubycritic
   module Analyser
 
     class Stats
-      def initialize(analysed_files)
-        @analysed_files = analysed_files
+      def initialize(analysed_modules)
+        @analysed_modules = analysed_modules
       end
 
       def run
-        @analysed_files.each do |analysed_file|
-          analysed_file.methods_count = methods_count(analysed_file.path)
+        @analysed_modules.each do |analysed_module|
+          analysed_module.methods_count = methods_count(analysed_module.path)
         end
       end
 

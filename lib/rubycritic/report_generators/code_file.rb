@@ -8,9 +8,9 @@ module Rubycritic
       LINE_NUMBER_OFFSET = 1
       TEMPLATE = erb_template("code_file.html.erb")
 
-      def initialize(analysed_file)
-        @analysed_file = analysed_file
-        @pathname = @analysed_file.pathname
+      def initialize(analysed_module)
+        @analysed_module = analysed_module
+        @pathname = @analysed_module.pathname
       end
 
       def file_directory
@@ -25,7 +25,7 @@ module Rubycritic
         file_code = ""
         File.readlines(@pathname).each.with_index(LINE_NUMBER_OFFSET) do |line_text, line_number|
           location = Location.new(@pathname, line_number)
-          line_smells = @analysed_file.smells_at_location(location)
+          line_smells = @analysed_module.smells_at_location(location)
           file_code << Line.new(file_directory, line_text, line_smells).render
         end
 

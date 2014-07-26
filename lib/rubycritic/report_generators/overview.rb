@@ -7,8 +7,8 @@ module Rubycritic
     class Overview < Base
       TEMPLATE = erb_template("overview.html.erb")
 
-      def initialize(analysed_files)
-        @turbulence_data = Turbulence.data(analysed_files)
+      def initialize(analysed_modules)
+        @turbulence_data = Turbulence.data(analysed_modules)
       end
 
       def file_name
