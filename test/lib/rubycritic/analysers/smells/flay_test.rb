@@ -7,8 +7,6 @@ describe Rubycritic::Analyser::FlaySmells do
   before do
     @analysed_file = Rubycritic::AnalysedFile.new(
       :pathname => Pathname.new("test/samples/flay/smelly.rb"),
-      :smells => [],
-      :duplication => 0
     )
     analysed_files = [@analysed_file]
     Rubycritic::Analyser::FlaySmells.new(analysed_files).run

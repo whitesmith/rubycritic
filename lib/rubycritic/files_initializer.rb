@@ -7,7 +7,7 @@ module Rubycritic
     def self.init(paths)
       source = SourceLocator.new(paths)
       source.pathnames.map do |pathname|
-        AnalysedFile.new(:pathname => pathname, :smells => [], :duplication => 0)
+        AnalysedFile.new(:pathname => pathname)
       end
     end
   end

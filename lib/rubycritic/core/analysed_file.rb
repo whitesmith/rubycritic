@@ -7,11 +7,11 @@ module Rubycritic
     include Virtus.model
 
     attribute :pathname
-    attribute :smells
+    attribute :smells,        Array,   :default => []
     attribute :churn
     attribute :committed_at
     attribute :complexity
-    attribute :duplication
+    attribute :duplication,   Integer, :default => 0
     attribute :methods_count
 
     def name
