@@ -22,7 +22,7 @@ describe Rubycritic::ViewHelpers do
 
     describe "#asset_path" do
       it "creates a relative path to an asset" do
-        generator.asset_path("stylesheets", "application.css").to_s
+        generator.asset_path("stylesheets/application.css").to_s
           .must_equal "assets/stylesheets/application.css"
       end
     end
@@ -47,7 +47,7 @@ describe Rubycritic::ViewHelpers do
 
     describe "#asset_path" do
       it "creates a relative path to an asset" do
-        generator.asset_path("stylesheets", "application.css").to_s
+        generator.asset_path("stylesheets/application.css").to_s
           .must_equal "../assets/stylesheets/application.css"
       end
     end
@@ -72,7 +72,7 @@ describe Rubycritic::ViewHelpers do
 
     describe "#asset_path" do
       it "creates a relative path to an asset" do
-        generator.asset_path("stylesheets", "application.css").to_s
+        generator.asset_path("stylesheets/application.css").to_s
           .must_equal "../../../assets/stylesheets/application.css"
       end
     end

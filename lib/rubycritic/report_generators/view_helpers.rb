@@ -6,15 +6,15 @@ module Rubycritic
     end
 
     def javascript_tag(file)
-      "<script src='" + asset_path("javascripts", "#{file}.js").to_s + "'></script>"
+      "<script src='" + asset_path("javascripts/#{file}.js").to_s + "'></script>"
     end
 
     def stylesheet_path(file)
-      asset_path("stylesheets", "#{file}.css")
+      asset_path("stylesheets/#{file}.css")
     end
 
-    def asset_path(*fragments)
-      relative_path(([root_directory, "assets"] + fragments).reduce(:+))
+    def asset_path(file)
+      relative_path(root_directory + "assets" + file)
     end
 
     def file_path(file)
