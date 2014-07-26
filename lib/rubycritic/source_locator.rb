@@ -27,7 +27,7 @@ module Rubycritic
         elsif File.exists?(path) && File.extname(path) == RUBY_EXTENSION
           Pathname.new(path)
         end
-      end.flatten.compact.map(&:cleanpath).sort
+      end.flatten.compact.map(&:cleanpath)
     end
   end
 
