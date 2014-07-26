@@ -3,7 +3,7 @@ require "rubycritic/core/smell"
 require "rubycritic/smells_status_setter"
 
 describe Rubycritic::SmellsStatusSetter do
-  describe "#smells" do
+  describe "::smells" do
     before do
       @smell = Rubycritic::Smell.new(:context => "#bar")
       @smells = [@smell]
