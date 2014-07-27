@@ -3,7 +3,7 @@ require "rubycritic/analysers/smells/flog"
 require "rubycritic/analysers/smells/reek"
 require "rubycritic/analysers/complexity"
 require "rubycritic/analysers/churn"
-require "rubycritic/analysers/stats"
+require "rubycritic/analysers/attributes"
 
 module Rubycritic
 
@@ -13,7 +13,7 @@ module Rubycritic
       Analyser::FlogSmells,
       Analyser::ReekSmells,
       Analyser::Complexity,
-      Analyser::Stats
+      Analyser::Attributes
     ]
 
     def initialize(analysed_modules, source_control_system)

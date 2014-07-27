@@ -4,7 +4,7 @@ require "rubycritic/analysers/adapters/ast_node"
 module Rubycritic
   module Analyser
 
-    class Stats
+    class Attributes
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
       end
