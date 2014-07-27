@@ -3,12 +3,12 @@ require "json"
 module Rubycritic
 
   module Turbulence
-    def self.data(analysed_files)
-      analysed_files.map do |analysed_file|
+    def self.data(analysed_modules)
+      analysed_modules.map do |analysed_module|
         {
-          :name => analysed_file.pathname,
-          :x => analysed_file.churn,
-          :y => analysed_file.complexity
+          :name => analysed_module.name,
+          :x => analysed_module.churn,
+          :y => analysed_module.complexity
         }
       end.to_json
     end

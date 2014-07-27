@@ -34,8 +34,8 @@ module Rubycritic
       end.parse!(@argv)
 
       if @main_command
-        analysed_files = Orchestrator.new.critique(@argv)
-        report_location = Reporter::Main.new(analysed_files).generate_report
+        analysed_modules = Orchestrator.new.critique(@argv)
+        report_location = Reporter::Main.new(analysed_modules).generate_report
         puts "New critique at #{report_location}"
       end
 

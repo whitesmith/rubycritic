@@ -8,8 +8,8 @@ module Rubycritic
   module Reporter
 
     class Main < Base
-      def initialize(analysed_files)
-        @analysed_files = analysed_files
+      def initialize(analysed_modules)
+        @analysed_modules = analysed_modules
       end
 
       def generate_report
@@ -25,25 +25,21 @@ module Rubycritic
       end
 
       def overview_generator
-        @overview_generator ||= Generator::Overview.new(@analysed_files)
+        @overview_generator ||= Generator::Overview.new(@analysed_modules)
       end
 
       def code_index_generator
-        Generator::CodeIndex.new(@analysed_files)
+        Generator::CodeIndex.new(@analysed_modules)
       end
 
       def smells_index_generator
-        Generator::SmellsIndex.new(smells)
+        Generator::SmellsIndex.new(@analysed_modules)
       end
 
       def file_generators
-        @analysed_files.map do |analysed_file|
-          Generator::CodeFile.new(analysed_file)
+        @analysed_modules.map do |analysed_module|
+          Generator::CodeFile.new(analysed_module)
         end
-      end
-
-      def smells
-        @analysed_files.flat_map(&:smells).uniq
       end
 
       def report_location

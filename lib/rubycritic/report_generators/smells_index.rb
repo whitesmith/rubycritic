@@ -6,8 +6,9 @@ module Rubycritic
     class SmellsIndex < Base
       TEMPLATE = erb_template("smells_index.html.erb")
 
-      def initialize(smells)
-        @smells = smells
+      def initialize(analysed_modules)
+        @smells = analysed_modules.flat_map(&:smells).uniq
+        @analysed_module_names = analysed_module_names(analysed_modules)
       end
 
       def file_name
@@ -17,6 +18,16 @@ module Rubycritic
       def render
         index_body = TEMPLATE.result(get_binding)
         LAYOUT_TEMPLATE.result(get_binding { index_body })
+      end
+
+      private
+
+      def analysed_module_names(analysed_modules)
+        names = {}
+        analysed_modules.each do |analysed_module|
+          names[analysed_module.pathname] = analysed_module.name
+        end
+        names
       end
     end
 

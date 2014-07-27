@@ -5,8 +5,8 @@ module Rubycritic
   module Reporter
 
     class Mini < Base
-      def initialize(analysed_files)
-        @analysed_file = analysed_files.first
+      def initialize(analysed_modules)
+        @analysed_module = analysed_modules.first
       end
 
       def generate_report
@@ -18,7 +18,7 @@ module Rubycritic
       private
 
       def file_generator
-        @file_generator ||= Generator::CurrentCodeFile.new(@analysed_file)
+        @file_generator ||= Generator::CurrentCodeFile.new(@analysed_module)
       end
 
       def report_location

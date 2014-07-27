@@ -12,7 +12,7 @@
       <td class="first-cell"><%= smell.type %></td>
       <td>
         <% smell.locations.each do |location| %>
-          <a href="<%= smell_location_path(location) %>"><%= location.file_name %></a>
+          <a href="<%= smell_location_path(location) %>"><%= @analysed_module_names[location.pathname] %></a>
         <% end %>
       </td>
       <td class="centered-cell last-cell"><span class="status-<%= smell.status %> circled-text circle"><%= smell.status %></span></td>

@@ -1,10 +1,10 @@
 <div class="file-header group">
-  <span class="rating-<%= @analysed_file.rating.to_s.downcase %> circled-text circle "><%= @analysed_file.rating %></span>
-  <h2 class="file-name"><%= @analysed_file.name %></h2>
+  <span class="rating-<%= @analysed_module.rating.to_s.downcase %> circled-text circle "><%= @analysed_module.rating %></span>
+  <h2 class="file-name"><%= @analysed_module.name %></h2>
 
   <span class="file-committed-at">
-    <% if @analysed_file.committed_at %>
-      Updated <%= timeago_tag(@analysed_file.committed_at) %>
+    <% if @analysed_module.committed_at %>
+      Updated <%= timeago_tag(@analysed_module.committed_at) %>
     <% else %>
       Never committed
     <% end %>
@@ -12,23 +12,23 @@
 
   <div class="file-stats group">
     <div class="file-stat">
-      <%= @analysed_file.complexity %> complexity
+      <%= @analysed_module.complexity %> complexity
     </div>
     <div class="file-stat">
-      <%= @analysed_file.complexity_per_method %> complexity per method
+      <%= @analysed_module.complexity_per_method %> complexity per method
     </div>
     <div class="file-stat">
-      <%= @analysed_file.churn %> churn
+      <%= @analysed_module.churn %> churn
     </div>
     <div class="file-stat">
-      <%= @analysed_file.methods_count %> methods
+      <%= @analysed_module.methods_count %> methods
     </div>
     <div class="file-stat">
-      <%= @analysed_file.duplication %> duplication
+      <%= @analysed_module.duplication %> duplication
     </div>
   </div>
 
-  <% if @analysed_file.has_smells? %>
+  <% if @analysed_module.has_smells? %>
     <button id="js-toggle-smells" class="smells-toggle-button button">Toggle Smells</button>
   <% end %>
 </div>
