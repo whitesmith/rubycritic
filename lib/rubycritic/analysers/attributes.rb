@@ -10,7 +10,7 @@ module Rubycritic
 
       def run
         @analysed_modules.each do |analysed_module|
-          analysed_module.methods_count = MethodsCounter.count(analysed_module.path)
+          analysed_module.methods_count = MethodsCounter.new(analysed_module).count
         end
       end
     end
