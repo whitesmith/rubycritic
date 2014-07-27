@@ -1,5 +1,5 @@
 require "parser/current"
-require "rubycritic/analysers/adapters/ast_node"
+require "rubycritic/analysers/helpers/ast_node"
 
 module Rubycritic
 

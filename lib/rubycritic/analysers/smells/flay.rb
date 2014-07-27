@@ -1,4 +1,4 @@
-require "rubycritic/analysers/adapters/flay"
+require "rubycritic/analysers/helpers/flay"
 require "rubycritic/core/smell"
 
 module Rubycritic

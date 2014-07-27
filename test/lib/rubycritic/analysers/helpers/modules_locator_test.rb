@@ -1,5 +1,5 @@
 require "test_helper"
-require "rubycritic/analysers/adapters/modules_locator"
+require "rubycritic/analysers/helpers/modules_locator"
 
 describe Rubycritic::ModulesLocator do
   describe "::names" do

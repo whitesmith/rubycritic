@@ -1,4 +1,4 @@
-require "rubycritic/analysers/adapters/methods_counter"
+require "rubycritic/analysers/helpers/methods_counter"
 
 module Rubycritic
   module Analyser

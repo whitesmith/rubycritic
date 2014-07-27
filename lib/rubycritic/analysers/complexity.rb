@@ -1,4 +1,4 @@
-require "rubycritic/analysers/adapters/flog"
+require "rubycritic/analysers/helpers/flog"
 
 module Rubycritic
   module Analyser

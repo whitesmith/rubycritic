@@ -1,4 +1,4 @@
-require "rubycritic/analysers/adapters/reek"
+require "rubycritic/analysers/helpers/reek"
 require "rubycritic/core/smell"
 
 module Rubycritic

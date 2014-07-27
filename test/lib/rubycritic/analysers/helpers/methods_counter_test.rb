@@ -1,5 +1,5 @@
 require "analysers_test_helper"
-require "rubycritic/analysers/adapters/methods_counter"
+require "rubycritic/analysers/helpers/methods_counter"
 
 describe Rubycritic::MethodsCounter do
   describe "::count" do
