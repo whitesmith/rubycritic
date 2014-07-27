@@ -33,17 +33,13 @@ module Rubycritic
       end
 
       def smells_index_generator
-        Generator::SmellsIndex.new(smells)
+        Generator::SmellsIndex.new(@analysed_modules)
       end
 
       def file_generators
         @analysed_modules.map do |analysed_module|
           Generator::CodeFile.new(analysed_module)
         end
-      end
-
-      def smells
-        @analysed_modules.flat_map(&:smells).uniq
       end
 
       def report_location
