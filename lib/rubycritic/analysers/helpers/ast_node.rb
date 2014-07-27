@@ -63,6 +63,10 @@ module Rubycritic
       def count_nodes_of_type(*types)
         0
       end
+
+      def get_module_names
+        []
+      end
     end
 
   end

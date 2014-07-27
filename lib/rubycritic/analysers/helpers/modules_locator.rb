@@ -14,25 +14,32 @@ module Rubycritic
 
     def names
       return name_from_path if @analysed_module.methods_count == 0
-
-      content = File.read(@analysed_module.path)
-      node = Parser::CurrentRuby.parse(content)
-      return name_from_path unless node
-
       names = node.get_module_names
       if names.empty?
         name_from_path
       else
         names
       end
-    rescue Parser::SyntaxError => error
-      name_from_path
     end
 
     private
 
+    def node
+      Parser::CurrentRuby.parse(content) || AST::EmptyNode.new
+    rescue Parser::SyntaxError => error
+      AST::EmptyNode.new
+    end
+
+    def content
+      File.read(@analysed_module.path)
+    end
+
     def name_from_path
-      [@analysed_module.pathname.basename.sub_ext("").to_s.split("_").map(&:capitalize).join]
+      [file_name.split("_").map(&:capitalize).join]
+    end
+
+    def file_name
+      @analysed_module.pathname.basename.sub_ext("").to_s
     end
   end
 
