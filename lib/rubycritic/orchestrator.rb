@@ -14,7 +14,7 @@ module Rubycritic
       analysed_modules = ModulesInitializer.init(paths)
       AnalysersRunner.new(analysed_modules, @source_control_system).run
       if @source_control_system.has_revision?
-        RevisionComparator.new(analysed_modules, @source_control_system).set_statuses
+        RevisionComparator.new(analysed_modules, @source_control_system, paths).set_statuses
       end
       analysed_modules
     end
