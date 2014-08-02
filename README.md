@@ -109,6 +109,13 @@ Similarly, Pull Requests that improve the look and feel of the gem, that tweak t
 
 See RubyCritic's [contributing guidelines](CONTRIBUTING.md) about how to proceed.
 
+Credits
+-------
+
+![Whitesmith](http://i.imgur.com/Si2l3kd.png)
+
+RubyCritic is maintained and funded by [Whitesmith][9]. Tweet your questions or suggestions to [@glitchdout][10] or [@Whitesmithco][11].
+
 [1]: https://github.com/troessner/reek
 [2]: https://github.com/seattlerb/flay
 [3]: https://github.com/seattlerb/flog
@@ -117,3 +124,6 @@ See RubyCritic's [contributing guidelines](CONTRIBUTING.md) about how to proceed
 [6]: https://github.com/whitesmith/rubycritic/wiki/Building-your-own-Code-Climate
 [7]: https://github.com/charliesome/better_errors
 [8]: https://github.com/charliesome/better_errors/pull/22
+[9]: http://www.whitesmith.co/
+[10]: https://twitter.com/glitchdout
+[11]: https://twitter.com/Whitesmithco
