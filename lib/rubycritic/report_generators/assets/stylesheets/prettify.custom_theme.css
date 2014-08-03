@@ -1,3 +1,5 @@
+@import url('http://fonts.googleapis.com/css?family=Source+Code+Pro');
+
 /* Pretty printing styles. Used with prettify.js. */
 
 /* SPAN elements with the classes below are added by prettyprint. */
@@ -51,13 +53,14 @@
 
 /* Put a border around prettyprinted code snippets. */
 .prettyprint {
-    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    font-family: 'Source Code Pro', Consolas, Monaco, 'Andale Mono', monospace;
     white-space: pre-wrap;
 }
 
 /* Specify class=linenums on a pre to get line numbering */
 .prettyprint ol.linenums {
     padding-left: 60px;
+    background: white;
 }
 
 .prettyprint li {
