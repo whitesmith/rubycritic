@@ -1,5 +1,4 @@
-require "parser/current"
-require "rubycritic/analysers/helpers/ast_node"
+require "rubycritic/analysers/helpers/parser"
 
 module Rubycritic
 
@@ -15,9 +14,7 @@ module Rubycritic
     private
 
     def node
-      Parser::CurrentRuby.parse(content) || AST::EmptyNode.new
-    rescue Parser::SyntaxError => error
-      AST::EmptyNode.new
+      Parser.parse(content)
     end
 
     def content
