@@ -33,8 +33,6 @@ module Parser
               "#{module_name}::#{children_module}"
             end
           end
-        elsif children_modules.empty?
-          []
         else
           children_modules
         end
