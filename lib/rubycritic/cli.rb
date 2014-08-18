@@ -36,7 +36,7 @@ module Rubycritic
       if @main_command
         analysed_modules = Orchestrator.new.critique(@argv)
         report_location = Reporter::Main.new(analysed_modules).generate_report
-        puts "New critique at #{report_location}"
+        `open #{report_location}`
       end
 
       STATUS_SUCCESS
