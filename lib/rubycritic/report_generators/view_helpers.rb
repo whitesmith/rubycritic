@@ -14,11 +14,11 @@ module Rubycritic
     end
 
     def asset_path(file)
-      relative_path(root_directory + "assets" + file)
+      relative_path("assets/#{file}")
     end
 
     def file_path(file)
-      relative_path(root_directory + file)
+      relative_path(file)
     end
 
     def smell_location_path(location)
@@ -27,8 +27,8 @@ module Rubycritic
 
     private
 
-    def relative_path(pathname)
-      pathname.relative_path_from(file_directory)
+    def relative_path(file)
+      (root_directory + file).relative_path_from(file_directory)
     end
 
     def file_directory
