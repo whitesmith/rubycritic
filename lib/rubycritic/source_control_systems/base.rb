@@ -19,13 +19,13 @@ module Rubycritic
         if supported_system
           supported_system.new
         else
-          puts "Rubycritic requires a #{system_names} repository."
+          puts "RubyCritic can provide more feedback if you use a #{connected_system_names} repository."
           Double.new
         end
       end
 
-      def self.system_names
-        systems.join(", ")
+      def self.connected_system_names
+        "#{systems[0...-1].join(', ')} or #{systems[-1]}"
       end
 
       def self.supported?
