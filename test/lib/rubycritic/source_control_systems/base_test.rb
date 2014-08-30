@@ -1,7 +1,7 @@
 require "test_helper"
 require "rubycritic/source_control_systems/base"
 
-describe Rubycritic::SourceControlSystem do
+describe Rubycritic::SourceControlSystem::Base do
   before do
     Rubycritic::SourceControlSystem::Base.systems.each do |system|
       system.stubs(:supported?).returns(false)

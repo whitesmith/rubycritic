@@ -12,6 +12,14 @@ module Rubycritic
         "Git"
       end
 
+      def revisions_count(path)
+        `git log --follow --format=oneline #{path.shellescape}`.count("\n")
+      end
+
+      def date_of_last_commit(path)
+        `git log -1 --date=iso --format=%ad #{path.shellescape}`.chomp!
+      end
+
       def has_revision?
         head_reference && $?.success?
       end
@@ -25,14 +33,6 @@ module Rubycritic
         yield
       ensure
         travel_to_original_state if stash_successful
-      end
-
-      def revisions_count(path)
-        `git log --follow --format=oneline #{path.shellescape}`.count("\n")
-      end
-
-      def date_of_last_commit(path)
-        `git log -1 --date=iso --format=%ad #{path.shellescape}`.chomp!
       end
 
       private
