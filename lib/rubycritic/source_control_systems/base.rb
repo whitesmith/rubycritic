@@ -27,30 +27,6 @@ module Rubycritic
       def self.connected_system_names
         "#{systems[0...-1].join(', ')} or #{systems[-1]}"
       end
-
-      def self.supported?
-        raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
-      end
-
-      def revisions_count(path)
-        raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
-      end
-
-      def date_of_last_commit(path)
-        raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
-      end
-
-      def has_revision?
-        raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
-      end
-
-      def head_reference
-        raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
-      end
-
-      def travel_to_head
-        raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
-      end
     end
 
   end
