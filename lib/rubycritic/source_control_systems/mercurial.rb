@@ -8,8 +8,8 @@ module Rubycritic
         `hg verify 2>&1` && $?.success?
       end
 
-      def has_revision?
-        false
+      def self.to_s
+        "Mercurial"
       end
 
       def revisions_count(path)
@@ -20,10 +20,10 @@ module Rubycritic
         `hg log #{path.shellescape} --template '{date|isodate}' --limit 1`.chomp
       end
 
-      def self.to_s
-        "Mercurial"
+      def has_revision?
+        false
       end
-
     end
+
   end
 end
