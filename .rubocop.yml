@@ -1,30 +1,17 @@
-# This is the default configuration file. Enabling and disabling is configured
-# in separate files. This file adds all other parameters apart from Enabled.
-
-inherit_from:
-  - enabled.yml
-  - disabled.yml
-
-# Common configuration.
 AllCops:
-  # Include gemspec and Rakefile
   Include:
     - '**/*.gemspec'
-    - '**/*.podspec'
-    - '**/*.jbuilder'
     - '**/*.rake'
     - '**/Gemfile'
     - '**/Rakefile'
-    - '**/Capfile'
-    - '**/Guardfile'
-    - '**/Podfile'
-    - '**/Thorfile'
-    - '**/Vagrantfile'
   Exclude:
-    - 'vendor/**/*'
+    - 'test/samples/**/*'
   # By default, the rails cops are not run. Override in project or home
   # directory .rubocop.yml files, or by giving the -R/--rails option.
   RunRailsCops: false
+
+Style/AccessorMethodName:
+  Enabled: false
 
 # Indent private/protected/public as deep as method definitions
 Style/AccessModifierIndentation:
@@ -115,6 +102,12 @@ Style/AlignParameters:
   SupportedStyles:
     - with_first_parameter
     - with_fixed_indentation
+  # My prefered method is not available:
+  #     method_call(
+  #       a,
+  #       b
+  #     )
+  Enabled: false
 
 Style/AndOr:
   # Whether `and` and `or` are banned only in conditionals (conditionals)
@@ -173,6 +166,9 @@ Style/ClassCheck:
     - is_a?
     - kind_of?
 
+Style/ClassVars:
+  Enabled: false
+
 # Align with the style guide.
 Style/CollectionMethods:
   # Mapping from undesired method to desired_method
@@ -197,12 +193,18 @@ Style/CommentAnnotation:
     - HACK
     - REVIEW
 
+Style/Documentation:
+  Enabled: false
+
 # Multi-line method chaining should be done with leading dots.
 Style/DotPosition:
   EnforcedStyle: leading
   SupportedStyles:
     - leading
     - trailing
+
+Style/EmptyLinesAroundBody:
+  Enabled: false
 
 # Use empty lines between defs.
 Style/EmptyLineBetweenDefs:
@@ -212,7 +214,7 @@ Style/EmptyLineBetweenDefs:
 
 # Checks whether the source file has a utf-8 encoding comment or not
 Style/Encoding:
-  EnforcedStyle: always
+  EnforcedStyle: when_needed
   SupportedStyles:
     - when_needed
     - always
@@ -251,7 +253,7 @@ Style/GuardClause:
   MinBodyLength: 1
 
 Style/HashSyntax:
-  EnforcedStyle: ruby19
+  EnforcedStyle: hash_rockets
   SupportedStyles:
     - ruby19
     - hash_rockets
@@ -338,6 +340,7 @@ Style/PercentQLiterals:
     - upper_case_q # Always use %Q
 
 Style/PredicateName:
+  Enabled: false
   # Predicate name prefices.
   NamePrefix:
     - is_
@@ -350,7 +353,7 @@ Style/PredicateName:
     - have_
 
 Style/RaiseArgs:
-  EnforcedStyle: exploded
+  EnforcedStyle: compact
   SupportedStyles:
     - compact # raise Exception.new(msg)
     - exploded # raise Exception, msg
@@ -369,6 +372,7 @@ Style/Semicolon:
   AllowAsExpressionSeparator: false
 
 Style/SignalException:
+  Enabled: false
   EnforcedStyle: semantic
   SupportedStyles:
     - only_raise
@@ -388,7 +392,10 @@ Style/SingleLineMethods:
   AllowIfMethodIsEmpty: true
 
 Style/StringLiterals:
-  EnforcedStyle: single_quotes
+  # Disabled until issue 1181 is fixed
+  # https://github.com/bbatsov/rubocop/issues/1181
+  Enabled: false
+  EnforcedStyle: double_quotes
   SupportedStyles:
     - single_quotes
     - double_quotes
@@ -423,10 +430,14 @@ Style/SpaceInsideHashLiteralBraces:
     - no_space
 
 Style/SymbolProc:
+  Enabled: false
   # A list of method names to be ignored by the check.
   # The names should be fairly unique, otherwise you'll end up ignoring lots of code.
   IgnoredMethods:
     - respond_to
+
+Style/SpecialGlobalVars:
+  Enabled: false
 
 Style/TrailingBlankLines:
   EnforcedStyle: final_newline
@@ -482,6 +493,7 @@ Style/VariableName:
     - camelCase
 
 Style/WhileUntilModifier:
+  Enabled: false
   MaxLineLength: 80
 
 Style/WordArray:
@@ -490,7 +502,7 @@ Style/WordArray:
 ##################### Metrics ##################################
 
 Metrics/BlockNesting:
-  Max: 3
+  Max: 2
 
 Metrics/ClassLength:
   CountComments: false  # count full line comments?
@@ -501,15 +513,16 @@ Metrics/CyclomaticComplexity:
   Max: 6
 
 Metrics/LineLength:
-  Max: 80
+  Max: 120
   AllowURI: true
   URISchemes:
     - http
     - https
 
 Metrics/MethodLength:
+  Enabled: false
   CountComments: false  # count full line comments?
-  Max: 10
+  Max: 14
 
 Metrics/ParameterLists:
   Max: 5
@@ -545,40 +558,3 @@ Lint/DefEndAlignment:
   SupportedStyles:
     - start_of_line
     - def
-
-##################### Rails ##################################
-
-Rails/ActionFilter:
-  EnforcedStyle: action
-  SupportedStyles:
-    - action
-    - filter
-  Include:
-    - app/controllers/**/*.rb
-
-Rails/DefaultScope:
-  Include:
-    - app/models/**/*.rb
-
-Rails/HasAndBelongsToMany:
-  Include:
-    - app/models/**/*.rb
-
-Rails/Output:
-  Include:
-    - app/**/*.rb
-    - config/**/*.rb
-    - db/**/*.rb
-    - lib/**/*.rb
-
-Rails/ReadWriteAttribute:
-  Include:
-    - app/models/**/*.rb
-
-Rails/ScopeArgs:
-  Include:
-    - app/models/**/*.rb
-
-Rails/Validation:
-  Include:
-    - app/models/**/*.rb
