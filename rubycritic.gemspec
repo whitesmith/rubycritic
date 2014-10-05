@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 1.9.3"
 
   spec.files         = `git ls-files`.split("\n")
-  spec.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  spec.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   spec.test_files    = `git ls-files -- test/*`.split("\n")
   spec.require_path  = "lib"
 

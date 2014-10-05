@@ -2,10 +2,10 @@ require "bundler/gem_tasks"
 require "rake/testtask"
 require "rubocop/rake_task"
 
-Rake::TestTask.new do |t|
-  t.libs.push "lib"
-  t.libs.push "test"
-  t.pattern = "test/**/*_test.rb"
+Rake::TestTask.new do |task|
+  task.libs.push "lib"
+  task.libs.push "test"
+  task.pattern = "test/**/*_test.rb"
 end
 
 RuboCop::RakeTask.new

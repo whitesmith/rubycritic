@@ -15,7 +15,7 @@ module Rubycritic
       end
 
       def self.create
-        supported_system = systems.detect(&:supported?)
+        supported_system = systems.find(&:supported?)
         if supported_system
           supported_system.new
         else

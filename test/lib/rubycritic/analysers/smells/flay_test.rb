@@ -6,7 +6,7 @@ require "pathname"
 describe Rubycritic::Analyser::FlaySmells do
   before do
     @analysed_module = Rubycritic::AnalysedModule.new(
-      :pathname => Pathname.new("test/samples/flay/smelly.rb"),
+      :pathname => Pathname.new("test/samples/flay/smelly.rb")
     )
     analysed_modules = [@analysed_module]
     Rubycritic::Analyser::FlaySmells.new(analysed_modules).run

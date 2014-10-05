@@ -24,11 +24,10 @@ module Rubycritic
       @initial_paths.map do |path|
         if File.directory?(path)
           Pathname.glob(File.join(path, RUBY_FILES))
-        elsif File.exists?(path) && File.extname(path) == RUBY_EXTENSION
+        elsif File.exist?(path) && File.extname(path) == RUBY_EXTENSION
           Pathname.new(path)
         end
       end.flatten.compact.map(&:cleanpath)
     end
   end
-
 end

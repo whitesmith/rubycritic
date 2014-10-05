@@ -12,7 +12,7 @@ module Rubycritic
 
       def initialize(file_directory, text, smells)
         @file_directory = file_directory
-        @text = CGI::escapeHTML(text.chomp)
+        @text = CGI.escapeHTML(text.chomp)
         @smells = smells
         @template =
           if @smells.empty?

@@ -24,11 +24,11 @@ describe Rubycritic::Analyser::Churn do
 end
 
 class SourceControlSystemDouble < Rubycritic::SourceControlSystem::Base
-  def revisions_count(path)
+  def revisions_count(_path)
     1 # churn
   end
 
-  def date_of_last_commit(path)
+  def date_of_last_commit(_path)
     "2013-10-09 12:52:49 +0100"
   end
 end
