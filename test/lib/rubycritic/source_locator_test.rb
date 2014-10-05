@@ -21,13 +21,13 @@ describe Rubycritic::SourceLocator do
 
     it "finds files through multiple paths" do
       paths = ["dir1/file1.rb", "file0.rb"]
-      Rubycritic::SourceLocator.new(paths).paths.sort.must_equal paths
+      Rubycritic::SourceLocator.new(paths).paths.must_match_array paths
     end
 
     it "finds all the files" do
       initial_paths = ["."]
       final_paths = ["dir1/file1.rb", "file0.rb"]
-      Rubycritic::SourceLocator.new(initial_paths).paths.sort.must_equal final_paths
+      Rubycritic::SourceLocator.new(initial_paths).paths.must_match_array final_paths
     end
 
     it "cleans paths of consecutive slashes and useless dots" do
