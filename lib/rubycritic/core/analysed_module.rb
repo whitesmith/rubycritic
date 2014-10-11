@@ -20,7 +20,7 @@ module Rubycritic
     end
 
     def cost
-      @cost ||= smells.map(&:cost).inject(0, :+) + (complexity / 25)
+      @cost ||= smells.map(&:cost).inject(0, :+) + (complexity.to_i / 25)
     end
 
     def rating
