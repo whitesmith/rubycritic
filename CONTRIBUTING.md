@@ -26,28 +26,30 @@ If you want to squash a bug or add a new feature, please:
 Make exactly as many commits as you need.
 Each commit should do one thing and one thing only. For example, all whitespace fixes should be relegated to a single commit.
 
-7. Write descriptive commit messages, in accordance with [these guidelines][1].
+7. Write [descriptive commit messages].
 
-8. [Hide the sausage making][3]. Squash, split and reorder commits if necessary (`git rebase -i`).
-For a more in-depth look at interactive rebasing, be sure to check [how to rewrite history][4].
+8. Push the branch to GitHub (`git push origin my-new-feature`).
 
-9. Push the branch to GitHub (`git push origin my-new-feature`).
+9. [Create a Pull Request] and send it to be merged with the master branch.
 
-10. Create a new [Pull Request][5] and send it to be merged with the master branch.
+10. After your code is reviewed, [hide the sausage making]. Squash, split and reorder commits if necessary (`git rebase -i`).
+For a more in-depth look at interactive rebasing, be sure to check [how to rewrite history].
 
 Improving the Documentation
 ---------------------------
 
-You are welcome to clarify how something works or simply fix a typo. Please include `[ci skip]` on a new line in each of your commit messages. This will signal [Travis][2] that running the test suite is not necessary for these changes.
+You are welcome to clarify how something works or simply fix a typo. Please include `[ci skip]` on a new line in each of your commit messages. This will signal [Travis] that running the test suite is not necessary for these changes.
 
 Reporting a Bug
 ---------------
 
 If you are experiencing unexpected behavior and, after having read Rubycritic's documentation, are convinced this behavior is a bug, please:
 
-1. Search the [issues tracker][6] to see if it was already reported / fixed.
+1. Search the [issues tracker] to see if it was already reported / fixed.
 
-2. Include the Ruby and RubyCritic versions in your report. Here's a little table to help you out:
+2. [Create a new issue].
+
+3. Include the Ruby and RubyCritic versions in your report. Here's a little table to help you out:
 
   ```
   |            | Version |
@@ -58,11 +60,11 @@ If you are experiencing unexpected behavior and, after having read Rubycritic's 
 
   The more information you provide, the easier it will be to track down the issue and fix it.
 
-3. Create a new issue.
 
-[1]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
-[2]: https://travis-ci.org
-[3]: http://sethrobertson.github.io/GitBestPractices/#sausage
-[4]: http://git-scm.com/book/en/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages
-[5]: https://help.github.com/articles/creating-a-pull-request
-[6]: https://github.com/whitesmith/rubycritic/search?type=Issues
+[descriptive commit messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+[Create a pull request]: https://help.github.com/articles/creating-a-pull-request
+[hide the sausage making]: http://sethrobertson.github.io/GitBestPractices/#sausage
+[how to rewrite history]: http://git-scm.com/book/en/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages
+[Travis]: https://travis-ci.org
+[issues tracker]: https://github.com/whitesmith/rubycritic/search?type=Issues
+[Create a new issue]: https://github.com/whitesmith/rubycritic/issues/new
