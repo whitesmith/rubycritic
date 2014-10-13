@@ -13,7 +13,7 @@ module Rubycritic
       end
 
       def revisions_count(path)
-        `git log --follow --format=oneline #{path.shellescape}`.count("\n")
+        `git log --follow --format=%h #{path.shellescape}`.count("\n")
       end
 
       def date_of_last_commit(path)
@@ -45,7 +45,7 @@ module Rubycritic
       end
 
       def stashes_count
-        `git stash list`.count("\n")
+        `git stash list --format=%h`.count("\n")
       end
 
       def travel_to_original_state
