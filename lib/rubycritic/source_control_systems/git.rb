@@ -38,16 +38,10 @@ module Rubycritic
       private
 
       def stash_changes
-        return false if everything_commmited?
-
         stashes_count_before = stashes_count
         `git stash`
         stashes_count_after = stashes_count
         stashes_count_after > stashes_count_before
-      end
-
-      def everything_commmited?
-        `git status --porcelain`.empty?
       end
 
       def stashes_count
