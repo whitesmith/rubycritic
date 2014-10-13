@@ -21,13 +21,13 @@ module Rubycritic
     private
 
     def expand_paths
-      @initial_paths.map do |path|
+      @initial_paths.flat_map do |path|
         if File.directory?(path)
           Pathname.glob(File.join(path, RUBY_FILES))
         elsif File.exist?(path) && File.extname(path) == RUBY_EXTENSION
           Pathname.new(path)
         end
-      end.flatten.compact.map(&:cleanpath)
+      end.compact.map(&:cleanpath)
     end
   end
 end
