@@ -1,5 +1,3 @@
-require "pathname"
-
 module Rubycritic
   def self.configuration
     @configuration ||= Configuration.new
@@ -13,12 +11,7 @@ module Rubycritic
     end
 
     def root=(path)
-      @root =
-        if Pathname(path).relative?
-          File.expand_path(path)
-        else
-          path
-        end
+      @root = File.expand_path(path)
     end
   end
 end
