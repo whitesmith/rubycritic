@@ -1,5 +1,4 @@
 require "rubycritic/serializer"
-require "rubycritic/modules_initializer"
 require "rubycritic/analysers_runner"
 require "rubycritic/smells_status_setter"
 require "rubycritic/version"
@@ -30,9 +29,9 @@ module Rubycritic
       if File.file?(revision_file)
         serializer.load
       else
-        analysed_modules = ModulesInitializer.init(@paths)
+        analysed_modules = nil
         @source_control_system.travel_to_head do
-          AnalysersRunner.new(analysed_modules, @source_control_system).run
+          analysed_modules = AnalysersRunner.new(@paths, @source_control_system).run
         end
         serializer.dump(analysed_modules)
         analysed_modules

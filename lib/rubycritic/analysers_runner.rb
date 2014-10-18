@@ -1,3 +1,4 @@
+require "rubycritic/modules_initializer"
 require "rubycritic/analysers/smells/flay"
 require "rubycritic/analysers/smells/flog"
 require "rubycritic/analysers/smells/reek"
@@ -16,16 +17,18 @@ module Rubycritic
       Analyser::Attributes
     ]
 
-    def initialize(analysed_modules, source_control_system)
-      @analysed_modules = analysed_modules
+    def initialize(paths, source_control_system)
+      @paths = paths
       @source_control_system = source_control_system
     end
 
     def run
-      ANALYSERS.each do |analyser|
-        analyser.new(@analysed_modules).run
-      end
-      Analyser::Churn.new(@analysed_modules, @source_control_system).run
+      analysed_modules = ModulesInitializer.init(@paths)
+
+      ANALYSERS.each { |analyser| analyser.new(analysed_modules).run }
+      Analyser::Churn.new(analysed_modules, @source_control_system).run
+
+      analysed_modules
     end
   end
 

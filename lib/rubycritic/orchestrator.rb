@@ -1,5 +1,4 @@
 require "rubycritic/source_control_systems/base"
-require "rubycritic/modules_initializer"
 require "rubycritic/analysers_runner"
 require "rubycritic/revision_comparator"
 
@@ -11,8 +10,7 @@ module Rubycritic
     end
 
     def critique(paths)
-      analysed_modules = ModulesInitializer.init(paths)
-      AnalysersRunner.new(analysed_modules, @source_control_system).run
+      analysed_modules = AnalysersRunner.new(paths, @source_control_system).run
       if @source_control_system.has_revision?
         RevisionComparator.new(analysed_modules, @source_control_system, paths).set_statuses
       end
