@@ -16,7 +16,7 @@ module Rubycritic
       end
 
       def copy_assets_to_report_directory
-        FileUtils.cp_r(ASSETS_DIR, ::Rubycritic.configuration.root)
+        FileUtils.cp_r(ASSETS_DIR, Config.root)
       end
     end
 

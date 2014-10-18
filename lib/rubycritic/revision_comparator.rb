@@ -9,17 +9,18 @@ module Rubycritic
   class RevisionComparator
     SNAPSHOTS_DIR_NAME = "snapshots"
 
-    def initialize(analysed_modules, source_control_system, paths)
-      @analysed_modules_now = analysed_modules
-      @source_control_system = source_control_system
+    def initialize(paths)
       @paths = paths
     end
 
-    def set_statuses
-      SmellsStatusSetter.set(
-        analysed_modules_before.flat_map(&:smells),
-        @analysed_modules_now.flat_map(&:smells)
-      )
+    def set_statuses(analysed_modules_now)
+      if Config.source_control_system.has_revision?
+        SmellsStatusSetter.set(
+          analysed_modules_before.flat_map(&:smells),
+          analysed_modules_now.flat_map(&:smells)
+        )
+      end
+      analysed_modules_now
     end
 
     private
@@ -30,8 +31,8 @@ module Rubycritic
         serializer.load
       else
         analysed_modules = nil
-        @source_control_system.travel_to_head do
-          analysed_modules = AnalysersRunner.new(@paths, @source_control_system).run
+        Config.source_control_system.travel_to_head do
+          analysed_modules = AnalysersRunner.new(@paths).run
         end
         serializer.dump(analysed_modules)
         analysed_modules
@@ -40,11 +41,11 @@ module Rubycritic
 
     def revision_file
       @revision_file ||= File.join(
-        ::Rubycritic.configuration.root,
+        Config.root,
         SNAPSHOTS_DIR_NAME,
         VERSION,
         Digest::MD5.hexdigest(Marshal.dump(@paths)),
-        @source_control_system.head_reference
+        Config.source_control_system.head_reference
       )
     end
   end

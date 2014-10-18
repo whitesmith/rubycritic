@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require "rubycritic/cli"
+require "rubycritic/cli/application"
 
-exit Rubycritic::Cli.new(ARGV).execute
+exit Rubycritic::Cli::Application.new(ARGV).execute

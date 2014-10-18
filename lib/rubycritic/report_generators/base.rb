@@ -38,7 +38,7 @@ module Rubycritic
       private
 
       def root_directory
-        @root_directory ||= Pathname.new(::Rubycritic.configuration.root)
+        @root_directory ||= Pathname.new(Config.root)
       end
 
       def get_binding

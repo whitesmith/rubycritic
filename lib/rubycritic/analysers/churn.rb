@@ -2,9 +2,11 @@ module Rubycritic
   module Analyser
 
     class Churn
-      def initialize(analysed_modules, source_control_system)
+      attr_writer :source_control_system
+
+      def initialize(analysed_modules)
         @analysed_modules = analysed_modules
-        @source_control_system = source_control_system
+        @source_control_system = Config.source_control_system
       end
 
       def run

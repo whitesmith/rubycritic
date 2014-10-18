@@ -4,25 +4,26 @@ require "rubycritic/configuration"
 describe Rubycritic::Configuration do
   describe "#root" do
     before do
-      @default = Rubycritic.configuration.root
+      Rubycritic::Config.set
+      @default = Rubycritic::Config.root
     end
 
     it "has a default" do
-      Rubycritic.configuration.root.wont_be_empty
+      Rubycritic::Config.root.must_be_instance_of String
     end
 
     it "can be set to a relative path" do
-      Rubycritic.configuration.root = "foo"
-      Rubycritic.configuration.root.must_equal File.expand_path("foo")
+      Rubycritic::Config.root = "foo"
+      Rubycritic::Config.root.must_equal File.expand_path("foo")
     end
 
     it "can be set to an absolute path" do
-      Rubycritic.configuration.root = "/foo"
-      Rubycritic.configuration.root.must_equal "/foo"
+      Rubycritic::Config.root = "/foo"
+      Rubycritic::Config.root.must_equal "/foo"
     end
 
     after do
-      Rubycritic.configuration.root = @default
+      Rubycritic::Config.root = @default
     end
   end
 end

@@ -1,4 +1,5 @@
-require "rubycritic/modules_initializer"
+require "rubycritic/source_locator"
+require "rubycritic/core/analysed_module"
 require "rubycritic/analysers/smells/flay"
 require "rubycritic/analysers/smells/flog"
 require "rubycritic/analysers/smells/reek"
@@ -14,21 +15,23 @@ module Rubycritic
       Analyser::FlogSmells,
       Analyser::ReekSmells,
       Analyser::Complexity,
-      Analyser::Attributes
+      Analyser::Attributes,
+      Analyser::Churn
     ]
 
-    def initialize(paths, source_control_system)
+    def initialize(paths)
       @paths = paths
-      @source_control_system = source_control_system
     end
 
     def run
-      analysed_modules = ModulesInitializer.init(@paths)
-
       ANALYSERS.each { |analyser| analyser.new(analysed_modules).run }
-      Analyser::Churn.new(analysed_modules, @source_control_system).run
-
       analysed_modules
+    end
+
+    def analysed_modules
+      @analysed_modules ||= SourceLocator.new(@paths).pathnames.map do |pathname|
+        AnalysedModule.new(:pathname => pathname)
+      end
     end
   end
 
