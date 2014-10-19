@@ -86,10 +86,11 @@ For a full list of the command-line options run:
 $ rubycritic --help
 ```
 
-| Command flag             | Description                             |
-|--------------------------|-----------------------------------------|
-| `-v/--version`           | Displays the current version and exits. |
-| `-p/--path`              | Customizes the output directory.        |
+| Command flag             | Description                                           |
+|--------------------------|-------------------------------------------------------|
+| `-v/--version`           | Displays the current version and exits                |
+| `-p/--path`              | Sets the output directory (tmp/rubycritic by default) |
+| `-m/--mode-ci`           | Uses CI mode (faster, but only analyses last commit)  |
 
 Alternative Usage Methods
 -------------------------

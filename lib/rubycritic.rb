@@ -11,6 +11,9 @@ module Rubycritic
     when :help
       require "rubycritic/commands/help"
       Command::Help.new(options)
+    when :ci
+      require "rubycritic/commands/ci"
+      Command::Ci.new(options_hash)
     else
       require "rubycritic/commands/default"
       Command::Default.new(options_hash)

@@ -16,6 +16,10 @@ module Rubycritic
             @root = path
           end
 
+          opts.on("-m", "--mode-ci", "Use CI mode (faster, but only analyses last commit)") do
+            @mode = :ci
+          end
+
           opts.on_tail("-v", "--version", "Show gem's version") do
             @mode = :version
           end

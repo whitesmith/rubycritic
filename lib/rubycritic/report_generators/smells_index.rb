@@ -9,6 +9,7 @@ module Rubycritic
       def initialize(analysed_modules)
         @smells = analysed_modules.flat_map(&:smells).uniq
         @analysed_module_names = analysed_module_names(analysed_modules)
+        @show_status = (Config.mode == :default)
       end
 
       def file_name
