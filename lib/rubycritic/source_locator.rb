@@ -7,7 +7,7 @@ module Rubycritic
     RUBY_FILES = File.join("**", "*#{RUBY_EXTENSION}")
 
     def initialize(paths)
-      @initial_paths = paths
+      @initial_paths = Array(paths)
     end
 
     def paths

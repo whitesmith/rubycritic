@@ -47,6 +47,12 @@ describe Rubycritic::SourceLocator do
       final_paths = []
       Rubycritic::SourceLocator.new(initial_paths).paths.must_equal final_paths
     end
+
+    it "can deal with nil paths" do
+      paths = nil
+      final_paths = []
+      Rubycritic::SourceLocator.new(paths).paths.must_equal final_paths
+    end
   end
 
   describe "#pathnames" do
