@@ -203,7 +203,10 @@ Style/DotPosition:
     - leading
     - trailing
 
-Style/EmptyLinesAroundBody:
+Style/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Style/EmptyLinesAroundModuleBody:
   Enabled: false
 
 # Use empty lines between defs.
@@ -313,6 +316,12 @@ Style/MethodName:
   SupportedStyles:
     - snake_case
     - camelCase
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+  SupportedStyles:
+    - aligned
+    - indented
 
 Style/NumericLiterals:
   MinDigits: 5
