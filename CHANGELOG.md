@@ -1,3 +1,10 @@
+# 1.2.0 / 2014-12-27
+
+* [FEATURE] Add CI mode that only analyses the last commit
+* [FEATURE] Add partial support for Mercurial
+* [FEATURE] Allow using Rubycritic programatically
+* [CHANGE] Update to Reek 1.6.0 (from 1.3.8)
+
 # 1.1.1 / 2014-07-29
 
 * [BUGFIX] Analyse only the files whose paths are specified in the CLI
