@@ -128,8 +128,16 @@ Style/BarePercentLiterals:
 Style/BracesAroundHashParameters:
   EnforcedStyle: no_braces
   SupportedStyles:
+    # The `braces` style enforces braces around all method parameters that are
+    # hashes.
     - braces
+    # The `no_braces` style checks that the last parameter doesn't have braces
+    # around it.
     - no_braces
+    # The `context_dependent` style checks that the last parameter doesn't have
+    # braces around it, but requires braces if the second to last parameter is
+    # also a hash literal.
+    - context_dependent
 
 # Indentation of `when`.
 Style/CaseIndentation:
@@ -203,17 +211,31 @@ Style/DotPosition:
     - leading
     - trailing
 
-Style/EmptyLinesAroundClassBody:
-  Enabled: false
-
-Style/EmptyLinesAroundModuleBody:
-  Enabled: false
-
 # Use empty lines between defs.
 Style/EmptyLineBetweenDefs:
   # If true, this parameter means that single line method definitions don't
   # need an empty line between them.
   AllowAdjacentOneLineDefs: false
+
+Style/EmptyLinesAroundBlockBody:
+  EnforcedStyle: no_empty_lines
+  SupportedStyles:
+    - empty_lines
+    - no_empty_lines
+
+Style/EmptyLinesAroundClassBody:
+  Enabled: false
+  EnforcedStyle: no_empty_lines
+  SupportedStyles:
+    - empty_lines
+    - no_empty_lines
+
+Style/EmptyLinesAroundModuleBody:
+  Enabled: false
+  EnforcedStyle: no_empty_lines
+  SupportedStyles:
+    - empty_lines
+    - no_empty_lines
 
 # Checks whether the source file has a utf-8 encoding comment or not
 Style/Encoding:
@@ -223,13 +245,9 @@ Style/Encoding:
     - always
 
 Style/FileName:
-  Exclude:
-    - '**/Rakefile'
-    - '**/Gemfile'
-    - '**/Capfile'
-    - '**/Vagrantfile'
-    - '**/Podfile'
-    - '**/Thorfile'
+  # File names listed in AllCops:Include are excluded by default. Add extra
+  # excludes here.
+  Exclude: []
 
 # Checks use of for or each in multiline loops.
 Style/For:
@@ -263,6 +281,10 @@ Style/HashSyntax:
 
 Style/IfUnlessModifier:
   MaxLineLength: 80
+
+Style/IndentationWidth:
+  # Number of spaces for each indentation level.
+  Width: 2
 
 # Checks the indentation of the first key in a hash literal.
 Style/IndentHash:
@@ -401,10 +423,13 @@ Style/SingleLineMethods:
   AllowIfMethodIsEmpty: true
 
 Style/StringLiterals:
-  # Disabled until issue 1181 is fixed
-  # https://github.com/bbatsov/rubocop/issues/1181
-  Enabled: false
   EnforcedStyle: double_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: single_quotes
   SupportedStyles:
     - single_quotes
     - double_quotes
@@ -439,7 +464,6 @@ Style/SpaceInsideHashLiteralBraces:
     - no_space
 
 Style/SymbolProc:
-  Enabled: false
   # A list of method names to be ignored by the check.
   # The names should be fairly unique, otherwise you'll end up ignoring lots of code.
   IgnoredMethods:
@@ -507,6 +531,8 @@ Style/WhileUntilModifier:
 
 Style/WordArray:
   MinSize: 0
+  # The regular expression WordRegex decides what is considered a word.
+  WordRegex: !ruby/regexp '/\A[\p{Word}]+\z/'
 
 ##################### Metrics ##################################
 
@@ -529,9 +555,8 @@ Metrics/LineLength:
     - https
 
 Metrics/MethodLength:
-  Enabled: false
   CountComments: false  # count full line comments?
-  Max: 14
+  Max: 16
 
 Metrics/ParameterLists:
   Max: 5
