@@ -35,7 +35,7 @@ module Rubycritic
       end
     end
 
-    def has_smells?
+    def smells?
       !smells.empty?
     end
 

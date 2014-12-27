@@ -18,7 +18,7 @@ module Rubycritic
       locations.any? { |location| location == other_location }
     end
 
-    def has_multiple_locations?
+    def multiple_locations?
       locations.length > 1
     end
 

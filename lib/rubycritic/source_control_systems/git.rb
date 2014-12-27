@@ -20,7 +20,7 @@ module Rubycritic
         `git log -1 --date=iso --format=%ad #{path.shellescape}`.chomp!
       end
 
-      def has_revision?
+      def revision?
         head_reference && $?.success?
       end
 

@@ -20,7 +20,7 @@ module Rubycritic
         `hg log #{path.shellescape} --template '{date|isodate}' --limit 1`.chomp
       end
 
-      def has_revision?
+      def revision?
         false
       end
     end

@@ -9,7 +9,7 @@ module Rubycritic
         nil
       end
 
-      def has_revision?
+      def revision?
         false
       end
     end

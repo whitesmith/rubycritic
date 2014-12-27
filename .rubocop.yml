@@ -371,7 +371,6 @@ Style/PercentQLiterals:
     - upper_case_q # Always use %Q
 
 Style/PredicateName:
-  Enabled: false
   # Predicate name prefices.
   NamePrefix:
     - is_

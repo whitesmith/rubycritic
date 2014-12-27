@@ -68,10 +68,10 @@ describe Rubycritic::AnalysedModule do
     end
   end
 
-  describe "#has_smells?" do
+  describe "#smells?" do
     it "returns true if the analysed_module has at least one smell" do
       analysed_module = Rubycritic::AnalysedModule.new(:smells => [SmellDouble.new])
-      analysed_module.has_smells?.must_equal true
+      analysed_module.smells?.must_equal true
     end
   end
 
