@@ -28,7 +28,7 @@ module Rubycritic
           :locations => smell_locations(smell.source, smell.lines),
           :context   => smell.context,
           :message   => smell.message,
-          :type      => smell.subclass,
+          :type      => smell.smell_type,
           :cost      => 0
         )
       end
