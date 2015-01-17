@@ -1,3 +1,9 @@
+# 1.2.1 / 2015-01-17
+
+* [FEATURE] Support Ruby 2.2
+* [CHANGE] Update to Reek 1.6.3 (from 1.6.0)
+* [CHANGE] Update to at least Parser 2.2.0 (from 2.2.0.pre.5)
+
 # 1.2.0 / 2014-12-27
 
 * [FEATURE] Add CI mode that only analyses the last commit
