@@ -43,7 +43,7 @@ You are welcome to clarify how something works or simply fix a typo. Please incl
 Reporting a Bug
 ---------------
 
-If you are experiencing unexpected behavior and, after having read Rubycritic's documentation, are convinced this behavior is a bug, please:
+If you are experiencing unexpected behavior and, after having read the documentation, you are convinced this behavior is a bug, please:
 
 1. Search the [issues tracker] to see if it was already reported / fixed.
 
@@ -66,5 +66,5 @@ If you are experiencing unexpected behavior and, after having read Rubycritic's 
 [hide the sausage making]: http://sethrobertson.github.io/GitBestPractices/#sausage
 [how to rewrite history]: http://git-scm.com/book/en/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages
 [Travis]: https://travis-ci.org
-[issues tracker]: https://github.com/whitesmith/rubycritic/search?type=Issues
+[issues tracker]: https://github.com/whitesmith/rubycritic/issues
 [Create a new issue]: https://github.com/whitesmith/rubycritic/issues/new
