@@ -1,11 +1,12 @@
 module Rubycritic
   class Configuration
     attr_reader :root
-    attr_accessor :source_control_system, :mode
+    attr_accessor :source_control_system, :mode, :deduplicate_symlinks
 
     def set(options)
       self.mode = options[:mode] || :default
       self.root = options[:root] || "tmp/rubycritic"
+      self.deduplicate_symlinks = options[:deduplicate_symlinks] || false
     end
 
     def root=(path)
