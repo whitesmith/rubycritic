@@ -21,6 +21,12 @@ module Rubycritic
 
     private
 
+    def remove_symlinks(path_list)
+      # sort the symlinks to the end so files are preferred
+      path_list.sort_by! { |path| File.symlink?(path.cleanpath) ? 'z' : 'a' }
+      path_list.uniq!(&:realpath)
+    end
+
     def expand_paths
       path_list = @initial_paths.flat_map do |path|
         if File.directory?(path)
@@ -30,7 +36,7 @@ module Rubycritic
         end
       end.compact
 
-      path_list.uniq!(&:realpath) if @ignore_symlinks
+      remove_symlinks(path_list) if @ignore_symlinks
 
       path_list.map(&:cleanpath)
     end
