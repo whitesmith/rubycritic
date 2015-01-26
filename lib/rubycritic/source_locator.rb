@@ -8,6 +8,7 @@ module Rubycritic
 
     def initialize(paths)
       @initial_paths = Array(paths)
+      @ignore_symlinks = Config.ignore_symlinks
     end
 
     def paths
@@ -21,13 +22,17 @@ module Rubycritic
     private
 
     def expand_paths
-      @initial_paths.flat_map do |path|
+      path_list = @initial_paths.flat_map do |path|
         if File.directory?(path)
           Pathname.glob(File.join(path, RUBY_FILES))
         elsif File.exist?(path) && File.extname(path) == RUBY_EXTENSION
           Pathname.new(path)
         end
-      end.compact.map(&:cleanpath)
+      end.compact
+
+      path_list.uniq!(&:realpath) if @ignore_symlinks
+
+      path_list.map(&:cleanpath)
     end
   end
 end

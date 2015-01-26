@@ -20,6 +20,10 @@ module Rubycritic
             @mode = :ci
           end
 
+          opts.on("-i", "--ignore-symlinks", "Only scan real files, not symlinks") do
+            @ignore_symlinks = true
+          end
+
           opts.on_tail("-v", "--version", "Show gem's version") do
             @mode = :version
           end
@@ -39,6 +43,7 @@ module Rubycritic
         {
           :mode => @mode,
           :root => @root,
+          :ignore_symlinks => @ignore_symlinks,
           :paths => paths
         }
       end
