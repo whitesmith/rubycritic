@@ -23,7 +23,7 @@ module Rubycritic
 
     def remove_symlinks(path_list)
       # sort the symlinks to the end so files are preferred
-      path_list.sort_by! { |path| File.symlink?(path.cleanpath) ? 'z' : 'a' }
+      path_list.sort_by! { |path| File.symlink?(path.cleanpath) ? "z" : "a" }
       path_list.uniq!(&:realpath)
     end
 
