@@ -6,8 +6,8 @@ require "rubycritic/reporters/main"
 module Rubycritic
   module Command
     class Default
-      def initialize(options)
-        @paths = options[:paths]
+      def initialize(paths)
+        @paths = paths
         Config.source_control_system = SourceControlSystem::Base.create
       end
 

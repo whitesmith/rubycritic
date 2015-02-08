@@ -10,13 +10,13 @@ module Rubycritic
       Command::Version.new
     when :help
       require "rubycritic/commands/help"
-      Command::Help.new(options)
+      Command::Help.new(options.help_text)
     when :ci
       require "rubycritic/commands/ci"
-      Command::Ci.new(options_hash)
+      Command::Ci.new(options_hash[:paths])
     else
       require "rubycritic/commands/default"
-      Command::Default.new(options_hash)
+      Command::Default.new(options_hash[:paths])
     end
   end
 end
