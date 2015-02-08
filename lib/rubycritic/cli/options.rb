@@ -8,6 +8,7 @@ module Rubycritic
         @parser = OptionParser.new
       end
 
+      # rubocop:disable Metrics/MethodLength
       def parse
         @parser.new do |opts|
           opts.banner = "Usage: rubycritic [options] [paths]"
