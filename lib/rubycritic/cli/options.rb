@@ -21,6 +21,10 @@ module Rubycritic
             @mode = :ci
           end
 
+          opts.on("--deduplicate-symlinks", "De-duplicate symlinks based on their final target") do
+            @deduplicate_symlinks = true
+          end
+
           opts.on_tail("-v", "--version", "Show gem's version") do
             @mode = :version
           end
@@ -40,6 +44,7 @@ module Rubycritic
         {
           :mode => @mode,
           :root => @root,
+          :deduplicate_symlinks => @deduplicate_symlinks,
           :paths => paths
         }
       end

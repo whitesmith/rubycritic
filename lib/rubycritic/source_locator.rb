@@ -8,6 +8,7 @@ module Rubycritic
 
     def initialize(paths)
       @initial_paths = Array(paths)
+      @deduplicate_symlinks = Config.deduplicate_symlinks
     end
 
     def paths
@@ -20,14 +21,31 @@ module Rubycritic
 
     private
 
+    def deduplicate_symlinks(path_list)
+      # sort the symlinks to the end so files are preferred
+      path_list.sort_by! { |path| File.symlink?(path.cleanpath) ? "z" : "a" }
+      if defined?(JRUBY_VERSION)
+        require "java"
+        path_list.uniq! do |path|
+          java.io.File.new(path.realpath.to_s).canonical_path
+        end
+      else
+        path_list.uniq!(&:realpath)
+      end
+    end
+
     def expand_paths
-      @initial_paths.flat_map do |path|
+      path_list = @initial_paths.flat_map do |path|
         if File.directory?(path)
           Pathname.glob(File.join(path, RUBY_FILES))
         elsif File.exist?(path) && File.extname(path) == RUBY_EXTENSION
           Pathname.new(path)
         end
-      end.compact.map(&:cleanpath)
+      end.compact
+
+      deduplicate_symlinks(path_list) if @deduplicate_symlinks
+
+      path_list.map(&:cleanpath)
     end
   end
 end

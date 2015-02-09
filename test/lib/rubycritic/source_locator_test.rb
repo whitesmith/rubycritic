@@ -26,6 +26,13 @@ describe Rubycritic::SourceLocator do
 
     it "finds all the files" do
       initial_paths = ["."]
+      final_paths = ["dir1/file1.rb", "file0.rb", "a_link.rb"]
+      Rubycritic::SourceLocator.new(initial_paths).paths.must_match_array final_paths
+    end
+
+    it "finds all the files, ignoring symlinks" do
+      Rubycritic::Config.stubs(:deduplicate_symlinks).returns(true)
+      initial_paths = ["."]
       final_paths = ["dir1/file1.rb", "file0.rb"]
       Rubycritic::SourceLocator.new(initial_paths).paths.must_match_array final_paths
     end

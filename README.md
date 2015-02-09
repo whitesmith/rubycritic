@@ -91,6 +91,7 @@ $ rubycritic --help
 | `-v/--version`           | Displays the current version and exits                |
 | `-p/--path`              | Sets the output directory (tmp/rubycritic by default) |
 | `-m/--mode-ci`           | Uses CI mode (faster, but only analyses last commit)  |
+| `--deduplicate-symlinks` | De-duplicate symlinks based on their final target     |
 
 Alternative Usage Methods
 -------------------------
