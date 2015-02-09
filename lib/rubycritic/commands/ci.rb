@@ -11,16 +11,15 @@ module Rubycritic
       end
 
       def execute
-        critique(@paths)
-        report
+        report(critique)
       end
 
-      def critique(paths)
-        @analysed_modules = AnalysersRunner.new(paths).run
+      def critique
+        AnalysersRunner.new(@paths).run
       end
 
-      def report
-        report_location = Reporter::Main.new(@analysed_modules).generate_report
+      def report(analysed_modules)
+        report_location = Reporter::Main.new(analysed_modules).generate_report
         puts "New critique at #{report_location}"
       end
     end
