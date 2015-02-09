@@ -8,7 +8,7 @@ module Rubycritic
 
     def initialize(paths)
       @initial_paths = Array(paths)
-      @ignore_symlinks = Config.ignore_symlinks
+      @deduplicate_symlinks = Config.deduplicate_symlinks
     end
 
     def paths
@@ -21,7 +21,7 @@ module Rubycritic
 
     private
 
-    def remove_symlinks(path_list)
+    def deduplicate_symlinks(path_list)
       # sort the symlinks to the end so files are preferred
       path_list.sort_by! { |path| File.symlink?(path.cleanpath) ? "z" : "a" }
       if defined?(JRUBY_VERSION)
@@ -43,7 +43,7 @@ module Rubycritic
         end
       end.compact
 
-      remove_symlinks(path_list) if @ignore_symlinks
+      deduplicate_symlinks(path_list) if @deduplicate_symlinks
 
       path_list.map(&:cleanpath)
     end

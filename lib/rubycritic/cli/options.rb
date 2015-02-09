@@ -20,8 +20,8 @@ module Rubycritic
             @mode = :ci
           end
 
-          opts.on("-i", "--ignore-symlinks", "Only scan real files, not symlinks") do
-            @ignore_symlinks = true
+          opts.on("--deduplicate-symlinks", "De-duplicate symlinks based on their final target") do
+            @deduplicate_symlinks = true
           end
 
           opts.on_tail("-v", "--version", "Show gem's version") do
@@ -43,7 +43,7 @@ module Rubycritic
         {
           :mode => @mode,
           :root => @root,
-          :ignore_symlinks => @ignore_symlinks,
+          :deduplicate_symlinks => @deduplicate_symlinks,
           :paths => paths
         }
       end
