@@ -25,6 +25,7 @@ module Rubycritic
       # sort the symlinks to the end so files are preferred
       path_list.sort_by! { |path| File.symlink?(path.cleanpath) ? "z" : "a" }
       if defined?(JRUBY_VERSION)
+        require 'java'
         path_list.uniq! do |path|
           java.io.File.new(path.realpath.to_s).canonical_path
         end
