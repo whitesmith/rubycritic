@@ -9,7 +9,7 @@ describe Rubycritic::SourceControlSystem::Base do
   end
 
   describe "::create" do
-    describe "when a source control system is found" do
+    context "when a source control system is found" do
       it "creates an instance of that source control system" do
         Rubycritic::SourceControlSystem::Git.stubs(:supported?).returns(true)
         system = Rubycritic::SourceControlSystem::Base.create
@@ -17,7 +17,7 @@ describe Rubycritic::SourceControlSystem::Base do
       end
     end
 
-    describe "when no source control system is found" do
+    context "when no source control system is found" do
       it "creates a source control system double" do
         capture_output_streams do
           system = Rubycritic::SourceControlSystem::Base.create

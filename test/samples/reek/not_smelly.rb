@@ -12,7 +12,7 @@ class Perfume
     end
   end
 
-  def method_with_too_many_statements
+  def allow_many_statements
     do_something
     do_something
     do_something

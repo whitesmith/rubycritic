@@ -30,11 +30,13 @@ describe Rubycritic::SourceLocator do
       Rubycritic::SourceLocator.new(initial_paths).paths.must_match_array final_paths
     end
 
-    it "finds all the files, ignoring symlinks" do
-      Rubycritic::Config.stubs(:deduplicate_symlinks).returns(true)
-      initial_paths = ["."]
-      final_paths = ["dir1/file1.rb", "file0.rb"]
-      Rubycritic::SourceLocator.new(initial_paths).paths.must_match_array final_paths
+    context "when configured to deduplicate symlinks" do
+      it "favors a file over a symlink if they both point to the same target" do
+        Rubycritic::Config.stubs(:deduplicate_symlinks).returns(true)
+        initial_paths = ["file0.rb", "file0_symlink.rb"]
+        final_paths = ["file0.rb"]
+        Rubycritic::SourceLocator.new(initial_paths).paths.must_match_array final_paths
+      end
     end
 
     it "cleans paths of consecutive slashes and useless dots" do
