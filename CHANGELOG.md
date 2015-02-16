@@ -1,3 +1,9 @@
+# 1.3.0 / 2015-02-16
+
+* [FEATURE] New CLI option `--deduplicate-symlinks` to deduplicate symlinks (by LeeXGreen)
+* [CHANGE] Update to Reek 1.6.5 (from 1.6.3)
+* [CHANGE] Remove ruby2ruby dependency
+
 # 1.2.1 / 2015-01-17
 
 * [FEATURE] Support Ruby 2.2
@@ -8,7 +14,7 @@
 
 * [FEATURE] Add CI mode that only analyses the last commit
 * [FEATURE] Add partial support for Mercurial
-* [FEATURE] Allow using Rubycritic programatically
+* [FEATURE] Allow using RubyCritic programatically
 * [CHANGE] Update to Reek 1.6.0 (from 1.3.8)
 
 # 1.1.1 / 2014-07-29
