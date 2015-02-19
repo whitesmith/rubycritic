@@ -6,7 +6,9 @@
     <th class="numeric-cell" title="Overall amount of code in a file">Complexity</th>
     <th class="numeric-cell" title="Amount of code that is similar to other code">Duplication</th>
     <th class="numeric-cell">Smells</th>
-    <th class="centered-cell last-cell">Rating</th>
+    <% unless Config.suppress_ratings %>
+      <th class="centered-cell last-cell">Rating</th>
+    <% end %>
   </tr>
 </thead>
 <tbody>
@@ -19,7 +21,9 @@
       <td class="numeric-cell"><%= analysed_module.complexity %></td>
       <td class="numeric-cell"><%= analysed_module.duplication %></td>
       <td class="numeric-cell"><%= analysed_module.smells.length %></td>
-      <td class="centered-cell last-cell"><span class="rating-<%= analysed_module.rating.to_s.downcase %> circled-text circle"><%= analysed_module.rating %></span></td>
+      <% unless Config.suppress_ratings %>
+        <td class="centered-cell last-cell"><span class="rating-<%= analysed_module.rating.to_s.downcase %> circled-text circle"><%= analysed_module.rating %></span></td>
+      <% end %>
     </tr>
   <% end %>
 </tbody>

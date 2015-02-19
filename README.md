@@ -92,6 +92,7 @@ $ rubycritic --help
 | `-p/--path`              | Sets the output directory (tmp/rubycritic by default) |
 | `-m/--mode-ci`           | Uses CI mode (faster, but only analyses last commit)  |
 | `--deduplicate-symlinks` | De-duplicate symlinks based on their final target     |
+| `--suppress-ratings`     | Suppress letter ratings                               |
 
 Alternative Usage Methods
 -------------------------
