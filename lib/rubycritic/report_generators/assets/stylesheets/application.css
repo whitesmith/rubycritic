@@ -175,7 +175,7 @@ html {
 
 .file-name {
   float: left;
-  margin: 0 0 0 20px;
+  margin: 0;
   line-height: 50px;
   font-weight: normal;
 }
@@ -189,7 +189,6 @@ html {
 
 .file-stats {
   clear: both;
-  margin-left: 68px;
   width: 300px;
 }
 
@@ -199,6 +198,18 @@ html {
   width: 130px;
   font-size: 12px;
   white-space: nowrap;
+}
+
+.file-header.rated .file-stats {
+  margin-left: 68px;
+}
+
+.file-header.rated .file-name {
+  margin-left: 20px;
+}
+
+.file-header.unrated .rating {
+  display: none;
 }
 
 .smells-toggle-button {

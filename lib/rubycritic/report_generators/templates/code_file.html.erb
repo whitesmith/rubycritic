@@ -1,7 +1,7 @@
-<div class="file-header group">
-  <% unless Config.suppress_ratings %>
-    <span class="rating-<%= @analysed_module.rating.to_s.downcase %> circled-text circle "><%= @analysed_module.rating %></span>
-  <% end %>
+<div class="file-header group <%= Config.suppress_ratings ? 'unrated' : 'rated' %>">
+  <span class="rating rating-<%= @analysed_module.rating.to_s.downcase %> circled-text circle">
+    <%= @analysed_module.rating %>
+  </span>
   <h2 class="file-name"><%= @analysed_module.name %></h2>
 
   <span class="file-committed-at">
