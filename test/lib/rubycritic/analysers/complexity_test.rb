@@ -2,11 +2,13 @@ require "analysers_test_helper"
 require "rubycritic/analysers/complexity"
 
 describe Rubycritic::Analyser::Complexity do
-  it "calculates the complexity of each file and adds it to analysed_modules" do
-    analysed_modules = [AnalysedModuleDouble.new(:path => "test/samples/flog/complex.rb")]
+  before do
+    @analysed_module = AnalysedModuleDouble.new(:path => "test/samples/flog/complex.rb", :smells => [])
+    analysed_modules = [@analysed_module]
     Rubycritic::Analyser::Complexity.new(analysed_modules).run
-    analysed_modules.each do |analysed_module|
-      analysed_module.complexity.must_be_kind_of Numeric
-    end
+  end
+
+  it "calculates the complexity of each analysed_module" do
+    @analysed_module.complexity.must_be :>, 0
   end
 end
