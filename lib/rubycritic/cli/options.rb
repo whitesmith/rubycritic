@@ -25,6 +25,10 @@ module Rubycritic
             @deduplicate_symlinks = true
           end
 
+          opts.on("--suppress-ratings", "Suppress letter grade ratings") do
+            @suppress_ratings = true
+          end
+
           opts.on_tail("-v", "--version", "Show gem's version") do
             @mode = :version
           end
@@ -45,7 +49,8 @@ module Rubycritic
           :mode => @mode,
           :root => @root,
           :deduplicate_symlinks => @deduplicate_symlinks,
-          :paths => paths
+          :paths => paths,
+          :suppress_ratings => @suppress_ratings
         }
       end
 
