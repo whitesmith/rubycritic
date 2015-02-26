@@ -9,7 +9,7 @@ describe Rubycritic::Analyser::ReekSmells do
       Rubycritic::Analyser::ReekSmells.new(analysed_modules).run
     end
 
-    it "detects smells and adds them to analysed_modules" do
+    it "detects its smells" do
       @analysed_module.smells.length.must_equal 1
     end
 
@@ -26,7 +26,7 @@ describe Rubycritic::Analyser::ReekSmells do
       Rubycritic::Analyser::ReekSmells.new(analysed_modules).run
     end
 
-    it "does not detect smells and does not add them to analysed files" do
+    it "does not detect those smells" do
       @analysed_module.smells.must_be_empty
     end
   end

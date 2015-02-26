@@ -1,4 +1,4 @@
-class Ramsay
+class Roose
   def flay(parts)
     parts -= 1
     parts -= 2
