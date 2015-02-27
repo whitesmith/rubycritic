@@ -1,5 +1,5 @@
 require "test_helper"
-require "rubycritic/report_generators/view_helpers"
+require "rubycritic/generators/html/view_helpers"
 require "pathname"
 
 describe Rubycritic::ViewHelpers do

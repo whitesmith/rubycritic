@@ -1,7 +1,7 @@
 require "rubycritic/source_control_systems/base"
 require "rubycritic/analysers_runner"
 require "rubycritic/revision_comparator"
-require "rubycritic/reporters/main"
+require "rubycritic/reporter"
 
 module Rubycritic
   module Command
@@ -21,8 +21,7 @@ module Rubycritic
       end
 
       def report(analysed_modules)
-        report_location = Reporter::Main.new(analysed_modules).generate_report
-        puts "New critique at #{report_location}"
+        Reporter.generate_report(analysed_modules)
       end
     end
   end

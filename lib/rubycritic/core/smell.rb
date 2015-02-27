@@ -31,6 +31,22 @@ module Rubycritic
       "(#{type}) #{context} #{message}"
     end
 
+    def to_h
+      {
+        :context => context,
+        :cost => cost,
+        :locations => locations,
+        :message => message,
+        :score => score,
+        :status => status,
+        :type => type
+      }
+    end
+
+    def to_json(*a)
+      to_h.to_json(*a)
+    end
+
     def hash
       state.hash
     end
