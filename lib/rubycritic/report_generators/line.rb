@@ -14,16 +14,20 @@ module Rubycritic
         @file_directory = file_directory
         @text = CGI.escapeHTML(text.chomp)
         @smells = smells
-        @template =
-          if @smells.empty?
-            NORMAL_TEMPLATE
-          else
-            SMELLY_TEMPLATE
-          end
       end
 
       def render
-        @template.result(binding).delete("\n") + "\n"
+        template.result(binding).delete("\n") + "\n"
+      end
+
+      private
+
+      def template
+        if @smells.empty?
+          NORMAL_TEMPLATE
+        else
+          SMELLY_TEMPLATE
+        end
       end
     end
 
