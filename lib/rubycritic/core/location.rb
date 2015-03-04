@@ -18,6 +18,17 @@ module Rubycritic
       "#{pathname}:#{line}"
     end
 
+    def to_h
+      {
+        :path => pathname.to_s,
+        :line => line
+      }
+    end
+
+    def to_json(*a)
+      to_h.to_json(*a)
+    end
+
     def ==(other)
       state == other.state
     end

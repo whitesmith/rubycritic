@@ -17,6 +17,16 @@ module Rubycritic
             @root = path
           end
 
+          opts.on(
+            "-f", "--format [FORMAT]",
+            [:html, :json],
+            "Report smells in the given format:",
+            "  html (default)",
+            "  json"
+          ) do |format|
+            @format = format
+          end
+
           opts.on("-m", "--mode-ci", "Use CI mode (faster, but only analyses last commit)") do
             @mode = :ci
           end
@@ -48,6 +58,7 @@ module Rubycritic
         {
           :mode => @mode,
           :root => @root,
+          :format => @format,
           :deduplicate_symlinks => @deduplicate_symlinks,
           :paths => paths,
           :suppress_ratings => @suppress_ratings

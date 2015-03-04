@@ -17,6 +17,14 @@ module Rubycritic
     def to_s
       @letter
     end
+
+    def to_h
+      @letter
+    end
+
+    def to_json(*a)
+      to_h.to_json(*a)
+    end
   end
 
 end
