@@ -10,17 +10,23 @@ describe Rubycritic::AnalysedModule do
       @smells = []
       @churn = 1
       @complexity = 2
+      @lines = 25
       @analysed_module = Rubycritic::AnalysedModule.new(
         :name       => @name,
         :pathname   => @pathname,
         :smells     => @smells,
         :churn      => @churn,
-        :complexity => @complexity
+        :complexity => @complexity,
+        :lines      => @lines
       )
     end
 
     it "has a name reader" do
       @analysed_module.name.must_equal @name
+    end
+
+    it "has a lines reader" do
+      @analysed_module.lines.must_equal @lines
     end
 
     it "has a pathname reader" do

@@ -5,8 +5,9 @@ module Rubycritic
     module Json
 
       class Simple
-        def initialize(analysed_modules)
+        def initialize(analysed_modules, gpa)
           @analysed_modules = analysed_modules
+          @gpa = gpa
         end
 
         def render
@@ -20,6 +21,7 @@ module Rubycritic
                 :version => Rubycritic::VERSION
               }
             },
+            :gpa => @gpa,
             :analysed_modules => @analysed_modules
           }
         end

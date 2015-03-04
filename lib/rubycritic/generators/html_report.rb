@@ -3,15 +3,18 @@ require "rubycritic/generators/html/overview"
 require "rubycritic/generators/html/smells_index"
 require "rubycritic/generators/html/code_index"
 require "rubycritic/generators/html/code_file"
+require "rubycritic/generators/global_rating_calculator"
 
 module Rubycritic
   module Generator
 
     class HtmlReport
+      include GlobalRatingCalculator
       ASSETS_DIR = File.expand_path("../html/assets", __FILE__)
 
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
+        @gpa = calculate_gpa(analysed_modules)
       end
 
       def generate_report
@@ -36,7 +39,7 @@ module Rubycritic
       end
 
       def overview_generator
-        @overview_generator ||= Html::Overview.new(@analysed_modules)
+        @overview_generator ||= Html::Overview.new(@analysed_modules, @gpa)
       end
 
       def code_index_generator
