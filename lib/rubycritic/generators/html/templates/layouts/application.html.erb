@@ -10,14 +10,18 @@
   </head>
   <body>
     <header class="project-header group">
-      <h1 class="logo"><a href="<%= file_path('overview.html') %>" class="logo-link">RubyCritic</a></h1>
-      <nav class="project-nav">
-        <a href="<%= file_path('overview.html') %>" class="project-nav-item">Overview</a>
-        <a href="<%= file_path('code_index.html') %>" class="project-nav-item">Code</a>
-        <a href="<%= file_path('smells_index.html') %>" class="project-nav-item">Smells</a>
-      </nav>
+      <div class="container">
+        <h1 class="logo"><a href="<%= file_path('overview.html') %>" class="logo-link">RubyCritic</a></h1>
+        <nav class="project-nav">
+          <a href="<%= file_path('overview.html') %>" class="project-nav-item">Overview</a>
+          <a href="<%= file_path('code_index.html') %>" class="project-nav-item">Code</a>
+          <a href="<%= file_path('smells_index.html') %>" class="project-nav-item">Smells</a>
+        </nav>
+      </div>
     </header>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
     <%= javascript_tag(:'jquery-2.1.0') %>
     <%= javascript_tag(:'jquery.tablesorter') %>
     <%= javascript_tag(:'jquery.floatThead-v1.2.7') %>
