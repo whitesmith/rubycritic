@@ -1,3 +1,9 @@
+# 1.4.0 / 2015-03-14
+
+* [FEATURE] New report in JSON format. Available by using the new CLI option `-f`
+* [FEATURE] New CLI option `--suppress-ratings` to suppress ratings (by halostatue)
+* [CHANGE] Improve UI, particularly the sortable tables (by crackofdusk)
+
 # 1.3.0 / 2015-02-16
 
 * [FEATURE] New CLI option `--deduplicate-symlinks` to deduplicate symlinks (by LeeXGreen)
@@ -16,6 +22,7 @@
 * [FEATURE] Add partial support for Mercurial
 * [FEATURE] Allow using RubyCritic programatically
 * [CHANGE] Update to Reek 1.6.0 (from 1.3.8)
+* [BUGFIX] Fix issue #18 - Prevent encoding issues when using Git
 
 # 1.1.1 / 2014-07-29
 
