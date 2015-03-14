@@ -59,7 +59,7 @@ If you are experiencing unexpected behavior and, after having read the documenta
   ```
 
   The more information you provide, the easier it will be to track down the issue and fix it.
-
+  If you have never written a bug report before, or if you want to brush up on your bug reporting skills, read Simon Tatham's essay [How to Report Bugs Effectively].
 
 [descriptive commit messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 [Create a pull request]: https://help.github.com/articles/creating-a-pull-request
@@ -68,3 +68,4 @@ If you are experiencing unexpected behavior and, after having read the documenta
 [Travis]: https://travis-ci.org
 [issues tracker]: https://github.com/whitesmith/rubycritic/issues
 [Create a new issue]: https://github.com/whitesmith/rubycritic/issues/new
+[How to Report Bugs Effectively]: http://www.chiark.greenend.org.uk/~sgtatham/bugs.html
