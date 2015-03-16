@@ -1,10 +1,12 @@
 require "rubycritic/analysers/helpers/flay"
 require "rubycritic/core/smell"
+require "rubycritic/colorize"
 
 module Rubycritic
   module Analyser
 
     class FlaySmells
+      include Colorize
       def initialize(analysed_modules)
         @analysed_modules = paths_to_analysed_modules(analysed_modules)
         @flay = Flay.new(@analysed_modules.keys)
@@ -20,7 +22,13 @@ module Rubycritic
           nodes.each do |node|
             @analysed_modules[node.file].duplication += node.mass
           end
+          print green "."
         end
+        puts ""
+      end
+
+      def to_s
+        "flay smells"
       end
 
       private

@@ -1,10 +1,12 @@
 require "rubycritic/analysers/helpers/flog"
 require "rubycritic/core/smell"
+require "rubycritic/colorize"
 
 module Rubycritic
   module Analyser
 
     class FlogSmells
+      include Colorize
       HIGH_COMPLEXITY_SCORE_THRESHOLD = 25
       VERY_HIGH_COMPLEXITY_SCORE_THRESHOLD = 60
 
@@ -16,7 +18,13 @@ module Rubycritic
       def run
         @analysed_modules.each do |analysed_module|
           add_smells_to(analysed_module)
+          print green "."
         end
+        puts ""
+      end
+
+      def to_s
+        "flog smells"
       end
 
       private
