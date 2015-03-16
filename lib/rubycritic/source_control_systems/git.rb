@@ -13,7 +13,7 @@ module Rubycritic
       end
 
       def revisions_count(path)
-        `git log --follow --format=%h #{path.shellescape}`.count("\n")
+        `git log --follow --since=#{(Time.now - 31_449_600).to_date.to_s} --format=%h #{path.shellescape}`.count("\n")
       end
 
       def date_of_last_commit(path)
