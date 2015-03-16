@@ -9,12 +9,12 @@ module Rubycritic
   module Generator
 
     class HtmlReport
-      include GlobalRatingCalculator
+
       ASSETS_DIR = File.expand_path("../html/assets", __FILE__)
 
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
-        @gpa = calculate_gpa(analysed_modules)
+        @gpa = GlobalRatingCalculator.calculate_gpa(analysed_modules)
       end
 
       def generate_report

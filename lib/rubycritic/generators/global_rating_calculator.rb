@@ -1,7 +1,7 @@
 module Rubycritic
   module Generator
-    module GlobalRatingCalculator
-      def calculate_gpa(analysed_modules)
+    class GlobalRatingCalculator
+      def self.calculate_gpa(analysed_modules)
         gpa_sum = 0
         total_lines = 0
         analysed_modules.each do |analysed_module|

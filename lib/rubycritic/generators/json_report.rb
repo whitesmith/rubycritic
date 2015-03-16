@@ -5,10 +5,10 @@ module Rubycritic
   module Generator
 
     class JsonReport
-      include GlobalRatingCalculator
+
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
-        @gpa = calculate_gpa(analysed_modules)
+        @gpa = GlobalRatingCalculator.calculate_gpa(analysed_modules)
       end
 
       def generate_report
