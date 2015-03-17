@@ -29,7 +29,12 @@ module Rubycritic
     end
 
     def lines
-      @lines ||= File.open(path).each_line.count
+      return @lines if @lines
+      count = 0
+      File.open(path).each_line do |line|
+        count += 1 unless line.strip[0] == "#" || line.strip.empty?
+      end
+      @lines = count
     end
 
     def complexity_per_method
