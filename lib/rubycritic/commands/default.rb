@@ -16,16 +16,8 @@ module Rubycritic
       end
 
       def critique(opts = {})
-        analysed_modules = generate_analysed_modules(opts)
+        analysed_modules = AnalysersRunner.new(@paths).run(opts[:analysers])
         RevisionComparator.new(@paths).set_statuses(analysed_modules)
-      end
-
-      def generate_analysed_modules(opts)
-        if opts[:analysers]
-          AnalysersRunner.new(@paths).run_with_specified_analysers(opts[:analysers])
-        else
-          AnalysersRunner.new(@paths).run
-        end
       end
 
       def report(analysed_modules)

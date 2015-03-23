@@ -15,11 +15,7 @@ module Rubycritic
       end
 
       def critique(opts = {})
-        if opts[:analysers]
-          AnalysersRunner.new(@paths).run_with_specified_analysers(opts[:analysers])
-        else
-          AnalysersRunner.new(@paths).run
-        end
+        AnalysersRunner.new(@paths).run(opts[:analysers])
       end
 
       def report(analysed_modules)

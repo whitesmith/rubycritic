@@ -23,12 +23,8 @@ module Rubycritic
       @paths = paths
     end
 
-    def run
-      run_with_specified_analysers(ANALYSERS)
-    end
-
-    def run_with_specified_analysers(analysers)
-      analysers.each { |analyser| analyser.new(analysed_modules).run }
+    def run(analysers = nil)
+      (analysers || ANALYSERS).each { |analyser| analyser.new(analysed_modules).run }
       analysed_modules
     end
 
