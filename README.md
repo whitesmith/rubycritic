@@ -12,17 +12,17 @@ This gem provides features such as:
 
 1. An overview of your project:
 
-  ![RubyCritic overview screenshot](http://i.imgur.com/OrOflfj.png)
+  ![RubyCritic overview screenshot](http://i.imgur.com/oiE5O3X.png)
 
 2. An index of the project files with their respective number of smells:
 
-  ![RubyCritic code index screenshot](http://i.imgur.com/0ETNrX7.png)
+  ![RubyCritic code index screenshot](http://i.imgur.com/a0GCn48.png)
 
 3. An index of the smells detected:
 
-  ![RubyCritic smells index screenshot](http://i.imgur.com/5CpPt9v.png)
+  ![RubyCritic smells index screenshot](http://i.imgur.com/PvkFEe3.png)
 
-4. Finally, when analysing code like the following:
+4. When analysing code like the following:
 
   ```ruby
   class Dirty
@@ -36,11 +36,17 @@ This gem provides features such as:
 
   It basically turns something like this:
 
-  ![Reek output screenshot](http://i.imgur.com/tCgZX9I.png)
+  ![Reek output screenshot](http://i.imgur.com/5G2zPIC.png)
 
   Into something like this:
 
-  ![RubyCritic file code screenshot](http://i.imgur.com/KLVrhMm.png)
+  ![RubyCritic file code screenshot](http://i.imgur.com/RNzXewk.png)
+
+5. It uses your source control system (only Git is supported for now) to
+  compare your currently uncommitted changes with your last commit.
+
+  **Warning**: If your code is not as you expect it to be after running
+  RubyCritic, please check your source control system stash.
 
 Getting Started
 ---------------
@@ -90,7 +96,7 @@ $ rubycritic --help
 |--------------------------|-------------------------------------------------------|
 | `-v/--version`           | Displays the current version and exits                |
 | `-p/--path`              | Sets the output directory (tmp/rubycritic by default) |
-| `-m/--mode-ci`           | Uses CI mode (faster, but only analyses last commit)  |
+| `--mode-ci`              | Uses CI mode (faster, but only analyses last commit)  |
 | `--deduplicate-symlinks` | De-duplicate symlinks based on their final target     |
 | `--suppress-ratings`     | Suppress letter ratings                               |
 
