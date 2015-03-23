@@ -15,14 +15,14 @@ module Rubycritic
         report(critique)
       end
 
-      def critique(opts={})
+      def critique(opts = {})
         analysed_modules = generate_analysed_modules(opts)
         RevisionComparator.new(@paths).set_statuses(analysed_modules)
       end
 
       def generate_analysed_modules(opts)
-        if analysers = opts[:analysers]
-          AnalysersRunner.new(@paths).run_with_specified_analysers(analysers)
+        if opts[:analysers]
+          AnalysersRunner.new(@paths).run_with_specified_analysers(opts[:analysers])
         else
           AnalysersRunner.new(@paths).run
         end
