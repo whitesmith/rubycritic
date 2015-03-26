@@ -20,7 +20,7 @@ If you want to squash a bug or add a new feature, please:
 
 4. Run the tests with the `rake` command. Make sure that they are still passing.
 
-5. Stage partial-file changesets (`git -p`).
+5. [Stage partial-file changesets] \(`git add -p`).
 
 6. Commit your changes (`git commit`).
 Make exactly as many commits as you need.
@@ -61,6 +61,7 @@ If you are experiencing unexpected behavior and, after having read the documenta
   The more information you provide, the easier it will be to track down the issue and fix it.
   If you have never written a bug report before, or if you want to brush up on your bug reporting skills, read Simon Tatham's essay [How to Report Bugs Effectively].
 
+[Stage partial-file changesets]: http://nuclearsquid.com/writings/git-add/
 [descriptive commit messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 [Create a pull request]: https://help.github.com/articles/creating-a-pull-request
 [hide the sausage making]: http://sethrobertson.github.io/GitBestPractices/#sausage
