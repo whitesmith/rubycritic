@@ -20,7 +20,7 @@ If you want to squash a bug or add a new feature, please:
 
 4. Run the tests with the `rake` command. Make sure that they are still passing.
 
-5. Stage partial-file changesets (`git -p`).
+5. Stage partial-file changesets (`git add -p`).
 
 6. Commit your changes (`git commit`).
 Make exactly as many commits as you need.
