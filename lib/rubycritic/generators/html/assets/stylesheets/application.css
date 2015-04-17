@@ -262,10 +262,13 @@ a.project-nav-item:hover {
   display: none;
 }
 
-.reports-toggle-button {
+.reports-toggle-buttons {
   position: absolute;
   right: 64px;
   bottom: -17px;
+}
+
+.reports-toggle-button {
   border-color: silver;
   background-color: #EEEBE9;
 }
