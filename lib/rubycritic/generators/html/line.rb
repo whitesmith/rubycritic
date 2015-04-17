@@ -1,34 +1,28 @@
 require "cgi"
 require "rubycritic/generators/html/base"
+require "rubycritic/generators/html/line_reports"
 
 module Rubycritic
   module Generator
     module Html
 
       class Line < Base
-        NORMAL_TEMPLATE = erb_template("line.html.erb")
-        SMELLY_TEMPLATE = erb_template("smelly_line.html.erb")
+        TEMPLATE = erb_template("line.html.erb")
 
         attr_reader :file_directory
 
-        def initialize(file_directory, text, smells)
+        def initialize(file_directory, text, smells, styles)
           @file_directory = file_directory
           @text = CGI.escapeHTML(text.chomp)
           @smells = smells
+          @styles = styles
         end
 
         def render
-          template.result(binding).delete("\n") + "\n"
-        end
-
-        private
-
-        def template
-          if @smells.empty?
-            NORMAL_TEMPLATE
-          else
-            SMELLY_TEMPLATE
-          end
+          reports = ""
+          reports << LineReports.new(@file_directory, @smells, "smell").render
+          reports << LineReports.new(@file_directory, @styles, "style").render
+          TEMPLATE.result(get_binding { reports }).delete("\n") + "\n"
         end
       end
 
