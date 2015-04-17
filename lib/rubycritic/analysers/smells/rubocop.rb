@@ -27,7 +27,12 @@ module Rubycritic
       private
 
       def add_smells_to(analysed_module, offense)
-        analysed_module.smells << create_smell(analysed_module, offense)
+        report = create_smell(analysed_module, offense)
+
+        case report_type_for_offense(offense)
+        when :style then analysed_module.styles << report
+        else analysed_module.smells << report
+        end
       end
 
       def create_smell(analysed_module, offense)
@@ -38,6 +43,13 @@ module Rubycritic
           :type      => offense["cop_name"],
           :cost      => 0
         )
+      end
+
+      def report_type_for_offense(offense)
+        case offense["cop_name"]
+        when %r{^Style/} then :style
+        else :smell
+        end
       end
     end
 
