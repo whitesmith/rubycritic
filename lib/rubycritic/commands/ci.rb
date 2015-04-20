@@ -14,8 +14,8 @@ module Rubycritic
         report(critique)
       end
 
-      def critique
-        AnalysersRunner.new(@paths).run
+      def critique(opts = {})
+        AnalysersRunner.new(@paths).run(opts[:analysers])
       end
 
       def report(analysed_modules)
