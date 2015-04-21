@@ -16,8 +16,8 @@ module Rubycritic
     def set_statuses(analysed_modules_now)
       if Config.source_control_system.revision?
         SmellsStatusSetter.set(
-          analysed_modules_before.flat_map(&:smells),
-          analysed_modules_now.flat_map(&:smells)
+          analysed_modules_before.flat_map(&:all_reports),
+          analysed_modules_now.flat_map(&:all_reports)
         )
       end
       analysed_modules_now

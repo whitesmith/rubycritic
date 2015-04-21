@@ -20,15 +20,16 @@ Gem::Specification.new do |spec|
   spec.test_files    = `git ls-files -- test/*`.split("\n")
   spec.require_path  = "lib"
 
+  spec.add_runtime_dependency "json"
   spec.add_runtime_dependency "virtus", "~> 1.0"
   spec.add_runtime_dependency "flay", "2.4.0"
   spec.add_runtime_dependency "flog", "4.2.1"
   spec.add_runtime_dependency "reek", "2.0.4"
   spec.add_runtime_dependency "parser", ">= 2.2.0", "< 3.0"
+  spec.add_runtime_dependency "rubocop", "0.30.0"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "minitest", "~> 5.3"
   spec.add_development_dependency "mocha", "~> 1.0"
-  spec.add_development_dependency "rubocop", "0.28.0"
 end

@@ -3,6 +3,7 @@ require "rubycritic/core/analysed_module"
 require "rubycritic/analysers/smells/flay"
 require "rubycritic/analysers/smells/flog"
 require "rubycritic/analysers/smells/reek"
+require "rubycritic/analysers/smells/rubocop"
 require "rubycritic/analysers/complexity"
 require "rubycritic/analysers/churn"
 require "rubycritic/analysers/attributes"
@@ -14,6 +15,7 @@ module Rubycritic
       Analyser::FlaySmells,
       Analyser::FlogSmells,
       Analyser::ReekSmells,
+      Analyser::RuboCopSmells,
       Analyser::Complexity,
       Analyser::Attributes,
       Analyser::Churn

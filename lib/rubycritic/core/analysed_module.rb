@@ -9,6 +9,7 @@ module Rubycritic
     attribute :name
     attribute :pathname
     attribute :smells,        Array,   :default => []
+    attribute :styles,        Array,   :default => []
     attribute :churn
     attribute :committed_at
     attribute :complexity
@@ -20,7 +21,7 @@ module Rubycritic
     end
 
     def cost
-      @cost ||= smells.map(&:cost).inject(0, :+) + (complexity / 25)
+      @cost ||= all_reports.map(&:cost).inject(0, :+) + (complexity / 25)
     end
 
     def rating
@@ -35,6 +36,10 @@ module Rubycritic
       end
     end
 
+    def all_reports
+      smells + styles
+    end
+
     def smells?
       !smells.empty?
     end
@@ -43,11 +48,20 @@ module Rubycritic
       smells.select { |smell| smell.at_location?(location) }
     end
 
+    def styles?
+      !styles.empty?
+    end
+
+    def styles_at_location(location)
+      styles.select { |style| style.at_location?(location) }
+    end
+
     def to_h
       {
         :name => name,
         :path => path,
         :smells => smells,
+        :styles => styles,
         :churn => churn,
         :committed_at => committed_at,
         :complexity => complexity,

@@ -1,0 +1,13 @@
+<ul class="nocode reports js-<%= @report_type+'s' %>">
+<% @reports.each do |report| %>
+  <li class="report <%= report.status %>">
+    <span class="description"><%= report %>
+      <% if report.multiple_locations? %>
+        <% report.locations.each_with_index do |location, index| %>
+          <a href="<%= smell_location_path(location) %>" class="js-report-location"><%= index %></a>
+        <% end %>
+      <% end %>
+    </span>
+  </li>
+<% end %>
+</ul>

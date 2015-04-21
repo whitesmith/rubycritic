@@ -262,19 +262,22 @@ a.project-nav-item:hover {
   display: none;
 }
 
-.smells-toggle-button {
+.reports-toggle-buttons {
   position: absolute;
   right: 64px;
   bottom: -17px;
+}
+
+.reports-toggle-button {
   border-color: silver;
   background-color: #EEEBE9;
 }
 
-.smells-toggle-button:hover {
+.reports-toggle-button:hover {
   background-color: #D1CFCD;
 }
 
-.smells {
+.reports {
   font-family: "Droid Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   margin: 2px 0 22px 0;
   padding-left: 0;
@@ -284,20 +287,20 @@ a.project-nav-item:hover {
   list-style-type: disc;
 }
 
-.smell {
+.report {
   margin: 5px 5px 5px 30px;
   font-size: 24px;
 }
 
-.smell.new {
+.report.new {
   color: #F00;
 }
 
-.smell.old {
+.report.old {
   color: #FA0;
 }
 
-.smell .description {
+.report .description {
   color: #000;
   font-size: initial;
 }

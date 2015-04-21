@@ -8,6 +8,7 @@ describe Rubycritic::AnalysedModule do
       @name = "Foo"
       @pathname = Pathname.new("foo.rb")
       @smells = []
+      @styles = []
       @churn = 1
       @complexity = 2
       @analysed_module = Rubycritic::AnalysedModule.new(
@@ -35,6 +36,10 @@ describe Rubycritic::AnalysedModule do
       @analysed_module.smells.must_equal @smells
     end
 
+    it "has a styles reader" do
+      @analysed_module.styles.must_equal @styles
+    end
+
     it "has a churn reader" do
       @analysed_module.churn.must_equal @churn
     end
@@ -47,8 +52,9 @@ describe Rubycritic::AnalysedModule do
   describe "#cost" do
     it "returns the remediation cost of fixing the analysed_module" do
       smells = [SmellDouble.new(:cost => 1), SmellDouble.new(:cost => 2)]
-      analysed_module = Rubycritic::AnalysedModule.new(:smells => smells, :complexity => 0)
-      analysed_module.cost.must_equal 3
+      styles = [SmellDouble.new(:cost => 4), SmellDouble.new(:cost => 8)]
+      analysed_module = Rubycritic::AnalysedModule.new(:smells => smells, :styles => styles, :complexity => 0)
+      analysed_module.cost.must_equal 15
     end
   end
 
@@ -68,6 +74,15 @@ describe Rubycritic::AnalysedModule do
     end
   end
 
+  describe "#all_reports" do
+    it "returns all smells and styles together in a single array" do
+      smells = [SmellDouble.new, SmellDouble.new]
+      styles = [SmellDouble.new, SmellDouble.new]
+      analysed_module = Rubycritic::AnalysedModule.new(:smells => smells, :styles => styles)
+      analysed_module.all_reports.must_equal smells + styles
+    end
+  end
+
   describe "#smells?" do
     it "returns true if the analysed_module has at least one smell" do
       analysed_module = Rubycritic::AnalysedModule.new(:smells => [SmellDouble.new])
@@ -81,6 +96,22 @@ describe Rubycritic::AnalysedModule do
       smells = [Rubycritic::Smell.new(:locations => [location])]
       analysed_module = Rubycritic::AnalysedModule.new(:smells => smells)
       analysed_module.smells_at_location(location).must_equal smells
+    end
+  end
+
+  describe "#styles?" do
+    it "returns true if the analysed_module has at least one style" do
+      analysed_module = Rubycritic::AnalysedModule.new(:styles => [SmellDouble.new])
+      analysed_module.styles?.must_equal true
+    end
+  end
+
+  describe "#styles_at_location" do
+    it "returns the styles of an analysed_module at a certain location" do
+      location = Rubycritic::Location.new("./foo", "42")
+      styles = [Rubycritic::Smell.new(:locations => [location])]
+      analysed_module = Rubycritic::AnalysedModule.new(:styles => styles)
+      analysed_module.styles_at_location(location).must_equal styles
     end
   end
 end
