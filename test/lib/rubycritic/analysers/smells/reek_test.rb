@@ -17,6 +17,11 @@ describe Rubycritic::Analyser::ReekSmells do
       smell = @analysed_module.smells.first
       smell.message.must_equal "has boolean parameter 'reek'"
     end
+
+    it "has documentation link" do
+      smell = @analysed_module.smells.first
+      smell.documentation.must_equal "https://github.com/troessner/reek/wiki/Boolean-Parameter"
+    end
   end
 
   context "when analysing a file with smells ignored in config.reek" do

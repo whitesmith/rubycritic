@@ -13,6 +13,7 @@ module Rubycritic
     attribute :score
     attribute :status
     attribute :type
+    attribute :documentation
 
     def at_location?(other_location)
       locations.any? { |location| location == other_location }
