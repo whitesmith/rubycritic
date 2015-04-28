@@ -1,4 +1,5 @@
 require "json"
+require "rubycritic/version"
 
 module Rubycritic
   module Generator
