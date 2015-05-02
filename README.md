@@ -121,6 +121,19 @@ Analyzer Configuration
 This section is work in progress at the moment and is missing the other analyzers that RubyCritic supports.
 You can expect this to be updated soon.
 
+Rake Task
+---------
+If you want to integrate RubyCritic into your `Rakefile` just include the below snippet
+to get a rake task called `rubycritic`.
+
+```ruby
+require "rubycritic/rake_task"
+
+Rubycritic::RakeTask.new do |task|
+  task.paths = "lib"
+end
+```
+
 Alternative Usage Methods
 -------------------------
 
