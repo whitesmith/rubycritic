@@ -4,7 +4,8 @@ require "rubycritic/analysers/smells/reek"
 describe Rubycritic::Analyser::ReekSmells do
   context "when analysing a smelly file" do
     before do
-      @analysed_module = AnalysedModuleDouble.new(:path => "test/samples/reek/smelly.rb", :smells => [])
+      pathname = Pathname.new("test/samples/reek/smelly.rb")
+      @analysed_module = AnalysedModuleDouble.new(:pathname => pathname, :smells => [])
       analysed_modules = [@analysed_module]
       Rubycritic::Analyser::ReekSmells.new(analysed_modules).run
     end
@@ -21,7 +22,8 @@ describe Rubycritic::Analyser::ReekSmells do
 
   context "when analysing a file with smells ignored in config.reek" do
     before do
-      @analysed_module = AnalysedModuleDouble.new(:path => "test/samples/reek/not_smelly.rb", :smells => [])
+      pathname = Pathname.new("test/samples/reek/not_smelly.rb")
+      @analysed_module = AnalysedModuleDouble.new(:pathname => pathname, :smells => [])
       analysed_modules = [@analysed_module]
       Rubycritic::Analyser::ReekSmells.new(analysed_modules).run
     end

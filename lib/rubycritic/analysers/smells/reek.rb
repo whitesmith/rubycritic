@@ -18,7 +18,7 @@ module Rubycritic
       private
 
       def add_smells_to(analysed_module)
-        Reek.new(analysed_module.path).smells.each do |smell|
+        Reek.new(analysed_module.pathname).smells.each do |smell|
           analysed_module.smells << create_smell(smell)
         end
       end
