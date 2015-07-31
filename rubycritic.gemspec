@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.require_path  = "lib"
 
   spec.add_runtime_dependency "virtus", "~> 1.0"
-  spec.add_runtime_dependency "flay", "2.4.0"
+  spec.add_runtime_dependency "flay", "2.6.1"
   spec.add_runtime_dependency "flog", "4.2.1"
   spec.add_runtime_dependency "reek", "2.0.4"
   spec.add_runtime_dependency "parser", ">= 2.2.0", "< 3.0"
