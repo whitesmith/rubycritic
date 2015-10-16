@@ -8,11 +8,11 @@ module Rubycritic
 
     attribute :name
     attribute :pathname
-    attribute :smells,        Array,   :default => []
+    attribute :smells, Array, :default => []
     attribute :churn
     attribute :committed_at
     attribute :complexity
-    attribute :duplication,   Integer, :default => 0
+    attribute :duplication, Integer, :default => 0
     attribute :methods_count
 
     def path
