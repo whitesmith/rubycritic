@@ -18,6 +18,10 @@ module Rubycritic
       "#{pathname}:#{line}"
     end
 
+    def to_s_with_realpath
+      "#{pathname.realpath.to_s}:#{line}"
+    end
+
     def to_h
       {
         :path => pathname.to_s,

@@ -12,17 +12,20 @@ module Rubycritic
         # render outputs the report in a format that's
         # easy to read in the Emacs and Sublime text editor.
         def render
-          @analysed_modules.each do |analysed_module|
-            analysed_module.smells.each do |smell|
+          render_lines = []
+          @analysed_modules.map do |analysed_module|
+            analysed_module.smells.map do |smell|
               message = "[#{smell.status}] " # "status": "old",
               message << "#{smell.type} - " # "type": "DuplicateCode"
               message << "#{smell.context} " # "context": "Identical code",
               message << "#{smell.message}" # "message": "found in 2 nodes",
-              smell.locations.each do |location|
-                output.printf("%s:%d:%d: %s: %s\n", file, location, 0, "W", message)
+              smell.locations.map do |location|
+                render_lines << "#{location.to_s_with_realpath}:1: W: #{message}"
               end
             end
           end
+          render_lines << ""
+          render_lines.join("\n")
         end
 
       end
