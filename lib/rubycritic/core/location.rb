@@ -19,7 +19,7 @@ module Rubycritic
     end
 
     def to_s_with_realpath
-      "#{pathname.realpath.to_s}:#{line}"
+      "#{pathname.realpath}:#{line}"
     end
 
     def to_h
