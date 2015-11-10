@@ -107,6 +107,19 @@ If you're fond of Guard you might like [guard-rubycritic][4]. It automatically a
 
 For continuous integration, you can give [Jenkins CI][5] a spin. With it, you can [easily build your own (poor-man's) Code Climate][6]!
 
+Compatibility
+---------------
+
+RubyCritic is supporting:
+
+* 2.0
+* 2.1
+* 2.2
+
+Note that we do not support Ruby 1.9 anymore.
+
+If you're still on ruby 1.9 you'll have to use the last version of RubyCritic that supports it, which would be 1.4.0.
+
 Improving RubyCritic
 --------------------
 
