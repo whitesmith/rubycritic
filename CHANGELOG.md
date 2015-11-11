@@ -1,3 +1,9 @@
+# 2.1.0 / 2015-11-11
+
+* [CHANGE] Bump flay dependency to 2.6.1.
+* [CHANGE] Bump reek dependency to 3.6.0.
+* [CHANGE] Bump flog dependency to 4.3.2.
+
 # 2.0.0 / 2015-11-11
 
 * [CHANGE] Drop support for ruby 1.9
