@@ -114,7 +114,7 @@ RubyCritic doesn't have to remain a second choice to other code quality analysis
 
 Arguably, the [better_errors gem][7] only got popular after receiving a [(pretty awesome) Pull Request][8] that changed its page design.
 
-Similarly, Pull Requests that improve the look and feel of the gem, that tweak the calculation of ratings or that fix existing issues will be most welcome. This is my first gem, so just commenting on an issue and giving some insight into how something should work will be appreciated. No contribution is too small.
+Similarly, Pull Requests that improve the look and feel of the gem, that tweak the calculation of ratings or that fix existing issues will be most welcome. Just commenting on an issue and giving some insight into how something should work will be appreciated. No contribution is too small.
 
 See RubyCritic's [contributing guidelines](CONTRIBUTING.md) about how to proceed.
 
@@ -123,7 +123,7 @@ Credits
 
 ![Whitesmith](http://i.imgur.com/Si2l3kd.png)
 
-RubyCritic is maintained and funded by [Whitesmith][9]. Tweet your questions or suggestions to [@glitchdout][10] or [@Whitesmithco][11].
+RubyCritic is maintained and funded by [Whitesmith][9]. Tweet your questions or suggestions to [@Whitesmithco][10].
 
 [1]: https://github.com/troessner/reek
 [2]: https://github.com/seattlerb/flay
@@ -134,5 +134,4 @@ RubyCritic is maintained and funded by [Whitesmith][9]. Tweet your questions or 
 [7]: https://github.com/charliesome/better_errors
 [8]: https://github.com/charliesome/better_errors/pull/22
 [9]: http://www.whitesmith.co/
-[10]: https://twitter.com/glitchdout
-[11]: https://twitter.com/Whitesmithco
+[10]: https://twitter.com/Whitesmithco
