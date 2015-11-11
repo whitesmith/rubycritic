@@ -1,17 +1,15 @@
-sudo: false
-cache: bundler
 language: ruby
-script:
-  - bundle exec rake
+
 rvm:
   - 2.0
   - 2.1
   - 2.2
-  - rbx-2
   - jruby
+  - rbx-2
 matrix:
   allow_failures:
     - rvm: rbx-2
     - rvm: jruby
   fast_finish: true
 
+script: "bundle exec rake"
