@@ -1,3 +1,7 @@
+# 2.0.0 / 2015-11-11
+
+* [CHANGE] Drop support for ruby 1.9
+
 # 1.4.0 / 2015-03-14
 
 * [FEATURE] New report in JSON format. Available by using the new CLI option `-f`
