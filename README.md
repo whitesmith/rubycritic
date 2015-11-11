@@ -132,7 +132,7 @@ RubyCritic is supporting:
 
 Note that we do not support Ruby 1.9 anymore.
 
-If you're still on ruby 1.9 you'll have to use the last version of RubyCritic that supports it, which would be 1.4.0.
+If you're still on ruby 1.9 you'll have to use the last version of RubyCritic that supports it, which would be [1.4.0](https://github.com/whitesmith/rubycritic/tree/v1.4.0).
 
 Improving RubyCritic
 --------------------

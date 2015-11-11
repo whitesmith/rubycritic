@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "RubyCritic is a Ruby code quality reporter"
   spec.homepage      = "https://github.com/whitesmith/rubycritic"
   spec.license       = "MIT"
-  spec.required_ruby_version = ">= 1.9.3"
+  spec.required_ruby_version = ">= 2.0.0"
 
   spec.files         = `git ls-files`.split("\n")
   spec.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
