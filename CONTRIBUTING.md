@@ -32,8 +32,8 @@ Each commit should do one thing and one thing only. For example, all whitespace 
 
 9. [Create a Pull Request] and send it to be merged with the master branch.
 
-10. After your code is reviewed, [hide the sausage making]. Squash, split and reorder commits if necessary (`git rebase -i`).
-For a more in-depth look at interactive rebasing, be sure to check [how to rewrite history].
+10. After your code is reviewed, [hide the sausage making]. We follow the "one commit per pull request" [principle](http://ndlib.github.io/practices/one-commit-per-pull-request/) since this allows for a clean git history, easy handling of features and convenient rollbacks when things go wrong. Or in one sentence: You can have as many commits as you want in your pull request, but after the final review and before the merge you need to squash all of those in one single commit.
+For a more in-depth look at interactive rebasing, be sure to check [how to rewrite history] as well.
 
 Improving the Documentation
 ---------------------------
