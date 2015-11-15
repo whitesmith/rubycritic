@@ -100,6 +100,14 @@ $ rubycritic --help
 | `--deduplicate-symlinks` | De-duplicate symlinks based on their final target     |
 | `--suppress-ratings`     | Suppress letter ratings                               |
 
+Analyzer Configuration
+-------------------------
+
+* `Reek`: `RubyCritic` just uses `Reek`'s default [configuration loading mechanism](https://github.com/troessner/reek#configuration-file).
+
+This section is work in progress at the moment and is missing the other analyzers that RubyCritic supports.
+You can expect this to be updated soon.
+
 Alternative Usage Methods
 -------------------------
 

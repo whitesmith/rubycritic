@@ -11,25 +11,15 @@ describe Rubycritic::Analyser::ReekSmells do
     end
 
     it "detects its smells" do
-      @analysed_module.smells.length.must_equal 1
+      @analysed_module.smells.length.must_equal 2
     end
 
     it "creates smells with messages" do
-      smell = @analysed_module.smells.first
-      smell.message.must_equal "has boolean parameter 'reek'"
-    end
-  end
+      first_smell = @analysed_module.smells.first
+      first_smell.message.must_equal "has no descriptive comment"
 
-  context "when analysing a file with smells ignored in config.reek" do
-    before do
-      pathname = Pathname.new("test/samples/reek/not_smelly.rb")
-      @analysed_module = AnalysedModuleDouble.new(:pathname => pathname, :smells => [])
-      analysed_modules = [@analysed_module]
-      Rubycritic::Analyser::ReekSmells.new(analysed_modules).run
-    end
-
-    it "does not detect those smells" do
-      @analysed_module.smells.must_be_empty
+      last_smell = @analysed_module.smells.last
+      last_smell.message.must_equal "has boolean parameter 'reek'"
     end
   end
 end
