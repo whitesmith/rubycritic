@@ -1,6 +1,7 @@
 require "bundler/gem_tasks"
 require "rake/testtask"
 require "rubocop/rake_task"
+require "rubycritic/rake_task"
 
 Rake::TestTask.new do |task|
   task.libs.push "lib"
@@ -9,5 +10,9 @@ Rake::TestTask.new do |task|
 end
 
 RuboCop::RakeTask.new
+
+Rubycritic::RakeTask.new do |task|
+  task.paths = "lib"
+end
 
 task :default => [:test, :rubocop]

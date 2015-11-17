@@ -100,6 +100,20 @@ $ rubycritic --help
 | `--deduplicate-symlinks` | De-duplicate symlinks based on their final target     |
 | `--suppress-ratings`     | Suppress letter ratings                               |
 
+
+Rake Task
+---------
+If you want to integrate `rubycritic` into your `Rakefile` just include the below snippet
+to get a rake task called `rubycritic`.
+
+```ruby
+require "rubycritic/rake_task"
+
+Rubycritic::RakeTask.new do |task|
+  task.paths = "lib"
+end
+```
+
 Alternative Usage Methods
 -------------------------
 
