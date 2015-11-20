@@ -1,3 +1,7 @@
+# 2.2.0 / 2015-11-20
+
+* [CHANGE] Use `Reeks` default configuration loading.
+
 # 2.1.0 / 2015-11-11
 
 * [CHANGE] Bump flay dependency to 2.6.1.
