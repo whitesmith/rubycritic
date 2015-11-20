@@ -131,6 +131,17 @@ Similarly, Pull Requests that improve the look and feel of the gem, that tweak t
 
 See RubyCritic's [contributing guidelines](CONTRIBUTING.md) about how to proceed.
 
+Contributors / Core Team
+---------------
+
+`RubyCritics` initial author was [Guilherme Simões](https://github.com/guilhermesimoes).
+
+The current core team consists of:
+
+* [Nuno Silva](https://github.com/Onumis)
+* [Lucas Mazza](https://github.com/lucasmazza)
+* [Timo Rößner](https://github.com/troessner)
+
 Credits
 -------
 
