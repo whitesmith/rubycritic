@@ -2,7 +2,7 @@ require "rake"
 require "rake/tasklib"
 
 module Rubycritic
-  class RakeTask < Rake::TaskLib
+  class RakeTask < ::Rake::TaskLib
     attr_accessor :name
     attr_accessor :report
     attr_accessor :format
@@ -10,22 +10,23 @@ module Rubycritic
     attr_accessor :options
 
     def initialize(*args, &task_block)
-      setup_ivars(args)
+      @name = args.shift || :rubycritic
+      @fail_on_error = true
+      @options = []
+      @format = "html"
+      @report = nil
+      @paths = []
 
-      desc "Run rubycritic" unless ::Rake.application.last_comment
+      desc "Run RubyCritic" unless ::Rake.application.last_comment
 
       task(name, *args) do |_, task_args|
-        RakeFileUtils.send(:verbose, verbose) do
-          if task_block
-            task_block.call(*[self, task_args].slice(0, task_block.arity))
-          end
-          rubycritic
-        end
+        task_block.call(*[self, task_args].slice(0, task_block.arity)) if task_block
+        run
       end
     end
 
-    def rubycritic
-      # We lazy-load rubycritic so that the task doesn't dramatically impact the
+    def run
+      # Lazy-load RubyCritic so that the task doesn't dramatically impact the
       # load time of your Rakefile.
       require "rubycritic"
       require "rubycritic/cli/options"
@@ -43,15 +44,6 @@ module Rubycritic
         result.concat(["--format", format])
         result.concat(Array(paths))
       end
-    end
-
-    def setup_ivars(args)
-      @name = args.shift || :rubycritic
-      @fail_on_error = true
-      @options = []
-      @format = "html"
-      @report = nil
-      @paths = []
     end
   end
 end
