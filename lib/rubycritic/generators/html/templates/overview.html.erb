@@ -1,3 +1,8 @@
+<% unless Config.suppress_ratings %>
+  <div class="chart-container">
+    <h2> Overall GPA: <%= @gpa.to_s[0..3] %> </h2>
+  </div>
+<% end %>
 <div id="js-chart-container" class="chart-container"></div>
 
 <script type="text/javascript">

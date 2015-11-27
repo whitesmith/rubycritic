@@ -25,6 +25,17 @@ module Rubycritic
     def to_json(*a)
       to_h.to_json(*a)
     end
+
+    def to_gpa
+      if @letter == "A" then 4.0
+      elsif @letter == "B" then 3.0
+      elsif @letter == "C" then 2.0
+      elsif @letter == "D" then 1.0
+      elsif @letter == "F" then 0.0
+      else
+        raise "unknown GPA"
+      end
+    end
   end
 
 end
