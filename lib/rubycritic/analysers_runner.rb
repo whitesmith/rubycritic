@@ -1,5 +1,4 @@
-require "rubycritic/source_locator"
-require "rubycritic/core/analysed_module"
+require "rubycritic/core/analysed_modules_collection"
 require "rubycritic/analysers/smells/flay"
 require "rubycritic/analysers/smells/flog"
 require "rubycritic/analysers/smells/reek"
@@ -29,9 +28,7 @@ module Rubycritic
     end
 
     def analysed_modules
-      @analysed_modules ||= SourceLocator.new(@paths).pathnames.map do |pathname|
-        AnalysedModule.new(:pathname => pathname)
-      end
+      @analysed_modules ||= AnalysedModulesCollection.new(@paths)
     end
   end
 

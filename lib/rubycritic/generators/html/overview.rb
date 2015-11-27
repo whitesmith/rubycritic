@@ -10,6 +10,8 @@ module Rubycritic
 
         def initialize(analysed_modules)
           @turbulence_data = Turbulence.data(analysed_modules)
+          @score = analysed_modules.score
+          @max_score = AnalysedModulesCollection::MAX_SCORE
         end
 
         def file_name

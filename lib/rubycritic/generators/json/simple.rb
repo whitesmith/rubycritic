@@ -21,7 +21,8 @@ module Rubycritic
                 :version => Rubycritic::VERSION
               }
             },
-            :analysed_modules => @analysed_modules
+            :analysed_modules => @analysed_modules,
+            :score => @analysed_modules.score
           }
         end
       end
