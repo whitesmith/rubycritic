@@ -16,10 +16,10 @@ describe Rubycritic::Analyser::ReekSmells do
 
     it "creates smells with messages" do
       first_smell = @analysed_module.smells.first
-      first_smell.message.must_equal "has no descriptive comment"
+      first_smell.message.must_equal "has boolean parameter 'reek'"
 
       last_smell = @analysed_module.smells.last
-      last_smell.message.must_equal "has boolean parameter 'reek'"
+      last_smell.message.must_equal "has no descriptive comment"
     end
   end
 end
