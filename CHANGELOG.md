@@ -1,3 +1,8 @@
+# 2.3.0 / 2015-11-30
+
+* [FEATURE] Added global score calculation
+* [CHANGE] Bump Reek dependency to 3.7.1.
+
 # 2.2.0 / 2015-11-20
 
 * [CHANGE] Use `Reeks` default configuration loading.
