@@ -115,6 +115,19 @@ If you're fond of Guard you might like [guard-rubycritic][4]. It automatically a
 
 For continuous integration, you can give [Jenkins CI][5] a spin. With it, you can [easily build your own (poor-man's) Code Climate][6]!
 
+Rake Task
+---------
+If you want to integrate RubyCritic into your `Rakefile` just include the below snippet
+to get a rake task called `rubycritic`.
+
+```ruby
+require "rubycritic/rake_task"
+
+Rubycritic::RakeTask.new do |task|
+  task.paths = "lib"
+end
+```
+
 Compatibility
 ---------------
 
