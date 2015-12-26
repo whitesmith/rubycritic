@@ -1,6 +1,10 @@
+# 2.4.0 / 2015-12-26
+
+* [FEATURE] Add progress bar functionality (by Nate Holland)
+
 # 2.3.0 / 2015-11-30
 
-* [FEATURE] Added global score calculation
+* [FEATURE] Added global score calculation (by Ancor Gonzalez Sosa)
 * [CHANGE] Bump Reek dependency to 3.7.1.
 
 # 2.2.0 / 2015-11-20
