@@ -1,10 +1,12 @@
 require "rubycritic/analysers/helpers/reek"
 require "rubycritic/core/smell"
+require "rubycritic/colorize"
 
 module Rubycritic
   module Analyser
 
     class ReekSmells
+      include Colorize
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
       end
@@ -12,7 +14,13 @@ module Rubycritic
       def run
         @analysed_modules.each do |analysed_module|
           add_smells_to(analysed_module)
+          print green "."
         end
+        puts ""
+      end
+
+      def to_s
+        "reek smells"
       end
 
       private
