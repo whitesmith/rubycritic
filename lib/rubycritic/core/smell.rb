@@ -8,7 +8,7 @@ module Rubycritic
 
     attribute :context
     attribute :cost
-    attribute :locations
+    attribute :locations, Array, :default => []
     attribute :message
     attribute :score
     attribute :status

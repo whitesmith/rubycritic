@@ -43,6 +43,10 @@ module Rubycritic
       smells.select { |smell| smell.at_location?(location) }
     end
 
+    def <=>(other)
+      [rating.to_s, name] <=> [other.rating.to_s, other.name]
+    end
+
     def to_h
       {
         :name => name,

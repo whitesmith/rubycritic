@@ -10,6 +10,9 @@ module Rubycritic
       when :json
         require "rubycritic/generators/json_report"
         Generator::JsonReport
+      when :console
+        require "rubycritic/generators/console_report"
+        Generator::ConsoleReport
       else
         require "rubycritic/generators/html_report"
         Generator::HtmlReport
