@@ -1,5 +1,6 @@
 require "rubycritic"
 require "rubycritic/cli/options"
+require "rubycritic/command_factory"
 
 module Rubycritic
   module Cli
@@ -13,7 +14,7 @@ module Rubycritic
 
       def execute
         parsed_options = @options.parse
-        ::Rubycritic.create(parsed_options).execute
+        ::Rubycritic::CommandFactory.create(parsed_options).execute
         STATUS_SUCCESS
       rescue OptionParser::InvalidOption => error
         $stderr.puts "Error: #{error}"
