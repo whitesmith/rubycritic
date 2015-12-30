@@ -1,3 +1,7 @@
+# 2.4.1 / 2015-12-27
+
+* [CHANGE] Bump Reek to 3.8.1
+
 # 2.4.0 / 2015-12-26
 
 * [FEATURE] Add progress bar functionality (by Nate Holland)
