@@ -12,7 +12,6 @@ module Rubycritic
     end
 
     def names
-      return name_from_path if @analysed_module.methods_count == 0
       names = node.get_module_names
       if names.empty?
         name_from_path
