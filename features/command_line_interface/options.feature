@@ -29,6 +29,7 @@ Feature: Rubycritic can be controlled using command-line options
           -m, --mode-ci                    Use CI mode (faster, but only analyses last commit)
               --deduplicate-symlinks       De-duplicate symlinks based on their final target
               --suppress-ratings           Suppress letter ratings
+          -O, --open                       Open html report with browser: [:chrome, :chromium, :firefox, :safari]
           -v, --version                    Show gem's version
           -h, --help                       Show this message
 

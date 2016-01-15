@@ -19,5 +19,4 @@ module Rubycritic
       end
     end
   end
-
 end
