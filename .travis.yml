@@ -13,4 +13,5 @@ matrix:
     - rvm: jruby
   fast_finish: true
 
+before_install: "gem update bundler"
 script: "bundle exec rake"

@@ -19,10 +19,11 @@ module Rubycritic
 
           opts.on(
             "-f", "--format [FORMAT]",
-            [:html, :json],
+            [:html, :json, :console],
             "Report smells in the given format:",
             "  html (default)",
-            "  json"
+            "  json",
+            "  console"
           ) do |format|
             @format = format
           end
