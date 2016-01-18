@@ -39,13 +39,13 @@ describe Rubycritic::ModulesLocator do
     end
 
     context "when a file has no methods" do
-      it "returns the name of the file titleized" do
+      it "returns the names of all the classes and modules inside the file" do
         analysed_module = Rubycritic::AnalysedModule.new(
           :pathname => Pathname.new("test/samples/no_methods.rb"),
           :methods_count => 0
         )
         capture_output_streams do
-          Rubycritic::ModulesLocator.new(analysed_module).names.must_equal ["NoMethods"]
+          Rubycritic::ModulesLocator.new(analysed_module).names.must_equal ["Foo::NoMethods"]
         end
       end
     end

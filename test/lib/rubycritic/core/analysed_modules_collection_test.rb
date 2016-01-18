@@ -26,7 +26,7 @@ describe Rubycritic::AnalysedModulesCollection do
       let(:paths) { "test/samples/" }
 
       it "recursively registers all files" do
-        subject.count.must_equal 13
+        subject.count.must_equal Dir["test/samples/**/*.rb"].count
       end
     end
 
