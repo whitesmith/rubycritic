@@ -1,3 +1,7 @@
+# 2.5.0 / 2015-01-16
+
+* [FEATURE] Add a ConsoleReport format (by Josh Bodah)
+
 # 2.4.1 / 2015-12-27
 
 * [CHANGE] Bump Reek to 3.8.1
