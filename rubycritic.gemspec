@@ -27,7 +27,9 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "parser", ">= 2.2.0", "< 3.0"
   spec.add_runtime_dependency "colorize"
 
+  spec.add_development_dependency "aruba"
   spec.add_development_dependency "bundler", "~> 1.3"
+  spec.add_development_dependency "cucumber"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "minitest", "~> 5.3"
   spec.add_development_dependency "mocha", "~> 1.0"

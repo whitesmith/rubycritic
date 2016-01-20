@@ -1,12 +1,11 @@
+require "rubycritic/commands/base"
+
 module Rubycritic
   module Command
-    class Help
-      def initialize(help_text)
-        @help_text = help_text
-      end
-
+    class Help < Base
       def execute
-        puts @help_text
+        puts @options[:help_text]
+        @status_reporter
       end
     end
   end

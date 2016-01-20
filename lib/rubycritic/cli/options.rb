@@ -28,6 +28,10 @@ module Rubycritic
             @format = format
           end
 
+          opts.on("-s", "--minimum-score [MIN_SCORE]", "Set a minimum score") do |min_score|
+            @minimum_score = Integer(min_score)
+          end
+
           opts.on("-m", "--mode-ci", "Use CI mode (faster, but only analyses last commit)") do
             @mode = :ci
           end
@@ -51,10 +55,6 @@ module Rubycritic
         self
       end
 
-      def help_text
-        @parser.help
-      end
-
       def to_h
         {
           :mode => @mode,
@@ -62,7 +62,9 @@ module Rubycritic
           :format => @format,
           :deduplicate_symlinks => @deduplicate_symlinks,
           :paths => paths,
-          :suppress_ratings => @suppress_ratings
+          :suppress_ratings => @suppress_ratings,
+          :help_text => @parser.help,
+          :minimum_score => @minimum_score || 0
         }
       end
 

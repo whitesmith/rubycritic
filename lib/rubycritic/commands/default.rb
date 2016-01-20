@@ -2,17 +2,20 @@ require "rubycritic/source_control_systems/base"
 require "rubycritic/analysers_runner"
 require "rubycritic/revision_comparator"
 require "rubycritic/reporter"
+require "rubycritic/commands/base"
 
 module Rubycritic
   module Command
-    class Default
-      def initialize(paths)
-        @paths = paths
+    class Default < Base
+      def initialize(options)
+        super
+        @paths = options[:paths]
         Config.source_control_system = SourceControlSystem::Base.create
       end
 
       def execute
         report(critique)
+        @status_reporter
       end
 
       def critique
@@ -22,6 +25,7 @@ module Rubycritic
 
       def report(analysed_modules)
         Reporter.generate_report(analysed_modules)
+        @status_reporter.score = analysed_modules.score
       end
     end
   end
