@@ -1,3 +1,8 @@
+# 2.6.0 / 2015-01-21
+
+* [FEATURE] Add a minimum score option to the command line interface (by Roberto Schneider)
+* [CHANGE] Display the class and module names when the file has no methods
+
 # 2.5.0 / 2015-01-16
 
 * [FEATURE] Add a ConsoleReport format (by Josh Bodah)
