@@ -1,13 +1,12 @@
-require "rubycritic/core/analysed_modules_collection"
-require "rubycritic/analysers/smells/flay"
-require "rubycritic/analysers/smells/flog"
-require "rubycritic/analysers/smells/reek"
-require "rubycritic/analysers/complexity"
-require "rubycritic/analysers/churn"
-require "rubycritic/analysers/attributes"
+require 'rubycritic/core/analysed_modules_collection'
+require 'rubycritic/analysers/smells/flay'
+require 'rubycritic/analysers/smells/flog'
+require 'rubycritic/analysers/smells/reek'
+require 'rubycritic/analysers/complexity'
+require 'rubycritic/analysers/churn'
+require 'rubycritic/analysers/attributes'
 
 module Rubycritic
-
   class AnalysersRunner
     ANALYSERS = [
       Analyser::FlaySmells,
@@ -16,7 +15,7 @@ module Rubycritic
       Analyser::Complexity,
       Analyser::Attributes,
       Analyser::Churn
-    ]
+    ].freeze
 
     def initialize(paths)
       @paths = paths
@@ -35,5 +34,4 @@ module Rubycritic
       @analysed_modules ||= AnalysedModulesCollection.new(@paths)
     end
   end
-
 end

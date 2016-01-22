@@ -1,10 +1,9 @@
-require "rubycritic/analysers/helpers/methods_counter"
-require "rubycritic/analysers/helpers/modules_locator"
-require "rubycritic/colorize"
+require 'rubycritic/analysers/helpers/methods_counter'
+require 'rubycritic/analysers/helpers/modules_locator'
+require 'rubycritic/colorize'
 
 module Rubycritic
   module Analyser
-
     class Attributes
       include Colorize
       def initialize(analysed_modules)
@@ -15,13 +14,13 @@ module Rubycritic
         @analysed_modules.each do |analysed_module|
           analysed_module.methods_count = MethodsCounter.new(analysed_module).count
           analysed_module.name = ModulesLocator.new(analysed_module).first_name
-          print green "."
+          print green '.'
         end
-        puts ""
+        puts ''
       end
 
       def to_s
-        "attributes"
+        'attributes'
       end
     end
   end

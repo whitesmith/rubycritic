@@ -1,5 +1,5 @@
-require "rubycritic/platforms/linux"
-require "rubycritic/platforms/darwin"
+require 'rubycritic/platforms/linux'
+require 'rubycritic/platforms/darwin'
 
 module Rubycritic
   class Browser
@@ -16,7 +16,7 @@ module Rubycritic
     end
 
     def platform
-      @platform ||= [Platforms::Linux.new, Platforms::Darwin.new].select(&:can_open?).first
+      @platform ||= [Platforms::Linux.new, Platforms::Darwin.new].find(&:can_open?)
     end
   end
 end

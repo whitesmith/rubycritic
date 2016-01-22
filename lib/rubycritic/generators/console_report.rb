@@ -1,4 +1,4 @@
-require "rubycritic/generators/text/list"
+require 'rubycritic/generators/text/list'
 
 module Rubycritic
   module Generator

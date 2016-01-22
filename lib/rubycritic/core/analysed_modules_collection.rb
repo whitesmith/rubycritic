@@ -1,5 +1,5 @@
-require "rubycritic/source_locator"
-require "rubycritic/core/analysed_module"
+require 'rubycritic/source_locator'
+require 'rubycritic/core/analysed_module'
 
 module Rubycritic
   class AnalysedModulesCollection
@@ -17,7 +17,7 @@ module Rubycritic
 
     def initialize(paths)
       @modules = SourceLocator.new(paths).pathnames.map do |pathname|
-        AnalysedModule.new(:pathname => pathname)
+        AnalysedModule.new(pathname: pathname)
       end
     end
 

@@ -1,11 +1,13 @@
-require "rubycritic/platforms/base"
+require 'rubycritic/platforms/base'
 
 module Rubycritic
   module Platforms
     class Linux < Base
       BROWSER_MAP = {}.tap do |hash|
-        hash.merge! :chrome => "google-chrome", :chromium => "chromium-browser", :firefox => "firefox"
-        hash.default = "firefox"
+        hash[:chrome] = 'google-chrome'
+        hash[:chromium] = 'chromium-browser'
+        hash[:firefox] = 'firefox'
+        hash.default = 'firefox'
       end
 
       def can_open?

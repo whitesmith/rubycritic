@@ -1,7 +1,6 @@
-require "rubycritic/analysers/helpers/parser"
+require 'rubycritic/analysers/helpers/parser'
 
 module Rubycritic
-
   class ModulesLocator
     def initialize(analysed_module)
       @analysed_module = analysed_module
@@ -31,12 +30,11 @@ module Rubycritic
     end
 
     def name_from_path
-      [file_name.split("_").map(&:capitalize).join]
+      [file_name.split('_').map(&:capitalize).join]
     end
 
     def file_name
-      @analysed_module.pathname.basename.sub_ext("").to_s
+      @analysed_module.pathname.basename.sub_ext('').to_s
     end
   end
-
 end

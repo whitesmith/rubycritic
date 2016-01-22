@@ -1,7 +1,6 @@
-require "flay"
+require 'flay'
 
 module Rubycritic
-
   class Flay < ::Flay
     def initialize(paths)
       super()
@@ -9,5 +8,4 @@ module Rubycritic
       analyze
     end
   end
-
 end

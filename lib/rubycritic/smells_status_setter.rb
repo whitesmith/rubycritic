@@ -1,5 +1,4 @@
 module Rubycritic
-
   module SmellsStatusSetter
     def self.set(smells_before, smells_now)
       old_smells = smells_now & smells_before
@@ -8,11 +7,10 @@ module Rubycritic
       set_status(new_smells, :new)
     end
 
-    private
-
     def self.set_status(smells, status)
       smells.each { |smell| smell.status = status }
     end
-  end
 
+    private_class_method :set_status
+  end
 end

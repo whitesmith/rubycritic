@@ -1,10 +1,9 @@
-require "rubycritic/analysers/helpers/flay"
-require "rubycritic/core/smell"
-require "rubycritic/colorize"
+require 'rubycritic/analysers/helpers/flay'
+require 'rubycritic/core/smell'
+require 'rubycritic/colorize'
 
 module Rubycritic
   module Analyser
-
     class FlaySmells
       include Colorize
       def initialize(analysed_modules)
@@ -22,13 +21,13 @@ module Rubycritic
           nodes.each do |node|
             @analysed_modules[node.file].duplication += node.mass
           end
-          print green "."
+          print green '.'
         end
-        puts ""
+        puts ''
       end
 
       def to_s
-        "flay smells"
+        'flay smells'
       end
 
       private
@@ -44,12 +43,12 @@ module Rubycritic
       def create_smell(structural_hash, nodes)
         mass = @flay.masses[structural_hash]
         Smell.new(
-          :locations => smell_locations(nodes),
-          :context   => similarity(structural_hash),
-          :message   => "found in #{nodes.size} nodes",
-          :score     => mass,
-          :type      => "DuplicateCode",
-          :cost      => cost(mass)
+          locations: smell_locations(nodes),
+          context: similarity(structural_hash),
+          message: "found in #{nodes.size} nodes",
+          score: mass,
+          type: 'DuplicateCode',
+          cost: cost(mass)
         )
       end
 
@@ -61,9 +60,9 @@ module Rubycritic
 
       def similarity(structural_hash)
         if @flay.identical[structural_hash]
-          "Identical code"
+          'Identical code'
         else
-          "Similar code"
+          'Similar code'
         end
       end
 
@@ -71,6 +70,5 @@ module Rubycritic
         mass / 25
       end
     end
-
   end
 end

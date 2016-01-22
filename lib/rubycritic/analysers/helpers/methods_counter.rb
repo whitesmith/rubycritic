@@ -1,7 +1,6 @@
-require "rubycritic/analysers/helpers/parser"
+require 'rubycritic/analysers/helpers/parser'
 
 module Rubycritic
-
   class MethodsCounter
     def initialize(analysed_module)
       @analysed_module = analysed_module
@@ -21,5 +20,4 @@ module Rubycritic
       File.read(@analysed_module.path)
     end
   end
-
 end

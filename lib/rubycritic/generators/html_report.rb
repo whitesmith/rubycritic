@@ -1,14 +1,13 @@
-require "fileutils"
-require "rubycritic/generators/html/overview"
-require "rubycritic/generators/html/smells_index"
-require "rubycritic/generators/html/code_index"
-require "rubycritic/generators/html/code_file"
+require 'fileutils'
+require 'rubycritic/generators/html/overview'
+require 'rubycritic/generators/html/smells_index'
+require 'rubycritic/generators/html/code_index'
+require 'rubycritic/generators/html/code_file'
 
 module Rubycritic
   module Generator
-
     class HtmlReport
-      ASSETS_DIR = File.expand_path("../html/assets", __FILE__)
+      ASSETS_DIR = File.expand_path('../html/assets', __FILE__)
 
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
@@ -30,7 +29,7 @@ module Rubycritic
       def create_directories_and_files
         Array(generators).each do |generator|
           FileUtils.mkdir_p(generator.file_directory)
-          File.open(generator.file_pathname, "w+") do |file|
+          File.open(generator.file_pathname, 'w+') do |file|
             file.write(generator.render)
           end
         end
@@ -66,6 +65,5 @@ module Rubycritic
         overview_generator.file_href
       end
     end
-
   end
 end

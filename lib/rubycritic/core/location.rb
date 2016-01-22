@@ -1,7 +1,6 @@
-require "pathname"
+require 'pathname'
 
 module Rubycritic
-
   class Location
     attr_reader :pathname, :line
 
@@ -11,7 +10,7 @@ module Rubycritic
     end
 
     def file_name
-      @pathname.basename.sub_ext("").to_s
+      @pathname.basename.sub_ext('').to_s
     end
 
     def to_s
@@ -20,8 +19,8 @@ module Rubycritic
 
     def to_h
       {
-        :path => pathname.to_s,
-        :line => line
+        path: pathname.to_s,
+        line: line
       }
     end
 
@@ -43,5 +42,4 @@ module Rubycritic
       [@pathname, @line]
     end
   end
-
 end

@@ -1,12 +1,11 @@
-require "rubycritic/generators/html/base"
-require "rubycritic/generators/html/turbulence"
+require 'rubycritic/generators/html/base'
+require 'rubycritic/generators/html/turbulence'
 
 module Rubycritic
   module Generator
     module Html
-
       class Overview < Base
-        TEMPLATE = erb_template("overview.html.erb")
+        TEMPLATE = erb_template('overview.html.erb')
 
         def initialize(analysed_modules)
           @turbulence_data = Turbulence.data(analysed_modules)
@@ -15,7 +14,7 @@ module Rubycritic
         end
 
         def file_name
-          "overview.html"
+          'overview.html'
         end
 
         def render
@@ -23,7 +22,6 @@ module Rubycritic
           LAYOUT_TEMPLATE.result(get_binding { index_body })
         end
       end
-
     end
   end
 end

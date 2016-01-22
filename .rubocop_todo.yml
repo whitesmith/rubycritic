@@ -1,0 +1,36 @@
+# Offense count: 1
+Metrics/AbcSize:
+  Exclude:
+    - 'lib/rubycritic/analysers/smells/flay.rb'
+    - 'lib/rubycritic/cli/options.rb'
+
+# Offense count: 6
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Exclude:
+    - 'lib/rubycritic/analysers/helpers/ast_node.rb'
+    - 'lib/rubycritic/analysers/smells/flay.rb'
+    - 'lib/rubycritic/command_factory.rb'
+    - 'lib/rubycritic/core/analysed_module.rb'
+    - 'lib/rubycritic/reporter.rb'
+    - 'lib/rubycritic/revision_comparator.rb'
+    - 'lib/rubycritic/platforms/base.rb'
+
+# Offense count: 4
+Style/AccessorMethodName:
+  Exclude:
+    - 'lib/rubycritic/analysers/helpers/ast_node.rb'
+    - 'lib/rubycritic/generators/html/base.rb'
+    - 'lib/rubycritic/revision_comparator.rb'
+
+# Offense count: 1
+Style/ClassVars:
+  Exclude:
+    - 'lib/rubycritic/source_control_systems/base.rb'
+
+# Offense count: 3
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: use_perl_names, use_english_names
+Style/SpecialGlobalVars:
+  Enabled: false

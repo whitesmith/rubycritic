@@ -12,7 +12,7 @@ Given(/^the smelly file 'smelly.rb'/) do
       end
     end
   EOS
-  write_file("smelly.rb", contents)
+  write_file('smelly.rb', contents)
 end
 
 Given(/^the clean file 'clean.rb'/) do
@@ -22,9 +22,9 @@ Given(/^the clean file 'clean.rb'/) do
       def foo; end
     end
   EOS
-  write_file("clean.rb", contents)
+  write_file('clean.rb', contents)
 end
 
 Given(/^the empty file 'empty.rb'/) do
-  write_file("clean.rb", "")
+  write_file('clean.rb', '')
 end

@@ -1,8 +1,7 @@
 module Parser
   module AST
-
     class Node
-      MODULE_TYPES = [:module, :class]
+      MODULE_TYPES = [:module, :class].freeze
 
       def count_nodes_of_type(*types)
         count = 0
@@ -22,8 +21,8 @@ module Parser
 
       def get_module_names
         children_modules = children
-          .select { |child| child.is_a?(Parser::AST::Node) }
-          .flat_map(&:get_module_names)
+                           .select { |child| child.is_a?(Parser::AST::Node) }
+                           .flat_map(&:get_module_names)
 
         if MODULE_TYPES.include?(type)
           if children_modules.empty?
@@ -47,7 +46,7 @@ module Parser
           name_segments.unshift(current_node.children[1])
           current_node = current_node.children[0]
         end
-        name_segments.join("::")
+        name_segments.join('::')
       end
     end
   end
@@ -64,6 +63,5 @@ module Rubycritic
         []
       end
     end
-
   end
 end

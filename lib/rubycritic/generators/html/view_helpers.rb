@@ -1,5 +1,4 @@
 module Rubycritic
-
   module ViewHelpers
     def timeago_tag(time)
       "<time class='js-timeago' datetime='#{time}'>#{time}</time>"
@@ -32,12 +31,13 @@ module Rubycritic
     end
 
     def file_directory
-      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
+      fail NotImplementedError,
+           "The #{self.class} class must implement the #{__method__} method."
     end
 
     def root_directory
-      raise NotImplementedError.new("The #{self.class} class must implement the #{__method__} method.")
+      fail NotImplementedError,
+           "The #{self.class} class must implement the #{__method__} method."
     end
   end
-
 end

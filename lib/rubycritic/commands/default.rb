@@ -1,8 +1,8 @@
-require "rubycritic/source_control_systems/base"
-require "rubycritic/analysers_runner"
-require "rubycritic/revision_comparator"
-require "rubycritic/reporter"
-require "rubycritic/commands/base"
+require 'rubycritic/source_control_systems/base'
+require 'rubycritic/analysers_runner'
+require 'rubycritic/revision_comparator'
+require 'rubycritic/reporter'
+require 'rubycritic/commands/base'
 
 module Rubycritic
   module Command
