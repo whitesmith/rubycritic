@@ -1,4 +1,5 @@
 require "optparse"
+require "rubycritic/browser"
 
 module Rubycritic
   module Cli
@@ -44,6 +45,13 @@ module Rubycritic
             @suppress_ratings = true
           end
 
+          opts.on("-O ", "--open",
+            Rubycritic::Browser::SUPPORTS,
+            "Open html report with browser: #{Rubycritic::Browser::SUPPORTS}"
+            ) do |open_with|
+            @open_with = open_with
+          end
+
           opts.on_tail("-v", "--version", "Show gem's version") do
             @mode = :version
           end
@@ -64,7 +72,8 @@ module Rubycritic
           :paths => paths,
           :suppress_ratings => @suppress_ratings,
           :help_text => @parser.help,
-          :minimum_score => @minimum_score || 0
+          :minimum_score => @minimum_score || 0,
+          :open_with => @open_with
         }
       end
 

@@ -18,6 +18,11 @@ module Rubycritic
         create_directories_and_files
         copy_assets_to_report_directory
         puts "New critique at #{report_location}"
+        browser.open
+      end
+
+      def browser
+        @browser ||= Rubycritic::Browser.new(report_location)
       end
 
       private
