@@ -15,7 +15,7 @@ Then(/^it reports:$/) do |report|
 end
 
 Then(/^there is no output on stdout$/) do
-  expect(last_command_started).to have_output_on_stdout("")
+  expect(last_command_started).to have_output_on_stdout('')
 end
 
 Then(/^it reports the current version$/) do

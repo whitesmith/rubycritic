@@ -1,6 +1,5 @@
 module Rubycritic
   module SourceControlSystem
-
     class Git < Base
       register_system
 
@@ -9,7 +8,7 @@ module Rubycritic
       end
 
       def self.to_s
-        "Git"
+        'Git'
       end
 
       def revisions_count(path)
@@ -52,6 +51,5 @@ module Rubycritic
         `git stash pop`
       end
     end
-
   end
 end

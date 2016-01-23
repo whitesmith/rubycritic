@@ -1,4 +1,4 @@
-require "rubycritic/configuration"
+require 'rubycritic/configuration'
 
 module Rubycritic
   module Platforms
@@ -6,29 +6,29 @@ module Rubycritic
       attr_reader :browser_name
 
       def initialize
-        @browser_name = Config.open_with || ""
+        @browser_name = Config.open_with || ''
       end
 
       def can_open?
-        raise NotImplementedError
+        fail NotImplementedError
       end
 
       def browser
-        raise NotImplementedError
+        fail NotImplementedError
       end
 
       def open(_)
-        raise NotImplementedError
+        fail NotImplementedError
       end
 
       def application
-        raise NotImplementedError
+        fail NotImplementedError
       end
 
       def platform
         @platform ||= begin
-          require "rbconfig"
-          host_os = ::RbConfig::CONFIG["host_os"]
+          require 'rbconfig'
+          host_os = ::RbConfig::CONFIG['host_os']
           case host_os
           when /mswin|msys|mingw|cygwin|bccwin|wince|emc/
             :windows
@@ -41,7 +41,6 @@ module Rubycritic
           end
         end
       end
-
     end
   end
 end

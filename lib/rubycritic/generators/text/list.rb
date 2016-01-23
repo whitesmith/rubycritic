@@ -1,24 +1,24 @@
-require "colorize"
+require 'colorize'
 
 module Rubycritic
   module Generator
     module Text
       class List
         class << self
-          TEMPLATE_PATH = File.expand_path("../templates/list.erb", __FILE__)
+          TEMPLATE_PATH = File.expand_path('../templates/list.erb', __FILE__)
 
           def erb_template
-            @erb_template ||= ERB.new(File.read(TEMPLATE_PATH), nil, "-")
+            @erb_template ||= ERB.new(File.read(TEMPLATE_PATH), nil, '-')
           end
         end
 
         RATING_TO_COLOR = {
-          "A" => :green,
-          "B" => :green,
-          "C" => :yellow,
-          "D" => :light_red,
-          "F" => :red
-        }
+          'A' => :green,
+          'B' => :green,
+          'C' => :yellow,
+          'D' => :light_red,
+          'F' => :red
+        }.freeze
 
         def initialize(analysed_module)
           @analysed_module = analysed_module

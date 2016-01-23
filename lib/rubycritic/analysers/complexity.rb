@@ -1,9 +1,8 @@
-require "rubycritic/analysers/helpers/flog"
-require "rubycritic/colorize"
+require 'rubycritic/analysers/helpers/flog'
+require 'rubycritic/colorize'
 
 module Rubycritic
   module Analyser
-
     class Complexity
       include Colorize
       def initialize(analysed_modules)
@@ -16,15 +15,14 @@ module Rubycritic
           @flog.reset
           @flog.flog(analysed_module.path)
           analysed_module.complexity = @flog.total_score.round
-          print green "."
+          print green '.'
         end
-        puts ""
+        puts ''
       end
 
       def to_s
-        "complexity"
+        'complexity'
       end
     end
-
   end
 end

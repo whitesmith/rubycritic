@@ -1,14 +1,13 @@
-require "virtus"
-require "rubycritic/core/location"
+require 'virtus'
+require 'rubycritic/core/location'
 
 module Rubycritic
-
   class Smell
     include Virtus.model
 
     attribute :context
     attribute :cost
-    attribute :locations, Array, :default => []
+    attribute :locations, Array, default: []
     attribute :message
     attribute :score
     attribute :status
@@ -25,7 +24,7 @@ module Rubycritic
     def ==(other)
       state == other.state
     end
-    alias_method :eql?, :==
+    alias eql? ==
 
     def to_s
       "(#{type}) #{context} #{message}"
@@ -33,13 +32,13 @@ module Rubycritic
 
     def to_h
       {
-        :context => context,
-        :cost => cost,
-        :locations => locations,
-        :message => message,
-        :score => score,
-        :status => status,
-        :type => type
+        context: context,
+        cost: cost,
+        locations: locations,
+        message: message,
+        score: score,
+        status: status,
+        type: type
       }
     end
 
@@ -57,5 +56,4 @@ module Rubycritic
       [@context, @message, @score, @type]
     end
   end
-
 end

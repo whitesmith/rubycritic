@@ -1,10 +1,9 @@
-require "pathname"
+require 'pathname'
 
 module Rubycritic
-
   class SourceLocator
-    RUBY_EXTENSION = ".rb"
-    RUBY_FILES = File.join("**", "*#{RUBY_EXTENSION}")
+    RUBY_EXTENSION = '.rb'.freeze
+    RUBY_FILES = File.join('**', "*#{RUBY_EXTENSION}")
 
     def initialize(paths)
       @initial_paths = Array(paths)
@@ -22,9 +21,9 @@ module Rubycritic
 
     def deduplicate_symlinks(path_list)
       # sort the symlinks to the end so files are preferred
-      path_list.sort_by! { |path| File.symlink?(path.cleanpath) ? "z" : "a" }
+      path_list.sort_by! { |path| File.symlink?(path.cleanpath) ? 'z' : 'a' }
       if defined?(JRUBY_VERSION)
-        require "java"
+        require 'java'
         path_list.uniq! do |path|
           java.io.File.new(path.realpath.to_s).canonical_path
         end

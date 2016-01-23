@@ -1,8 +1,8 @@
-require_relative "../../lib/rubycritic"
-require_relative "../../lib/rubycritic/cli/application"
-require_relative "../../lib/rubycritic/commands/status_reporter"
-require "aruba/cucumber"
-require "minitest/spec"
+require_relative '../../lib/rubycritic'
+require_relative '../../lib/rubycritic/cli/application'
+require_relative '../../lib/rubycritic/commands/status_reporter'
+require 'aruba/cucumber'
+require 'minitest/spec'
 
 #
 # Provides runner methods used in the cucumber steps.

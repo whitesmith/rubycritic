@@ -1,10 +1,9 @@
-require "rubycritic/analysers/helpers/flog"
-require "rubycritic/core/smell"
-require "rubycritic/colorize"
+require 'rubycritic/analysers/helpers/flog'
+require 'rubycritic/core/smell'
+require 'rubycritic/colorize'
 
 module Rubycritic
   module Analyser
-
     class FlogSmells
       include Colorize
       HIGH_COMPLEXITY_SCORE_THRESHOLD = 25
@@ -18,13 +17,13 @@ module Rubycritic
       def run
         @analysed_modules.each do |analysed_module|
           add_smells_to(analysed_module)
-          print green "."
+          print green '.'
         end
-        puts ""
+        puts ''
       end
 
       def to_s
-        "flog smells"
+        'flog smells'
       end
 
       private
@@ -42,29 +41,28 @@ module Rubycritic
 
       def create_smell(context, score)
         Smell.new(
-          :locations => smell_locations(context),
-          :context   => context,
-          :message   => "has a flog score of #{score}",
-          :score     => score,
-          :type      => type(score),
-          :cost      => 0
+          locations: smell_locations(context),
+          context: context,
+          message: "has a flog score of #{score}",
+          score: score,
+          type: type(score),
+          cost: 0
         )
       end
 
       def smell_locations(context)
         line = @flog.method_locations[context]
-        file_path, file_line = line.split(":")
+        file_path, file_line = line.split(':')
         [Location.new(file_path, file_line)]
       end
 
       def type(score)
         if score >= VERY_HIGH_COMPLEXITY_SCORE_THRESHOLD
-          "VeryHighComplexity"
+          'VeryHighComplexity'
         else
-          "HighComplexity"
+          'HighComplexity'
         end
       end
     end
-
   end
 end

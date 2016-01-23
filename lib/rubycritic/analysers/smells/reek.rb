@@ -1,10 +1,9 @@
-require "rubycritic/analysers/helpers/reek"
-require "rubycritic/core/smell"
-require "rubycritic/colorize"
+require 'rubycritic/analysers/helpers/reek'
+require 'rubycritic/core/smell'
+require 'rubycritic/colorize'
 
 module Rubycritic
   module Analyser
-
     class ReekSmells
       include Colorize
       def initialize(analysed_modules)
@@ -14,13 +13,13 @@ module Rubycritic
       def run
         @analysed_modules.each do |analysed_module|
           add_smells_to(analysed_module)
-          print green "."
+          print green '.'
         end
-        puts ""
+        puts ''
       end
 
       def to_s
-        "reek smells"
+        'reek smells'
       end
 
       private
@@ -33,11 +32,11 @@ module Rubycritic
 
       def create_smell(smell)
         Smell.new(
-          :locations => smell_locations(smell.source, smell.lines),
-          :context   => smell.context,
-          :message   => smell.message,
-          :type      => smell.smell_type,
-          :cost      => 0
+          locations: smell_locations(smell.source, smell.lines),
+          context: smell.context,
+          message: smell.message,
+          type: smell.smell_type,
+          cost: 0
         )
       end
 
@@ -47,6 +46,5 @@ module Rubycritic
         end.sort
       end
     end
-
   end
 end

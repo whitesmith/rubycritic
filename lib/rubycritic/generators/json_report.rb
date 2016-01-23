@@ -1,8 +1,7 @@
-require "rubycritic/generators/json/simple"
+require 'rubycritic/generators/json/simple'
 
 module Rubycritic
   module Generator
-
     class JsonReport
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
@@ -18,6 +17,5 @@ module Rubycritic
         Json::Simple.new(@analysed_modules)
       end
     end
-
   end
 end

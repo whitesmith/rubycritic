@@ -1,12 +1,11 @@
 module Rubycritic
-
   class Rating
     def self.from_cost(cost)
-      if    cost <= 2  then new("A")
-      elsif cost <= 4  then new("B")
-      elsif cost <= 8  then new("C")
-      elsif cost <= 16 then new("D")
-      else new("F")
+      if    cost <= 2  then new('A')
+      elsif cost <= 4  then new('B')
+      elsif cost <= 8  then new('C')
+      elsif cost <= 16 then new('D')
+      else new('F')
       end
     end
 
@@ -26,5 +25,4 @@ module Rubycritic
       to_h.to_json(*a)
     end
   end
-
 end

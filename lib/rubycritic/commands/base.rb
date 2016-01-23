@@ -1,4 +1,4 @@
-require "rubycritic/commands/status_reporter"
+require 'rubycritic/commands/status_reporter'
 
 module Rubycritic
   module Command
@@ -9,7 +9,7 @@ module Rubycritic
       end
 
       def execute
-        raise NotImplementedError
+        fail NotImplementedError
       end
     end
   end

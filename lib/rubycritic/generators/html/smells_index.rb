@@ -1,11 +1,10 @@
-require "rubycritic/generators/html/base"
+require 'rubycritic/generators/html/base'
 
 module Rubycritic
   module Generator
     module Html
-
       class SmellsIndex < Base
-        TEMPLATE = erb_template("smells_index.html.erb")
+        TEMPLATE = erb_template('smells_index.html.erb')
 
         def initialize(analysed_modules)
           @smells = analysed_modules.flat_map(&:smells).uniq
@@ -14,7 +13,7 @@ module Rubycritic
         end
 
         def file_name
-          "smells_index.html"
+          'smells_index.html'
         end
 
         def render
@@ -32,7 +31,6 @@ module Rubycritic
           names
         end
       end
-
     end
   end
 end

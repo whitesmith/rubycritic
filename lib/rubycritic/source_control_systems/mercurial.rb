@@ -1,6 +1,5 @@
 module Rubycritic
   module SourceControlSystem
-
     class Mercurial < Base
       register_system
 
@@ -9,7 +8,7 @@ module Rubycritic
       end
 
       def self.to_s
-        "Mercurial"
+        'Mercurial'
       end
 
       def revisions_count(path)
@@ -24,6 +23,5 @@ module Rubycritic
         false
       end
     end
-
   end
 end

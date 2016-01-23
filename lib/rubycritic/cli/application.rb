@@ -1,6 +1,6 @@
-require "rubycritic"
-require "rubycritic/cli/options"
-require "rubycritic/command_factory"
+require 'rubycritic'
+require 'rubycritic/cli/options'
+require 'rubycritic/command_factory'
 
 module Rubycritic
   module Cli

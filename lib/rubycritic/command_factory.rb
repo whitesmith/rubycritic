@@ -1,4 +1,4 @@
-require "rubycritic/configuration"
+require 'rubycritic/configuration'
 
 module Rubycritic
   class CommandFactory
@@ -10,16 +10,16 @@ module Rubycritic
     def self.command_class(mode)
       case mode
       when :version
-        require "rubycritic/commands/version"
+        require 'rubycritic/commands/version'
         Command::Version
       when :help
-        require "rubycritic/commands/help"
+        require 'rubycritic/commands/help'
         Command::Help
       when :ci
-        require "rubycritic/commands/ci"
+        require 'rubycritic/commands/ci'
         Command::Ci
       else
-        require "rubycritic/commands/default"
+        require 'rubycritic/commands/default'
         Command::Default
       end
     end

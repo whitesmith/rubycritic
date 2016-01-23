@@ -1,13 +1,12 @@
-require "rubycritic/serializer"
-require "rubycritic/analysers_runner"
-require "rubycritic/smells_status_setter"
-require "rubycritic/version"
-require "digest/md5"
+require 'rubycritic/serializer'
+require 'rubycritic/analysers_runner'
+require 'rubycritic/smells_status_setter'
+require 'rubycritic/version'
+require 'digest/md5'
 
 module Rubycritic
-
   class RevisionComparator
-    SNAPSHOTS_DIR_NAME = "snapshots"
+    SNAPSHOTS_DIR_NAME = 'snapshots'.freeze
 
     def initialize(paths)
       @paths = paths
@@ -49,5 +48,4 @@ module Rubycritic
       )
     end
   end
-
 end

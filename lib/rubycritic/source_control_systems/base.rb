@@ -1,8 +1,7 @@
-require "shellwords"
+require 'shellwords'
 
 module Rubycritic
   module SourceControlSystem
-
     class Base
       @@systems = []
 
@@ -28,10 +27,9 @@ module Rubycritic
         "#{systems[0...-1].join(', ')} or #{systems[-1]}"
       end
     end
-
   end
 end
 
-require "rubycritic/source_control_systems/double"
-require "rubycritic/source_control_systems/git"
-require "rubycritic/source_control_systems/mercurial"
+require 'rubycritic/source_control_systems/double'
+require 'rubycritic/source_control_systems/git'
+require 'rubycritic/source_control_systems/mercurial'

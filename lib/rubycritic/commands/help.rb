@@ -1,4 +1,4 @@
-require "rubycritic/commands/base"
+require 'rubycritic/commands/base'
 
 module Rubycritic
   module Command

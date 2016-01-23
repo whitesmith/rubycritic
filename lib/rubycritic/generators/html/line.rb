@@ -1,13 +1,12 @@
-require "cgi"
-require "rubycritic/generators/html/base"
+require 'cgi'
+require 'rubycritic/generators/html/base'
 
 module Rubycritic
   module Generator
     module Html
-
       class Line < Base
-        NORMAL_TEMPLATE = erb_template("line.html.erb")
-        SMELLY_TEMPLATE = erb_template("smelly_line.html.erb")
+        NORMAL_TEMPLATE = erb_template('line.html.erb')
+        SMELLY_TEMPLATE = erb_template('smelly_line.html.erb')
 
         attr_reader :file_directory
 
@@ -31,7 +30,6 @@ module Rubycritic
           end
         end
       end
-
     end
   end
 end
