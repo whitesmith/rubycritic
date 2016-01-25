@@ -11,7 +11,7 @@ module Rubycritic
       end
 
       def score=(score)
-        @score = score
+        @score = score.round(2)
         update_status
       end
 

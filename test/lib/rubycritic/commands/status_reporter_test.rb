@@ -21,7 +21,13 @@ describe Rubycritic::Command::StatusReporter do
     it 'accept a score' do
       @reporter.score = 50
       @reporter.status.must_equal success_status
-      @reporter.status_message.must_equal 'Score: 50'
+      @reporter.status_message.must_equal 'Score: 50.0'
+    end
+
+    it 'should format the score' do
+      @reporter.score = 98.95258620689656
+      @reporter.status.must_equal success_status
+      @reporter.status_message.must_equal 'Score: 98.95'
     end
   end
 
@@ -42,7 +48,13 @@ describe Rubycritic::Command::StatusReporter do
       it 'should return the correct status' do
         @reporter.score = score
         @reporter.status.must_equal score_below_minimum
-        @reporter.status_message.must_equal 'Score (98) is below the minimum 99'
+        @reporter.status_message.must_equal 'Score (98.0) is below the minimum 99'
+      end
+
+      it 'should format the score' do
+        @reporter.score = 98.95258620689656
+        @reporter.status.must_equal score_below_minimum
+        @reporter.status_message.must_equal 'Score (98.95) is below the minimum 99'
       end
     end
 
@@ -51,7 +63,7 @@ describe Rubycritic::Command::StatusReporter do
       it 'should return the correct status' do
         @reporter.score = score
         @reporter.status.must_equal success_status
-        @reporter.status_message.must_equal 'Score: 99'
+        @reporter.status_message.must_equal 'Score: 99.0'
       end
     end
 
@@ -60,7 +72,7 @@ describe Rubycritic::Command::StatusReporter do
       it 'should return the correct status' do
         @reporter.score = score
         @reporter.status.must_equal success_status
-        @reporter.status_message.must_equal 'Score: 100'
+        @reporter.status_message.must_equal 'Score: 100.0'
       end
     end
   end
