@@ -1,3 +1,9 @@
+# 2.7.0 / 2015-01-23
+
+* [FEATURE] Open html report with browser (by YingRui Lu)
+* [CHANGE] Bump Reek to 3.9
+* [CHANGE] Bump Rubocop to 0.36 and internal cleanup (preparing for Ruby 2.3)
+
 # 2.6.0 / 2015-01-21
 
 * [FEATURE] Add a minimum score option to the command line interface (by Roberto Schneider)
