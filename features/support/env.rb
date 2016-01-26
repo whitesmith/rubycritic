@@ -16,7 +16,7 @@ class RubycriticWorld
   end
 
   def rubycritic(args)
-    run_simple("rubycritic #{args}", false)
+    run_simple("rubycritic #{args}  --no-browser", false)
   end
 end
 

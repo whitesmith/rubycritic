@@ -45,11 +45,8 @@ module Rubycritic
             @suppress_ratings = true
           end
 
-          opts.on('-O ', '--open',
-                  Rubycritic::Browser::SUPPORTS,
-                  "Open html report with browser: #{Rubycritic::Browser::SUPPORTS}"
-                 ) do |open_with|
-            @open_with = open_with
+          opts.on('--no-browser', 'Do not open html report with browser') do
+            @no_browser = true
           end
 
           opts.on_tail('-v', '--version', "Show gem's version") do
@@ -73,7 +70,7 @@ module Rubycritic
           suppress_ratings: @suppress_ratings,
           help_text: @parser.help,
           minimum_score: @minimum_score || 0,
-          open_with: @open_with
+          no_browser: @no_browser
         }
       end
 

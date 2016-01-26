@@ -1,22 +1,17 @@
-require 'rubycritic/platforms/linux'
-require 'rubycritic/platforms/darwin'
+require 'launchy'
 
 module Rubycritic
   class Browser
     attr_reader :report_path
-
-    SUPPORTS = Platforms::Linux::BROWSER_MAP.keys | Platforms::Darwin::BROWSER_MAP.keys
 
     def initialize(report_path)
       @report_path = report_path
     end
 
     def open
-      platform && platform.open(report_path)
-    end
-
-    def platform
-      @platform ||= [Platforms::Linux.new, Platforms::Darwin.new].find(&:can_open?)
+      Launchy.open(report_path) do |exception|
+        puts "Attempted to open #{report_path} and failed because #{exception}"
+      end
     end
   end
 end

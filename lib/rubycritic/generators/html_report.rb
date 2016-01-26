@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'rubycritic/configuration'
 require 'rubycritic/generators/html/overview'
 require 'rubycritic/generators/html/smells_index'
 require 'rubycritic/generators/html/code_index'
@@ -17,7 +18,7 @@ module Rubycritic
         create_directories_and_files
         copy_assets_to_report_directory
         puts "New critique at #{report_location}"
-        browser.open
+        browser.open unless Config.no_browser
       end
 
       def browser
