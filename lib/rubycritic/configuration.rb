@@ -2,7 +2,7 @@ module Rubycritic
   class Configuration
     attr_reader :root
     attr_accessor :source_control_system, :mode, :format, :deduplicate_symlinks,
-                  :suppress_ratings, :open_with
+                  :suppress_ratings, :open_with, :no_browser
 
     def set(options)
       self.mode = options[:mode] || :default
@@ -11,6 +11,7 @@ module Rubycritic
       self.deduplicate_symlinks = options[:deduplicate_symlinks] || false
       self.suppress_ratings = options[:suppress_ratings] || false
       self.open_with = options[:open_with]
+      self.no_browser = options[:no_browser]
     end
 
     def root=(path)
