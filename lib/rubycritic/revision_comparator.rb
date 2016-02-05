@@ -14,28 +14,21 @@ module Rubycritic
 
     def set_statuses(analysed_modules_now)
       if Config.source_control_system.revision?
-        SmellsStatusSetter.set(
-          analysed_modules_before.flat_map(&:smells),
-          analysed_modules_now.flat_map(&:smells)
-        )
+        analysed_modules_before = load_cached_analysed_modules
+        if analysed_modules_before
+          SmellsStatusSetter.set(
+            analysed_modules_before.flat_map(&:smells),
+            analysed_modules_now.flat_map(&:smells)
+          )
+        end
       end
       analysed_modules_now
     end
 
     private
 
-    def analysed_modules_before
-      serializer = Serializer.new(revision_file)
-      if File.file?(revision_file)
-        serializer.load
-      else
-        analysed_modules = nil
-        Config.source_control_system.travel_to_head do
-          analysed_modules = AnalysersRunner.new(@paths).run
-        end
-        serializer.dump(analysed_modules)
-        analysed_modules
-      end
+    def load_cached_analysed_modules
+      Serializer.new(revision_file).load if File.file?(revision_file)
     end
 
     def revision_file

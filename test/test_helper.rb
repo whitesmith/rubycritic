@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'mocha/setup'
+require 'mocha/mini_test'
 require 'ostruct'
 
 def context(*args, &block)
