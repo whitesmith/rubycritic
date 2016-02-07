@@ -15,7 +15,7 @@ describe Rubycritic::Generator::ConsoleReport do
     end
 
     it 'outputs the report to the stdout' do
-      assert @output.size > 0, 'expected report to be output to stdout'
+      assert !@output.empty?, 'expected report to be output to stdout'
     end
 
     it "starts the report with the module's name" do
