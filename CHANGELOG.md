@@ -1,15 +1,20 @@
-# 2.7.0 / 2015-01-23
+# 2.7.1 / 2016-02-09
+
+* [CHANGE] Bump Reek to 3.10.1 (by Tomasz Pajor)
+* [BUGFIX] Analyse only the files whose paths are specified in the CLI (by Nuno Silva)
+
+# 2.7.0 / 2016-01-23
 
 * [FEATURE] Open html report with browser (by YingRui Lu)
 * [CHANGE] Bump Reek to 3.9.1
 * [CHANGE] Bump Rubocop to 0.36 and internal cleanup (preparing for Ruby 2.3)
 
-# 2.6.0 / 2015-01-21
+# 2.6.0 / 2016-01-21
 
 * [FEATURE] Add a minimum score option to the command line interface (by Roberto Schneider)
 * [CHANGE] Display the class and module names when the file has no methods
 
-# 2.5.0 / 2015-01-16
+# 2.5.0 / 2016-01-16
 
 * [FEATURE] Add a ConsoleReport format (by Josh Bodah)
 
