@@ -31,13 +31,13 @@ module Rubycritic
     end
 
     def file_directory
-      fail NotImplementedError,
-           "The #{self.class} class must implement the #{__method__} method."
+      raise NotImplementedError,
+            "The #{self.class} class must implement the #{__method__} method."
     end
 
     def root_directory
-      fail NotImplementedError,
-           "The #{self.class} class must implement the #{__method__} method."
+      raise NotImplementedError,
+            "The #{self.class} class must implement the #{__method__} method."
     end
   end
 end

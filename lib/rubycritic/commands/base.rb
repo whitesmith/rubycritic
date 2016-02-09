@@ -9,7 +9,7 @@ module Rubycritic
       end
 
       def execute
-        fail NotImplementedError
+        raise NotImplementedError
       end
     end
   end

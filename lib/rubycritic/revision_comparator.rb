@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubycritic/serializer'
 require 'rubycritic/analysers_runner'
 require 'rubycritic/smells_status_setter'
