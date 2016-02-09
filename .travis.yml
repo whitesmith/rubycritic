@@ -2,16 +2,24 @@ sudo: false
 language: ruby
 
 rvm:
-  - 2.0
-  - 2.1
-  - 2.2
-  - jruby
-  - rbx-2
+  - 2.0.0-p648
+  - 2.1.8
+  - 2.2.4
+  - 2.3.0
+  - ruby-head
+  - jruby-9.0.5.0
+  - rbx-3
+
+env:
+  # this doesn't do anything for MRI or RBX, but it doesn't hurt them either
+  # for JRuby, it enables us to get more accurate coverage data
+  - JRUBY_OPTS="--debug"
+
 matrix:
   allow_failures:
-    - rvm: rbx-2
-    - rvm: jruby
+    - rvm: ruby-head
+    - rvm: rbx-3
   fast_finish: true
 
-before_install: "gem update bundler"
-script: "bundle exec rake"
+before_install: gem update bundler
+script: bundle exec rake
