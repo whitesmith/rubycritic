@@ -1,3 +1,8 @@
+# unreleased
+
+* [CHANGE] Bump Rubocop to 0.37.2 (by Tomasz Pajor)
+* [CHANGE] Bump Flay to 2.7.0 (by Tomasz Pajor)
+
 # 2.7.1 / 2016-02-09
 
 * [CHANGE] Bump Reek to 3.10.1 (by Tomasz Pajor)

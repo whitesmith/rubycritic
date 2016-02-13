@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.require_path  = 'lib'
 
   spec.add_runtime_dependency 'virtus', '~> 1.0'
-  spec.add_runtime_dependency 'flay', '2.6.1'
+  spec.add_runtime_dependency 'flay', '2.7.0'
   spec.add_runtime_dependency 'flog', '4.3.2'
   spec.add_runtime_dependency 'reek', '3.10.1'
   spec.add_runtime_dependency 'parser', '~> 2.3'
@@ -34,5 +34,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'minitest', '~> 5.3'
   spec.add_development_dependency 'mocha', '~> 1.1'
-  spec.add_development_dependency 'rubocop', '0.37.1'
+  spec.add_development_dependency 'rubocop', '0.37.2'
 end
