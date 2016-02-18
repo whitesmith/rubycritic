@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'virtus', '~> 1.0'
   spec.add_runtime_dependency 'flay', '2.7.0'
   spec.add_runtime_dependency 'flog', '4.3.2'
-  spec.add_runtime_dependency 'reek', '3.10.1'
+  spec.add_runtime_dependency 'reek', '3.11'
   spec.add_runtime_dependency 'parser', '~> 2.3'
   spec.add_runtime_dependency 'colorize'
   spec.add_runtime_dependency 'launchy', '2.4.3'
