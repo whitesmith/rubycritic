@@ -67,6 +67,10 @@ Attribute:
   - Rubycritic::Configuration#open_with
   - Rubycritic::Configuration#source_control_system
   - Rubycritic::Configuration#suppress_ratings
+  - Rubycritic::RakeTask#name
+  - Rubycritic::RakeTask#options
+  - Rubycritic::RakeTask#paths
+  - Rubycritic::RakeTask#verbose
 DuplicateMethodCall:
   exclude:
   - Rubycritic::Analyser::Churn#run

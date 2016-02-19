@@ -3,6 +3,7 @@ require 'rake/testtask'
 require 'rubocop/rake_task'
 require 'cucumber/rake/task'
 require 'reek/rake/task'
+require 'rubycritic/rake_task'
 
 Rake::TestTask.new do |task|
   task.libs.push 'lib'
@@ -17,5 +18,9 @@ end
 RuboCop::RakeTask.new
 
 Reek::Rake::Task.new
+
+Rubycritic::RakeTask.new do |task|
+  task.paths = FileList['lib/**/*.rb']
+end
 
 task default: [:test, :features, :reek, :rubocop]

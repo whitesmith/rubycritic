@@ -117,6 +117,45 @@ If you're fond of Guard you might like [guard-rubycritic][4]. It automatically a
 
 For continuous integration, you can give [Jenkins CI][5] a spin. With it, you can [easily build your own (poor-man's) Code Climate][6]!
 
+Rake Task
+---------
+
+You can use RubyCritic as Rake command in its most simple form like this:
+
+```ruby
+require "rubycritic/rake_task"
+
+Rubycritic::RakeTask.new
+```
+
+A more sophisticated Rake task that would make use of all available configuration options could look like this:
+
+```ruby
+RubyCritic::RakeTask.new do |task|
+  # Name of RubyCritic task. Defaults to :rubycritic.
+  task.name    = 'something_special'
+
+  # Glob pattern to match source files. Defaults to FileList['.'].
+  task.paths   = FileList['vendor/**/*.rb']
+
+  # You can pass all the options here in that are shown by "rubycritic -h" except for
+  # "-p / --path" since that is set separately. Defaults to ''.
+  task.options = '--mode-ci --format json'
+
+  # Defaults to false
+  task.verbose = true
+end
+```
+
+RubyCritic will try to open the generated report with a browser by default. If you don't want this
+you can prevent this behaviour by setting the options correspondingly:
+
+```ruby
+RubyCritic::RakeTask.new do |task|
+  task.options = '--no-browser'
+end
+```
+
 Compatibility
 ---------------
 

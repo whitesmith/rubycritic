@@ -18,6 +18,16 @@ class RubycriticWorld
   def rubycritic(args)
     run_simple("rubycritic #{args}  --no-browser", false)
   end
+
+  def rake(name, task_def)
+    header = <<-EOS.strip_heredoc
+      require 'rubycritic'
+      require 'rubycritic/rake_task'
+
+    EOS
+    write_file 'Rakefile', header + task_def
+    run_simple("rake #{name}", false)
+  end
 end
 
 World do

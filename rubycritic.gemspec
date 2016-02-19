@@ -35,4 +35,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest', '~> 5.3'
   spec.add_development_dependency 'mocha', '~> 1.1'
   spec.add_development_dependency 'rubocop', '0.37.2'
+  spec.add_development_dependency 'pry-byebug'
 end
