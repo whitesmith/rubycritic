@@ -46,6 +46,10 @@ module Rubycritic
       to_h.to_json(*a)
     end
 
+    def doc_url
+      "https://github.com/troessner/reek/blob/master/docs/#{dasherized_type}.md"
+    end
+
     def hash
       state.hash
     end
@@ -54,6 +58,12 @@ module Rubycritic
 
     def state
       [@context, @message, @score, @type]
+    end
+
+    private
+
+    def dasherized_type
+      type.gsub(/(?<!^)([A-Z])/, '-\1')
     end
   end
 end

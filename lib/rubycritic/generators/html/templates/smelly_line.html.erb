@@ -3,7 +3,9 @@
 <ul class="nocode smells js-smells">
 <% @smells.each do |smell| %>
   <li class="smell <%= smell.status %>">
-    <span class="description"><%= smell %>
+    <span class="description">
+      (<a href="<%= smell.doc_url %>" target="_blank"><%= smell.type %></a>)
+      <%= "#{smell.context} #{smell.message}" %>
       <% if smell.multiple_locations? %>
         <% smell.locations.each_with_index do |location, index| %>
           <a href="<%= smell_location_path(location) %>" class="js-smell-location"><%= index %></a>
