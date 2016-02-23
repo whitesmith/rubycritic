@@ -69,4 +69,18 @@ describe Rubycritic::Smell do
       smell1.must_equal smell2
     end
   end
+
+  describe '#doc_url' do
+    it 'handles one word type names' do
+      smell = Rubycritic::Smell.new(type: 'Complexity')
+
+      smell.doc_url.must_equal('https://github.com/troessner/reek/blob/master/docs/Complexity.md')
+    end
+
+    it 'handles multiple word type names' do
+      smell = Rubycritic::Smell.new(type: 'TooManyStatements')
+
+      smell.doc_url.must_equal('https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md')
+    end
+  end
 end
