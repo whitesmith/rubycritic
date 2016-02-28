@@ -2,6 +2,7 @@ require 'bundler/gem_tasks'
 require 'rake/testtask'
 require 'rubocop/rake_task'
 require 'cucumber/rake/task'
+require 'reek/rake/task'
 
 Rake::TestTask.new do |task|
   task.libs.push 'lib'
@@ -15,4 +16,6 @@ end
 
 RuboCop::RakeTask.new
 
-task default: [:test, :features, :rubocop]
+Reek::Rake::Task.new
+
+task default: [:test, :features, :reek, :rubocop]
