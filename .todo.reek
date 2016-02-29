@@ -1,0 +1,133 @@
+---
+IrresponsibleModule:
+  exclude:
+  - Rubycritic::Analyser::Attributes
+  - Rubycritic::Analyser::Churn
+  - Rubycritic::Analyser::Complexity
+  - Parser::AST::Node
+  - Rubycritic::AST::EmptyNode
+  - Rubycritic::Flay
+  - Rubycritic::Flog
+  - Rubycritic::MethodsCounter
+  - Rubycritic::ModulesLocator
+  - Rubycritic::Parser
+  - Rubycritic::Reek
+  - Rubycritic::Analyser::FlaySmells
+  - Rubycritic::Analyser::FlogSmells
+  - Rubycritic::Analyser::ReekSmells
+  - Rubycritic::AnalysersRunner
+  - Rubycritic::Browser
+  - Rubycritic::Cli::Application
+  - Rubycritic::Cli::Options
+  - Rubycritic::Colorize
+  - Rubycritic::CommandFactory
+  - Rubycritic::Command::Base
+  - Rubycritic::Command::Ci
+  - Rubycritic::Command::Default
+  - Rubycritic::Command::Help
+  - Rubycritic::Command::StatusReporter
+  - Rubycritic::Command::Version
+  - Rubycritic::Config
+  - Rubycritic::Configuration
+  - Rubycritic::AnalysedModule
+  - Rubycritic::AnalysedModulesCollection
+  - Rubycritic::Location
+  - Rubycritic::Rating
+  - Rubycritic::Smell
+  - Rubycritic::Generator::ConsoleReport
+  - Rubycritic::Generator::Html::Base
+  - Rubycritic::Generator::Html::CodeFile
+  - Rubycritic::Generator::Html::CodeIndex
+  - Rubycritic::Generator::Html::Line
+  - Rubycritic::Generator::Html::Overview
+  - Rubycritic::Generator::Html::SmellsIndex
+  - Rubycritic::Turbulence
+  - Rubycritic::ViewHelpers
+  - Rubycritic::Generator::HtmlReport
+  - Rubycritic::Generator::Json::Simple
+  - Rubycritic::Generator::JsonReport
+  - Rubycritic::Generator::Text::List
+  - Rubycritic::Reporter
+  - Rubycritic::RevisionComparator
+  - Rubycritic::Serializer
+  - Rubycritic::SmellsStatusSetter
+  - Rubycritic::SourceControlSystem::Base
+  - Rubycritic::SourceControlSystem::Double
+  - Rubycritic::SourceControlSystem::Git
+  - Rubycritic::SourceControlSystem::Mercurial
+  - Rubycritic::SourceLocator
+  - Rubycritic
+Attribute:
+  exclude:
+  - Rubycritic::Analyser::Churn#source_control_system
+  - Rubycritic::Configuration#deduplicate_symlinks
+  - Rubycritic::Configuration#format
+  - Rubycritic::Configuration#mode
+  - Rubycritic::Configuration#no_browser
+  - Rubycritic::Configuration#open_with
+  - Rubycritic::Configuration#source_control_system
+  - Rubycritic::Configuration#suppress_ratings
+DuplicateMethodCall:
+  exclude:
+  - Rubycritic::Analyser::Churn#run
+  - Parser::AST::Node#module_name
+TooManyStatements:
+  exclude:
+  - Rubycritic::Analyser::Complexity#run
+  - Parser::AST::Node#get_module_names
+  - Rubycritic::Analyser::FlaySmells#run
+  - Rubycritic::Cli::Application#execute
+  - Rubycritic::Cli::Options#parse
+  - Rubycritic::CommandFactory#self.command_class
+  - Rubycritic::Configuration#set
+  - Rubycritic::Generator::Html::CodeFile#render
+  - Rubycritic::Reporter#self.report_generator_class
+  - Rubycritic::SourceLocator#deduplicate_symlinks
+FeatureEnvy:
+  exclude:
+  - Parser::AST::Node#module_name
+  - Parser::AST::Node#module_name
+  - Parser::AST::Node#recursive_children
+  - Rubycritic::Analyser::ReekSmells#add_smells_to
+  - Rubycritic::Analyser::ReekSmells#create_smell
+  - Rubycritic::ViewHelpers#smell_location_path
+  - Rubycritic::Generator::HtmlReport#create_directories_and_files
+  - Rubycritic::SourceLocator#deduplicate_symlinks
+NestedIterators:
+  exclude:
+  - Parser::AST::Node#recursive_children
+  - Rubycritic::Analyser::FlaySmells#run
+  - Rubycritic::Cli::Options#parse
+  - Rubycritic::Generator::HtmlReport#create_directories_and_files
+UtilityFunction:
+  exclude:
+  - Rubycritic::Analyser::FlaySmells#cost
+  - Rubycritic::Analyser::FlaySmells#paths_to_analysed_modules
+  - Rubycritic::Analyser::FlaySmells#smell_locations
+  - Rubycritic::Analyser::FlogSmells#type
+  - Rubycritic::Analyser::ReekSmells#smell_locations
+  - Rubycritic::Cli::Application#print
+  - Rubycritic::AnalysedModulesCollection#limited_cost_for
+  - Rubycritic::Generator::Html::SmellsIndex#analysed_module_names
+  - Rubycritic::Generator::HtmlReport#copy_assets_to_report_directory
+  - Rubycritic::SourceControlSystem::Git#date_of_last_commit
+  - Rubycritic::SourceControlSystem::Git#head_reference
+  - Rubycritic::SourceControlSystem::Git#revisions_count
+  - Rubycritic::SourceControlSystem::Git#stashes_count
+  - Rubycritic::SourceControlSystem::Mercurial#date_of_last_commit
+  - Rubycritic::SourceControlSystem::Mercurial#revisions_count
+TooManyInstanceVariables:
+  exclude:
+  - Rubycritic::Cli::Options
+ControlParameter:
+  exclude:
+  - Rubycritic::CommandFactory#self.command_class
+UncommunicativeParameterName:
+  exclude:
+  - Rubycritic::AnalysedModule#to_json
+  - Rubycritic::Location#to_json
+  - Rubycritic::Rating#to_json
+  - Rubycritic::Smell#to_json
+ClassVariable:
+  exclude:
+  - Rubycritic::SourceControlSystem::Base
