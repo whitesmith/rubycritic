@@ -104,10 +104,11 @@ $ rubycritic --help
 Analyzer Configuration
 -------------------------
 
-* `Reek`: `RubyCritic` just uses `Reek`'s default [configuration loading mechanism](https://github.com/troessner/reek#configuration-file).
-
-This section is work in progress at the moment and is missing the other analyzers that RubyCritic supports.
-You can expect this to be updated soon.
+* [`Reek`](https://github.com/troessner/reek): `RubyCritic` utilizes `Reek`'s default [configuration loading mechanism](https://github.com/troessner/reek#configuration-file).
+  This means that if you have an existing `Reek` configuration file, you can just put this into your
+  project root and `RubyCritic` will respect this configuration.
+* [`flay`](https://github.com/seattlerb/flay): We use `flay`'s default configuration.
+* [`flog`](https://github.com/seattlerb/flog): We use `flog`'s default configuration with a couple of [smaller tweaks](https://github.com/whitesmith/rubycritic/blob/master/lib/rubycritic/analysers/helpers/flog.rb#L5).
 
 Alternative Usage Methods
 -------------------------
@@ -124,10 +125,7 @@ RubyCritic is supporting:
 * 2.0
 * 2.1
 * 2.2
-
-Note that we do not support Ruby 1.9 anymore.
-
-If you're still on ruby 1.9 you'll have to use the last version of RubyCritic that supports it, which would be [1.4.0](https://github.com/whitesmith/rubycritic/tree/v1.4.0).
+* 2.3
 
 Improving RubyCritic
 --------------------
