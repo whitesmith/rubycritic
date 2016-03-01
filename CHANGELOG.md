@@ -1,8 +1,11 @@
-# unreleased
+# 2.8.0 / 2016-02-29
 
+* [FEATURE] Add link to Reek's code smells documentation (by danielmbarlow)
+* [FEATURE] Make RubyCritic usable as Rake Task (by Timo Rößner)
 * [CHANGE] Bump Rubocop to 0.37.2 (by Tomasz Pajor)
 * [CHANGE] Bump Flay to 2.7.0 (by Tomasz Pajor)
 * [CHANGE] Bump Reek to 3.11 (by Tomasz Pajor)
+* [CHANGE] Add explicit runtime dependency on ruby_parser ('~> 3.8') (by Nuno Silva)
 
 # 2.7.1 / 2016-02-09
 
