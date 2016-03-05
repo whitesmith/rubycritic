@@ -108,7 +108,10 @@ Analyzer Configuration
   This means that if you have an existing `Reek` configuration file, you can just put this into your
   project root and `RubyCritic` will respect this configuration.
 * [`flay`](https://github.com/seattlerb/flay): We use `flay`'s default configuration.
-* [`flog`](https://github.com/seattlerb/flog): We use `flog`'s default configuration with a couple of [smaller tweaks](https://github.com/whitesmith/rubycritic/blob/master/lib/rubycritic/analysers/helpers/flog.rb#L5).
+* [`flog`](https://github.com/seattlerb/flog): We use `flog`'s default configuration with a couple of [smaller tweaks](https://github.com/whitesmith/rubycritic/blob/master/lib/rubycritic/analysers/helpers/flog.rb#L5):
+    * `all`: Forces `flog` to report scores on all classes and methods. Without this option `flog` will only give results up to a certain threshold.
+    * `continue`: Makes it so that `flog` does not abort when a ruby file cannot be parsed.
+    * `methods`: Configures `flog` to skip code outside of methods. It prevents `flog` from reporting on the "methods" `private` and `protected`. It also prevents `flog` from reporting on Rails methods like `before_action` and `has_many`.
 
 Alternative Usage Methods
 -------------------------
