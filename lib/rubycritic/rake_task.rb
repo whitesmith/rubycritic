@@ -19,7 +19,6 @@ module Rubycritic
   #     task.paths = FileList['lib/**/*.rb', 'spec/**/*.rb']
   #   end
   #
-  # :reek:TooManyStatements: { max_statements: 6 }
   class RakeTask < ::Rake::TaskLib
     # Name of RubyCritic task. Defaults to :rubycritic.
     attr_writer :name
