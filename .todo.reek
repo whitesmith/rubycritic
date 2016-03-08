@@ -77,6 +77,7 @@ DuplicateMethodCall:
   - Parser::AST::Node#module_name
 TooManyStatements:
   exclude:
+  - Rubycritic::RakeTask#initialize
   - Rubycritic::Analyser::Complexity#run
   - Parser::AST::Node#get_module_names
   - Rubycritic::Analyser::FlaySmells#run
