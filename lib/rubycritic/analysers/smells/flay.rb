@@ -48,6 +48,7 @@ module Rubycritic
           message: "found in #{nodes.size} nodes",
           score: mass,
           type: 'DuplicateCode',
+          analyser: 'flay',
           cost: cost(mass)
         )
       end

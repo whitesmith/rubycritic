@@ -71,16 +71,33 @@ describe Rubycritic::Smell do
   end
 
   describe '#doc_url' do
-    it 'handles one word type names' do
-      smell = Rubycritic::Smell.new(type: 'Complexity')
+    it 'handles one word type names for reek smells' do
+      smell = Rubycritic::Smell.new(type: 'Complexity', analyser: 'reek')
 
       smell.doc_url.must_equal('https://github.com/troessner/reek/blob/master/docs/Complexity.md')
     end
 
-    it 'handles multiple word type names' do
-      smell = Rubycritic::Smell.new(type: 'TooManyStatements')
+    it 'handles multiple word type names for reek smells' do
+      smell = Rubycritic::Smell.new(type: 'TooManyStatements', analyser: 'reek')
 
       smell.doc_url.must_equal('https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md')
+    end
+
+    it 'handles flay smells' do
+      smell = Rubycritic::Smell.new(type: 'DuplicateCode', analyser: 'flay')
+
+      smell.doc_url.must_equal('http://docs.seattlerb.org/flay/')
+    end
+
+    it 'handles flog smells' do
+      smell = Rubycritic::Smell.new(type: 'VeryHighComplexity', analyser: 'flog')
+
+      smell.doc_url.must_equal('http://docs.seattlerb.org/flog/')
+    end
+
+    it 'raises an error for unknown analysers' do
+      smell = Rubycritic::Smell.new(type: 'FooSmell', analyser: 'foo')
+      assert_raises { smell.doc_url }
     end
   end
 end

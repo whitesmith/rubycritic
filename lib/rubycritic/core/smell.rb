@@ -12,6 +12,10 @@ module Rubycritic
     attribute :score
     attribute :status
     attribute :type
+    attribute :analyser
+
+    FLAY_DOCS_URL = 'http://docs.seattlerb.org/flay/'.freeze
+    FLOG_DOCS_URL = 'http://docs.seattlerb.org/flog/'.freeze
 
     def at_location?(other_location)
       locations.any? { |location| location == other_location }
@@ -47,7 +51,16 @@ module Rubycritic
     end
 
     def doc_url
-      "https://github.com/troessner/reek/blob/master/docs/#{dasherized_type}.md"
+      case analyser
+      when 'reek'
+        "https://github.com/troessner/reek/blob/master/docs/#{dasherized_type}.md"
+      when 'flay'
+        FLAY_DOCS_URL
+      when 'flog'
+        FLOG_DOCS_URL
+      else
+        raise "No documentation URL set for analyser '#{analyser}' smells"
+      end
     end
 
     def hash
