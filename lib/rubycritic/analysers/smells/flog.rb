@@ -46,6 +46,7 @@ module Rubycritic
           message: "has a flog score of #{score}",
           score: score,
           type: type(score),
+          analyser: 'flog',
           cost: 0
         )
       end

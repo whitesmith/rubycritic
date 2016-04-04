@@ -36,6 +36,7 @@ module Rubycritic
           context: smell.context,
           message: smell.message,
           type: smell.smell_type,
+          analyser: 'reek',
           cost: 0
         )
       end
