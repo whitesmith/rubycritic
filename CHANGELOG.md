@@ -1,3 +1,11 @@
+# 2.9.0 / 2016-04-12
+
+* [FEATURE] Add links to Flay and Flog code smells documentation (by ragesoss)
+* [FEATURE] Documentation updates (by troessner)
+* [CHANGE] Bump Rubocop to 0.39.0 (by nijikon)
+* [CHANGE] Bump Reek to 4.0.1 (by nijikon)
+* [CHANGE] Drop support for Ruby 2.0 (by nijikon)
+
 # 2.8.0 / 2016-02-29
 
 * [FEATURE] Add link to Reek's code smells documentation (by danielmbarlow)
