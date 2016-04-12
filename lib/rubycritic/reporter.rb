@@ -9,6 +9,9 @@ module Rubycritic
       when :json
         require 'rubycritic/generators/json_report'
         Generator::JsonReport
+      when :xml
+        require 'rubycritic/generators/xml_report'
+        Generator::XmlReport
       when :console
         require 'rubycritic/generators/console_report'
         Generator::ConsoleReport

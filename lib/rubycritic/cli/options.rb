@@ -20,7 +20,7 @@ module Rubycritic
 
           opts.on(
             '-f', '--format [FORMAT]',
-            [:html, :json, :console],
+            [:html, :json, :xml, :console],
             'Report smells in the given format:',
             '  html (default)',
             '  json',
