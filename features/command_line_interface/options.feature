@@ -32,5 +32,8 @@ Feature: Rubycritic can be controlled using command-line options
               --no-browser                 Do not open html report with browser
           -v, --version                    Show gem's version
           -h, --help                       Show this message
+          -r, --for-rails                  Generates report inside your rails application
+                                             Ignores some given parameters:
+                                             (-p, --path, -f, --format)
 
       """

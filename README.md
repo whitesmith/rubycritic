@@ -92,15 +92,40 @@ For a full list of the command-line options run:
 $ rubycritic --help
 ```
 
-| Command flag             | Description                                           |
-|--------------------------|-------------------------------------------------------|
-| `-v/--version`           | Displays the current version and exits                |
-| `-p/--path`              | Sets the output directory (tmp/rubycritic by default) |
-| `-s/--minimum-score`     | Set a minimum score                                   |
-| `--mode-ci`              | Uses CI mode (faster, but only analyses last commit)  |
-| `--deduplicate-symlinks` | De-duplicate symlinks based on their final target     |
-| `--suppress-ratings`     | Suppress letter ratings                               |
+| Command flag             | Description                                                                                               |
+|--------------------------|-----------------------------------------------------------------------------------------------------------|
+| `-v/--version`           | Displays the current version and exits                                                                    |
+| `-p/--path`              | Sets the output directory (tmp/rubycritic by default)                                                     |
+| `-f'/--format [FORMAT]`  | Report smells in the given format: html (default), json, console                                          |
+| `-s/--minimum-score`     | Set a minimum score                                                                                       |
+| `--mode-ci`              | Uses CI mode (faster, but only analyses last commit)                                                      |
+| `--deduplicate-symlinks` | De-duplicate symlinks based on their final target                                                         |
+| `--suppress-ratings`     | Suppress letter ratings                                                                                   |
+| `--no-browser`           | Do not open html report with browser                                                                      |
+| `-r/-for-rails`          | Generates report inside your rails application. Ignores some given parameters: (-p, --path, -f, --format) |
 
+If the -r option is choosen, it is possible build routes and dynamic controller to access it inside your rails app:
+1. Add the following code to draw the routes
+
+```ruby
+# config/routes.rb
+get '/rubycritic/*path' => 'rubycritic#rubycritic', as: :rubycritic
+```
+
+2. Build the controller
+```ruby
+# app/controllers/rubycritic_controller.rb
+class RubycriticController < ApplicationController
+  # Add some filter to ensure that your code is not going to be exposed.
+  # before_filter :authenticate_as_admin
+  # Add this to avoid using you default layout. Rubycritic has its own layout.
+  # layout false
+
+  def rubycritic
+    render template: '/rubycritic/' + params[:path]
+  end
+end
+```
 Analyzer Configuration
 -------------------------
 
