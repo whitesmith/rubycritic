@@ -49,6 +49,18 @@ module Rubycritic
             @no_browser = true
           end
 
+          opts.on(
+            '-r', '--for-rails', 'Generates report inside your rails application',
+            '  Ignores some given parameters:',
+            '  (-p, --path, -f, --format)'
+          ) do
+            @format = :html
+            @assets_folder = "app"
+            @assets_path = "rubycritic"
+            @root = "app/views/rubycritic"
+            @for_rails = true
+          end
+
           opts.on_tail('-v', '--version', "Show gem's version") do
             @mode = :version
           end
@@ -70,7 +82,11 @@ module Rubycritic
           suppress_ratings: @suppress_ratings,
           help_text: @parser.help,
           minimum_score: @minimum_score || 0,
-          no_browser: @no_browser
+          no_browser: @no_browser,
+          assets_folder: @assets_folder,
+          javascripts_path: @assets_path || "javascripts/rubycritic",
+          stylesheets_path: @assets_path || "stylesheets/rubycritic",
+          for_rails: @for_rails
         }
       end
 

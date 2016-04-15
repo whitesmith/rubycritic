@@ -10,7 +10,7 @@ module Rubycritic
           ERB.new(File.read(File.join(TEMPLATES_DIR, template_path)))
         end
 
-        TEMPLATES_DIR = File.expand_path('../templates', __FILE__)
+        TEMPLATES_DIR = File.expand_path('../app/views/rubycritic', __FILE__)
         LAYOUT_TEMPLATE = erb_template(File.join('layouts', 'application.html.erb'))
 
         include ViewHelpers

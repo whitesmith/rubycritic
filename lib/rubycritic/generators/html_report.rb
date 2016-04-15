@@ -8,7 +8,7 @@ require 'rubycritic/generators/html/code_file'
 module Rubycritic
   module Generator
     class HtmlReport
-      ASSETS_DIR = File.expand_path('../html/assets', __FILE__)
+      ASSETS_DIR = File.expand_path('../html/app/assets', __FILE__)
 
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
@@ -59,7 +59,8 @@ module Rubycritic
       end
 
       def copy_assets_to_report_directory
-        FileUtils.cp_r(ASSETS_DIR, Config.root)
+        puts Config.assets_folder
+        FileUtils.cp_r(ASSETS_DIR, Pathname.new(Config.assets_folder))
       end
 
       def report_location

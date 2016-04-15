@@ -10,6 +10,7 @@ module Rubycritic
       def initialize(options)
         super
         @paths = options[:paths]
+        @scaffold = options[:scaffold]
         Config.source_control_system = SourceControlSystem::Base.create
       end
 
