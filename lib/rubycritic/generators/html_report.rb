@@ -59,7 +59,6 @@ module Rubycritic
       end
 
       def copy_assets_to_report_directory
-        puts Config.assets_folder
         FileUtils.cp_r(ASSETS_DIR, Pathname.new(Config.assets_folder))
       end
 
