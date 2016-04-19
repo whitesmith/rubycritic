@@ -30,10 +30,10 @@ Feature: Rubycritic can be controlled using command-line options
               --deduplicate-symlinks       De-duplicate symlinks based on their final target
               --suppress-ratings           Suppress letter ratings
               --no-browser                 Do not open html report with browser
-          -v, --version                    Show gem's version
-          -h, --help                       Show this message
           -r, --for-rails                  Generates report inside your rails application
                                              Ignores some given parameters:
                                              (-p, --path, -f, --format)
+          -v, --version                    Show gem's version
+          -h, --help                       Show this message
 
       """

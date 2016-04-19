@@ -102,7 +102,7 @@ $ rubycritic --help
 | `--deduplicate-symlinks` | De-duplicate symlinks based on their final target                                                         |
 | `--suppress-ratings`     | Suppress letter ratings                                                                                   |
 | `--no-browser`           | Do not open html report with browser                                                                      |
-| `-r/-for-rails`          | Generates report inside your rails application. Ignores some given parameters: (-p, --path, -f, --format) |
+| `-r/--for-rails`          | Generates report inside your rails application. Ignores some given parameters: (-p, --path, -f, --format) |
 
 If the -r option is choosen, it is possible build routes and dynamic controller to access it inside your rails app:
 1. Add the following code to draw the routes
