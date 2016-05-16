@@ -1,3 +1,9 @@
+# 2.9.1 / 2016-05-16
+
+* [CHANGE] Upgrade 'parser' to 2.3.1.0 (by y-yagi)
+* [CHANGE] Upgrade 'reek' to 4.0.2 (by onumis)
+* [CHANGE] Upgrade 'rubocop' to 0.40.0 (by onumis)
+
 # 2.9.0 / 2016-04-12
 
 * [FEATURE] Add links to Flay and Flog code smells documentation (by ragesoss)

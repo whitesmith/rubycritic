@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'virtus', '~> 1.0'
   spec.add_runtime_dependency 'flay', '2.7.0'
   spec.add_runtime_dependency 'flog', '4.3.2'
-  spec.add_runtime_dependency 'reek', '4.0.1'
+  spec.add_runtime_dependency 'reek', '4.0.2'
   spec.add_runtime_dependency 'parser', '2.3.1.0'
   spec.add_runtime_dependency 'ruby_parser', '~> 3.8'
   spec.add_runtime_dependency 'colorize'
@@ -35,6 +35,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'minitest', '~> 5.3'
   spec.add_development_dependency 'mocha', '~> 1.1'
-  spec.add_development_dependency 'rubocop', '0.39.0'
+  spec.add_development_dependency 'rubocop', '0.40.0'
   spec.add_development_dependency 'pry-byebug'
 end
