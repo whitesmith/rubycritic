@@ -12,6 +12,9 @@ module Rubycritic
       when :console
         require 'rubycritic/generators/console_report'
         Generator::ConsoleReport
+      when :rails
+        require 'rubycritic/generators/rails_report'
+        Generator::RailsReport
       else
         require 'rubycritic/generators/html_report'
         Generator::HtmlReport

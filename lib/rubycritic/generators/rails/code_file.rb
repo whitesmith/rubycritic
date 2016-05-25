@@ -1,9 +1,9 @@
-require 'rubycritic/generators/html/base'
-require 'rubycritic/generators/html/line'
+require 'rubycritic/generators/rails/base'
+require 'rubycritic/generators/rails/line'
 
 module Rubycritic
   module Generator
-    module Html
+    module Rails
       class CodeFile < Base
         LINE_NUMBER_OFFSET = 1
         TEMPLATE = erb_template('code_file.html.erb')

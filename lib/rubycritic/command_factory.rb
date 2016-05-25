@@ -1,4 +1,6 @@
-require 'rubycritic/configuration'
+require 'rubycritic/config'
+require 'rubycritic/config/base'
+require 'rubycritic/config/default'
 
 module Rubycritic
   class CommandFactory
@@ -18,6 +20,10 @@ module Rubycritic
       when :ci
         require 'rubycritic/commands/ci'
         Command::Ci
+      when :rails
+        require 'rubycritic/commands/rails'
+        require 'rubycritic/config/rails'
+        Command::Rails
       else
         require 'rubycritic/commands/default'
         Command::Default

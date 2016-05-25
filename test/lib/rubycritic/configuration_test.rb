@@ -1,7 +1,8 @@
 require 'test_helper'
-require 'rubycritic/configuration'
+require 'rubycritic/config'
+require 'rubycritic/config/base'
 
-describe Rubycritic::Configuration do
+describe Rubycritic::Config do
   describe '#root' do
     before do
       Rubycritic::Config.set

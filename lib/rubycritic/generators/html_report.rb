@@ -1,5 +1,5 @@
 require 'fileutils'
-require 'rubycritic/configuration'
+require 'rubycritic/config'
 require 'rubycritic/generators/html/overview'
 require 'rubycritic/generators/html/smells_index'
 require 'rubycritic/generators/html/code_index'
@@ -59,7 +59,7 @@ module Rubycritic
       end
 
       def copy_assets_to_report_directory
-        FileUtils.cp_r(ASSETS_DIR, Config.root)
+        FileUtils.cp_r(ASSETS_DIR, Pathname.new(Config.root))
       end
 
       def report_location

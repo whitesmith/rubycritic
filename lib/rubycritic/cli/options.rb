@@ -49,6 +49,14 @@ module Rubycritic
             @no_browser = true
           end
 
+          opts.on(
+            '-r', '--for-rails', 'Generates report inside your rails application',
+            '  Ignores some given parameters:',
+            '  (-p, --path, -f, --format)'
+          ) do
+            @mode = :rails
+          end
+
           opts.on_tail('-v', '--version', "Show gem's version") do
             @mode = :version
           end
