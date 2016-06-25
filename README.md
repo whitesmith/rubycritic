@@ -8,6 +8,22 @@ RubyCritic
 <img src="http://i.imgur.com/66HACCD.png" alt="RubyCritic Icon" align="right" />
 RubyCritic is a gem that wraps around static analysis gems such as [Reek][1], [Flay][2] and [Flog][3] to provide a quality report of your Ruby code.
 
+**Table of Contents**
+
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+  + [Analyzer Configuration](#analyzer-configuration)
+  + [Alternative Usage Methods](#alternative-usage-methods)
+  + [Rake Task](#rake-task)
+- [Compatibility](#compatibility)
+- [Improving RubyCritic](#improving-rubyCritic)
+- [Contributors](#contributors)
+- [Credits](#credits)
+
+
+## Overview
+
 This gem provides features such as:
 
 1. An overview of your project:
@@ -48,8 +64,10 @@ This gem provides features such as:
   **Warning**: If your code is not as you expect it to be after running
   RubyCritic, please check your source control system stash.
 
-Getting Started
----------------
+Checkout the `/docs` if you want to read more about our [core metrics](./docs/core-metrics.md).
+
+
+## Getting Started
 
 RubyCritic can be installed with the following command:
 
@@ -70,8 +88,8 @@ And then execute:
 $ bundle
 ```
 
-Usage
------
+
+## Usage
 
 Running `rubycritic` with no arguments will analyse all the Ruby files in the
 current directory:
@@ -101,8 +119,8 @@ $ rubycritic --help
 | `--deduplicate-symlinks` | De-duplicate symlinks based on their final target     |
 | `--suppress-ratings`     | Suppress letter ratings                               |
 
-Analyzer Configuration
--------------------------
+
+### Analyzer Configuration
 
 * [`Reek`](https://github.com/troessner/reek): `RubyCritic` utilizes `Reek`'s default [configuration loading mechanism](https://github.com/troessner/reek#configuration-file).
   This means that if you have an existing `Reek` configuration file, you can just put this into your
@@ -113,15 +131,15 @@ Analyzer Configuration
     * `continue`: Makes it so that `flog` does not abort when a ruby file cannot be parsed.
     * `methods`: Configures `flog` to skip code outside of methods. It prevents `flog` from reporting on the "methods" `private` and `protected`. It also prevents `flog` from reporting on Rails methods like `before_action` and `has_many`.
 
-Alternative Usage Methods
--------------------------
+
+### Alternative Usage Methods
 
 If you're fond of Guard you might like [guard-rubycritic][4]. It automatically analyses your Ruby files as they are modified.
 
 For continuous integration, you can give [Jenkins CI][5] a spin. With it, you can [easily build your own (poor-man's) Code Climate][6]!
 
-Rake Task
----------
+
+### Rake Task
 
 You can use RubyCritic as Rake command in its most simple form like this:
 
@@ -159,8 +177,8 @@ RubyCritic::RakeTask.new do |task|
 end
 ```
 
-Compatibility
----------------
+
+## Compatibility
 
 RubyCritic is supporting:
 
@@ -168,8 +186,8 @@ RubyCritic is supporting:
 * 2.2
 * 2.3
 
-Improving RubyCritic
---------------------
+
+## Improving RubyCritic
 
 RubyCritic doesn't have to remain a second choice to other code quality analysis services. Together, we can improve it and continue to build on the great code metric tools that are available in the Ruby ecosystem.
 
@@ -179,8 +197,9 @@ Similarly, Pull Requests that improve the look and feel of the gem, that tweak t
 
 See RubyCritic's [contributing guidelines](CONTRIBUTING.md) about how to proceed.
 
-Contributors / Core Team
----------------
+
+## Contributors
+
 
 `RubyCritics` initial author was [Guilherme Simões](https://github.com/guilhermesimoes).
 
@@ -190,8 +209,8 @@ The current core team consists of:
 * [Lucas Mazza](https://github.com/lucasmazza)
 * [Timo Rößner](https://github.com/troessner)
 
-Credits
--------
+
+## Credits
 
 ![Whitesmith](http://i.imgur.com/Si2l3kd.png)
 
@@ -202,7 +221,7 @@ RubyCritic is maintained and funded by [Whitesmith][9]. Tweet your questions or 
 [3]: https://github.com/seattlerb/flog
 [4]: https://github.com/whitesmith/guard-rubycritic
 [5]: http://jenkins-ci.org/
-[6]: https://github.com/whitesmith/rubycritic/wiki/Building-your-own-Code-Climate
+[6]: ./docs/building-own-code-climate.md
 [7]: https://github.com/charliesome/better_errors
 [8]: https://github.com/charliesome/better_errors/pull/22
 [9]: http://www.whitesmith.co/
