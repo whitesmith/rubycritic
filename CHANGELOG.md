@@ -1,3 +1,10 @@
+# 2.9.2 / 2016-07-01
+
+* [CHANGE] Upgrade rubocop to 0.41.1 (by nijikon)
+* [CHANGE] Upgrade flog to 4.4.0 (by nijikon)
+* [CHANGE] Upgrade flay to 2.8.0 (by nijikon)
+* [CHANGE] Upgrade Reek to 4.1.0 and Parser to 2.3.1.2 (by y-yagi)
+
 # 2.9.1 / 2016-05-16
 
 * [CHANGE] Upgrade 'parser' to 2.3.1.0 (by y-yagi)
