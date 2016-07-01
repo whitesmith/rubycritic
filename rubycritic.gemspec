@@ -21,8 +21,8 @@ Gem::Specification.new do |spec|
   spec.require_path  = 'lib'
 
   spec.add_runtime_dependency 'virtus', '~> 1.0'
-  spec.add_runtime_dependency 'flay', '2.7.0'
   spec.add_runtime_dependency 'flog', '4.3.2'
+  spec.add_runtime_dependency 'flay', '2.8.0'
   spec.add_runtime_dependency 'reek', '4.1.0'
   spec.add_runtime_dependency 'parser', '2.3.1.2'
   spec.add_runtime_dependency 'ruby_parser', '~> 3.8'
