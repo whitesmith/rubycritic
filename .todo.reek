@@ -136,3 +136,6 @@ UncommunicativeParameterName:
 ClassVariable:
   exclude:
   - Rubycritic::SourceControlSystem::Base
+BooleanParameter: 
+  exclude:
+  - Rubycritic::Config#self.respond_to_missing?
