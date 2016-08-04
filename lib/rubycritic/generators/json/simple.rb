@@ -1,7 +1,7 @@
 require 'json'
 require 'rubycritic/version'
 
-module Rubycritic
+module RubyCritic
   module Generator
     module Json
       class Simple
@@ -17,7 +17,7 @@ module Rubycritic
           {
             metadata: {
               rubycritic: {
-                version: Rubycritic::VERSION
+                version: RubyCritic::VERSION
               }
             },
             analysed_modules: @analysed_modules,

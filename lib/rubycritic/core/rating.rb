@@ -1,4 +1,4 @@
-module Rubycritic
+module RubyCritic
   class Rating
     def self.from_cost(cost)
       if    cost <= 2  then new('A')

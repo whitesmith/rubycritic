@@ -52,7 +52,7 @@ module Parser
   end
 end
 
-module Rubycritic
+module RubyCritic
   module AST
     class EmptyNode
       def count_nodes_of_type(*)

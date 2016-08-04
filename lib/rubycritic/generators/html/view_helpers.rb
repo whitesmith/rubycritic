@@ -1,4 +1,4 @@
-module Rubycritic
+module RubyCritic
   module ViewHelpers
     def timeago_tag(time)
       "<time class='js-timeago' datetime='#{time}'>#{time}</time>"

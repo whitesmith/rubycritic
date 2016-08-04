@@ -1,12 +1,12 @@
 require 'test_helper'
 require 'rubycritic/core/location'
 
-describe Rubycritic::Location do
+describe RubyCritic::Location do
   describe 'attribute readers' do
     before do
       @path = './foo.rb'
       @line = '42'
-      @location = Rubycritic::Location.new(@path, @line)
+      @location = RubyCritic::Location.new(@path, @line)
     end
 
     it 'has a pathname' do
@@ -23,15 +23,15 @@ describe Rubycritic::Location do
   end
 
   it 'is comparable' do
-    location1 = Rubycritic::Location.new('./foo', 42)
-    location2 = Rubycritic::Location.new('./foo', 42)
+    location1 = RubyCritic::Location.new('./foo', 42)
+    location2 = RubyCritic::Location.new('./foo', 42)
     location1.must_equal location2
   end
 
   it 'is sortable' do
-    location1 = Rubycritic::Location.new('./foo', 42)
-    location2 = Rubycritic::Location.new('./bar', 23)
-    location3 = Rubycritic::Location.new('./bar', 16)
+    location1 = RubyCritic::Location.new('./foo', 42)
+    location2 = RubyCritic::Location.new('./bar', 23)
+    location3 = RubyCritic::Location.new('./bar', 16)
     [location1, location2, location3].sort.must_equal [location3, location2, location1]
   end
 end

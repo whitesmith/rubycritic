@@ -1,6 +1,6 @@
 require 'flay'
 
-module Rubycritic
+module RubyCritic
   class Flay < ::Flay
     def initialize(paths)
       super()

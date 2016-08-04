@@ -2,7 +2,7 @@
 
 require 'pathname'
 
-module Rubycritic
+module RubyCritic
   class SourceLocator
     RUBY_EXTENSION = '.rb'.freeze
     RUBY_FILES = File.join('**', "*#{RUBY_EXTENSION}")

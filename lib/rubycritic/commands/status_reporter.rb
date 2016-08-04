@@ -1,4 +1,4 @@
-module Rubycritic
+module RubyCritic
   module Command
     class StatusReporter
       attr_reader :status, :status_message

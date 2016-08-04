@@ -1,6 +1,6 @@
 require 'fileutils'
 
-module Rubycritic
+module RubyCritic
   class Serializer
     def initialize(file)
       @file = file

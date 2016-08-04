@@ -4,7 +4,7 @@ require 'rubycritic/revision_comparator'
 require 'rubycritic/reporter'
 require 'rubycritic/commands/base'
 
-module Rubycritic
+module RubyCritic
   module Command
     class Default < Base
       def initialize(options)

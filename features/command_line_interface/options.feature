@@ -1,5 +1,5 @@
-Feature: Rubycritic can be controlled using command-line options
-  In order to change Rubycritic's default behaviour
+Feature: RubyCritic can be controlled using command-line options
+  In order to change RubyCritic's default behaviour
   As a developer
   I want to supply options on the command line
 

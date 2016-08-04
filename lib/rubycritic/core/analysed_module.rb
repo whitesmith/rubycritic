@@ -1,7 +1,7 @@
 require 'virtus'
 require 'rubycritic/core/rating'
 
-module Rubycritic
+module RubyCritic
   class AnalysedModule
     include Virtus.model
 

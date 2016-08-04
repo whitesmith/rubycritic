@@ -1,6 +1,6 @@
 require 'rubycritic/generators/json/simple'
 
-module Rubycritic
+module RubyCritic
   module Generator
     class JsonReport
       def initialize(analysed_modules)

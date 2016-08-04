@@ -6,7 +6,7 @@ require 'rubycritic/smells_status_setter'
 require 'rubycritic/version'
 require 'digest/md5'
 
-module Rubycritic
+module RubyCritic
   class RevisionComparator
     SNAPSHOTS_DIR_NAME = 'snapshots'.freeze
 

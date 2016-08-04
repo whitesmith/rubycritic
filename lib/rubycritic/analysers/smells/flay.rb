@@ -2,7 +2,7 @@ require 'rubycritic/analysers/helpers/flay'
 require 'rubycritic/core/smell'
 require 'rubycritic/colorize'
 
-module Rubycritic
+module RubyCritic
   module Analyser
     class FlaySmells
       include Colorize

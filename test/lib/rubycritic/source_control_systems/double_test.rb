@@ -6,6 +6,6 @@ class DoubleTest < Minitest::Test
   include BasicInterface
 
   def setup
-    @system = Rubycritic::SourceControlSystem::Double.new
+    @system = RubyCritic::SourceControlSystem::Double.new
   end
 end

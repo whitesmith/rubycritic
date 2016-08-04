@@ -6,7 +6,7 @@ require 'rubycritic/analysers/complexity'
 require 'rubycritic/analysers/churn'
 require 'rubycritic/analysers/attributes'
 
-module Rubycritic
+module RubyCritic
   class AnalysersRunner
     ANALYSERS = [
       Analyser::FlaySmells,

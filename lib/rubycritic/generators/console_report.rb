@@ -1,6 +1,6 @@
 require 'rubycritic/generators/text/list'
 
-module Rubycritic
+module RubyCritic
   module Generator
     class ConsoleReport
       def initialize(analysed_modules)

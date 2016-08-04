@@ -1,6 +1,6 @@
 require 'launchy'
 
-module Rubycritic
+module RubyCritic
   class Browser
     attr_reader :report_path
 

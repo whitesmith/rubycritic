@@ -1,4 +1,4 @@
-module Rubycritic
+module RubyCritic
   module SourceControlSystem
     class Mercurial < Base
       register_system

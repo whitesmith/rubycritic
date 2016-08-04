@@ -1,6 +1,6 @@
 require 'rubycritic/generators/html/base'
 
-module Rubycritic
+module RubyCritic
   module Generator
     module Html
       class SmellsIndex < Base

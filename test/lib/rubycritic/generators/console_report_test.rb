@@ -3,12 +3,12 @@ require 'rubycritic/generators/console_report'
 require 'rubycritic/core/rating'
 require 'rubycritic/core/smell'
 
-describe Rubycritic::Generator::ConsoleReport do
+describe RubyCritic::Generator::ConsoleReport do
   describe '#generate_report' do
     before do
       @mock_analysed_module = mock_analysed_module
       capture_output_streams do
-        report = Rubycritic::Generator::ConsoleReport.new([@mock_analysed_module])
+        report = RubyCritic::Generator::ConsoleReport.new([@mock_analysed_module])
         report.generate_report
         @output = $stdout.tap(&:rewind).read
       end
@@ -61,7 +61,7 @@ describe Rubycritic::Generator::ConsoleReport do
     def mock_analysed_module
       OpenStruct.new(
         name: 'TestModule',
-        rating: Rubycritic::Rating.from_cost(3),
+        rating: RubyCritic::Rating.from_cost(3),
         churn: 10,
         complexity: 0,
         duplication: 20,
@@ -70,8 +70,8 @@ describe Rubycritic::Generator::ConsoleReport do
     end
 
     def mock_smell
-      smell = Rubycritic::Smell.new
-      smell.locations << Rubycritic::Location.new(__FILE__, 3)
+      smell = RubyCritic::Smell.new
+      smell.locations << RubyCritic::Location.new(__FILE__, 3)
       smell.type = 'SmellySmell'
       smell.context = 'You'
       smell.message = 'Seriously, take a shower or something'

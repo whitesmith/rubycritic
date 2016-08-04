@@ -7,7 +7,7 @@ require 'minitest/spec'
 #
 # Provides runner methods used in the cucumber steps.
 #
-class RubycriticWorld
+class RubyCriticWorld
   extend MiniTest::Assertions
   attr_accessor :assertions
 
@@ -31,7 +31,7 @@ class RubycriticWorld
 end
 
 World do
-  RubycriticWorld.new
+  RubyCriticWorld.new
 end
 
 Before do

@@ -6,6 +6,6 @@ class MercurialTest < Minitest::Test
   include BasicInterface
 
   def setup
-    @system = Rubycritic::SourceControlSystem::Mercurial.new
+    @system = RubyCritic::SourceControlSystem::Mercurial.new
   end
 end

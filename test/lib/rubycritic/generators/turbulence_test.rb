@@ -1,11 +1,11 @@
 require 'test_helper'
 require 'rubycritic/generators/html/turbulence'
 
-describe Rubycritic::Turbulence do
+describe RubyCritic::Turbulence do
   describe '::data' do
     it 'returns json data that maps pathname, churn and complexity to name, x and y' do
       files = [AnalysedModuleDouble.new(name: 'Foo', churn: 1, complexity: 2)]
-      turbulence_data = Rubycritic::Turbulence.data(files)
+      turbulence_data = RubyCritic::Turbulence.data(files)
       instance_parsed_json = JSON.parse(turbulence_data).first
       instance_parsed_json['name'].must_equal 'Foo'
       instance_parsed_json['x'].must_equal 1

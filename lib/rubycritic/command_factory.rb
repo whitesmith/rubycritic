@@ -1,6 +1,6 @@
 require 'rubycritic/configuration'
 
-module Rubycritic
+module RubyCritic
   class CommandFactory
     def self.create(options = {})
       Config.set(options)

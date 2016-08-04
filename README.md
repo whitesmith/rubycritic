@@ -146,7 +146,7 @@ You can use RubyCritic as Rake command in its most simple form like this:
 ```ruby
 require "rubycritic/rake_task"
 
-Rubycritic::RakeTask.new
+RubyCritic::RakeTask.new
 ```
 
 A more sophisticated Rake task that would make use of all available configuration options could look like this:

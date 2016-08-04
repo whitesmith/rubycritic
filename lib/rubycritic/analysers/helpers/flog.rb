@@ -1,6 +1,6 @@
 require 'flog'
 
-module Rubycritic
+module RubyCritic
   class Flog < ::Flog
     DEFAULT_OPTIONS = {
       all: true,

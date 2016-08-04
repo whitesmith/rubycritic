@@ -3,7 +3,7 @@ require 'rake/tasklib'
 require 'English'
 require 'rubycritic/cli/application'
 
-module Rubycritic
+module RubyCritic
   #
   # A rake task that runs RubyCritic on a set of source files.
   #
@@ -58,7 +58,7 @@ module Rubycritic
         puts "\n\n!!! Running `#{name}` rake command\n"
         puts "!!! Inspecting #{paths} #{options.empty? ? '' : "with options #{options}"}\n\n"
       end
-      application = Rubycritic::Cli::Application.new(options_as_arguments + paths)
+      application = RubyCritic::Cli::Application.new(options_as_arguments + paths)
       application.execute
     end
 

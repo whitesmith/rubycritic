@@ -1,7 +1,7 @@
 require 'rubycritic/source_locator'
 require 'rubycritic/core/analysed_module'
 
-module Rubycritic
+module RubyCritic
   class AnalysedModulesCollection
     include Enumerable
 

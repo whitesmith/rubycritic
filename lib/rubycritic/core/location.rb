@@ -1,6 +1,6 @@
 require 'pathname'
 
-module Rubycritic
+module RubyCritic
   class Location
     attr_reader :pathname, :line
 

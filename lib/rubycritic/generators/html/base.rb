@@ -2,7 +2,7 @@ require 'erb'
 require 'pathname'
 require 'rubycritic/generators/html/view_helpers'
 
-module Rubycritic
+module RubyCritic
   module Generator
     module Html
       class Base

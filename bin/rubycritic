@@ -6,4 +6,4 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
 require 'rubycritic/cli/application'
 
-exit Rubycritic::Cli::Application.new(ARGV).execute
+exit RubyCritic::Cli::Application.new(ARGV).execute

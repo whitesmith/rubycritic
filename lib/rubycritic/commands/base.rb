@@ -1,11 +1,11 @@
 require 'rubycritic/commands/status_reporter'
 
-module Rubycritic
+module RubyCritic
   module Command
     class Base
       def initialize(options)
         @options = options
-        @status_reporter = Rubycritic::Command::StatusReporter.new(@options)
+        @status_reporter = RubyCritic::Command::StatusReporter.new(@options)
       end
 
       def execute

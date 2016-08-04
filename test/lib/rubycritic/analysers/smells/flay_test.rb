@@ -3,14 +3,14 @@ require 'rubycritic/analysers/smells/flay'
 require 'rubycritic/core/analysed_module'
 require 'pathname'
 
-describe Rubycritic::Analyser::FlaySmells do
+describe RubyCritic::Analyser::FlaySmells do
   context 'when analysing a bunch of files with duplicate code' do
     before do
       @analysed_modules = [
-        Rubycritic::AnalysedModule.new(pathname: Pathname.new('test/samples/flay/smelly.rb')),
-        Rubycritic::AnalysedModule.new(pathname: Pathname.new('test/samples/flay/smelly2.rb'))
+        RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/flay/smelly.rb')),
+        RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/flay/smelly2.rb'))
       ]
-      Rubycritic::Analyser::FlaySmells.new(@analysed_modules).run
+      RubyCritic::Analyser::FlaySmells.new(@analysed_modules).run
     end
 
     it 'detects its smells' do

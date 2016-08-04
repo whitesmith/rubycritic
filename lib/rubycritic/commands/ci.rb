@@ -3,7 +3,7 @@ require 'rubycritic/analysers_runner'
 require 'rubycritic/reporter'
 require 'rubycritic/commands/default'
 
-module Rubycritic
+module RubyCritic
   module Command
     class Ci < Default
       def critique

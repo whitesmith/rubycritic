@@ -1,4 +1,4 @@
-module Rubycritic
+module RubyCritic
   module SourceControlSystem
     class Double < Base
       def revisions_count(_)

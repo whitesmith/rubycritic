@@ -2,7 +2,7 @@ require 'rubycritic/analysers/helpers/methods_counter'
 require 'rubycritic/analysers/helpers/modules_locator'
 require 'rubycritic/colorize'
 
-module Rubycritic
+module RubyCritic
   module Analyser
     class Attributes
       include Colorize

@@ -1,4 +1,4 @@
-module Rubycritic
+module RubyCritic
   module SourceControlSystem
     class Git < Base
       register_system

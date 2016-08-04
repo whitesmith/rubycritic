@@ -1,12 +1,12 @@
 require 'analysers_test_helper'
 require 'rubycritic/analysers/smells/flog'
 
-describe Rubycritic::Analyser::FlogSmells do
+describe RubyCritic::Analyser::FlogSmells do
   context 'when analysing a complex file' do
     before do
       @analysed_module = AnalysedModuleDouble.new(path: 'test/samples/flog/smelly.rb', smells: [])
       analysed_modules = [@analysed_module]
-      Rubycritic::Analyser::FlogSmells.new(analysed_modules).run
+      RubyCritic::Analyser::FlogSmells.new(analysed_modules).run
     end
 
     it 'detects its smells' do
