@@ -31,5 +31,9 @@ module Rubycritic
     def self.method_missing(method, *args, &block)
       configuration.public_send(method, *args, &block)
     end
+
+    def self.respond_to_missing?(symbol, include_all = false)
+      configuration.respond_to_missing?(symbol) || super
+    end
   end
 end

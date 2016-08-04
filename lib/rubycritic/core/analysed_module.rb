@@ -27,7 +27,7 @@ module Rubycritic
     end
 
     def complexity_per_method
-      if methods_count == 0
+      if methods_count.zero?
         'N/A'
       else
         complexity.fdiv(methods_count).round(1)
