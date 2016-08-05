@@ -2,12 +2,12 @@ require 'analysers_test_helper'
 require 'rubycritic/analysers/churn'
 require 'rubycritic/source_control_systems/base'
 
-describe Rubycritic::Analyser::Churn do
+describe RubyCritic::Analyser::Churn do
   context 'when analysing a file' do
     before do
       @analysed_module = AnalysedModuleDouble.new(path: 'path_to_some_file.rb')
       analysed_modules = [@analysed_module]
-      analyser = Rubycritic::Analyser::Churn.new(analysed_modules)
+      analyser = RubyCritic::Analyser::Churn.new(analysed_modules)
       analyser.source_control_system = SourceControlSystemDouble.new
       analyser.run
     end
@@ -22,7 +22,7 @@ describe Rubycritic::Analyser::Churn do
   end
 end
 
-class SourceControlSystemDouble < Rubycritic::SourceControlSystem::Base
+class SourceControlSystemDouble < RubyCritic::SourceControlSystem::Base
   def revisions_count(_path)
     1 # churn
   end

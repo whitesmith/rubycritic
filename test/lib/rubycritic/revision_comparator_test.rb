@@ -1,13 +1,13 @@
 require 'test_helper'
 require 'rubycritic/revision_comparator'
 
-describe Rubycritic::RevisionComparator do
-  subject { Rubycritic::RevisionComparator.new([]) }
+describe RubyCritic::RevisionComparator do
+  subject { RubyCritic::RevisionComparator.new([]) }
 
   describe '#set_statuses' do
     context 'in a SCS with :revision? == false' do
       before do
-        Rubycritic::Config.expects(:source_control_system)
+        RubyCritic::Config.expects(:source_control_system)
                           .at_least_once
                           .returns(stub(revision?: false))
       end
@@ -21,7 +21,7 @@ describe Rubycritic::RevisionComparator do
 
     context 'in a SCS with :revision? == true' do
       before do
-        Rubycritic::Config.expects(:source_control_system)
+        RubyCritic::Config.expects(:source_control_system)
                           .at_least_once
                           .returns(stub(revision?: true))
       end
@@ -33,12 +33,12 @@ describe Rubycritic::RevisionComparator do
         end
 
         it 'does not load them' do
-          Rubycritic::Serializer.expects(:new).never
+          RubyCritic::Serializer.expects(:new).never
           subject.set_statuses([])
         end
 
-        it 'does not invoke Rubycritic::SmellsStatusSetter' do
-          Rubycritic::SmellsStatusSetter.expects(:set).never
+        it 'does not invoke RubyCritic::SmellsStatusSetter' do
+          RubyCritic::SmellsStatusSetter.expects(:set).never
           subject.set_statuses([])
         end
       end
@@ -47,15 +47,15 @@ describe Rubycritic::RevisionComparator do
         before do
           subject.expects(:revision_file).twice.returns('foo')
           File.expects(:file?).with('foo').returns(true)
-          Rubycritic::Serializer.expects(:new).with('foo').returns(stub(load: []))
+          RubyCritic::Serializer.expects(:new).with('foo').returns(stub(load: []))
         end
 
         it 'loads them' do
           subject.set_statuses([])
         end
 
-        it 'invokes Rubycritic::SmellsStatusSetter' do
-          Rubycritic::SmellsStatusSetter.expects(:set).once
+        it 'invokes RubyCritic::SmellsStatusSetter' do
+          RubyCritic::SmellsStatusSetter.expects(:set).once
           subject.set_statuses([])
         end
       end

@@ -2,7 +2,7 @@ require 'rubycritic/analysers/helpers/reek'
 require 'rubycritic/core/smell'
 require 'rubycritic/colorize'
 
-module Rubycritic
+module RubyCritic
   module Analyser
     class ReekSmells
       include Colorize

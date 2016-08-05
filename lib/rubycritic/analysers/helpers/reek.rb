@@ -1,6 +1,6 @@
 require 'reek'
 
-module Rubycritic
+module RubyCritic
   class Reek < ::Reek::Examiner
   end
 end

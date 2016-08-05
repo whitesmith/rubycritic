@@ -1,4 +1,4 @@
-module Rubycritic
+module RubyCritic
   class Configuration
     attr_reader :root
     attr_accessor :source_control_system, :mode, :format, :deduplicate_symlinks,

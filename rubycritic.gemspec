@@ -5,7 +5,7 @@ require 'rubycritic/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'rubycritic'
-  spec.version       = Rubycritic::VERSION
+  spec.version       = RubyCritic::VERSION
   spec.authors       = ['Guilherme Simoes']
   spec.email         = ['guilherme.rdems@gmail.com']
   spec.description   = 'RubyCritic is a tool that wraps around various static analysis gems '\

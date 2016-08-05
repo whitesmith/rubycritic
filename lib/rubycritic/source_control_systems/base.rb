@@ -1,6 +1,6 @@
 require 'shellwords'
 
-module Rubycritic
+module RubyCritic
   module SourceControlSystem
     class Base
       @@systems = []

@@ -1,7 +1,7 @@
 require 'rubycritic/version'
 require 'rubycritic/commands/base'
 
-module Rubycritic
+module RubyCritic
   module Command
     class Version < Base
       def execute

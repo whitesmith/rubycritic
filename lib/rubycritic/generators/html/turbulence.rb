@@ -1,6 +1,6 @@
 require 'json'
 
-module Rubycritic
+module RubyCritic
   module Turbulence
     def self.data(analysed_modules)
       analysed_modules.map do |analysed_module|

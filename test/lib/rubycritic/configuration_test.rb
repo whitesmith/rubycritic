@@ -1,29 +1,29 @@
 require 'test_helper'
 require 'rubycritic/configuration'
 
-describe Rubycritic::Configuration do
+describe RubyCritic::Configuration do
   describe '#root' do
     before do
-      Rubycritic::Config.set
-      @default = Rubycritic::Config.root
+      RubyCritic::Config.set
+      @default = RubyCritic::Config.root
     end
 
     it 'has a default' do
-      Rubycritic::Config.root.must_be_instance_of String
+      RubyCritic::Config.root.must_be_instance_of String
     end
 
     it 'can be set to a relative path' do
-      Rubycritic::Config.root = 'foo'
-      Rubycritic::Config.root.must_equal File.expand_path('foo')
+      RubyCritic::Config.root = 'foo'
+      RubyCritic::Config.root.must_equal File.expand_path('foo')
     end
 
     it 'can be set to an absolute path' do
-      Rubycritic::Config.root = '/foo'
-      Rubycritic::Config.root.must_equal '/foo'
+      RubyCritic::Config.root = '/foo'
+      RubyCritic::Config.root.must_equal '/foo'
     end
 
     after do
-      Rubycritic::Config.root = @default
+      RubyCritic::Config.root = @default
     end
   end
 end

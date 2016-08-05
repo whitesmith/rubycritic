@@ -1,4 +1,4 @@
-module Rubycritic
+module RubyCritic
   module SmellsStatusSetter
     def self.set(smells_before, smells_now)
       old_smells = smells_now & smells_before

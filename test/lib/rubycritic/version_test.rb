@@ -1,8 +1,8 @@
 require 'test_helper'
 require 'rubycritic/version'
 
-describe 'Rubycritic version' do
+describe 'RubyCritic version' do
   it 'is defined' do
-    Rubycritic::VERSION.wont_be_nil
+    RubyCritic::VERSION.wont_be_nil
   end
 end

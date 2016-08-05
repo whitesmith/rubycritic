@@ -2,7 +2,7 @@ require 'rubycritic/analysers/helpers/flog'
 require 'rubycritic/core/smell'
 require 'rubycritic/colorize'
 
-module Rubycritic
+module RubyCritic
   module Analyser
     class FlogSmells
       include Colorize

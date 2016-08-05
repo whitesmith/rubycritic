@@ -2,7 +2,7 @@ require 'rubycritic'
 require 'rubycritic/cli/options'
 require 'rubycritic/command_factory'
 
-module Rubycritic
+module RubyCritic
   module Cli
     class Application
       STATUS_SUCCESS = 0
@@ -15,7 +15,7 @@ module Rubycritic
       def execute
         parsed_options = @options.parse
 
-        reporter = Rubycritic::CommandFactory.create(parsed_options.to_h).execute
+        reporter = RubyCritic::CommandFactory.create(parsed_options.to_h).execute
         print(reporter.status_message)
         reporter.status
       rescue OptionParser::InvalidOption => error

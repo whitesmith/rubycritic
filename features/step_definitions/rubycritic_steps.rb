@@ -3,11 +3,11 @@ When(/^I run rubycritic (.*)$/) do |args|
 end
 
 Then(/^the exit status indicates an error$/) do
-  expect(last_command_started).to have_exit_status(Rubycritic::Command::StatusReporter::SCORE_BELOW_MINIMUM)
+  expect(last_command_started).to have_exit_status(RubyCritic::Command::StatusReporter::SCORE_BELOW_MINIMUM)
 end
 
 Then(/^the exit status indicates a success$/) do
-  expect(last_command_started).to have_exit_status(Rubycritic::Command::StatusReporter::SUCCESS)
+  expect(last_command_started).to have_exit_status(RubyCritic::Command::StatusReporter::SUCCESS)
 end
 
 Then(/^it reports:$/) do |report|
@@ -19,7 +19,7 @@ Then(/^there is no output on stdout$/) do
 end
 
 Then(/^it reports the current version$/) do
-  expect(last_command_started).to have_output("RubyCritic #{Rubycritic::VERSION}\n")
+  expect(last_command_started).to have_output("RubyCritic #{RubyCritic::VERSION}\n")
 end
 
 Then(/^it reports the error ['"](.*)['"]$/) do |string|
@@ -27,5 +27,5 @@ Then(/^it reports the error ['"](.*)['"]$/) do |string|
 end
 
 Then(/^it succeeds$/) do
-  expect(last_command_started).to have_exit_status(Rubycritic::Command::StatusReporter::SUCCESS)
+  expect(last_command_started).to have_exit_status(RubyCritic::Command::StatusReporter::SUCCESS)
 end

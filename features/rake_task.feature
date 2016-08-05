@@ -1,4 +1,4 @@
-Feature: Rubycritic can be run via Rake task
+Feature: RubyCritic can be run via Rake task
   In order to allow for a better CI usage
   As a developer
   I want to use RubyCritic as a Rake task
@@ -7,7 +7,7 @@ Feature: Rubycritic can be run via Rake task
     Given the smelly file 'smelly.rb'
     When I run rake rubycritic with:
       """
-      Rubycritic::RakeTask.new do |t|
+      RubyCritic::RakeTask.new do |t|
         t.paths = FileList['smelly.*']
         t.options = '--no-browser -f console'
       end
@@ -22,7 +22,7 @@ Feature: Rubycritic can be run via Rake task
     Given the smelly file 'smelly.rb'
     When I run rake silky with:
       """
-      Rubycritic::RakeTask.new('silky') do |t|
+      RubyCritic::RakeTask.new('silky') do |t|
         t.paths = FileList['smelly.*']
         t.verbose = true
         t.options = '--no-browser'
@@ -37,7 +37,7 @@ Feature: Rubycritic can be run via Rake task
     Given the smelly file 'smelly.rb'
     When I run rake rubycritic with:
       """
-      Rubycritic::RakeTask.new do |t|
+      RubyCritic::RakeTask.new do |t|
         t.paths = FileList['smelly.*']
         t.verbose = true
         t.options = '--no-browser'
@@ -53,7 +53,7 @@ Feature: Rubycritic can be run via Rake task
     Given the smelly file 'smelly.rb'
     When I run rake rubycritic with:
       """
-      Rubycritic::RakeTask.new do |t|
+      RubyCritic::RakeTask.new do |t|
         t.paths = FileList['smelly.*']
         t.verbose = true
         t.options = '--no-browser -f console --minimum-score 95'

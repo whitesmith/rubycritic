@@ -1,6 +1,6 @@
 Feature: Break if overall score is bellow minimum
   In order to break the Continuous Integration builds based on a score threshold
-  Rubycritic returns the exit status according with the score
+  RubyCritic returns the exit status according with the score
 
   Scenario: Status indicates a success when not using --minimum-score
     Given the smelly file 'smelly.rb' with a score of 93.75

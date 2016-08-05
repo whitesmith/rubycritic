@@ -2,7 +2,7 @@ require 'test_helper'
 require 'rubycritic/generators/html/view_helpers'
 require 'pathname'
 
-describe Rubycritic::ViewHelpers do
+describe RubyCritic::ViewHelpers do
   context 'when the file is in the root directory' do
     let(:generator) { GeneratorDouble.new('foo.html') }
 
@@ -67,7 +67,7 @@ describe Rubycritic::ViewHelpers do
 end
 
 class GeneratorDouble
-  include Rubycritic::ViewHelpers
+  include RubyCritic::ViewHelpers
 
   def initialize(file)
     @file = Pathname.new(file)

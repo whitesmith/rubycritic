@@ -1,10 +1,10 @@
 require 'test_helper'
 require 'rubycritic/browser'
 
-describe Rubycritic::Browser do
+describe RubyCritic::Browser do
   before do
     @report_path = 'tmp/rubycritic/overview.html'
-    @browser = Rubycritic::Browser.new @report_path
+    @browser = RubyCritic::Browser.new @report_path
   end
 
   describe '#open' do

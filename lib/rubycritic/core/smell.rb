@@ -1,7 +1,7 @@
 require 'virtus'
 require 'rubycritic/core/location'
 
-module Rubycritic
+module RubyCritic
   class Smell
     include Virtus.model
 

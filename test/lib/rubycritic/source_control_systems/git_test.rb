@@ -8,6 +8,6 @@ class GitTest < Minitest::Test
   include TimeTravelInterface
 
   def setup
-    @system = Rubycritic::SourceControlSystem::Git.new
+    @system = RubyCritic::SourceControlSystem::Git.new
   end
 end

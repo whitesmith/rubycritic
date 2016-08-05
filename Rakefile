@@ -19,7 +19,7 @@ RuboCop::RakeTask.new
 
 Reek::Rake::Task.new
 
-Rubycritic::RakeTask.new do |task|
+RubyCritic::RakeTask.new do |task|
   task.paths = FileList['lib/**/*.rb']
 end
 

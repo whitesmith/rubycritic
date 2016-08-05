@@ -1,7 +1,7 @@
 require 'rubycritic/analysers/helpers/flog'
 require 'rubycritic/colorize'
 
-module Rubycritic
+module RubyCritic
   module Analyser
     class Complexity
       include Colorize

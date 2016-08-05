@@ -1,6 +1,6 @@
 require 'rubycritic/colorize'
 
-module Rubycritic
+module RubyCritic
   module Analyser
     class Churn
       include Colorize

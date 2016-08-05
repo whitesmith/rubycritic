@@ -1,6 +1,6 @@
 require 'rubycritic/commands/base'
 
-module Rubycritic
+module RubyCritic
   module Command
     class Help < Base
       def execute

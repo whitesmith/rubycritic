@@ -1,7 +1,7 @@
 require 'parser/current'
 require 'rubycritic/analysers/helpers/ast_node'
 
-module Rubycritic
+module RubyCritic
   module Parser
     def self.parse(content)
       ::Parser::CurrentRuby.parse(content) || AST::EmptyNode.new

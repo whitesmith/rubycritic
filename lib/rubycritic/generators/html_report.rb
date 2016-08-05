@@ -5,7 +5,7 @@ require 'rubycritic/generators/html/smells_index'
 require 'rubycritic/generators/html/code_index'
 require 'rubycritic/generators/html/code_file'
 
-module Rubycritic
+module RubyCritic
   module Generator
     class HtmlReport
       ASSETS_DIR = File.expand_path('../html/assets', __FILE__)
@@ -22,7 +22,7 @@ module Rubycritic
       end
 
       def browser
-        @browser ||= Rubycritic::Browser.new(report_location)
+        @browser ||= RubyCritic::Browser.new(report_location)
       end
 
       private

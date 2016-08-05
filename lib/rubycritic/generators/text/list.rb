@@ -1,6 +1,6 @@
 require 'colorize'
 
-module Rubycritic
+module RubyCritic
   module Generator
     module Text
       class List

@@ -1,13 +1,13 @@
 require 'analysers_test_helper'
 require 'rubycritic/analysers/smells/reek'
 
-describe Rubycritic::Analyser::ReekSmells do
+describe RubyCritic::Analyser::ReekSmells do
   context 'when analysing a smelly file' do
     before do
       pathname = Pathname.new('test/samples/reek/smelly.rb')
       @analysed_module = AnalysedModuleDouble.new(pathname: pathname, smells: [])
       analysed_modules = [@analysed_module]
-      Rubycritic::Analyser::ReekSmells.new(analysed_modules).run
+      RubyCritic::Analyser::ReekSmells.new(analysed_modules).run
     end
 
     it 'detects its smells' do

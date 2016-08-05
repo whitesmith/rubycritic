@@ -1,8 +1,8 @@
 require 'test_helper'
 require 'rubycritic/core/analysed_modules_collection'
 
-describe Rubycritic::AnalysedModulesCollection do
-  subject { Rubycritic::AnalysedModulesCollection.new(paths) }
+describe RubyCritic::AnalysedModulesCollection do
+  subject { RubyCritic::AnalysedModulesCollection.new(paths) }
 
   describe '.new' do
     context 'with an empty path' do
@@ -18,7 +18,7 @@ describe Rubycritic::AnalysedModulesCollection do
 
       it 'registers one AnalysedModule element per existent file' do
         subject.count.must_equal 2
-        subject.all? { |a| a.is_a?(Rubycritic::AnalysedModule) }.must_equal true
+        subject.all? { |a| a.is_a?(RubyCritic::AnalysedModule) }.must_equal true
       end
     end
 

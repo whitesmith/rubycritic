@@ -1,7 +1,7 @@
 require 'optparse'
 require 'rubycritic/browser'
 
-module Rubycritic
+module RubyCritic
   module Cli
     class Options
       def initialize(argv)

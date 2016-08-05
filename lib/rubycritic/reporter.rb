@@ -1,4 +1,4 @@
-module Rubycritic
+module RubyCritic
   module Reporter
     def self.generate_report(analysed_modules)
       report_generator_class.new(analysed_modules).generate_report

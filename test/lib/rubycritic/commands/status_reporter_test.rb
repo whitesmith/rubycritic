@@ -2,15 +2,15 @@ require 'test_helper'
 require 'rubycritic/commands/status_reporter'
 require 'rubycritic/cli/options'
 
-describe Rubycritic::Command::StatusReporter do
-  let(:success_status) { Rubycritic::Command::StatusReporter::SUCCESS }
-  let(:score_below_minimum) { Rubycritic::Command::StatusReporter::SCORE_BELOW_MINIMUM }
+describe RubyCritic::Command::StatusReporter do
+  let(:success_status) { RubyCritic::Command::StatusReporter::SUCCESS }
+  let(:score_below_minimum) { RubyCritic::Command::StatusReporter::SCORE_BELOW_MINIMUM }
 
   describe 'with default options' do
     before do
-      @options = Rubycritic::Cli::Options.new([])
+      @options = RubyCritic::Cli::Options.new([])
       @options.parse
-      @reporter = Rubycritic::Command::StatusReporter.new(@options.to_h)
+      @reporter = RubyCritic::Command::StatusReporter.new(@options.to_h)
     end
 
     it 'has a default' do
@@ -33,9 +33,9 @@ describe Rubycritic::Command::StatusReporter do
 
   describe 'with minimum-score option' do
     before do
-      @options = Rubycritic::Cli::Options.new(['-s', '99'])
+      @options = RubyCritic::Cli::Options.new(['-s', '99'])
       @options.parse
-      @reporter = Rubycritic::Command::StatusReporter.new(@options.to_h)
+      @reporter = RubyCritic::Command::StatusReporter.new(@options.to_h)
     end
 
     it 'has a default' do

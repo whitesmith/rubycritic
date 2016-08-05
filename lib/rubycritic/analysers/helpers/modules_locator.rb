@@ -1,6 +1,6 @@
 require 'rubycritic/analysers/helpers/parser'
 
-module Rubycritic
+module RubyCritic
   class ModulesLocator
     def initialize(analysed_module)
       @analysed_module = analysed_module

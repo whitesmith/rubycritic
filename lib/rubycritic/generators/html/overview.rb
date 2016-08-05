@@ -1,7 +1,7 @@
 require 'rubycritic/generators/html/base'
 require 'rubycritic/generators/html/turbulence'
 
-module Rubycritic
+module RubyCritic
   module Generator
     module Html
       class Overview < Base
