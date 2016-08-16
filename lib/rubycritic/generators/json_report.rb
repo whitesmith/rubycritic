@@ -8,7 +8,10 @@ module RubyCritic
       end
 
       def generate_report
-        print generator.render
+        FileUtils.mkdir_p(generator.file_directory)
+        File.open(generator.file_pathname, 'w+') do |file|
+          file.write(generator.render)
+        end
       end
 
       private
