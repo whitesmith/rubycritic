@@ -1,3 +1,8 @@
+# 2.9.3 / 2016-08-17
+
+* [FEATURE] Save json report to file  (by NickTroy)
+* [CHANGE] Rename Rubycritic to RubyCritic (by troessner)
+
 # 2.9.2 / 2016-07-01
 
 * [CHANGE] Upgrade rubocop to 0.41.1 (by nijikon)
