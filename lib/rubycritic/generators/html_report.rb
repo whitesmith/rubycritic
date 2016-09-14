@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'fileutils'
 require 'rubycritic/configuration'
 require 'rubycritic/generators/html/overview'

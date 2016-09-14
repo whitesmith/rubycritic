@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 Given(/^the smelly file 'smelly.rb'/) do
   contents = <<-EOS.strip_heredoc
     class AllTheMethods

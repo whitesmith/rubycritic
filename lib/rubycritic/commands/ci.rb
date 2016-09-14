@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rubycritic/source_control_systems/base'
 require 'rubycritic/analysers_runner'
 require 'rubycritic/reporter'
@@ -7,8 +8,12 @@ module RubyCritic
   module Command
     class Ci < Default
       def critique
-        AnalysersRunner.new(@paths).run
+        AnalysersRunner.new(paths).run
       end
+
+      private
+
+      attr_reader :paths
     end
   end
 end

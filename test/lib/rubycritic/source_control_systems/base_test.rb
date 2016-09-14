@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'test_helper'
 require 'rubycritic/source_control_systems/base'
 

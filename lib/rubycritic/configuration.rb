@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module RubyCritic
   class Configuration
     attr_reader :root

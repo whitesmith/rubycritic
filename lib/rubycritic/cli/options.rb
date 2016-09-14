@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'optparse'
 require 'rubycritic/browser'
 
@@ -6,12 +7,12 @@ module RubyCritic
     class Options
       def initialize(argv)
         @argv = argv
-        @parser = OptionParser.new
+        self.parser = OptionParser.new
       end
 
       # rubocop:disable Metrics/MethodLength
       def parse
-        @parser.new do |opts|
+        parser.new do |opts|
           opts.banner = 'Usage: rubycritic [options] [paths]'
 
           opts.on('-p', '--path [PATH]', 'Set path where report will be saved (tmp/rubycritic by default)') do |path|
@@ -26,35 +27,35 @@ module RubyCritic
             '  json',
             '  console'
           ) do |format|
-            @format = format
+            self.format = format
           end
 
           opts.on('-s', '--minimum-score [MIN_SCORE]', 'Set a minimum score') do |min_score|
-            @minimum_score = Integer(min_score)
+            self.minimum_score = Integer(min_score)
           end
 
           opts.on('-m', '--mode-ci', 'Use CI mode (faster, but only analyses last commit)') do
-            @mode = :ci
+            self.mode = :ci
           end
 
           opts.on('--deduplicate-symlinks', 'De-duplicate symlinks based on their final target') do
-            @deduplicate_symlinks = true
+            self.deduplicate_symlinks = true
           end
 
           opts.on('--suppress-ratings', 'Suppress letter ratings') do
-            @suppress_ratings = true
+            self.suppress_ratings = true
           end
 
           opts.on('--no-browser', 'Do not open html report with browser') do
-            @no_browser = true
+            self.no_browser = true
           end
 
           opts.on_tail('-v', '--version', "Show gem's version") do
-            @mode = :version
+            self.mode = :version
           end
 
           opts.on_tail('-h', '--help', 'Show this message') do
-            @mode = :help
+            self.mode = :help
           end
         end.parse!(@argv)
         self
@@ -62,20 +63,22 @@ module RubyCritic
 
       def to_h
         {
-          mode: @mode,
-          root: @root,
-          format: @format,
-          deduplicate_symlinks: @deduplicate_symlinks,
+          mode: mode,
+          root: root,
+          format: format,
+          deduplicate_symlinks: deduplicate_symlinks,
           paths: paths,
-          suppress_ratings: @suppress_ratings,
-          help_text: @parser.help,
-          minimum_score: @minimum_score || 0,
-          no_browser: @no_browser
+          suppress_ratings: suppress_ratings,
+          help_text: parser.help,
+          minimum_score: minimum_score || 0,
+          no_browser: no_browser
         }
       end
 
       private
 
+      attr_accessor :mode, :root, :format, :deduplicate_symlinks,
+                    :suppress_ratings, :minimum_score, :no_browser, :parser
       def paths
         if @argv.empty?
           ['.']

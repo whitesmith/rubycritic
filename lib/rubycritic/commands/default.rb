@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rubycritic/source_control_systems/base'
 require 'rubycritic/analysers_runner'
 require 'rubycritic/revision_comparator'
@@ -15,18 +16,22 @@ module RubyCritic
 
       def execute
         report(critique)
-        @status_reporter
+        status_reporter
       end
 
       def critique
-        analysed_modules = AnalysersRunner.new(@paths).run
-        RevisionComparator.new(@paths).set_statuses(analysed_modules)
+        analysed_modules = AnalysersRunner.new(paths).run
+        RevisionComparator.new(paths).set_statuses(analysed_modules)
       end
 
       def report(analysed_modules)
         Reporter.generate_report(analysed_modules)
-        @status_reporter.score = analysed_modules.score
+        status_reporter.score = analysed_modules.score
       end
+
+      private
+
+      attr_reader :paths, :status_reporter
     end
   end
 end

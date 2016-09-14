@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'parser/current'
 require 'rubycritic/analysers/helpers/ast_node'
 

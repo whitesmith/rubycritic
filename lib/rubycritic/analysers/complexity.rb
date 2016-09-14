@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rubycritic/analysers/helpers/flog'
 require 'rubycritic/colorize'
 

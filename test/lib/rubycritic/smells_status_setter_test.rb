@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'test_helper'
 require 'rubycritic/core/smell'
 require 'rubycritic/smells_status_setter'

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module RubyCritic
   module Colorize
     def colorize(text, color_code)

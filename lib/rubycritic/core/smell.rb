@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'virtus'
 require 'rubycritic/core/location'
 
@@ -70,7 +71,7 @@ module RubyCritic
     protected
 
     def state
-      [@context, @message, @score, @type]
+      [context, message, score, type]
     end
 
     private

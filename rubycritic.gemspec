@@ -1,4 +1,5 @@
 # coding: utf-8
+# frozen_string_literal: true
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rubycritic/version'
@@ -21,9 +22,9 @@ Gem::Specification.new do |spec|
   spec.require_path  = 'lib'
 
   spec.add_runtime_dependency 'virtus', '~> 1.0'
-  spec.add_runtime_dependency 'flay', '2.8.0'
-  spec.add_runtime_dependency 'flog', '4.4.0'
-  spec.add_runtime_dependency 'reek', '4.1.0'
+  spec.add_runtime_dependency 'flay', '~> 2.8'
+  spec.add_runtime_dependency 'flog', '~> 4.4'
+  spec.add_runtime_dependency 'reek', '~> 4.4'
   spec.add_runtime_dependency 'parser', '2.3.1.2'
   spec.add_runtime_dependency 'ruby_parser', '~> 3.8'
   spec.add_runtime_dependency 'colorize'
@@ -36,6 +37,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'minitest', '~> 5.3'
   spec.add_development_dependency 'mocha', '~> 1.1'
-  spec.add_development_dependency 'rubocop', '>= 0.41.1'
+  spec.add_development_dependency 'rubocop', '>= 0.42.0'
   spec.add_development_dependency 'pry-byebug'
 end

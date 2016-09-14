@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rubycritic/source_locator'
 require 'rubycritic/core/analysed_module'
 

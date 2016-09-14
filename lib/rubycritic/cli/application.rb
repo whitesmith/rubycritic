@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rubycritic'
 require 'rubycritic/cli/options'
 require 'rubycritic/command_factory'

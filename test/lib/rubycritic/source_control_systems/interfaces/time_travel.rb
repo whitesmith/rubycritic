@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # This interface is only used if `@system.revision?` returns `true`.
 module TimeTravelInterface
   def test_implements_time_travel_interface

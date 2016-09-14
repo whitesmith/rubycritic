@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require_relative '../../lib/rubycritic'
 require_relative '../../lib/rubycritic/cli/application'
 require_relative '../../lib/rubycritic/commands/status_reporter'
