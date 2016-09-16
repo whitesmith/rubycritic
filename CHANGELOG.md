@@ -1,3 +1,8 @@
+
+# 2.9.4 / 2016-09-16
+
+* [CHANGE] Update Reek, flog, flay (by bglusman)
+
 # 2.9.3 / 2016-08-17
 
 * [FEATURE] Save json report to file  (by NickTroy)
