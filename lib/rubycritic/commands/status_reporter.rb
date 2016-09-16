@@ -1,7 +1,8 @@
+# frozen_string_literal: true
 module RubyCritic
   module Command
     class StatusReporter
-      attr_reader :status, :status_message
+      attr_reader :status, :status_message, :score
       SUCCESS = 0
       SCORE_BELOW_MINIMUM = 1
 
@@ -10,8 +11,8 @@ module RubyCritic
         @status = SUCCESS
       end
 
-      def score=(score)
-        @score = score.round(2)
+      def score=(input_score)
+        @score = input_score.round(2)
         update_status
       end
 
@@ -27,15 +28,15 @@ module RubyCritic
       end
 
       def satisfy_minimum_score_rule
-        @score >= @options[:minimum_score]
+        score >= @options[:minimum_score]
       end
 
       def update_status_message
         case @status
         when SUCCESS
-          @status_message = "Score: #{@score}"
+          @status_message = "Score: #{score}"
         when SCORE_BELOW_MINIMUM
-          @status_message = "Score (#{@score}) is below the minimum #{@options[:minimum_score]}"
+          @status_message = "Score (#{score}) is below the minimum #{@options[:minimum_score]}"
         end
       end
     end

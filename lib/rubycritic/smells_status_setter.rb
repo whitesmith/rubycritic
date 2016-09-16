@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module RubyCritic
   module SmellsStatusSetter
     def self.set(smells_before, smells_now)

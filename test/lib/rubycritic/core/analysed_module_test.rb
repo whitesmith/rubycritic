@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'test_helper'
 require 'rubycritic/core/analysed_module'
 require 'rubycritic/core/smell'

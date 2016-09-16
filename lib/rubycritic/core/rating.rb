@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module RubyCritic
   class Rating
     def self.from_cost(cost)

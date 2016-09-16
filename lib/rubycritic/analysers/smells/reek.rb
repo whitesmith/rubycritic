@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rubycritic/analysers/helpers/reek'
 require 'rubycritic/core/smell'
 require 'rubycritic/colorize'

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rubycritic/commands/status_reporter'
 
 module RubyCritic

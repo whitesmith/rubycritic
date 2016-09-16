@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'test_helper'
 require 'rubycritic/generators/html/view_helpers'
 require 'pathname'
