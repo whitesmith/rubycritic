@@ -531,6 +531,7 @@ span.metric {
   margin-left: 20px;
 }
 
+
 .filter-table {
   text-align: right;
 }
@@ -547,4 +548,23 @@ span.metric {
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.branch{
+  font-size: 15px;
+  color: #9b111d;
+  font-weight: bold;
+  display: inline-block;
+  padding: 13px;
+}
+
+.green-color {
+  color: #00A900;
+}
+.red-color {
+  color: #ED0000;
+}
+.empty-span{
+  height: 17px;
+  width: 17px;
 }

@@ -23,6 +23,16 @@
             <tr>
               <td>
                 <% unless Config.suppress_ratings %>
+                  <% if Config.build_mode? %>
+                    <% master_analysed_module = Config.base_branch_collection.find(analysed_module.pathname) %>
+                    <% if master_analysed_module.cost > analysed_module.cost %>
+                      <span class="glyphicon glyphicon-arrow-up green-color"></span>
+                    <% elsif master_analysed_module.cost < analysed_module.cost %>
+                      <span class="glyphicon glyphicon-arrow-down red-color"></span>
+                    <% else %>
+                      <span class="empty-span glyphicon"></span>
+                    <% end %>
+                  <% end %>
                   <div class="rating <%= analysed_module.rating.to_s.downcase %>"><%= analysed_module.rating %></div>
                 <% end %>
               </td>
