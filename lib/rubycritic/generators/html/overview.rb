@@ -14,6 +14,13 @@ module RubyCritic
           @score = analysed_modules.score
           @max_score = AnalysedModulesCollection::MAX_SCORE
           @summary = analysed_modules.summary
+          set_header_links if Config.compare_branches_mode?
+        end
+
+        def set_header_links
+          @base_path = code_index_path(Config.base_root_directory, file_name)
+          @feature_path = code_index_path(Config.feature_root_directory, file_name)
+          @build_path = code_index_path(Config.build_root_directory, file_name)
         end
 
         def file_name

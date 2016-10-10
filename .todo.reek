@@ -67,6 +67,16 @@ Attribute:
   - RubyCritic::Configuration#open_with
   - RubyCritic::Configuration#source_control_system
   - RubyCritic::Configuration#suppress_ratings
+  - RubyCritic::Configuration#base_branch
+  - RubyCritic::Configuration#base_branch_score
+  - RubyCritic::Configuration#base_root_directory
+  - RubyCritic::Configuration#build_root_directory
+  - RubyCritic::Configuration#feature_branch
+  - RubyCritic::Configuration#feature_branch_score
+  - RubyCritic::Configuration#feature_root_directory
+  - RubyCritic::Configuration#threshold_score
+  - RubyCritic::Configuration#base_branch_collection
+  - RubyCritic::Configuration#feature_branch_collection
   - RubyCritic::RakeTask#name
   - RubyCritic::RakeTask#options
   - RubyCritic::RakeTask#paths
@@ -88,6 +98,7 @@ TooManyStatements:
   - RubyCritic::Generator::Html::CodeFile#render
   - RubyCritic::Reporter#self.report_generator_class
   - RubyCritic::SourceLocator#deduplicate_symlinks
+  - RubyCritic::Command::Compare#compare_branches
 FeatureEnvy:
   exclude:
   - Parser::AST::Node#module_name
@@ -104,6 +115,7 @@ NestedIterators:
   - RubyCritic::Analyser::FlaySmells#run
   - RubyCritic::Cli::Options#parse
   - RubyCritic::Generator::HtmlReport#create_directories_and_files
+  - RubyCritic::AnalysedModulesCollection#initialize
 UtilityFunction:
   exclude:
   - RubyCritic::Analyser::FlaySmells#cost
@@ -121,9 +133,18 @@ UtilityFunction:
   - RubyCritic::SourceControlSystem::Git#stashes_count
   - RubyCritic::SourceControlSystem::Mercurial#date_of_last_commit
   - RubyCritic::SourceControlSystem::Mercurial#revisions_count
+  - RubyCritic::ViewHelpers#code_index_path
+  - RubyCritic::AnalysedModulesCollection#build_analysed_module
+  - RubyCritic::Command::Compare#branch_directory
+  - RubyCritic::Command::Compare#build_details
+  - RubyCritic::Command::Compare#threshold_reached?
+  - RubyCritic::Command::Compare#threshold_values_set?
 TooManyInstanceVariables:
   exclude:
   - RubyCritic::Cli::Options
+  - RubyCritic::Generator::Html::CodeFile
+  - RubyCritic::Generator::Html::Overview
+  - RubyCritic::Generator::Html::SmellsIndex
 ControlParameter:
   exclude:
   - RubyCritic::CommandFactory#self.command_class

@@ -19,6 +19,13 @@
     <header class="navbar navbar-default navbar-fixed-top">
       <a href="#menu-toggle" class="btn btn-default hidden-lg visible-sm-* hidden-md visible-xs-* pull-left" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
       <a href="<%= file_path('overview.html') %>"><img src="<%= image_path('logo.png') %>" title="Ruby Critic Logo" width="55"><span class="logo">RUBYCRITIC</span></a>
+      <% if Config.compare_branches_mode? %>
+        <ul class="nav navbar-nav navbar-right">
+          <a href="<%= @base_path %>"><span class="branch"><%= Config.base_branch %></span></a>
+          <a href="<%= @feature_path %>"><span class="branch"><%= Config.feature_branch %></span></a>
+          <a href="<%= @build_path %>"><span class="branch">Build</span></a>
+        </ul>
+      <% end %>
     </header>
     <div id="wrapper">
       <!-- Sidebar -->

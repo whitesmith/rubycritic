@@ -21,12 +21,15 @@ Feature: RubyCritic can be controlled using command-line options
       """
       Usage: rubycritic [options] [paths]
           -p, --path [PATH]                Set path where report will be saved (tmp/rubycritic by default)
+          -b, --branch BRANCH              Set branch to compare
+          -t [MAX_DECREASE],               Set a threshold for score difference between two branches (works only with -b)
+              --maximum-decrease
           -f, --format [FORMAT]            Report smells in the given format:
                                              html (default; will open in a browser)
                                              json
                                              console
           -s, --minimum-score [MIN_SCORE]  Set a minimum score
-          -m, --mode-ci                    Use CI mode (faster, but only analyses last commit)
+          -m, --mode-ci [BASE_BRANCH]      Use CI mode (faster, analyses diffs w.r.t base_branch (default: master))
               --deduplicate-symlinks       De-duplicate symlinks based on their final target
               --suppress-ratings           Suppress letter ratings
               --no-browser                 Do not open html report with browser

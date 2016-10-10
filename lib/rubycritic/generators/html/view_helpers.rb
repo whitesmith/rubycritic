@@ -26,7 +26,16 @@ module RubyCritic
     end
 
     def smell_location_path(location)
-      file_path("#{location.pathname.sub_ext('.html')}#L#{location.line}")
+      smell_location = "#{location.pathname.sub_ext('.html')}#L#{location.line}"
+      if Config.compare_branches_mode?
+        file_path("#{File.expand_path(Config.feature_root_directory)}/#{smell_location}")
+      else
+        file_path(smell_location)
+      end
+    end
+
+    def code_index_path(root_directory, file_name)
+      file_path("#{File.expand_path(root_directory)}/#{file_name}")
     end
 
     private

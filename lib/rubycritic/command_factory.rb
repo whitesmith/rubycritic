@@ -19,6 +19,9 @@ module RubyCritic
       when :ci
         require 'rubycritic/commands/ci'
         Command::Ci
+      when :compare_branches
+        require 'rubycritic/commands/compare'
+        Command::Compare
       else
         require 'rubycritic/commands/default'
         Command::Default
