@@ -1,5 +1,5 @@
-<%= @analysed_module.name.colorize(color) %>:
-  Rating:       <%= @analysed_module.rating.to_s.colorize(color) %>
+<%= Rainbow(@analysed_module.name.to_s).foreground(color) %>:
+  Rating:       <%= Rainbow(@analysed_module.rating.to_s).foreground(color) %>
   Churn:        <%= @analysed_module.churn %>
   Complexity:   <%= @analysed_module.complexity %>
   Duplication:  <%= @analysed_module.duplication %>

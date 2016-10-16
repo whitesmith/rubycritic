@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'colorize'
+require 'rainbow'
 
 module RubyCritic
   module Generator
