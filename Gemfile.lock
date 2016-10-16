@@ -2,11 +2,11 @@ PATH
   remote: .
   specs:
     rubycritic (2.9.4)
-      colorize
       flay (~> 2.8)
       flog (~> 4.4)
       launchy (= 2.4.3)
       parser (= 2.3.1.2)
+      rainbow
       reek (~> 4.4)
       ruby_parser (~> 3.8)
       virtus (~> 1.0)
@@ -36,7 +36,6 @@ GEM
     coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
-    colorize (0.8.1)
     contracts (0.14.0)
     cucumber (2.4.0)
       builder (>= 2.1.2)
