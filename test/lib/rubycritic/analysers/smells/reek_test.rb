@@ -15,6 +15,11 @@ describe RubyCritic::Analyser::ReekSmells do
       @analysed_module.smells.length.must_equal 2
     end
 
+    it 'respects the .reek file' do
+      messages = @analysed_module.smells.map(&:message)
+      messages.wont_include "has the parameter name 'a'"
+    end
+
     it 'creates smells with messages' do
       first_smell = @analysed_module.smells.first
       first_smell.message.must_equal "has boolean parameter 'reek'"

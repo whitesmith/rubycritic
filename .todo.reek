@@ -133,9 +133,10 @@ UncommunicativeParameterName:
   - RubyCritic::Location#to_json
   - RubyCritic::Rating#to_json
   - RubyCritic::Smell#to_json
+  - Theon # This is needed for the tests to pass
 ClassVariable:
   exclude:
   - RubyCritic::SourceControlSystem::Base
-BooleanParameter: 
+BooleanParameter:
   exclude:
   - RubyCritic::Config#self.respond_to_missing?
