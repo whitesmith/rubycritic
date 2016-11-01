@@ -1,3 +1,7 @@
+# 3.0.0 / 2016-11-01
+
+* [CHANGE] Set required ruby version to 2.1 (by Onumis)
+* [BUGFIX] Respect the .reek configuration file (by mereghost)
 
 # 2.9.4 / 2016-09-16
 
