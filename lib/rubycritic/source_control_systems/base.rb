@@ -34,3 +34,4 @@ end
 require 'rubycritic/source_control_systems/double'
 require 'rubycritic/source_control_systems/git'
 require 'rubycritic/source_control_systems/mercurial'
+require 'rubycritic/source_control_systems/perforce'
