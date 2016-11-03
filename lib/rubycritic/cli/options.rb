@@ -23,7 +23,7 @@ module RubyCritic
             '-f', '--format [FORMAT]',
             [:html, :json, :console],
             'Report smells in the given format:',
-            '  html (default)',
+            '  html (default; will open in a browser)',
             '  json',
             '  console'
           ) do |format|

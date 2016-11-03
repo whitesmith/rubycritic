@@ -22,7 +22,7 @@ Feature: RubyCritic can be controlled using command-line options
       Usage: rubycritic [options] [paths]
           -p, --path [PATH]                Set path where report will be saved (tmp/rubycritic by default)
           -f, --format [FORMAT]            Report smells in the given format:
-                                             html (default)
+                                             html (default; will open in a browser)
                                              json
                                              console
           -s, --minimum-score [MIN_SCORE]  Set a minimum score
