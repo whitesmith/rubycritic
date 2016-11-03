@@ -28,15 +28,15 @@ describe RubyCritic::Generator::ConsoleReport do
       assert output_contains?('Rating', @mock_analysed_module.rating)
     end
 
-    it "includes the module's rating in the report" do
+    it "includes the module's churn metric in the report" do
       assert output_contains?('Churn', @mock_analysed_module.churn)
     end
 
-    it "includes the module's rating in the report" do
+    it "includes the module's complexity in the report" do
       assert output_contains?('Complexity', @mock_analysed_module.complexity)
     end
 
-    it "includes the module's rating in the report" do
+    it "includes the module's duplication metric in the report" do
       assert output_contains?('Duplication', @mock_analysed_module.duplication)
     end
 
