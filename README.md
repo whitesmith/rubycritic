@@ -58,8 +58,9 @@ This gem provides features such as:
 
   ![RubyCritic file code screenshot](http://i.imgur.com/RNzXewk.png)
 
-5. It uses your source control system (only Git is supported for now) to
-  compare your currently uncommitted changes with your last commit.
+5. It uses your source control system (only Git, Mercurial and Perforce
+  are currently supported) to compare your currently uncommitted
+  changes with your last commit.
 
   **Warning**: If your code is not as you expect it to be after running
   RubyCritic, please check your source control system stash.
