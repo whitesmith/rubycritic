@@ -131,6 +131,10 @@ Under `Build Triggers` select `Build when a change is pushed to GitHub`, and sta
 
 Finally, click the `Save` button to save your job configuration. You can try out your build right away by clicking the `Build Now` button.
 
+### Failing fast: the `--minimum-score` option
+
+The CLI option `--minimum-score` makes `rubycritic` return the exit status according to the calculated score: it returns an error exit status if the score is below the set minimum. A helpful message is also printed. This allows your CI job to fail on too-low scores.
+
 ## Setting Up A GitHub Service
 
 The last step is to set up GitHub integration so that a push triggers a new job in the Build Server. You’ll need admin access to your project's repository to be able to change its settings. On the repository page navigate to `Settings`, `Webhooks & Services` and click the `Add service` button. Select the `Jenkins (GitHub plugin)` options and set the `Jenkins hook url`.
