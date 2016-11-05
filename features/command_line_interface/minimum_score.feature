@@ -1,4 +1,4 @@
-Feature: Break if overall score is bellow minimum
+Feature: Break if overall score is below minimum
   In order to break the Continuous Integration builds based on a score threshold
   RubyCritic returns the exit status according with the score
 
