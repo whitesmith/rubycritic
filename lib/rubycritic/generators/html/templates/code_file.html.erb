@@ -1,38 +1,61 @@
-<div class="file-header group <%= Config.suppress_ratings ? 'unrated' : 'rated' %>">
-  <span class="rating rating-<%= @analysed_module.rating.to_s.downcase %> circled-text circle">
-    <%= @analysed_module.rating %>
-  </span>
-  <h2 class="file-name"><%= @analysed_module.name %></h2>
-
-  <span class="file-committed-at">
-    <% if @analysed_module.committed_at %>
-      Updated <%= timeago_tag(@analysed_module.committed_at) %>
-    <% else %>
-      Never committed
-    <% end %>
-  </span>
-
-  <div class="file-stats group">
-    <div class="file-stat">
-      <%= @analysed_module.complexity %> complexity
+<div class="row">
+  <!--Page Title -->
+  <div class="Page_Title">
+    <div class="file-time">
+      <span class="committed-at">
+        <% if @analysed_module.committed_at %>
+          Updated <%= timeago_tag(@analysed_module.committed_at) %>
+        <% else %>
+          Never committed
+        <% end %>
+      </span>
     </div>
-    <div class="file-stat">
-      <%= @analysed_module.complexity_per_method %> complexity per method
-    </div>
-    <div class="file-stat">
-      <%= @analysed_module.churn %> churn
-    </div>
-    <div class="file-stat">
-      <%= @analysed_module.methods_count %> methods
-    </div>
-    <div class="file-stat">
-      <%= @analysed_module.duplication %> duplication
+    <div>
+      <h3><small><%= @analysed_module.file_location %> /</small> <%= @analysed_module.file_name %></h3>
     </div>
   </div>
+  <!--End Page Title -->
+  <div class="Content_Wrapper">
+    <!-- code detail -->
+    <div class="code-top-detail clearfix row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-1">
+            <div class="rating <%= @analysed_module.rating.to_s.downcase %> big">
+              <%= @analysed_module.rating %>
+            </div>
+          </div>
+          <div class="code-statistics col-md-11">
+            <div class="col-md-3">
+              <div><span class="metric"><%= @analysed_module.line_count %></span><small> lines of codes</small></div>
+              <div><span class="metric"><%= @analysed_module.methods_count %></span><small> methods</small></div>
+            </div>
+            <div class="col-md-3">
+              <div><span class="metric"><%= @analysed_module.complexity_per_method %></span><small> complexity/method</small></div>
+              <div><span class="metric"><%= @analysed_module.churn %></span><small> loc/method</small></div>
+            </div>
+            <div class="col-md-3">
+              <div><span class="metric"><%= @analysed_module.complexity %></span><small> complexity</small></div>
+              <div><span class="metric"><%= @analysed_module.duplication %></span><small> duplications</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="code-tabs">
+          <ul class="nav nav-pills right-to-left">
+            <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
+            <li class="active">
+              <a href="#" id="toggle-smells" class="toggle-button button">
+                <%= @analysed_module.smells_count %>
+                <%= @analysed_module.smells_count <= 1 ? 'smell' : 'smells' %>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-  <% if @analysed_module.smells? %>
-    <button id="js-toggle-smells" class="smells-toggle-button button">Toggle Smells</button>
-  <% end %>
+    <code class="prettyprint linenums lang-ruby file-code js-file-code"><%= yield %></code>
+  </div>
 </div>
-
-<code class="prettyprint linenums lang-ruby file-code js-file-code"><%= yield %></code>
