@@ -1,6 +1,6 @@
+# frozen_string_literal: true
 require 'date'
 
-# frozen_string_literal: true
 module RubyCritic
   module SourceControlSystem
     PerforceStats = Struct.new(:filename, :revision, :last_commit, :opened?)

@@ -2,6 +2,7 @@
 
 * [CHANGE] Set required ruby version to 2.1 (by Onumis)
 * [BUGFIX] Respect the .reek configuration file (by mereghost)
+* [CHANGE] Fix test warnings and upgrade 'parser' to '2.3.1.4' (by tejasbubane)
 
 # 2.9.4 / 2016-09-16
 
