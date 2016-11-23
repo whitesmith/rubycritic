@@ -3,7 +3,7 @@
 RubyCritic wraps around static analysis gems such as [Reek][2], [Flay][3] and [Flog][4] to provide a quality report of your Ruby code.
 
 Each of these gems are internally wrapped as an **Analyser**, with a collection of **AnalysedModule**s, which give us calculations of key metrics.
-The most important ones are **churn**, **complexity**, **cost** and **rating**. 
+The most important ones are **churn**, **complexity**, **cost** and **rating**.
 
 The output of RubyCritic will give you four values to help you judge your code's _odorousness_:
 
@@ -40,7 +40,7 @@ Complexity is the output of [Flog][4]. You can [read more about how it works][7]
 
 Both **churn** and **complexity** are presented as a chart:
 
-![RubyCritic overview screenshot](http://i.imgur.com/oiE5O3X.png)
+![RubyCritic overview screenshot](/images/churn-vs-complexity.png)
 
 Each file is represented by a dot. **The closer they are to the bottom-left corner, the better.**
 But keep in mind that you cannot reduce churn (well... not unless you re-write your repo's history :neckbeard:), so try to keep the dots as close to the bottom as possible.
@@ -54,7 +54,7 @@ Generally `A`'s & `B`'s are good enough, `C`'s serve as a warning and `D`'s & `F
 
 **Rating** is simply [a conversion][5] from the calculated **cost** to a letter.
 
-![RubyCritic code index screenshot](http://i.imgur.com/a0GCn48.png)
+![RubyCritic code index screenshot](/images/rating.png)
 
 ### Cost
 
