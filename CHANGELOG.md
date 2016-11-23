@@ -1,8 +1,16 @@
+# 3.1.0 / 2016-11-23
+
+* [FEATURE] Support for Perforce source control system (by Loic Gudet)
+* [CHANGE] New Web UI (by tejasbubane)
+* [CHANGE] Significant improvements to documentation (by olleolleolle)
+* [CHANGE] Typo / consistency updates to features and tests (by olleolleolle)
+* [CHANGE] Fix test warnings and upgrade 'parser' to '2.3.1.4' (by tejasbubane)
+* [BUGFIX] Increase the turboThreshold of Highcharts so that it renders nicely even with lots of data (by Victor Martins)
+
 # 3.0.0 / 2016-11-01
 
 * [CHANGE] Set required ruby version to 2.1 (by Onumis)
 * [BUGFIX] Respect the .reek configuration file (by mereghost)
-* [CHANGE] Fix test warnings and upgrade 'parser' to '2.3.1.4' (by tejasbubane)
 
 # 2.9.4 / 2016-09-16
 
