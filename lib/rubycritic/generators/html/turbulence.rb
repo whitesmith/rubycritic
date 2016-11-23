@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 require 'json'
-
 module RubyCritic
   module Turbulence
     def self.data(analysed_modules)
@@ -8,7 +7,8 @@ module RubyCritic
         {
           name: analysed_module.name,
           x: analysed_module.churn,
-          y: analysed_module.complexity
+          y: analysed_module.complexity,
+          rating: analysed_module.rating
         }
       end.to_json
     end

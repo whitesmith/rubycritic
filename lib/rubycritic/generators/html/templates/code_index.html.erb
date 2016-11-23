@@ -1,30 +1,45 @@
-<table id="js-index-table" class="index-table sortable-table">
-<thead>
-  <tr>
-    <th>Name</th>
-    <th class="numeric-cell" title="Number of times a file has changed">Churn</th>
-    <th class="numeric-cell" title="Overall amount of code in a file">Complexity</th>
-    <th class="numeric-cell" title="Amount of code that is similar to other code">Duplication</th>
-    <th class="numeric-cell">Smells</th>
-    <% unless Config.suppress_ratings %>
-      <th class="centered-cell">Rating</th>
-    <% end %>
-  </tr>
-</thead>
-<tbody>
-  <% @analysed_modules.each do |analysed_module| %>
-    <tr>
-      <td>
-        <a href="<%= file_path(analysed_module.pathname.sub_ext('.html')) %>"><%= analysed_module.name %></a>
-      </td>
-      <td class="numeric-cell"><%= analysed_module.churn %></td>
-      <td class="numeric-cell"><%= analysed_module.complexity %></td>
-      <td class="numeric-cell"><%= analysed_module.duplication %></td>
-      <td class="numeric-cell"><%= analysed_module.smells.length %></td>
-      <% unless Config.suppress_ratings %>
-        <td class="centered-cell"><span class="rating-<%= analysed_module.rating.to_s.downcase %> circled-text circle"><%= analysed_module.rating %></span></td>
-      <% end %>
-    </tr>
-  <% end %>
-</tbody>
-</table>
+<div class="row">
+    <!--Page Title -->
+    <div class="Page_Title">
+      <h3>Code</h3>
+    </div>
+    <!--End Page Title -->
+    <div class="Content_Wrapper">
+      <table id="codeTable" class="table code sortable-table tablesorter">
+        <thead>
+          <tr>
+            <% unless Config.suppress_ratings %>
+              <th width="10%" class="table-header">Rating<span class="sort-type"></span></th>
+            <% end %>
+            <th width="50%" class="table-header">Name<span class="sort-type"></span></th>
+            <th width="10%" class="table-header">Churn<span class="sort-type"></span></th>
+            <th width="10%" class="table-header">Complexity<span class="sort-type"></span></th>
+            <th width="10%" class="table-header">Duplication<span class="sort-type"></span></th>
+            <th width="10%" class="table-header">Smells<span class="sort-type"></span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @analysed_modules.each do |analysed_module| %>
+            <tr>
+              <td>
+                <% unless Config.suppress_ratings %>
+                  <div class="rating <%= analysed_module.rating.to_s.downcase %>"><%= analysed_module.rating %></div>
+                <% end %>
+              </td>
+              <td>
+                <ul class="nav nav-pills">
+                  <li role="presentation" >
+                    <a href="<%= file_path(analysed_module.pathname.sub_ext('.html')) %>"><%= analysed_module.name %></a>
+                  </li>
+                </ul>
+              </td>
+              <td><%= analysed_module.churn %></td>
+              <td><%= analysed_module.complexity %></td>
+              <td><%= analysed_module.duplication %></td>
+              <td><%= analysed_module.smells_count %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+</div>

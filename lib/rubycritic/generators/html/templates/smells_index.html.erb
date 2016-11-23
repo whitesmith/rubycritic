@@ -1,26 +1,47 @@
-<table id="js-index-table" class="smells-index-table index-table sortable-table">
-<thead>
-  <tr>
-    <th>Smell</th>
-    <th>Locations</th>
-    <% if @show_status %>
-      <th class="centered-cell" title="Code smells introduced recently are marked as new. There's still time before they are committed!">Status</th>
-    <% end %>
-  </tr>
-</thead>
-<tbody>
-  <% @smells.each do |smell| %>
-    <tr>
-      <td><%= smell.type %></td>
-      <td>
-        <% smell.locations.each do |location| %>
-          <a href="<%= smell_location_path(location) %>"><%= @analysed_module_names[location.pathname] %></a>
-        <% end %>
-      </td>
-      <% if @show_status %>
-        <td class="centered-cell"><span class="status-<%= smell.status %> circled-text circle"><%= smell.status %></span></td>
-      <% end %>
-    </tr>
-  <% end %>
-</tbody>
-</table>
+<!-- Page Content -->
+<div id="page-content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <!--Page Title -->
+      <div class="Page_Title">
+        <h3>Smells</h3>
+      </div>
+      <!--End Page Title -->
+      <div class="Content_Wrapper">
+        <table id="js-index-table" class="table smells-index-table index-table sortable-table">
+          <thead>
+            <tr>
+              <th width="30%" class="table-header">Smell<span class="sort-type"></span></th>
+              <th width="65%" class="table-header">Locations<span class="sort-type"></span></th>
+              <th width="5%" class="table-header">Status<span class="sort-type"></span></th>
+            </tr>
+          </thead>
+          <% @smells.each do |smell| %>
+            <tr>
+              <td><%= smell.type %></td>
+              <td>
+                <ul class="nav nav-pills">
+                  <% smell.locations.each do |location| %>
+                    <li role="presentation">
+                      <a href="<%= smell_location_path(location) %>"><%= @analysed_module_names[location.pathname] %></a>
+                    </li>
+                  <% end %>
+                </ul>
+              </td>
+              <td>
+                <% if @show_status %>
+                  <ul class="nav nav-pills">
+                    <li role="presentation">
+                      <td class="centered-cell"><span class="status-<%= smell.status %> circled-text circle"><%= smell.status %></span></td>
+                    </li>
+                  </ul>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /#page-content-wrapper -->

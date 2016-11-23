@@ -17,6 +17,10 @@ module RubyCritic
       relative_path("assets/#{file}")
     end
 
+    def image_path(file)
+      asset_path("images/#{file}")
+    end
+
     def file_path(file)
       relative_path(file)
     end

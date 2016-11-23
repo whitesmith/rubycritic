@@ -36,6 +36,14 @@ module RubyCritic
       0.0
     end
 
+    def summary
+      AnalysisSummary.generate(self)
+    end
+
+    def for_rating(rating)
+      find_all { |mod| mod.rating.to_s == rating }
+    end
+
     private
 
     def average_limited_cost

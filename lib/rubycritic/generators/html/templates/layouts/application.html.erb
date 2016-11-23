@@ -1,34 +1,56 @@
 <!DOCTYPE html>
-<html>
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>RubyCritic</title>
-    <link href="<%= stylesheet_path(:application) %>" media="screen, projection, print" rel="stylesheet" type="text/css">
-    <link href="<%= stylesheet_path(:'prettify.custom_theme') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <title>Ruby Critic - Home</title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- StyleSheets -->
+    <link href="<%= stylesheet_path(:'bootstrap.min') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="<%= stylesheet_path(:'font-awesome.min') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="<%= stylesheet_path(:'prettify.custom_theme') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="<%= stylesheet_path(:application) %>" media="screen, projection, print" rel="stylesheet" type="text/css">
   </head>
+
   <body>
-    <header class="project-header group">
-      <div class="container">
-        <h1 class="logo"><a href="<%= file_path('overview.html') %>" class="logo-link">RubyCritic</a></h1>
-        <nav class="project-nav">
-          <a href="<%= file_path('overview.html') %>" class="project-nav-item">Overview</a>
-          <a href="<%= file_path('code_index.html') %>" class="project-nav-item">Code</a>
-          <a href="<%= file_path('smells_index.html') %>" class="project-nav-item">Smells</a>
-        </nav>
-      </div>
+    <header class="navbar navbar-default navbar-fixed-top">
+      <a href="#menu-toggle" class="btn btn-default hidden-lg visible-sm-* hidden-md visible-xs-* pull-left" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <a href="<%= file_path('overview.html') %>"><img src="<%= image_path('logo.png') %>" title="Ruby Critic Logo" width="55"><span class="logo">RUBYCRITIC</span></a>
     </header>
-    <div class="container">
-      <%= yield %>
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <aside id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-item">
+            <a href="<%= file_path('overview.html') %>" class="project-nav-item overview-nav"><i class="fa fa-dashboard"></i>Overview</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="<%= file_path('code_index.html') %>" class="project-nav-item code-index-nav"><i class="fa fa-code"></i>Code</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="<%= file_path('smells_index.html') %>" class="project-nav-item smells-index-nav"><i class="fa fa-warning"></i>Smells</a>
+          </li>
+        </ul>
+      </aside>
+      <!-- /#sidebar-wrapper -->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <%= yield %>
+        </div>
+      </div>
     </div>
-    <%= javascript_tag(:'jquery-2.1.0') %>
-    <%= javascript_tag(:'jquery.tablesorter') %>
-    <%= javascript_tag(:'jquery.floatThead-v1.2.7') %>
-    <%= javascript_tag(:'jquery.timeago-v1.4.1') %>
+
+    <!-- Javascripts -->
+    <%= javascript_tag(:'jquery.min') %>
+    <%= javascript_tag(:'jquery.tablesorter.min') %>
+    <%= javascript_tag(:'jquery.scrollTo.min') %>
+    <%= javascript_tag(:'jquery.timeago') %>
     <%= javascript_tag(:'highcharts.src-4.0.1') %>
-    <%= javascript_tag(:'jquery.scrollTo-1.4.11') %>
-    <%= javascript_tag(:'prettify-4-Mar-2013') %>
+    <%= javascript_tag(:'prettify') %>
+    <%= javascript_tag(:'bootstrap.min') %>
     <%= javascript_tag(:application) %>
   </body>
 </html>
