@@ -2,20 +2,22 @@
 
 <div class="nocode errors smells">
 <% @smells.each do |smell| %>
-  <div class="description">
-    <div class="heading">
-      <span>
-        <i class="fa fa-warning" aria-hidden"true"=""></i>
-        <a href="<%= smell.doc_url %>" target="_blank"><b><%= smell.type %></b></a>
-      </span>
-    </div>
-    <span><%= "#{smell.context} #{smell.message}" %></span>
-    <% if smell.multiple_locations? %>
-      <span>Locations:</span>
-      <% smell.locations.each_with_index do |location, index| %>
-        <a href="<%= smell_location_path(location) %>" class="js-smell-location"><%= index %></a>
+  <li>
+    <div class="description">
+      <div class="heading">
+        <span>
+          <i class="fa fa-warning" aria-hidden"true"=""></i>
+          <a href="<%= smell.doc_url %>" target="_blank"><b><%= smell.type %></b></a>
+        </span>
+      </div>
+      <span><%= "#{smell.context} #{smell.message}" %></span>
+      <% if smell.multiple_locations? %>
+        <span>Locations:</span>
+        <% smell.locations.each_with_index do |location, index| %>
+          <a href="<%= smell_location_path(location) %>" class="js-smell-location"><%= index %></a>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  </li>
 <% end %>
 </div>
