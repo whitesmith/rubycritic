@@ -32,7 +32,7 @@ module RubyCritic
     end
 
     def line_count
-      `wc -l "#{path}"`.strip.split(' ')[0].to_i
+      File.read(path).each_line.count
     end
 
     def cost
