@@ -1,3 +1,10 @@
+# 3.1.1 / 2016-12-01
+
+* [FEATURE] Implement search and filter on code and smells view (rohitcy)
+* [CHANGE] Use Ruby's File instead of `wc` system command (by tejasbubane)
+* [BUGFIX] Fix code navigation links in the new UI (by rohitcy)
+* [BUGFIX] Add missing method 'head_reference' for Perforce source control (Rataah)
+
 # 3.1.0 / 2016-11-23
 
 * [FEATURE] Support for Perforce source control system (by Loic Gudet)
