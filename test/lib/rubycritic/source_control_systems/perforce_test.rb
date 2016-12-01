@@ -110,11 +110,13 @@ Server address: the.server.address.com
 ... clientFile /path/to/client/a_ruby_file.rb
 ... headTime 1473075551
 ... headRev 16
+... headChange 2103503
 
 ... clientFile /path/to/client/second_ruby_file.rb
 ... headTime 1464601668
 ... action opened
 ... headRev 12
+... headChange 2103504
         END
       end
 
@@ -128,12 +130,14 @@ Server address: the.server.address.com
           first_file.filename.must_equal '/path/to/client/a_ruby_file.rb'
           first_file.revision.must_equal '16'
           first_file.last_commit.must_equal '1473075551'
+          first_file.head.must_equal '2103503'
           first_file.opened?.must_equal false
 
           second_file = file_cache['/path/to/client/second_ruby_file.rb']
           second_file.filename.must_equal '/path/to/client/second_ruby_file.rb'
           second_file.revision.must_equal '12'
           second_file.last_commit.must_equal '1464601668'
+          second_file.head.must_equal '2103504'
           second_file.opened?.must_equal true
         end
       end
@@ -156,6 +160,12 @@ Server address: the.server.address.com
         Dir.stubs(:getwd).returns('/path/to/client')
         RubyCritic::SourceControlSystem::Perforce.stubs(:`).once.returns(p4_stats)
         @system.revision?.must_equal true
+      end
+
+      it 'retrieves the head reference of the repository' do
+        Dir.stubs(:getwd).returns('/path/to/client')
+        RubyCritic::SourceControlSystem::Perforce.stubs(:`).once.returns(p4_stats)
+        @system.head_reference.must_equal '2103504'
       end
     end
   end

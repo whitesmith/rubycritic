@@ -3,7 +3,8 @@ require 'date'
 
 module RubyCritic
   module SourceControlSystem
-    PerforceStats = Struct.new(:filename, :revision, :last_commit, :opened?)
+    PERFORCE_FSTAT_OPTS = '-F "clientFile=*.rb" -T clientFile,headRev,headTime,headChange,action'.freeze
+    PerforceStats = Struct.new(:filename, :revision, :last_commit, :opened?, :head)
 
     class Perforce < Base
       register_system
@@ -53,12 +54,16 @@ module RubyCritic
         !perforce_files.values.count(&:opened?).zero?
       end
 
+      def head_reference
+        perforce_files.values.map(&:head).max_by(&:to_i)
+      end
+
       def self.build_file_cache
         # Chun is very slow if files stats are requested one by one
         # this fill a hash with the result of all ruby file in the current directory (and sub-directories)
         {}.tap do |file_cache|
           line_aggregator = []
-          `p4 fstat -F "clientFile=*.rb" -T clientFile,headRev,headTime,action #{Dir.getwd}...`.each_line do |line|
+          `p4 fstat #{PERFORCE_FSTAT_OPTS} #{Dir.getwd}...`.each_line do |line|
             Perforce.compute_line(file_cache, line_aggregator, line)
           end
           # handle remaining lines
@@ -86,7 +91,8 @@ module RubyCritic
           Perforce.normalized_file_path(perforce_lines['clientFile']),
           perforce_lines['headRev'],
           perforce_lines['headTime'],
-          perforce_lines.key?('action')
+          perforce_lines.key?('action'),
+          perforce_lines['headChange']
         )
       end
 
