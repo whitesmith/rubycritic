@@ -1,7 +1,8 @@
-# 3.1.1 / 2016-12-01
+# 3.1.1 / 2016-12-02
 
 * [FEATURE] Implement search and filter on code and smells view (rohitcy)
 * [CHANGE] Use Ruby's File instead of `wc` system command (by tejasbubane)
+* [CHANGE] Add MRI 2.3.3 compatibility by updating `parser` to v2.3.3.1 (by josephpage)
 * [BUGFIX] Fix code navigation links in the new UI (by rohitcy)
 * [BUGFIX] Add missing method 'head_reference' for Perforce source control (Rataah)
 
