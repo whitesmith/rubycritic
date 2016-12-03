@@ -8,7 +8,7 @@ module RubyCritic
           name: analysed_module.name,
           x: analysed_module.churn,
           y: analysed_module.complexity,
-          rating: analysed_module.rating
+          rating: analysed_module.rating.to_s
         }
       end.to_json
     end
