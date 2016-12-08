@@ -1,26 +1,25 @@
 # frozen_string_literal: true
 require 'rubycritic/analysers/helpers/flog'
 require 'rubycritic/core/smell'
-require 'rubycritic/colorize'
 
 module RubyCritic
   module Analyser
     class FlogSmells
-      include Colorize
       HIGH_COMPLEXITY_SCORE_THRESHOLD = 25
       VERY_HIGH_COMPLEXITY_SCORE_THRESHOLD = 60
 
-      def initialize(analysed_modules)
+      def initialize(analysed_modules, logger=nil)
         @flog = Flog.new
         @analysed_modules = analysed_modules
+        @logger = logger
       end
 
       def run
         @analysed_modules.each do |analysed_module|
           add_smells_to(analysed_module)
-          print green '.'
+
+          @logger.report_completion unless @logger.nil?
         end
-        puts ''
       end
 
       def to_s

@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 require 'rubycritic/analysers/helpers/flog'
-require 'rubycritic/colorize'
 
 module RubyCritic
   module Analyser
     class Complexity
-      include Colorize
-      def initialize(analysed_modules)
+      def initialize(analysed_modules, logger=nil)
         @flog = Flog.new
         @analysed_modules = analysed_modules
+        @logger = logger
       end
 
       def run
@@ -16,9 +15,9 @@ module RubyCritic
           @flog.reset
           @flog.flog(analysed_module.path)
           analysed_module.complexity = @flog.total_score.round
-          print green '.'
+
+          @logger.report_completion unless @logger.nil?
         end
-        puts ''
       end
 
       def to_s

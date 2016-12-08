@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 require 'rubycritic/analysers/helpers/flay'
 require 'rubycritic/core/smell'
-require 'rubycritic/colorize'
 
 module RubyCritic
   module Analyser
     class FlaySmells
-      include Colorize
-      def initialize(analysed_modules)
+      def initialize(analysed_modules, logger=nil)
         @analysed_modules = paths_to_analysed_modules(analysed_modules)
+        @logger = logger
         @flay = Flay.new(@analysed_modules.keys)
       end
 
@@ -22,9 +21,11 @@ module RubyCritic
           nodes.each do |node|
             @analysed_modules[node.file].duplication += node.mass
           end
-          print green '.'
+
+          @logger.report_completion unless @logger.nil?
         end
-        puts ''
+
+        @logger.report_completion @analysed_modules.size - @flay.hashes.size unless @logger.nil?
       end
 
       def to_s

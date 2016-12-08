@@ -30,6 +30,10 @@ module RubyCritic
       @modules.to_json(*options)
     end
 
+    def size
+      @modules.size
+    end
+
     def score
       MAX_SCORE - average_limited_cost * COST_MULTIPLIER
     rescue
