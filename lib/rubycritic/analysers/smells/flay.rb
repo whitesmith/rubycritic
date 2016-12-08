@@ -12,7 +12,8 @@ module RubyCritic
       end
 
       def run
-        @flay.hashes.each do |structural_hash, nodes|
+        hashes = @flay.hashes
+        hashes.each do |structural_hash, nodes|
           smell = create_smell(structural_hash, nodes)
           nodes.map(&:file).uniq.each do |file|
             @analysed_modules[file].smells << smell
@@ -25,7 +26,7 @@ module RubyCritic
           @logger.report_completion unless @logger.nil?
         end
 
-        @logger.report_completion @analysed_modules.size - @flay.hashes.size unless @logger.nil?
+        @logger.report_completion @analysed_modules.size - hashes.size unless @logger.nil?
       end
 
       def to_s
