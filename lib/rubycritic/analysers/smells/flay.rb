@@ -13,6 +13,7 @@ module RubyCritic
 
       def run
         hashes = @flay.hashes
+        skip_logging = @logger.nil?
         hashes.each do |structural_hash, nodes|
           smell = create_smell(structural_hash, nodes)
           nodes.map(&:file).uniq.each do |file|
@@ -23,10 +24,10 @@ module RubyCritic
             @analysed_modules[node.file].duplication += node.mass
           end
 
-          @logger.report_completion unless @logger.nil?
+          @logger.report_completion unless skip_logging
         end
 
-        @logger.report_completion @analysed_modules.size - hashes.size unless @logger.nil?
+        @logger.report_completion @analysed_modules.size - hashes.size unless skip_logging
       end
 
       def to_s
