@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+require 'rubycritic/source_control_systems/base'
+
 module RubyCritic
   class Configuration
     attr_reader :root
@@ -17,6 +19,11 @@ module RubyCritic
 
     def root=(path)
       @root = File.expand_path(path)
+    end
+
+    def source_control_present?
+      source_control_system &&
+        !source_control_system.is_a?(SourceControlSystem::Double)
     end
   end
 

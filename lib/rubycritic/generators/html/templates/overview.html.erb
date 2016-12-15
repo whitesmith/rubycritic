@@ -20,12 +20,16 @@
         <!--Churn vs Complexity graph-->
         <div class="col-xs-7 col-sm-7 col-md-6 col-lg-8">
           <div class="Graph_Cards fadeIn">
+            <% if Config.source_control_present? %>
+              <div id="churn-vs-complexity-graph-container" class="chart-container"></div>
+            <% else %>
+              <div id="churn-error">We can't show you Churn-vs-Complexity graph because this project does not seem to be under a source code management system like git or perforce at the moment. This doesn't mean that anything is wrong, it just means certain features like this one are not avaiable.</div>
+            <% end %>
 
-          <div id="churn-vs-complexity-graph-container" class="chart-container"></div>
-          <script type="text/javascript">
-            var turbulenceData = <%= @turbulence_data %>;
-            var score = <%= @score %>;
-          </script>
+            <script type="text/javascript">
+             var turbulenceData = <%= @turbulence_data %>;
+             var score = <%= @score %>;
+            </script>
           </div>
         </div>
         <!--End Churn vs Complexity graph-->
