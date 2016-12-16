@@ -19,7 +19,9 @@ module RubyCritic
         if supported_system
           supported_system.new
         else
-          puts "RubyCritic can provide more feedback if you use a #{connected_system_names} repository."
+          puts 'RubyCritic can provide more feedback if you use '\
+               "a #{connected_system_names} repository. "\
+               'Churn will not be calculated.'
           Double.new
         end
       end

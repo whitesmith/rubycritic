@@ -3,7 +3,7 @@ module RubyCritic
   module SourceControlSystem
     class Double < Base
       def revisions_count(_)
-        'N/A'
+        0
       end
 
       def date_of_last_commit(_)
