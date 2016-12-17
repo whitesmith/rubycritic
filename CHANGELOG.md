@@ -1,3 +1,8 @@
+# 3.1.2 / 2016-12-17
+
+* [BUGFIX] Fix lack of the GPA chart when used with rake/rails (by hoshinotsuyoshi)
+* [BUGFIX] Fix code navigation links in the new UI (by rohitcy)
+
 # 3.1.1 / 2016-12-02
 
 * [FEATURE] Implement search and filter on code and smells view (rohitcy)
