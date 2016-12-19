@@ -1,5 +1,8 @@
 # master (unreleased)
 
+# 3.1.3 / 2016-12-19
+
+* [BUGFIX] Fix crash with the usage of an unavailable color in "rainbow" gem  (by [@thedrow][])
 
 # 3.1.2 / 2016-12-17
 
@@ -186,3 +189,4 @@
 [@rohitcy]: https://github.com/rohitcy
 [@josephpage]: https://github.com/josephpage
 [@hoshinotsuyoshi]: https://github.com/hoshinotsuyoshi
+[@thedrow]: https://github.com/thedrow
