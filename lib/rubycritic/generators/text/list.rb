@@ -17,7 +17,7 @@ module RubyCritic
           'A' => :green,
           'B' => :green,
           'C' => :yellow,
-          'D' => :light_red,
+          'D' => :orange,
           'F' => :red
         }.freeze
 
