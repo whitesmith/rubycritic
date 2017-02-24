@@ -18,4 +18,9 @@ Metrics/LineLength:
 Style/Documentation:
   Enabled: false
 
+Security/MarshalLoad:
+  Enabled: false
+  Include:
+    - 'lib/rubycritic/serializer.rb'
+
 inherit_from: .rubocop_todo.yml
