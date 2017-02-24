@@ -3,6 +3,8 @@
 # 3.1.3 / 2016-12-19
 
 * [BUGFIX] Fix crash with the usage of an unavailable color in "rainbow" gem  (by [@thedrow][])
+* [CHANGE] Update `rubocop` to 0.47.1 from 0.42.0 (by [@jdickey][])
+* [CHANGE] Update for Ruby 2.4.0 compatibility; update `parser` gem to 2.4.0 (by [@jdickey][])
 
 # 3.1.2 / 2016-12-17
 
@@ -190,3 +192,4 @@
 [@josephpage]: https://github.com/josephpage
 [@hoshinotsuyoshi]: https://github.com/hoshinotsuyoshi
 [@thedrow]: https://github.com/thedrow
+[@jdickey]: https://github.com/jdickey
