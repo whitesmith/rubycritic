@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'flay', '~> 2.8'
   spec.add_runtime_dependency 'flog', '~> 4.4'
   spec.add_runtime_dependency 'reek', '~> 4.4'
-  spec.add_runtime_dependency 'parser', '2.3.3.1'
+  spec.add_runtime_dependency 'parser', '2.4.0'
   spec.add_runtime_dependency 'ruby_parser', '~> 3.8'
   spec.add_runtime_dependency 'rainbow', '~> 2.1'
   spec.add_runtime_dependency 'launchy', '2.4.3'
