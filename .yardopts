@@ -1,0 +1,5 @@
+--no-private
+--use-cache
+--asset images
+lib/**/*.rb -
+README.md LICENSE.txt CHANGELOG.md
