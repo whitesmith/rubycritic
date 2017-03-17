@@ -1,19 +1,20 @@
 # frozen_string_literal: true
 require 'rubycritic/analysers/helpers/flay'
 require 'rubycritic/core/smell'
-require 'rubycritic/colorize'
 
 module RubyCritic
   module Analyser
     class FlaySmells
-      include Colorize
-      def initialize(analysed_modules)
+      def initialize(analysed_modules, logger=nil)
         @analysed_modules = paths_to_analysed_modules(analysed_modules)
+        @logger = logger
         @flay = Flay.new(@analysed_modules.keys)
       end
 
       def run
-        @flay.hashes.each do |structural_hash, nodes|
+        hashes = @flay.hashes
+        skip_logging = @logger.nil?
+        hashes.each do |structural_hash, nodes|
           smell = create_smell(structural_hash, nodes)
           nodes.map(&:file).uniq.each do |file|
             @analysed_modules[file].smells << smell
@@ -22,9 +23,11 @@ module RubyCritic
           nodes.each do |node|
             @analysed_modules[node.file].duplication += node.mass
           end
-          print green '.'
+
+          @logger.report_completion unless skip_logging
         end
-        puts ''
+
+        @logger.report_completion @analysed_modules.size - hashes.size unless skip_logging
       end
 
       def to_s

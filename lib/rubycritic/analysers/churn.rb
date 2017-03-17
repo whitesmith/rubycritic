@@ -1,14 +1,13 @@
 # frozen_string_literal: true
-require 'rubycritic/colorize'
 
 module RubyCritic
   module Analyser
     class Churn
-      include Colorize
       attr_writer :source_control_system
 
-      def initialize(analysed_modules)
+      def initialize(analysed_modules, logger=nil)
         @analysed_modules = analysed_modules
+        @logger = logger
         @source_control_system = Config.source_control_system
       end
 
@@ -16,9 +15,9 @@ module RubyCritic
         @analysed_modules.each do |analysed_module|
           analysed_module.churn = @source_control_system.revisions_count(analysed_module.path)
           analysed_module.committed_at = @source_control_system.date_of_last_commit(analysed_module.path)
-          print green '.'
+
+          @logger.report_completion unless @logger.nil?
         end
-        puts ''
       end
 
       def to_s

@@ -6,6 +6,7 @@ require 'rubycritic/analysers/smells/reek'
 require 'rubycritic/analysers/complexity'
 require 'rubycritic/analysers/churn'
 require 'rubycritic/analysers/attributes'
+require 'rubycritic/analysers/logger'
 
 module RubyCritic
   class AnalysersRunner
@@ -23,11 +24,16 @@ module RubyCritic
     end
 
     def run
+      logger = Analyser::Logger.new(analysed_modules.size * ANALYSERS.size)
       ANALYSERS.each do |analyser_class|
-        analyser_instance = analyser_class.new(analysed_modules)
-        puts "running #{analyser_instance}"
+        analyser_instance = analyser_class.new(analysed_modules, logger)
+        logger.topic = analyser_instance
+
         analyser_instance.run
       end
+
+      puts ''
+
       analysed_modules
     end
 

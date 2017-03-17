@@ -1,22 +1,21 @@
 # frozen_string_literal: true
 require 'rubycritic/analysers/helpers/reek'
 require 'rubycritic/core/smell'
-require 'rubycritic/colorize'
 
 module RubyCritic
   module Analyser
     class ReekSmells
-      include Colorize
-      def initialize(analysed_modules)
+      def initialize(analysed_modules, logger=nil)
         @analysed_modules = analysed_modules
+        @logger = logger
       end
 
       def run
         @analysed_modules.each do |analysed_module|
           add_smells_to(analysed_module)
-          print green '.'
+
+          @logger.report_completion unless @logger.nil?
         end
-        puts ''
       end
 
       def to_s
