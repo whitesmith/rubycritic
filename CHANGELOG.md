@@ -1,7 +1,10 @@
 # master (unreleased)
 
+# 3.2.0 / 2017-03-24
+
 * [CHANGE] Update `rubocop` to 0.47.1 from 0.42.0 (by [@jdickey][])
 * [CHANGE] Update for Ruby 2.4.0 compatibility; update `parser` gem to 2.4.0 (by [@jdickey][])
+* [CHANGE] Improve YARD documentation (by [@olleolleolle][] and [@tejasbubane][])
 
 # 3.1.3 / 2016-12-19
 
