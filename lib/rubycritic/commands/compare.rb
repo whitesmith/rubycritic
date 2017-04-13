@@ -27,10 +27,11 @@ module RubyCritic
       def compare_branches
         update_build_number
         set_root_paths
+        original_no_browser_config = Config.no_browser
         Config.no_browser = true
         analyse_branch(:base_branch)
         analyse_branch(:feature_branch)
-        Config.no_browser = false
+        Config.no_browser = original_no_browser_config
         analyse_modified_files
         compare_code_quality
       end
@@ -38,7 +39,7 @@ module RubyCritic
       # keep track of the number of builds and
       # use this build number to create seperate directory for each build
       def update_build_number
-        build_file_location = '/tmp/build_count.txt'
+        build_file_location = "#{Config.root}/build_count.txt"
         File.new(build_file_location, 'a') unless File.exist?(build_file_location)
         @build_number = File.open(build_file_location).readlines.first.to_i + 1
         File.write(build_file_location, @build_number)
@@ -90,11 +91,11 @@ module RubyCritic
       end
 
       def branch_directory(branch)
-        "tmp/rubycritic/compare/#{Config.send(branch)}"
+        "#{Config.root}/compare/#{Config.send(branch)}"
       end
 
       def build_directory
-        "tmp/rubycritic/compare/builds/build_#{@build_number}"
+        "#{Config.root}/compare/builds/build_#{@build_number}"
       end
 
       # create a txt file with the branch score details
