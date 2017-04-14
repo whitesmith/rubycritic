@@ -80,7 +80,7 @@ If you'd rather install RubyCritic using Bundler, add this line to your
 application's Gemfile:
 
 ```ruby
-gem "rubycritic", :require => false
+gem "rubycritic", require: false
 ```
 
 And then execute:
