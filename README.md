@@ -230,3 +230,5 @@ RubyCritic is maintained and funded by [Whitesmith][9]. Tweet your questions or 
 [8]: https://github.com/charliesome/better_errors/pull/22
 [9]: http://www.whitesmith.co/
 [10]: https://twitter.com/Whitesmithco
+
+
