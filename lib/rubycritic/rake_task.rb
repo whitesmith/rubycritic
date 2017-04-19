@@ -16,7 +16,7 @@ module RubyCritic
   #
   #   require 'rubycritic/rake_task'
   #
-  #   RubyCritic::RakeTask.new do |task|
+  #   Rubycritic::RakeTask.new do |task|
   #     task.paths = FileList['lib/**/*.rb', 'spec/**/*.rb']
   #   end
   #

@@ -155,7 +155,7 @@ RubyCritic::RakeTask.new
 A more sophisticated Rake task that would make use of all available configuration options could look like this:
 
 ```ruby
-RubyCritic::RakeTask.new do |task|
+Rubycritic::RakeTask.new do |task|
   # Name of RubyCritic task. Defaults to :rubycritic.
   task.name    = 'something_special'
 
@@ -175,7 +175,7 @@ RubyCritic will try to open the generated report with a browser by default. If y
 you can prevent this behaviour by setting the options correspondingly:
 
 ```ruby
-RubyCritic::RakeTask.new do |task|
+Rubycritic::RakeTask.new do |task|
   task.options = '--no-browser'
 end
 ```
