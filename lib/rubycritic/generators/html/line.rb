@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'cgi'
 require 'rubycritic/generators/html/base'
 

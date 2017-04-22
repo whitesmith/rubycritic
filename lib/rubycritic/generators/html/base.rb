@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'erb'
 require 'pathname'
 require 'rubycritic/generators/html/view_helpers'

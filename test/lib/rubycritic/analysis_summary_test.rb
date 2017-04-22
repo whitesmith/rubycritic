@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'test_helper'
 require 'rubycritic/analysis_summary'
 
@@ -7,10 +8,10 @@ module RubyCritic
     before do
       analysed_modules = AnalysedModulesCollectionDouble.new(
         [
-          AnalysedModuleDouble.new(rating: 'A', churn: 2, smells: [:a, :b, :c]),
+          AnalysedModuleDouble.new(rating: 'A', churn: 2, smells: %i[a b c]),
           AnalysedModuleDouble.new(rating: 'A', churn: 3, smells: [:b]),
-          AnalysedModuleDouble.new(rating: 'A', churn: 4, smells: [:x, :y]),
-          AnalysedModuleDouble.new(rating: 'B', churn: 5, smells: [:a, :z])
+          AnalysedModuleDouble.new(rating: 'A', churn: 4, smells: %i[x y]),
+          AnalysedModuleDouble.new(rating: 'B', churn: 5, smells: %i[a z])
         ]
       )
       @summary = RubyCritic::AnalysisSummary.generate(analysed_modules)

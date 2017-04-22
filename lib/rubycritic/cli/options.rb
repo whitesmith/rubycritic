@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'optparse'
 require 'rubycritic/browser'
 
@@ -21,7 +22,7 @@ module RubyCritic
 
           opts.on(
             '-f', '--format [FORMAT]',
-            [:html, :json, :console],
+            %i[html json console],
             'Report smells in the given format:',
             '  html (default; will open in a browser)',
             '  json',

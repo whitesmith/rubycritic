@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 When(/^I run rubycritic (.*)$/) do |args|
   rubycritic(args)
 end

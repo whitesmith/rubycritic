@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'analysers_test_helper'
 require 'rubycritic/analysers/smells/reek'
 

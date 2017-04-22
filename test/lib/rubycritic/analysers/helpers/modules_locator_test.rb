@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'test_helper'
 require 'rubycritic/analysers/helpers/modules_locator'
 require 'rubycritic/core/analysed_module'

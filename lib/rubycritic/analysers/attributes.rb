@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rubycritic/analysers/helpers/methods_counter'
 require 'rubycritic/analysers/helpers/modules_locator'
 require 'rubycritic/colorize'

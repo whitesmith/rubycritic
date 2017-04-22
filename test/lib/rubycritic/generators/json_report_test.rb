@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'test_helper'
 require 'rubycritic/core/analysed_modules_collection'
 require 'rubycritic/generators/json_report'

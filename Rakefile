@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'bundler/gem_tasks'
 require 'rake/testtask'
 require 'rubocop/rake_task'
@@ -24,4 +25,4 @@ RubyCritic::RakeTask.new do |task|
   task.paths = FileList['lib/**/*.rb']
 end
 
-task default: [:test, :features, :reek, :rubocop]
+task default: %i[test features reek rubocop]
