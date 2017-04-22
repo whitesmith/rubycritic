@@ -40,3 +40,6 @@ Style/MethodMissing:
   Exclude: 
     - 'lib/rubycritic/configuration.rb'
 
+# Offense count: 3
+Style/IndentHeredoc:
+  Enabled: false
