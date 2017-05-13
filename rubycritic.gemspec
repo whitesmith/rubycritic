@@ -37,5 +37,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest', '~> 5.3', '>= 5.3.0'
   spec.add_development_dependency 'mocha', '~> 1.1', '>= 1.1.0'
   spec.add_development_dependency 'rake', '~> 11.0', '>= 11.0.0'
-  spec.add_development_dependency 'rubocop', '~> 0.47', '>= 0.47.1'
+  spec.add_development_dependency 'rubocop', '~> 0.47.0'
 end
