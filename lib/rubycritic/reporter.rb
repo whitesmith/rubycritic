@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module RubyCritic
   module Reporter
     def self.generate_report(analysed_modules)

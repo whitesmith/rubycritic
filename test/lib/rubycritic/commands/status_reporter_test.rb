@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'test_helper'
 require 'rubycritic/commands/status_reporter'
 require 'rubycritic/cli/options'

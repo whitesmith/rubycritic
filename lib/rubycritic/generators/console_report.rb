@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rubycritic/generators/text/list'
 
 module RubyCritic

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'test_helper'
 require 'rubycritic/generators/console_report'
 require 'rubycritic/core/rating'

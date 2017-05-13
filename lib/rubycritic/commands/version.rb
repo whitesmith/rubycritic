@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rubycritic/version'
 require 'rubycritic/commands/base'
 
