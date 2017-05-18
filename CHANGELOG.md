@@ -1,8 +1,13 @@
 # master (unreleased)
 
+# 3.2.2 / 2017-05-18 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.1...v3.2.2)
+
+* [CHANGE] Relax dependency of parser gem (by [@yuku-t][])
+* [BUGFIX] Only scroll Y axis when visiting page with anchor tag (by [@georgedrummond][])
+
 # 3.2.1 / 2017-05-13 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.0...v3.2.1)
 
-* [CHANGE] Update `rubocop` to 0.48.x from 0.47.1 (by [@koic]() and [@Onumis][])
+* [CHANGE] Update `rubocop` to 0.48.x from 0.47.1 (by [@koic][] and [@Onumis][])
 * [BUGFIX] Nest ordered list so we don't render errors as line numbers (by [@georgedrummond][])
 
 # 3.2.0 / 2017-03-24
@@ -204,3 +209,4 @@
 [@jdickey]: https://github.com/jdickey
 [@koic]: https://github.com/koic
 [@georgedrummond]: https://github.com/georgedrummond
+[@yuku-t]: https://github.com/yuku-t
