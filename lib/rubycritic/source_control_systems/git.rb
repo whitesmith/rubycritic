@@ -14,7 +14,7 @@ module RubyCritic
       end
 
       def revisions_count(path)
-        `git log --follow --format=%h #{path.shellescape}`.count("\n")
+        path_revisions_count.fetch(path.shellescape, 0)
       end
 
       def date_of_last_commit(path)
@@ -51,6 +51,18 @@ module RubyCritic
 
       def travel_to_original_state
         `git stash pop`
+      end
+
+      def path_revisions_counts
+        `git log --name-only --format='' | sort | uniq -c`
+      end
+
+      def path_revisions_count
+        @path_revisions_count ||=
+          path_revisions_counts.split("\n").map do |string|
+            count, path = string.split
+            [path, count.to_i]
+          end.to_h
       end
     end
   end
