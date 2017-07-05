@@ -1,4 +1,8 @@
-# master (unreleased)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.2.3...master)
+
+# 3.2.3 / 2017-05-31 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.2...v3.2.3)
+
+* [BUGFIX] Fix rendering of churn chart in large codebases. (by [@ochagata][])
 
 * [CHANGE] Cache git revision count ([@joneshf][])
 
@@ -212,4 +216,5 @@
 [@koic]: https://github.com/koic
 [@georgedrummond]: https://github.com/georgedrummond
 [@yuku-t]: https://github.com/yuku-t
+[@ochagata]: https://github.com/ochagata
 [@joneshf]: https://github.com/joneshf

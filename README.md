@@ -117,7 +117,7 @@ $ rubycritic --help
 | `-v` / `--version`       | Displays the current version and exits                |
 | `-p` / `--path`          | Set path where report will be saved (tmp/rubycritic by default) |
 | `-f` / `--format`        | Report smells in the given format: `html` (default; will open in a browser), `json`, `console`. |
-| `-s` / `--minimum-score` | Set a minimum score                                   |
+| `-s` / `--minimum-score` | Set a minimum score (FLOAT: ex: 96.28)                |
 | `--mode-ci`              | Use CI mode (faster, but only analyses last commit)   |
 | `--deduplicate-symlinks` | De-duplicate symlinks based on their final target     |
 | `--suppress-ratings`     | Suppress letter ratings                               |

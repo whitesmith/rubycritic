@@ -32,7 +32,7 @@ module RubyCritic
           end
 
           opts.on('-s', '--minimum-score [MIN_SCORE]', 'Set a minimum score') do |min_score|
-            self.minimum_score = Integer(min_score)
+            self.minimum_score = Float(min_score)
           end
 
           opts.on('-m', '--mode-ci', 'Use CI mode (faster, but only analyses last commit)') do
