@@ -4,6 +4,8 @@
 
 * [BUGFIX] Fix rendering of churn chart in large codebases. (by [@ochagata][])
 
+* [CHANGE] Cache git revision count ([@joneshf][])
+
 # 3.2.2 / 2017-05-18 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.1...v3.2.2)
 
 * [CHANGE] Relax dependency of parser gem (by [@yuku-t][])
@@ -215,3 +217,4 @@
 [@georgedrummond]: https://github.com/georgedrummond
 [@yuku-t]: https://github.com/yuku-t
 [@ochagata]: https://github.com/ochagata
+[@joneshf]: https://github.com/joneshf

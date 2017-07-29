@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'rubycritic/source_control_systems/git/revision'
+
 module RubyCritic
   module SourceControlSystem
     class Git < Base
@@ -14,7 +16,7 @@ module RubyCritic
       end
 
       def revisions_count(path)
-        `git log --follow --format=%h #{path.shellescape}`.count("\n")
+        path_revisions_count.fetch(path.shellescape, 0)
       end
 
       def date_of_last_commit(path)
@@ -51,6 +53,23 @@ module RubyCritic
 
       def travel_to_original_state
         `git stash pop`
+      end
+
+      def name_status
+        `git log --all --name-status --format='' --reverse`
+      end
+
+      def path_revisions_count
+        @path_revisions_count ||= path_revisions_cache
+      end
+
+      def path_revisions_cache
+        revisions = [Add, Copy, Delete, Modify, Rename, Double]
+
+        name_status
+          .split("\n")
+          .map { |string| Revision.parse(revisions, string) }
+          .each_with_object({}) { |revision, hash| revision.evaluate(hash) }
       end
     end
   end
