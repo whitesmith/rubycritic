@@ -25,6 +25,7 @@ Feature: RubyCritic can be controlled using command-line options
                                              html (default; will open in a browser)
                                              json
                                              console
+                                             lint
           -s, --minimum-score [MIN_SCORE]  Set a minimum score
           -m, --mode-ci                    Use CI mode (faster, but only analyses last commit)
               --deduplicate-symlinks       De-duplicate symlinks based on their final target

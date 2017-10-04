@@ -1,4 +1,5 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.2.3...master)
+* [FEATURE] Add lint format similar to Golint (by [@nightscape][])
 
 # 3.2.3 / 2017-05-31 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.2...v3.2.3)
 
@@ -215,3 +216,4 @@
 [@georgedrummond]: https://github.com/georgedrummond
 [@yuku-t]: https://github.com/yuku-t
 [@ochagata]: https://github.com/ochagata
+[@nightscape]: https://github.com/nightscape

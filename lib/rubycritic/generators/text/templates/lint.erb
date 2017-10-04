@@ -1,0 +1,3 @@
+<%- @analysed_module.smells.each do |smell| -%>
+<%= smell.locations.first.to_s %>: <%= smell.to_s %>
+<%- end -%>

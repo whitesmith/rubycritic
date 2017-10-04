@@ -22,11 +22,12 @@ module RubyCritic
 
           opts.on(
             '-f', '--format [FORMAT]',
-            %i[html json console],
+            %i[html json console lint],
             'Report smells in the given format:',
             '  html (default; will open in a browser)',
             '  json',
-            '  console'
+            '  console',
+            '  lint'
           ) do |format|
             self.format = format
           end
