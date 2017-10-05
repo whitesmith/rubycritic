@@ -1,34 +1,34 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'rubycritic/core/analysed_modules_collection'
+require 'rubycritic/analysers_runner'
 require 'rubycritic/generators/json_report'
 require 'json'
 require 'fakefs/safe'
 
 describe RubyCritic::Generator::JsonReport do
   describe '#generate_report' do
-    before(:each) do
-      FakeFS.activate!
+    around do |example|
+      capture_output_streams do
+        with_cloned_fs(&example)
+      end
+    end
+
+    it 'creates a report file with JSON data inside' do
+      sample_files = Dir['test/samples/**/*.rb']
       create_analysed_modules_collection
       generate_report
-    end
-
-    after(:each) { FakeFS.deactivate! }
-
-    it 'creates a report.json file' do
-      assert File.file?('test/samples/report.json'), 'expected report.json file to be created'
-    end
-
-    it 'report file has data inside' do
-      data = File.read('test/samples/report.json')
-      assert data != '', 'expected report file not to be empty'
+      data = JSON.parse(File.read('test/samples/report.json'))
+      analysed_files = data['analysed_modules'].map { |h| h['path'] }.uniq
+      assert_matched_arrays analysed_files, sample_files
     end
   end
 
   def create_analysed_modules_collection
-    @analysed_modules_collection = RubyCritic::AnalysedModulesCollection.new('test/samples/')
     RubyCritic::Config.root = 'test/samples'
+    RubyCritic::Config.source_control_system = RubyCritic::SourceControlSystem::Git.new
+    analyser_runner = RubyCritic::AnalysersRunner.new('test/samples/')
+    @analysed_modules_collection = analyser_runner.run
   end
 
   def generate_report

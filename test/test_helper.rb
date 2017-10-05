@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 require 'minitest/autorun'
+require 'minitest/around/spec'
 require 'minitest/pride'
 require 'mocha/mini_test'
 require 'ostruct'
+require 'diff/lcs'
 
 def context(*args, &block)
   describe(*args, &block)
@@ -16,6 +18,19 @@ def capture_output_streams
 ensure
   $stdout = STDOUT
   $stderr = STDERR
+end
+
+def with_cloned_fs
+  FakeFS do
+    begin
+      config = File.expand_path('..', __dir__)
+      FakeFS::FileSystem.clone(config)
+      Dir.chdir(config)
+      yield
+    ensure
+      FakeFS::FileSystem.clear
+    end
+  end
 end
 
 module MiniTest
@@ -31,7 +46,8 @@ module MiniTest
       assert_kind_of Array, exp_ary
       act_ary = act.to_ary
       assert_kind_of Array, act_ary
-      assert_equal exp_ary.sort, act_ary.sort
+      diffs = Diff::LCS.sdiff(act_ary.sort, exp_ary.sort).reject(&:unchanged?)
+      assert diffs.empty?, "There are diffs between expected and actual values:\n#{diffs.map(&:inspect).join("\n")}"
     end
   end
 
