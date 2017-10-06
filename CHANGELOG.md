@@ -2,6 +2,7 @@
 
 * [CHANGE] Update `cucumber` to 3.0 (by [@onumis][]) 
 * [CHANGE] Update `rake` to 12.0 (by [@onumis][])
+* [CHANGE] Update `rubocop` to 0.50.0 (by [@onumis][])
 
 # 3.2.3 / 2017-05-31 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.2...v3.2.3)
 
