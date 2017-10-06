@@ -66,7 +66,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
     describe '::in_client_directory?' do
       context 'current directory is in p4 client' do
         let(:p4_info) do
-          <<-END
+          <<-P4INFO
 User name: unit_test_user
 Client name: UNIT_TEST_CLIENT
 Client host: MACHINE_NAME
@@ -75,7 +75,7 @@ Current directory: /path/to/client/root/ruby_project/unit_test
 Peer address: 127.0.0.1::3000
 Client address: 127.0.0.1
 Server address: the.server.address.com
-          END
+          P4INFO
         end
 
         it 'calls p4 info and parse the result' do
@@ -86,7 +86,7 @@ Server address: the.server.address.com
 
       context 'current directory is not in p4 client' do
         let(:p4_info) do
-          <<-END
+          <<-P4INFO
 User name: unit_test_user
 Client name: UNIT_TEST_CLIENT
 Client host: MACHINE_NAME
@@ -95,7 +95,7 @@ Current directory: /somewhere/else/ruby_project/unit_test
 Peer address: 127.0.0.1::3000
 Client address: 127.0.0.1
 Server address: the.server.address.com
-          END
+          P4INFO
         end
 
         it 'calls p4 info and parse the result' do
@@ -107,7 +107,7 @@ Server address: the.server.address.com
 
     describe 'retrieve informations' do
       let(:p4_stats) do
-        <<-END
+        <<-P4STATS
 ... clientFile /path/to/client/a_ruby_file.rb
 ... headTime 1473075551
 ... headRev 16
@@ -118,7 +118,7 @@ Server address: the.server.address.com
 ... action opened
 ... headRev 12
 ... headChange 2103504
-        END
+        P4STATS
       end
 
       describe 'build_file_cache' do

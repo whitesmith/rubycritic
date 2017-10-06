@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Given(/^the smelly file 'smelly.rb'/) do
-  contents = <<-EOS.strip_heredoc
+  contents = <<-RUBY.strip_heredoc
     class AllTheMethods
       def method_missing(method, *args, &block)
         message = "I"
@@ -13,17 +13,17 @@ Given(/^the smelly file 'smelly.rb'/) do
         self.send(method)
       end
     end
-  EOS
+  RUBY
   write_file('smelly.rb', contents)
 end
 
 Given(/^the clean file 'clean.rb'/) do
-  contents = <<-EOS.strip_heredoc
+  contents = <<-RUBY.strip_heredoc
     # Explanatory comment
     class Clean
       def foo; end
     end
-  EOS
+  RUBY
   write_file('clean.rb', contents)
 end
 

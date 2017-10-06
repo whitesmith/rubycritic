@@ -22,11 +22,11 @@ class RubyCriticWorld
   end
 
   def rake(name, task_def)
-    header = <<-EOS.strip_heredoc
+    header = <<-RUBY.strip_heredoc
       require 'rubycritic'
       require 'rubycritic/rake_task'
 
-    EOS
+    RUBY
     write_file 'Rakefile', header + task_def
     run_simple("rake #{name}", false)
   end
