@@ -20,3 +20,4 @@ tmp
 .ruby-gemset
 .ruby-version
 .DS_Store
+.byebug_history

@@ -7,6 +7,9 @@ module RubyCritic
   class AnalysedModule
     include Virtus.model
 
+    # Complexity is reduced by a factor of 25 when calculating cost
+    COMPLEXITY_FACTOR = 25.0
+
     attribute :name
     attribute :smells_count
     attribute :file_location
@@ -16,7 +19,7 @@ module RubyCritic
     attribute :smells, Array, default: []
     attribute :churn
     attribute :committed_at
-    attribute :complexity
+    attribute :complexity, Float, default: Float::INFINITY
     attribute :duplication, Integer, default: 0
     attribute :methods_count
 
@@ -37,7 +40,8 @@ module RubyCritic
     end
 
     def cost
-      @cost ||= smells.map(&:cost).inject(0, :+) + (complexity / 25)
+      @cost ||= smells.map(&:cost).inject(0.0, :+) +
+                (complexity / COMPLEXITY_FACTOR)
     end
 
     def rating

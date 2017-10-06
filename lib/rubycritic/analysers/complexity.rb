@@ -16,7 +16,7 @@ module RubyCritic
         @analysed_modules.each do |analysed_module|
           @flog.reset
           @flog.flog(analysed_module.path)
-          analysed_module.complexity = @flog.total_score.round
+          analysed_module.complexity = @flog.total_score.round(2)
           print green '.'
         end
         puts ''
