@@ -1,5 +1,7 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.2.3...master)
 
+* [CHANGE] Update `cucumber` to 3.0 
+
 # 3.2.3 / 2017-05-31 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.2...v3.2.3)
 
 * [BUGFIX] Fix rendering of churn chart in large codebases. (by [@ochagata][])

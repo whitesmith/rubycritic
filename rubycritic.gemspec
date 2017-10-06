@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'aruba', '~> 0.12', '>= 0.12.0'
   spec.add_development_dependency 'bundler', '~> 1.3', '>= 1.3.0'
-  spec.add_development_dependency 'cucumber', '~> 2.2', '>= 2.2.0'
+  spec.add_development_dependency 'cucumber', '~> 3.0', '>= 2.2.0'
   spec.add_development_dependency 'fakefs', '~> 0.10', '>= 0.10.0'
   spec.add_development_dependency 'minitest', '~> 5.3', '>= 5.3.0'
   spec.add_development_dependency 'mocha', '~> 1.1', '>= 1.1.0'
