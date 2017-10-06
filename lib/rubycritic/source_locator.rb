@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'pathname'
+require 'rubycritic/configuration'
 
 module RubyCritic
   class SourceLocator
