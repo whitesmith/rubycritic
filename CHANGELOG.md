@@ -1,6 +1,8 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.2.3...master)
-* [FEATURE] Add lint format similar to Golint (by [@nightscape][])
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.3.0...master)
 
+# 3.3.0 / 2017-10-10 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.3...v3.3.0)
+
+* [FEATURE] Add lint format similar to Golint (by [@nightscape][])
 * [CHANGE] Update `cucumber` to 3.0 (by [@onumis][]) 
 * [CHANGE] Update `rake` to 12.0 (by [@onumis][])
 * [CHANGE] Update `rubocop` to 0.50.0 (by [@onumis][])
