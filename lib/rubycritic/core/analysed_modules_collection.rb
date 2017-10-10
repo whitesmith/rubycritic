@@ -32,9 +32,11 @@ module RubyCritic
     end
 
     def score
-      MAX_SCORE - average_limited_cost * COST_MULTIPLIER
-    rescue
-      0.0
+      if @modules.any?
+        MAX_SCORE - average_limited_cost * COST_MULTIPLIER
+      else
+        0.0
+      end
     end
 
     def summary
@@ -48,8 +50,16 @@ module RubyCritic
     private
 
     def average_limited_cost
-      avg = map { |mod| limited_cost_for(mod) }.reduce(:+) / @modules.size.to_f
-      [avg, ZERO_SCORE_COST].min
+      [average_cost, ZERO_SCORE_COST].min
+    end
+
+    def average_cost
+      num_modules = @modules.size
+      if num_modules > 0
+        map { |mod| limited_cost_for(mod) }.reduce(:+) / num_modules.to_f
+      else
+        0.0
+      end
     end
 
     def limited_cost_for(mod)

@@ -61,5 +61,5 @@ Feature: RubyCritic can be run via Rake task
       """
     Then the output should contain:
       """
-      Score (93.75) is below the minimum 95
+      Score (93.19) is below the minimum 95
       """
