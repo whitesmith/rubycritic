@@ -28,13 +28,6 @@ Style/ClassVars:
   Exclude:
     - 'lib/rubycritic/source_control_systems/base.rb'
 
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: use_perl_names, use_english_names
-Style/SpecialGlobalVars:
-  Enabled: false
-
 # Offense count: 1
 Style/MethodMissing:
   Exclude:
