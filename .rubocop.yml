@@ -1,4 +1,5 @@
 AllCops:
+  DisplayCopNames: true
   Include:
     - '**/*.gemspec'
     - '**/*.rake'
