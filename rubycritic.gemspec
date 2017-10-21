@@ -40,6 +40,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'diff-lcs', '~> 1.3'
   spec.add_development_dependency 'mocha', '~> 1.1', '>= 1.1.0'
   spec.add_development_dependency 'rake', '~> 12.0', '>= 11.0.0'
-  spec.add_development_dependency 'rubocop', '~> 0.50.0'
+  spec.add_development_dependency 'rubocop', '~> 0.51'
   spec.add_development_dependency 'byebug', '~> 9.0', '>= 8.0'
 end
