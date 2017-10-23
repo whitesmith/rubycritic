@@ -1,5 +1,7 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.3.0...master)
 
+* [CHANGE] Update `rubocop` to 0.51.0 (by [@olleolleolle][]) 
+
 # 3.3.0 / 2017-10-10 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.3...v3.3.0)
 
 * [FEATURE] Add lint format similar to Golint (by [@nightscape][])
