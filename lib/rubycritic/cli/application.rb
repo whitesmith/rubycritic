@@ -21,7 +21,7 @@ module RubyCritic
         print(reporter.status_message)
         reporter.status
       rescue OptionParser::InvalidOption => error
-        $stderr.puts "Error: #{error}"
+        warn "Error: #{error}"
         STATUS_ERROR
       end
 

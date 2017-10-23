@@ -48,7 +48,7 @@ module RubyCritic
       end
 
       def date_of_last_commit(path)
-        DateTime.strptime(perforce_files[Perforce.key_file(path)].last_commit, '%s').strftime('%Y-%m-%d %H:%M:%S %z')
+        Time.strptime(perforce_files[Perforce.key_file(path)].last_commit, '%s').strftime('%Y-%m-%d %H:%M:%S %z')
       end
 
       def revision?
