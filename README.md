@@ -184,7 +184,7 @@ end
 
 ## Compatibility
 
-RubyCritic is supporting:
+RubyCritic is supporting Ruby versions:
 
 * 2.1
 * 2.2
