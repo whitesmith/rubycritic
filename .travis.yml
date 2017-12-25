@@ -1,7 +1,8 @@
 sudo: false
 language: ruby
 cache: bundler
-before_install: gem update bundler
+before_install:
+  - gem install bundler
 matrix:
   include:
     - rvm: 2.1.0
@@ -18,4 +19,4 @@ matrix:
     - rvm: jruby-9.1.8.0
     - rvm: rbx-3
   fast_finish: true
-script: bundle exec rake
+
