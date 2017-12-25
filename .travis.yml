@@ -1,6 +1,7 @@
 sudo: false
 language: ruby
-cache: bundler
+cache:
+  bundler: true
 before_install:
   - gem install bundler
 matrix:
