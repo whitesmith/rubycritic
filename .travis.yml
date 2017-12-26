@@ -1,7 +1,9 @@
 sudo: false
 language: ruby
-cache: bundler
-before_install: gem update bundler
+cache:
+  bundler: true
+before_install:
+  - gem install bundler
 matrix:
   include:
     - rvm: 2.1.0
@@ -18,4 +20,9 @@ matrix:
     - rvm: jruby-9.1.8.0
     - rvm: rbx-3
   fast_finish: true
-script: bundle exec rake
+
+script:
+  - bundle exec rake test
+  - bundle exec cucumber features --format progress --color
+  - bundle exec rake reek
+  - bundle exec rubocop

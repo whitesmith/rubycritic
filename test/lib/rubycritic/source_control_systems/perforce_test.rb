@@ -151,10 +151,13 @@ Server address: the.server.address.com
       end
 
       it 'retrieves the date of the last commit of the ruby files' do
+        oldtz = ENV['TZ']
+        ENV['TZ'] = 'utc'
         Dir.stubs(:getwd).returns('/path/to/client')
         RubyCritic::SourceControlSystem::Perforce.stubs(:`).once.returns(p4_stats)
         @system.date_of_last_commit('a_ruby_file.rb').must_equal '2016-09-05 11:39:11 +0000'
         @system.date_of_last_commit('second_ruby_file.rb').must_equal '2016-05-30 09:47:48 +0000'
+        ENV['TZ'] = oldtz
       end
 
       it 'retrieves the information if the ruby file is opened (in the changelist and ready to commit)' do
