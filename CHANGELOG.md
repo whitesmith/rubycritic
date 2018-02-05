@@ -1,6 +1,7 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.3.0...master)
 
 * [CHANGE] Update `rubocop` to 0.51.0 (by [@olleolleolle][]) 
+* [BUGFIX] Fix wrong label for churn in the code file template
 
 # 3.3.0 / 2017-10-10 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.3...v3.3.0)
 
@@ -226,3 +227,4 @@
 [@yuku-t]: https://github.com/yuku-t
 [@ochagata]: https://github.com/ochagata
 [@nightscape]: https://github.com/nightscape
+[@nbekirov]: https://github.com/nbekirov
