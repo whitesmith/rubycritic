@@ -24,8 +24,8 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'flay', '~> 2.8'
   spec.add_runtime_dependency 'flog', '~> 4.4'
   spec.add_runtime_dependency 'launchy', '2.4.3'
-  spec.add_runtime_dependency 'parser', '~> 2.4.0'
-  spec.add_runtime_dependency 'rainbow', '~> 2.1'
+  spec.add_runtime_dependency 'parser', '~> 2.5.0'
+  spec.add_runtime_dependency 'rainbow', '~> 3.0'
   spec.add_runtime_dependency 'reek', '~> 4.4'
   spec.add_runtime_dependency 'ruby_parser', '~> 3.8'
   spec.add_runtime_dependency 'tty-which', '~> 0.3.0'
@@ -41,5 +41,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest-around', '~> 0.4.0'
   spec.add_development_dependency 'mocha', '~> 1.1', '>= 1.1.0'
   spec.add_development_dependency 'rake', '~> 12.0', '>= 11.0.0'
-  spec.add_development_dependency 'rubocop', '~> 0.51', '< 0.52.0'
+  spec.add_development_dependency 'rubocop', '~> 0.53'
 end
