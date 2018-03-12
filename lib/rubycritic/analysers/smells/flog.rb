@@ -35,9 +35,7 @@ module RubyCritic
         @flog.flog(analysed_module.path)
         @flog.each_by_score do |class_method, original_score|
           score = original_score.round
-          if score >= HIGH_COMPLEXITY_SCORE_THRESHOLD
-            analysed_module.smells << create_smell(class_method, score)
-          end
+          analysed_module.smells << create_smell(class_method, score) if score >= HIGH_COMPLEXITY_SCORE_THRESHOLD
         end
       end
 
