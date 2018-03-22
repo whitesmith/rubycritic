@@ -9,13 +9,13 @@ module RubyCritic
 
     # Limit used to prevent very bad modules to have excessive impact in the
     # overall result. See #limited_cost_for
-    COST_LIMIT = 32
+    COST_LIMIT = 32.0
     # Score goes from 0 (worst) to 100 (perfect)
-    MAX_SCORE = 100
+    MAX_SCORE = 100.0
     # Projects with an average cost of 16 (or above) will score 0, since 16
     # is where the worst possible rating (F) starts
-    ZERO_SCORE_COST = 16
-    COST_MULTIPLIER = MAX_SCORE.to_f / ZERO_SCORE_COST
+    ZERO_SCORE_COST = 16.0
+    COST_MULTIPLIER = MAX_SCORE / ZERO_SCORE_COST
 
     def initialize(paths)
       @modules = SourceLocator.new(paths).pathnames.map do |pathname|

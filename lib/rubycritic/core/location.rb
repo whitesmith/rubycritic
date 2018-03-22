@@ -26,8 +26,8 @@ module RubyCritic
       }
     end
 
-    def to_json(*a)
-      to_h.to_json(*a)
+    def to_json(*options)
+      to_h.to_json(*options)
     end
 
     def ==(other)

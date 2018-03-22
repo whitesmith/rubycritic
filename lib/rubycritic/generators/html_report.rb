@@ -10,7 +10,7 @@ require 'rubycritic/generators/html/code_file'
 module RubyCritic
   module Generator
     class HtmlReport
-      ASSETS_DIR = File.expand_path('../html/assets', __FILE__)
+      ASSETS_DIR = File.expand_path('html/assets', __dir__)
 
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules

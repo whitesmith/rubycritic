@@ -76,6 +76,7 @@ module RubyCritic
           no_browser: no_browser
         }
       end
+      # rubocop:enable Metrics/MethodLength
 
       private
 
