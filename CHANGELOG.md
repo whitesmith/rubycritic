@@ -4,6 +4,7 @@
 * [CHANGE] Update `parser` to 2.5.0 (by [@joshrpowell][])
 * [CHANGE] Update `rainbow` to 3.0 (by [@joshrpowell][])
 * [CHANGE] Update `rubocop` to 0.53.0 (by [@joshrpowell][])
+* [BUGFIX] Fix wrong label for churn in the code file template (by [@nbekirov][])
 
 # 3.3.0 / 2017-10-10 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.3...v3.3.0)
 
@@ -229,4 +230,5 @@
 [@yuku-t]: https://github.com/yuku-t
 [@ochagata]: https://github.com/ochagata
 [@nightscape]: https://github.com/nightscape
+[@nbekirov]: https://github.com/nbekirov
 [@joshrpowell]: https://github.com/joshrpowell
