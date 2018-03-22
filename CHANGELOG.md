@@ -1,4 +1,8 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.3.0...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.4.0...master)
+
+* 
+
+# 3.4.0 / 2018-03-22 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.3.0...v3.4.0)
 
 * [CHANGE] Update `rubocop` to 0.51.0 (by [@olleolleolle][])
 * [CHANGE] Update `parser` to 2.5.0 (by [@joshrpowell][])
