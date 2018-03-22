@@ -7,7 +7,7 @@ module RubyCritic
     module Text
       class List
         class << self
-          TEMPLATE_PATH = File.expand_path('../templates/list.erb', __FILE__)
+          TEMPLATE_PATH = File.expand_path('templates/list.erb', __dir__)
 
           def erb_template
             @erb_template ||= ERB.new(File.read(TEMPLATE_PATH), nil, '-')

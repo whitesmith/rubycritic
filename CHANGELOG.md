@@ -1,11 +1,14 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.3.0...master)
 
-* [CHANGE] Update `rubocop` to 0.51.0 (by [@olleolleolle][]) 
+* [CHANGE] Update `rubocop` to 0.51.0 (by [@olleolleolle][])
+* [CHANGE] Update `parser` to 2.5.0 (by [@joshrpowell][])
+* [CHANGE] Update `rainbow` to 3.0 (by [@joshrpowell][])
+* [CHANGE] Update `rubocop` to 0.53.0 (by [@joshrpowell][])
 
 # 3.3.0 / 2017-10-10 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.3...v3.3.0)
 
 * [FEATURE] Add lint format similar to Golint (by [@nightscape][])
-* [CHANGE] Update `cucumber` to 3.0 (by [@onumis][]) 
+* [CHANGE] Update `cucumber` to 3.0 (by [@onumis][])
 * [CHANGE] Update `rake` to 12.0 (by [@onumis][])
 * [CHANGE] Update `rubocop` to 0.50.0 (by [@onumis][])
 * [CHANGE] Accepting floating point values from Flog (by [@onumis][])
@@ -226,3 +229,4 @@
 [@yuku-t]: https://github.com/yuku-t
 [@ochagata]: https://github.com/ochagata
 [@nightscape]: https://github.com/nightscape
+[@joshrpowell]: https://github.com/joshrpowell

@@ -6,7 +6,7 @@ module RubyCritic
     module Text
       class Lint
         class << self
-          TEMPLATE_PATH = File.expand_path('../templates/lint.erb', __FILE__)
+          TEMPLATE_PATH = File.expand_path('templates/lint.erb', __dir__)
           FILE_NAME = 'lint.txt'.freeze
 
           def file_directory
