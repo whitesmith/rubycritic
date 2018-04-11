@@ -12,6 +12,13 @@ module RubyCritic
           @smells = analysed_modules.flat_map(&:smells).uniq
           @analysed_module_names = analysed_module_names(analysed_modules)
           @show_status = (Config.mode == :default)
+          set_header_links if Config.compare_branches_mode?
+        end
+
+        def set_header_links
+          @base_path = code_index_path(Config.base_root_directory, file_name)
+          @feature_path = code_index_path(Config.feature_root_directory, file_name)
+          @build_path = code_index_path(Config.compare_root_directory, file_name)
         end
 
         def file_name

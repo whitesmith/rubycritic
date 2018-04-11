@@ -17,14 +17,27 @@ module RubyCritic
     ZERO_SCORE_COST = 16.0
     COST_MULTIPLIER = MAX_SCORE / ZERO_SCORE_COST
 
-    def initialize(paths)
+    def initialize(paths, modules = nil)
       @modules = SourceLocator.new(paths).pathnames.map do |pathname|
-        AnalysedModule.new(pathname: pathname)
+        if modules
+          analysed_module = modules.find { |mod| mod.pathname == pathname }
+          build_analysed_module(analysed_module)
+        else
+          AnalysedModule.new(pathname: pathname)
+        end
       end
     end
 
     def each(&block)
       @modules.each(&block)
+    end
+
+    def where(module_paths)
+      @modules.find_all { |mod| module_paths.include? mod.path }
+    end
+
+    def find(module_path)
+      @modules.find { |mod| mod.pathname == module_path }
     end
 
     def to_json(*options)
@@ -33,7 +46,7 @@ module RubyCritic
 
     def score
       if @modules.any?
-        MAX_SCORE - average_limited_cost * COST_MULTIPLIER
+        (MAX_SCORE - average_limited_cost * COST_MULTIPLIER).round(2)
       else
         0.0
       end
@@ -64,6 +77,13 @@ module RubyCritic
 
     def limited_cost_for(mod)
       [mod.cost, COST_LIMIT].min
+    end
+
+    def build_analysed_module(analysed_module)
+      AnalysedModule.new(pathname: analysed_module.pathname, name: analysed_module.name,
+                         smells: analysed_module.smells, churn: analysed_module.churn,
+                         committed_at: analysed_module.committed_at, complexity: analysed_module.complexity,
+                         duplication: analysed_module.duplication, methods_count: analysed_module.methods_count)
     end
   end
 end

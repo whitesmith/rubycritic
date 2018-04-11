@@ -13,6 +13,13 @@ module RubyCritic
         def initialize(analysed_module)
           @analysed_module = analysed_module
           @pathname = @analysed_module.pathname
+          set_header_links if Config.compare_branches_mode?
+        end
+
+        def set_header_links
+          @base_path = code_index_path(Config.base_root_directory, file_location)
+          @feature_path = code_index_path(Config.feature_root_directory, file_location)
+          @build_path = code_index_path(Config.compare_root_directory, file_location)
         end
 
         def file_directory
@@ -21,6 +28,10 @@ module RubyCritic
 
         def file_name
           @pathname.basename.sub_ext('.html')
+        end
+
+        def file_location
+          @pathname.sub_ext('.html')
         end
 
         def render

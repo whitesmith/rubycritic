@@ -112,16 +112,18 @@ For a full list of the command-line options run:
 $ rubycritic --help
 ```
 
-| Command flag             | Description                                           |
-|--------------------------|-------------------------------------------------------|
-| `-v` / `--version`       | Displays the current version and exits                |
-| `-p` / `--path`          | Set path where report will be saved (tmp/rubycritic by default) |
-| `-f` / `--format`        | Report smells in the given format: `html` (default; will open in a browser), `json`, `console`. |
-| `-s` / `--minimum-score` | Set a minimum score (FLOAT: ex: 96.28)                |
-| `--mode-ci`              | Use CI mode (faster, but only analyses last commit)   |
-| `--deduplicate-symlinks` | De-duplicate symlinks based on their final target     |
-| `--suppress-ratings`     | Suppress letter ratings                               |
-| `--no-browser`           | Do not open html report with browser                  |
+| Command flag                | Description                                                                                    |
+|-----------------------------|------------------------------------------------------------------------------------------------|
+| `-v` / `--version`          | Displays the current version and exits                                                         |
+| `-p` / `--path`             | Set path where report will be saved (tmp/rubycritic by default)                                |
+| `-f` / `--format`           | Report smells in the given format: `html` (default; will open in a browser), `json`, `console` |
+| `-s` / `--minimum-score`    | Set a minimum score (FLOAT: ex: 96.28), default: 0                                             |
+| `-m` / `--mode-ci`          | Use CI mode. Faster, analyses diffs w.r.t base_branch (default: master), see -b                |
+| `-b` / `--branch`           | Set branch to compare                                                                          |
+| `-t` / `--maximum-decrease` | Set a threshold for score difference between two branches (works only with -b), default: 0     |
+| `--deduplicate-symlinks`    | De-duplicate symlinks based on their final target                                              |
+| `--suppress-ratings`        | Suppress letter ratings                                                                        |
+| `--no-browser`              | Do not open html report with browser                                                           |
 
 
 ### Analyzer Configuration

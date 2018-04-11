@@ -47,6 +47,28 @@ module RubyCritic
         travel_to_original_state if stash_successful
       end
 
+      def self.switch_branch(branch)
+        uncommitted_changes? ? `git checkout #{branch}` : abort('Uncommitted changes are present.')
+      end
+
+      def self.uncommitted_changes?
+        `git ls-files --other --exclude-standard --directory`.empty? && `git status --porcelain`.empty?
+      end
+
+      def self.modified_files
+        modified_files = `git diff --name-status #{Config.base_branch} #{Config.feature_branch}`
+        modified_files.split("\n").map do |line|
+          next if line.start_with?('D')
+          file_name = line.split("\t")[1]
+          file_name
+        end.compact
+      end
+
+      def self.current_branch
+        branch_list = `git branch`
+        branch_list.match(/\*.*$/)[0].gsub('* ', '')
+      end
+
       private
 
       def stash_changes

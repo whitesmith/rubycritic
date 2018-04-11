@@ -20,6 +20,17 @@ module RubyCritic
             @root = path
           end
 
+          opts.on('-b', '--branch BRANCH', 'Set branch to compare') do |branch|
+            self.base_branch = String(branch)
+            set_current_branch
+            self.mode = :compare_branches
+          end
+
+          opts.on('-t', '--maximum-decrease [MAX_DECREASE]',
+                  'Set a threshold for score difference between two branches (works only with -b)') do |threshold_score|
+            self.threshold_score = Integer(threshold_score)
+          end
+
           opts.on(
             '-f', '--format [FORMAT]',
             %i[html json console lint],
@@ -36,7 +47,10 @@ module RubyCritic
             self.minimum_score = Float(min_score)
           end
 
-          opts.on('-m', '--mode-ci', 'Use CI mode (faster, but only analyses last commit)') do
+          opts.on('-m', '--mode-ci [BASE_BRANCH]',
+                  'Use CI mode (faster, analyses diffs w.r.t base_branch (default: master))') do |branch|
+            self.base_branch = branch || 'master'
+            set_current_branch
             self.mode = :ci
           end
 
@@ -73,7 +87,10 @@ module RubyCritic
           suppress_ratings: suppress_ratings,
           help_text: parser.help,
           minimum_score: minimum_score || 0,
-          no_browser: no_browser
+          no_browser: no_browser,
+          base_branch: base_branch,
+          feature_branch: feature_branch,
+          threshold_score: threshold_score || 0
         }
       end
       # rubocop:enable Metrics/MethodLength
@@ -81,13 +98,18 @@ module RubyCritic
       private
 
       attr_accessor :mode, :root, :format, :deduplicate_symlinks,
-                    :suppress_ratings, :minimum_score, :no_browser, :parser
+                    :suppress_ratings, :minimum_score, :no_browser,
+                    :parser, :base_branch, :feature_branch, :threshold_score
       def paths
         if @argv.empty?
           ['.']
         else
           @argv
         end
+      end
+
+      def set_current_branch
+        self.feature_branch = SourceControlSystem::Git.current_branch
       end
     end
   end
