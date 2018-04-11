@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'virtus'
 require 'rubycritic/core/location'
 
@@ -47,8 +48,8 @@ module RubyCritic
       }
     end
 
-    def to_json(*a)
-      to_h.to_json(*a)
+    def to_json(*options)
+      to_h.to_json(*options)
     end
 
     def doc_url

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rubycritic/core/analysed_modules_collection'
 require 'rubycritic/analysers/smells/flay'
 require 'rubycritic/analysers/smells/flog'

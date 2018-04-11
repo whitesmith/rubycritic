@@ -1,4 +1,5 @@
 AllCops:
+  DisplayCopNames: true
   Include:
     - '**/*.gemspec'
     - '**/*.rake'
@@ -22,5 +23,15 @@ Security/MarshalLoad:
   Enabled: false
   Include:
     - 'lib/rubycritic/serializer.rb'
+
+Style/RedundantFreeze:
+  Enabled: false
+  Include:
+    - 'lib/rubycritic/core/smell.rb'
+    - 'lib/rubycritic/generators/json/simple.rb'
+    - 'lib/rubycritic/revision_comparator.rb'
+    - 'lib/rubycritic/source_control_systems/perforce.rb'
+    - 'lib/rubycritic/source_locator.rb'
+    - 'lib/rubycritic/version.rb'
 
 inherit_from: .rubocop_todo.yml

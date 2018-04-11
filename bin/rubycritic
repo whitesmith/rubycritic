@@ -3,7 +3,7 @@
 
 # Always look in the lib directory of this gem
 # first when searching the load path
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 
 require 'rubycritic/cli/application'
 

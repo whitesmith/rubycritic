@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'test_helper'
 require 'rubycritic/commands/status_reporter'
 require 'rubycritic/cli/options'
@@ -20,7 +21,7 @@ describe RubyCritic::Command::StatusReporter do
     end
 
     it 'accept a score' do
-      @reporter.score = 50
+      @reporter.score = 50.0
       @reporter.status.must_equal success_status
       @reporter.status_message.must_equal 'Score: 50.0'
     end
@@ -45,22 +46,22 @@ describe RubyCritic::Command::StatusReporter do
     end
 
     describe 'when score is below minimum' do
-      let(:score) { 98 }
+      let(:score) { 98.0 }
       it 'should return the correct status' do
         @reporter.score = score
         @reporter.status.must_equal score_below_minimum
-        @reporter.status_message.must_equal 'Score (98.0) is below the minimum 99'
+        @reporter.status_message.must_equal 'Score (98.0) is below the minimum 99.0'
       end
 
       it 'should format the score' do
         @reporter.score = 98.95258620689656
         @reporter.status.must_equal score_below_minimum
-        @reporter.status_message.must_equal 'Score (98.95) is below the minimum 99'
+        @reporter.status_message.must_equal 'Score (98.95) is below the minimum 99.0'
       end
     end
 
     describe 'when score is equal the minimum' do
-      let(:score) { 99 }
+      let(:score) { 99.0 }
       it 'should return the correct status' do
         @reporter.score = score
         @reporter.status.must_equal success_status
@@ -69,7 +70,7 @@ describe RubyCritic::Command::StatusReporter do
     end
 
     describe 'when score is above the minimum' do
-      let(:score) { 100 }
+      let(:score) { 100.0 }
       it 'should return the correct status' do
         @reporter.score = score
         @reporter.status.must_equal success_status

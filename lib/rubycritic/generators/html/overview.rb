@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rubycritic/generators/html/base'
 require 'rubycritic/generators/html/turbulence'
 require 'rubycritic/analysis_summary'

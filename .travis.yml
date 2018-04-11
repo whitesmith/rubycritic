@@ -1,20 +1,29 @@
 sudo: false
 language: ruby
-cache: bundler
-before_install: gem update bundler
+cache:
+  bundler: true
+before_install:
+  - gem install bundler
 matrix:
   include:
     - rvm: 2.1.0
     - rvm: 2.1
     - rvm: 2.2
-    - rvm: 2.3.3
+    - rvm: 2.3
+    - rvm: 2.4
+    - rvm: 2.5
     - rvm: ruby-head
-    - rvm: jruby-9.1.5.0
+    - rvm: jruby-9.1.8.0
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: rbx-3
   allow_failures:
     - rvm: ruby-head
-    - rvm: jruby-9.1.5.0
+    - rvm: jruby-9.1.8.0
     - rvm: rbx-3
   fast_finish: true
-script: bundle exec rake
+
+script:
+  - bundle exec rake test
+  - bundle exec cucumber features --format progress --color
+  - bundle exec rake reek
+  - bundle exec rubocop

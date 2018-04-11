@@ -5,7 +5,8 @@ RubyCritic
 [![Build Status](https://travis-ci.org/whitesmith/rubycritic.svg?branch=master)](https://travis-ci.org/whitesmith/rubycritic)
 [![Code Climate](https://codeclimate.com/github/whitesmith/rubycritic/badges/gpa.svg)](https://codeclimate.com/github/whitesmith/rubycritic)
 
-<img src="/images/logo.png" alt="RubyCritic Icon" align="right" />
+<img src="https://github.com/whitesmith/rubycritic/raw/master/images/logo.png" alt="RubyCritic Icon" align="right" />
+
 RubyCritic is a gem that wraps around static analysis gems such as [Reek][1], [Flay][2] and [Flog][3] to provide a quality report of your Ruby code.
 
 **Table of Contents**
@@ -28,15 +29,15 @@ This gem provides features such as:
 
 1. An overview of your project:
 
-  ![RubyCritic overview screenshot](/images/overview.png)
+  ![RubyCritic overview screenshot](https://github.com/whitesmith/rubycritic/raw/master/images/overview.png)
 
 2. An index of the project files with their respective number of smells:
 
-  ![RubyCritic code index screenshot](/images/code.png)
+  ![RubyCritic code index screenshot](https://github.com/whitesmith/rubycritic/raw/master/images/code.png)
 
 3. An index of the smells detected:
 
-  ![RubyCritic smells index screenshot](/images/smells.png)
+  ![RubyCritic smells index screenshot](https://github.com/whitesmith/rubycritic/raw/master/images/smells.png)
 
 4. When analysing code like the following:
 
@@ -52,11 +53,11 @@ This gem provides features such as:
 
   It basically turns something like this:
 
-  ![Reek output screenshot](/images/reek.png)
+  ![Reek output screenshot](https://github.com/whitesmith/rubycritic/raw/master/images/reek.png)
 
   Into something like this:
 
-  ![RubyCritic file code screenshot](/images/smell-details.png)
+  ![RubyCritic file code screenshot](https://github.com/whitesmith/rubycritic/raw/master/images/smell-details.png)
 
 5. It uses your source control system (only Git, Mercurial and Perforce
   are currently supported) to compare your currently uncommitted
@@ -65,7 +66,7 @@ This gem provides features such as:
   **Warning**: If your code is not as you expect it to be after running
   RubyCritic, please check your source control system stash.
 
-Checkout the `/docs` if you want to read more about our [core metrics](./docs/core-metrics.md).
+Checkout the `/docs` if you want to read more about our [core metrics](https://github.com/whitesmith/rubycritic/blob/master/docs/core-metrics.md).
 
 
 ## Getting Started
@@ -80,7 +81,7 @@ If you'd rather install RubyCritic using Bundler, add this line to your
 application's Gemfile:
 
 ```ruby
-gem "rubycritic", :require => false
+gem "rubycritic", require: false
 ```
 
 And then execute:
@@ -116,7 +117,7 @@ $ rubycritic --help
 | `-v` / `--version`       | Displays the current version and exits                |
 | `-p` / `--path`          | Set path where report will be saved (tmp/rubycritic by default) |
 | `-f` / `--format`        | Report smells in the given format: `html` (default; will open in a browser), `json`, `console`. |
-| `-s` / `--minimum-score` | Set a minimum score                                   |
+| `-s` / `--minimum-score` | Set a minimum score (FLOAT: ex: 96.28)                |
 | `--mode-ci`              | Use CI mode (faster, but only analyses last commit)   |
 | `--deduplicate-symlinks` | De-duplicate symlinks based on their final target     |
 | `--suppress-ratings`     | Suppress letter ratings                               |
@@ -183,11 +184,12 @@ end
 
 ## Compatibility
 
-RubyCritic is supporting:
+RubyCritic is supporting Ruby versions:
 
 * 2.1
 * 2.2
 * 2.3
+* 2.4
 
 
 ## Improving RubyCritic
@@ -198,7 +200,7 @@ Arguably, the [better_errors gem][7] only got popular after receiving a [(pretty
 
 Similarly, Pull Requests that improve the look and feel of the gem, that tweak the calculation of ratings or that fix existing issues will be most welcome. Just commenting on an issue and giving some insight into how something should work will be appreciated. No contribution is too small.
 
-See RubyCritic's [contributing guidelines](CONTRIBUTING.md) about how to proceed.
+See RubyCritic's [contributing guidelines](https://github.com/whitesmith/rubycritic/blob/master/CONTRIBUTING.md) about how to proceed.
 
 
 ## Contributors
@@ -215,7 +217,7 @@ The current core team consists of:
 
 ## Credits
 
-![Whitesmith](/images/whitesmith.png)
+![Whitesmith](https://github.com/whitesmith/rubycritic/raw/master/images/whitesmith.png)
 
 RubyCritic is maintained and funded by [Whitesmith][9]. Tweet your questions or suggestions to [@Whitesmithco][10].
 
@@ -224,7 +226,7 @@ RubyCritic is maintained and funded by [Whitesmith][9]. Tweet your questions or 
 [3]: https://github.com/seattlerb/flog
 [4]: https://github.com/whitesmith/guard-rubycritic
 [5]: http://jenkins-ci.org/
-[6]: ./docs/building-own-code-climate.md
+[6]: https://github.com/whitesmith/rubycritic/blob/master/docs/building-own-code-climate.md
 [7]: https://github.com/charliesome/better_errors
 [8]: https://github.com/charliesome/better_errors/pull/22
 [9]: http://www.whitesmith.co/

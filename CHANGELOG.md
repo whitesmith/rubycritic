@@ -1,4 +1,42 @@
-# master (unreleased)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.4.0...master)
+
+* 
+
+# 3.4.0 / 2018-03-22 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.3.0...v3.4.0)
+
+* [CHANGE] Update `rubocop` to 0.51.0 (by [@olleolleolle][])
+* [CHANGE] Update `parser` to 2.5.0 (by [@joshrpowell][])
+* [CHANGE] Update `rainbow` to 3.0 (by [@joshrpowell][])
+* [CHANGE] Update `rubocop` to 0.53.0 (by [@joshrpowell][])
+* [BUGFIX] Fix wrong label for churn in the code file template (by [@nbekirov][])
+
+# 3.3.0 / 2017-10-10 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.3...v3.3.0)
+
+* [FEATURE] Add lint format similar to Golint (by [@nightscape][])
+* [CHANGE] Update `cucumber` to 3.0 (by [@onumis][])
+* [CHANGE] Update `rake` to 12.0 (by [@onumis][])
+* [CHANGE] Update `rubocop` to 0.50.0 (by [@onumis][])
+* [CHANGE] Accepting floating point values from Flog (by [@onumis][])
+
+# 3.2.3 / 2017-05-31 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.2...v3.2.3)
+
+* [BUGFIX] Fix rendering of churn chart in large codebases. (by [@ochagata][])
+
+# 3.2.2 / 2017-05-18 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.1...v3.2.2)
+
+* [CHANGE] Relax dependency of parser gem (by [@yuku-t][])
+* [BUGFIX] Only scroll Y axis when visiting page with anchor tag (by [@georgedrummond][])
+
+# 3.2.1 / 2017-05-13 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.2.0...v3.2.1)
+
+* [CHANGE] Update `rubocop` to 0.48.x from 0.47.1 (by [@koic][] and [@Onumis][])
+* [BUGFIX] Nest ordered list so we don't render errors as line numbers (by [@georgedrummond][])
+
+# 3.2.0 / 2017-03-24
+
+* [CHANGE] Update `rubocop` to 0.47.1 from 0.42.0 (by [@jdickey][])
+* [CHANGE] Update for Ruby 2.4.0 compatibility; update `parser` gem to 2.4.0 (by [@jdickey][])
+* [CHANGE] Improve YARD documentation (by [@olleolleolle][] and [@tejasbubane][])
 
 # 3.1.3 / 2016-12-19
 
@@ -190,3 +228,11 @@
 [@josephpage]: https://github.com/josephpage
 [@hoshinotsuyoshi]: https://github.com/hoshinotsuyoshi
 [@thedrow]: https://github.com/thedrow
+[@jdickey]: https://github.com/jdickey
+[@koic]: https://github.com/koic
+[@georgedrummond]: https://github.com/georgedrummond
+[@yuku-t]: https://github.com/yuku-t
+[@ochagata]: https://github.com/ochagata
+[@nightscape]: https://github.com/nightscape
+[@nbekirov]: https://github.com/nbekirov
+[@joshrpowell]: https://github.com/joshrpowell

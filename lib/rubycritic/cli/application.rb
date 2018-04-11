@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rubycritic'
 require 'rubycritic/cli/options'
 require 'rubycritic/command_factory'
@@ -20,7 +21,7 @@ module RubyCritic
         print(reporter.status_message)
         reporter.status
       rescue OptionParser::InvalidOption => error
-        $stderr.puts "Error: #{error}"
+        warn "Error: #{error}"
         STATUS_ERROR
       end
 

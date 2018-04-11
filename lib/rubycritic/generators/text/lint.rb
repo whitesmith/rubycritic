@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
-require 'rainbow'
-
+require 'erb'
 module RubyCritic
   module Generator
     module Text
-      class List
+      class Lint
         class << self
-          TEMPLATE_PATH = File.expand_path('templates/list.erb', __dir__)
+          TEMPLATE_PATH = File.expand_path('templates/lint.erb', __dir__)
+          FILE_NAME = 'lint.txt'.freeze
+
+          def file_directory
+            @file_directory ||= Pathname.new(Config.root)
+          end
+
+          def file_pathname
+            Pathname.new(file_directory).join FILE_NAME
+          end
 
           def erb_template
             @erb_template ||= ERB.new(File.read(TEMPLATE_PATH), nil, '-')
           end
         end
-
-        RATING_TO_COLOR = {
-          'A' => :green,
-          'B' => :green,
-          'C' => :yellow,
-          'D' => :orange,
-          'F' => :red
-        }.freeze
 
         def initialize(analysed_module)
           @analysed_module = analysed_module
@@ -34,10 +34,6 @@ module RubyCritic
 
         def erb_template
           self.class.erb_template
-        end
-
-        def color
-          @color ||= RATING_TO_COLOR[@analysed_module.rating.to_s]
         end
       end
     end

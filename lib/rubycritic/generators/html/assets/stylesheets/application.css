@@ -417,6 +417,10 @@ header {
   color: #197b30;
 }
 
+ol.errors {
+  list-style: none;
+  padding-left: 0px;
+}
 .errors {
   background-position: 10px 25px;
   background-repeat: no-repeat;

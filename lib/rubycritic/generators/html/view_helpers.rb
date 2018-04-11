@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module RubyCritic
   module ViewHelpers
     def timeago_tag(time)

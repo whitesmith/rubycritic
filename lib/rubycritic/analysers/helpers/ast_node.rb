@@ -1,8 +1,9 @@
 # frozen_string_literal: true
+
 module Parser
   module AST
     class Node
-      MODULE_TYPES = [:module, :class].freeze
+      MODULE_TYPES = %i[module class].freeze
 
       def count_nodes_of_type(*types)
         count = 0

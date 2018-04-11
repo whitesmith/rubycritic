@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module RubyCritic
   class Rating
     def self.from_cost(cost)
@@ -22,8 +23,8 @@ module RubyCritic
       @letter
     end
 
-    def to_json(*a)
-      to_h.to_json(*a)
+    def to_json(*options)
+      to_h.to_json(*options)
     end
   end
 end

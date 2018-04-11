@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'optparse'
 require 'rubycritic/browser'
 
@@ -32,17 +33,18 @@ module RubyCritic
 
           opts.on(
             '-f', '--format [FORMAT]',
-            [:html, :json, :console],
+            %i[html json console lint],
             'Report smells in the given format:',
             '  html (default; will open in a browser)',
             '  json',
-            '  console'
+            '  console',
+            '  lint'
           ) do |format|
             self.format = format
           end
 
           opts.on('-s', '--minimum-score [MIN_SCORE]', 'Set a minimum score') do |min_score|
-            self.minimum_score = Integer(min_score)
+            self.minimum_score = Float(min_score)
           end
 
           opts.on('-m', '--mode-ci [BASE_BRANCH]',
@@ -91,6 +93,7 @@ module RubyCritic
           threshold_score: threshold_score || 0
         }
       end
+      # rubocop:enable Metrics/MethodLength
 
       private
 

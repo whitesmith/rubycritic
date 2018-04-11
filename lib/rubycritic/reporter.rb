@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module RubyCritic
   module Reporter
     def self.generate_report(analysed_modules)
@@ -13,6 +14,9 @@ module RubyCritic
       when :console
         require 'rubycritic/generators/console_report'
         Generator::ConsoleReport
+      when :lint
+        require 'rubycritic/generators/lint_report'
+        Generator::LintReport
       else
         require 'rubycritic/generators/html_report'
         Generator::HtmlReport

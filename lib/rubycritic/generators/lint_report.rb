@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require 'rubycritic/generators/json/simple'
+require 'rubycritic/generators/text/lint'
 
 module RubyCritic
   module Generator
-    class JsonReport
+    class LintReport
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
       end
@@ -12,14 +12,18 @@ module RubyCritic
       def generate_report
         FileUtils.mkdir_p(generator.file_directory)
         File.open(generator.file_pathname, 'w+') do |file|
-          file.write(generator.render)
+          file.write(reports.join("\n"))
         end
       end
 
-      private
-
       def generator
-        Json::Simple.new(@analysed_modules)
+        Text::Lint
+      end
+
+      def reports
+        @analysed_modules.sort.map do |mod|
+          generator.new(mod).render
+        end
       end
     end
   end

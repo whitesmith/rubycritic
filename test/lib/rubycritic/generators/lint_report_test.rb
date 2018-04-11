@@ -2,11 +2,10 @@
 
 require 'test_helper'
 require 'rubycritic/analysers_runner'
-require 'rubycritic/generators/json_report'
-require 'json'
+require 'rubycritic/generators/lint_report'
 require 'fakefs/safe'
 
-describe RubyCritic::Generator::JsonReport do
+describe RubyCritic::Generator::LintReport do
   describe '#generate_report' do
     around do |example|
       capture_output_streams do
@@ -14,12 +13,12 @@ describe RubyCritic::Generator::JsonReport do
       end
     end
 
-    it 'creates a report file with JSON data inside' do
-      sample_files = Dir['test/samples/**/*.rb']
+    it 'report file has data inside' do
+      sample_files = Dir['test/samples/**/*.rb'].reject { |f| File.zero?(f) }
       create_analysed_modules_collection
       generate_report
-      data = JSON.parse(File.read('test/samples/report.json'))
-      analysed_files = data['analysed_modules'].map { |h| h['path'] }.uniq
+      lines = File.readlines('test/samples/lint.txt').map(&:strip).reject(&:empty?)
+      analysed_files = lines.map { |line| line.split(':').first }.uniq
       assert_matched_arrays analysed_files, sample_files
     end
   end
@@ -32,7 +31,7 @@ describe RubyCritic::Generator::JsonReport do
   end
 
   def generate_report
-    report = RubyCritic::Generator::JsonReport.new(@analysed_modules_collection)
+    report = RubyCritic::Generator::LintReport.new(@analysed_modules_collection)
     report.generate_report
   end
 end

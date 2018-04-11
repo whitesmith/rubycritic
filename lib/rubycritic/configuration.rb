@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rubycritic/source_control_systems/base'
 
 module RubyCritic

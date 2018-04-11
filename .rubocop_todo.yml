@@ -17,7 +17,7 @@ Metrics/MethodLength:
     - 'lib/rubycritic/platforms/base.rb'
 
 # Offense count: 4
-Style/AccessorMethodName:
+Naming/AccessorMethodName:
   Exclude:
     - 'lib/rubycritic/analysers/helpers/ast_node.rb'
     - 'lib/rubycritic/generators/html/base.rb'
@@ -37,6 +37,9 @@ Style/SpecialGlobalVars:
 
 # Offense count: 1
 Style/MethodMissing:
-  Exclude: 
+  Exclude:
     - 'lib/rubycritic/configuration.rb'
 
+# Offense count: 3
+Layout/IndentHeredoc:
+  Enabled: false
