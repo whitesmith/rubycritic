@@ -6,7 +6,7 @@ module RubyCritic
       register_system
 
       def self.supported?
-        `hg verify 2>&1` && $?.success?
+        `hg verify 2>&1` && $CHILD_STATUS.success?
       end
 
       def self.to_s
