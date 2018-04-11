@@ -39,6 +39,44 @@ describe RubyCritic::AnalysedModulesCollection do
         subject.count.must_equal 3
       end
     end
+
+    context 'with a list of files and initializing analysed modules with pre existing values' do
+      let(:paths) { %w(test/samples/empty.rb) }
+      let(:analysed_modules) do
+        [RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/empty.rb'), name: 'Name', smells: [],
+                                        churn: 2, committed_at: Time.now, complexity: 2, duplication: 0,
+                                        methods_count: 2)]
+      end
+
+      it 'registers one AnalysedModule element per existent file' do
+        analysed_modules_collection = RubyCritic::AnalysedModulesCollection.new(paths, analysed_modules)
+        analysed_modules_collection.count.must_equal 1
+        analysed_module = analysed_modules_collection.first
+        analysed_module.name.must_equal 'Name'
+        analysed_module.churn.must_equal 2
+        analysed_module.complexity.must_equal 2
+        analysed_module.duplication.must_equal 0
+        analysed_module.methods_count.must_equal 2
+      end
+    end
+  end
+
+  describe 'querying analysed_modules_collection' do
+    subject { RubyCritic::AnalysedModulesCollection.new(paths, analysed_modules) }
+
+    context 'with a list of files and initializing analysed modules with pre existing values' do
+      let(:paths) { %w(test/samples/empty.rb test/samples/unparsable.rb) }
+      let(:analysed_modules) do
+        [RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/empty.rb'), name: 'Empty'),
+         RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/unparsable.rb'), name: 'Unparsable')]
+      end
+
+      it 'registers one AnalysedModule element per existent file' do
+        subject.count.must_equal 2
+        subject.where(['test/samples/empty.rb']).count.must_equal 1
+        subject.where(['test/samples/unparsable.rb']).count.must_equal 1
+      end
+    end
   end
 
   describe '#score' do
