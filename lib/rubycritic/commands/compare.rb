@@ -39,6 +39,7 @@ module RubyCritic
       # keep track of the number of builds and
       # use this build number to create separate directory for each build
       def update_build_number
+        FileUtils.mkdir_p(Config.root) unless File.directory?(Config.root)
         build_file_location = "#{Config.root}/build_count.txt"
         File.new(build_file_location, 'a') unless File.exist?(build_file_location)
         @build_number = File.open(build_file_location).readlines.first.to_i + 1
