@@ -41,7 +41,7 @@ module RubyCritic
       def set_root_paths
         Config.base_root_directory = Pathname.new(branch_directory(:base_branch))
         Config.feature_root_directory = Pathname.new(branch_directory(:feature_branch))
-        Config.build_root_directory = Pathname.new(build_directory)
+        Config.compare_root_directory = Pathname.new("#{Config.root}/compare")
       end
 
       # switch branch and analyse files
@@ -57,7 +57,7 @@ module RubyCritic
       def analyse_modified_files
         modified_files = Config.feature_branch_collection.where(SourceControlSystem::Git.modified_files)
         analysed_modules = AnalysedModulesCollection.new(modified_files.map(&:path), modified_files)
-        Config.root = build_directory
+        Config.root = "#{Config.root}/compare"
         report(analysed_modules)
       end
 
@@ -87,15 +87,11 @@ module RubyCritic
         "#{Config.root}/compare/#{Config.send(branch)}"
       end
 
-      def build_directory
-        "#{Config.root}/compare/builds/build_#{@build_number}"
-      end
-
       # create a txt file with the branch score details
       def build_details
         details = "Base branch (#{Config.base_branch}) score: #{Config.base_branch_score} \n"\
                   "Feature branch (#{Config.feature_branch}) score: #{Config.feature_branch_score} \n"
-        File.open("#{Config.build_root_directory}/build_details.txt", 'w') { |file| file.write(details) }
+        File.open("#{Config.compare_root_directory}/build_details.txt", 'w') { |file| file.write(details) }
       end
 
       # store the analysed moduled collection based on the branch

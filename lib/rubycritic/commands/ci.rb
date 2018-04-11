@@ -9,13 +9,6 @@ require 'rubycritic/commands/compare'
 module RubyCritic
   module Command
     class Ci < Compare
-      # def critique
-      #   AnalysersRunner.new(paths).run
-      # end
-
-      private
-
-      attr_reader :paths
     end
   end
 end

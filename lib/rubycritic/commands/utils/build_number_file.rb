@@ -25,7 +25,9 @@ module RubyCritic
         def open_build_number_file
           root = Config.root
           FileUtils.mkdir_p(root) unless File.directory?(root)
-          @file = File.open("#{root}/build_number.txt", 'r+')
+          location = "#{root}/build_number.txt"
+          File.new(location, 'a') unless File.exist?(location)
+          @file = File.open(location, 'r+')
         end
       end
     end

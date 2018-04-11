@@ -19,7 +19,7 @@ module RubyCritic
         def set_header_links
           @base_path = code_index_path(Config.base_root_directory, file_location)
           @feature_path = code_index_path(Config.feature_root_directory, file_location)
-          @build_path = code_index_path(Config.build_root_directory, file_location)
+          @build_path = code_index_path(Config.compare_root_directory, file_location)
         end
 
         def file_directory

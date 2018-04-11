@@ -70,7 +70,7 @@ Attribute:
   - RubyCritic::Configuration#base_branch
   - RubyCritic::Configuration#base_branch_score
   - RubyCritic::Configuration#base_root_directory
-  - RubyCritic::Configuration#build_root_directory
+  - RubyCritic::Configuration#compare_root_directory
   - RubyCritic::Configuration#feature_branch
   - RubyCritic::Configuration#feature_branch_score
   - RubyCritic::Configuration#feature_root_directory

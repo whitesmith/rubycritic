@@ -66,7 +66,7 @@ module RubyCritic
 
       def self.current_branch
         branch_list = `git branch`
-        branch_list.match(/\* \w*/)[0].gsub('* ', '')
+        branch_list.match(/\*.*$/)[0].gsub('* ', '')
       end
 
       private

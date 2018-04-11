@@ -9,7 +9,7 @@ module RubyCritic
                   :suppress_ratings, :open_with, :no_browser, :base_branch,
                   :feature_branch, :base_branch_score, :feature_branch_score,
                   :base_root_directory, :feature_root_directory,
-                  :build_root_directory, :threshold_score, :base_branch_collection,
+                  :compare_root_directory, :threshold_score, :base_branch_collection,
                   :feature_branch_collection
 
     def set(options)
