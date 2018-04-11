@@ -1,5 +1,6 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.4.0...master)
 
+* [CHANGE] Add ability to compare only the modified files between two branches. Refactored option `--mode-ci`, added `--branch` and `--maximum-decrease` (by [@HemanthMudalaiah][])
 * 
 
 # 3.4.0 / 2018-03-22 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.3.0...v3.4.0)
@@ -236,3 +237,4 @@
 [@nightscape]: https://github.com/nightscape
 [@nbekirov]: https://github.com/nbekirov
 [@joshrpowell]: https://github.com/joshrpowell
+[@HemanthMudalaiah]: https://github.com/HemanthMudalaiah
