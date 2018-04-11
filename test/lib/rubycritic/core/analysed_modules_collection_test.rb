@@ -41,7 +41,7 @@ describe RubyCritic::AnalysedModulesCollection do
     end
 
     context 'with a list of files and initializing analysed modules with pre existing values' do
-      let(:paths) { %w(test/samples/empty.rb) }
+      let(:paths) { %w[test/samples/empty.rb] }
       let(:analysed_modules) do
         [RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/empty.rb'), name: 'Name', smells: [],
                                         churn: 2, committed_at: Time.now, complexity: 2, duplication: 0,
@@ -65,7 +65,7 @@ describe RubyCritic::AnalysedModulesCollection do
     subject { RubyCritic::AnalysedModulesCollection.new(paths, analysed_modules) }
 
     context 'with a list of files and initializing analysed modules with pre existing values' do
-      let(:paths) { %w(test/samples/empty.rb test/samples/unparsable.rb) }
+      let(:paths) { %w[test/samples/empty.rb test/samples/unparsable.rb] }
       let(:analysed_modules) do
         [RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/empty.rb'), name: 'Empty'),
          RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/unparsable.rb'), name: 'Unparsable')]

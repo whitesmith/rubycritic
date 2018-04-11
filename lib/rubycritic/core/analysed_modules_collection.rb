@@ -46,7 +46,7 @@ module RubyCritic
 
     def score
       if @modules.any?
-        MAX_SCORE - average_limited_cost * COST_MULTIPLIER
+        (MAX_SCORE - average_limited_cost * COST_MULTIPLIER).round(2)
       else
         0.0
       end

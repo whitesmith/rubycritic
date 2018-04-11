@@ -1,10 +1,12 @@
 # frozen_string_literal: true
+
 require 'rubycritic/source_control_systems/base'
 require 'rubycritic/analysers_runner'
 require 'rubycritic/revision_comparator'
 require 'rubycritic/reporter'
 require 'rubycritic/commands/base'
 require 'rubycritic/commands/default'
+require 'rubycritic/commands/utils/build_number_file'
 
 module RubyCritic
   module Command
@@ -25,7 +27,7 @@ module RubyCritic
       attr_reader :paths, :status_reporter
 
       def compare_branches
-        update_build_number
+        @build_number = Utils::BuildNumberFile.new.update_build_number
         set_root_paths
         original_no_browser_config = Config.no_browser
         Config.no_browser = true
@@ -34,16 +36,6 @@ module RubyCritic
         Config.no_browser = original_no_browser_config
         analyse_modified_files
         compare_code_quality
-      end
-
-      # keep track of the number of builds and
-      # use this build number to create separate directory for each build
-      def update_build_number
-        FileUtils.mkdir_p(Config.root) unless File.directory?(Config.root)
-        build_file_location = "#{Config.root}/build_count.txt"
-        File.new(build_file_location, 'a') unless File.exist?(build_file_location)
-        @build_number = File.open(build_file_location).readlines.first.to_i + 1
-        File.write(build_file_location, @build_number)
       end
 
       def set_root_paths

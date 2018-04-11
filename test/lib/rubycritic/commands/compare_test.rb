@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'test_helper'
 require 'rubycritic/commands/compare'
 require 'rubycritic/cli/options'
@@ -29,7 +30,7 @@ describe RubyCritic::Command::Compare do
 
   describe 'compare' do
     it 'should compare a file of different branch' do
-      options = ['-b', 'base_branch', '-t', '10', 'test/samples/compare_file.rb']
+      options = ['-b', 'base_branch', '-t', '0', 'test/samples/compare_file.rb']
       options = RubyCritic::Cli::Options.new(options).parse.to_h
       RubyCritic::Config.set(options)
       status_reporter = RubyCritic::Command::Compare.new(options).execute
