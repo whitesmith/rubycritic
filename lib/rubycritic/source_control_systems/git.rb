@@ -9,7 +9,11 @@ module RubyCritic
       GIT_EXECUTABLE = TTY::Which.which('git')
 
       def self.git(arg)
-        `#{GIT_EXECUTABLE} #{arg}`
+        if Gem.win_platform?
+          `\"#{GIT_EXECUTABLE}\" #{arg}`
+        else
+          `#{GIT_EXECUTABLE} #{arg}`
+        end
       end
 
       def git(arg)
