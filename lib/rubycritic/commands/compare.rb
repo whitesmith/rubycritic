@@ -76,7 +76,7 @@ module RubyCritic
       end
 
       def mark_build_fail?
-        Config.threshold_score > 0 && threshold_reached?
+        Config.threshold_score >= 0 && threshold_reached?
       end
 
       def threshold_reached?
