@@ -18,7 +18,7 @@ module RubyCritic
         include ViewHelpers
 
         def file_href
-          "file://#{file_pathname}"
+          "file:///#{file_pathname}"
         end
 
         def file_pathname
