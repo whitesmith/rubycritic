@@ -1,9 +1,12 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.4.0...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.5.0...master)
+
+# 3.5.0 / 2018-09-03 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.4.0...v3.5.0)
 
 * [CHANGE] Add ability to compare only the modified files between two branches. Refactored option `--mode-ci`, added `--branch` and `--maximum-decrease` (by [@HemanthMudalaiah][])
+* [CHANGE] Optimized all images (by [@SuperSandro2000][])
 * [BUGFIX] Fixed opening report in chrome on windows (by [@SuperSandro2000][])
 * [BUGFIX] Fixed churn on windows (by [@SuperSandro2000][])
-* [CHANGE] Optimized all images (by [@SuperSandro2000][])
+* [BUGFIX] Fixed gem not installing under restricted windows environments (by [@onumis][])
 
 # 3.4.0 / 2018-03-22 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.3.0...v3.4.0)
 
