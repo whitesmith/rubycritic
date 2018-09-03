@@ -16,9 +16,18 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
   spec.required_ruby_version = '>= 2.1.0'
 
-  spec.files         = `git ls-files`.split("\n")
+  spec.files = [
+    'CHANGELOG.md',
+    'CONTRIBUTING.md',
+    'Gemfile',
+    'LICENSE.txt',
+    'README.md',
+    'ROADMAP.md',
+    'Rakefile'
+  ]
+  spec.files += `git ls-files lib`.split("\n")
+
   spec.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
-  spec.test_files    = `git ls-files -- test/*`.split("\n")
   spec.require_path  = 'lib'
 
   spec.add_runtime_dependency 'flay', '~> 2.8'
