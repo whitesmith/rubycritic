@@ -31,7 +31,8 @@ describe RubyCritic::Command::Compare do
   end
 
   describe 'comparing the same file for two different branches' do
-    before do
+    after do
+      # clear file contents after tests
       File.open('test/samples/compare_file.rb', 'w') { |file| file.truncate(0) }
     end
 

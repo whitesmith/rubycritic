@@ -1,4 +1,8 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.5.0...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.5.1...master)
+
+# 3.5.1 / 2018-09-05 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.5.0...v3.5.1)
+
+* [BUGFIX] Fix branches score comparison when threshold is 0 (by [@antoineLeclercq][])
 
 # 3.5.0 / 2018-09-03 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.4.0...v3.5.0)
 
@@ -244,3 +248,4 @@
 [@joshrpowell]: https://github.com/joshrpowell
 [@HemanthMudalaiah]: https://github.com/HemanthMudalaiah
 [@SuperSandro2000]: https://github.com/SuperSandro2000
+[@antoineLeclercq]: https://github.com/antoineLeclercq
