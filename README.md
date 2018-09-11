@@ -4,6 +4,8 @@ RubyCritic
 [![Gem Version](https://badge.fury.io/rb/rubycritic.svg)](http://badge.fury.io/rb/rubycritic)
 [![Build Status](https://travis-ci.org/whitesmith/rubycritic.svg?branch=master)](https://travis-ci.org/whitesmith/rubycritic)
 [![Code Climate](https://codeclimate.com/github/whitesmith/rubycritic/badges/gpa.svg)](https://codeclimate.com/github/whitesmith/rubycritic)
+[![Code Quality: Javascript](https://img.shields.io/lgtm/grade/javascript/g/whitesmith/rubycritic.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/whitesmith/rubycritic/context:javascript)
+[![Total Alerts](https://img.shields.io/lgtm/alerts/g/whitesmith/rubycritic.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/whitesmith/rubycritic/alerts)
 
 <img src="https://github.com/whitesmith/rubycritic/raw/master/images/logo.png" alt="RubyCritic Icon" align="right" />
 
