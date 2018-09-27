@@ -1,4 +1,8 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.5.1...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.5.2...master)
+
+# 3.5.2 / 2018-09-27 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.5.1...v3.5.2)
+
+* [BUGFIX] Use a better uncommitted changes detection for git (by [@onumis][])
 
 # 3.5.1 / 2018-09-05 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.5.0...v3.5.1)
 
