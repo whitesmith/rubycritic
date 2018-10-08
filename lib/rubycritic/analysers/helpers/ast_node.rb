@@ -22,9 +22,11 @@ module Parser
       end
 
       def get_module_names
-        children_modules = children
-                           .select { |child| child.is_a?(Parser::AST::Node) }
-                           .flat_map(&:get_module_names)
+        ast_node_children = children.select do |child|
+          child.is_a?(Parser::AST::Node)
+        end
+
+        children_modules = ast_node_children.flat_map(&:get_module_names)
 
         if MODULE_TYPES.include?(type)
           if children_modules.empty?

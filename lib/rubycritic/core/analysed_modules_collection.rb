@@ -80,10 +80,16 @@ module RubyCritic
     end
 
     def build_analysed_module(analysed_module)
-      AnalysedModule.new(pathname: analysed_module.pathname, name: analysed_module.name,
-                         smells: analysed_module.smells, churn: analysed_module.churn,
-                         committed_at: analysed_module.committed_at, complexity: analysed_module.complexity,
-                         duplication: analysed_module.duplication, methods_count: analysed_module.methods_count)
+      AnalysedModule.new(
+        pathname: analysed_module.pathname,
+        name: analysed_module.name,
+        smells: analysed_module.smells,
+        churn: analysed_module.churn,
+        committed_at: analysed_module.committed_at,
+        complexity: analysed_module.complexity,
+        duplication: analysed_module.duplication,
+        methods_count: analysed_module.methods_count
+      )
     end
   end
 end
