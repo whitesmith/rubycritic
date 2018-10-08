@@ -22,7 +22,7 @@ module RubyCritic
 
       def critique
         analysed_modules = AnalysersRunner.new(paths).run
-        RevisionComparator.new(paths).set_statuses(analysed_modules)
+        RevisionComparator.new(paths).statuses = analysed_modules
       end
 
       def report(analysed_modules)

@@ -14,17 +14,16 @@ module RubyCritic
       @paths = paths
     end
 
-    def set_statuses(analysed_modules_now)
-      if Config.source_control_system.revision?
-        analysed_modules_before = load_cached_analysed_modules
-        if analysed_modules_before
-          SmellsStatusSetter.set(
-            analysed_modules_before.flat_map(&:smells),
-            analysed_modules_now.flat_map(&:smells)
-          )
-        end
-      end
-      analysed_modules_now
+    def statuses=(analysed_modules_now)
+      return unless Config.source_control_system.revision?
+
+      analysed_modules_before = load_cached_analysed_modules
+      return unless analysed_modules_before
+
+      SmellsStatusSetter.set(
+        analysed_modules_before.flat_map(&:smells),
+        analysed_modules_now.flat_map(&:smells)
+      )
     end
 
     private

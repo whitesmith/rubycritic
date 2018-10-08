@@ -6,7 +6,7 @@ require 'rubycritic/revision_comparator'
 describe RubyCritic::RevisionComparator do
   subject { RubyCritic::RevisionComparator.new([]) }
 
-  describe '#set_statuses' do
+  describe '#statuses=' do
     context 'in a SCS with :revision? == false' do
       before do
         RubyCritic::Config.expects(:source_control_system)
@@ -16,8 +16,7 @@ describe RubyCritic::RevisionComparator do
 
       it 'does not attempt to compare with previous results' do
         subject.expects(:load_cached_analysed_modules).never
-        result = subject.set_statuses([])
-        result.must_equal([])
+        subject.statuses = []
       end
     end
 
@@ -36,12 +35,12 @@ describe RubyCritic::RevisionComparator do
 
         it 'does not load them' do
           RubyCritic::Serializer.expects(:new).never
-          subject.set_statuses([])
+          subject.statuses = []
         end
 
         it 'does not invoke RubyCritic::SmellsStatusSetter' do
           RubyCritic::SmellsStatusSetter.expects(:set).never
-          subject.set_statuses([])
+          subject.statuses = []
         end
       end
 
@@ -53,12 +52,12 @@ describe RubyCritic::RevisionComparator do
         end
 
         it 'loads them' do
-          subject.set_statuses([])
+          subject.statuses = []
         end
 
         it 'invokes RubyCritic::SmellsStatusSetter' do
           RubyCritic::SmellsStatusSetter.expects(:set).once
-          subject.set_statuses([])
+          subject.statuses = []
         end
       end
     end
