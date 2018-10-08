@@ -29,19 +29,23 @@ module Parser
         children_modules = ast_node_children.flat_map(&:get_module_names)
 
         if MODULE_TYPES.include?(type)
-          if children_modules.empty?
-            [module_name]
-          else
-            children_modules.map do |children_module|
-              "#{module_name}::#{children_module}"
-            end
-          end
+          module_names_with_children children_modules
         else
           children_modules
         end
       end
 
       private
+
+      def module_names_with_children(children_modules)
+        if children_modules.empty?
+          [module_name]
+        else
+          children_modules.map do |children_module|
+            "#{module_name}::#{children_module}"
+          end
+        end
+      end
 
       def module_name
         name_segments = []
