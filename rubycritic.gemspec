@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'launchy', '2.4.3'
   spec.add_runtime_dependency 'parser', '~> 2.5.0'
   spec.add_runtime_dependency 'rainbow', '~> 3.0'
-  spec.add_runtime_dependency 'reek', '~> 4.4'
+  spec.add_runtime_dependency 'reek', '~> 5.2.0'
   spec.add_runtime_dependency 'ruby_parser', '~> 3.8'
   spec.add_runtime_dependency 'tty-which', '~> 0.3.0'
   spec.add_runtime_dependency 'virtus', '~> 1.0'

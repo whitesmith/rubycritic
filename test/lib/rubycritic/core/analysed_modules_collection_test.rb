@@ -16,7 +16,7 @@ describe RubyCritic::AnalysedModulesCollection do
     end
 
     context 'with a list of files' do
-      let(:paths) { %w[test/samples/doesnt_exist.rb test/samples/unparsable.rb test/samples/empty.rb] }
+      let(:paths) { %w[test/samples/doesnt_exist.rb test/samples/no_methods.rb test/samples/empty.rb] }
 
       it 'registers one AnalysedModule element per existent file' do
         subject.count.must_equal 2
@@ -65,16 +65,16 @@ describe RubyCritic::AnalysedModulesCollection do
     subject { RubyCritic::AnalysedModulesCollection.new(paths, analysed_modules) }
 
     context 'with a list of files and initializing analysed modules with pre existing values' do
-      let(:paths) { %w[test/samples/empty.rb test/samples/unparsable.rb] }
+      let(:paths) { %w[test/samples/empty.rb test/samples/no_methods.rb] }
       let(:analysed_modules) do
         [RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/empty.rb'), name: 'Empty'),
-         RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/unparsable.rb'), name: 'Unparsable')]
+         RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/no_methods.rb'), name: 'Unparsable')]
       end
 
       it 'registers one AnalysedModule element per existent file' do
         subject.count.must_equal 2
         subject.where(['test/samples/empty.rb']).count.must_equal 1
-        subject.where(['test/samples/unparsable.rb']).count.must_equal 1
+        subject.where(['test/samples/no_methods.rb']).count.must_equal 1
       end
     end
   end
