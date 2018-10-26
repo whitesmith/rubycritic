@@ -98,7 +98,7 @@ module RubyCritic
       def critique(branch)
         module_collection = AnalysersRunner.new(paths).run
         Config.send(:"#{branch}_collection=", module_collection)
-        RevisionComparator.new(paths).set_statuses(module_collection)
+        RevisionComparator.new(paths).statuses = module_collection
       end
     end
   end

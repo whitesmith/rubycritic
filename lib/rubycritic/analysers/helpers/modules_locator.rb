@@ -13,7 +13,7 @@ module RubyCritic
     end
 
     def names
-      names = node.get_module_names
+      names = node.module_names
       if names.empty?
         name_from_path
       else

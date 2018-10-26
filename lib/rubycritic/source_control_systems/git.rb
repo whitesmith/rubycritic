@@ -21,7 +21,7 @@ module RubyCritic
       end
 
       def self.supported?
-        git('branch 2>&1') && $?.success?
+        git('branch 2>&1') && $CHILD_STATUS.success?
       end
 
       def self.to_s
@@ -37,7 +37,7 @@ module RubyCritic
       end
 
       def revision?
-        head_reference && $?.success?
+        head_reference && $CHILD_STATUS.success?
       end
 
       def head_reference

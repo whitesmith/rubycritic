@@ -3,7 +3,7 @@
 require 'minitest/autorun'
 require 'minitest/around/spec'
 require 'minitest/pride'
-require 'mocha/mini_test'
+require 'mocha/minitest'
 require 'ostruct'
 require 'diff/lcs'
 

@@ -89,7 +89,7 @@ TooManyStatements:
   exclude:
   - RubyCritic::RakeTask#initialize
   - RubyCritic::Analyser::Complexity#run
-  - Parser::AST::Node#get_module_names
+  - Parser::AST::Node#module_names
   - RubyCritic::Analyser::FlaySmells#run
   - RubyCritic::Cli::Application#execute
   - RubyCritic::Cli::Options#parse

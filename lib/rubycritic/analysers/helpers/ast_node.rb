@@ -21,27 +21,31 @@ module Parser
         end
       end
 
-      def get_module_names
+      def module_names
         ast_node_children = children.select do |child|
           child.is_a?(Parser::AST::Node)
         end
 
-        children_modules = ast_node_children.flat_map(&:get_module_names)
+        children_modules = ast_node_children.flat_map(&:module_names)
 
         if MODULE_TYPES.include?(type)
-          if children_modules.empty?
-            [module_name]
-          else
-            children_modules.map do |children_module|
-              "#{module_name}::#{children_module}"
-            end
-          end
+          module_names_with_children children_modules
         else
           children_modules
         end
       end
 
       private
+
+      def module_names_with_children(children_modules)
+        if children_modules.empty?
+          [module_name]
+        else
+          children_modules.map do |children_module|
+            "#{module_name}::#{children_module}"
+          end
+        end
+      end
 
       def module_name
         name_segments = []
@@ -63,7 +67,7 @@ module RubyCritic
         0
       end
 
-      def get_module_names
+      def module_names
         []
       end
     end
