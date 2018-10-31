@@ -15,8 +15,7 @@ module RubyCritic
 
       def run
         @flay.hashes.each do |structural_hash, nodes|
-          add_smells(structural_hash, nodes)
-          add_duplication(nodes)
+          analyze_modules(structural_hash, nodes)
           print green '.'
         end
         puts ''
@@ -67,13 +66,10 @@ module RubyCritic
         mass / 25
       end
 
-      def add_smells(structural_hash, nodes)
+      def analyze_modules(structural_hash, nodes)
         nodes.map(&:file).uniq.each do |file|
           @analysed_modules[file].smells << create_smell(structural_hash, nodes)
         end
-      end
-
-      def add_duplication(nodes)
         nodes.each do |node|
           @analysed_modules[node.file].duplication += node.mass
         end

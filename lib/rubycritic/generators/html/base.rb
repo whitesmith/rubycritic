@@ -44,6 +44,10 @@ module RubyCritic
         def root_directory
           @root_directory ||= Pathname.new(Config.root)
         end
+
+        def base_binding
+          binding
+        end
       end
     end
   end
