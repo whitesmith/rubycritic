@@ -42,8 +42,8 @@ module RubyCritic
             file_code << Line.new(file_directory, line_text, line_smells).render
           end
 
-          file_body = TEMPLATE.result(get_binding { file_code.join })
-          LAYOUT_TEMPLATE.result(get_binding { file_body })
+          file_body = TEMPLATE.result(base_binding { file_code.join })
+          LAYOUT_TEMPLATE.result(base_binding { file_body })
         end
       end
     end

@@ -15,14 +15,7 @@ module RubyCritic
 
       def run
         @flay.hashes.each do |structural_hash, nodes|
-          smell = create_smell(structural_hash, nodes)
-          nodes.map(&:file).uniq.each do |file|
-            @analysed_modules[file].smells << smell
-          end
-
-          nodes.each do |node|
-            @analysed_modules[node.file].duplication += node.mass
-          end
+          analyze_modules(structural_hash, nodes)
           print green '.'
         end
         puts ''
@@ -71,6 +64,15 @@ module RubyCritic
 
       def cost(mass)
         mass / 25
+      end
+
+      def analyze_modules(structural_hash, nodes)
+        nodes.map(&:file).uniq.each do |file|
+          @analysed_modules[file].smells << create_smell(structural_hash, nodes)
+        end
+        nodes.each do |node|
+          @analysed_modules[node.file].duplication += node.mass
+        end
       end
     end
   end

@@ -1,20 +1,13 @@
 # Offense count: 1
 Metrics/AbcSize:
   Exclude:
-    - 'lib/rubycritic/analysers/smells/flay.rb'
     - 'lib/rubycritic/cli/options.rb'
 
 # Offense count: 2
 # Configuration parameters: CountComments.
 Metrics/MethodLength:
   Exclude:
-    - 'lib/rubycritic/analysers/smells/flay.rb'
     - 'lib/rubycritic/core/analysed_module.rb'
-
-# Offense count: 1
-Naming/AccessorMethodName:
-  Exclude:
-    - 'lib/rubycritic/generators/html/base.rb'
 
 # Offense count: 1
 Style/ClassVars:

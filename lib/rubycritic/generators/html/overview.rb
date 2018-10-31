@@ -29,8 +29,8 @@ module RubyCritic
         end
 
         def render
-          index_body = TEMPLATE.result(get_binding)
-          LAYOUT_TEMPLATE.result(get_binding { index_body })
+          index_body = TEMPLATE.result(base_binding)
+          LAYOUT_TEMPLATE.result(base_binding { index_body })
         end
       end
     end
