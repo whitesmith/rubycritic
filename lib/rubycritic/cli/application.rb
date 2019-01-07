@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rubycritic'
+require 'rubycritic/browser'
 require 'rubycritic/cli/options'
 require 'rubycritic/command_factory'
 

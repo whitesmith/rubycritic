@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'optparse'
-require 'rubycritic/browser'
 
 module RubyCritic
   module Cli
