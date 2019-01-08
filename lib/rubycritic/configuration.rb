@@ -15,14 +15,14 @@ module RubyCritic
     def set(options)
       self.mode = options[:mode] || :default
       self.root = options[:root] || 'tmp/rubycritic'
-      self.formats = options[:formats] || [:html]
-      self.deduplicate_symlinks = options[:deduplicate_symlinks] || false
-      self.suppress_ratings = options[:suppress_ratings] || false
+      self.format = options[:formats] || [:html]
+      self.deduplicate_symlinks = options[:deduplicate_symlinks]
+      self.suppress_ratings = options[:suppress_ratings]
       self.open_with = options[:open_with]
       self.no_browser = options[:no_browser]
       self.base_branch = options[:base_branch]
       self.feature_branch = options[:feature_branch]
-      self.threshold_score = options[:threshold_score]
+      self.threshold_score = options[:threshold_score].to_i
     end
 
     def root=(path)

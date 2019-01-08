@@ -2,6 +2,7 @@
 Metrics/AbcSize:
   Exclude:
     - 'lib/rubycritic/cli/options/argv.rb'
+    - 'lib/rubycritic/configuration.rb'
 
 # Offense count: 1
 Metrics/LineLength:

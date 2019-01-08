@@ -91,7 +91,11 @@ module RubyCritic
             base_branch: base_branch,
             feature_branch: feature_branch,
             threshold_score: threshold_score
+<<<<<<< HEAD
           }
+=======
+          }.compact
+>>>>>>> Add parsing config file
         end
         # rubocop:enable Metrics/MethodLength
 

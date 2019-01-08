@@ -11,7 +11,7 @@ module RubyCritic
     class Default < Base
       def initialize(options)
         super
-        @paths = options[:paths]
+        @paths = options[:paths] || ['.']
         Config.source_control_system = SourceControlSystem::Base.create
       end
 

@@ -125,6 +125,25 @@ $ rubycritic --help
 | `--suppress-ratings`        | Suppress letter ratings                                                                        |
 | `--no-browser`              | Do not open html report with browser                                                           |
 
+You also can use a config file. Just create a `.rubycritic.yml` on your project root path.
+
+Here are one example:
+```
+mode_ci:
+  enabled: true # default is false
+  branch: 'production' # default is master
+branch: 'production' # default is master
+path: '/tmp/mycustompath' # Set path where report will be saved (tmp/rubycritic by default)
+threshhold_score: 10 # default is 0
+deduplicate_symlinks: true # default is false
+suppress_ratings: true # default is false
+no_browser: true # default is false
+format: console # Available values are: html, json, console, lint. Default value is html.
+minimum_score: 95 # default is 0
+paths: # Files to analyse.
+  - 'app/controllers/'
+  - 'app/models/'
+```
 
 ### Analyzer Configuration
 

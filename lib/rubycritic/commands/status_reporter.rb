@@ -29,7 +29,7 @@ module RubyCritic
       end
 
       def satisfy_minimum_score_rule
-        score >= @options[:minimum_score]
+        score >= @options[:minimum_score].to_f
       end
 
       def update_status_message
