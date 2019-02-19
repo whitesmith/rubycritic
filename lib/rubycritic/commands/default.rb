@@ -26,7 +26,10 @@ module RubyCritic
       end
 
       def report(analysed_modules)
-        Reporter.generate_report(analysed_modules)
+        Config.formats.each do |format|
+          Reporter.generate_report(analysed_modules, format)
+        end
+
         status_reporter.score = analysed_modules.score
       end
 

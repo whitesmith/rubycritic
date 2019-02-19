@@ -9,10 +9,12 @@ module RubyCritic
       def initialize(argv)
         @argv = argv
         self.parser = OptionParser.new
+        self.formats = []
       end
 
       # rubocop:disable Metrics/MethodLength
       def parse
+        tmp_formats = []
         parser.new do |opts|
           opts.banner = 'Usage: rubycritic [options] [paths]'
 
@@ -40,7 +42,7 @@ module RubyCritic
             '  console',
             '  lint'
           ) do |format|
-            self.format = format
+            tmp_formats << format
           end
 
           opts.on('-s', '--minimum-score [MIN_SCORE]', 'Set a minimum score') do |min_score|
@@ -74,6 +76,7 @@ module RubyCritic
             self.mode = :help
           end
         end.parse!(@argv)
+        self.formats = tmp_formats
         self
       end
 
@@ -81,7 +84,7 @@ module RubyCritic
         {
           mode: mode,
           root: root,
-          format: format,
+          formats: formats,
           deduplicate_symlinks: deduplicate_symlinks,
           paths: paths,
           suppress_ratings: suppress_ratings,
@@ -97,7 +100,7 @@ module RubyCritic
 
       private
 
-      attr_accessor :mode, :root, :format, :deduplicate_symlinks,
+      attr_accessor :mode, :root, :formats, :deduplicate_symlinks,
                     :suppress_ratings, :minimum_score, :no_browser,
                     :parser, :base_branch, :feature_branch, :threshold_score
       def paths
