@@ -9,7 +9,7 @@ AllCops:
     - 'test/samples/**/*'
     - 'tmp/**/*'
     - 'vendor/**/*'
-  TargetRubyVersion: 2.1
+  TargetRubyVersion: 2.3
 
 Metrics/BlockLength:
   Enabled: false

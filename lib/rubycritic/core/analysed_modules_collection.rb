@@ -68,7 +68,7 @@ module RubyCritic
 
     def average_cost
       num_modules = @modules.size
-      if num_modules > 0
+      if num_modules.positive?
         map { |mod| limited_cost_for(mod) }.reduce(:+) / num_modules.to_f
       else
         0.0
