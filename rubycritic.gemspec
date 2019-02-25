@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'RubyCritic is a Ruby code quality reporter'
   spec.homepage      = 'https://github.com/whitesmith/rubycritic'
   spec.license       = 'MIT'
-  spec.required_ruby_version = '>= 2.1.0'
+  spec.required_ruby_version = '>= 2.3.0'
 
   spec.files = [
     'CHANGELOG.md',
@@ -41,7 +41,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'virtus', '~> 1.0'
 
   spec.add_development_dependency 'aruba', '~> 0.12', '>= 0.12.0'
-  spec.add_development_dependency 'bundler', '~> 1.3', '>= 1.3.0'
+  spec.add_development_dependency 'bundler', '~> 2.0', '>= 2.0.0'
   spec.add_development_dependency 'byebug', '~> 9.0', '>= 8.0'
   spec.add_development_dependency 'cucumber', '~> 3.0', '>= 2.2.0'
   spec.add_development_dependency 'diff-lcs', '~> 1.3'

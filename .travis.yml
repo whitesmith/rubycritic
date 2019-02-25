@@ -3,22 +3,22 @@ language: ruby
 cache:
   bundler: true
 before_install:
+  - gem update --system
   - gem install bundler
 matrix:
   include:
-    - rvm: 2.1.0
-    - rvm: 2.1
-    - rvm: 2.2
+    - rvm: 2.3.0
     - rvm: 2.3
     - rvm: 2.4
     - rvm: 2.5
+    - rvm: 2.6
     - rvm: ruby-head
-    - rvm: jruby-9.1.8.0
+    - rvm: jruby-9.1.17.0
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: rbx-3
   allow_failures:
     - rvm: ruby-head
-    - rvm: jruby-9.1.8.0
+    - rvm: jruby-9.1.17.0
     - rvm: rbx-3
   fast_finish: true
 
