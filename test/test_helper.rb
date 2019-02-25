@@ -23,12 +23,29 @@ end
 def with_cloned_fs
   FakeFS do
     begin
-      config = File.expand_path('..', __dir__)
-      FakeFS::FileSystem.clone(config)
-      Dir.chdir(config)
+      FakeFS::FileSystem.clone(PathHelper.project_path)
+
+      # reek schema is required to init reek
+      FakeFS::FileSystem.clone(PathHelper.reek_schema_path)
+
+      Dir.chdir(PathHelper.project_path)
       yield
     ensure
       FakeFS::FileSystem.clear
+    end
+  end
+end
+
+# This class is to encapsulate avoid specs class called those paths methods accidentally
+module PathHelper
+  class << self
+    def reek_schema_path
+      reek_path = Gem.loaded_specs['reek'].full_gem_path
+      reek_path + '/lib/reek/configuration/schema.yml'
+    end
+
+    def project_path
+      File.expand_path('..', __dir__)
     end
   end
 end

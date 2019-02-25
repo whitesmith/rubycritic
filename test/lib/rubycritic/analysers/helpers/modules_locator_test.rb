@@ -28,18 +28,6 @@ describe RubyCritic::ModulesLocator do
       end
     end
 
-    context 'when a file is unparsable' do
-      it 'does not blow up and returns the name of the file titleized' do
-        analysed_module = RubyCritic::AnalysedModule.new(
-          pathname: Pathname.new('test/samples/unparsable.rb'),
-          methods_count: 1
-        )
-        capture_output_streams do
-          RubyCritic::ModulesLocator.new(analysed_module).names.must_equal ['Unparsable']
-        end
-      end
-    end
-
     context 'when a file has no methods' do
       it 'returns the names of all the classes and modules inside the file' do
         analysed_module = RubyCritic::AnalysedModule.new(

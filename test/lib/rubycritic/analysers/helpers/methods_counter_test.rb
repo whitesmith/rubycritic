@@ -19,9 +19,9 @@ describe RubyCritic::MethodsCounter do
       end
     end
 
-    context 'when a file is unparsable' do
+    context 'when a file has no method' do
       it 'does not blow up and returns 0 as the number of methods' do
-        analysed_module = AnalysedModuleDouble.new(path: 'test/samples/unparsable.rb')
+        analysed_module = AnalysedModuleDouble.new(path: 'test/samples/no_methods.rb')
         capture_output_streams do
           RubyCritic::MethodsCounter.new(analysed_module).count.must_equal 0
         end
