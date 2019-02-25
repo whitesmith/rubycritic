@@ -16,6 +16,7 @@ module Parser
       def recursive_children
         children.each do |child|
           next unless child.is_a?(Parser::AST::Node)
+
           yield child
           child.recursive_children { |grand_child| yield grand_child }
         end

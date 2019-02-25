@@ -63,6 +63,7 @@ module RubyCritic
         modified_files = `git diff --name-status #{Config.base_branch} #{Config.feature_branch}`
         modified_files.split("\n").map do |line|
           next if line.start_with?('D')
+
           file_name = line.split("\t")[1]
           file_name
         end.compact

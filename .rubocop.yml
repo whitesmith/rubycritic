@@ -1,10 +1,5 @@
 AllCops:
   DisplayCopNames: true
-  Include:
-    - '**/*.gemspec'
-    - '**/*.rake'
-    - '**/Gemfile'
-    - '**/Rakefile'
   Exclude:
     - 'test/samples/**/*'
     - 'tmp/**/*'
