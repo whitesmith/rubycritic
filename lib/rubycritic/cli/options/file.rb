@@ -31,7 +31,7 @@ module RubyCritic
             base_branch: base_branch,
             feature_branch: feature_branch,
             threshold_score: threshold_score
-          }.compact
+          }
         end
         # rubocop:enable Metrics/MethodLength
 
