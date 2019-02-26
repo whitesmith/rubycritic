@@ -15,7 +15,7 @@ module RubyCritic
     def set(options)
       self.mode = options[:mode] || :default
       self.root = options[:root] || 'tmp/rubycritic'
-      self.format = options[:formats] || [:html]
+      self.formats = options[:formats] || [:html]
       self.deduplicate_symlinks = options[:deduplicate_symlinks]
       self.suppress_ratings = options[:suppress_ratings]
       self.open_with = options[:open_with]

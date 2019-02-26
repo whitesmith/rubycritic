@@ -22,7 +22,7 @@ module RubyCritic
           {
             mode: mode,
             root: root,
-            format: format,
+            formats: formats,
             deduplicate_symlinks: deduplicate_symlinks,
             paths: paths,
             suppress_ratings: suppress_ratings,
@@ -75,9 +75,11 @@ module RubyCritic
           value_for(options['no_browser'])
         end
 
-        def format
-          value = options['format']
-          value if %w[html json console lint].include?(value)
+        def formats
+          formats = options['formats'] || []
+          formats.select do |format|
+            %w[html json console lint].include?(format)
+          end
         end
 
         def minimum_score
