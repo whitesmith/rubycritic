@@ -31,6 +31,8 @@ module RubyCritic
             self.threshold_score = Integer(threshold_score)
           end
 
+          formats = []
+          self.formats = formats
           opts.on(
             '-f', '--format [FORMAT]',
             %i[html json console lint],
@@ -40,7 +42,7 @@ module RubyCritic
             '  console',
             '  lint'
           ) do |format|
-            self.format = format
+            formats << format
           end
 
           opts.on('-s', '--minimum-score [MIN_SCORE]', 'Set a minimum score') do |min_score|
@@ -81,7 +83,7 @@ module RubyCritic
         {
           mode: mode,
           root: root,
-          format: format,
+          formats: formats,
           deduplicate_symlinks: deduplicate_symlinks,
           paths: paths,
           suppress_ratings: suppress_ratings,
@@ -97,7 +99,7 @@ module RubyCritic
 
       private
 
-      attr_accessor :mode, :root, :format, :deduplicate_symlinks,
+      attr_accessor :mode, :root, :formats, :deduplicate_symlinks,
                     :suppress_ratings, :minimum_score, :no_browser,
                     :parser, :base_branch, :feature_branch, :threshold_score
       def paths

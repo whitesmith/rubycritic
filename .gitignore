@@ -15,6 +15,12 @@ spec/reports
 test/tmp
 test/version_tmp
 test/samples/report.json
+test/samples/lint.txt
+test/samples/overview.html   
+test/samples/code_index.html
+test/samples/smells_index.html
+test/samples/test
+test/samples/assets
 tmp
 .idea/
 .ruby-gemset
