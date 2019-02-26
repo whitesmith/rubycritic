@@ -1,7 +1,13 @@
 # Offense count: 1
 Metrics/AbcSize:
   Exclude:
-    - 'lib/rubycritic/cli/options.rb'
+    - 'lib/rubycritic/cli/options/argv.rb'
+    - 'lib/rubycritic/configuration.rb'
+
+# Offense count: 1
+Metrics/LineLength:
+  Exclude:
+    - 'lib/rubycritic/cli/options/argv.rb'
 
 # Offense count: 2
 # Configuration parameters: CountComments.

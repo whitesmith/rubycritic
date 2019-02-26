@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rubycritic'
+require 'rubycritic/browser'
 require 'rubycritic/cli/options'
 require 'rubycritic/command_factory'
 
@@ -15,9 +16,9 @@ module RubyCritic
       end
 
       def execute
-        parsed_options = @options.parse
+        parsed_options = @options.parse.to_h
 
-        reporter = RubyCritic::CommandFactory.create(parsed_options.to_h).execute
+        reporter = RubyCritic::CommandFactory.create(parsed_options).execute
         print(reporter.status_message)
         reporter.status
       rescue OptionParser::InvalidOption => error

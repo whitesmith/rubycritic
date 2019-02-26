@@ -93,7 +93,7 @@ detectors:
     - Parser::AST::Node#module_names
     - RubyCritic::Analyser::FlaySmells#run
     - RubyCritic::Cli::Application#execute
-    - RubyCritic::Cli::Options#parse
+    - RubyCritic::Cli::Options::Argv#parse
     - RubyCritic::CommandFactory#self.command_class
     - RubyCritic::Configuration#set
     - RubyCritic::Generator::Html::CodeFile#render
@@ -114,7 +114,7 @@ detectors:
     exclude:
     - Parser::AST::Node#recursive_children
     - RubyCritic::Analyser::FlaySmells#run
-    - RubyCritic::Cli::Options#parse
+    - RubyCritic::Cli::Options::Argv#parse
     - RubyCritic::Generator::HtmlReport#create_directories_and_files
     - RubyCritic::AnalysedModulesCollection#initialize
   UtilityFunction:
@@ -125,6 +125,7 @@ detectors:
     - RubyCritic::Analyser::FlogSmells#type
     - RubyCritic::Analyser::ReekSmells#smell_locations
     - RubyCritic::Cli::Application#print
+    - RubyCritic::Cli::Options::File#value_for
     - RubyCritic::AnalysedModulesCollection#limited_cost_for
     - RubyCritic::Generator::Html::SmellsIndex#analysed_module_names
     - RubyCritic::Generator::HtmlReport#copy_assets_to_report_directory
@@ -142,7 +143,6 @@ detectors:
     - RubyCritic::Command::Compare#threshold_values_set?
   TooManyInstanceVariables:
     exclude:
-    - RubyCritic::Cli::Options
     - RubyCritic::Generator::Html::CodeFile
     - RubyCritic::Generator::Html::Overview
     - RubyCritic::Generator::Html::SmellsIndex
