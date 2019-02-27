@@ -116,7 +116,7 @@ $ rubycritic --help
 |-----------------------------|------------------------------------------------------------------------------------------------|
 | `-v` / `--version`          | Displays the current version and exits                                                         |
 | `-p` / `--path`             | Set path where report will be saved (tmp/rubycritic by default)                                |
-| `-f` / `--format`           | Report smells in the given format: `html` (default; will open in a browser), `json`, `console` |
+| `-f` / `--format`           | Report smells in the given format(s) (see below)                                               |
 | `-s` / `--minimum-score`    | Set a minimum score (FLOAT: ex: 96.28), default: 0                                             |
 | `-m` / `--mode-ci`          | Use CI mode. Faster, analyses diffs w.r.t base_branch (default: master), see -b                |
 | `-b` / `--branch`           | Set branch to compare                                                                          |
@@ -125,10 +125,16 @@ $ rubycritic --help
 | `--suppress-ratings`        | Suppress letter ratings                                                                        |
 | `--no-browser`              | Do not open html report with browser                                                           |
 
+### Available output formats:
+- `html` (default; will open in a browser)
+- `json`
+- `console`
+- `lint`
+
 You also can use a config file. Just create a `.rubycritic.yml` on your project root path.
 
 Here are one example:
-```
+```yml
 mode_ci:
   enabled: true # default is false
   branch: 'production' # default is master
@@ -207,11 +213,10 @@ end
 
 RubyCritic is supporting Ruby versions:
 
-* 2.1
-* 2.2
 * 2.3
 * 2.4
 * 2.5
+* 2.6
 
 
 ## Improving RubyCritic
