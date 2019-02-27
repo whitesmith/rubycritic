@@ -1,6 +1,14 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v3.5.2...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.0.0...master)
+
+# 4.0.0 / 2019-02-27 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.5.1...v4.0.0)
 
 * [FEATURE] Allow generating reports in multiple formats in one run (by [@katafrakt])
+* [FEATURE] Allow to accept a config file (by [@mfbmina])
+* [CHANGE] Update `reek` to 5.3 (by [@taitran19][] and [@onumis][])
+* [CHANGE] Update `parser` to 2.6.0 (by [@onumis][])
+* [CHANGE] Update `tty-which` to 0.4.0 (by [@onumis][])
+* [CHANGE] Drop support for ruby 2.1 and 2.2 (by [@onumis][])
+* [CHANGE] Fix rubocop offenses (by [@AllanSiqueira][] and [@harman28][])
 
 # 3.5.2 / 2018-09-27 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.5.1...v3.5.2)
 
@@ -255,3 +263,7 @@
 [@HemanthMudalaiah]: https://github.com/HemanthMudalaiah
 [@SuperSandro2000]: https://github.com/SuperSandro2000
 [@antoineLeclercq]: https://github.com/antoineLeclercq
+[@mfbmina]: https://github.com/mfbmina
+[@taitran19]: https://github.com/taitran19
+[@AllanSiqueira]: https://github.com/AllanSiqueira
+[@harman28]: https://github.com/harman28
