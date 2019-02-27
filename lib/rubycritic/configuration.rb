@@ -45,13 +45,11 @@ module RubyCritic
     end
 
     def self.compare_branches_mode?
-      mode = Config.mode
-      mode == :compare_branches || mode == :ci
+      %i[compare_branches ci].include?(Config.mode)
     end
 
     def self.build_mode?
-      mode = Config.mode
-      (mode == :compare_branches || mode == :ci) && !Config.no_browser
+      !Config.no_browser && %i[compare_branches ci].include?(Config.mode)
     end
 
     def self.method_missing(method, *args, &block)

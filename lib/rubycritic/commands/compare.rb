@@ -70,6 +70,7 @@ module RubyCritic
       # two branches is greater than threshold value
       def compare_threshold
         return unless mark_build_fail?
+
         print("Threshold: #{Config.threshold_score}\n")
         print("Difference: #{(Config.base_branch_score - Config.feature_branch_score).abs}\n")
         abort('The score difference between the two branches is over the threshold.')

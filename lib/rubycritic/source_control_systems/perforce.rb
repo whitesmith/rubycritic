@@ -35,6 +35,7 @@ module RubyCritic
         root_size = root.size
         target_size = target.size
         return false if target_size < root_size
+
         target[0...root_size] == root &&
           (target_size == root_size || [File::ALT_SEPARATOR, File::SEPARATOR].include?(target[root_size]))
       end
