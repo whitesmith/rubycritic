@@ -5,13 +5,14 @@ require 'optparse'
 module RubyCritic
   module Cli
     class Options
+      # rubocop:disable Metrics/ClassLength
       class Argv
         def initialize(argv)
           @argv = argv
           self.parser = OptionParser.new
         end
 
-        # rubocop:disable Metrics/MethodLength
+        # rubocop:disable Metrics/MethodLength,Metrics/AbcSize
         def parse
           parser.new do |opts|
             opts.banner = 'Usage: rubycritic [options] [paths]'
@@ -43,9 +44,26 @@ module RubyCritic
               '  html (default; will open in a browser)',
               '  json',
               '  console',
-              '  lint'
+              '  lint',
+              'Multiple formats are supported.'
             ) do |format|
               formats << format
+            end
+
+            formatters = []
+            self.formatters = formatters
+            opts.on(
+              '--formatter [REQUIREPATH]:[CLASSNAME]|[CLASSNAME]',
+              'Instantiate a given class as formatter and call report for reporting.',
+              'Two ways are possible to load the formatter.',
+              'If the class is not autorequired the REQUIREPATH can be given together',
+              'with the CLASSNAME to be loaded seperated by a :.',
+              'Example: rubycritic/markdown/reporter.rb:RubyCritic::MarkDown::Reporter',
+              'or if the file is already required the CLASSNAME is enough',
+              'Example: RubyCritic::MarkDown::Reporter',
+              'Multiple formatters are supported.'
+            ) do |formatter|
+              formatters << formatter
             end
 
             opts.on('-s', '--minimum-score [MIN_SCORE]', 'Set a minimum score') do |min_score|
@@ -86,6 +104,7 @@ module RubyCritic
             mode: mode,
             root: root,
             formats: formats,
+            formatters: formatters,
             deduplicate_symlinks: deduplicate_symlinks,
             paths: paths,
             suppress_ratings: suppress_ratings,
@@ -97,11 +116,11 @@ module RubyCritic
             threshold_score: threshold_score
           }
         end
-        # rubocop:enable Metrics/MethodLength
+        # rubocop:enable Metrics/MethodLength,Metrics/AbcSize
 
         private
 
-        attr_accessor :mode, :root, :formats, :deduplicate_symlinks,
+        attr_accessor :mode, :root, :formats, :formatters, :deduplicate_symlinks,
                       :suppress_ratings, :minimum_score, :no_browser,
                       :parser, :base_branch, :feature_branch, :threshold_score
         def paths
@@ -112,6 +131,7 @@ module RubyCritic
           self.feature_branch = SourceControlSystem::Git.current_branch
         end
       end
+      # rubocop:enable Metrics/ClassLength
     end
   end
 end
