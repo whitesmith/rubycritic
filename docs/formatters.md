@@ -48,7 +48,7 @@ Taking the above example and combining it with the *Rakefile* could look as foll
 require 'my_formatter'
 RubyCritic::RakeTask.new do |task|
   ..
-  task.options = %(--formatter MyFormatter)
+  task.options = %(--custom-format MyFormatter)
   ..
 end
 ```

@@ -53,7 +53,7 @@ module RubyCritic
             formatters = []
             self.formatters = formatters
             opts.on(
-              '--formatter [REQUIREPATH]:[CLASSNAME]|[CLASSNAME]',
+              '--custom-format [REQUIREPATH]:[CLASSNAME]|[CLASSNAME]',
               'Instantiate a given class as formatter and call report for reporting.',
               'Two ways are possible to load the formatter.',
               'If the class is not autorequired the REQUIREPATH can be given together',

@@ -112,26 +112,28 @@ For a full list of the command-line options run:
 $ rubycritic --help
 ```
 
-| Command flag                        | Description                                                                                    |
-|-------------------------------------|------------------------------------------------------------------------------------------------|
-| `-v` / `--version`                  | Displays the current version and exits                                                         |
-| `-p` / `--path`                     | Set path where report will be saved (tmp/rubycritic by default)                                |
-| `-f` / `--format`                   | Report smells in the given format: `html` (default; will open in a browser), `json`, `console` |
-| `--formatter requirepath:classname` | Load and instantiate the formatter (reporter) with the given classname and load the            |
-|                                     | requirepath upfront.                                                                           |
-| `-s` / `--minimum-score`            | Set a minimum score (FLOAT: ex: 96.28), default: 0                                             |
-| `-m` / `--mode-ci`                  | Use CI mode. Faster, analyses diffs w.r.t base_branch (default: master), see -b                |
-| `-b` / `--branch`                   | Set branch to compare                                                                          |
-| `-t` / `--maximum-decrease`         | Set a threshold for score difference between two branches (works only with -b), default: 0     |
-| `--deduplicate-symlinks`            | De-duplicate symlinks based on their final target                                              |
-| `--suppress-ratings`                | Suppress letter ratings                                                                        |
-| `--no-browser`                      | Do not open html report with browser                                                           |
+| Command flag                        | Description                                                     |
+|-------------------------------------|-----------------------------------------------------------------|
+| `-v` / `--version`                  | Displays the current version and exits                          |
+| `-p` / `--path`                     | Set path where report will be saved (tmp/rubycritic by default) |
+| `-f` / `--format`                   | Report smells in the given format(s)<sup>1</sup>                |
+| `--custom-format path:classname`    | Load and instantiate custom formatter(s)<sup>2</sup>            |
+| `-s` / `--minimum-score`            | Set a minimum score (FLOAT: ex: 96.28), default: 0              |
+| `-m` / `--mode-ci`                  | Use CI mode<sup>3</sup>                                         |
+| `-b` / `--branch`                   | Set branch to compare                                           |
+| `-t` / `--maximum-decrease`         | Threshold for score difference between two branches<sup>4</sup> |
+| `--deduplicate-symlinks`            | De-duplicate symlinks based on their final target               |
+| `--suppress-ratings`                | Suppress letter ratings                                         |
+| `--no-browser`                      | Do not open html report with browser                            |
 
-### Available output formats:
+1. Available output formats:
 - `html` (default; will open in a browser)
 - `json`
 - `console`
 - `lint`
+2. See [custom formatters docs](/docs/formatters.md)
+3. Faster, analyses diffs w.r.t base_branch (default: master), see `-b`
+4. Works only with `-b`, default: 0
 
 You also can use a config file. Just create a `.rubycritic.yml` on your project root path.
 
