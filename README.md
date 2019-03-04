@@ -118,7 +118,7 @@ $ rubycritic --help
 | `-p` / `--path`                     | Set path where report will be saved (tmp/rubycritic by default)                                |
 | `-f` / `--format`                   | Report smells in the given format: `html` (default; will open in a browser), `json`, `console` |
 | `--formatter requirepath:classname` | Load and instantiate the formatter (reporter) with the given classname and load the            |
-|                                     | requirepath upfront.                                                                           | 
+|                                     | requirepath upfront.                                                                           |
 | `-s` / `--minimum-score`            | Set a minimum score (FLOAT: ex: 96.28), default: 0                                             |
 | `-m` / `--mode-ci`                  | Use CI mode. Faster, analyses diffs w.r.t base_branch (default: master), see -b                |
 | `-b` / `--branch`                   | Set branch to compare                                                                          |
