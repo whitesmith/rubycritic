@@ -16,7 +16,6 @@ module RubyCritic
       def parse
         argv_options.parse
         file_options.parse
-
         self
       end
 

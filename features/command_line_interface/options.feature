@@ -29,6 +29,16 @@ Feature: RubyCritic can be controlled using command-line options
                                              json
                                              console
                                              lint
+                                           Multiple formats are supported.
+              --formatter [REQUIREPATH]:[CLASSNAME]|[CLASSNAME]
+                                           Instantiate a given class as formatter and call report for reporting.
+                                           Two ways are possible to load the formatter.
+                                           If the class is not autorequired the REQUIREPATH can be given together
+                                           with the CLASSNAME to be loaded seperated by a :.
+                                           Example: rubycritic/markdown/reporter.rb:RubyCritic::MarkDown::Reporter
+                                           or if the file is already required the CLASSNAME is enough
+                                           Example: RubyCritic::MarkDown::Reporter
+                                           Multiple formatters are supported.
           -s, --minimum-score [MIN_SCORE]  Set a minimum score
           -m, --mode-ci [BASE_BRANCH]      Use CI mode (faster, analyses diffs w.r.t base_branch (default: master))
               --deduplicate-symlinks       De-duplicate symlinks based on their final target

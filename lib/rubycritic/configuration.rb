@@ -5,7 +5,7 @@ require 'rubycritic/source_control_systems/base'
 module RubyCritic
   class Configuration
     attr_reader :root
-    attr_accessor :source_control_system, :mode, :formats, :deduplicate_symlinks,
+    attr_accessor :source_control_system, :mode, :formats, :formatters, :deduplicate_symlinks,
                   :suppress_ratings, :open_with, :no_browser, :base_branch,
                   :feature_branch, :base_branch_score, :feature_branch_score,
                   :base_root_directory, :feature_root_directory,
@@ -15,7 +15,6 @@ module RubyCritic
     def set(options)
       self.mode = options[:mode] || :default
       self.root = options[:root] || 'tmp/rubycritic'
-      self.formats = options[:formats] || [:html]
       self.deduplicate_symlinks = options[:deduplicate_symlinks]
       self.suppress_ratings = options[:suppress_ratings]
       self.open_with = options[:open_with]
@@ -23,6 +22,12 @@ module RubyCritic
       self.base_branch = options[:base_branch]
       self.feature_branch = options[:feature_branch]
       self.threshold_score = options[:threshold_score].to_i
+      setup_formats(options)
+    end
+
+    def setup_formats(options)
+      self.formats = options[:formats] || [:html]
+      self.formatters = options[:formatters] || []
     end
 
     def root=(path)
