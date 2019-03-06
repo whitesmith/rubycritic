@@ -18,7 +18,10 @@ class RubyCriticWorld
   end
 
   def rubycritic(args)
-    run_simple("rubycritic #{args}  --no-browser", false)
+    run_command_and_stop(
+      "rubycritic #{args}  --no-browser",
+      fail_on_error: false
+    )
   end
 
   def rake(name, task_def)
@@ -28,7 +31,10 @@ class RubyCriticWorld
 
     RUBY
     write_file 'Rakefile', header + task_def
-    run_simple("rake #{name}", false)
+    run_command_and_stop(
+      "rake #{name}",
+      fail_on_error: false
+    )
   end
 end
 
