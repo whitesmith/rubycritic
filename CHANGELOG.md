@@ -1,4 +1,9 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.0.0...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.0.1...master)
+
+# 4.0.1 / 2019-03-12 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.0.0...v4.0.1)
+
+* [FEATUE] Allow passing formatters from the outside (by [@marcgrimme][] and [@onumis][])
+* [CHANGE] Fix aruba deprecation warning
 
 # 4.0.0 / 2019-02-27 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.5.1...v4.0.0)
 
