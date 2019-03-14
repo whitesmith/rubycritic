@@ -26,7 +26,8 @@ module RubyCritic
     end
 
     def setup_formats(options)
-      self.formats = options[:formats] || [:html]
+      formats = options[:formats].to_a
+      self.formats = formats.empty? ? [:html] : formats
       self.formatters = options[:formatters] || []
     end
 
