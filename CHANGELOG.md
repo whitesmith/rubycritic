@@ -1,4 +1,8 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.0.1...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.0.2...master)
+
+# 4.0.2 / 2019-03-14 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.0.1...v4.0.2)
+
+* [BUGFIX] Fix generating the default html report (by [@lightalloy][])
 
 # 4.0.1 / 2019-03-12 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.0.0...v4.0.1)
 
@@ -272,3 +276,4 @@
 [@taitran19]: https://github.com/taitran19
 [@AllanSiqueira]: https://github.com/AllanSiqueira
 [@harman28]: https://github.com/harman28
+[@lightalloy]: https://github.com/lightalloy
