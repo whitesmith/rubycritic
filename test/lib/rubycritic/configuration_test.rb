@@ -28,4 +28,14 @@ describe RubyCritic::Configuration do
       RubyCritic::Config.root = @default
     end
   end
+
+  describe '#formats' do
+    before do
+      RubyCritic::Config.set(formats: [])
+    end
+
+    it 'sets html format by default' do
+      RubyCritic::Config.formats.must_equal [:html]
+    end
+  end
 end
