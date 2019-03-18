@@ -1,5 +1,6 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.0.2...master)
 
+* [BUGFIX] Assorted fixes in HTML report (by [@jbampton][])
 * [BUGFIX] Fix duplicate HTML5 DOCTYPE (by [@jbampton][])
 
 # 4.0.2 / 2019-03-14 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.0.1...v4.0.2)
