@@ -23,10 +23,10 @@
             <% if Config.source_control_present? %>
               <div id="churn-vs-complexity-graph-container" class="chart-container"></div>
             <% else %>
-              <div id="churn-error">We can't show you Churn-vs-Complexity graph because this project does not seem to be under a source code management system like git or perforce at the moment. This doesn't mean that anything is wrong, it just means certain features like this one are not avaiable.</div>
+              <div id="churn-error">We can't show you Churn-vs-Complexity graph because this project does not seem to be under a source code management system like git or perforce at the moment. This doesn't mean that anything is wrong, it just means certain features like this one are not available.</div>
             <% end %>
 
-            <script type="text/javascript">
+            <script>
              var turbulenceData = <%= @turbulence_data %>;
              var score = <%= @score %>;
             </script>
