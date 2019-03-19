@@ -21,8 +21,8 @@
         <tbody>
           <% @analysed_modules.each do |analysed_module| %>
             <tr>
-              <td>
-                <% unless Config.suppress_ratings %>
+              <% unless Config.suppress_ratings %>
+                <td>
                   <% if Config.build_mode? %>
                     <% master_analysed_module = Config.base_branch_collection.find(analysed_module.pathname) %>
                     <% if master_analysed_module.cost > analysed_module.cost %>
@@ -34,8 +34,8 @@
                     <% end %>
                   <% end %>
                   <div class="rating <%= analysed_module.rating.to_s.downcase %>"><%= analysed_module.rating %></div>
-                <% end %>
-              </td>
+                </td>
+              <% end %>
               <td>
                 <ul class="nav nav-pills">
                   <li role="presentation" >
