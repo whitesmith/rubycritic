@@ -89,7 +89,7 @@ header {
 .Graph_Cards img {margin-top:30px;}
 .Graph_Cards h4 {color:#A4A4A4;}
 .Summary_Wrapper {display:inline-block;width:100%;}
-.Summary_Title {padding:left:0;}
+.Summary_Title {padding-left:0;}
 .Summary_Title h3 {padding:10px;position:relative;color:#fff;}
 .Summary_Title h3:after {
   content: "";
