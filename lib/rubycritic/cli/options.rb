@@ -19,6 +19,7 @@ module RubyCritic
         self
       end
 
+      # :reek:NilCheck
       def to_h
         file_hash = file_options.to_h
         argv_hash = argv_options.to_h
