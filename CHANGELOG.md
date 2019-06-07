@@ -1,7 +1,13 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.0.2...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.1.0...master)
+
+*
+
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.0.2...v4.1.0)
 
 * [BUGFIX] Assorted fixes in HTML report (by [@jbampton][])
 * [BUGFIX] Fix duplicate HTML5 DOCTYPE (by [@jbampton][])
+* [BUGFIX] Config options getting overwritten by nil argv options (by [@nathanbwright][])
+* [CHANGE] Update Reek dependency to '~> 5.0', '< 6.0' (by [@leksster][])
 
 # 4.0.2 / 2019-03-14 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.0.1...v4.0.2)
 
@@ -281,3 +287,5 @@
 [@harman28]: https://github.com/harman28
 [@lightalloy]: https://github.com/lightalloy
 [@jbampton]: https://github.com/jbampton
+[@nathanbwright]: https://github.com/nathanbwright
+[@leksster]: https://github.com/leksster
