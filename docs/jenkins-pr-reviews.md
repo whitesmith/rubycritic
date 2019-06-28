@@ -15,7 +15,6 @@ For creating comments on PRs we are going to use the [Violation Comments to GitH
 The Violation plugin has parsers for many different formats, and the GoLint one is compatible with the `lint` format created by RubyCritic.
 We're assuming that you use a `Jenkinsfile` for creating a pipeline, but the approach can be adapted to other scenarios.
 
-
 ```groovy
 pipeline {
   agent any

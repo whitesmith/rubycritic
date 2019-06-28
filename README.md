@@ -1,15 +1,14 @@
-RubyCritic
-==========
+# RubyCritic
 
 [![Gem Version](https://badge.fury.io/rb/rubycritic.svg)](http://badge.fury.io/rb/rubycritic)
 [![Build Status](https://travis-ci.org/whitesmith/rubycritic.svg?branch=master)](https://travis-ci.org/whitesmith/rubycritic)
 [![Code Climate](https://codeclimate.com/github/whitesmith/rubycritic/badges/gpa.svg)](https://codeclimate.com/github/whitesmith/rubycritic)
 
-<img src="https://github.com/whitesmith/rubycritic/raw/master/images/logo.png" alt="RubyCritic Icon" align="right" />
+<img src="https://github.com/whitesmith/rubycritic/raw/master/images/logo.png" alt="RubyCritic Icon" align="right">
 
 RubyCritic is a gem that wraps around static analysis gems such as [Reek][1], [Flay][2] and [Flog][3] to provide a quality report of your Ruby code.
 
-**Table of Contents**
+## Table of Contents
 
 - [Overview](#overview)
 - [Getting Started](#getting-started)
@@ -21,7 +20,6 @@ RubyCritic is a gem that wraps around static analysis gems such as [Reek][1], [F
 - [Improving RubyCritic](#improving-rubyCritic)
 - [Contributors](#contributors)
 - [Credits](#credits)
-
 
 ## Overview
 
@@ -68,7 +66,6 @@ This gem provides features such as:
 
 Checkout the `/docs` if you want to read more about our [core metrics](https://github.com/whitesmith/rubycritic/blob/master/docs/core-metrics.md).
 
-
 ## Getting Started
 
 RubyCritic can be installed with the following command:
@@ -89,7 +86,6 @@ And then execute:
 ```bash
 $ bundle
 ```
-
 
 ## Usage
 
@@ -138,6 +134,7 @@ $ rubycritic --help
 You also can use a config file. Just create a `.rubycritic.yml` on your project root path.
 
 Here are one example:
+
 ```yml
 mode_ci:
   enabled: true # default is false
@@ -162,17 +159,15 @@ paths: # Files to analyse.
   project root and `RubyCritic` will respect this configuration.
 * [`flay`](https://github.com/seattlerb/flay): We use `flay`'s default configuration.
 * [`flog`](https://github.com/seattlerb/flog): We use `flog`'s default configuration with a couple of [smaller tweaks](https://github.com/whitesmith/rubycritic/blob/master/lib/rubycritic/analysers/helpers/flog.rb#L5):
-    * `all`: Forces `flog` to report scores on all classes and methods. Without this option `flog` will only give results up to a certain threshold.
-    * `continue`: Makes it so that `flog` does not abort when a ruby file cannot be parsed.
-    * `methods`: Configures `flog` to skip code outside of methods. It prevents `flog` from reporting on the "methods" `private` and `protected`. It also prevents `flog` from reporting on Rails methods like `before_action` and `has_many`.
-
+  * `all`: Forces `flog` to report scores on all classes and methods. Without this option `flog` will only give results up to a certain threshold.
+  * `continue`: Makes it so that `flog` does not abort when a ruby file cannot be parsed.
+  * `methods`: Configures `flog` to skip code outside of methods. It prevents `flog` from reporting on the "methods" `private` and `protected`. It also prevents `flog` from reporting on Rails methods like `before_action` and `has_many`.
 
 ### Alternative Usage Methods
 
 If you're fond of Guard you might like [guard-rubycritic][4]. It automatically analyses your Ruby files as they are modified.
 
 For continuous integration, you can give [Jenkins CI][5] a spin. With it, you can [easily build your own (poor-man's) Code Climate][6]!
-
 
 ### Rake Task
 
@@ -225,7 +220,6 @@ RubyCritic is supporting Ruby versions:
 * 2.5
 * 2.6
 
-
 ## Improving RubyCritic
 
 RubyCritic doesn't have to remain a second choice to other code quality analysis services. Together, we can improve it and continue to build on the great code metric tools that are available in the Ruby ecosystem.
@@ -236,9 +230,7 @@ Similarly, Pull Requests that improve the look and feel of the gem, that tweak t
 
 See RubyCritic's [contributing guidelines](https://github.com/whitesmith/rubycritic/blob/master/CONTRIBUTING.md) about how to proceed.
 
-
 ## Contributors
-
 
 `RubyCritics` initial author was [Guilherme Simões](https://github.com/guilhermesimoes).
 
@@ -247,7 +239,6 @@ The current core team consists of:
 * [Nuno Silva](https://github.com/Onumis)
 * [Lucas Mazza](https://github.com/lucasmazza)
 * [Timo Rößner](https://github.com/troessner)
-
 
 ## Credits
 

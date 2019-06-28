@@ -46,7 +46,6 @@ Each file is represented by a dot. **The closer they are to the bottom-left corn
 But keep in mind that you cannot reduce churn (well... not unless you re-write your repo's history :neckbeard:), so try to keep the dots as close to the bottom as possible.
 Chad made a nice [summary if you want to know more][8] about the meaning behind each quadrant.
 
-
 ## Rating
 
 This is a letter from `A` to `F`, `A` being the best. This serves as a baseline to tell you how *smelly* a file is.
@@ -60,7 +59,6 @@ Generally `A`'s & `B`'s are good enough, `C`'s serve as a warning and `D`'s & `F
 
 The definition of this **cost** varies from tool to tool, but it's always a non-negative number, with high values indicating worse smells.
 The **complexity** of a file also (slightly) affects its final cost.
-
 
 [1]: https://gist.github.com/brynary/21369b5892525e1bd102
 [2]: https://github.com/troessner/reek

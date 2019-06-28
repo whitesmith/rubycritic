@@ -1,6 +1,6 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.1.0...master)
 
-*
+* [FEATURE] Add Markdown linting to the Travis build by using the Rubygem `markdownlint` (by [@jbampton][])
 
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.0.2...v4.1.0)
 
@@ -15,7 +15,7 @@
 
 # 4.0.1 / 2019-03-12 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.0.0...v4.0.1)
 
-* [FEATUE] Allow passing formatters from the outside (by [@marcgrimme][] and [@onumis][])
+* [FEATURE] Allow passing formatters from the outside (by [@marcgrimme][] and [@onumis][])
 * [CHANGE] Fix aruba deprecation warning
 
 # 4.0.0 / 2019-02-27 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.5.1...v4.0.0)
@@ -243,7 +243,6 @@
 # 1.0.0 / 2014-07-13
 
 * Official Release
-
 
 [@LeeXGreen]: https://github.com/LeeXGreen
 [@crackofdusk]: https://github.com/crackofdusk
