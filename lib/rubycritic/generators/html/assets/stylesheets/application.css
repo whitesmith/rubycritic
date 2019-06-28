@@ -277,10 +277,10 @@ header {
   color: #4e4d4d;
   font-weight: bold;
 }
-.table.code th:nth-child(1) {
+.table.code th.center {
   text-align: center;
 }
-.table.code th:nth-child(2) {
+.table.code th.left {
   text-align: left;
 }
 .table.code th {
@@ -291,10 +291,10 @@ header {
 .table td {
   color: #777575;
 }
-.table.code td:nth-child(1) {
+.table.code td.center {
   text-align: center;
 }
-.table.code td:nth-child(2) {
+.table.code td.left {
   text-align: left;
 }
 .table.code td {
