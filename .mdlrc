@@ -1,0 +1,2 @@
+git_recurse true
+rules "~MD004,~MD006,~MD013,~MD014,~MD025,~MD029,~MD032,~MD033,~MD038"
