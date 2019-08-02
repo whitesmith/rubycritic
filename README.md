@@ -145,7 +145,8 @@ threshold_score: 10 # default is 0
 deduplicate_symlinks: true # default is false
 suppress_ratings: true # default is false
 no_browser: true # default is false
-format: console # Available values are: html, json, console, lint. Default value is html.
+formats: # Available values are: html, json, console, lint. Default value is html.
+  - console
 minimum_score: 95 # default is 0
 paths: # Files to analyse.
   - 'app/controllers/'
