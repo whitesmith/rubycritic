@@ -144,7 +144,7 @@ mode_ci:
   branch: 'production' # default is master
 branch: 'production' # default is master
 path: '/tmp/mycustompath' # Set path where report will be saved (tmp/rubycritic by default)
-threshhold_score: 10 # default is 0
+threshold_score: 10 # default is 0
 deduplicate_symlinks: true # default is false
 suppress_ratings: true # default is false
 no_browser: true # default is false
