@@ -10,6 +10,7 @@ module RubyCritic
     # Complexity is reduced by a factor of 25 when calculating cost
     COMPLEXITY_FACTOR = 25.0
 
+    attribute :coverage
     attribute :name
     attribute :smells_count
     attribute :file_location
@@ -42,6 +43,10 @@ module RubyCritic
     def cost
       @cost ||= smells.map(&:cost).inject(0.0, :+) +
                 (complexity / COMPLEXITY_FACTOR)
+    end
+
+    def coverage_rating
+      @coverage_rating ||= Rating.from_cost(100 - coverage)
     end
 
     def rating

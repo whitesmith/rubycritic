@@ -7,6 +7,7 @@ require 'rubycritic/analysers/smells/reek'
 require 'rubycritic/analysers/complexity'
 require 'rubycritic/analysers/churn'
 require 'rubycritic/analysers/attributes'
+require 'rubycritic/analysers/coverage'
 
 module RubyCritic
   class AnalysersRunner
@@ -16,7 +17,8 @@ module RubyCritic
       Analyser::ReekSmells,
       Analyser::Complexity,
       Analyser::Attributes,
-      Analyser::Churn
+      Analyser::Churn,
+      Analyser::Coverage
     ].freeze
 
     def initialize(paths)
