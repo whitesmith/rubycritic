@@ -5,6 +5,7 @@ require 'rubycritic/configuration'
 require 'rubycritic/generators/html/overview'
 require 'rubycritic/generators/html/smells_index'
 require 'rubycritic/generators/html/code_index'
+require 'rubycritic/generators/html/simple_cov_index'
 require 'rubycritic/generators/html/code_file'
 
 module RubyCritic
@@ -39,7 +40,7 @@ module RubyCritic
       end
 
       def generators
-        [overview_generator, code_index_generator, smells_index_generator] + file_generators
+        [overview_generator, code_index_generator, smells_index_generator, simple_cov_index_generator] + file_generators
       end
 
       def overview_generator
@@ -52,6 +53,10 @@ module RubyCritic
 
       def smells_index_generator
         Html::SmellsIndex.new(@analysed_modules)
+      end
+
+      def simple_cov_index_generator
+        Html::SimpleCovIndex.new(@analysed_modules)
       end
 
       def file_generators
