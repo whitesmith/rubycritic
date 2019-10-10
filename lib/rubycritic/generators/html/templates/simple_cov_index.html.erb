@@ -11,32 +11,29 @@
         <table id="js-index-table" class="table coverage-index-table index-table sortable-table">
           <thead>
             <tr>
-              <th width="30%" class="table-header">Smell<span class="sort-type"></span></th>
-              <th width="65%" class="table-header">Locations<span class="sort-type"></span></th>
-              <th width="5%" class="table-header">Status<span class="sort-type"></span></th>
+              <% unless Config.suppress_ratings %>
+                <th width="10%" class="table-header">Rating<span class="sort-type"></span></th>
+              <% end %>
+              <th width="80%" class="table-header">Name<span class="sort-type"></span></th>
+              <th width="10%" class="table-header">Coverage<span class="sort-type"></span></th>
             </tr>
           </thead>
-          <% @smells.each do |smell| %>
+          <% @analysed_modules.each do |analysed_module| %>
             <tr>
-              <td><%= smell.type %></td>
-              <td>
-                <ul class="nav nav-pills">
-                  <% smell.locations.each do |location| %>
-                    <li role="presentation">
-                      <a href="<%= smell_location_path(location) %>"><%= @analysed_module_names[location.pathname] %></a>
-                    </li>
-                  <% end %>
-                </ul>
-              </td>
-              <td>
-                <% if @show_status %>
+              <tr>
+                <% unless Config.suppress_ratings %>
+                  <td>
+                    <div class="rating <%= analysed_module.rating.to_s.downcase %>"><%= analysed_module.coverage_rating %></div>
+                  </td>
+                <% end %>
+                <td>
                   <ul class="nav nav-pills">
-                    <li role="presentation">
-                      <td class="centered-cell"><span class="status-<%= smell.status %> circled-text circle"><%= smell.status %></span></td>
+                    <li role="presentation" >
+                      <a href="<%= file_path(analysed_module.pathname.sub_ext('.html')) %>"><%= analysed_module.name %></a>
                     </li>
                   </ul>
-                <% end %>
-              </td>
+                </td>
+                <td><%= '%g' % analysed_module.coverage %>%</td>
             </tr>
           <% end %>
         </table>
