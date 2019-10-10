@@ -6,6 +6,14 @@ require 'rubycritic/generators/json_report'
 require 'json'
 require 'fakefs/safe'
 
+module FakeFS
+  class File < StringIO
+    def flock(*)
+      true
+    end
+  end
+end
+
 describe RubyCritic::Generator::JsonReport do
   describe '#generate_report' do
     around do |example|
