@@ -1,5 +1,12 @@
 # frozen_string_literal: true
 
+if ENV['COVERAGE'] == 'true'
+  require 'simplecov'
+  SimpleCov.start do
+    track_files '/lib/'
+  end
+end
+
 require 'minitest/autorun'
 require 'minitest/around/spec'
 require 'minitest/pride'

@@ -9,9 +9,7 @@ module RubyCritic
         TEMPLATE = erb_template('simple_cov_index.html.erb')
 
         def initialize(analysed_modules)
-          @smells = analysed_modules.flat_map(&:smells).uniq
-          @analysed_module_names = analysed_module_names(analysed_modules)
-          @show_status = (Config.mode == :default)
+          @analysed_modules = sorted(filtered(analysed_modules))
           set_header_links if Config.compare_branches_mode?
         end
 
@@ -30,14 +28,15 @@ module RubyCritic
           LAYOUT_TEMPLATE.result(base_binding { index_body })
         end
 
-        private
+        def sorted(mods)
+          mods.sort_by(&:coverage)
+        end
 
-        def analysed_module_names(analysed_modules)
-          names = {}
-          analysed_modules.each do |analysed_module|
-            names[analysed_module.pathname] = analysed_module.name
+        def filtered(mods)
+          mods.reject do |a_module|
+            path = a_module.pathname.to_s
+            path.start_with?('spec', 'test')
           end
-          names
         end
       end
     end
