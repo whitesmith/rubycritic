@@ -90,6 +90,7 @@ detectors:
     exclude:
     - RubyCritic::RakeTask#initialize
     - RubyCritic::Analyser::Complexity#run
+    - RubyCritic::Analyser::Coverage#synchronize_resultset
     - Parser::AST::Node#module_names
     - RubyCritic::Analyser::FlaySmells#run
     - RubyCritic::Cli::Application#execute
