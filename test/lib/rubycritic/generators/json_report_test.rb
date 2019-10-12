@@ -4,15 +4,7 @@ require 'test_helper'
 require 'rubycritic/analysers_runner'
 require 'rubycritic/generators/json_report'
 require 'json'
-require 'fakefs/safe'
-
-module FakeFS
-  class File < StringIO
-    def flock(*)
-      true
-    end
-  end
-end
+require 'fakefs_helper'
 
 describe RubyCritic::Generator::JsonReport do
   describe '#generate_report' do
