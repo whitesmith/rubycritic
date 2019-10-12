@@ -74,15 +74,9 @@ module RubyCritic
 
     def to_h
       {
-        name: name,
-        path: path,
-        smells: smells,
-        churn: churn,
-        committed_at: committed_at,
-        complexity: complexity,
-        duplication: duplication,
-        methods_count: methods_count,
-        cost: cost,
+        name: name, path: path, smells: smells,
+        churn: churn, committed_at: committed_at, complexity: complexity,
+        duplication: duplication, methods_count: methods_count, cost: cost,
         rating: rating
       }
     end
