@@ -57,8 +57,7 @@ module RubyCritic
       # caching it for subsequent accesses.
       def resultset
         @resultset ||= begin
-          data = stored_data
-          if data
+          if (data = stored_data)
             begin
               JSON.parse(data) || {}
             rescue
@@ -88,6 +87,8 @@ module RubyCritic
       def synchronize_resultset
         # make it reentrant
         return yield if resultset_locked == true
+
+        return yield unless File.exist?(resultset_writelock)
 
         begin
           @resultset_locked = true
