@@ -794,10 +794,17 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         1,
         1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
         2,
         2,
         2,
@@ -858,7 +865,7 @@
         1,
         108,
         null,
-        1,
+        7,
         null,
         null,
         1,
@@ -866,7 +873,7 @@
         null,
         108,
         null,
-        1400,
+        10220,
         null,
         null,
         null,
@@ -936,6 +943,17 @@
         null,
         12,
         null,
+        null,
+        null,
+        null
+      ],
+      "/Users/etagwerker/Projects/fastruby/quality/rubycritic/test/fakefs_helper.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        2,
         null,
         null,
         null
@@ -3334,14 +3352,6 @@
         1,
         1,
         1,
-        2,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
         1,
         1,
         null,
@@ -4673,6 +4683,6 @@
         null
       ]
     },
-    "timestamp": 1570843732
+    "timestamp": 1570847334
   }
 }
