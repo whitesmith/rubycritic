@@ -9,8 +9,6 @@ module RubyCritic
     class Coverage
       include Colorize
 
-      attr_reader :resultset_locked
-
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
         @result = results.first
@@ -31,7 +29,9 @@ module RubyCritic
       private
 
       def find_coverage_percentage(analysed_module)
-        return 0 unless (source_file = find_source_file(analysed_module))
+        source_file = find_source_file(analysed_module)
+
+        return 0 unless source_file
 
         source_file.covered_percent
       end
@@ -60,7 +60,8 @@ module RubyCritic
           if (data = stored_data)
             begin
               JSON.parse(data) || {}
-            rescue
+            rescue JSON::ParserError => err
+              puts "Error: Loading .resultset.json: #{err.message}"
               {}
             end
           else
@@ -86,7 +87,7 @@ module RubyCritic
       # given time
       def synchronize_resultset
         # make it reentrant
-        return yield if resultset_locked == true
+        return yield if @resultset_locked == true
 
         return yield unless File.exist?(resultset_writelock)
 
