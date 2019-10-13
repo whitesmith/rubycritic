@@ -1,5 +1,8 @@
 ---
 detectors:
+  InstanceVariableAssumption:
+    exclude:
+      - RubyCritic::Analyser::Coverage
   IrresponsibleModule:
     exclude:
     - RubyCritic::Analyser::Attributes
