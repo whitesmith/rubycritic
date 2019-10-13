@@ -1,7 +1,7 @@
 {
   "Unit Tests": {
     "coverage": {
-      "/Users/etagwerker/Projects/fastruby/quality/rubycritic/lib/rubycritic/source_control_systems/double.rb": [
+      "[REPLACE_ME]/lib/rubycritic/source_control_systems/double.rb": [
         null,
         null,
         1,
