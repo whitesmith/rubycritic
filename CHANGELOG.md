@@ -1,5 +1,6 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.1.0...master)
 
+* [BUGFIX] Fix CSS alignment of columns for when --suppress-ratings is used on the code page (by [@jbampton][])
 * [FEATURE] Add Markdown linting to the Travis build by using the Rubygem `markdownlint` (by [@jbampton][])
 
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.0.2...v4.1.0)

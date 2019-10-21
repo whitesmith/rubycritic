@@ -9,9 +9,9 @@
         <thead>
           <tr>
             <% unless Config.suppress_ratings %>
-              <th width="10%" class="table-header">Rating<span class="sort-type"></span></th>
+              <th width="10%" class="table-header center">Rating<span class="sort-type"></span></th>
             <% end %>
-            <th width="50%" class="table-header">Name<span class="sort-type"></span></th>
+            <th width="50%" class="table-header left">Name<span class="sort-type"></span></th>
             <th width="10%" class="table-header">Churn<span class="sort-type"></span></th>
             <th width="10%" class="table-header">Complexity<span class="sort-type"></span></th>
             <th width="10%" class="table-header">Duplication<span class="sort-type"></span></th>
@@ -22,7 +22,7 @@
           <% @analysed_modules.each do |analysed_module| %>
             <tr>
               <% unless Config.suppress_ratings %>
-                <td>
+                <td class="center">
                   <% if Config.build_mode? %>
                     <% master_analysed_module = Config.base_branch_collection.find(analysed_module.pathname) %>
                     <% if master_analysed_module.cost > analysed_module.cost %>
@@ -36,7 +36,7 @@
                   <div class="rating <%= analysed_module.rating.to_s.downcase %>"><%= analysed_module.rating %></div>
                 </td>
               <% end %>
-              <td>
+              <td class="left">
                 <ul class="nav nav-pills">
                   <li role="presentation" >
                     <a href="<%= file_path(analysed_module.pathname.sub_ext('.html')) %>"><%= analysed_module.name %></a>
