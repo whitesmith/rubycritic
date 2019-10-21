@@ -76,10 +76,10 @@ module RubyCritic
         end
 
         def formats
-          formats = options['formats'] || []
+          formats = Array(options['formats'])
           formats.select do |format|
             %w[html json console lint].include?(format)
-          end
+          end.map(&:to_sym)
         end
 
         def minimum_score

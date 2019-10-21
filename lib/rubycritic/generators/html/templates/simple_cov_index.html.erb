@@ -1,0 +1,44 @@
+<!-- Page Content -->
+<div id="page-content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <!--Page Title -->
+      <div class="Page_Title">
+        <h3>Coverage</h3>
+      </div>
+      <!--End Page Title -->
+      <div class="Content_Wrapper">
+        <table id="js-index-table" class="table coverage-index-table index-table sortable-table">
+          <thead>
+            <tr>
+              <% unless Config.suppress_ratings %>
+                <th width="10%" class="table-header">Rating<span class="sort-type"></span></th>
+              <% end %>
+              <th width="80%" class="table-header">Name<span class="sort-type"></span></th>
+              <th width="10%" class="table-header">Coverage<span class="sort-type"></span></th>
+            </tr>
+          </thead>
+          <% @analysed_modules.each do |analysed_module| %>
+            <tr>
+              <tr>
+                <% unless Config.suppress_ratings %>
+                  <td>
+                    <div class="rating <%= analysed_module.rating.to_s.downcase %>"><%= analysed_module.coverage_rating %></div>
+                  </td>
+                <% end %>
+                <td>
+                  <ul class="nav nav-pills">
+                    <li role="presentation" >
+                      <a href="<%= file_path(analysed_module.pathname.sub_ext('.html')) %>"><%= analysed_module.name %></a>
+                    </li>
+                  </ul>
+                </td>
+                <td><%= '%g' % analysed_module.coverage %>%</td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /#page-content-wrapper -->

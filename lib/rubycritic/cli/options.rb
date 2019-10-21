@@ -25,7 +25,7 @@ module RubyCritic
         argv_hash = argv_options.to_h
 
         file_hash.merge(argv_hash) do |_, file_option, argv_option|
-          argv_option.nil? ? file_option : argv_option
+          Array(argv_option).empty? ? file_option : argv_option
         end
       end
     end

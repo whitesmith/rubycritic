@@ -1,0 +1,28 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "[REPLACE_ME]/lib/rubycritic/source_control_systems/double.rb": [
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1570847334
+  }
+}

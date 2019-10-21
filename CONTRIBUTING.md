@@ -75,6 +75,7 @@ If you are experiencing unexpected behavior and, after having read the documenta
 
 Changelog entry format
 ------------------------
+
 Here are a few examples:
 
 ```

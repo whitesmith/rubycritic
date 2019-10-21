@@ -1,5 +1,8 @@
 ---
 detectors:
+  InstanceVariableAssumption:
+    exclude:
+      - RubyCritic::Analyser::Coverage
   IrresponsibleModule:
     exclude:
     - RubyCritic::Analyser::Attributes
@@ -90,6 +93,7 @@ detectors:
     exclude:
     - RubyCritic::RakeTask#initialize
     - RubyCritic::Analyser::Complexity#run
+    - RubyCritic::Analyser::Coverage#synchronize_resultset
     - Parser::AST::Node#module_names
     - RubyCritic::Analyser::FlaySmells#run
     - RubyCritic::Cli::Application#execute
@@ -119,6 +123,8 @@ detectors:
     - RubyCritic::AnalysedModulesCollection#initialize
   UtilityFunction:
     exclude:
+    - RubyCritic::Analyser::Coverage#resultset_path
+    - RubyCritic::Analyser::Coverage#resultset_writelock
     - RubyCritic::Analyser::FlaySmells#cost
     - RubyCritic::Analyser::FlaySmells#paths_to_analysed_modules
     - RubyCritic::Analyser::FlaySmells#smell_locations
@@ -127,6 +133,8 @@ detectors:
     - RubyCritic::Cli::Application#print
     - RubyCritic::Cli::Options::File#value_for
     - RubyCritic::AnalysedModulesCollection#limited_cost_for
+    - RubyCritic::Generator::Html::SimpleCovIndex#filtered
+    - RubyCritic::Generator::Html::SimpleCovIndex#sorted
     - RubyCritic::Generator::Html::SmellsIndex#analysed_module_names
     - RubyCritic::Generator::HtmlReport#copy_assets_to_report_directory
     - RubyCritic::SourceControlSystem::Git#date_of_last_commit

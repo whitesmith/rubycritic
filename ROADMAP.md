@@ -39,7 +39,7 @@ These are more nice-to-haves than promises. We can always dream. But this is wha
 
   - [ ] [Brakeman](https://github.com/presidentbeef/brakeman) to provide security issues (Rails-only feature)
 
-  - [ ] [Rails Best Practices](https://github.com/railsbp/rails_best_practices) to provide Rails smells (Rails-only feature) #14 
+  - [ ] [Rails Best Practices](https://github.com/railsbp/rails_best_practices) to provide Rails smells (Rails-only feature) #14
 
   - [ ] [SandiMeter](https://github.com/makaroni4/sandi_meter) #15
 

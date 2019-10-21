@@ -26,4 +26,5 @@ script:
   - bundle exec rake test
   - bundle exec cucumber features --format progress --color
   - bundle exec rake reek
+  - bundle exec mdl .
   - bundle exec rubocop

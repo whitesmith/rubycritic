@@ -10,6 +10,7 @@ module RubyCritic
     # Complexity is reduced by a factor of 25 when calculating cost
     COMPLEXITY_FACTOR = 25.0
 
+    attribute :coverage
     attribute :name
     attribute :smells_count
     attribute :file_location
@@ -44,6 +45,10 @@ module RubyCritic
                 (complexity / COMPLEXITY_FACTOR)
     end
 
+    def coverage_rating
+      @coverage_rating ||= Rating.from_cost(100 - coverage)
+    end
+
     def rating
       @rating ||= Rating.from_cost(cost)
     end
@@ -74,15 +79,9 @@ module RubyCritic
 
     def to_h
       {
-        name: name,
-        path: path,
-        smells: smells,
-        churn: churn,
-        committed_at: committed_at,
-        complexity: complexity,
-        duplication: duplication,
-        methods_count: methods_count,
-        cost: cost,
+        name: name, path: path, smells: smells,
+        churn: churn, committed_at: committed_at, complexity: complexity,
+        duplication: duplication, methods_count: methods_count, cost: cost,
         rating: rating
       }
     end
