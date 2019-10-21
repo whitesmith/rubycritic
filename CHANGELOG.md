@@ -1,9 +1,14 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.1.0...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.2.0...master)
+
+# v4.2.0 / 2019-10-22 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.1.0...v4.2.0)
 
 * [BUGFIX] Fix CSS alignment of columns for when --suppress-ratings is used on the code page (by [@jbampton][])
+* [BUGFIX] Fix typo in example `.rubycritic.yml` (by [@Adre][])
+* [BUGFIX] Fix YAML configuration file 'formats' processing (by [@cvoltz][])
 * [FEATURE] Add Markdown linting to the Travis build by using the Rubygem `markdownlint` (by [@jbampton][])
+* [FEATURE] Add new report for SimpleCov (by [@etagwerker][])
 
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.0.2...v4.1.0)
+# v4.1.0 / 2019-06-07 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.0.2...v4.1.0)
 
 * [BUGFIX] Assorted fixes in HTML report (by [@jbampton][])
 * [BUGFIX] Fix duplicate HTML5 DOCTYPE (by [@jbampton][])
@@ -289,3 +294,6 @@
 [@jbampton]: https://github.com/jbampton
 [@nathanbwright]: https://github.com/nathanbwright
 [@leksster]: https://github.com/leksster
+[@etagwerker]: https://github.com/etagwerker
+[@cvoltz]: https://github.com/cvoltz
+[@Adre]: https://github.com/Adre
