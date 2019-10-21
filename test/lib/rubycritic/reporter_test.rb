@@ -17,6 +17,7 @@ describe RubyCritic::Reporter do
     assert(File.exist?('test/samples/report.json'))
     assert(File.exist?('test/samples/lint.txt'))
     assert(File.exist?('test/samples/overview.html'))
+    assert(File.exist?('test/samples/simple_cov_index.html'))
   end
 
   it 'creates a dummy formatter' do
