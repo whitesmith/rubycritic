@@ -87,7 +87,7 @@ module RubyCritic
       # given time
       def synchronize_resultset
         # make it reentrant
-        return yield if @resultset_locked == true
+        return yield if defined?(@resultset_locked) && @resultset_locked == true
 
         return yield unless File.exist?(resultset_writelock)
 
