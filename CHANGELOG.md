@@ -1,4 +1,8 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.2.0...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.2.1...master)
+
+# v4.2.1 / 2019-10-29 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.2.0...v4.2.1)
+
+* [BUGFIX] Fix Color coding of files in Coverage section (by [@etagwerker][])
 
 # v4.2.0 / 2019-10-22 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.1.0...v4.2.0)
 
