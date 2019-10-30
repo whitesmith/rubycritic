@@ -12,7 +12,7 @@ These are more nice-to-haves than promises. We can always dream. But this is wha
 
   Finally, this score is translated to a grade like [this](https://github.com/whitesmith/rubycritic/blob/43005e7b76dd0c648c7715133e42afdd6ea9a065/lib/rubycritic/core/rating.rb), based off of a [Code Climate blog post](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/#value-objects).
 
-- [ ] Implement a project rating, ala Code Climate.
+- [x] Implement a project rating, ala Code Climate.
 
 - [ ] Explain ratings. What's the difference between an A and a B? Bryan Helmkamp, the creator of Code Climate, wrote [a great essay on the subject](https://gist.github.com/brynary/21369b5892525e1bd102). #63
 
@@ -33,7 +33,7 @@ These are more nice-to-haves than promises. We can always dream. But this is wha
 
 - [ ] Integrate other gems, like:
 
-  - [ ] [Simplecov](https://github.com/colszowka/simplecov) to provide code coverage
+  - [x] [Simplecov](https://github.com/colszowka/simplecov) to provide code coverage. #319
 
   - [ ] [Rubocop](https://github.com/bbatsov/rubocop/) to provide style issues
 
