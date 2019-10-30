@@ -19,11 +19,11 @@ module RubyCritic
 
     describe '.root' do
       it 'computes correct summary' do
-        @summary['A'].to_a.must_equal({ files: 3, churns: 9, smells: 6 }.to_a)
-        @summary['B'].to_a.must_equal({ files: 1, churns: 5, smells: 2 }.to_a)
-        @summary['C'].to_a.must_equal({ files: 0, churns: 0, smells: 0 }.to_a)
-        @summary['D'].to_a.must_equal({ files: 0, churns: 0, smells: 0 }.to_a)
-        @summary['F'].to_a.must_equal({ files: 0, churns: 0, smells: 0 }.to_a)
+        _(@summary['A'].to_a).must_equal({ files: 3, churns: 9, smells: 6 }.to_a)
+        _(@summary['B'].to_a).must_equal({ files: 1, churns: 5, smells: 2 }.to_a)
+        _(@summary['C'].to_a).must_equal({ files: 0, churns: 0, smells: 0 }.to_a)
+        _(@summary['D'].to_a).must_equal({ files: 0, churns: 0, smells: 0 }.to_a)
+        _(@summary['F'].to_a).must_equal({ files: 0, churns: 0, smells: 0 }.to_a)
       end
     end
   end

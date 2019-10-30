@@ -12,7 +12,7 @@ describe RubyCritic::Browser do
   describe '#open' do
     it 'should be open report with launch browser' do
       Launchy.stubs(:open).returns(true)
-      @browser.open.must_equal true
+      _(@browser.open).must_equal true
     end
   end
 end

@@ -22,27 +22,27 @@ describe RubyCritic::AnalysedModule do
     end
 
     it 'has a name reader' do
-      @analysed_module.name.must_equal @name
+      _(@analysed_module.name).must_equal @name
     end
 
     it 'has a pathname reader' do
-      @analysed_module.pathname.must_equal @pathname
+      _(@analysed_module.pathname).must_equal @pathname
     end
 
     it 'has a path reader' do
-      @analysed_module.path.must_equal @pathname.to_s
+      _(@analysed_module.path).must_equal @pathname.to_s
     end
 
     it 'has a smells reader' do
-      @analysed_module.smells.must_equal @smells
+      _(@analysed_module.smells).must_equal @smells
     end
 
     it 'has a churn reader' do
-      @analysed_module.churn.must_equal @churn
+      _(@analysed_module.churn).must_equal @churn
     end
 
     it 'has a complexity reader' do
-      @analysed_module.complexity.must_equal @complexity
+      _(@analysed_module.complexity).must_equal @complexity
     end
   end
 
@@ -50,7 +50,7 @@ describe RubyCritic::AnalysedModule do
     it 'returns the remediation cost of fixing the analysed_module' do
       smells = [SmellDouble.new(cost: 1), SmellDouble.new(cost: 2)]
       analysed_module = RubyCritic::AnalysedModule.new(smells: smells, complexity: 0)
-      analysed_module.cost.must_equal 3
+      _(analysed_module.cost).must_equal 3
     end
   end
 
@@ -58,14 +58,14 @@ describe RubyCritic::AnalysedModule do
     context 'when the file has no methods' do
       it 'returns a placeholder' do
         analysed_module = RubyCritic::AnalysedModule.new(complexity: 0, methods_count: 0)
-        analysed_module.complexity_per_method.must_equal 'N/A'
+        _(analysed_module.complexity_per_method).must_equal 'N/A'
       end
     end
 
     context 'when the file has at least one method' do
       it 'returns the average complexity per method' do
         analysed_module = RubyCritic::AnalysedModule.new(complexity: 10, methods_count: 2)
-        analysed_module.complexity_per_method.must_equal 5
+        _(analysed_module.complexity_per_method).must_equal 5
       end
     end
   end
@@ -73,7 +73,7 @@ describe RubyCritic::AnalysedModule do
   describe '#smells?' do
     it 'returns true if the analysed_module has at least one smell' do
       analysed_module = RubyCritic::AnalysedModule.new(smells: [SmellDouble.new])
-      analysed_module.smells?.must_equal true
+      _(analysed_module.smells?).must_equal true
     end
   end
 
@@ -82,7 +82,7 @@ describe RubyCritic::AnalysedModule do
       location = RubyCritic::Location.new('./foo', '42')
       smells = [RubyCritic::Smell.new(locations: [location])]
       analysed_module = RubyCritic::AnalysedModule.new(smells: smells)
-      analysed_module.smells_at_location(location).must_equal smells
+      _(analysed_module.smells_at_location(location)).must_equal smells
     end
   end
 end

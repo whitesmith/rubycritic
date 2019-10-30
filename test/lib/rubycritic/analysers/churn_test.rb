@@ -15,11 +15,11 @@ describe RubyCritic::Analyser::Churn do
     end
 
     it 'calculates its churn' do
-      @analysed_module.churn.must_equal 1
+      _(@analysed_module.churn).must_equal 1
     end
 
     it 'determines the date of its last commit' do
-      @analysed_module.committed_at.must_equal '2013-10-09 12:52:49 +0100'
+      _(@analysed_module.committed_at).must_equal '2013-10-09 12:52:49 +0100'
     end
   end
 end
