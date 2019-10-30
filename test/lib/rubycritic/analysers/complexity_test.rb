@@ -12,7 +12,7 @@ describe RubyCritic::Analyser::Complexity do
     end
 
     it 'calculates its complexity' do
-      @analysed_module.complexity.must_be :>, 0
+      _(@analysed_module.complexity).must_be :>, 0
     end
   end
 end

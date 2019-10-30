@@ -54,9 +54,9 @@ describe RubyCritic::Command::Compare do
         comparison.expects(:abort).once
 
         status_reporter = comparison.execute
-        status_reporter.score.must_equal RubyCritic::Config.feature_branch_score
-        status_reporter.score.wont_equal RubyCritic::Config.base_branch_score
-        status_reporter.status_message.must_equal "Score: #{RubyCritic::Config.feature_branch_score}"
+        _(status_reporter.score).must_equal RubyCritic::Config.feature_branch_score
+        _(status_reporter.score).wont_equal RubyCritic::Config.base_branch_score
+        _(status_reporter.status_message).must_equal "Score: #{RubyCritic::Config.feature_branch_score}"
       end
     end
 
@@ -73,9 +73,9 @@ describe RubyCritic::Command::Compare do
         options = RubyCritic::Cli::Options.new(options).parse.to_h
         RubyCritic::Config.set(options)
         status_reporter = RubyCritic::Command::Compare.new(options).execute
-        status_reporter.score.must_equal RubyCritic::Config.feature_branch_score
-        status_reporter.score.must_equal RubyCritic::Config.base_branch_score
-        status_reporter.status_message.must_equal "Score: #{RubyCritic::Config.feature_branch_score}"
+        _(status_reporter.score).must_equal RubyCritic::Config.feature_branch_score
+        _(status_reporter.score).must_equal RubyCritic::Config.base_branch_score
+        _(status_reporter.status_message).must_equal "Score: #{RubyCritic::Config.feature_branch_score}"
       end
     end
   end
@@ -87,10 +87,10 @@ describe RubyCritic::Command::Compare do
     end
 
     it 'with -b option withour pull request id' do
-      @options[:base_branch].must_equal 'base_branch'
-      @options[:feature_branch].must_equal 'feature_branch'
-      @options[:mode].must_equal :compare_branches
-      @options[:threshold_score].must_equal 10
+      _(@options[:base_branch]).must_equal 'base_branch'
+      _(@options[:feature_branch]).must_equal 'feature_branch'
+      _(@options[:mode]).must_equal :compare_branches
+      _(@options[:threshold_score]).must_equal 10
     end
   end
 end

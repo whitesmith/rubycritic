@@ -12,28 +12,28 @@ describe RubyCritic::Location do
     end
 
     it 'has a pathname' do
-      @location.pathname.must_equal Pathname.new(@path)
+      _(@location.pathname).must_equal Pathname.new(@path)
     end
 
     it 'has a line number' do
-      @location.line.must_equal @line.to_i
+      _(@location.line).must_equal @line.to_i
     end
 
     it 'has a file name' do
-      @location.file_name.must_equal 'foo'
+      _(@location.file_name).must_equal 'foo'
     end
   end
 
   it 'is comparable' do
     location1 = RubyCritic::Location.new('./foo', 42)
     location2 = RubyCritic::Location.new('./foo', 42)
-    location1.must_equal location2
+    _(location1).must_equal location2
   end
 
   it 'is sortable' do
     location1 = RubyCritic::Location.new('./foo', 42)
     location2 = RubyCritic::Location.new('./bar', 23)
     location3 = RubyCritic::Location.new('./bar', 16)
-    [location1, location2, location3].sort.must_equal [location3, location2, location1]
+    _([location1, location2, location3].sort).must_equal [location3, location2, location1]
   end
 end

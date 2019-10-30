@@ -24,7 +24,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
           File.stubs(:executable?).with('/perforce/path/p4/p4').returns(true)
           RubyCritic::SourceControlSystem::Perforce.stubs(:in_client_directory?).returns(true)
 
-          RubyCritic::SourceControlSystem::Perforce.supported?.must_equal true
+          _(RubyCritic::SourceControlSystem::Perforce.supported?).must_equal true
         end
       end
 
@@ -37,7 +37,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
           File.stubs(:executable?).with('/perforce/path/p4/p4').returns(false)
           File.stubs(:executable?).with('/other/useless_path/p4').returns(false)
 
-          RubyCritic::SourceControlSystem::Perforce.supported?.must_equal false
+          _(RubyCritic::SourceControlSystem::Perforce.supported?).must_equal false
         end
 
         it 'returns false if no p4 client is set in environment variables' do
@@ -47,7 +47,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
           File.stubs(:executable?).with('/some/path/p4').returns(false)
           File.stubs(:executable?).with('/perforce/path/p4/p4').returns(true)
 
-          RubyCritic::SourceControlSystem::Perforce.supported?.must_equal false
+          _(RubyCritic::SourceControlSystem::Perforce.supported?).must_equal false
         end
 
         it 'returns false if the current directory is not under p4 client' do
@@ -58,7 +58,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
           File.stubs(:executable?).with('/perforce/path/p4/p4').returns(true)
           RubyCritic::SourceControlSystem::Perforce.stubs(:in_client_directory?).returns(false)
 
-          RubyCritic::SourceControlSystem::Perforce.supported?.must_equal false
+          _(RubyCritic::SourceControlSystem::Perforce.supported?).must_equal false
         end
       end
     end
@@ -80,7 +80,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
 
         it 'calls p4 info and parse the result' do
           RubyCritic::SourceControlSystem::Perforce.stubs(:`).with('p4 info').returns(p4_info)
-          RubyCritic::SourceControlSystem::Perforce.in_client_directory?.must_equal true
+          _(RubyCritic::SourceControlSystem::Perforce.in_client_directory?).must_equal true
         end
       end
 
@@ -100,7 +100,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
 
         it 'calls p4 info and parse the result' do
           RubyCritic::SourceControlSystem::Perforce.stubs(:`).with('p4 info').returns(p4_info)
-          RubyCritic::SourceControlSystem::Perforce.in_client_directory?.must_equal false
+          _(RubyCritic::SourceControlSystem::Perforce.in_client_directory?).must_equal false
         end
       end
     end
@@ -125,29 +125,29 @@ describe RubyCritic::SourceControlSystem::Perforce do
         it 'builds the perforce file cache' do
           RubyCritic::SourceControlSystem::Perforce.stubs(:`).returns(p4_stats)
           file_cache = @system.send(:perforce_files)
-          file_cache.size.must_equal 2
+          _(file_cache.size).must_equal 2
 
           first_file = file_cache['/path/to/client/a_ruby_file.rb']
-          first_file.filename.must_equal '/path/to/client/a_ruby_file.rb'
-          first_file.revision.must_equal '16'
-          first_file.last_commit.must_equal '1473075551'
-          first_file.head.must_equal '2103503'
-          first_file.opened?.must_equal false
+          _(first_file.filename).must_equal '/path/to/client/a_ruby_file.rb'
+          _(first_file.revision).must_equal '16'
+          _(first_file.last_commit).must_equal '1473075551'
+          _(first_file.head).must_equal '2103503'
+          _(first_file.opened?).must_equal false
 
           second_file = file_cache['/path/to/client/second_ruby_file.rb']
-          second_file.filename.must_equal '/path/to/client/second_ruby_file.rb'
-          second_file.revision.must_equal '12'
-          second_file.last_commit.must_equal '1464601668'
-          second_file.head.must_equal '2103504'
-          second_file.opened?.must_equal true
+          _(second_file.filename).must_equal '/path/to/client/second_ruby_file.rb'
+          _(second_file.revision).must_equal '12'
+          _(second_file.last_commit).must_equal '1464601668'
+          _(second_file.head).must_equal '2103504'
+          _(second_file.opened?).must_equal true
         end
       end
 
       it 'retrieves the number revisions of the ruby files' do
         Dir.stubs(:getwd).returns('/path/to/client')
         RubyCritic::SourceControlSystem::Perforce.stubs(:`).once.returns(p4_stats)
-        @system.revisions_count('a_ruby_file.rb').must_equal 16
-        @system.revisions_count('second_ruby_file.rb').must_equal 12
+        _(@system.revisions_count('a_ruby_file.rb')).must_equal 16
+        _(@system.revisions_count('second_ruby_file.rb')).must_equal 12
       end
 
       it 'retrieves the date of the last commit of the ruby files' do
@@ -155,21 +155,21 @@ describe RubyCritic::SourceControlSystem::Perforce do
         ENV['TZ'] = 'utc'
         Dir.stubs(:getwd).returns('/path/to/client')
         RubyCritic::SourceControlSystem::Perforce.stubs(:`).once.returns(p4_stats)
-        @system.date_of_last_commit('a_ruby_file.rb').must_equal '2016-09-05 11:39:11 +0000'
-        @system.date_of_last_commit('second_ruby_file.rb').must_equal '2016-05-30 09:47:48 +0000'
+        _(@system.date_of_last_commit('a_ruby_file.rb')).must_equal '2016-09-05 11:39:11 +0000'
+        _(@system.date_of_last_commit('second_ruby_file.rb')).must_equal '2016-05-30 09:47:48 +0000'
         ENV['TZ'] = oldtz
       end
 
       it 'retrieves the information if the ruby file is opened (in the changelist and ready to commit)' do
         Dir.stubs(:getwd).returns('/path/to/client')
         RubyCritic::SourceControlSystem::Perforce.stubs(:`).once.returns(p4_stats)
-        @system.revision?.must_equal true
+        _(@system.revision?).must_equal true
       end
 
       it 'retrieves the head reference of the repository' do
         Dir.stubs(:getwd).returns('/path/to/client')
         RubyCritic::SourceControlSystem::Perforce.stubs(:`).once.returns(p4_stats)
-        @system.head_reference.must_equal '2103504'
+        _(@system.head_reference).must_equal '2103504'
       end
     end
   end

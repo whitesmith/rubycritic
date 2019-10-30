@@ -8,14 +8,14 @@ describe RubyCritic::MethodsCounter do
     context 'when a file contains Ruby code' do
       it 'calculates the number of methods' do
         analysed_module = AnalysedModuleDouble.new(path: 'test/samples/methods_count.rb')
-        RubyCritic::MethodsCounter.new(analysed_module).count.must_equal 2
+        _(RubyCritic::MethodsCounter.new(analysed_module).count).must_equal 2
       end
     end
 
     context 'when a file is empty' do
       it 'returns 0 as the number of methods' do
         analysed_module = AnalysedModuleDouble.new(path: 'test/samples/empty.rb')
-        RubyCritic::MethodsCounter.new(analysed_module).count.must_equal 0
+        _(RubyCritic::MethodsCounter.new(analysed_module).count).must_equal 0
       end
     end
 
@@ -23,7 +23,7 @@ describe RubyCritic::MethodsCounter do
       it 'does not blow up and returns 0 as the number of methods' do
         analysed_module = AnalysedModuleDouble.new(path: 'test/samples/no_methods.rb')
         capture_output_streams do
-          RubyCritic::MethodsCounter.new(analysed_module).count.must_equal 0
+          _(RubyCritic::MethodsCounter.new(analysed_module).count).must_equal 0
         end
       end
     end

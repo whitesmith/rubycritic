@@ -5,6 +5,6 @@ require 'rubycritic/version'
 
 describe 'RubyCritic version' do
   it 'is defined' do
-    RubyCritic::VERSION.wont_be_nil
+    _(RubyCritic::VERSION).wont_be_nil
   end
 end

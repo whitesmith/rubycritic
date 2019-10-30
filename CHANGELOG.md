@@ -1,5 +1,7 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.2.1...master)
 
+* [BUGFIX] Fix deprecation warnings related to Minitest 6 (by [@jsantos][])
+
 # v4.2.1 / 2019-10-29 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.2.0...v4.2.1)
 
 * [BUGFIX] Fix Color coding of files in Coverage section (by [@etagwerker][])

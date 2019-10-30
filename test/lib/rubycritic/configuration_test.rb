@@ -11,17 +11,17 @@ describe RubyCritic::Configuration do
     end
 
     it 'has a default' do
-      RubyCritic::Config.root.must_be_instance_of String
+      _(RubyCritic::Config.root).must_be_instance_of String
     end
 
     it 'can be set to a relative path' do
       RubyCritic::Config.root = 'foo'
-      RubyCritic::Config.root.must_equal File.expand_path('foo')
+      _(RubyCritic::Config.root).must_equal File.expand_path('foo')
     end
 
     it 'can be set to an absolute path' do
       RubyCritic::Config.root = '/foo'
-      RubyCritic::Config.root.must_equal '/foo'
+      _(RubyCritic::Config.root).must_equal '/foo'
     end
 
     after do
@@ -35,7 +35,7 @@ describe RubyCritic::Configuration do
     end
 
     it 'sets html format by default' do
-      RubyCritic::Config.formats.must_equal [:html]
+      _(RubyCritic::Config.formats).must_equal [:html]
     end
   end
 end

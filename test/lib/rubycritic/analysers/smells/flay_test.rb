@@ -16,26 +16,26 @@ describe RubyCritic::Analyser::FlaySmells do
     end
 
     it 'detects its smells' do
-      @analysed_modules.first.smells?.must_equal true
+      _(@analysed_modules.first.smells?).must_equal true
     end
 
     it 'creates smells with messages' do
       smell = @analysed_modules.first.smells.first
-      smell.message.must_be_instance_of String
+      _(smell.message).must_be_instance_of String
     end
 
     it 'creates smells with scores' do
       smell = @analysed_modules.first.smells.first
-      smell.score.must_be_kind_of Numeric
+      _(smell.score).must_be_kind_of Numeric
     end
 
     it 'creates smells with more than one location' do
       smell = @analysed_modules.first.smells.first
-      smell.multiple_locations?.must_equal true
+      _(smell.multiple_locations?).must_equal true
     end
 
     it 'calculates the mass of duplicate code' do
-      @analysed_modules.first.duplication.must_be(:>, 0)
+      _(@analysed_modules.first.duplication).must_be(:>, 0)
     end
   end
 end
