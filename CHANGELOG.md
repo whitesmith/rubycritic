@@ -1,6 +1,7 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.2.1...master)
 
 * [BUGFIX] Fix deprecation warnings related to Minitest 6 (by [@jsantos][])
+* [BUGFIX] Expand Churn vs. Complexity chart to full-width on small screen (by [@teohm][])
 
 # v4.2.1 / 2019-10-29 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.2.0...v4.2.1)
 
