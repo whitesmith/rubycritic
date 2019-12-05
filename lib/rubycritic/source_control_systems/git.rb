@@ -56,7 +56,7 @@ module RubyCritic
       end
 
       def self.uncommitted_changes
-        git('diff-index HEAD --').chomp!
+        git('diff-index HEAD --').chomp! || ''
       end
 
       def self.uncommitted_changes?
