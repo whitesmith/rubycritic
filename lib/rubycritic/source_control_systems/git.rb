@@ -60,7 +60,7 @@ module RubyCritic
       end
 
       def self.uncommitted_changes?
-        uncommitted_changes.present?
+        !uncommitted_changes.empty?
       end
 
       def self.modified_files
