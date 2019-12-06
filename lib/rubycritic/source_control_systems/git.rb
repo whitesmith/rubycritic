@@ -55,7 +55,7 @@ module RubyCritic
         dirty = !uncommitted_changes.blank?
         abort("Uncommitted changes are present: #{uncommitted_changes}") if dirty
 
-        `git checkout #{branch}`
+        git("checkout #{branch}")
       end
 
       def self.uncommitted_changes
