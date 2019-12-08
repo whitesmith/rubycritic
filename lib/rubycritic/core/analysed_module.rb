@@ -10,7 +10,7 @@ module RubyCritic
     # Complexity is reduced by a factor of 25 when calculating cost
     COMPLEXITY_FACTOR = 25.0
 
-    attribute :coverage
+    attribute :coverage, Float, default: 0.0
     attribute :name
     attribute :smells_count
     attribute :file_location
