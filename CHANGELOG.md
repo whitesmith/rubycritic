@@ -1,4 +1,5 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.2.2...master)
+* [FEATURE] Show which files are uncommited in git (by [@GeoffTidey][])
 
 # v4.2.2 / 2019-11-12 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.2.1...v4.2.2)
 
@@ -306,3 +307,4 @@
 [@etagwerker]: https://github.com/etagwerker
 [@cvoltz]: https://github.com/cvoltz
 [@Adre]: https://github.com/Adre
+[@GeoffTidey]: https://github.com/GeoffTidey
