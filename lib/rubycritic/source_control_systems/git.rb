@@ -52,11 +52,16 @@ module RubyCritic
       end
 
       def self.switch_branch(branch)
-        uncommitted_changes? ? abort('Uncommitted changes are present.') : `git checkout #{branch}`
+        dirty = !uncommitted_changes.blank?
+        abort("Uncommitted changes are present: #{uncommitted_changes}") if dirty
+
+        git("checkout #{branch}")
       end
 
-      def self.uncommitted_changes?
-        !`git diff-index HEAD --`.empty?
+      def self.uncommitted_changes
+        return @uncommitted_changes if defined? @uncommitted_changes
+
+        @uncommitted_changes = git('diff-index HEAD --').chomp! || ''
       end
 
       def self.modified_files
