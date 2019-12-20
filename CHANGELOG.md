@@ -1,6 +1,6 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.2.2...master)
-* [FEATURE] Show which files are uncommited in git (by [@GeoffTidey][])
 
+* [FEATURE] Show which files are uncommited in git (by [@GeoffTidey][])
 * [BUGFIX] Fixes TypeError when `.resultset.json` is not found (by [@etagwerker][])
 
 # v4.2.2 / 2019-11-12 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.2.1...v4.2.2)
