@@ -1,4 +1,6 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.2.2...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.3.0...master)
+
+# v4.3.0 / 2019-23-26 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.2.2...v4.3.0)
 
 * [FEATURE] Show which files are uncommited in git (by [@GeoffTidey][])
 * [BUGFIX] Fixes TypeError when `.resultset.json` is not found (by [@etagwerker][])
