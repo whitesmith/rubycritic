@@ -1,5 +1,7 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.3.0...master)
 
+* [BUGFIX] Fixes NoMethodError on RubyCritic::SourceControlSystem::Git.switch_branch (by [@eitoball][])
+
 # v4.3.0 / 2019-23-26 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.2.2...v4.3.0)
 
 * [FEATURE] Show which files are uncommited in git (by [@GeoffTidey][])
