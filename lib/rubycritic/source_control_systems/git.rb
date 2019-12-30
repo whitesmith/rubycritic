@@ -52,7 +52,7 @@ module RubyCritic
       end
 
       def self.switch_branch(branch)
-        dirty = !uncommitted_changes.blank?
+        dirty = !uncommitted_changes.empty?
         abort("Uncommitted changes are present: #{uncommitted_changes}") if dirty
 
         git("checkout #{branch}")

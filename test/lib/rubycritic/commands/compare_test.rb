@@ -37,45 +37,40 @@ describe RubyCritic::Command::Compare do
     end
 
     context 'when file from feature_branch has a worse score than base_branch' do
-      before do
-        RubyCritic::SourceControlSystem::Git.class_eval do
-          def self.switch_branch(branch)
-            FileUtils.cp "test/samples/#{branch}_file.rb", 'test/samples/compare_file.rb'
-          end
-        end
-      end
-
       it 'errors by aborting the process' do
         options = ['-b', 'base_branch', '-t', '0', 'test/samples/compare_file.rb']
         options = RubyCritic::Cli::Options.new(options).parse.to_h
         RubyCritic::Config.set(options)
 
-        comparison = RubyCritic::Command::Compare.new(options)
-        comparison.expects(:abort).once
+        copy_proc = proc do |branch|
+          FileUtils.cp "test/samples/#{branch}_file.rb", 'test/samples/compare_file.rb'
+        end
+        RubyCritic::SourceControlSystem::Git.stub(:switch_branch, copy_proc) do
+          comparison = RubyCritic::Command::Compare.new(options)
+          comparison.expects(:abort).once
 
-        status_reporter = comparison.execute
-        _(status_reporter.score).must_equal RubyCritic::Config.feature_branch_score
-        _(status_reporter.score).wont_equal RubyCritic::Config.base_branch_score
-        _(status_reporter.status_message).must_equal "Score: #{RubyCritic::Config.feature_branch_score}"
+          status_reporter = comparison.execute
+          _(status_reporter.score).must_equal RubyCritic::Config.feature_branch_score
+          _(status_reporter.score).wont_equal RubyCritic::Config.base_branch_score
+          _(status_reporter.status_message).must_equal "Score: #{RubyCritic::Config.feature_branch_score}"
+        end
       end
     end
 
     context 'when file from feature_branch has an equal or better score than base_branch' do
-      before do
-        RubyCritic::SourceControlSystem::Git.class_eval do
-          def self.switch_branch(_branch)
-            FileUtils.cp 'test/samples/base_branch_file.rb', 'test/samples/compare_file.rb'
-          end
-        end
-      end
       it 'outputs score' do
         options = ['-b', 'feature_branch', '-t', '0', 'test/samples/compare_file.rb']
         options = RubyCritic::Cli::Options.new(options).parse.to_h
         RubyCritic::Config.set(options)
-        status_reporter = RubyCritic::Command::Compare.new(options).execute
-        _(status_reporter.score).must_equal RubyCritic::Config.feature_branch_score
-        _(status_reporter.score).must_equal RubyCritic::Config.base_branch_score
-        _(status_reporter.status_message).must_equal "Score: #{RubyCritic::Config.feature_branch_score}"
+        copy_proc = proc do |_|
+          FileUtils.cp 'test/samples/base_branch_file.rb', 'test/samples/compare_file.rb'
+        end
+        RubyCritic::SourceControlSystem::Git.stub(:switch_branch, copy_proc) do
+          status_reporter = RubyCritic::Command::Compare.new(options).execute
+          _(status_reporter.score).must_equal RubyCritic::Config.feature_branch_score
+          _(status_reporter.score).must_equal RubyCritic::Config.base_branch_score
+          _(status_reporter.status_message).must_equal "Score: #{RubyCritic::Config.feature_branch_score}"
+        end
       end
     end
   end
