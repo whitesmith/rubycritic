@@ -1,5 +1,7 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.3.1...master)
 
+* [BUGFIX] Relax constraint on `parser` gem (by [@lloydwatkin][])
+
 # v4.3.1 / 2019-12-30 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.3.0...v4.3.1)
 
 * [BUGFIX] Fixes NoMethodError on RubyCritic::SourceControlSystem::Git.switch_branch (by [@eitoball][])
@@ -316,3 +318,4 @@
 [@cvoltz]: https://github.com/cvoltz
 [@Adre]: https://github.com/Adre
 [@GeoffTidey]: https://github.com/GeoffTidey
+[@lloydwatkin]: https://github.com/lloydwatkin
