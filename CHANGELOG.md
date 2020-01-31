@@ -1,4 +1,6 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.3.2...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.3.3...master)
+
+# v4.3.3 / 2020-01-31 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.3.2...v4.3.3)
 
 * [BUGFIX] Relax constraint on `simplecov` gem (by [@etagwerker][])
 
