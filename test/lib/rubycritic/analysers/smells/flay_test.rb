@@ -38,4 +38,27 @@ describe RubyCritic::Analyser::FlaySmells do
       _(@analysed_modules.first.duplication).must_be(:>, 0)
     end
   end
+
+  context 'when some files are ignored using .flayignore' do
+    before do
+      FileUtils.ln_s('test/samples/flay/.flayignore', '.')
+      @analysed_modules = [
+        RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/flay/smelly.rb')),
+        RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/flay/smelly2.rb'))
+      ]
+      RubyCritic::Analyser::FlaySmells.new(@analysed_modules).run
+    end
+
+    after do
+      FileUtils.rm(%w[.flayignore])
+    end
+
+    it "doesn't detect smells for the ignored files" do
+      _(@analysed_modules.first.smells?).must_equal false
+    end
+
+    it 'still detects smells for non-ignored files' do
+      _(@analysed_modules.last.smells?).must_equal true
+    end
+  end
 end
