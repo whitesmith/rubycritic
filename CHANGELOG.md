@@ -1,4 +1,6 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.3.3...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.4.0...master)
+
+# v4.4.0 / 2020-02-15 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.3.3...v4.4.0)
 
 * [FEATURE] Take into account the `.flayignore` file (by [@Flink][])
 
