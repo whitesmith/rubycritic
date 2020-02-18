@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'tty/which'
+require 'rubycritic/source_control_systems/git/churn'
 
 module RubyCritic
   module SourceControlSystem
@@ -28,12 +29,16 @@ module RubyCritic
         'Git'
       end
 
+      def churn
+        @churn ||= Churn.new
+      end
+
       def revisions_count(path)
-        git("log --follow --format=%h #{path.shellescape}").count("\n")
+        churn.revisions_count(path)
       end
 
       def date_of_last_commit(path)
-        git("log -1 --date=iso --format=%ad #{path.shellescape}").chomp!
+        churn.date_of_last_commit(path)
       end
 
       def revision?
