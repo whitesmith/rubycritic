@@ -1,4 +1,6 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.4.0...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.4.1...master)
+
+# v4.4.1 / 2020-02-20 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.4.0...v4.4.1)
 
 * [CHANGE] Rewrite how churn is calculated to make it faster
 
