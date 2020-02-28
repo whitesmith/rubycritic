@@ -170,3 +170,5 @@ detectors:
   BooleanParameter:
     exclude:
     - RubyCritic::Config#self.respond_to_missing?
+exclude_paths:
+    - test/samples/reek/excluded_smelly.rb # This is needed for the tests

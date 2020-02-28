@@ -13,7 +13,7 @@ module RubyCritic
       end
 
       def run
-        @analysed_modules.each do |analysed_module|
+        relevant_paths.each do |analysed_module|
           add_smells_to(analysed_module)
           print green '.'
         end
@@ -25,6 +25,8 @@ module RubyCritic
       end
 
       private
+
+      attr_reader :analysed_modules
 
       def add_smells_to(analysed_module)
         Reek.new(analysed_module.pathname).smells.each do |smell|
@@ -47,6 +49,14 @@ module RubyCritic
         file_lines.uniq.map do |file_line|
           Location.new(file_path, file_line)
         end.sort
+      end
+
+      def relevant_paths
+        analysed_modules.reject { |path| configuration.path_excluded?(path.pathname) }
+      end
+
+      def configuration
+        @configuration ||= ::Reek::Configuration::AppConfiguration.from_default_path
       end
     end
   end

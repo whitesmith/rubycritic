@@ -14,7 +14,9 @@ describe RubyCritic::Generator::LintReport do
     end
 
     it 'report file has data inside' do
-      sample_files = Dir['test/samples/**/*.rb'].reject { |f| File.zero?(f) }
+      sample_files = Dir['test/samples/**/*.rb'].reject do |f|
+        File.zero?(f) || f.include?('excluded')
+      end
       create_analysed_modules_collection
       generate_report
       lines = File.readlines('test/samples/lint.txt').map(&:strip).reject(&:empty?)

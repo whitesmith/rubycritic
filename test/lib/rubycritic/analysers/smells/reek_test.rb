@@ -29,4 +29,17 @@ describe RubyCritic::Analyser::ReekSmells do
       _(last_smell.message).must_equal 'has no descriptive comment'
     end
   end
+
+  context 'when analysing a excluded smelly file' do
+    before do
+      pathname = Pathname.new('test/samples/reek/excluded_smelly.rb')
+      @analysed_module = AnalysedModuleDouble.new(pathname: pathname, smells: [])
+      analysed_modules = [@analysed_module]
+      RubyCritic::Analyser::ReekSmells.new(analysed_modules).run
+    end
+
+    it 'dont analyse the file' do
+      _(@analysed_module.smells.length).must_equal 0
+    end
+  end
 end
