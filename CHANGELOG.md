@@ -1,5 +1,8 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.4.1...master)
 
+* [CHANGE] Upgrade rubocop to the current latest version (0.80.1)
+* [CHANGE] Relax `launchy` version dependency requirement
+
 # v4.4.1 / 2020-02-20 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.4.0...v4.4.1)
 
 * [CHANGE] Rewrite how churn is calculated to make it faster

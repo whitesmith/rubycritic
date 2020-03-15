@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'flay', '~> 2.8'
   spec.add_runtime_dependency 'flog', '~> 4.4'
-  spec.add_runtime_dependency 'launchy', '2.4.3'
+  spec.add_runtime_dependency 'launchy', '> 2'
   spec.add_runtime_dependency 'parser', '>= 2.6.0'
   spec.add_runtime_dependency 'rainbow', '~> 3.0'
   spec.add_runtime_dependency 'reek', '~> 5.0', '< 6.0'
@@ -52,5 +52,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest-around', '~> 0.5.0', '>= 0.4.0'
   spec.add_development_dependency 'mocha', '~> 1.1', '>= 1.1.0'
   spec.add_development_dependency 'rake', '~> 12.0', '>= 11.0.0'
-  spec.add_development_dependency 'rubocop', '~> 0.65.0'
+  spec.add_development_dependency 'rubocop', '~> 0.80.1'
 end

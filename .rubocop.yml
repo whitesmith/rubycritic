@@ -30,4 +30,7 @@ Style/RedundantFreeze:
     - 'lib/rubycritic/source_locator.rb'
     - 'lib/rubycritic/version.rb'
 
+Naming/RescuedExceptionsVariableName:
+  PreferredName: error
+
 inherit_from: .rubocop_todo.yml

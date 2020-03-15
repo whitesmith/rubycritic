@@ -60,8 +60,8 @@ module RubyCritic
           if (data = stored_data)
             begin
               JSON.parse(data) || {}
-            rescue JSON::ParserError => err
-              puts "Error: Loading .resultset.json: #{err.message}"
+            rescue JSON::ParserError => error
+              puts "Error: Loading .resultset.json: #{error.message}"
               {}
             end
           else
