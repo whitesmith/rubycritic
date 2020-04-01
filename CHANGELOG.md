@@ -1,5 +1,6 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.4.1...master)
 
+* [CHANGE] Upgrade `parser` version requirement to 2.7.0
 * [CHANGE] Relax `launchy` version dependency requirement
 
 # v4.4.1 / 2020-02-20 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.4.0...v4.4.1)
