@@ -1,6 +1,7 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.4.1...master)
 
 * [CHANGE] Relax `launchy` version dependency requirement
+* [CHANGE] Drop support for ruby 2.3 (by [@joshrpowell][])
 * [CHANGE] Update Reek dependency to '~> 6.0', '< 7.0' (by [@joshrpowell][])
 
 # v4.4.1 / 2020-02-20 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.4.0...v4.4.1)

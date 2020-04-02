@@ -7,8 +7,6 @@ before_install:
   - gem install bundler
 jobs:
   include:
-    - rvm: 2.3.0
-    - rvm: 2.3
     - rvm: 2.4
     - rvm: 2.5
     - rvm: 2.6
