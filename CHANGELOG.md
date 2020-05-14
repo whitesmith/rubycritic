@@ -1,4 +1,6 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.4.1...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.5.0...master)
+
+# v4.5.0 / 2020-05-14 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.4.1...v4.5.0)
 
 * [CHANGE] Relax `launchy` version dependency requirement
 * [CHANGE] Drop support for ruby 2.3 (by [@joshrpowell][])
