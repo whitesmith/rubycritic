@@ -84,7 +84,7 @@ describe RubyCritic::SourceControlSystem::Git::Churn do
       let(:churn) { RubyCritic::SourceControlSystem::Git::Churn.new(churn_after: '2015-01-01') }
 
       it 'uses the option in the git command' do
-        _(churn.send(:git_log_command)).must_match /2015-01-01/
+        _(churn.send(:git_log_command)).must_match(/2015-01-01/)
       end
     end
   end

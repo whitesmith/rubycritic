@@ -19,11 +19,15 @@ module RubyCritic
       self.suppress_ratings = options[:suppress_ratings]
       self.open_with = options[:open_with]
       self.no_browser = options[:no_browser]
+      self.threshold_score = options[:threshold_score].to_i
+      setup_version_control(options)
+      setup_formats(options)
+    end
+
+    def setup_version_control(options)
       self.base_branch = options[:base_branch]
       self.feature_branch = options[:feature_branch]
-      self.threshold_score = options[:threshold_score].to_i
       self.churn_after = options[:churn_after]
-      setup_formats(options)
     end
 
     def setup_formats(options)
