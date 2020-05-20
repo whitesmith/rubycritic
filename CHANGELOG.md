@@ -1,4 +1,5 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.5.0...master)
+* [FEATURE] Add --churn-after (only supports git) to limit churn analysis to recent history (by [@jackcasey][])
 
 # v4.5.0 / 2020-05-14 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.4.1...v4.5.0)
 
@@ -340,3 +341,4 @@
 [@GeoffTidey]: https://github.com/GeoffTidey
 [@lloydwatkin]: https://github.com/lloydwatkin
 [@Flink]: https://github.com/Flink
+[@jackcasey]: https://github.com/jackcasey
