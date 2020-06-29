@@ -1,5 +1,7 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.5.0...master)
 
+* [BUGFIX] Handle git --name-status Copied (C) operation (by [@rizalmuthi][])
+
 # v4.5.0 / 2020-05-14 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.4.1...v4.5.0)
 
 * [CHANGE] Relax `launchy` version dependency requirement

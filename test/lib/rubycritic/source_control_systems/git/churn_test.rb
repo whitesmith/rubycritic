@@ -11,6 +11,9 @@ describe RubyCritic::SourceControlSystem::Git::Churn do
 
   let(:git_log) do
     <<~GIT_LOG
+      date:\t2020-06-29 03:03:03 -0500
+      C051\tROADMAP.md\tROADMAP.extend.md
+
       date:\t2020-01-31 08:01:07 -0500
       M\tCHANGELOG.md
       M\trubycritic.gemspec

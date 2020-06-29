@@ -53,7 +53,7 @@ module RubyCritic
           case operation
           when /^date:/
             process_date(*rest)
-          when /^R/
+          when /^[RC]/
             process_rename(*rest)
           else
             process_file(*rest)
