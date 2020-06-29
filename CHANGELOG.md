@@ -1,4 +1,6 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.5.0...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.5.1...master)
+
+# v4.5.1 / 2020-06-29 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.0...v4.5.1)
 
 * [BUGFIX] Handle git --name-status Copied (C) operation (by [@rizalmuthi][])
 
