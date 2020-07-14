@@ -221,7 +221,7 @@ header {
 }
 .sidebar-nav li a:hover {color:#9B111D;}
 .sidebar-nav li a i,.sidebar-nav li a img {font-size:18px;display:block;margin:0 auto;}
-/*End of Layout Stlyes*/
+/*End of Layout Styles*/
 
 .fadeIn {-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
