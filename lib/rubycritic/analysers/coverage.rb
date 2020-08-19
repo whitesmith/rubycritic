@@ -107,11 +107,15 @@ module RubyCritic
       # All results that are above the SimpleCov.merge_timeout will be
       # dropped. Returns an array of SimpleCov::Result items.
       def results
-        array = []
-        resultset.each do |command_name, data|
-          array << ::SimpleCov::Result.from_hash(command_name => data)
+        if Gem.loaded_specs['simplecov'].version >= Gem::Version.new('0.19')
+          ::SimpleCov::Result.from_hash(resultset)
+        else
+          array = []
+          resultset.each do |command_name, data|
+            array << ::SimpleCov::Result.from_hash(command_name => data)
+          end
+          array
         end
-        array
       end
     end
   end

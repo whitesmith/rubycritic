@@ -4,6 +4,7 @@ AllCops:
     - 'test/samples/**/*'
     - 'tmp/**/*'
     - 'vendor/**/*'
+    - 'gemfiles/*'
   TargetRubyVersion: 2.4
 
 Metrics/BlockLength:
