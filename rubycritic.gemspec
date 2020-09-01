@@ -41,6 +41,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'tty-which', '~> 0.4.0'
   spec.add_runtime_dependency 'virtus', '~> 1.0'
 
+  spec.add_development_dependency 'appraisal'
   spec.add_development_dependency 'aruba', '~> 0.12', '>= 0.12.0'
   spec.add_development_dependency 'bundler', '~> 2.0', '>= 2.0.0'
   spec.add_development_dependency 'byebug', '~> 11.0', '>= 10.0'
