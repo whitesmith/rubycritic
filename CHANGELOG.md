@@ -1,4 +1,4 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.5.1...master)
+# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.5.2...master)
 
 # v4.5.2 / 2020-08-20 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.1...v4.5.2)
 
