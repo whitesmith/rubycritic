@@ -18,6 +18,8 @@
 * [BUGFIX] Fix directory structure of reports when comparing branches (by [@denny][])
 * [BUGFIX] Restrict simplecov to versions before data format changed (by [@denny][])
 
+* [BUGFIX] Handle missing comparison file in html template (by @lauratpa)
+
 # v4.5.2 / 2020-08-20 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.1...v4.5.2)
 
 * [BUGFIX] Handle simplecov v0.19 and install appraisal (by [@MZiserman][])
