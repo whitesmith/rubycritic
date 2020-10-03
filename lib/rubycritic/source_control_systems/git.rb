@@ -30,7 +30,7 @@ module RubyCritic
       end
 
       def churn
-        @churn ||= Churn.new
+        @churn ||= Churn.new(churn_after: Config.churn_after)
       end
 
       def revisions_count(path)

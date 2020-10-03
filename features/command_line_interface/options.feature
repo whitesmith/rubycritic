@@ -40,6 +40,9 @@ Feature: RubyCritic can be controlled using command-line options
                                            Example: RubyCritic::MarkDown::Reporter
                                            Multiple formatters are supported.
           -s, --minimum-score [MIN_SCORE]  Set a minimum score
+              --churn-after [DATE]         Only count churn from a certain date.
+                                           The date is passed through to version control (currently git only).
+                                           Example: 2017-01-01
           -m, --mode-ci [BASE_BRANCH]      Use CI mode (faster, analyses diffs w.r.t base_branch (default: master))
               --deduplicate-symlinks       De-duplicate symlinks based on their final target
               --suppress-ratings           Suppress letter ratings

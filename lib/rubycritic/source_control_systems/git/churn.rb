@@ -21,10 +21,11 @@ module RubyCritic
       end
 
       class Churn
-        def initialize
+        def initialize(churn_after: nil)
           @renames = Renames.new
           @date = nil
           @stats = {}
+          @churn_after = churn_after
 
           call
         end
@@ -41,10 +42,15 @@ module RubyCritic
 
         def call
           Git
-            .git("log --all --date=iso --follow --format='format:date:%x09%ad' --name-status .")
+            .git(git_log_command)
             .split("\n")
             .reject(&:empty?)
             .each { |line| process_line(line) }
+        end
+
+        def git_log_command
+          after_clause = @churn_after ? "--after='#{@churn_after}' " : ''
+          "log --all --date=iso --follow --format='format:date:%x09%ad' --name-status #{after_clause}."
         end
 
         def process_line(line)
