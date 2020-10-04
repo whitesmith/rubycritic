@@ -24,7 +24,6 @@ end
 
 describe RubyCritic::Command::Compare do
   before do
-    RubyCritic::Browser.any_instance.stubs(:open).returns(nil)
     RubyCritic::Reporter.stubs(:generate_report).returns(nil)
     RubyCritic::Command::Compare.any_instance.stubs(:build_details).returns(nil)
     RubyCritic::SourceControlSystem::Git.stubs(:modified_files).returns('test/samples/compare_file.rb')
@@ -45,6 +44,7 @@ describe RubyCritic::Command::Compare do
         copy_proc = proc do |branch|
           FileUtils.cp "test/samples/#{branch}_file.rb", 'test/samples/compare_file.rb'
         end
+
         RubyCritic::SourceControlSystem::Git.stub(:switch_branch, copy_proc) do
           comparison = RubyCritic::Command::Compare.new(options)
           comparison.expects(:abort).once
