@@ -82,6 +82,31 @@ describe RubyCritic::SourceControlSystem::Git::Churn do
     it 'returns 0 for an uncommited file' do
       _(churn.revisions_count('non_existant_file')).must_equal 0
     end
+
+    context 'with churn_after option specified' do
+      let(:churn) { RubyCritic::SourceControlSystem::Git::Churn.new(churn_after: '2015-01-01') }
+      let(:log_command) do
+        "log --all --date=iso --follow --format='format:date:%x09%ad' --name-status --after='2015-01-01' ."
+      end
+
+      let(:git_log) do
+        <<~GIT_LOG
+          date:\t2020-09-04 05:24:07 -0300
+          M\tCHANGELOG.md
+
+          date:\t2020-09-03 20:30:50 -0400
+          M\tlib/rubycritic/version.rb
+        GIT_LOG
+      end
+
+      it 'uses the option in the git command' do
+        _(churn.send(:git_log_command)).must_equal(log_command)
+      end
+
+      it 'returns only 1 revision' do
+        _(churn.revisions_count('CHANGELOG.md')).must_equal 1
+      end
+    end
   end
 
   describe '#date_of_last_commit' do

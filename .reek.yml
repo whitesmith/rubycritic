@@ -81,6 +81,7 @@ detectors:
     - RubyCritic::Configuration#threshold_score
     - RubyCritic::Configuration#base_branch_collection
     - RubyCritic::Configuration#feature_branch_collection
+    - RubyCritic::Configuration#churn_after
     - RubyCritic::RakeTask#name
     - RubyCritic::RakeTask#options
     - RubyCritic::RakeTask#paths

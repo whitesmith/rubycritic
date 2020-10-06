@@ -70,6 +70,12 @@ module RubyCritic
               self.minimum_score = Float(min_score)
             end
 
+            opts.on('--churn-after [DATE]', 'Only count churn from a certain date.',
+                    'The date is passed through to version control (currently git only).',
+                    'Example: 2017-01-01') do |churn_after|
+              self.churn_after = churn_after
+            end
+
             opts.on('-m', '--mode-ci [BASE_BRANCH]',
                     'Use CI mode (faster, analyses diffs w.r.t base_branch (default: master))') do |branch|
               self.base_branch = branch || 'master'
@@ -110,6 +116,7 @@ module RubyCritic
             suppress_ratings: suppress_ratings,
             help_text: parser.help,
             minimum_score: minimum_score,
+            churn_after: churn_after,
             no_browser: no_browser,
             base_branch: base_branch,
             feature_branch: feature_branch,
@@ -121,7 +128,7 @@ module RubyCritic
         private
 
         attr_accessor :mode, :root, :formats, :formatters, :deduplicate_symlinks,
-                      :suppress_ratings, :minimum_score, :no_browser,
+                      :suppress_ratings, :minimum_score, :churn_after, :no_browser,
                       :parser, :base_branch, :feature_branch, :threshold_score
         def paths
           @argv unless @argv.empty?

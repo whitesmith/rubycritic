@@ -8,6 +8,8 @@
 
 * [BUGFIX] Handle git --name-status Copied (C) operation (by [@rizalmuthi][])
 
+* [FEATURE] Add --churn-after (only supports git) to limit churn analysis to recent history (by [@jackcasey][])
+
 # v4.5.0 / 2020-05-14 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.4.1...v4.5.0)
 
 * [CHANGE] Relax `launchy` version dependency requirement
@@ -348,3 +350,4 @@
 [@GeoffTidey]: https://github.com/GeoffTidey
 [@lloydwatkin]: https://github.com/lloydwatkin
 [@Flink]: https://github.com/Flink
+[@jackcasey]: https://github.com/jackcasey
