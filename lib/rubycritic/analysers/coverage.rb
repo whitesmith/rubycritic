@@ -56,18 +56,16 @@ module RubyCritic
       # Loads the cached resultset from JSON and returns it as a Hash,
       # caching it for subsequent accesses.
       def resultset
-        @resultset ||= begin
-          if (data = stored_data)
-            begin
-              JSON.parse(data) || {}
-            rescue JSON::ParserError => err
-              puts "Error: Loading .resultset.json: #{err.message}"
-              {}
-            end
-          else
-            {}
-          end
-        end
+        @resultset ||= parse_resultset(stored_data)
+      end
+
+      def parse_resultset(data)
+        return {} unless data
+
+        JSON.parse(data) || {}
+      rescue JSON::ParserError => err
+        puts "Error: Loading .resultset.json: #{err.message}"
+        {}
       end
 
       # Returns the contents of the resultset cache as a string or if the file is missing or empty nil
