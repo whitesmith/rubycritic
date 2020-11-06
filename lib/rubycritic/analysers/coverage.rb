@@ -91,15 +91,17 @@ module RubyCritic
 
         return yield unless File.exist?(resultset_writelock)
 
-        begin
-          @resultset_locked = true
-          File.open(resultset_writelock, 'w+') do |file|
-            file.flock(File::LOCK_EX)
-            yield
-          end
-        ensure
-          @resultset_locked = false
+        with_lock(&proc)
+      end
+
+      def with_lock
+        @resultset_locked = true
+        File.open(resultset_writelock, 'w+') do |file|
+          file.flock(File::LOCK_EX)
+          yield
         end
+      ensure
+        @resultset_locked = false
       end
 
       # Gets the resultset hash and re-creates all included instances
