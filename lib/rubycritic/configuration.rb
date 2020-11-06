@@ -68,7 +68,7 @@ module RubyCritic
     end
 
     def self.respond_to_missing?(symbol, include_all = false)
-      configuration.respond_to_missing?(symbol) || super
+      configuration.respond_to?(symbol) || super
     end
   end
 end

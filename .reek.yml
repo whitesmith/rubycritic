@@ -171,3 +171,6 @@ detectors:
   BooleanParameter:
     exclude:
     - RubyCritic::Config#self.respond_to_missing?
+  ManualDispatch:
+    exclude:
+    - RubyCritic::Config#self.respond_to_missing?
