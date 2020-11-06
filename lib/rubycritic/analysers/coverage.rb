@@ -9,6 +9,8 @@ module RubyCritic
     class Coverage
       include Colorize
 
+      RESULTSET_FILENAME = '.resultset.json'
+
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
         @result = results.first
@@ -44,13 +46,13 @@ module RubyCritic
         @result.source_files.detect { |file| file.filename == needle }
       end
 
-      # The path to the .resultset.json cache file
+      # The path to the cache file
       def resultset_path
-        File.join(SimpleCov.coverage_path, '.resultset.json')
+        File.join(SimpleCov.coverage_path, RESULTSET_FILENAME)
       end
 
       def resultset_writelock
-        File.join(SimpleCov.coverage_path, '.resultset.json.lock')
+        "#{resultset_path}.lock"
       end
 
       # Loads the cached resultset from JSON and returns it as a Hash,
@@ -64,7 +66,7 @@ module RubyCritic
 
         JSON.parse(data) || {}
       rescue JSON::ParserError => err
-        puts "Error: Loading .resultset.json: #{err.message}"
+        puts "Error: Loading #{RESULTSET_FILENAME}: #{err.message}"
         {}
       end
 

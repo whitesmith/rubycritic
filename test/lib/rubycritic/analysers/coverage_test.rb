@@ -11,7 +11,7 @@ describe RubyCritic::Analyser::Coverage do
       File.join(PathHelper.project_path, 'test', 'samples', 'coverage_sample')
     end
     let(:resultset_file) do
-      File.join(coverage_path, '.resultset.json')
+      File.join(coverage_path, RubyCritic::Analyser::Coverage::RESULTSET_FILENAME)
     end
     let(:old_content) do
       File.read(resultset_file)
