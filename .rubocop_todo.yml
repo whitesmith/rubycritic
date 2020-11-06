@@ -10,8 +10,3 @@
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/MethodLength:
   Max: 12
-
-# Offense count: 1
-Style/MethodMissingSuper:
-  Exclude:
-    - 'lib/rubycritic/configuration.rb'
