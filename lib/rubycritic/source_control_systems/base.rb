@@ -6,7 +6,7 @@ require 'shellwords'
 module RubyCritic
   module SourceControlSystem
     class Base
-      @@systems = []
+      @@systems = [] # rubocop:disable Style/ClassVars
 
       def self.register_system
         @@systems << self
