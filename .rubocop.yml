@@ -30,5 +30,3 @@ Style/RedundantFreeze:
     - 'lib/rubycritic/source_control_systems/perforce.rb'
     - 'lib/rubycritic/source_locator.rb'
     - 'lib/rubycritic/version.rb'
-
-inherit_from: .rubocop_todo.yml
