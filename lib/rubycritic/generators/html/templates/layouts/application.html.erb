@@ -8,16 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- StyleSheets -->
-    <link href="<%= vendor_stylesheet_path(:'bootstrap.min') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
-    <link href="<%= vendor_stylesheet_path(:'font-awesome.min') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
-    <link href="<%= vendor_stylesheet_path(:'prettify.custom_theme') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
-    <link href="<%= stylesheet_path(:application) %>" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="<%= asset_path("vendor/stylesheets/bootstrap.min.css") %>" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="<%= asset_path("vendor/stylesheets/font-awesome.min.css") %>" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="<%= asset_path("vendor/stylesheets/prettify.custom_theme.css") %>" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="<%= asset_path("stylesheets/application.css") %>" media="screen, projection, print" rel="stylesheet" type="text/css">
   </head>
 
   <body>
     <header class="navbar navbar-default navbar-fixed-top">
       <a href="#menu-toggle" class="btn btn-default hidden-lg visible-sm-* hidden-md visible-xs-* pull-left" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
-      <a href="<%= file_path('overview.html') %>"><img src="<%= image_path('logo.png') %>" alt="Ruby Critic Logo" title="Ruby Critic Logo" width="55"><span class="logo">RUBYCRITIC</span></a>
+      <a href="<%= file_path('overview.html') %>"><img src="<%= asset_path('images/logo.png') %>" alt="Ruby Critic Logo" title="Ruby Critic Logo" width="55"><span class="logo">RUBYCRITIC</span></a>
       <% if Config.compare_branches_mode? %>
         <ul class="nav navbar-nav navbar-right">
           <a href="<%= @base_path %>"><span class="branch"><%= Config.base_branch %></span></a>
@@ -53,14 +53,14 @@
     </div>
 
     <!-- JavaScripts -->
-    <%= vendor_javascript_tag(:'jquery.min') %>
-    <%= vendor_javascript_tag(:'jquery.tablesorter.min') %>
-    <%= vendor_javascript_tag(:'jquery.scrollTo.min') %>
-    <%= vendor_javascript_tag(:'jquery.timeago') %>
-    <%= vendor_javascript_tag(:'highcharts.src-4.0.1') %>
-    <%= vendor_javascript_tag(:'prettify') %>
-    <%= vendor_javascript_tag(:'bootstrap.min') %>
-    <%= javascript_tag(:application) %>
-    <%= vendor_javascript_tag(:'jquery.filtertable.min') %>
+    <script src="<%= asset_path("vendor/javascripts/jquery.min.js") %>"></script>
+    <script src="<%= asset_path("vendor/javascripts/jquery.tablesorter.min.js") %>"></script>
+    <script src="<%= asset_path("vendor/javascripts/jquery.scrollTo.min.js") %>"></script>
+    <script src="<%= asset_path("vendor/javascripts/jquery.timeago.js") %>"></script>
+    <script src="<%= asset_path("vendor/javascripts/highcharts.src-4.0.1.js") %>"></script>
+    <script src="<%= asset_path("vendor/javascripts/prettify.js") %>"></script>
+    <script src="<%= asset_path("vendor/javascripts/bootstrap.min.js") %>"></script>
+    <script src="<%= asset_path("javascripts/application.js") %>"></script>
+    <script src="<%= asset_path("vendor/javascripts/jquery.filtertable.min.js") %>"></script>
   </body>
 </html>
