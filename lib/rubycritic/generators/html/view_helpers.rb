@@ -18,6 +18,18 @@ module RubyCritic
       relative_path("assets/#{file}")
     end
 
+    def vendor_javascript_tag(file)
+      "<script src='" + vendor_asset_path("javascripts/#{file}.js").to_s + "'></script>"
+    end
+
+    def vendor_stylesheet_path(file)
+      vendor_asset_path("stylesheets/#{file}.css")
+    end
+
+    def vendor_asset_path(file)
+      relative_path("assets/vendor/#{file}")
+    end
+
     def image_path(file)
       asset_path("images/#{file}")
     end

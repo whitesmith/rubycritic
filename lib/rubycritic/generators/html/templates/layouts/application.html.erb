@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- StyleSheets -->
-    <link href="<%= stylesheet_path(:'bootstrap.min') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
-    <link href="<%= stylesheet_path(:'font-awesome.min') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
-    <link href="<%= stylesheet_path(:'prettify.custom_theme') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="<%= vendor_stylesheet_path(:'bootstrap.min') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="<%= vendor_stylesheet_path(:'font-awesome.min') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="<%= vendor_stylesheet_path(:'prettify.custom_theme') %>" media="screen, projection, print" rel="stylesheet" type="text/css">
     <link href="<%= stylesheet_path(:application) %>" media="screen, projection, print" rel="stylesheet" type="text/css">
   </head>
 
@@ -53,14 +53,14 @@
     </div>
 
     <!-- JavaScripts -->
-    <%= javascript_tag(:'jquery.min') %>
-    <%= javascript_tag(:'jquery.tablesorter.min') %>
-    <%= javascript_tag(:'jquery.scrollTo.min') %>
-    <%= javascript_tag(:'jquery.timeago') %>
-    <%= javascript_tag(:'highcharts.src-4.0.1') %>
-    <%= javascript_tag(:'prettify') %>
-    <%= javascript_tag(:'bootstrap.min') %>
+    <%= vendor_javascript_tag(:'jquery.min') %>
+    <%= vendor_javascript_tag(:'jquery.tablesorter.min') %>
+    <%= vendor_javascript_tag(:'jquery.scrollTo.min') %>
+    <%= vendor_javascript_tag(:'jquery.timeago') %>
+    <%= vendor_javascript_tag(:'highcharts.src-4.0.1') %>
+    <%= vendor_javascript_tag(:'prettify') %>
+    <%= vendor_javascript_tag(:'bootstrap.min') %>
     <%= javascript_tag(:application) %>
-    <%= javascript_tag(:'jquery.filtertable.min') %>
+    <%= vendor_javascript_tag(:'jquery.filtertable.min') %>
   </body>
 </html>
