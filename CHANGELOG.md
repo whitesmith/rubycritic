@@ -1,5 +1,7 @@
 # master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.5.2...master)
 
+* [CHANGE] Make Github Linguist ignore vendored files (by [@sl4vr][])
+
 # v4.5.2 / 2020-08-20 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.1...v4.5.2)
 
 * [BUGFIX] Handle simplecov v0.19 and install appraisal (by [@MZiserman][])
@@ -351,3 +353,4 @@
 [@lloydwatkin]: https://github.com/lloydwatkin
 [@Flink]: https://github.com/Flink
 [@jackcasey]: https://github.com/jackcasey
+[@sl4vr]: https://github.com/sl4vr
