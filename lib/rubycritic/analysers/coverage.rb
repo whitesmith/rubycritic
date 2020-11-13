@@ -9,6 +9,8 @@ module RubyCritic
     class Coverage
       include Colorize
 
+      RESULTSET_FILENAME = '.resultset.json'
+
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
         @result = results.first
@@ -44,30 +46,28 @@ module RubyCritic
         @result.source_files.detect { |file| file.filename == needle }
       end
 
-      # The path to the .resultset.json cache file
+      # The path to the cache file
       def resultset_path
-        File.join(SimpleCov.coverage_path, '.resultset.json')
+        File.join(SimpleCov.coverage_path, RESULTSET_FILENAME)
       end
 
       def resultset_writelock
-        File.join(SimpleCov.coverage_path, '.resultset.json.lock')
+        "#{resultset_path}.lock"
       end
 
       # Loads the cached resultset from JSON and returns it as a Hash,
       # caching it for subsequent accesses.
       def resultset
-        @resultset ||= begin
-          if (data = stored_data)
-            begin
-              JSON.parse(data) || {}
-            rescue JSON::ParserError => err
-              puts "Error: Loading .resultset.json: #{err.message}"
-              {}
-            end
-          else
-            {}
-          end
-        end
+        @resultset ||= parse_resultset(stored_data)
+      end
+
+      def parse_resultset(data)
+        return {} unless data
+
+        JSON.parse(data) || {}
+      rescue JSON::ParserError => err
+        puts "Error: Loading #{RESULTSET_FILENAME}: #{err.message}"
+        {}
       end
 
       # Returns the contents of the resultset cache as a string or if the file is missing or empty nil
@@ -91,15 +91,17 @@ module RubyCritic
 
         return yield unless File.exist?(resultset_writelock)
 
-        begin
-          @resultset_locked = true
-          File.open(resultset_writelock, 'w+') do |file|
-            file.flock(File::LOCK_EX)
-            yield
-          end
-        ensure
-          @resultset_locked = false
+        with_lock(&proc)
+      end
+
+      def with_lock
+        @resultset_locked = true
+        File.open(resultset_writelock, 'w+') do |file|
+          file.flock(File::LOCK_EX)
+          yield
         end
+      ensure
+        @resultset_locked = false
       end
 
       # Gets the resultset hash and re-creates all included instances

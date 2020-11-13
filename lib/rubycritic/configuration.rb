@@ -64,11 +64,15 @@ module RubyCritic
     end
 
     def self.method_missing(method, *args, &block)
-      configuration.public_send(method, *args, &block)
+      if configuration.respond_to?(method)
+        configuration.public_send(method, *args, &block)
+      else
+        super
+      end
     end
 
     def self.respond_to_missing?(symbol, include_all = false)
-      configuration.respond_to_missing?(symbol) || super
+      configuration.respond_to?(symbol) || super
     end
   end
 end
