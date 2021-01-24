@@ -13,6 +13,7 @@ module RubyCritic
     class Compare < Default
       def initialize(options)
         super
+        @original_config_root = Config.root
         @build_number = 0
       end
 
@@ -57,7 +58,7 @@ module RubyCritic
       def analyse_modified_files
         modified_files = Config.feature_branch_collection.where(SourceControlSystem::Git.modified_files)
         analysed_modules = AnalysedModulesCollection.new(modified_files.map(&:path), modified_files)
-        Config.root = "#{Config.root}/compare"
+        Config.root = Config.compare_root_directory
         report(analysed_modules)
       end
 
@@ -85,7 +86,7 @@ module RubyCritic
       end
 
       def branch_directory(branch)
-        "#{Config.root}/compare/#{Config.send(branch)}"
+        "#{@original_config_root}/compare/#{Config.send(branch)}"
       end
 
       # create a txt file with the branch score details
