@@ -1,4 +1,6 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.5.2...master)
+# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.5.3...main)
+
+# v4.5.3 / 2021-01-26 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.2...v4.5.3)
 
 * [CHANGE] Fix rubocop offenses (by [@sl4vr][])
 * [CHANGE] Make Github Linguist ignore vendored files (by [@sl4vr][])
@@ -357,3 +359,4 @@
 [@Flink]: https://github.com/Flink
 [@jackcasey]: https://github.com/jackcasey
 [@sl4vr]: https://github.com/sl4vr
+[@denny]: https://github.com/denny
