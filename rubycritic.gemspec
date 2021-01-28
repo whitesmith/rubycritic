@@ -37,7 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'rainbow', '~> 3.0'
   spec.add_runtime_dependency 'reek', '~> 6.0', '< 7.0'
   spec.add_runtime_dependency 'ruby_parser', '~> 3.8'
-  spec.add_runtime_dependency 'simplecov', '>= 0.17.0', '< 0.21'
+  spec.add_runtime_dependency 'simplecov', '>= 0.17.0'
   spec.add_runtime_dependency 'tty-which', '~> 0.4.0'
   spec.add_runtime_dependency 'virtus', '~> 1.0'
 
@@ -47,11 +47,12 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'byebug', '~> 11.0', '>= 10.0'
   spec.add_development_dependency 'cucumber', '~> 3.0', '>= 2.2.0'
   spec.add_development_dependency 'diff-lcs', '~> 1.3'
-  spec.add_development_dependency 'fakefs', '~> 0.10', '>= 0.10.0'
+  spec.add_development_dependency 'fakefs', '~> 1.3.2', '< 2.0.0'
   spec.add_development_dependency 'mdl', '~> 0.5.0'
-  spec.add_development_dependency 'minitest', '~> 5.3', '>= 5.3.0'
+  spec.add_development_dependency 'minitest', '>= 5.3.0'
   spec.add_development_dependency 'minitest-around', '~> 0.5.0', '>= 0.4.0'
   spec.add_development_dependency 'mocha', '~> 1.1', '>= 1.1.0'
   spec.add_development_dependency 'rake', '~> 12.0', '>= 11.0.0'
+  spec.add_development_dependency 'rexml', '>= 3.2.0'
   spec.add_development_dependency 'rubocop', '~> 0.65.0'
 end
