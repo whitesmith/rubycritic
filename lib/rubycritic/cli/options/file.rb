@@ -38,7 +38,7 @@ module RubyCritic
         private
 
         def base_branch
-          return options.dig('mode_ci', 'branch') || 'master' if options.dig('mode_ci', 'enabled').to_s == 'true'
+          return options.dig('mode_ci', 'branch') || 'main' if options.dig('mode_ci', 'enabled').to_s == 'true'
 
           options['branch']
         end

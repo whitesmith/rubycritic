@@ -77,8 +77,8 @@ module RubyCritic
             end
 
             opts.on('-m', '--mode-ci [BASE_BRANCH]',
-                    'Use CI mode (faster, analyses diffs w.r.t base_branch (default: master))') do |branch|
-              self.base_branch = branch || 'master'
+                    'Use CI mode (faster, analyses diffs w.r.t base_branch (default: main))') do |branch|
+              self.base_branch = branch || 'main'
               set_current_branch
               self.mode = :ci
             end
