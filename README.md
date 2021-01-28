@@ -128,7 +128,7 @@ $ rubycritic --help
 - `console`
 - `lint`
 2. See [custom formatters docs](/docs/formatters.md)
-3. Faster, analyses diffs w.r.t base_branch (default: master), see `-b`
+3. Faster, analyses diffs w.r.t base_branch (default: main), see `-b`
 4. Works only with `-b`, default: 0
 
 You also can use a config file. Just create a `.rubycritic.yml` on your project root path.
@@ -138,8 +138,8 @@ Here are one example:
 ```yml
 mode_ci:
   enabled: true # default is false
-  branch: 'production' # default is master
-branch: 'production' # default is master
+  branch: 'production' # default is main
+branch: 'production' # default is main
 path: '/tmp/mycustompath' # Set path where report will be saved (tmp/rubycritic by default)
 threshold_score: 10 # default is 0
 deduplicate_symlinks: true # default is false
