@@ -1,13 +1,13 @@
-# master [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.5.2...master)
+# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.6.0...main)
+
+* [CHANGE] Updated master references to main (by [@96RadhikaJadhav][])
+
+# v4.6.0 / 2021-01-28 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.2...v4.6.0)
 
 * [CHANGE] Fix rubocop offenses (by [@sl4vr][])
 * [CHANGE] Make Github Linguist ignore vendored files (by [@sl4vr][])
 * [BUGFIX] Fix directory structure of reports when comparing branches (by [@denny][])
 * [BUGFIX] Restrict simplecov to versions before data format changed (by [@denny][])
-
-# main / 2021-01-29 [(commits)](https://github.com/96RadhikaJadhav/rubycritic/compare/main...updated-references-to-master)
-
-* [CHANGE] Updated master references to main (by [@96RadhikaJadhav][])
 
 # v4.5.2 / 2020-08-20 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.1...v4.5.2)
 
@@ -362,3 +362,4 @@
 [@jackcasey]: https://github.com/jackcasey
 [@sl4vr]: https://github.com/sl4vr
 [@96RadhikaJadhav]: https://github.com/96RadhikaJadhav/
+[@denny]: https://github.com/denny
