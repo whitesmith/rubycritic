@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/whitesmith/rubycritic.svg?branch=master)](https://travis-ci.org/whitesmith/rubycritic)
 [![Code Climate](https://codeclimate.com/github/whitesmith/rubycritic/badges/gpa.svg)](https://codeclimate.com/github/whitesmith/rubycritic)
 
-<img src="https://github.com/whitesmith/rubycritic/raw/master/images/logo.png" alt="RubyCritic Icon" align="right">
+<img src="https://github.com/whitesmith/rubycritic/raw/main/images/logo.png" alt="RubyCritic Icon" align="right">
 
 RubyCritic is a gem that wraps around static analysis gems such as [Reek][1], [Flay][2] and [Flog][3] to provide a quality report of your Ruby code.
 
@@ -27,15 +27,15 @@ This gem provides features such as:
 
 1. An overview of your project:
 
-  ![RubyCritic overview screenshot](https://github.com/whitesmith/rubycritic/raw/master/images/overview.png)
+  ![RubyCritic overview screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/overview.png)
 
 2. An index of the project files with their respective number of smells:
 
-  ![RubyCritic code index screenshot](https://github.com/whitesmith/rubycritic/raw/master/images/code.png)
+  ![RubyCritic code index screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/code.png)
 
 3. An index of the smells detected:
 
-  ![RubyCritic smells index screenshot](https://github.com/whitesmith/rubycritic/raw/master/images/smells.png)
+  ![RubyCritic smells index screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/smells.png)
 
 4. When analysing code like the following:
 
@@ -51,11 +51,11 @@ This gem provides features such as:
 
   It basically turns something like this:
 
-  ![Reek output screenshot](https://github.com/whitesmith/rubycritic/raw/master/images/reek.png)
+  ![Reek output screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/reek.png)
 
   Into something like this:
 
-  ![RubyCritic file code screenshot](https://github.com/whitesmith/rubycritic/raw/master/images/smell-details.png)
+  ![RubyCritic file code screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/smell-details.png)
 
 5. It uses your source control system (only Git, Mercurial and Perforce
   are currently supported) to compare your currently uncommitted
@@ -243,7 +243,7 @@ The current core team consists of:
 
 ## Credits
 
-![Whitesmith](https://github.com/whitesmith/rubycritic/raw/master/images/whitesmith.png)
+![Whitesmith](https://github.com/whitesmith/rubycritic/raw/main/images/whitesmith.png)
 
 RubyCritic is maintained and funded by [Whitesmith][9]. Tweet your questions or suggestions to [@Whitesmithco][10].
 
