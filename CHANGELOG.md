@@ -6,6 +6,7 @@
 * [CHANGE] Make Github Linguist ignore vendored files (by [@sl4vr][])
 * [BUGFIX] Fix directory structure of reports when comparing branches (by [@denny][])
 * [BUGFIX] Restrict simplecov to versions before data format changed (by [@denny][])
+* [CHANGE] CI: Drop rbx-3 from matrix, does not install (by [@olleolleolle][])
 
 # v4.5.2 / 2020-08-20 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.1...v4.5.2)
 
