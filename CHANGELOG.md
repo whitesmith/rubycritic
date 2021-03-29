@@ -2,6 +2,7 @@
 
 # v4.6.0 / 2021-01-28 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.2...v4.6.0)
 
+* [CHANGE] Add support for Ruby 3.0 (by [@etagwerker][])
 * [CHANGE] Fix rubocop offenses (by [@sl4vr][])
 * [CHANGE] Make Github Linguist ignore vendored files (by [@sl4vr][])
 * [BUGFIX] Fix directory structure of reports when comparing branches (by [@denny][])
