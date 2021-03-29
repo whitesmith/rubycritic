@@ -1,13 +1,17 @@
-# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.6.0...main)
+# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...main)
+
+# v4.6.0 / 2021-01-28 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.0...v4.6.1)
+
+* [CHANGE] CI: Drop rbx-3 from matrix, does not install (by [@olleolleolle][])
+* [CHANGE] Add support for Ruby 3.0 (by [@etagwerker][])
+* [BUGFIX] Fix images on readme (by [@borisrorsvort][])
 
 # v4.6.0 / 2021-01-28 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.2...v4.6.0)
 
-* [CHANGE] Add support for Ruby 3.0 (by [@etagwerker][])
 * [CHANGE] Fix rubocop offenses (by [@sl4vr][])
 * [CHANGE] Make Github Linguist ignore vendored files (by [@sl4vr][])
 * [BUGFIX] Fix directory structure of reports when comparing branches (by [@denny][])
 * [BUGFIX] Restrict simplecov to versions before data format changed (by [@denny][])
-* [CHANGE] CI: Drop rbx-3 from matrix, does not install (by [@olleolleolle][])
 
 # v4.5.2 / 2020-08-20 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.1...v4.5.2)
 
