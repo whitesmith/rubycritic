@@ -1,6 +1,6 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...main)
 
-# v4.6.0 / 2021-01-28 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.0...v4.6.1)
+# v4.6.1 / 2021-01-28 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.0...v4.6.1)
 
 * [CHANGE] CI: Drop rbx-3 from matrix, does not install (by [@olleolleolle][])
 * [CHANGE] Add support for Ruby 3.0 (by [@etagwerker][])
