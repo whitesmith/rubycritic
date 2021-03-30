@@ -92,7 +92,7 @@ Finally, it's time to set up the job that will run in the Build Server after eve
 
 Under `Source Code Management` select `Git` and enter your project's repository URL. If your project is private, then you need to set up Jenkins' credentials so that GitHub can authorize it. This was the reason for setting up Jenkins' SSH key beforehand. Now all that has to be done is to click the `Add` button on the far right, pick the `kind` of credentials `SSH Username with private key` and select the `Private key` option `from the Jenkins master ~/.ssh`. Confirm these new credentials by clicking another `Add` button.
 
-Under `Branches to build` you can enter one or more branches that you want Jenkins to build against. The default is `*/master` but you can leave the `branch` field blank so that Jenkins builds against any changed branch.
+Under `Branches to build` you can enter one or more branches that you want Jenkins to build against. The default is `*/main` but you can leave the `branch` field blank so that Jenkins builds against any changed branch.
 
 Under `Build Triggers` select `Build when a change is pushed to GitHub`, and start configuring the `Build` script. Click the dropdown `Add build step`, select the `Execute shell` option and in the new textarea enter the script to be run after every push. The possibilities here are endless. You could:
 

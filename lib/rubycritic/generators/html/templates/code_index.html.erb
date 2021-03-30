@@ -24,7 +24,7 @@
               <% unless Config.suppress_ratings %>
                 <td class="center">
                   <% if Config.build_mode? %>
-                    <% master_analysed_module = Config.base_branch_collection.find(analysed_module.pathname) %>
+                    <% master_analysed_module = Config.base__collection.find(analysed_module.pathname) %>
                     <% if master_analysed_module.cost > analysed_module.cost %>
                       <span class="glyphicon glyphicon-arrow-up green-color"></span>
                     <% elsif master_analysed_module.cost < analysed_module.cost %>

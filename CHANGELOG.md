@@ -6,6 +6,8 @@
 * [CHANGE] Add support for Ruby 3.0 (by [@etagwerker][])
 * [BUGFIX] Fix images on readme (by [@borisrorsvort][])
 
+* [CHANGE] Updated master references to main (by [@96RadhikaJadhav][])
+
 # v4.6.0 / 2021-01-28 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.2...v4.6.0)
 
 * [CHANGE] Fix rubocop offenses (by [@sl4vr][])
@@ -365,4 +367,5 @@
 [@Flink]: https://github.com/Flink
 [@jackcasey]: https://github.com/jackcasey
 [@sl4vr]: https://github.com/sl4vr
+[@96RadhikaJadhav]: https://github.com/96RadhikaJadhav/
 [@denny]: https://github.com/denny
