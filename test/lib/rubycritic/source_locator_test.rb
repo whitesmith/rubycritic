@@ -32,6 +32,11 @@ describe RubyCritic::SourceLocator do
       _(RubyCritic::SourceLocator.new(initial_paths).paths).must_match_array final_paths
     end
 
+    it 'finds files which have a ruby shebang' do
+      paths = ['file_with_ruby_shebang']
+      _(RubyCritic::SourceLocator.new(paths).paths).must_equal paths
+    end
+
     context 'when configured to deduplicate symlinks' do
       it 'favors a file over a symlink if they both point to the same target' do
         RubyCritic::Config.stubs(:deduplicate_symlinks).returns(true)
