@@ -7,6 +7,7 @@ module RubyCritic
   class SourceLocator
     RUBY_EXTENSION = '.rb'.freeze
     RUBY_FILES = File.join('**', "*#{RUBY_EXTENSION}")
+    RUBY_SHEBANG = '#!/usr/bin/env ruby'.freeze
 
     def initialize(paths)
       @initial_paths = Array(paths)
@@ -39,7 +40,7 @@ module RubyCritic
       path_list = @initial_paths.flat_map do |path|
         if File.directory?(path)
           Pathname.glob(File.join(path, RUBY_FILES))
-        elsif File.exist?(path) && File.extname(path) == RUBY_EXTENSION
+        elsif File.exist?(path) && ruby_file?(path)
           Pathname.new(path)
         end
       end.compact
@@ -47,6 +48,10 @@ module RubyCritic
       deduplicate_symlinks(path_list) if Config.deduplicate_symlinks
 
       path_list.map(&:cleanpath)
+    end
+
+    def ruby_file?(path)
+      File.extname(path) == RUBY_EXTENSION || File.open(path, &:gets).to_s.match?(RUBY_SHEBANG)
     end
   end
 end
