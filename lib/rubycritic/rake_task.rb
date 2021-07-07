@@ -36,11 +36,12 @@ module RubyCritic
     # "-p / --path" since that is set separately. Defaults to ''.
     attr_writer :options
 
-    def initialize(name = :rubycritic)
-      @name    = name
-      @paths   = FileList['.']
-      @options = ''
-      @verbose = false
+    def initialize(name = :rubycritic, description = 'Run RubyCritic')
+      @name           = name
+      @description    = description
+      @paths          = FileList['.']
+      @options        = ''
+      @verbose        = false
 
       yield self if block_given?
       define_task
@@ -48,10 +49,10 @@ module RubyCritic
 
     private
 
-    attr_reader :name, :paths, :verbose, :options
+    attr_reader :name, :description, :paths, :verbose, :options
 
     def define_task
-      desc 'Run RubyCritic'
+      desc description
       task(name) { run_task }
     end
 
