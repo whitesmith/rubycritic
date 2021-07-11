@@ -208,6 +208,22 @@ RubyCritic::RakeTask.new do |task|
 end
 ```
 
+If you wish to create multiple Rake tasks (e.g., for local & for ci-specific configuration), you can do so!
+If you decide to do this, you should provide a clearer description for each task:
+
+```ruby
+# for local
+RubyCritic::RakeTask.new("local", "Run RubyCritic (local configuration)" do |task|
+  # ...
+end
+
+# for CI
+RubyCritic::RakeTask.new("ci", "Run RubyCritic (CI configuration)" do |task|
+  task.options = "--mode-ci"
+  # ...
+end
+```
+
 ## Formatters
 
 See [formatters](docs/formatters.md)
