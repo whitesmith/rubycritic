@@ -51,7 +51,7 @@ module RubyCritic
     end
 
     def ruby_file?(path)
-      File.extname(path) == RUBY_EXTENSION || File.open(path, &:gets).to_s.match?(RUBY_SHEBANG)
+      Config.ruby_extensions.include?(File.extname(path)) || File.open(path, &:gets).to_s.match?(RUBY_SHEBANG)
     end
   end
 end
