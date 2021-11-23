@@ -86,6 +86,7 @@ detectors:
     - RubyCritic::RakeTask#options
     - RubyCritic::RakeTask#paths
     - RubyCritic::RakeTask#verbose
+    - RubyCritic::RakeTask#fail_on_error
   DuplicateMethodCall:
     exclude:
     - RubyCritic::Analyser::Churn#run

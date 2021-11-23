@@ -2,6 +2,7 @@
 
 * [FEATURE] Allow the Rake task generator to accept a description (by [@anicholson][])
 * [CHANGE] Replace travis-ci with Github Actions for contributors (by [@RyanSnodgrass][])
+* [BUGFIX] Exit with 0 or 1 from Rake Task. Fixes #214 (by [@RyanSnodgrass][])
 
 # v4.6.1 / 2021-01-28 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.0...v4.6.1)
 
@@ -369,3 +370,4 @@
 [@jackcasey]: https://github.com/jackcasey
 [@sl4vr]: https://github.com/sl4vr
 [@denny]: https://github.com/denny
+[@RyanSnodgrass]: https://github.com/RyanSnodgrass
