@@ -38,8 +38,6 @@ jobs:
         include:
           - ruby-version: ruby-head
             experimental: true
-          - ruby-version: jruby-9.1.17.0
-            experimental: true
           - ruby-version: jruby-9.2
             experimental: true
           - ruby-version: jruby-9.3
@@ -72,8 +70,6 @@ jobs:
         experimental: [false]
         include:
           - ruby-version: ruby-head
-            experimental: true
-          - ruby-version: jruby-9.1.17.0
             experimental: true
           - ruby-version: jruby-9.2
             experimental: true
@@ -108,8 +104,6 @@ jobs:
         include:
           - ruby-version: ruby-head
             experimental: true
-          - ruby-version: jruby-9.1.17.0
-            experimental: true
           - ruby-version: jruby-9.2
             experimental: true
           - ruby-version: jruby-9.3
@@ -142,8 +136,6 @@ jobs:
         experimental: [false]
         include:
           - ruby-version: ruby-head
-            experimental: true
-          - ruby-version: jruby-9.1.17.0
             experimental: true
           - ruby-version: jruby-9.2
             experimental: true
