@@ -21,7 +21,6 @@ module RubyCritic
   #     task.paths = FileList['lib/**/*.rb', 'spec/**/*.rb']
   #   end
   #
-  # @quality :reek:TooManyInstanceVariables { max_instance_variables: 5 }
   class RakeTask < ::Rake::TaskLib
     # Name of RubyCritic task. Defaults to :rubycritic.
     attr_writer :name

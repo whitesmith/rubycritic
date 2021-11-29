@@ -156,6 +156,7 @@ detectors:
     - RubyCritic::Generator::Html::CodeFile
     - RubyCritic::Generator::Html::Overview
     - RubyCritic::Generator::Html::SmellsIndex
+    - RubyCritic::RakeTask
   ControlParameter:
     exclude:
     - RubyCritic::CommandFactory#self.command_class
