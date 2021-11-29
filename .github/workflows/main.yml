@@ -1,0 +1,182 @@
+name: Continuous Integration
+
+on:
+  - pull_request
+  - push
+
+jobs:
+  pre_job:
+    runs-on: ubuntu-latest
+    # Map a step output to a job output
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - id: skip_check
+        uses: fkirc/skip-duplicate-actions@master
+        with:
+          # All of these options are optional, so you can remove them if you are happy with the defaults
+          concurrent_skipping: 'same_content'
+          skip_after_successful_duplicate: 'true'
+          paths_ignore: '["**/README.md", "**/docs/**", "**/CHANGELOG.md"]'
+          do_not_skip: '["pull_request", "workflow_dispatch", "schedule"]'
+
+  Features:
+    needs: pre_job # skip duplicates
+    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby-version:
+          - 2.4
+          - 2.5
+          - 2.6
+          - 2.7
+          - 3.0
+        experimental: [false]
+        include:
+          - ruby-version: ruby-head
+            experimental: true
+          - ruby-version: jruby-9.1.17.0
+            experimental: true
+          - ruby-version: jruby-9.2
+            experimental: true
+          - ruby-version: jruby-9.3
+            experimental: true
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby ${{ matrix.ruby-version }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+      - name: bundle install
+        run: bundle install
+      - name: Run Cucumber
+        run: bundle exec cucumber features --format progress --color
+
+  Rubocop:
+    needs: pre_job # skip duplicates
+    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby-version:
+          - 2.4
+          - 2.5
+          - 2.6
+          - 2.7
+          - 3.0
+        experimental: [false]
+        include:
+          - ruby-version: ruby-head
+            experimental: true
+          - ruby-version: jruby-9.1.17.0
+            experimental: true
+          - ruby-version: jruby-9.2
+            experimental: true
+          - ruby-version: jruby-9.3
+            experimental: true
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby ${{ matrix.ruby-version }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+      - name: bundle install
+        run: bundle install
+      - name: Run Rubocop
+        run: bundle exec rubocop
+
+  Reek:
+    needs: pre_job # skip duplicates
+    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby-version:
+          - 2.4
+          - 2.5
+          - 2.6
+          - 2.7
+          - 3.0
+        experimental: [false]
+        include:
+          - ruby-version: ruby-head
+            experimental: true
+          - ruby-version: jruby-9.1.17.0
+            experimental: true
+          - ruby-version: jruby-9.2
+            experimental: true
+          - ruby-version: jruby-9.3
+            experimental: true
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby ${{ matrix.ruby-version }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+      - name: bundle install
+        run: bundle install
+      - name: Run Reek
+        run: bundle exec rake reek
+
+  Minitest:
+    needs: pre_job # skip duplicates
+    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby-version:
+          - 2.4
+          - 2.5
+          - 2.6
+          - 2.7
+          - 3.0
+        experimental: [false]
+        include:
+          - ruby-version: ruby-head
+            experimental: true
+          - ruby-version: jruby-9.1.17.0
+            experimental: true
+          - ruby-version: jruby-9.2
+            experimental: true
+          - ruby-version: jruby-9.3
+            experimental: true
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby ${{ matrix.ruby-version }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+      - name: bundle install
+        run: bundle install
+      - name: Run Unit tests
+        run: bundle exec rake test
+
+  MarkdownLint:
+    needs: pre_job # skip duplicates
+    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+          bundler-cache: true
+      - name: bundle install
+        run: bundle install
+      - name: Run markdownlint
+        run: bundle exec mdl .
