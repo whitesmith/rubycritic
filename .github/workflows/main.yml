@@ -51,8 +51,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
-      - name: bundle install
-        run: bundle install
+          cache-version: 1
       - name: Run Cucumber
         run: bundle exec cucumber features --format progress --color
 
@@ -87,8 +86,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
-      - name: bundle install
-        run: bundle install
+          cache-version: 1
       - name: Run Rubocop
         run: bundle exec rubocop
 
@@ -123,8 +121,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
-      - name: bundle install
-        run: bundle install
+          cache-version: 1
       - name: Run Reek
         run: bundle exec rake reek
 
@@ -160,8 +157,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
-      - name: bundle install
-        run: bundle install
+          cache-version: 1
       - name: Run Unit tests
         run: bundle exec rake test
 
@@ -176,7 +172,6 @@ jobs:
         with:
           ruby-version: 3.0
           bundler-cache: true
-      - name: bundle install
-        run: bundle install
+          cache-version: 1
       - name: Run markdownlint
         run: bundle exec mdl .
