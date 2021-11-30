@@ -196,6 +196,9 @@ RubyCritic::RakeTask.new do |task|
 
   # Defaults to false
   task.verbose = true
+
+  # Fail the Rake task if RubyCritic doesn't pass. Defaults to true
+  task.fail_on_error = true
 end
 ```
 

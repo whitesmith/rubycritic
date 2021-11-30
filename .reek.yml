@@ -86,6 +86,7 @@ detectors:
     - RubyCritic::RakeTask#options
     - RubyCritic::RakeTask#paths
     - RubyCritic::RakeTask#verbose
+    - RubyCritic::RakeTask#fail_on_error
   DuplicateMethodCall:
     exclude:
     - RubyCritic::Analyser::Churn#run
@@ -155,6 +156,7 @@ detectors:
     - RubyCritic::Generator::Html::CodeFile
     - RubyCritic::Generator::Html::Overview
     - RubyCritic::Generator::Html::SmellsIndex
+    - RubyCritic::RakeTask
   ControlParameter:
     exclude:
     - RubyCritic::CommandFactory#self.command_class

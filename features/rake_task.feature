@@ -63,3 +63,20 @@ Feature: RubyCritic can be run via Rake task
       """
       Score (93.19) is below the minimum 95
       """
+    And the exit status indicates an error
+
+  Scenario: 'fail_on_error' when false will exit 0 even when RubyCritic fails
+    Given the smelly file 'smelly.rb'
+    When I run rake rubycritic with:
+      """
+      RubyCritic::RakeTask.new do |t|
+        t.paths = FileList['smelly.*']
+        t.fail_on_error = false
+        t.options = '--no-browser -f console --minimum-score 95'
+      end
+      """
+    Then the output should contain:
+      """
+      Score (93.19) is below the minimum 95
+      """
+    And the exit status indicates a success
