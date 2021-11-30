@@ -44,7 +44,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'appraisal'
   spec.add_development_dependency 'aruba', '~> 0.12', '>= 0.12.0'
   spec.add_development_dependency 'bundler', '~> 2.0', '>= 2.0.0'
-  spec.add_development_dependency 'byebug', '~> 11.0', '>= 10.0'
+  if RUBY_PLATFORM == 'java'
+    spec.add_development_dependency 'pry-debugger-jruby'
+  else
+    spec.add_development_dependency 'byebug', '~> 11.0', '>= 10.0'
+  end
   spec.add_development_dependency 'cucumber', '~> 3.0', '>= 2.2.0'
   spec.add_development_dependency 'diff-lcs', '~> 1.3'
   spec.add_development_dependency 'fakefs', '~> 1.3.2', '< 2.0.0'
