@@ -29,18 +29,18 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - 2.4
-          - 2.5
-          - 2.6
-          - 2.7
+          - '2.4'
+          - '2.5'
+          - '2.6'
+          - '2.7'
           - '3.0'
         experimental: [false]
         include:
-          - ruby-version: ruby-head
+          - ruby-version: 'ruby-head'
             experimental: true
-          - ruby-version: jruby-9.2
+          - ruby-version: 'jruby-9.2'
             experimental: true
-          - ruby-version: jruby-9.3
+          - ruby-version: 'jruby-9.3'
             experimental: true
     steps:
       - uses: actions/checkout@v2
@@ -62,18 +62,18 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - 2.4
-          - 2.5
-          - 2.6
-          - 2.7
+          - '2.4'
+          - '2.5'
+          - '2.6'
+          - '2.7'
           - '3.0'
         experimental: [false]
         include:
-          - ruby-version: ruby-head
+          - ruby-version: 'ruby-head'
             experimental: true
-          - ruby-version: jruby-9.2
+          - ruby-version: 'jruby-9.2'
             experimental: true
-          - ruby-version: jruby-9.3
+          - ruby-version: 'jruby-9.3'
             experimental: true
     steps:
       - uses: actions/checkout@v2
@@ -95,18 +95,18 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - 2.4
-          - 2.5
-          - 2.6
-          - 2.7
+          - '2.4'
+          - '2.5'
+          - '2.6'
+          - '2.7'
           - '3.0'
         experimental: [false]
         include:
-          - ruby-version: ruby-head
+          - ruby-version: 'ruby-head'
             experimental: true
-          - ruby-version: jruby-9.2
+          - ruby-version: 'jruby-9.2'
             experimental: true
-          - ruby-version: jruby-9.3
+          - ruby-version: 'jruby-9.3'
             experimental: true
     steps:
       - uses: actions/checkout@v2
@@ -128,18 +128,18 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - 2.4
-          - 2.5
-          - 2.6
-          - 2.7
+          - '2.4'
+          - '2.5'
+          - '2.6'
+          - '2.7'
           - '3.0'
         experimental: [false]
         include:
-          - ruby-version: ruby-head
+          - ruby-version: 'ruby-head'
             experimental: true
-          - ruby-version: jruby-9.2
+          - ruby-version: 'jruby-9.2'
             experimental: true
-          - ruby-version: jruby-9.3
+          - ruby-version: 'jruby-9.3'
             experimental: true
 
     steps:
