@@ -44,7 +44,6 @@ describe RubyCritic::Command::Compare do
         copy_proc = proc do |branch|
           FileUtils.cp "test/samples/#{branch}_file.rb", 'test/samples/compare_file.rb'
         end
-
         RubyCritic::SourceControlSystem::Git.stub(:switch_branch, copy_proc) do
           comparison = RubyCritic::Command::Compare.new(options)
           comparison.expects(:abort).once
