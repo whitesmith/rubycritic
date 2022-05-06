@@ -1,4 +1,6 @@
-# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...main)
+# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.7.0...main)
+
+# v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
 
 * [FEATURE] Allow the Rake task generator to accept a description (by [@anicholson][])
 * [CHANGE] Replace travis-ci with Github Actions for contributors (by [@RyanSnodgrass][])
