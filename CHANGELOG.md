@@ -1,5 +1,6 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...main)
 
+* [CHANGE] Run test suite with Ruby 3.1 (by [@etagwerker][])
 * [FEATURE] Allow the Rake task generator to accept a description (by [@anicholson][])
 * [CHANGE] Replace travis-ci with Github Actions for contributors (by [@RyanSnodgrass][])
 * [CHANGE] Drop support for JRuby 9.1.x (by [@RyanSnodgrass][])
