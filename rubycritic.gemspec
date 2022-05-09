@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'RubyCritic is a Ruby code quality reporter'
   spec.homepage      = 'https://github.com/whitesmith/rubycritic'
   spec.license       = 'MIT'
-  spec.required_ruby_version = '>= 2.4.0'
+  spec.required_ruby_version = '> 2.4.0'
 
   spec.files = [
     'CHANGELOG.md',
