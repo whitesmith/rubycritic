@@ -1,5 +1,7 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.7.0...main)
 
+* [CHANGE] Drop support for Ruby 2.4.x (by [@rishijain][])
+
 # v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
 
 * [CHANGE] Run test suite with Ruby 3.1 (by [@etagwerker][])
