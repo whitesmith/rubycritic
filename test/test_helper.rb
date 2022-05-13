@@ -29,17 +29,15 @@ end
 
 def with_cloned_fs
   FakeFS do
-    begin
-      FakeFS::FileSystem.clone(PathHelper.project_path)
+    FakeFS::FileSystem.clone(PathHelper.project_path)
 
-      # reek schema is required to init reek
-      FakeFS::FileSystem.clone(PathHelper.reek_schema_path)
+    # reek schema is required to init reek
+    FakeFS::FileSystem.clone(PathHelper.reek_schema_path)
 
-      Dir.chdir(PathHelper.project_path)
-      yield
-    ensure
-      FakeFS::FileSystem.clear
-    end
+    Dir.chdir(PathHelper.project_path)
+    yield
+  ensure
+    FakeFS::FileSystem.clear
   end
 end
 
