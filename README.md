@@ -235,7 +235,6 @@ See [formatters](docs/formatters.md)
 
 RubyCritic is supporting Ruby versions:
 
-* 2.5
 * 2.6
 * 2.7
 * 3.0
