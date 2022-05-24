@@ -1,5 +1,6 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.7.0...main)
 
+* [CHANGE] Drop support for Ruby 2.5.x (by [@cleicar][])
 * [CHANGE] Drop support for Ruby 2.4.x (by [@rishijain][])
 * [FEATURE] Add ruby_extensions configuration option (by [@stufro][])
 * [CHANGE] Include files which have a ruby shebang (by [@stufro][])

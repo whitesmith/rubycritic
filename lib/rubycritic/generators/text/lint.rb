@@ -18,7 +18,7 @@ module RubyCritic
           end
 
           def erb_template
-            @erb_template ||= ERB.new(File.read(TEMPLATE_PATH), nil, '-')
+            @erb_template ||= ERB.new(File.read(TEMPLATE_PATH), trim_mode: '-')
           end
         end
 

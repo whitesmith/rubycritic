@@ -10,7 +10,7 @@ module RubyCritic
           TEMPLATE_PATH = File.expand_path('templates/list.erb', __dir__)
 
           def erb_template
-            @erb_template ||= ERB.new(File.read(TEMPLATE_PATH), nil, '-')
+            @erb_template ||= ERB.new(File.read(TEMPLATE_PATH), trim_mode: '-')
           end
         end
 
