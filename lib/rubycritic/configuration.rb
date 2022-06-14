@@ -10,7 +10,7 @@ module RubyCritic
                   :feature_branch, :base_branch_score, :feature_branch_score,
                   :base_root_directory, :feature_root_directory,
                   :compare_root_directory, :threshold_score, :base_branch_collection,
-                  :feature_branch_collection, :churn_after
+                  :feature_branch_collection, :churn_after, :ruby_extensions
 
     def set(options)
       self.mode = options[:mode] || :default
@@ -20,6 +20,7 @@ module RubyCritic
       self.open_with = options[:open_with]
       self.no_browser = options[:no_browser]
       self.threshold_score = options[:threshold_score].to_i
+      self.ruby_extensions = options[:ruby_extensions] || %w[.rb .rake .thor]
       setup_version_control(options)
       setup_formats(options)
     end

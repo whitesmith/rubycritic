@@ -82,6 +82,7 @@ detectors:
     - RubyCritic::Configuration#base_branch_collection
     - RubyCritic::Configuration#feature_branch_collection
     - RubyCritic::Configuration#churn_after
+    - RubyCritic::Configuration#ruby_extensions
     - RubyCritic::RakeTask#name
     - RubyCritic::RakeTask#options
     - RubyCritic::RakeTask#paths
@@ -151,6 +152,7 @@ detectors:
     - RubyCritic::Command::Compare#build_details
     - RubyCritic::Command::Compare#threshold_reached?
     - RubyCritic::Command::Compare#threshold_values_set?
+    - RubyCritic::SourceLocator#ruby_file?
   TooManyInstanceVariables:
     exclude:
     - RubyCritic::Generator::Html::CodeFile

@@ -6,6 +6,10 @@ require 'rubycritic/core/analysed_modules_collection'
 describe RubyCritic::AnalysedModulesCollection do
   subject { RubyCritic::AnalysedModulesCollection.new(paths) }
 
+  before do
+    RubyCritic::Config.stubs(:ruby_extensions).returns(%w[.rb])
+  end
+
   describe '.new' do
     context 'with an empty path' do
       let(:paths) { '' }

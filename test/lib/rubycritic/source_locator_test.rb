@@ -7,6 +7,7 @@ describe RubyCritic::SourceLocator do
   before do
     @original_dir = Dir.getwd
     Dir.chdir('test/samples/location')
+    RubyCritic::Config.stubs(:ruby_extensions).returns(%w[.rb])
   end
 
   describe '#paths' do
@@ -30,6 +31,17 @@ describe RubyCritic::SourceLocator do
       initial_paths = ['.']
       final_paths = ['dir1/file1.rb', 'file0.rb', 'file0_symlink.rb']
       _(RubyCritic::SourceLocator.new(initial_paths).paths).must_match_array final_paths
+    end
+
+    it 'finds files with extensions it is configured to find' do
+      RubyCritic::Config.stubs(:ruby_extensions).returns(%w[.rb .foo])
+      paths = ['file0.rb', 'ruby_file_different_extension.foo']
+      _(RubyCritic::SourceLocator.new(paths).paths).must_equal paths
+    end
+
+    it 'finds files which have a ruby shebang' do
+      paths = ['file_with_ruby_shebang']
+      _(RubyCritic::SourceLocator.new(paths).paths).must_equal paths
     end
 
     context 'when configured to deduplicate symlinks' do
