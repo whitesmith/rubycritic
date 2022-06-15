@@ -4,6 +4,7 @@
 * [CHANGE] Drop support for Ruby 2.4.x (by [@rishijain][])
 * [FEATURE] Add ruby_extensions configuration option (by [@stufro][])
 * [CHANGE] Include files which have a ruby shebang (by [@stufro][])
+* [CHANGE] Fix some typos (by [@ydah][])
 
 # v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
 
@@ -382,3 +383,4 @@
 [@sl4vr]: https://github.com/sl4vr
 [@denny]: https://github.com/denny
 [@RyanSnodgrass]: https://github.com/RyanSnodgrass
+[@ydah]: https://github.com/ydah

@@ -34,7 +34,7 @@ Feature: RubyCritic can be controlled using command-line options
                                            Instantiate a given class as formatter and call report for reporting.
                                            Two ways are possible to load the formatter.
                                            If the class is not autorequired the REQUIREPATH can be given together
-                                           with the CLASSNAME to be loaded seperated by a :.
+                                           with the CLASSNAME to be loaded separated by a :.
                                            Example: rubycritic/markdown/reporter.rb:RubyCritic::MarkDown::Reporter
                                            or if the file is already required the CLASSNAME is enough
                                            Example: RubyCritic::MarkDown::Reporter

@@ -80,7 +80,7 @@ describe RubyCritic::SourceControlSystem::Git::Churn do
     end
 
     it 'returns 0 for an uncommited file' do
-      _(churn.revisions_count('non_existant_file')).must_equal 0
+      _(churn.revisions_count('non_existent_file')).must_equal 0
     end
 
     context 'with churn_after option specified' do
@@ -116,7 +116,7 @@ describe RubyCritic::SourceControlSystem::Git::Churn do
     end
 
     it 'returns nil for an uncommited file' do
-      assert_nil(churn.date_of_last_commit('non_existant_file'))
+      assert_nil(churn.date_of_last_commit('non_existent_file'))
     end
   end
 end

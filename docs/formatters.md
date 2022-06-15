@@ -1,7 +1,7 @@
 # Concept of formatters
 
 The formatters goal is to allow to extract the logic around the representation of each rubycritic run from the gathering of results.
-By delegating to a formatter you can write your own *custom* report for rubycritic and being indepedent on the logic.
+By delegating to a formatter you can write your own *custom* report for rubycritic and being independent on the logic.
 
 ## Formatters interface
 
@@ -57,9 +57,9 @@ See the [Rakefile](https://github.com/MarcGrimme/repo-small-badge/blob/master/Ra
 
 ### With classname and classpath
 
-When *rubycritic* is called outside of the structure that has to be **criticed** with just calling the command.
+When *rubycritic* is called outside of the structure that has to be **criticized** with just calling the command.
 The path to load as well, as the fully qualified classname of the formatter, have to be passed.
-This happens with the `--formater` option followed by the path to require (*requirepath*) a `:` as a separator and the fully qualified *classname*.
+This happens with the `--formatter` option followed by the path to require (*requirepath*) a `:` as a separator and the fully qualified *classname*.
 An example could look as follows:
 
 ``` shell
