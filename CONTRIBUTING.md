@@ -90,4 +90,4 @@ Here are a few examples:
 * Start with the change type BUGFIX / CHANGE / FEATURE.
 * Describe the brief of the change.
 * At the end of the entry, add an implicit link to your GitHub user page as `([@username][])`.
-* If this is your first contribution to RuboCop project, add a link definition for the implicit link to the bottom of the changelog as `[@username]: https://github.com/username`.
+* If this is your first contribution to RubyCritic project, add a link definition for the implicit link to the bottom of the changelog as `[@username]: https://github.com/username`.
