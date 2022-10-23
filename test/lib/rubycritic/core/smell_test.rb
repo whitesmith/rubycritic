@@ -102,4 +102,16 @@ describe RubyCritic::Smell do
       assert_raises { smell.doc_url }
     end
   end
+
+  describe 'default attributes' do
+    it 'has :new for status' do
+      smell = RubyCritic::Smell.new
+      _(smell.status).must_equal(:new)
+    end
+
+    it 'is has an empty array for locations' do
+      smell = RubyCritic::Smell.new
+      _(smell.locations).must_equal([])
+    end
+  end
 end

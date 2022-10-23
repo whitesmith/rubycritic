@@ -12,7 +12,7 @@ module RubyCritic
     attribute :locations, Array, default: []
     attribute :message
     attribute :score
-    attribute :status
+    attribute :status, Symbol, default: :new
     attribute :type
     attribute :analyser
 
