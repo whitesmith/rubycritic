@@ -5,6 +5,7 @@
 * [FEATURE] Add ruby_extensions configuration option (by [@stufro][])
 * [CHANGE] Include files which have a ruby shebang (by [@stufro][])
 * [CHANGE] Fix some typos (by [@ydah][])
+* [CHANGE] Remove wrong Rubocop reference in contributing file (by [@itsmeurbi]: https://github.com/itsmeurbi)
 
 # v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
 
