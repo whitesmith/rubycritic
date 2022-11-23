@@ -2,6 +2,7 @@
 
 * [CHORE] Test gem with Ruby 3.2 (by [@etagwerker][])
 * [CHORE] Test gem with Ruby 3.1 (by [@etagwerker][])
+* [CHANGE] Scope churn calculation to provided paths (by [@Fito][])
 * [CHANGE] Drop support for Ruby 2.5.x (by [@cleicar][])
 * [CHANGE] Drop support for Ruby 2.4.x (by [@rishijain][])
 * [FEATURE] Add ruby_extensions configuration option (by [@stufro][])
