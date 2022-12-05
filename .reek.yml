@@ -3,6 +3,9 @@ detectors:
   InstanceVariableAssumption:
     exclude:
       - RubyCritic::Analyser::Coverage
+  TooManyMethods:
+    exclude:
+      - RubyCritic::Cli::Options::File
   IrresponsibleModule:
     exclude:
     - RubyCritic::Analyser::Attributes
@@ -68,6 +71,7 @@ detectors:
     - RubyCritic::Configuration#format
     - RubyCritic::Configuration#mode
     - RubyCritic::Configuration#no_browser
+    - RubyCritic::Configuration#coverage_path
     - RubyCritic::Configuration#open_with
     - RubyCritic::Configuration#source_control_system
     - RubyCritic::Configuration#suppress_ratings

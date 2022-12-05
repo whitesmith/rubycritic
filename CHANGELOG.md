@@ -7,6 +7,7 @@
 * [CHANGE] Fix some typos (by [@ydah][])
 * [CHANGE] Remove wrong Rubocop reference in contributing file (by [@itsmeurbi]: https://github.com/itsmeurbi)
 * [BUGFIX] Restore missing smell status label (by [@itsmeurbi]: https://github.com/itsmeurbi)
+* [FEATURE] Add coverage_path configuration option (by [@exoego][])
 
 # v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
 
@@ -386,3 +387,4 @@
 [@denny]: https://github.com/denny
 [@RyanSnodgrass]: https://github.com/RyanSnodgrass
 [@ydah]: https://github.com/ydah
+[@exoego]: https://github.com/exoego

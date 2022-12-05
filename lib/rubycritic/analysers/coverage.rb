@@ -48,6 +48,9 @@ module RubyCritic
 
       # The path to the cache file
       def resultset_path
+        if (cp = Config.coverage_path)
+          SimpleCov.coverage_dir(cp)
+        end
         File.join(SimpleCov.coverage_path, RESULTSET_FILENAME)
       end
 

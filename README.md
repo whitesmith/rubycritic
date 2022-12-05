@@ -108,19 +108,20 @@ For a full list of the command-line options run:
 $ rubycritic --help
 ```
 
-| Command flag                        | Description                                                     |
-|-------------------------------------|-----------------------------------------------------------------|
-| `-v` / `--version`                  | Displays the current version and exits                          |
-| `-p` / `--path`                     | Set path where report will be saved (tmp/rubycritic by default) |
-| `-f` / `--format`                   | Report smells in the given format(s)<sup>1</sup>                |
-| `--custom-format path:classname`    | Load and instantiate custom formatter(s)<sup>2</sup>            |
-| `-s` / `--minimum-score`            | Set a minimum score (FLOAT: ex: 96.28), default: 0              |
-| `-m` / `--mode-ci`                  | Use CI mode<sup>3</sup>                                         |
-| `-b` / `--branch`                   | Set branch to compare                                           |
-| `-t` / `--maximum-decrease`         | Threshold for score difference between two branches<sup>4</sup> |
-| `--deduplicate-symlinks`            | De-duplicate symlinks based on their final target               |
-| `--suppress-ratings`                | Suppress letter ratings                                         |
-| `--no-browser`                      | Do not open html report with browser                            |
+| Command flag                     | Description                                                     |
+|----------------------------------|-----------------------------------------------------------------|
+| `-v` / `--version`               | Displays the current version and exits                          |
+| `-p` / `--path`                  | Set path where report will be saved (tmp/rubycritic by default) |
+| `--coverage-path`                | Set path where SimpleCov will be saved (./coverage by default)  |
+| `-f` / `--format`                | Report smells in the given format(s)<sup>1</sup>                |
+| `--custom-format path:classname` | Load and instantiate custom formatter(s)<sup>2</sup>            |
+| `-s` / `--minimum-score`         | Set a minimum score (FLOAT: ex: 96.28), default: 0              |
+| `-m` / `--mode-ci`               | Use CI mode<sup>3</sup>                                         |
+| `-b` / `--branch`                | Set branch to compare                                           |
+| `-t` / `--maximum-decrease`      | Threshold for score difference between two branches<sup>4</sup> |
+| `--deduplicate-symlinks`         | De-duplicate symlinks based on their final target               |
+| `--suppress-ratings`             | Suppress letter ratings                                         |
+| `--no-browser`                   | Do not open html report with browser                            |
 
 1. Available output formats:
 - `html` (default; will open in a browser)
@@ -141,6 +142,7 @@ mode_ci:
   branch: 'production' # default is master
 branch: 'production' # default is master
 path: '/tmp/mycustompath' # Set path where report will be saved (tmp/rubycritic by default)
+coverage_path: '/tmp/coverage' # Set path where SimpleCov coverage will be saved (./coverage by default)
 threshold_score: 10 # default is 0
 deduplicate_symlinks: true # default is false
 suppress_ratings: true # default is false
