@@ -81,7 +81,9 @@ module RubyCritic
 
       def self.current_branch
         branch_list = `git branch`
-        branch_list.match(/\*.*$/)[0].gsub('* ', '')
+        branch = branch_list.match(/\*.*$/)[0].gsub('* ', '')
+        branch = branch.gsub(/\(HEAD detached at (.*)\)$/, '\1') if branch =~ /\(HEAD detached at (.*)\)$/
+        branch
       end
 
       private
