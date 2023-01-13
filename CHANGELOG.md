@@ -1,5 +1,6 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.7.0...main)
 
+* [CHANGE] Run test suite with Ruby 3.2 (by [@Zhong-z][])
 * [CHANGE] Drop support for Ruby 2.5.x (by [@cleicar][])
 * [CHANGE] Drop support for Ruby 2.4.x (by [@rishijain][])
 * [FEATURE] Add ruby_extensions configuration option (by [@stufro][])
@@ -386,3 +387,4 @@
 [@denny]: https://github.com/denny
 [@RyanSnodgrass]: https://github.com/RyanSnodgrass
 [@ydah]: https://github.com/ydah
+[@Zhong-z]: https://github.com/Zhong-z
