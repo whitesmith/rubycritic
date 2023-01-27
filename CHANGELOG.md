@@ -5,8 +5,9 @@
 * [FEATURE] Add ruby_extensions configuration option (by [@stufro][])
 * [CHANGE] Include files which have a ruby shebang (by [@stufro][])
 * [CHANGE] Fix some typos (by [@ydah][])
-* [CHANGE] Remove wrong Rubocop reference in contributing file (by [@itsmeurbi]: https://github.com/itsmeurbi)
-* [BUGFIX] Restore missing smell status label (by [@itsmeurbi]: https://github.com/itsmeurbi)
+* [CHANGE] Remove wrong Rubocop reference in contributing file (by [@itsmeurbi][])
+* [BUGFIX] Restore missing smell status label (by [@itsmeurbi][])
+* [BUGFIX] Fix CI build related to markdownlint (by [@juanvqz][])
 
 # v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
 
@@ -386,3 +387,5 @@
 [@denny]: https://github.com/denny
 [@RyanSnodgrass]: https://github.com/RyanSnodgrass
 [@ydah]: https://github.com/ydah
+[@itsmeurbi]: https://github.com/itsmeurbi
+[@juanvqz]: https://github.com/juanvqz
