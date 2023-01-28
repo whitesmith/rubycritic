@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rubycritic/source_control_systems/base'
+require 'rubycritic/configurations/command_parser'
 
 module RubyCritic
   class Configuration
@@ -10,7 +11,8 @@ module RubyCritic
                   :feature_branch, :base_branch_score, :feature_branch_score,
                   :base_root_directory, :feature_root_directory,
                   :compare_root_directory, :threshold_score, :base_branch_collection,
-                  :feature_branch_collection, :churn_after, :ruby_extensions
+                  :feature_branch_collection, :churn_after, :ruby_extensions,
+                  :command
 
     def set(options)
       self.mode = options[:mode] || :default
@@ -23,6 +25,7 @@ module RubyCritic
       self.ruby_extensions = options[:ruby_extensions] || %w[.rb .rake .thor]
       setup_version_control(options)
       setup_formats(options)
+      setup_command
     end
 
     def setup_version_control(options)
@@ -35,6 +38,10 @@ module RubyCritic
       formats = options[:formats].to_a
       self.formats = formats.empty? ? [:html] : formats
       self.formatters = options[:formatters] || []
+    end
+
+    def setup_command
+      self.command = Configurations::CommandParser.new(self.mode).parse
     end
 
     def root=(path)
