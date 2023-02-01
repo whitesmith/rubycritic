@@ -30,3 +30,8 @@ Style/RedundantFreeze:
     - 'lib/rubycritic/source_control_systems/perforce.rb'
     - 'lib/rubycritic/source_locator.rb'
     - 'lib/rubycritic/version.rb'
+
+Layout/BlockAlignment:
+  Enabled: false
+  Exclude:
+    - 'features/step_definitions/rake_task_steps.rb'
