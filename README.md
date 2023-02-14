@@ -10,21 +10,17 @@ RubyCritic is a gem that wraps around static analysis gems such as [Reek][1], [F
 
 ## Table of Contents
 
-- [RubyCritic](#rubycritic)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Getting Started](#getting-started)
-  - [Usage](#usage)
-    - [Analyzer Configuration](#analyzer-configuration)
-    - [Alternative Usage Methods](#alternative-usage-methods)
-    - [Rake Task](#rake-task)
-  - [Formatters](#formatters)
-  - [Compatibility](#compatibility)
-  - [Improving RubyCritic](#improving-rubycritic)
-  - [Contributors](#contributors)
-  - [Credits](#credits)
-
-## Overview
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+  + [Analyzer Configuration](#analyzer-configuration)
+  + [Alternative Usage Methods](#alternative-usage-methods)
+  + [Rake Task](#rake-task)
+- [Formatters](#formatters)
+- [Compatibility](#compatibility)
+- [Improving RubyCritic](#improving-rubyCritic)
+- [Contributors](#contributors)
+- [Credits](#credits)## Overview
 
 This gem provides features such as:
 
