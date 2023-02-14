@@ -29,40 +29,39 @@ RubyCritic is a gem that wraps around static analysis gems such as [Reek][1], [F
 This gem provides features such as:
 
 1. An overview of your project:
-   ![RubyCritic overview screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/overview.png)
+  ![RubyCritic overview screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/overview.png)
 
 2. An index of the project files with their respective number of smells:
-   ![RubyCritic code index screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/code.png)
+  ![RubyCritic code index screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/code.png)
 
 3. An index of the smells detected:
-   ![RubyCritic smells index screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/smells.png)
+  ![RubyCritic smells index screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/smells.png)
 
 4. When analysing code like the following:
+    ```ruby
+    class Dirty
+      def awful(x, y)
+        if y
+          @screen = widgets.map {|w| w.each {|key| key += 3}}
+        end
+      end
+    end
+    ```
 
-   ```ruby
-   class Dirty
-     def awful(x, y)
-       if y
-         @screen = widgets.map {|w| w.each {|key| key += 3}}
-       end
-     end
-   end
-   ```
+    It basically turns something like this:
 
-   It basically turns something like this:
+    ![Reek output screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/reek.png)
 
-   ![Reek output screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/reek.png)
+    Into something like this:
 
-   Into something like this:
-
-   ![RubyCritic file code screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/smell-details.png)
+    ![RubyCritic file code screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/smell-details.png)
 
 5. It uses your source control system (only Git, Mercurial and Perforce
-   are currently supported) to compare your currently uncommitted
-   changes with your last commit.
+  are currently supported) to compare your currently uncommitted
+  changes with your last commit.
 
-   **Warning**: If your code is not as you expect it to be after running
-   RubyCritic, please check your source control system stash.
+    **Warning**: If your code is not as you expect it to be after running
+    RubyCritic, please check your source control system stash.
 
 Checkout the `/docs` if you want to read more about our [core metrics](https://github.com/whitesmith/rubycritic/blob/master/docs/core-metrics.md).
 
@@ -108,27 +107,25 @@ For a full list of the command-line options run:
 $ rubycritic --help
 ```
 
-| Command flag                     | Description                                                     |
-| -------------------------------- | --------------------------------------------------------------- |
-| `-v` / `--version`               | Displays the current version and exits                          |
-| `-p` / `--path`                  | Set path where report will be saved (tmp/rubycritic by default) |
-| `-f` / `--format`                | Report smells in the given format(s)<sup>1</sup>                |
-| `--custom-format path:classname` | Load and instantiate custom formatter(s)<sup>2</sup>            |
-| `-s` / `--minimum-score`         | Set a minimum score (FLOAT: ex: 96.28), default: 0              |
-| `-m` / `--mode-ci`               | Use CI mode<sup>3</sup>                                         |
-| `-b` / `--branch`                | Set branch to compare                                           |
-| `-t` / `--maximum-decrease`      | Threshold for score difference between two branches<sup>4</sup> |
-| `--deduplicate-symlinks`         | De-duplicate symlinks based on their final target               |
-| `--suppress-ratings`             | Suppress letter ratings                                         |
-| `--no-browser`                   | Do not open html report with browser                            |
+| Command flag                        | Description                                                     |
+|-------------------------------------|-----------------------------------------------------------------|
+| `-v` / `--version`                  | Displays the current version and exits                          |
+| `-p` / `--path`                     | Set path where report will be saved (tmp/rubycritic by default) |
+| `-f` / `--format`                   | Report smells in the given format(s)<sup>1</sup>                |
+| `--custom-format path:classname`    | Load and instantiate custom formatter(s)<sup>2</sup>            |
+| `-s` / `--minimum-score`            | Set a minimum score (FLOAT: ex: 96.28), default: 0              |
+| `-m` / `--mode-ci`                  | Use CI mode<sup>3</sup>                                         |
+| `-b` / `--branch`                   | Set branch to compare                                           |
+| `-t` / `--maximum-decrease`         | Threshold for score difference between two branches<sup>4</sup> |
+| `--deduplicate-symlinks`            | De-duplicate symlinks based on their final target               |
+| `--suppress-ratings`                | Suppress letter ratings                                         |
+| `--no-browser`                      | Do not open html report with browser                            |
 
 1. Available output formats:
-
 - `html` (default; will open in a browser)
 - `json`
 - `console`
 - `lint`
-
 2. See [custom formatters docs](/docs/formatters.md)
 3. Faster, analyses diffs w.r.t base_branch (default: master), see `-b`
 4. Works only with `-b`, default: 0
@@ -140,9 +137,9 @@ Here are one example:
 ```yml
 mode_ci:
   enabled: true # default is false
-  branch: "production" # default is master
-branch: "production" # default is master
-path: "/tmp/mycustompath" # Set path where report will be saved (tmp/rubycritic by default)
+  branch: 'production' # default is master
+branch: 'production' # default is master
+path: '/tmp/mycustompath' # Set path where report will be saved (tmp/rubycritic by default)
 threshold_score: 10 # default is 0
 deduplicate_symlinks: true # default is false
 suppress_ratings: true # default is false
@@ -151,20 +148,20 @@ formats: # Available values are: html, json, console, lint. Default value is htm
   - console
 minimum_score: 95 # default is 0
 paths: # Files to analyse.
-  - "app/controllers/"
-  - "app/models/"
+  - 'app/controllers/'
+  - 'app/models/'
 ```
 
 ### Analyzer Configuration
 
-- [`Reek`](https://github.com/troessner/reek): `RubyCritic` utilizes `Reek`'s default [configuration loading mechanism](https://github.com/troessner/reek#configuration-file).
+* [`Reek`](https://github.com/troessner/reek): `RubyCritic` utilizes `Reek`'s default [configuration loading mechanism](https://github.com/troessner/reek#configuration-file).
   This means that if you have an existing `Reek` configuration file, you can just put this into your
   project root and `RubyCritic` will respect this configuration.
-- [`flay`](https://github.com/seattlerb/flay): We use `flay`'s default configuration.
-- [`flog`](https://github.com/seattlerb/flog): We use `flog`'s default configuration with a couple of [smaller tweaks](https://github.com/whitesmith/rubycritic/blob/master/lib/rubycritic/analysers/helpers/flog.rb#L5):
-  - `all`: Forces `flog` to report scores on all classes and methods. Without this option `flog` will only give results up to a certain threshold.
-  - `continue`: Makes it so that `flog` does not abort when a ruby file cannot be parsed.
-  - `methods`: Configures `flog` to skip code outside of methods. It prevents `flog` from reporting on the "methods" `private` and `protected`. It also prevents `flog` from reporting on Rails methods like `before_action` and `has_many`.
+* [`flay`](https://github.com/seattlerb/flay): We use `flay`'s default configuration.
+* [`flog`](https://github.com/seattlerb/flog): We use `flog`'s default configuration with a couple of [smaller tweaks](https://github.com/whitesmith/rubycritic/blob/master/lib/rubycritic/analysers/helpers/flog.rb#L5):
+  * `all`: Forces `flog` to report scores on all classes and methods. Without this option `flog` will only give results up to a certain threshold.
+  * `continue`: Makes it so that `flog` does not abort when a ruby file cannot be parsed.
+  * `methods`: Configures `flog` to skip code outside of methods. It prevents `flog` from reporting on the "methods" `private` and `protected`. It also prevents `flog` from reporting on Rails methods like `before_action` and `has_many`.
 
 ### Alternative Usage Methods
 
@@ -237,14 +234,14 @@ See [formatters](docs/formatters.md)
 
 RubyCritic is supporting Ruby versions:
 
-| Ruby version | Latest RubyCritic version                                      |
-| ------------ | -------------------------------------------------------------- |
-| 2.4          | [v4.7.0](https://github.com/whitesmith/rubycritic/tree/v4.7.0) |
-| 2.5          | [v4.7.0](https://github.com/whitesmith/rubycritic/tree/v4.7.0) |
-| 2.6          | latest                                                         |
-| 2.7          | latest                                                         |
-| 3.0          | latest                                                         |
-| 3.1          | latest                                                         |
+| Ruby version | Latest RubyCritic version |
+| - | - |
+| 2.4 | [v4.7.0](https://github.com/whitesmith/rubycritic/tree/v4.7.0) |
+| 2.5 | [v4.7.0](https://github.com/whitesmith/rubycritic/tree/v4.7.0) |
+| 2.6 | latest |
+| 2.7 | latest |
+| 3.0 | latest |
+| 3.1 | latest |
 
 ## Improving RubyCritic
 
@@ -262,9 +259,9 @@ See RubyCritic's [contributing guidelines](https://github.com/whitesmith/rubycri
 
 The current core team consists of:
 
-- [Nuno Silva](https://github.com/Onumis)
-- [Lucas Mazza](https://github.com/lucasmazza)
-- [Timo Rößner](https://github.com/troessner)
+* [Nuno Silva](https://github.com/Onumis)
+* [Lucas Mazza](https://github.com/lucasmazza)
+* [Timo Rößner](https://github.com/troessner)
 
 ## Credits
 
