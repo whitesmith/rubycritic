@@ -8,7 +8,7 @@
       </div>
       <!--End Page Title -->
       <div class="Content_Wrapper">
-        <table id="js-index-table" class="table coverage-index-table index-table sortable-table">
+        <table id="coverageTable" class="table index-table sortable-table tablesorter">
           <thead>
             <tr>
               <% unless Config.suppress_ratings %>
@@ -20,20 +20,23 @@
           </thead>
           <% @analysed_modules.each do |analysed_module| %>
             <tr>
-              <tr>
-                <% unless Config.suppress_ratings %>
-                  <td>
-                    <div class="rating <%= analysed_module.coverage_rating.to_s.downcase %>"><%= analysed_module.coverage_rating %></div>
-                  </td>
-                <% end %>
+              <% unless Config.suppress_ratings %>
                 <td>
-                  <ul class="nav nav-pills">
-                    <li role="presentation" >
-                      <a href="<%= file_path(analysed_module.pathname.sub_ext('.html')) %>"><%= analysed_module.name %></a>
-                    </li>
-                  </ul>
+                  <div class="rating <%= analysed_module.coverage_rating.to_s.downcase %>">
+                    <%= analysed_module.coverage_rating %>
+                  </div>
                 </td>
-                <td><%= '%g' % analysed_module.coverage %>%</td>
+              <% end %>
+              <td>
+                <ul class="nav nav-pills">
+                  <li role="presentation" >
+                    <a href="<%= file_path(analysed_module.pathname.sub_ext('.html')) %>">
+                      <%= analysed_module.name %>
+                    </a>
+                  </li>
+                </ul>
+              </td>
+              <td><%= '%g' % analysed_module.coverage %>%</td>
             </tr>
           <% end %>
         </table>
