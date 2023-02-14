@@ -7,7 +7,7 @@
 * [CHANGE] Fix some typos (by [@ydah][])
 * [CHANGE] Remove wrong Rubocop reference in contributing file (by [@itsmeurbi]: https://github.com/itsmeurbi)
 * [BUGFIX] Restore missing smell status label (by [@itsmeurbi]: https://github.com/itsmeurbi)
-* [FEATURE] Adds support for search and filters in the coverage tab (by [@kcamcam][])
+* [BUGFIX] Fixes sort and filters on the coverage page (by [@kcamcam][])
 
 # v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
 
