@@ -7,7 +7,7 @@
 * [CHANGE] Fix some typos (by [@ydah][])
 * [CHANGE] Remove wrong Rubocop reference in contributing file (by [@itsmeurbi][])
 * [BUGFIX] Restore missing smell status label (by [@itsmeurbi][])
-* [CHANGE] Fix changelog @user links (by [@kcamcam][])
+* [BUGFIX] Fix changelog @user links and update README (by [@kcamcam][])
 
 # v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
 
