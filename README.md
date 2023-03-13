@@ -16,6 +16,7 @@ RubyCritic is a gem that wraps around static analysis gems such as [Reek][1], [F
   + [Analyzer Configuration](#analyzer-configuration)
   + [Alternative Usage Methods](#alternative-usage-methods)
   + [Rake Task](#rake-task)
+- [Formatters](#formatters)
 - [Compatibility](#compatibility)
 - [Improving RubyCritic](#improving-rubyCritic)
 - [Contributors](#contributors)
@@ -26,43 +27,39 @@ RubyCritic is a gem that wraps around static analysis gems such as [Reek][1], [F
 This gem provides features such as:
 
 1. An overview of your project:
-
   ![RubyCritic overview screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/overview.png)
 
 2. An index of the project files with their respective number of smells:
-
   ![RubyCritic code index screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/code.png)
 
 3. An index of the smells detected:
-
   ![RubyCritic smells index screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/smells.png)
 
 4. When analysing code like the following:
-
-  ```ruby
-  class Dirty
-    def awful(x, y)
-      if y
-        @screen = widgets.map {|w| w.each {|key| key += 3}}
+    ```ruby
+    class Dirty
+      def awful(x, y)
+        if y
+          @screen = widgets.map {|w| w.each {|key| key += 3}}
+        end
       end
     end
-  end
-  ```
+    ```
 
-  It basically turns something like this:
+    It basically turns something like this:
 
-  ![Reek output screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/reek.png)
+    ![Reek output screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/reek.png)
 
-  Into something like this:
+    Into something like this:
 
-  ![RubyCritic file code screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/smell-details.png)
+    ![RubyCritic file code screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/smell-details.png)
 
 5. It uses your source control system (only Git, Mercurial and Perforce
   are currently supported) to compare your currently uncommitted
   changes with your last commit.
 
-  **Warning**: If your code is not as you expect it to be after running
-  RubyCritic, please check your source control system stash.
+    **Warning**: If your code is not as you expect it to be after running
+    RubyCritic, please check your source control system stash.
 
 Checkout the `/docs` if you want to read more about our [core metrics](https://github.com/whitesmith/rubycritic/blob/master/docs/core-metrics.md).
 
