@@ -5,8 +5,9 @@
 * [FEATURE] Add ruby_extensions configuration option (by [@stufro][])
 * [CHANGE] Include files which have a ruby shebang (by [@stufro][])
 * [CHANGE] Fix some typos (by [@ydah][])
-* [CHANGE] Remove wrong Rubocop reference in contributing file (by [@itsmeurbi]: https://github.com/itsmeurbi)
-* [BUGFIX] Restore missing smell status label (by [@itsmeurbi]: https://github.com/itsmeurbi)
+* [CHANGE] Remove wrong Rubocop reference in contributing file (by [@itsmeurbi][])
+* [BUGFIX] Restore missing smell status label (by [@itsmeurbi][])
+* [BUGFIX] Fix changelog @user links and update README (by [@kcamcam][])
 * [BUGFIX] Fix CI Update FakeFs to use ruby-head (by [@juanvqz][])
 
 # v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
@@ -387,3 +388,15 @@
 [@denny]: https://github.com/denny
 [@RyanSnodgrass]: https://github.com/RyanSnodgrass
 [@ydah]: https://github.com/ydah
+[@stufro]: https://github.com/stufro
+[@rishijain]: https://github.com/rishijain
+[@cleicar]: https://github.com/cleicar
+[@anicholson]: https://github.com/anicholson
+[@borisrorsvort]: https://github.com/borisrorsvort
+[@lauratpa]: https://github.com/lauratpa
+[@MZiserman]: https://github.com/MZiserman
+[@rizalmuthi]: https://github.com/rizalmuthi
+[@jsantos]: https://github.com/jsantos
+[@teohm]: https://github.com/teohm
+[@itsmeurbi]: https://github.com/itsmeurbi
+[@kcamcam]: https://github.com/kcamcam
