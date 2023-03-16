@@ -8,7 +8,9 @@
 * [CHANGE] Remove wrong Rubocop reference in contributing file (by [@itsmeurbi][])
 * [BUGFIX] Restore missing smell status label (by [@itsmeurbi][])
 * [BUGFIX] Fix changelog @user links and update README (by [@kcamcam][])
+* [BUGFIX] Fix CI rubocop using ruby-head (by [@juanvqz][])
 * [BUGFIX] Fix CI Update FakeFs to use ruby-head (by [@juanvqz][])
+
 
 # v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
 
