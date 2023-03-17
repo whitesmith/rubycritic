@@ -24,7 +24,7 @@ describe RubyCritic::Generator::HtmlReport do
   end
 
   def create_analysed_modules_collection
-    RubyCritic::Config.root = 'test/samples'
+    RubyCritic::Config.set(root: 'test/samples')
     RubyCritic::Config.base_root_directory = 'test/samples'
     RubyCritic::Config.feature_root_directory = 'test/samples'
     RubyCritic::Config.compare_root_directory = 'test/samples'
