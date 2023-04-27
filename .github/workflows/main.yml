@@ -37,9 +37,9 @@ jobs:
         include:
           - ruby-version: 'ruby-head'
             experimental: true
-          - ruby-version: 'jruby-9.2'
-            experimental: true
           - ruby-version: 'jruby-9.3'
+            experimental: true
+          - ruby-version: 'jruby-9.4'
             experimental: true
     steps:
       - uses: actions/checkout@v2
@@ -68,9 +68,9 @@ jobs:
         include:
           - ruby-version: 'ruby-head'
             experimental: true
-          - ruby-version: 'jruby-9.2'
-            experimental: true
           - ruby-version: 'jruby-9.3'
+            experimental: true
+          - ruby-version: 'jruby-9.4'
             experimental: true
     steps:
       - uses: actions/checkout@v2
@@ -99,9 +99,9 @@ jobs:
         include:
           - ruby-version: 'ruby-head'
             experimental: true
-          - ruby-version: 'jruby-9.2'
-            experimental: true
           - ruby-version: 'jruby-9.3'
+            experimental: true
+          - ruby-version: 'jruby-9.4'
             experimental: true
     steps:
       - uses: actions/checkout@v2
@@ -130,9 +130,9 @@ jobs:
         include:
           - ruby-version: 'ruby-head'
             experimental: true
-          - ruby-version: 'jruby-9.2'
-            experimental: true
           - ruby-version: 'jruby-9.3'
+            experimental: true
+          - ruby-version: 'jruby-9.4'
             experimental: true
 
     steps:

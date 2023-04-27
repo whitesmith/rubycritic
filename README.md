@@ -36,23 +36,24 @@ This gem provides features such as:
   ![RubyCritic smells index screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/smells.png)
 
 4. When analysing code like the following:
-    ```ruby
-    class Dirty
-      def awful(x, y)
-        if y
-          @screen = widgets.map {|w| w.each {|key| key += 3}}
-        end
+
+  ```ruby
+  class Dirty
+    def awful(x, y)
+      if y
+        @screen = widgets.map {|w| w.each {|key| key += 3}}
       end
     end
-    ```
+  end
+  ```
 
-    It basically turns something like this:
+  It basically turns something like this:
 
-    ![Reek output screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/reek.png)
+  ![Reek output screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/reek.png)
 
-    Into something like this:
+  Into something like this:
 
-    ![RubyCritic file code screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/smell-details.png)
+  ![RubyCritic file code screenshot](https://github.com/whitesmith/rubycritic/raw/main/images/smell-details.png)
 
 5. It uses your source control system (only Git, Mercurial and Perforce
   are currently supported) to compare your currently uncommitted
