@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'etc'
 require 'fakefs/safe'
 
 module FakeFS
@@ -9,3 +10,10 @@ module FakeFS
     end
   end
 end
+
+module FakeFSPatch
+  def home(user = Etc.getlogin)
+    RealDir.home(user)
+  end
+end
+::FakeFS::Dir.singleton_class.prepend(FakeFSPatch)
