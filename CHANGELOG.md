@@ -17,7 +17,6 @@
 * [FEATURE] Support a branch in 'detached HEAD' state (by [@h-r-k-matsumoto]: https://github.com/h-r-k-matsumoto)
 * [BUGFIX] Fix CI, tests did not work with JRuby (by [@etagwerker][] and [@@h-r-k-matsumoto][])
 
-
 # v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
 
 * [CHANGE] Run test suite with Ruby 3.1 (by [@etagwerker][])
