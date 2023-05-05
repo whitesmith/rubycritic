@@ -15,6 +15,7 @@
 * [BUGFIX] Fix CI, test didn't include the ruby_extensions (by [@aisayo][] and [@juanvqz][])
 * [FEATURE] Support a branch in 'detached HEAD' state (by [@h-r-k-matsumoto][])
 * [BUGFIX] Fix CI, tests did not work with JRuby (by [@etagwerker][] and [@@h-r-k-matsumoto][])
+* [CHANGE] Add continuous integration status badge to README (by [@kcamcam][])
 
 # v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
 
