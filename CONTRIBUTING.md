@@ -32,7 +32,7 @@ Each commit should do one thing and one thing only. For example, all whitespace 
 
 9. Push the branch to GitHub (`git push origin my-new-feature`).
 
-10. [Create a Pull Request] and send it to be merged with the master branch.
+10. [Create a Pull Request] and send it to be merged with the main branch.
 
 11. After your code is reviewed, [hide the sausage making]. We follow the "one commit per pull request" [principle](http://ndlib.github.io/practices/one-commit-per-pull-request/) since this allows for a clean git history, easy handling of features and convenient rollbacks when things go wrong. Or in one sentence: You can have as many commits as you want in your pull request, but after the final review and before the merge you need to squash all of those in one single commit.
 For a more in-depth look at interactive rebasing, be sure to check [how to rewrite history] as well.
@@ -85,7 +85,7 @@ Here are a few examples:
 ```
 
 * Mark it up in [Markdown syntax](http://daringfireball.net/projects/markdown/syntax).
-* Add your entry in the `master (unreleased)` section.
+* Add your entry in the `main (unreleased)` section.
 * The entry line should start with `* ` (an asterisk and a space).
 * Start with the change type BUGFIX / CHANGE / FEATURE.
 * Describe the brief of the change.
