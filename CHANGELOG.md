@@ -1,5 +1,7 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.8.0...main)
 
+* [BUGFIX] Fix sort and filters on the coverage page (by [@kcamcam][])
+
 # v4.8.0 / 2023-05-12 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.7.0...v4.8.0)
 
 * [CHORE] Fix syntax of contributor references in this file
@@ -19,7 +21,6 @@
 * [BUGFIX] Fix CI rubocop using ruby-head (by [@juanvqz][])
 * [BUGFIX] Fix CI Update FakeFs to use ruby-head (by [@juanvqz][])
 * [BUGFIX] Fix CI, test didn't include the ruby_extensions (by [@aisayo][] and [@juanvqz][])
-* [BUGFIX] Fix sort and filters on the coverage page (by [@kcamcam][])
 * [FEATURE] Support a branch in 'detached HEAD' state (by [@h-r-k-matsumoto][])
 * [BUGFIX] Fix CI, tests did not work with JRuby (by [@etagwerker][] and [@h-r-k-matsumoto][])
 * [CHANGE] Add continuous integration status badge to README (by [@kcamcam][])
