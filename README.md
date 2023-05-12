@@ -62,7 +62,7 @@ This gem provides features such as:
     **Warning**: If your code is not as you expect it to be after running
     RubyCritic, please check your source control system stash.
 
-Checkout the `/docs` if you want to read more about our [core metrics](https://github.com/whitesmith/rubycritic/blob/master/docs/core-metrics.md).
+Checkout the `/docs` if you want to read more about our [core metrics](https://github.com/whitesmith/rubycritic/blob/main/docs/core-metrics.md).
 
 ## Getting Started
 
@@ -126,7 +126,7 @@ $ rubycritic --help
 - `console`
 - `lint`
 2. See [custom formatters docs](/docs/formatters.md)
-3. Faster, analyses diffs w.r.t base_branch (default: master), see `-b`
+3. Faster, analyses diffs w.r.t base_branch (default: main), see `-b`
 4. Works only with `-b`, default: 0
 
 You also can use a config file. Just create a `.rubycritic.yml` on your project root path.
@@ -136,8 +136,8 @@ Here are one example:
 ```yml
 mode_ci:
   enabled: true # default is false
-  branch: 'production' # default is master
-branch: 'production' # default is master
+  branch: 'production' # default is main
+branch: 'production' # default is main
 path: '/tmp/mycustompath' # Set path where report will be saved (tmp/rubycritic by default)
 threshold_score: 10 # default is 0
 deduplicate_symlinks: true # default is false
@@ -157,7 +157,7 @@ paths: # Files to analyse.
   This means that if you have an existing `Reek` configuration file, you can just put this into your
   project root and `RubyCritic` will respect this configuration.
 * [`flay`](https://github.com/seattlerb/flay): We use `flay`'s default configuration.
-* [`flog`](https://github.com/seattlerb/flog): We use `flog`'s default configuration with a couple of [smaller tweaks](https://github.com/whitesmith/rubycritic/blob/master/lib/rubycritic/analysers/helpers/flog.rb#L5):
+* [`flog`](https://github.com/seattlerb/flog): We use `flog`'s default configuration with a couple of [smaller tweaks](https://github.com/whitesmith/rubycritic/blob/main/lib/rubycritic/analysers/helpers/flog.rb#L5):
   * `all`: Forces `flog` to report scores on all classes and methods. Without this option `flog` will only give results up to a certain threshold.
   * `continue`: Makes it so that `flog` does not abort when a ruby file cannot be parsed.
   * `methods`: Configures `flog` to skip code outside of methods. It prevents `flog` from reporting on the "methods" `private` and `protected`. It also prevents `flog` from reporting on Rails methods like `before_action` and `has_many`.
@@ -250,7 +250,7 @@ Arguably, the [better_errors gem][7] only got popular after receiving a [(pretty
 
 Similarly, Pull Requests that improve the look and feel of the gem, that tweak the calculation of ratings or that fix existing issues will be most welcome. Just commenting on an issue and giving some insight into how something should work will be appreciated. No contribution is too small.
 
-See RubyCritic's [contributing guidelines](https://github.com/whitesmith/rubycritic/blob/master/CONTRIBUTING.md) about how to proceed.
+See RubyCritic's [contributing guidelines](https://github.com/whitesmith/rubycritic/blob/main/CONTRIBUTING.md) about how to proceed.
 
 ## Contributors
 
@@ -273,7 +273,7 @@ RubyCritic is maintained and funded by [Whitesmith][9]. Tweet your questions or 
 [3]: https://github.com/seattlerb/flog
 [4]: https://github.com/whitesmith/guard-rubycritic
 [5]: http://jenkins-ci.org/
-[6]: https://github.com/whitesmith/rubycritic/blob/master/docs/building-own-code-climate.md
+[6]: https://github.com/whitesmith/rubycritic/blob/main/docs/building-own-code-climate.md
 [7]: https://github.com/charliesome/better_errors
 [8]: https://github.com/charliesome/better_errors/pull/22
 [9]: http://www.whitesmith.co/

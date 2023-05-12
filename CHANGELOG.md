@@ -1,5 +1,6 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.7.0...main)
 
+* [CHANGE] Updated branch references from master to main (by [@96RadhikaJadhav][] and [@faisal][])
 * [CHORE] Test gem with Ruby 3.2 (by [@etagwerker][])
 * [CHORE] Test gem with Ruby 3.1 (by [@etagwerker][])
 * [CHANGE] Drop support for JRuby 9.3.x (by [@faisal][])
@@ -409,3 +410,6 @@
 [@itsmeurbi]: https://github.com/itsmeurbi
 [@kcamcam]: https://github.com/kcamcam
 [@aisayo]: https://github.com/aisayo
+[@96RadhikaJadhav]: https://github.com/96RadhikaJadhav
+[@faisal]: https://github.com/faisal
+[@h-r-k-matsumoto]: https://github.com/h-r-k-matsumoto
