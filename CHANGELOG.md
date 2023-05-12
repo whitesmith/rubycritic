@@ -1,7 +1,13 @@
-# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.7.0...main)
+# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.8.0...main)
 
+# v4.8.0 / 2023-05-12 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.7.0...v4.8.0)
+
+* [CHORE] Fix syntax of contributor references in this file
+* [CHANGE] Updated branch references from master to main (by [@96RadhikaJadhav][] and [@faisal][])
 * [CHORE] Test gem with Ruby 3.2 (by [@etagwerker][])
 * [CHORE] Test gem with Ruby 3.1 (by [@etagwerker][])
+* [CHANGE] Drop support for JRuby 9.3.x (by [@faisal][])
+* [CHANGE] Drop support for Ruby 2.6.x (by [@faisal][])
 * [CHANGE] Drop support for Ruby 2.5.x (by [@cleicar][])
 * [CHANGE] Drop support for Ruby 2.4.x (by [@rishijain][])
 * [FEATURE] Add ruby_extensions configuration option (by [@stufro][])
@@ -14,8 +20,9 @@
 * [BUGFIX] Fix CI Update FakeFs to use ruby-head (by [@juanvqz][])
 * [BUGFIX] Fix CI, test didn't include the ruby_extensions (by [@aisayo][] and [@juanvqz][])
 * [BUGFIX] Fix sort and filters on the coverage page (by [@kcamcam][])
-* [FEATURE] Support a branch in 'detached HEAD' state (by [@h-r-k-matsumoto]: https://github.com/h-r-k-matsumoto)
-* [BUGFIX] Fix CI, tests did not work with JRuby (by [@etagwerker][] and [@@h-r-k-matsumoto][])
+* [FEATURE] Support a branch in 'detached HEAD' state (by [@h-r-k-matsumoto][])
+* [BUGFIX] Fix CI, tests did not work with JRuby (by [@etagwerker][] and [@h-r-k-matsumoto][])
+* [CHANGE] Add continuous integration status badge to README (by [@kcamcam][])
 
 # v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
 
@@ -37,8 +44,7 @@
 * [CHANGE] Make Github Linguist ignore vendored files (by [@sl4vr][])
 * [BUGFIX] Fix directory structure of reports when comparing branches (by [@denny][])
 * [BUGFIX] Restrict simplecov to versions before data format changed (by [@denny][])
-
-* [BUGFIX] Handle missing comparison file in html template (by @lauratpa)
+* [BUGFIX] Handle missing comparison file in html template (by [@lauratpa][])
 
 # v4.5.2 / 2020-08-20 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.1...v4.5.2)
 
@@ -47,7 +53,6 @@
 # v4.5.1 / 2020-06-29 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.5.0...v4.5.1)
 
 * [BUGFIX] Handle git --name-status Copied (C) operation (by [@rizalmuthi][])
-
 * [FEATURE] Add --churn-after (only supports git) to limit churn analysis to recent history (by [@jackcasey][])
 
 # v4.5.0 / 2020-05-14 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.4.1...v4.5.0)
@@ -116,8 +121,8 @@
 
 # 4.0.0 / 2019-02-27 [(commits)](https://github.com/whitesmith/rubycritic/compare/v3.5.1...v4.0.0)
 
-* [FEATURE] Allow generating reports in multiple formats in one run (by [@katafrakt])
-* [FEATURE] Allow to accept a config file (by [@mfbmina])
+* [FEATURE] Allow generating reports in multiple formats in one run (by [@katafrakt][])
+* [FEATURE] Allow to accept a config file (by [@mfbmina][])
 * [CHANGE] Update `reek` to 5.3 (by [@taitran19][] and [@onumis][])
 * [CHANGE] Update `parser` to 2.6.0 (by [@onumis][])
 * [CHANGE] Update `tty-which` to 0.4.0 (by [@onumis][])
@@ -408,3 +413,10 @@
 [@itsmeurbi]: https://github.com/itsmeurbi
 [@kcamcam]: https://github.com/kcamcam
 [@aisayo]: https://github.com/aisayo
+[@h-r-k-matsumoto]: https://github.com/h-r-k-matsumoto
+[@juanvqz]: https://github.com/juanvqz
+[@eitoball]: https://github.com/eitoball
+[@marcgrimme]: https://github.com/marcgrimme
+[@katafrakt]: https://github.com/katafrakt
+[@faisal]: https://github.com/faisal
+[@96RadhikaJadhav]: https://github.com/
