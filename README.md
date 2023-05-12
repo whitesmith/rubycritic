@@ -1,6 +1,7 @@
 # RubyCritic
 
 [![Gem Version](https://badge.fury.io/rb/rubycritic.svg)](http://badge.fury.io/rb/rubycritic)
+[![Continuous Integration](https://github.com/whitesmith/rubycritic/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/whitesmith/rubycritic/actions/workflows/main.yml)
 [![Build Status](https://travis-ci.org/whitesmith/rubycritic.svg?branch=master)](https://travis-ci.org/whitesmith/rubycritic)
 [![Code Climate](https://codeclimate.com/github/whitesmith/rubycritic/badges/gpa.svg)](https://codeclimate.com/github/whitesmith/rubycritic)
 
