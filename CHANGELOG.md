@@ -2,6 +2,8 @@
 
 * [CHORE] Test gem with Ruby 3.2 (by [@etagwerker][])
 * [CHORE] Test gem with Ruby 3.1 (by [@etagwerker][])
+* [CHANGE] Drop support for JRuby 9.3.x (by [@faisal][])
+* [CHANGE] Drop support for Ruby 2.6.x (by [@faisal][])
 * [CHANGE] Drop support for Ruby 2.5.x (by [@cleicar][])
 * [CHANGE] Drop support for Ruby 2.4.x (by [@rishijain][])
 * [FEATURE] Add ruby_extensions configuration option (by [@stufro][])
@@ -13,8 +15,8 @@
 * [BUGFIX] Fix CI rubocop using ruby-head (by [@juanvqz][])
 * [BUGFIX] Fix CI Update FakeFs to use ruby-head (by [@juanvqz][])
 * [BUGFIX] Fix CI, test didn't include the ruby_extensions (by [@aisayo][] and [@juanvqz][])
-* [FEATURE] Support a branch in 'detached HEAD' state (by [@h-r-k-matsumoto]: https://github.com/h-r-k-matsumoto)
-* [BUGFIX] Fix CI, tests did not work with JRuby (by [@etagwerker][] and [@@h-r-k-matsumoto][])
+* [FEATURE] Support a branch in 'detached HEAD' state (by [@h-r-k-matsumoto][])
+* [BUGFIX] Fix CI, tests did not work with JRuby (by [@etagwerker][] and [@h-r-k-matsumoto][])
 
 # v4.7.0 / 2022-05-06 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.6.1...v4.7.0)
 

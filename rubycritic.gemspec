@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'RubyCritic is a Ruby code quality reporter'
   spec.homepage      = 'https://github.com/whitesmith/rubycritic'
   spec.license       = 'MIT'
-  spec.required_ruby_version = '>= 2.6.0'
+  spec.required_ruby_version = '>= 2.7.0'
 
   spec.files = [
     'CHANGELOG.md',
@@ -58,5 +58,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'mocha', '~> 1.1', '>= 1.1.0'
   spec.add_development_dependency 'rake', '~> 12.0', '>= 11.0.0'
   spec.add_development_dependency 'rexml', '>= 3.2.0'
-  spec.add_development_dependency 'rubocop', '~> 0.65.0'
+  spec.add_development_dependency 'rubocop', '~> 0.75.0'
 end
