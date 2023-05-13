@@ -14,8 +14,8 @@ require 'mocha/minitest'
 require 'ostruct'
 require 'diff/lcs'
 
-def context(*args, &block)
-  describe(*args, &block)
+def context(...)
+  describe(...)
 end
 
 def capture_output_streams
@@ -45,8 +45,7 @@ end
 module PathHelper
   class << self
     def reek_schema_path
-      reek_path = Gem.loaded_specs['reek'].full_gem_path
-      reek_path + '/lib/reek/configuration/schema.yml'
+      "#{Gem.loaded_specs['reek'].full_gem_path}/lib/reek/configuration/schema.yml"
     end
 
     def project_path
@@ -65,11 +64,14 @@ module MiniTest
 
     def assert_matched_arrays(exp, act)
       exp_ary = exp.to_ary
+
       assert_kind_of Array, exp_ary
       act_ary = act.to_ary
+
       assert_kind_of Array, act_ary
       diffs = Diff::LCS.sdiff(act_ary.sort, exp_ary.sort).reject(&:unchanged?)
-      assert diffs.empty?, "There are diffs between expected and actual values:\n#{diffs.map(&:inspect).join("\n")}"
+
+      assert_empty diffs, "There are diffs between expected and actual values:\n#{diffs.map(&:inspect).join("\n")}"
     end
   end
 

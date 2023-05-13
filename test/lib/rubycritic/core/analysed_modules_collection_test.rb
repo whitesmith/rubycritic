@@ -24,7 +24,7 @@ describe RubyCritic::AnalysedModulesCollection do
 
       it 'registers one AnalysedModule element per existent file' do
         _(subject.count).must_equal 2
-        _(subject.all? { |a| a.is_a?(RubyCritic::AnalysedModule) }).must_equal true
+        _(subject.all?(RubyCritic::AnalysedModule)).must_equal true
       end
     end
 

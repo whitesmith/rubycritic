@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.version       = RubyCritic::VERSION
   spec.authors       = ['Guilherme Simoes']
   spec.email         = ['guilherme.rdems@gmail.com']
-  spec.description   = 'RubyCritic is a tool that wraps around various static analysis gems '\
-    'to provide a quality report of your Ruby code.'
+  spec.description   = 'RubyCritic is a tool that wraps around various static analysis gems ' \
+                       'to provide a quality report of your Ruby code.'
   spec.summary       = 'RubyCritic is a Ruby code quality reporter'
   spec.homepage      = 'https://github.com/whitesmith/rubycritic'
   spec.license       = 'MIT'
@@ -58,5 +58,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'mocha', '~> 1.1', '>= 1.1.0'
   spec.add_development_dependency 'rake', '~> 12.0', '>= 11.0.0'
   spec.add_development_dependency 'rexml', '>= 3.2.0'
-  spec.add_development_dependency 'rubocop', '~> 0.75.0'
+  spec.add_development_dependency 'rubocop', '~> 1.51.0'
+  spec.add_development_dependency 'rubocop-minitest'
+  spec.add_development_dependency 'rubocop-performance'
+  spec.add_development_dependency 'rubocop-rake'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end

@@ -30,7 +30,7 @@ module RubyCritic
       end
 
       def churn
-        @churn ||= Churn.new(churn_after: Config.churn_after)
+        @churn ||= Churn.new(churn_after: Config.churn_after, paths: Config.paths)
       end
 
       def revisions_count(path)
@@ -71,18 +71,18 @@ module RubyCritic
 
       def self.modified_files
         modified_files = `git diff --name-status #{Config.base_branch} #{Config.feature_branch}`
-        modified_files.split("\n").map do |line|
+        modified_files.split("\n").filter_map do |line|
           next if line.start_with?('D')
 
           file_name = line.split("\t")[1]
           file_name
-        end.compact
+        end
       end
 
       def self.current_branch
         branch_list = `git branch`
         branch = branch_list.match(/\*.*$/)[0].gsub('* ', '')
-        branch = branch.gsub(/\(HEAD detached at (.*)\)$/, '\1') if branch =~ /\(HEAD detached at (.*)\)$/
+        branch = branch.gsub(/\(HEAD detached at (.*)\)$/, '\1') if /\(HEAD detached at (.*)\)$/.match?(branch)
         branch
       end
 

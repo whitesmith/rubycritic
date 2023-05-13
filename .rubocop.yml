@@ -1,5 +1,11 @@
+require:
+  - rubocop-minitest
+  - rubocop-performance
+  - rubocop-rake
+
 AllCops:
   DisplayCopNames: true
+  NewCops: enable
   Exclude:
     - 'test/samples/**/*'
     - 'tmp/**/*'
@@ -10,7 +16,7 @@ AllCops:
 Metrics/BlockLength:
   Enabled: false
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
 
 Style/Documentation:
@@ -41,3 +47,41 @@ Naming/RescuedExceptionsVariableName:
     - 'lib/rubycritic/analysers/coverage.rb'
     - 'lib/rubycritic/cli/application.rb'
     - 'lib/rubycritic/reporter.rb'
+
+Lint/EmptyClass:
+  Exclude:
+    - 'test/lib/rubycritic/reporter_test.rb'
+
+Lint/ConstantDefinitionInBlock:
+  Exclude:
+    - 'test/lib/rubycritic/reporter_test.rb'
+
+Style/OpenStructUse:
+  Exclude:
+    - 'test/lib/rubycritic/generators/turbulence_test.rb'
+    - 'test/lib/rubycritic/generators/console_report_test.rb'
+    - 'test/lib/rubycritic/core/analysed_module_test.rb'
+    - 'test/analysers_test_helper.rb'
+
+Lint/MissingSuper:
+  Exclude:
+    - 'test/analysers_test_helper.rb'
+    - 'lib/rubycritic/generators/html/overview.rb'
+    - 'lib/rubycritic/generators/html/simple_cov_index.rb'
+    - 'lib/rubycritic/generators/html/smells_index.rb'
+    - 'lib/rubycritic/rake_task.rb'
+    - 'lib/rubycritic/generators/html/code_file.rb'
+    - 'lib/rubycritic/generators/html/code_index.rb'
+    - 'lib/rubycritic/generators/html/line.rb'
+
+Gemspec/DevelopmentDependencies:
+  Exclude:
+    - 'rubycritic.gemspec'
+
+Lint/StructNewOverride:
+  Exclude:
+    - 'lib/rubycritic/source_control_systems/git/churn.rb'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'lib/rubycritic/configuration.rb'

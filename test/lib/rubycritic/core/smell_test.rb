@@ -99,7 +99,7 @@ describe RubyCritic::Smell do
 
     it 'raises an error for unknown analysers' do
       smell = RubyCritic::Smell.new(type: 'FooSmell', analyser: 'foo')
-      assert_raises { smell.doc_url }
+      assert_raises(RuntimeError) { smell.doc_url }
     end
   end
 

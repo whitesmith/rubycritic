@@ -16,4 +16,4 @@ module FakeFSPatch
     RealDir.home(user)
   end
 end
-::FakeFS::Dir.singleton_class.prepend(FakeFSPatch)
+FakeFS::Dir.singleton_class.prepend(FakeFSPatch)

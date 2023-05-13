@@ -88,7 +88,7 @@ module RubyCritic
       end
 
       def self.compute_cache_lines(lines)
-        perforce_lines = Hash[*lines.map { |line| line.split[1..-1] }.flatten]
+        perforce_lines = Hash[*lines.map { |line| line.split[1..] }.flatten]
         PerforceStats.new(
           Perforce.normalized_file_path(perforce_lines['clientFile']),
           perforce_lines['headRev'],

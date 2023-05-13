@@ -19,7 +19,7 @@ module RubyCritic
         end
 
         def render
-          template.result(binding).delete("\n") + "\n"
+          "#{template.result(binding).delete("\n")}\n"
         end
 
         private

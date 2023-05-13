@@ -14,10 +14,10 @@ describe RubyCritic::Reporter do
     create_analysed_modules_collection
     RubyCritic::Reporter.generate_report(@analysed_modules_collection)
 
-    assert(File.exist?('test/samples/report.json'))
-    assert(File.exist?('test/samples/lint.txt'))
-    assert(File.exist?('test/samples/overview.html'))
-    assert(File.exist?('test/samples/simple_cov_index.html'))
+    assert_path_exists('test/samples/report.json')
+    assert_path_exists('test/samples/lint.txt')
+    assert_path_exists('test/samples/overview.html')
+    assert_path_exists('test/samples/simple_cov_index.html')
   end
 
   it 'creates a dummy formatter' do
@@ -27,6 +27,7 @@ describe RubyCritic::Reporter do
     formatter.expects(:generate_report).returns(true)
     DummyFormatter.expects(:new).once.returns(formatter)
     create_analysed_modules_collection
+
     assert RubyCritic::Reporter.generate_report(@analysed_modules_collection)
   end
 
@@ -39,12 +40,14 @@ describe RubyCritic::Reporter do
     formatter.expects(:generate_report).returns(true)
     MyTest::DummyFormatter.expects(:new).once.returns(formatter)
     create_analysed_modules_collection
+
     assert RubyCritic::Reporter.generate_report(@analysed_modules_collection)
   end
 
   it 'creates and loads a dummy formatter' do
     RubyCritic::Config.stubs(:formatters).returns(['./test/samples/dummy_formatter.rb:Test::DummyFormatter'])
     create_analysed_modules_collection
+
     assert RubyCritic::Reporter.generate_report(@analysed_modules_collection)
   end
 
