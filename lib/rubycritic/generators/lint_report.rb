@@ -11,9 +11,7 @@ module RubyCritic
 
       def generate_report
         FileUtils.mkdir_p(generator.file_directory)
-        File.open(generator.file_pathname, 'w+') do |file|
-          file.write(reports.join("\n"))
-        end
+        File.write(generator.file_pathname, reports.join("\n"))
       end
 
       def generator

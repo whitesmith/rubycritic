@@ -7,7 +7,8 @@ module RubyCritic
       elsif cost <= 4  then new('B')
       elsif cost <= 8  then new('C')
       elsif cost <= 16 then new('D')
-      else new('F')
+      else
+        new('F')
       end
     end
 

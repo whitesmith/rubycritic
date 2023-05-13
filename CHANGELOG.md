@@ -1,5 +1,6 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.8.0...main)
 
+* [CHANGE] Update rubocop to use current version (~1.51.0) and relevant plugins (by [@faisal][]])
 * [BUGFIX] Fix sort and filters on the coverage page (by [@kcamcam][])
 
 # v4.8.0 / 2023-05-12 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.7.0...v4.8.0)

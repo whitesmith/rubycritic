@@ -20,7 +20,7 @@ module RubyCritic
     FLOG_DOCS_URL = 'http://docs.seattlerb.org/flog/'.freeze
 
     def at_location?(other_location)
-      locations.any? { |location| location == other_location }
+      locations.any?(other_location)
     end
 
     def multiple_locations?
