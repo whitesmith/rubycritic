@@ -14,9 +14,9 @@ RubyCritic is a gem that wraps around static analysis gems such as [Reek][1], [F
 - [Overview](#overview)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-  + [Analyzer Configuration](#analyzer-configuration)
-  + [Alternative Usage Methods](#alternative-usage-methods)
-  + [Rake Task](#rake-task)
+   + [Analyzer Configuration](#analyzer-configuration)
+   + [Alternative Usage Methods](#alternative-usage-methods)
+   + [Rake Task](#rake-task)
 - [Formatters](#formatters)
 - [Compatibility](#compatibility)
 - [Improving RubyCritic](#improving-rubyCritic)
@@ -159,9 +159,9 @@ paths: # Files to analyse.
   project root and `RubyCritic` will respect this configuration.
 * [`flay`](https://github.com/seattlerb/flay): We use `flay`'s default configuration.
 * [`flog`](https://github.com/seattlerb/flog): We use `flog`'s default configuration with a couple of [smaller tweaks](https://github.com/whitesmith/rubycritic/blob/main/lib/rubycritic/analysers/helpers/flog.rb#L5):
-  * `all`: Forces `flog` to report scores on all classes and methods. Without this option `flog` will only give results up to a certain threshold.
-  * `continue`: Makes it so that `flog` does not abort when a ruby file cannot be parsed.
-  * `methods`: Configures `flog` to skip code outside of methods. It prevents `flog` from reporting on the "methods" `private` and `protected`. It also prevents `flog` from reporting on Rails methods like `before_action` and `has_many`.
+   * `all`: Forces `flog` to report scores on all classes and methods. Without this option `flog` will only give results up to a certain threshold.
+   * `continue`: Makes it so that `flog` does not abort when a ruby file cannot be parsed.
+   * `methods`: Configures `flog` to skip code outside of methods. It prevents `flog` from reporting on the "methods" `private` and `protected`. It also prevents `flog` from reporting on Rails methods like `before_action` and `has_many`.
 
 ### Alternative Usage Methods
 
