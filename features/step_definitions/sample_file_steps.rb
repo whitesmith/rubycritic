@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Given(/^the smelly file 'smelly.rb'/) do
-  contents = <<-RUBY.strip_heredoc
+  contents = <<~RUBY
     class AllTheMethods
       def method_missing(method, *args, &block)
         message = "I"
@@ -18,7 +18,7 @@ Given(/^the smelly file 'smelly.rb'/) do
 end
 
 Given(/^the clean file 'clean.rb'/) do
-  contents = <<-RUBY.strip_heredoc
+  contents = <<~RUBY
     # Explanatory comment
     class Clean
       def foo; end
