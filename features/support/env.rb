@@ -25,7 +25,7 @@ class RubyCriticWorld
   end
 
   def rake(name, task_def)
-    header = <<-RUBY.strip_heredoc
+    header = <<~RUBY
       require 'rubycritic'
       require 'rubycritic/rake_task'
 
