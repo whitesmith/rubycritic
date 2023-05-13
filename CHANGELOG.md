@@ -1,5 +1,6 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.8.0...main)
 
+* [CHANGE] Update runtime dependencies to current versions of analysis gems (by [@faisal][])
 * [CHANGE] Update the mdl development_dependency from 0.5 to 0.12 (by [@faisal][])
 * [CHANGE] Update rubocop to use current version (~1.51.0) and relevant plugins (by [@faisal][]])
 * [CHANGE] Update testing gems to current versions (by [@faisal][])
@@ -424,4 +425,5 @@
 [@marcgrimme]: https://github.com/marcgrimme
 [@katafrakt]: https://github.com/katafrakt
 [@faisal]: https://github.com/faisal
-[@96RadhikaJadhav]: https://github.com/
+[@96RadhikaJadhav]: https://github.com/96RadhikaJadhav
+[@Fito]: https://github.com/Fito
