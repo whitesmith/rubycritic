@@ -41,7 +41,7 @@ module RubyCritic
     end
 
     def cost
-      @cost ||= smells.map(&:cost).inject(0.0, :+) +
+      @cost ||= smells.sum(0.0, &:cost) +
                 (complexity / COMPLEXITY_FACTOR)
     end
 

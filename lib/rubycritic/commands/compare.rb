@@ -91,9 +91,9 @@ module RubyCritic
 
       # create a txt file with the branch score details
       def build_details
-        details = "Base branch (#{Config.base_branch}) score: #{Config.base_branch_score} \n"\
+        details = "Base branch (#{Config.base_branch}) score: #{Config.base_branch_score} \n" \
                   "Feature branch (#{Config.feature_branch}) score: #{Config.feature_branch_score} \n"
-        File.open("#{Config.compare_root_directory}/build_details.txt", 'w') { |file| file.write(details) }
+        File.write("#{Config.compare_root_directory}/build_details.txt", details)
       end
 
       # store the analysed moduled collection based on the branch

@@ -77,8 +77,9 @@ module RubyCritic
 
         def formats
           formats = Array(options['formats'])
+          formats_to_check = %w[html json console lint]
           formats.select do |format|
-            %w[html json console lint].include?(format)
+            formats_to_check.include?(format)
           end.map(&:to_sym)
         end
 

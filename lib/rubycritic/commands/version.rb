@@ -7,6 +7,7 @@ module RubyCritic
   module Command
     class Version < Base
       attr_reader :status_reporter
+
       def execute
         puts "RubyCritic #{VERSION}"
         status_reporter

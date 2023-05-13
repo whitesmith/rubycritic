@@ -13,12 +13,12 @@ module Parser
         count
       end
 
-      def recursive_children
+      def recursive_children(&block)
         children.each do |child|
           next unless child.is_a?(Parser::AST::Node)
 
           yield child
-          child.recursive_children { |grand_child| yield grand_child }
+          child.recursive_children(&block)
         end
       end
 

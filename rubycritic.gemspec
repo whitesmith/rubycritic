@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.version       = RubyCritic::VERSION
   spec.authors       = ['Guilherme Simoes']
   spec.email         = ['guilherme.rdems@gmail.com']
-  spec.description   = 'RubyCritic is a tool that wraps around various static analysis gems '\
-    'to provide a quality report of your Ruby code.'
+  spec.description   = 'RubyCritic is a tool that wraps around various static analysis gems ' \
+                       'to provide a quality report of your Ruby code.'
   spec.summary       = 'RubyCritic is a Ruby code quality reporter'
   spec.homepage      = 'https://github.com/whitesmith/rubycritic'
   spec.license       = 'MIT'
@@ -48,13 +48,19 @@ Gem::Specification.new do |spec|
   else
     spec.add_development_dependency 'byebug', '~> 11.0', '>= 10.0'
   end
+
   spec.add_development_dependency 'cucumber', '~> 8.0.0'
   spec.add_development_dependency 'fakefs', '~> 2.4.0'
-  spec.add_development_dependency 'mdl', '~> 0.5.0'
+  spec.add_development_dependency 'diff-lcs', '~> 1.3'
+  spec.add_development_dependency 'mdl', '~> 0.12.0'
   spec.add_development_dependency 'minitest', '>= 5.3.0'
   spec.add_development_dependency 'minitest-around', '~> 0.5.0', '>= 0.4.0'
   spec.add_development_dependency 'mocha', '~> 2.0.2'
   spec.add_development_dependency 'rake', '~> 13.0.6', '>= 11.0.0'
   spec.add_development_dependency 'rexml', '>= 3.2.0'
-  spec.add_development_dependency 'rubocop', '~> 0.75.0'
+  spec.add_development_dependency 'rubocop', '~> 1.51.0'
+  spec.add_development_dependency 'rubocop-minitest'
+  spec.add_development_dependency 'rubocop-performance'
+  spec.add_development_dependency 'rubocop-rake'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end

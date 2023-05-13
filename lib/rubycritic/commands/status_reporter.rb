@@ -4,6 +4,7 @@ module RubyCritic
   module Command
     class StatusReporter
       attr_reader :status, :status_message, :score
+
       SUCCESS = 0
       SCORE_BELOW_MINIMUM = 1
 

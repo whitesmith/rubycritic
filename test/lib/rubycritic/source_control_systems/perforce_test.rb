@@ -11,7 +11,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
   describe RubyCritic::SourceControlSystem::Perforce do
     describe '::supported?' do
       let(:path) do
-        ['/some/path', File::PATH_SEPARATOR, '/perforce/path/p4', File::PATH_SEPARATOR + '/other/useless_path'].join
+        "/some/path#{File::PATH_SEPARATOR}/perforce/path/p4#{File::PATH_SEPARATOR}/other/useless_path"
       end
       let(:p4_client) { 'UNIT_TEST_CLIENT' }
 
@@ -151,7 +151,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
       end
 
       it 'retrieves the date of the last commit of the ruby files' do
-        oldtz = ENV['TZ']
+        oldtz = ENV.fetch('TZ', nil)
         ENV['TZ'] = 'utc'
         Dir.stubs(:getwd).returns('/path/to/client')
         RubyCritic::SourceControlSystem::Perforce.stubs(:`).once.returns(p4_stats)

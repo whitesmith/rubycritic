@@ -14,11 +14,12 @@ describe RubyCritic::Generator::LintReport do
     end
 
     it 'report file has data inside' do
-      sample_files = Dir['test/samples/**/*.rb'].reject { |f| File.zero?(f) }
+      sample_files = Dir['test/samples/**/*.rb'].reject { |f| File.empty?(f) }
       create_analysed_modules_collection
       generate_report
       lines = File.readlines('test/samples/lint.txt').map(&:strip).reject(&:empty?)
       analysed_files = lines.map { |line| line.split(':').first }.uniq
+
       assert_matched_arrays analysed_files, sample_files
     end
   end
