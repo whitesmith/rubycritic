@@ -95,7 +95,8 @@ current directory:
 $ rubycritic
 ```
 
-Alternatively you can pass `rubycritic` a list of files and directories to check:
+Alternatively you can pass `rubycritic` a list of files and directories.
+The analysis will be scoped to the provided files and directories:
 
 ```bash
 $ rubycritic app lib/foo.rb
@@ -147,7 +148,7 @@ no_browser: true # default is false
 formats: # Available values are: html, json, console, lint. Default value is html.
   - console
 minimum_score: 95 # default is 0
-paths: # Files to analyse.
+paths: # Files to analyse. Churn calculation is scoped to these files when using Git SCM.
   - 'app/controllers/'
   - 'app/models/'
 ```

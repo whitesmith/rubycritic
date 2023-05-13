@@ -69,6 +69,7 @@ detectors:
     - RubyCritic::Configuration#mode
     - RubyCritic::Configuration#no_browser
     - RubyCritic::Configuration#open_with
+    - RubyCritic::Configuration#paths
     - RubyCritic::Configuration#source_control_system
     - RubyCritic::Configuration#suppress_ratings
     - RubyCritic::Configuration#base_branch

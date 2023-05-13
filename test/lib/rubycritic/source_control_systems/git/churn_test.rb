@@ -100,11 +100,30 @@ describe RubyCritic::SourceControlSystem::Git::Churn do
       end
 
       it 'uses the option in the git command' do
-        _(churn.send(:git_log_command)).must_equal(log_command)
+        RubyCritic::SourceControlSystem::Git.expects(:git).with(log_command).once.returns(git_log)
+
+        churn.revisions_count('CHANGELOG.md')
       end
 
       it 'returns only 1 revision' do
         _(churn.revisions_count('CHANGELOG.md')).must_equal 1
+      end
+    end
+
+    context 'with paths option specified' do
+      let(:analysis_targets) { ['lib/rubycritic/commands', 'lib/rubycritic/generators'] }
+      let(:churn) { RubyCritic::SourceControlSystem::Git::Churn.new(paths: analysis_targets) }
+
+      it 'executes the git log command once for each specified path' do
+        RubyCritic::SourceControlSystem::Git.expects(:git).with(
+          "log --all --date=iso --follow --format='format:date:%x09%ad' --name-status lib/rubycritic/commands"
+        ).once.returns('')
+
+        RubyCritic::SourceControlSystem::Git.expects(:git).with(
+          "log --all --date=iso --follow --format='format:date:%x09%ad' --name-status lib/rubycritic/generators"
+        ).once.returns('')
+
+        churn.revisions_count('CHANGELOG.md')
       end
     end
   end

@@ -21,11 +21,11 @@ module RubyCritic
       end
 
       class Churn
-        def initialize(churn_after: nil)
-          @renames = Renames.new
+        def initialize(churn_after: nil, paths: ['.'])
+          @churn_after = churn_after
+          @paths = Array(paths)
           @date = nil
           @stats = {}
-          @churn_after = churn_after
 
           call
         end
@@ -41,16 +41,27 @@ module RubyCritic
         private
 
         def call
+          git_log_commands.each { |log_command| exec_git_command(log_command) }
+        end
+
+        def exec_git_command(command)
           Git
-            .git(git_log_command)
+            .git(command)
             .split("\n")
             .reject(&:empty?)
             .each { |line| process_line(line) }
         end
 
-        def git_log_command
-          after_clause = @churn_after ? "--after='#{@churn_after}' " : ''
-          "log --all --date=iso --follow --format='format:date:%x09%ad' --name-status #{after_clause}."
+        def git_log_commands
+          @paths.map { |path| git_log_command(path) }
+        end
+
+        def git_log_command(path)
+          "log --all --date=iso --follow --format='format:date:%x09%ad' --name-status #{after_clause}#{path}"
+        end
+
+        def after_clause
+          @churn_after ? "--after='#{@churn_after}' " : ''
         end
 
         def process_line(line)
@@ -71,17 +82,21 @@ module RubyCritic
         end
 
         def process_rename(from, to)
-          @renames.renamed(from, to)
+          renames.renamed(from, to)
           process_file(to)
         end
 
         def process_file(filename)
-          record_commit(@renames.current(filename), @date)
+          record_commit(renames.current(filename), @date)
         end
 
         def record_commit(filename, date)
           stats = @stats[filename] ||= Stats.new(0, date)
           stats.count += 1
+        end
+
+        def renames
+          @renames ||= Renames.new
         end
 
         def stats(path)
