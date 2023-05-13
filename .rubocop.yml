@@ -5,7 +5,7 @@ AllCops:
     - 'tmp/**/*'
     - 'vendor/**/*'
     - 'gemfiles/*'
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.7
 
 Metrics/BlockLength:
   Enabled: false
@@ -35,3 +35,9 @@ Layout/BlockAlignment:
   Enabled: false
   Exclude:
     - 'features/step_definitions/rake_task_steps.rb'
+
+Naming/RescuedExceptionsVariableName:
+  Exclude:
+    - 'lib/rubycritic/analysers/coverage.rb'
+    - 'lib/rubycritic/cli/application.rb'
+    - 'lib/rubycritic/reporter.rb'

@@ -43,7 +43,7 @@ Feature: RubyCritic can be controlled using command-line options
               --churn-after [DATE]         Only count churn from a certain date.
                                            The date is passed through to version control (currently git only).
                                            Example: 2017-01-01
-          -m, --mode-ci [BASE_BRANCH]      Use CI mode (faster, analyses diffs w.r.t base_branch (default: master))
+          -m, --mode-ci [BASE_BRANCH]      Use CI mode (faster, analyses diffs w.r.t base_branch (default: main))
               --deduplicate-symlinks       De-duplicate symlinks based on their final target
               --suppress-ratings           Suppress letter ratings
               --no-browser                 Do not open html report with browser

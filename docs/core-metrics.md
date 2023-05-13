@@ -64,7 +64,7 @@ The **complexity** of a file also (slightly) affects its final cost.
 [2]: https://github.com/troessner/reek
 [3]: https://github.com/seattlerb/flay
 [4]: https://github.com/seattlerb/flog
-[5]: https://github.com/whitesmith/rubycritic/blob/master/lib/rubycritic/core/rating.rb
-[6]: https://github.com/whitesmith/rubycritic/blob/master/lib/rubycritic/core/analysed_modules_collection.rb
+[5]: https://github.com/whitesmith/rubycritic/blob/main/lib/rubycritic/core/rating.rb
+[6]: https://github.com/whitesmith/rubycritic/blob/main/lib/rubycritic/core/analysed_modules_collection.rb
 [7]: http://www.railsinside.com/tutorials/487-how-to-score-your-rails-apps-complexity-before-refactoring.html
 [8]: https://github.com/chad/turbulence#hopefully-meaningful-metrics
