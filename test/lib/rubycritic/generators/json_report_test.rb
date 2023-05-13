@@ -20,6 +20,7 @@ describe RubyCritic::Generator::JsonReport do
       generate_report
       data = JSON.parse(File.read('test/samples/report.json'))
       analysed_files = data['analysed_modules'].map { |h| h['path'] }.uniq
+
       assert_matched_arrays analysed_files, sample_files
     end
   end

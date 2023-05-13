@@ -17,11 +17,12 @@ describe RubyCritic::Generator::ConsoleReport do
     end
 
     it 'outputs the report to the stdout' do
-      assert !@output.empty?, 'expected report to be output to stdout'
+      refute_empty @output, 'expected report to be output to stdout'
     end
 
     it "starts the report with the module's name" do
       lines = @output.split("\n")
+
       assert lines[0][/#{mock_analysed_module.name}/]
     end
 
