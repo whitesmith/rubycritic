@@ -2,6 +2,7 @@
 
 # v4.8.1 / 2023-05-17 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.8.0...v4.8.1)
 
+* [CHANGE] Drop support for Ruby 2.7.x (by [@faisal][])
 * [CHANGE] Update runtime dependencies to current versions of analysis gems (by [@faisal][])
 * [CHANGE] Update the mdl development_dependency from 0.5 to 0.12 (by [@faisal][])
 * [CHANGE] Update rubocop to use current version (~1.51.0) and relevant plugins (by [@faisal][]])
