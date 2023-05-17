@@ -1,4 +1,6 @@
-# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.8.0...main)
+# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.8.1...main)
+
+# v4.8.1 / 2023-05-17 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.8.0...v4.8.1)
 
 * [CHANGE] Update runtime dependencies to current versions of analysis gems (by [@faisal][])
 * [CHANGE] Update the mdl development_dependency from 0.5 to 0.12 (by [@faisal][])
