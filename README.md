@@ -235,7 +235,7 @@ See [formatters](docs/formatters.md)
 RubyCritic is supporting Ruby versions:
 
 | Ruby version | Latest RubyCritic version |
-| - | - |
+| --- | --- |
 | 2.4 | [v4.7.0](https://github.com/whitesmith/rubycritic/tree/v4.7.0) |
 | 2.5 | [v4.7.0](https://github.com/whitesmith/rubycritic/tree/v4.7.0) |
 | 2.6 | [v4.7.0](https://github.com/whitesmith/rubycritic/tree/v4.7.0) |

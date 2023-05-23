@@ -23,7 +23,7 @@ describe RubyCritic::Generator::ConsoleReport do
     it "starts the report with the module's name" do
       lines = @output.split("\n")
 
-      assert lines[0][/#{mock_analysed_module.name}/]
+      assert_operator lines[0], :[], /#{mock_analysed_module.name}/
     end
 
     it "includes the module's rating in the report" do
