@@ -1,5 +1,7 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.8.1...main)
 
+* [BUGFIX] Stop using long-deprecated MiniTest module name, removed in 5.19.0 (by [@faisal][])
+
 # v4.8.1 / 2023-05-17 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.8.0...v4.8.1)
 
 * [CHANGE] Update runtime dependencies to current versions of analysis gems (by [@faisal][])
