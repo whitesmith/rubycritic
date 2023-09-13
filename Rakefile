@@ -14,7 +14,7 @@ Rake::TestTask.new do |task|
 end
 
 Cucumber::Rake::Task.new(:features) do |t|
-  t.cucumber_opts = 'features --format progress --color'
+  t.cucumber_opts = %w[features --format progress --color]
 end
 
 RuboCop::RakeTask.new
