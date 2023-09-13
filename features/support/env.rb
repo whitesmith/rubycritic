@@ -10,7 +10,7 @@ require 'minitest/spec'
 # Provides runner methods used in the cucumber steps.
 #
 class RubyCriticWorld
-  extend MiniTest::Assertions
+  extend Minitest::Assertions
   attr_accessor :assertions
 
   def initialize

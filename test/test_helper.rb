@@ -54,7 +54,7 @@ module PathHelper
   end
 end
 
-module MiniTest
+module Minitest
   module Assertions
     ##
     # Fails unless <tt>exp</tt> and <tt>act</tt> are both arrays and
@@ -77,7 +77,7 @@ module MiniTest
 
   module Expectations
     ##
-    # See MiniTest::Assertions#assert_matched_arrays
+    # See Minitest::Assertions#assert_matched_arrays
     #
     #     [1,2,3].must_match_array [3,2,1]
     #
