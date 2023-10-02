@@ -36,6 +36,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'parser', '>= 3.2.2.1'
   spec.add_runtime_dependency 'rainbow', '~> 3.1.1'
   spec.add_runtime_dependency 'reek', '~> 6.0', '< 7.0'
+  spec.add_runtime_dependency 'rexml'
   spec.add_runtime_dependency 'ruby_parser', '~> 3.20'
   spec.add_runtime_dependency 'simplecov', '>= 0.22.0'
   spec.add_runtime_dependency 'tty-which', '~> 0.5.0'
