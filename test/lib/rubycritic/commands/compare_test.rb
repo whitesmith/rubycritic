@@ -9,9 +9,13 @@ require 'rubycritic/source_control_systems/git'
 module RubyCritic
   module SourceControlSystem
     class Git < Base
+      # $VERBOSE = nil to suppress warnings when we overrie self.current_branch.
+      original_verbose = $VERBOSE
+      $VERBOSE = nil
       def self.current_branch
         'feature_branch'
       end
+      $VERBOSE = original_verbose
     end
   end
 
