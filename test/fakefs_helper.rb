@@ -5,9 +5,13 @@ require 'fakefs/safe'
 
 module FakeFS
   class File < StringIO
+    # $VERBOSE = nil to suppress warnings when we overrie flock.
+    original_verbose = $VERBOSE
+    $VERBOSE = nil
     def flock(*)
       true
     end
+    $VERBOSE = original_verbose
   end
 end
 
