@@ -3,6 +3,7 @@
 * [CHANGE] Fix test warning related to `cucumber_opts` declaration (by [@faisal][])
 * [BUGFIX] Stop using long-deprecated MiniTest module name, removed in 5.19.0 (by [@faisal][])
 * [CHANGE] Disable VERBOSE warnings in test stubs (by [@fbuys][])
+* [BUGFIX] Raise error when the same branches are compared (by [@rishijain][])
 
 # v4.8.1 / 2023-05-17 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.8.0...v4.8.1)
 

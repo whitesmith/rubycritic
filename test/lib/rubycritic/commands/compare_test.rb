@@ -33,6 +33,22 @@ describe RubyCritic::Command::Compare do
     RubyCritic::SourceControlSystem::Git.stubs(:modified_files).returns('test/samples/compare_file.rb')
   end
 
+  describe 'comparing the branches with the compare option' do
+    context 'when same branches are compared' do
+      it 'it aborts with the error message' do
+        options = ['-b', 'feature_branch']
+        options = RubyCritic::Cli::Options.new(options).parse.to_h
+        RubyCritic::Config.set(options)
+        comparison = RubyCritic::Command::Compare.new(options)
+
+        assert_raises('The branch you are on and are comparing with are the same.
+        Please switch to a different branch or choose a different branch to compare.') do
+          comparison.execute
+        end
+      end
+    end
+  end
+
   describe 'comparing the same file for two different branches' do
     after do
       # clear file contents after tests
@@ -65,6 +81,7 @@ describe RubyCritic::Command::Compare do
         options = ['-b', 'feature_branch', '-t', '0', 'test/samples/compare_file.rb']
         options = RubyCritic::Cli::Options.new(options).parse.to_h
         RubyCritic::Config.set(options)
+        RubyCritic::Config.set(base_branch: 'base_branch')
         copy_proc = proc do |_|
           FileUtils.cp 'test/samples/base_branch_file.rb', 'test/samples/compare_file.rb'
         end
