@@ -18,6 +18,10 @@ module RubyCritic
       end
 
       def execute
+        if Config.send(:base_branch) == Config.send(:feature_branch)
+          raise('The branch you are on and are comparing with are the same.
+          Please switch to a different branch or choose a different branch to compare.')
+        end
         compare_branches
         status_reporter.score = Config.feature_branch_score
         status_reporter
