@@ -7,6 +7,7 @@
 * [BUGFIX] Raise error when the same branches are compared (by [@rishijain][])
 * [BUGFIX] Churn score was always 0 when rubycritic was executed from a sub-directory (by [@rishijain][])
 * [BUGFIX] Use overview.html as the fallback path when files does not exist during compare option (by [@rishijain][])
+* [BUGFIX] Use name from the file path instead of fetching name from the parser (by [@rishijain][])
 
 # v4.8.1 / 2023-05-17 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.8.0...v4.8.1)
 
