@@ -24,7 +24,10 @@ module RubyCritic
     end
 
     def code_index_path(root_directory, file_name)
-      file_path("#{File.expand_path(root_directory)}/#{file_name}")
+      root_directory_path = File.expand_path(root_directory)
+      index_path = "#{root_directory_path}/#{file_name}"
+      index_path = "#{root_directory_path}/overview.html" unless File.exist?(index_path)
+      file_path(index_path)
     end
 
     private
