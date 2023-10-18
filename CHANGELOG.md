@@ -1,4 +1,6 @@
-# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.8.1...main)
+# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.0...main)
+
+# v4.9.0 / 2023-10-18 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.8.1...v4.9.0)
 
 * [CHANGE] Fix test warning related to `cucumber_opts` declaration (by [@faisal][])
 * [BUGFIX] Stop using long-deprecated MiniTest module name, removed in 5.19.0 (by [@faisal][])
