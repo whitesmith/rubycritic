@@ -9,7 +9,7 @@ module RubyCritic
     end
 
     def first_name
-      names.first
+      name_from_path.first
     end
 
     def names
