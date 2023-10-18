@@ -73,6 +73,7 @@ module RubyCritic
           when /^[RC]/
             process_rename(*rest)
           else
+            rest = filename_for_subdirectory(rest[0])
             process_file(*rest)
           end
         end
@@ -84,6 +85,15 @@ module RubyCritic
         def process_rename(from, to)
           renames.renamed(from, to)
           process_file(to)
+        end
+
+        def filename_for_subdirectory(filename)
+          git_path = Git.git('rev-parse --show-toplevel')
+          cd_path = Dir.pwd
+          if cd_path.length > git_path.length
+            filename = filename.sub(/^#{Regexp.escape("#{File.basename(cd_path)}/")}/, '')
+          end
+          [filename]
         end
 
         def process_file(filename)

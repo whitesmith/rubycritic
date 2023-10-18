@@ -145,6 +145,7 @@ detectors:
     - RubyCritic::SourceControlSystem::Git#head_reference
     - RubyCritic::SourceControlSystem::Git#revisions_count
     - RubyCritic::SourceControlSystem::Git#stashes_count
+    - RubyCritic::SourceControlSystem::Git::Churn#filename_for_subdirectory
     - RubyCritic::SourceControlSystem::Mercurial#date_of_last_commit
     - RubyCritic::SourceControlSystem::Mercurial#revisions_count
     - RubyCritic::ViewHelpers#code_index_path
@@ -180,3 +181,6 @@ detectors:
     exclude:
     - RubyCritic::Config#self.method_missing
     - RubyCritic::Config#self.respond_to_missing?
+  TooManyMethods:
+    exclude:
+    - RubyCritic::SourceControlSystem::Git::Churn

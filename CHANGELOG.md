@@ -5,6 +5,7 @@
 * [CHANGE] Disable VERBOSE warnings in test stubs (by [@fbuys][])
 * [CHANGE] Add rexml dependency for Ruby 3.0.0+ support (by [@fbuys][])
 * [BUGFIX] Raise error when the same branches are compared (by [@rishijain][])
+* [BUGFIX] Churn score was always 0 when rubycritic was executed from a sub-directory (by [@rishijain][])
 
 # v4.8.1 / 2023-05-17 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.8.0...v4.8.1)
 
