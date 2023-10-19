@@ -82,7 +82,7 @@ module RubyCritic
         name: name, path: path, smells: smells,
         churn: churn, committed_at: committed_at, complexity: complexity,
         duplication: duplication, methods_count: methods_count, cost: cost,
-        rating: rating
+        rating: rating, coverage: coverage
       }
     end
 

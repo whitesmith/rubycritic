@@ -1,5 +1,7 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.0...main)
 
+* [BUGFIX] Pass coverage data for compare branch mode (by [@rishijain][])
+
 # v4.9.0 / 2023-10-18 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.8.1...v4.9.0)
 
 * [CHANGE] Bump aruba, cucumber, fakefs, flog, mdl, minitest, and rubocop dependencies (by [@faisal][])
