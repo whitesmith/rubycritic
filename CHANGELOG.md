@@ -1,5 +1,6 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.0...main)
 
+* [CHANGE] Bump cucumber, minitest, parser, rake, reek, rubocop, and ruby_parser dependencies (by [@faisal][])
 * [CHANGE] Fix some typos (by [@jbampton][])
 
 # v4.9.0 / 2023-10-18 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.8.1...v4.9.0)
