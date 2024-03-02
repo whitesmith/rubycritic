@@ -1,5 +1,7 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.0...main)
 
+* [CHANGE] Fix some typos (by [@jbampton][])
+
 # v4.9.0 / 2023-10-18 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.8.1...v4.9.0)
 
 * [CHANGE] Bump aruba, cucumber, fakefs, flog, mdl, minitest, and rubocop dependencies (by [@faisal][])
@@ -103,7 +105,7 @@
 
 # v4.3.0 / 2019-12-26 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.2.2...v4.3.0)
 
-* [FEATURE] Show which files are uncommited in git (by [@GeoffTidey][])
+* [FEATURE] Show which files are uncommitted in git (by [@GeoffTidey][])
 * [BUGFIX] Fixes TypeError when `.resultset.json` is not found (by [@etagwerker][])
 
 # v4.2.2 / 2019-11-12 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.2.1...v4.2.2)
@@ -341,7 +343,7 @@
 
 * [FEATURE] Add CI mode that only analyses the last commit
 * [FEATURE] Add partial support for Mercurial
-* [FEATURE] Allow using RubyCritic programatically
+* [FEATURE] Allow using RubyCritic programmatically
 * [CHANGE] Update to Reek 1.6.0 (from 1.3.8)
 * [BUGFIX] Fix issue #18 - Prevent encoding issues when using Git
 
