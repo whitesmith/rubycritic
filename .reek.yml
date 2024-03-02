@@ -3,9 +3,6 @@ detectors:
   InstanceVariableAssumption:
     exclude:
       - RubyCritic::Analyser::Coverage
-  TooManyMethods:
-    exclude:
-      - RubyCritic::Cli::Options::File
   IrresponsibleModule:
     exclude:
     - RubyCritic::Analyser::Attributes
@@ -187,4 +184,5 @@ detectors:
     - RubyCritic::Config#self.respond_to_missing?
   TooManyMethods:
     exclude:
+    - RubyCritic::Cli::Options::File
     - RubyCritic::SourceControlSystem::Git::Churn
