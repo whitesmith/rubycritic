@@ -101,7 +101,7 @@ describe RubyCritic::Command::Compare do
       @options = RubyCritic::Cli::Options.new(options).parse.to_h
     end
 
-    it 'with -b option withour pull request id' do
+    it 'with -b option without pull request id' do
       _(@options[:base_branch]).must_equal 'base_branch'
       _(@options[:feature_branch]).must_equal 'feature_branch'
       _(@options[:mode]).must_equal :compare_branches

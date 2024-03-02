@@ -79,7 +79,7 @@ describe RubyCritic::SourceControlSystem::Git::Churn do
         .must_equal 4
     end
 
-    it 'returns 0 for an uncommited file' do
+    it 'returns 0 for an uncommitted file' do
       _(churn.revisions_count('non_existent_file')).must_equal 0
     end
 
@@ -134,7 +134,7 @@ describe RubyCritic::SourceControlSystem::Git::Churn do
         .must_equal '2014-03-19 18:17:28 +0000'
     end
 
-    it 'returns nil for an uncommited file' do
+    it 'returns nil for an uncommitted file' do
       assert_nil(churn.date_of_last_commit('non_existent_file'))
     end
   end
