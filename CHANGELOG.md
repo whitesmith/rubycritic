@@ -1,6 +1,7 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.0...main)
 
 * [CHANGE] Fix some typos (by [@jbampton][])
+* [FEATURE] Add coverage_path configuration option (by [@exoego][])
 
 # v4.9.0 / 2023-10-18 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.8.1...v4.9.0)
 
@@ -444,3 +445,4 @@
 [@96RadhikaJadhav]: https://github.com/96RadhikaJadhav
 [@Fito]: https://github.com/Fito
 [@fbuys]: https://github.com/fbuys
+[@exoego]: https://github.com/exoego
