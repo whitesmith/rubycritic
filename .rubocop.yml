@@ -16,6 +16,10 @@ AllCops:
 Metrics/BlockLength:
   Enabled: false
 
+Metrics/MethodLength:
+  Exclude:
+    - "lib/rubycritic/configuration.rb"
+
 Layout/LineLength:
   Max: 120
 

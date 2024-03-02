@@ -95,6 +95,10 @@ module RubyCritic
               self.no_browser = true
             end
 
+            opts.on('--coverage-path [PATH]', 'SimpleCov coverage will be saved (./coverage by default)') do |path|
+              @coverage_path = path
+            end
+
             opts.on_tail('-v', '--version', "Show gem's version") do
               self.mode = :version
             end
@@ -129,7 +133,7 @@ module RubyCritic
 
         attr_accessor :mode, :root, :formats, :formatters, :deduplicate_symlinks,
                       :suppress_ratings, :minimum_score, :churn_after, :no_browser,
-                      :parser, :base_branch, :feature_branch, :threshold_score
+                      :parser, :base_branch, :feature_branch, :threshold_score, :coverage_path
 
         def paths
           @argv unless @argv.empty?

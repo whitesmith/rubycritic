@@ -22,6 +22,7 @@ module RubyCritic
           {
             mode: mode,
             root: root,
+            coverage_path: coverage_path,
             formats: formats,
             deduplicate_symlinks: deduplicate_symlinks,
             paths: paths,
@@ -57,6 +58,10 @@ module RubyCritic
 
         def root
           options['path']
+        end
+
+        def coverage_path
+          options['coverage_path']
         end
 
         def threshold_score

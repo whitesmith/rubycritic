@@ -68,6 +68,7 @@ detectors:
     - RubyCritic::Configuration#format
     - RubyCritic::Configuration#mode
     - RubyCritic::Configuration#no_browser
+    - RubyCritic::Configuration#coverage_path
     - RubyCritic::Configuration#open_with
     - RubyCritic::Configuration#paths
     - RubyCritic::Configuration#source_control_system
@@ -183,4 +184,5 @@ detectors:
     - RubyCritic::Config#self.respond_to_missing?
   TooManyMethods:
     exclude:
+    - RubyCritic::Cli::Options::File
     - RubyCritic::SourceControlSystem::Git::Churn

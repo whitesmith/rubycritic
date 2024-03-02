@@ -47,6 +47,7 @@ Feature: RubyCritic can be controlled using command-line options
               --deduplicate-symlinks       De-duplicate symlinks based on their final target
               --suppress-ratings           Suppress letter ratings
               --no-browser                 Do not open html report with browser
+              --coverage-path [PATH]       SimpleCov coverage will be saved (./coverage by default)
           -v, --version                    Show gem's version
           -h, --help                       Show this message
 
