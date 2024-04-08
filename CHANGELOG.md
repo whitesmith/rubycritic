@@ -2,6 +2,7 @@
 
 * [CHANGE] Fix some typos (by [@jbampton][])
 * [FEATURE] Add coverage_path configuration option (by [@exoego][])
+* [BUGFIX] Restrict reek version upper limit (by [@brkn][])
 
 # v4.9.0 / 2023-10-18 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.8.1...v4.9.0)
 
