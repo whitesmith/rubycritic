@@ -115,11 +115,7 @@ module RubyCritic
         if Gem.loaded_specs['simplecov'].version >= Gem::Version.new('0.19')
           ::SimpleCov::Result.from_hash(resultset)
         else
-          array = []
-          resultset.each do |command_name, data|
-            array << ::SimpleCov::Result.from_hash(command_name => data)
-          end
-          array
+          resultset.map { |command_name, data| ::SimpleCov::Result.from_hash(command_name => data) }
         end
       end
     end
