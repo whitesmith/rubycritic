@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'launchy', '>= 2.5.2'
   spec.add_runtime_dependency 'parser', '>= 3.2.2.4'
   spec.add_runtime_dependency 'rainbow', '~> 3.1.1'
-  spec.add_runtime_dependency 'reek', '~> 6.1', '< 7.0' # >= 6.2 requires Ruby 3
+  spec.add_runtime_dependency 'reek', '~> 6.0', '< 6.2'
   spec.add_runtime_dependency 'rexml'
   spec.add_runtime_dependency 'ruby_parser', '~> 3.21'
   spec.add_runtime_dependency 'simplecov', '>= 0.22.0'
