@@ -1,5 +1,7 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.1...main)
 
+* [CHANGE] Drop support for Ruby 3.0.x (by [@faisal][])
+* [CHANGE] Bump minitest, mocha, rubocop dependencies (by [@faisal][])
 * [CHANGE] Drop support for Ruby 2.7.x (by [@faisal][])
 
 # v4.9.1 / 2024-04-14 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.9.0...v4.9.1)
