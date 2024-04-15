@@ -1,8 +1,8 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.1...main)
+* [CHANGE] Drop support for Ruby 2.7.x (by [@faisal][])
 
 # v4.9.1 / 2024-04-14 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.9.0...v4.9.1)
 
-* [CHANGE] Drop support for Ruby 2.7.x (by [@faisal][])
 * [CHANGE] Bump cucumber, minitest, parser, rake, reek, rubocop, and ruby_parser dependencies (by [@faisal][])
 * [CHANGE] Fix some typos (by [@jbampton][])
 * [FEATURE] Add coverage_path configuration option (by [@exoego][])
