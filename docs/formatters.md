@@ -59,12 +59,12 @@ See the [Rakefile](https://github.com/MarcGrimme/repo-small-badge/blob/master/Ra
 
 When *rubycritic* is called outside of the structure that has to be **criticized** with just calling the command.
 The path to load as well, as the fully qualified classname of the formatter, have to be passed.
-This happens with the `--formatter` option followed by the path to require (*requirepath*) a `:` as a separator and the fully qualified *classname*.
+This happens with the `--custom-format` option followed by the path to require (*requirepath*) a `:` as a separator and the fully qualified *classname*.
 An example could look as follows:
 
 ``` shell
 gem install my_formatter_gem
-rubycritic --formatter my_formatter:MyFormatter
+rubycritic --custom-format my_formatter:MyFormatter
 ```
 
 This will do the same as above.
