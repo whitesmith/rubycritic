@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'RubyCritic is a Ruby code quality reporter'
   spec.homepage      = 'https://github.com/whitesmith/rubycritic'
   spec.license       = 'MIT'
-  spec.required_ruby_version = '>= 2.7.0'
+  spec.required_ruby_version = '>= 3.0.0'
 
   spec.files = [
     'CHANGELOG.md',
@@ -33,9 +33,9 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'flay', '~> 2.13'
   spec.add_runtime_dependency 'flog', '~> 4.7'
   spec.add_runtime_dependency 'launchy', '>= 2.5.2'
-  spec.add_runtime_dependency 'parser', '>= 3.2.2.4'
+  spec.add_runtime_dependency 'parser', '>= 3.3.0.5'
   spec.add_runtime_dependency 'rainbow', '~> 3.1.1'
-  spec.add_runtime_dependency 'reek', '~> 6.0', '< 6.2'
+  spec.add_runtime_dependency 'reek', '~> 6.3.0', '< 7.0'
   spec.add_runtime_dependency 'rexml'
   spec.add_runtime_dependency 'ruby_parser', '~> 3.21'
   spec.add_runtime_dependency 'simplecov', '>= 0.22.0'
@@ -58,7 +58,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'mocha', '~> 2.2.0'
   spec.add_development_dependency 'rake', '~> 13.2.0', '>= 11.0.0'
   spec.add_development_dependency 'rexml', '>= 3.2.0'
-  spec.add_development_dependency 'rubocop', '~> 1.59.0', '>= 1.54.0' # >= 1.60 requires Ruby 3
+  spec.add_development_dependency 'rubocop', '~> 1.63.0', '>= 1.54.0'
   spec.add_development_dependency 'rubocop-minitest'
   spec.add_development_dependency 'rubocop-performance'
   spec.add_development_dependency 'rubocop-rake'

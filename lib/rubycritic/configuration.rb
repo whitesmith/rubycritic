@@ -70,9 +70,9 @@ module RubyCritic
       !Config.no_browser && %i[compare_branches ci].include?(Config.mode)
     end
 
-    def self.method_missing(method, *args, &block)
+    def self.method_missing(method, ...)
       if configuration.respond_to?(method)
-        configuration.public_send(method, *args, &block)
+        configuration.public_send(method, ...)
       else
         super
       end
