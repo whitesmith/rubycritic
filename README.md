@@ -10,17 +10,19 @@ RubyCritic is a gem that wraps around static analysis gems such as [Reek][1], [F
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-   + [Analyzer Configuration](#analyzer-configuration)
-   + [Alternative Usage Methods](#alternative-usage-methods)
-   + [Rake Task](#rake-task)
-- [Formatters](#formatters)
-- [Compatibility](#compatibility)
-- [Improving RubyCritic](#improving-rubyCritic)
-- [Contributors](#contributors)
-- [Credits](#credits)
+- [RubyCritic](#rubycritic)
+   - [Table of Contents](#table-of-contents)
+   - [Overview](#overview)
+   - [Getting Started](#getting-started)
+   - [Usage](#usage)
+      - [Analyzer Configuration](#analyzer-configuration)
+      - [Alternative Usage Methods](#alternative-usage-methods)
+      - [Rake Task](#rake-task)
+   - [Formatters](#formatters)
+   - [Compatibility](#compatibility)
+   - [Improving RubyCritic](#improving-rubycritic)
+   - [Contributors](#contributors)
+   - [Credits](#credits)
 
 ## Overview
 
@@ -241,7 +243,7 @@ RubyCritic is supporting Ruby versions:
 | 2.4 | [v4.7.0](https://github.com/whitesmith/rubycritic/tree/v4.7.0) |
 | 2.5 | [v4.7.0](https://github.com/whitesmith/rubycritic/tree/v4.7.0) |
 | 2.6 | [v4.7.0](https://github.com/whitesmith/rubycritic/tree/v4.7.0) |
-| 2.7 | latest |
+| 2.7 | [v4.9.x](https://github.com/whitesmith/rubycritic/tree/v4.9.1) |
 | 3.0 | latest |
 | 3.1 | latest |
 
