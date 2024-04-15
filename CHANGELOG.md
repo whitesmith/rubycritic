@@ -1,4 +1,6 @@
-# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.0...main)
+# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.1...main)
+
+# v4.9.1 / 2024-04-14 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.9.0...v4.9.1)
 
 * [CHANGE] Drop support for Ruby 2.7.x (by [@faisal][])
 * [CHANGE] Bump cucumber, minitest, parser, rake, reek, rubocop, and ruby_parser dependencies (by [@faisal][])
