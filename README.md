@@ -265,7 +265,7 @@ See RubyCritic's [contributing guidelines](https://github.com/whitesmith/rubycri
 
 The current core team consists of:
 
-* [Nuno Silva](https://github.com/Onumis)
+* [Nuno Silva](https://github.com/nunosilva800)
 * [Lucas Mazza](https://github.com/lucasmazza)
 * [Timo Rößner](https://github.com/troessner)
 
