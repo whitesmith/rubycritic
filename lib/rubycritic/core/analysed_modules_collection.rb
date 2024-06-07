@@ -28,8 +28,8 @@ module RubyCritic
       end
     end
 
-    def each(&block)
-      @modules.each(&block)
+    def each(&)
+      @modules.each(&)
     end
 
     def where(module_paths)

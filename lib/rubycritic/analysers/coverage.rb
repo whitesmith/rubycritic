@@ -88,13 +88,13 @@ module RubyCritic
 
       # Ensure only one process is reading or writing the resultset at any
       # given time
-      def synchronize_resultset(&proc)
+      def synchronize_resultset(&)
         # make it reentrant
         return yield if defined?(@resultset_locked) && @resultset_locked == true
 
         return yield unless File.exist?(resultset_writelock)
 
-        with_lock(&proc)
+        with_lock(&)
       end
 
       def with_lock

@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'RubyCritic is a Ruby code quality reporter'
   spec.homepage      = 'https://github.com/whitesmith/rubycritic'
   spec.license       = 'MIT'
-  spec.required_ruby_version = '>= 3.0.0'
+  spec.required_ruby_version = '>= 3.1.0'
 
   spec.files = [
     'CHANGELOG.md',
@@ -53,12 +53,12 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'diff-lcs', '~> 1.3'
   spec.add_development_dependency 'fakefs', '~> 2.5.0'
   spec.add_development_dependency 'mdl', '~> 0.13.0', '>= 0.12.0'
-  spec.add_development_dependency 'minitest', '~> 5.22.2', '>= 5.3.0'
+  spec.add_development_dependency 'minitest', '~> 5.23.1', '>= 5.3.0'
   spec.add_development_dependency 'minitest-around', '~> 0.5.0', '>= 0.4.0'
-  spec.add_development_dependency 'mocha', '~> 2.2.0'
+  spec.add_development_dependency 'mocha', '~> 2.3.0'
   spec.add_development_dependency 'rake', '~> 13.2.0', '>= 11.0.0'
   spec.add_development_dependency 'rexml', '>= 3.2.0'
-  spec.add_development_dependency 'rubocop', '~> 1.63.0', '>= 1.54.0'
+  spec.add_development_dependency 'rubocop', '~> 1.64.0', '>= 1.54.0'
   spec.add_development_dependency 'rubocop-minitest'
   spec.add_development_dependency 'rubocop-performance'
   spec.add_development_dependency 'rubocop-rake'
