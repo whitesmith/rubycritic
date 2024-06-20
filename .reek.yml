@@ -93,9 +93,11 @@ detectors:
   DuplicateMethodCall:
     exclude:
     - RubyCritic::Analyser::Churn#run
+    - RubyCritic::Configuration#set
     - Parser::AST::Node#module_name
   TooManyStatements:
     exclude:
+    - RubyCritic::Configuration#find_directories
     - RubyCritic::RakeTask#initialize
     - RubyCritic::Analyser::Complexity#run
     - RubyCritic::Analyser::Coverage#synchronize_resultset
@@ -119,6 +121,7 @@ detectors:
     - RubyCritic::ViewHelpers#smell_location_path
     - RubyCritic::Generator::HtmlReport#create_directories_and_files
     - RubyCritic::SourceLocator#deduplicate_symlinks
+    - RubyCritic::Configuration#setup_paths_for_targets
   NestedIterators:
     exclude:
     - Parser::AST::Node#recursive_children
@@ -126,8 +129,10 @@ detectors:
     - RubyCritic::Cli::Options::Argv#parse
     - RubyCritic::Generator::HtmlReport#create_directories_and_files
     - RubyCritic::AnalysedModulesCollection#initialize
+    - RubyCritic::Configuration#find_directories
   UtilityFunction:
     exclude:
+    - RubyCritic::Configuration#find_directories
     - RubyCritic::Analyser::Coverage#resultset_path
     - RubyCritic::Analyser::Coverage#resultset_writelock
     - RubyCritic::Analyser::FlaySmells#cost
