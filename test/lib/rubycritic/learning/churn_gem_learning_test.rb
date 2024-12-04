@@ -2,7 +2,7 @@ require 'test_helper'
 require 'churn'
 require 'churn/calculator'
 describe "churn gem's Churn" do
-  it 'computes how many times a file was changes' do
+  it 'computes how many times a file was changed' do
     config = {
       report: false, # Disable default report output
       start_date: '6 years ago', # Optional: Limit analysis to a specific time range
@@ -11,6 +11,7 @@ describe "churn gem's Churn" do
 
     churn_calculator = ::Churn::ChurnCalculator.new(config)
     report = churn_calculator.report(false)
-    assert_equal 146, report[:churn][:changes].length
+    # rubycritic gemspec was changed 148 times.
+    assert_equal 148, report[:churn][:changes].length
   end
 end
