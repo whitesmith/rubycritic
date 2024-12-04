@@ -30,6 +30,7 @@ Gem::Specification.new do |spec|
   spec.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   spec.require_path  = 'lib'
 
+  spec.add_runtime_dependency 'churn'
   spec.add_runtime_dependency 'flay', '~> 2.13'
   spec.add_runtime_dependency 'flog', '~> 4.7'
   spec.add_runtime_dependency 'launchy', '>= 2.5.2'
