@@ -14,7 +14,7 @@ describe "churn gem's Churn" do
     Churn::GitAnalyzer.stubs(:supported?).returns(true)
     churn_calculator = Churn::ChurnCalculator.new(config)
     churn_calculator.stubs(:parse_log_for_changes).returns([['file.rb', 4], ['less.rb', 1]])
-    churn_calculator.stubs(:parse_log_for_revision_changes).returns(['revision'])
+    churn_calculator.stubs(:parse_log_for_revision_changes).returns(['revision-git-sha'])
 
     report = churn_calculator.report(false)
 
