@@ -7,9 +7,9 @@ require 'byebug'
 describe "churn gem's Churn" do
   it 'computes how many times a file was changed' do
     config = {
-      report: false, # Disable default report output
-      start_date: '6 years ago', # Optional: Limit analysis to a specific time range
-      minimum_churn_count: 1     # Minimum number of changes to consider a file
+      report: false,
+      start_date: '6 years ago',
+      minimum_churn_count: 1
     }
     Churn::GitAnalyzer.stubs(:supported?).returns(true)
     churn_calculator = Churn::ChurnCalculator.new(config)
