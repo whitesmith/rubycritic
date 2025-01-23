@@ -51,7 +51,7 @@ Gem::Specification.new do |spec|
   end
   spec.add_development_dependency 'cucumber', '~> 9.2.1', '!= 9.0.0'
   spec.add_development_dependency 'diff-lcs', '~> 1.3'
-  spec.add_development_dependency 'fakefs', '~> 2.6.0'
+  spec.add_development_dependency 'fakefs', '~> 3.0.0'
   spec.add_development_dependency 'irb'
   spec.add_development_dependency 'mdl', '~> 0.13.0', '>= 0.12.0'
   spec.add_development_dependency 'minitest', '~> 5.25.2', '>= 5.3.0'
