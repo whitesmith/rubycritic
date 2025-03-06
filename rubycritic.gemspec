@@ -7,6 +7,11 @@ require 'rubycritic/version'
 Gem::Specification.new do |spec|
   spec.name          = 'rubycritic'
   spec.version       = RubyCritic::VERSION
+  if RUBY_PLATFORM == 'java'
+    spec.platform      = Gem::Platform::JAVA
+  else
+    spec.platform      = Gem::Platform::RUBY
+  end
   spec.authors       = ['Guilherme Simoes']
   spec.email         = ['guilherme.rdems@gmail.com']
   spec.description   = 'RubyCritic is a tool that wraps around various static analysis gems ' \
@@ -46,6 +51,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '>= 2.0.0'
   if RUBY_PLATFORM == 'java'
     spec.add_development_dependency 'pry-debugger-jruby'
+    spec.add_development_dependency 'jar-dependencies', '~> 0.4.1'
   else
     spec.add_development_dependency 'byebug', '~> 11.0', '>= 10.0'
   end
