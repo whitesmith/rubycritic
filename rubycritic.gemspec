@@ -46,7 +46,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'aruba', '~> 2.3.0'
   spec.add_development_dependency 'bundler', '>= 2.0.0'
   if RUBY_PLATFORM == 'java'
-    spec.add_development_dependency 'jar-dependencies', '~> 0.4.1'
+    spec.add_development_dependency 'jar-dependencies', '~> 0.5.4'
     spec.add_development_dependency 'pry-debugger-jruby'
   else
     spec.add_development_dependency 'byebug', '~> 11.0', '>= 10.0'
