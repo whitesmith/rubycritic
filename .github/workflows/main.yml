@@ -68,6 +68,7 @@ jobs:
         include:
           - ruby-version: 'ruby-head'
             experimental: true
+            continue-on-error: true
           - ruby-version: 'jruby-9.4'
             experimental: true
     steps:
@@ -98,6 +99,7 @@ jobs:
         include:
           - ruby-version: 'ruby-head'
             experimental: true
+            continue-on-error: true
           - ruby-version: 'jruby-9.4'
             experimental: true
     steps:
