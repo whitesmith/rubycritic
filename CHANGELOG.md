@@ -1,7 +1,7 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.1...main)
 
 * [CHANGE] Adds development dependency for gems removed from standard library in Ruby 3.5 -- ostruct, irb, rdoc (by [@faisal][])
-* [CHANGE] Bump aruba, fakefs, minitest, mocha, reek, rubocop dependencies (by [@faisal][])
+* [CHANGE] Bump aruba, byebug, fakefs, minitest, mocha, reek, rubocop dependencies (by [@faisal][])
 * [CHANGE] Add .solargraph.yml config file to enable Solargraph LSP use in editors such as BBedit (by [@faisal][])
 * [CHANGE] Drop support for Ruby 2.7.x, 3.0.x (by [@faisal][])
 * [CHANGE] Cache the reek configuration loading for faster execution (by [@raff-s][])
