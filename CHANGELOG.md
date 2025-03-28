@@ -1,5 +1,7 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.2...main)
 
+* [CHANGE] Drop support for Ruby 3.1.x, including moving CI from JRuby 9.4 to JRuby 10 (by [@faisal][])
+
 # v4.10.0 / 2025-07-30 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.9.2...v4.10.0)
 
 * [CHANGE] Bump aruba, byebug, cucumber, fakefs, rake, reek dependencies (by [@faisal][])
