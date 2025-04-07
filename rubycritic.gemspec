@@ -61,7 +61,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 13.2.0', '>= 11.0.0'
   spec.add_development_dependency 'rdoc'
   spec.add_development_dependency 'rexml', '>= 3.2.0'
-  spec.add_development_dependency 'rubocop', '~> 1.73.2', '>= 1.72.0'
+  spec.add_development_dependency 'rubocop', '>= 1.72.0', '< 2.0'
   spec.add_development_dependency 'rubocop-minitest'
   spec.add_development_dependency 'rubocop-performance'
   spec.add_development_dependency 'rubocop-rake'
