@@ -1,4 +1,6 @@
-# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.1...main)
+# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.2...main)
+
+# v4.9.2 / 2025-04-08 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.9.1...v4.9.2)
 
 * [CHANGE] Adds development dependency for gems removed from standard library in Ruby 3.5 -- ostruct, irb, rdoc (by [@faisal][])
 * [CHANGE] Bump aruba, fakefs, minitest, mocha, reek, rubocop dependencies (by [@faisal][])
