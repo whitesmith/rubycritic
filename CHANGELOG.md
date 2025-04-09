@@ -1,5 +1,7 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.2...main)
 
+* [CHANGE] Bump aruba, byebug, cucumber, fakefs, rake, reek dependencies (by [@faisal][])
+* [BUGFIX] Work around issue preventing feature execution on Ruby 3.5.0dev (by [@faisal][])
 * [CHANGE] Add changes or suppress warnings for issues found by newer rubocop (by [@faisal][])
 * [CHANGE] Update CI checkout action to v4 (by [@faisal][])
 
