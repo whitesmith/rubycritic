@@ -88,7 +88,8 @@ module RubyCritic
         committed_at: analysed_module.committed_at,
         complexity: analysed_module.complexity,
         duplication: analysed_module.duplication,
-        methods_count: analysed_module.methods_count
+        methods_count: analysed_module.methods_count,
+        coverage: analysed_module.coverage
       )
     end
   end
