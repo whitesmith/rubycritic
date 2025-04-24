@@ -1,5 +1,6 @@
 # main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.2...main)
 
+* [CHANGE] Bump CI's JRuby checks to JRuby 10 (by [@faisal][])
 * [CHANGE] Update CI checkout action to v4 (by [@faisal][])
 
 # v4.9.2 / 2025-04-08 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.9.1...v4.9.2)
