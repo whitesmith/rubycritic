@@ -21,16 +21,19 @@ describe RubyCritic::Analyser::FlaySmells do
 
     it 'creates smells with messages' do
       smell = @analysed_modules.first.smells.first
+
       _(smell.message).must_be_instance_of String
     end
 
     it 'creates smells with scores' do
       smell = @analysed_modules.first.smells.first
+
       _(smell.score).must_be_kind_of Numeric
     end
 
     it 'creates smells with more than one location' do
       smell = @analysed_modules.first.smells.first
+
       _(smell.multiple_locations?).must_equal true
     end
 
