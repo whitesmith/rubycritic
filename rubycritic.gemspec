@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'launchy', '>= 2.5.2'
   spec.add_dependency 'parser', '>= 3.3.0.5'
   spec.add_dependency 'rainbow', '~> 3.1.1'
-  spec.add_dependency 'reek', '~> 6.4.0', '< 7.0'
+  spec.add_dependency 'reek', '~> 6.5.0', '< 7.0'
   spec.add_dependency 'rexml'
   spec.add_dependency 'ruby_parser', '~> 3.21'
   spec.add_dependency 'simplecov', '>= 0.22.0'
@@ -47,7 +47,7 @@ Gem::Specification.new do |spec|
   if RUBY_PLATFORM == 'java'
     spec.add_development_dependency 'pry-debugger-jruby'
   else
-    spec.add_development_dependency 'byebug', '~> 11.0', '>= 10.0'
+    spec.add_development_dependency 'byebug', '~> 12.0', '>= 10.0'
   end
   spec.add_development_dependency 'cucumber', '~> 9.2.1', '!= 9.0.0'
   spec.add_development_dependency 'diff-lcs', '~> 1.3'
