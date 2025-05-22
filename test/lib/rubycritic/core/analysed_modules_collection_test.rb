@@ -49,7 +49,7 @@ describe RubyCritic::AnalysedModulesCollection do
       let(:analysed_modules) do
         [RubyCritic::AnalysedModule.new(pathname: Pathname.new('test/samples/empty.rb'), name: 'Name', smells: [],
                                         churn: 2, committed_at: Time.now, complexity: 2, duplication: 0,
-                                        methods_count: 2)]
+                                        methods_count: 2, coverage: 70.0)]
       end
 
       it 'registers one AnalysedModule element per existent file' do
@@ -61,6 +61,7 @@ describe RubyCritic::AnalysedModulesCollection do
         _(analysed_module.complexity).must_equal 2
         _(analysed_module.duplication).must_equal 0
         _(analysed_module.methods_count).must_equal 2
+        _(analysed_module.coverage).must_equal 70.0
       end
     end
   end
