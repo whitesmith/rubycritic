@@ -92,3 +92,11 @@ Lint/StructNewOverride:
 Metrics/AbcSize:
   Exclude:
     - 'lib/rubycritic/configuration.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'lib/rubycritic/configuration.rb'
+
+Style/RedundantAssignment:
+  Exclude:
+    - 'lib/rubycritic/configuration.rb'
