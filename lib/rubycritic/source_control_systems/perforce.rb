@@ -52,9 +52,11 @@ module RubyCritic
         Time.strptime(perforce_files[Perforce.key_file(path)].last_commit, '%s').strftime('%Y-%m-%d %H:%M:%S %z')
       end
 
+      # rubocop:disable Style/CollectionQuerying
       def revision?
         !perforce_files.values.count(&:opened?).zero?
       end
+      # rubocop:enable Style/CollectionQuerying
 
       def head_reference
         perforce_files.values.map(&:head).max_by(&:to_i)

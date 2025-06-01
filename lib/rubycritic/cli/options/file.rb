@@ -96,10 +96,12 @@ module RubyCritic
           options['paths']
         end
 
+        # rubocop:disable Naming/PredicateMethod
         def value_for(value)
           value = value.to_s
           value == 'true' unless value.empty?
         end
+        # rubocop:enable Naming/PredicateMethod
       end
     end
   end
