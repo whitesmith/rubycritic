@@ -80,6 +80,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
 
         it 'calls p4 info and parse the result' do
           RubyCritic::SourceControlSystem::Perforce.stubs(:`).with('p4 info').returns(p4_info)
+
           _(RubyCritic::SourceControlSystem::Perforce.in_client_directory?).must_equal true
         end
       end
@@ -100,6 +101,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
 
         it 'calls p4 info and parse the result' do
           RubyCritic::SourceControlSystem::Perforce.stubs(:`).with('p4 info').returns(p4_info)
+
           _(RubyCritic::SourceControlSystem::Perforce.in_client_directory?).must_equal false
         end
       end
@@ -125,9 +127,11 @@ describe RubyCritic::SourceControlSystem::Perforce do
         it 'builds the perforce file cache' do
           RubyCritic::SourceControlSystem::Perforce.stubs(:`).returns(p4_stats)
           file_cache = @system.send(:perforce_files)
+
           _(file_cache.size).must_equal 2
 
           first_file = file_cache['/path/to/client/a_ruby_file.rb']
+
           _(first_file.filename).must_equal '/path/to/client/a_ruby_file.rb'
           _(first_file.revision).must_equal '16'
           _(first_file.last_commit).must_equal '1473075551'
@@ -135,6 +139,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
           _(first_file.opened?).must_equal false
 
           second_file = file_cache['/path/to/client/second_ruby_file.rb']
+
           _(second_file.filename).must_equal '/path/to/client/second_ruby_file.rb'
           _(second_file.revision).must_equal '12'
           _(second_file.last_commit).must_equal '1464601668'
@@ -146,6 +151,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
       it 'retrieves the number revisions of the ruby files' do
         Dir.stubs(:getwd).returns('/path/to/client')
         RubyCritic::SourceControlSystem::Perforce.stubs(:`).once.returns(p4_stats)
+
         _(@system.revisions_count('a_ruby_file.rb')).must_equal 16
         _(@system.revisions_count('second_ruby_file.rb')).must_equal 12
       end
@@ -155,6 +161,7 @@ describe RubyCritic::SourceControlSystem::Perforce do
         ENV['TZ'] = 'utc'
         Dir.stubs(:getwd).returns('/path/to/client')
         RubyCritic::SourceControlSystem::Perforce.stubs(:`).once.returns(p4_stats)
+
         _(@system.date_of_last_commit('a_ruby_file.rb')).must_equal '2016-09-05 11:39:11 +0000'
         _(@system.date_of_last_commit('second_ruby_file.rb')).must_equal '2016-05-30 09:47:48 +0000'
         ENV['TZ'] = oldtz
@@ -163,12 +170,14 @@ describe RubyCritic::SourceControlSystem::Perforce do
       it 'retrieves the information if the ruby file is opened (in the changelist and ready to commit)' do
         Dir.stubs(:getwd).returns('/path/to/client')
         RubyCritic::SourceControlSystem::Perforce.stubs(:`).once.returns(p4_stats)
+
         _(@system.revision?).must_equal true
       end
 
       it 'retrieves the head reference of the repository' do
         Dir.stubs(:getwd).returns('/path/to/client')
         RubyCritic::SourceControlSystem::Perforce.stubs(:`).once.returns(p4_stats)
+
         _(@system.head_reference).must_equal '2103504'
       end
     end
