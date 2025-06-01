@@ -6,6 +6,7 @@ module RubyCritic
   module Analyser
     class Churn
       include Colorize
+
       attr_writer :source_control_system
 
       def initialize(analysed_modules)

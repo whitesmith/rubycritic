@@ -11,6 +11,7 @@ require 'minitest/spec'
 #
 class RubyCriticWorld
   extend Minitest::Assertions
+
   attr_accessor :assertions
 
   def initialize

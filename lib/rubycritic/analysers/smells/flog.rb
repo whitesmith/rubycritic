@@ -8,6 +8,7 @@ module RubyCritic
   module Analyser
     class FlogSmells
       include Colorize
+
       HIGH_COMPLEXITY_SCORE_THRESHOLD = 25
       VERY_HIGH_COMPLEXITY_SCORE_THRESHOLD = 60
 

@@ -45,6 +45,7 @@ describe RubyCritic::Smell do
     it 'returns true if the smell has a location that matches the location passed as argument' do
       location = RubyCritic::Location.new('./foo', '42')
       smell = RubyCritic::Smell.new(locations: [location])
+
       _(smell.at_location?(location)).must_equal true
     end
   end
@@ -54,6 +55,7 @@ describe RubyCritic::Smell do
       location1 = RubyCritic::Location.new('./foo', '42')
       location2 = RubyCritic::Location.new('./foo', '23')
       smell = RubyCritic::Smell.new(locations: [location1, location2])
+
       _(smell.multiple_locations?).must_equal true
     end
   end
@@ -68,6 +70,7 @@ describe RubyCritic::Smell do
       }
       smell1 = RubyCritic::Smell.new(attributes)
       smell2 = RubyCritic::Smell.new(attributes)
+
       _(smell1).must_equal smell2
     end
   end
@@ -106,11 +109,13 @@ describe RubyCritic::Smell do
   describe 'default attributes' do
     it 'has :new for status' do
       smell = RubyCritic::Smell.new
+
       _(smell.status).must_equal(:new)
     end
 
     it 'is has an empty array for locations' do
       smell = RubyCritic::Smell.new
+
       _(smell.locations).must_equal([])
     end
   end

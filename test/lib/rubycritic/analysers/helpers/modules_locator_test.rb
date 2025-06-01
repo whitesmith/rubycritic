@@ -13,6 +13,7 @@ describe RubyCritic::ModulesLocator do
           pathname: Pathname.new('test/samples/module_names.rb'),
           methods_count: 1
         )
+
         _(RubyCritic::ModulesLocator.new(analysed_module).names)
           .must_equal ['Foo', 'Foo::Bar', 'Foo::Baz', 'Foo::Qux', 'Foo::Quux::Corge']
       end
@@ -24,6 +25,7 @@ describe RubyCritic::ModulesLocator do
           pathname: Pathname.new('test/samples/empty.rb'),
           methods_count: 1
         )
+
         _(RubyCritic::ModulesLocator.new(analysed_module).names).must_equal ['Empty']
       end
     end
@@ -34,6 +36,7 @@ describe RubyCritic::ModulesLocator do
           pathname: Pathname.new('test/samples/no_methods.rb'),
           methods_count: 0
         )
+
         capture_output_streams do
           _(RubyCritic::ModulesLocator.new(analysed_module).names).must_equal ['Foo::NoMethods']
         end

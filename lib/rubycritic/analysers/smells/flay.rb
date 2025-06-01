@@ -8,6 +8,7 @@ module RubyCritic
   module Analyser
     class FlaySmells
       include Colorize
+
       def initialize(analysed_modules)
         @analysed_modules = paths_to_analysed_modules(analysed_modules)
         @flay = Flay.new(@analysed_modules.keys)

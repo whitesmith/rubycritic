@@ -8,6 +8,7 @@ module RubyCritic
   module Analyser
     class ReekSmells
       include Colorize
+
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
       end

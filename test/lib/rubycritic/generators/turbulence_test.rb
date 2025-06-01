@@ -9,6 +9,7 @@ describe RubyCritic::Turbulence do
       files = [AnalysedModuleDouble.new(name: 'Foo', churn: 1, complexity: 2)]
       turbulence_data = RubyCritic::Turbulence.data(files)
       instance_parsed_json = JSON.parse(turbulence_data).first
+
       _(instance_parsed_json['name']).must_equal 'Foo'
       _(instance_parsed_json['x']).must_equal 1
       _(instance_parsed_json['y']).must_equal 2

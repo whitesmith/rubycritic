@@ -7,6 +7,7 @@ module RubyCritic
   module Analyser
     class Complexity
       include Colorize
+
       def initialize(analysed_modules)
         @flog = Flog.new
         @analysed_modules = analysed_modules

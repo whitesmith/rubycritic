@@ -17,11 +17,13 @@ describe RubyCritic::Analyser::FlogSmells do
 
     it 'creates smells with messages' do
       smell = @analysed_module.smells.first
+
       _(smell.message).must_be_instance_of String
     end
 
     it 'creates smells with scores' do
       smell = @analysed_module.smells.first
+
       _(smell.score).must_be :>, 0
     end
   end
