@@ -71,7 +71,7 @@ module RubyCritic
 
     def print_starting_up_output
       puts "\n\n!!! Running `#{name}` rake command\n"
-      puts "!!! Inspecting #{paths} #{options.empty? ? '' : "with options #{options}"}\n\n"
+      puts "!!! Inspecting #{paths} #{"with options #{options}" unless options.empty?}\n\n"
     end
 
     def options_as_arguments

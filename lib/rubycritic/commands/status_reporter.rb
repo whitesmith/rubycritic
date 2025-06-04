@@ -26,10 +26,10 @@ module RubyCritic
       end
 
       def current_status
-        satisfy_minimum_score_rule ? SUCCESS : SCORE_BELOW_MINIMUM
+        satisfy_minimum_score_rule? ? SUCCESS : SCORE_BELOW_MINIMUM
       end
 
-      def satisfy_minimum_score_rule
+      def satisfy_minimum_score_rule?
         score >= @options[:minimum_score].to_f
       end
 
