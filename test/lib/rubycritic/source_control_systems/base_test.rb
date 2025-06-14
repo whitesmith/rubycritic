@@ -15,6 +15,7 @@ describe RubyCritic::SourceControlSystem::Base do
       it 'creates an instance of that source control system' do
         RubyCritic::SourceControlSystem::Git.stubs(:supported?).returns(true)
         system = RubyCritic::SourceControlSystem::Base.create
+
         _(system).must_be_instance_of RubyCritic::SourceControlSystem::Git
       end
     end
@@ -23,6 +24,7 @@ describe RubyCritic::SourceControlSystem::Base do
       it 'creates a source control system double' do
         capture_output_streams do
           system = RubyCritic::SourceControlSystem::Base.create
+
           _(system).must_be_instance_of RubyCritic::SourceControlSystem::Double
         end
       end
