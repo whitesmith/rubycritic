@@ -27,6 +27,7 @@ describe RubyCritic::Location do
   it 'is comparable' do
     location1 = RubyCritic::Location.new('./foo', 42)
     location2 = RubyCritic::Location.new('./foo', 42)
+
     _(location1).must_equal location2
   end
 
@@ -34,6 +35,7 @@ describe RubyCritic::Location do
     location1 = RubyCritic::Location.new('./foo', 42)
     location2 = RubyCritic::Location.new('./bar', 23)
     location3 = RubyCritic::Location.new('./bar', 16)
+
     _([location1, location2, location3].sort).must_equal [location3, location2, location1]
   end
 end
