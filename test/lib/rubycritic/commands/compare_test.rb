@@ -69,6 +69,7 @@ describe RubyCritic::Command::Compare do
           comparison.expects(:abort).once
 
           status_reporter = comparison.execute
+
           _(status_reporter.score).must_equal RubyCritic::Config.feature_branch_score
           _(status_reporter.score).wont_equal RubyCritic::Config.base_branch_score
           _(status_reporter.status_message).must_equal "Score: #{RubyCritic::Config.feature_branch_score}"
@@ -87,6 +88,7 @@ describe RubyCritic::Command::Compare do
         end
         RubyCritic::SourceControlSystem::Git.stub(:switch_branch, copy_proc) do
           status_reporter = RubyCritic::Command::Compare.new(options).execute
+
           _(status_reporter.score).must_equal RubyCritic::Config.feature_branch_score
           _(status_reporter.score).must_equal RubyCritic::Config.base_branch_score
           _(status_reporter.status_message).must_equal "Score: #{RubyCritic::Config.feature_branch_score}"
