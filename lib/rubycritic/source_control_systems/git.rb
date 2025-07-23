@@ -21,8 +21,27 @@ module RubyCritic
         self.class.git(arg)
       end
 
+      # :reek:DuplicateMethodCall
+      # :reek:NilCheck
       def self.supported?
-        git('branch 2>&1') && $CHILD_STATUS.success?
+        return true if git('branch 2>&1') && $CHILD_STATUS.success?
+
+        return false if Config.paths.nil? || Config.paths.empty?
+
+        Config.paths.any? do |path|
+          absolute_path = File.expand_path(path)
+          check_git_repository?(absolute_path)
+        end
+      end
+
+      # :reek:DuplicateMethodCall
+      def self.check_git_repository?(path)
+        current_path = File.expand_path(path)
+        while current_path != File.dirname(current_path)
+          return true if Dir.exist?(File.join(current_path, '.git'))
+          current_path = File.dirname(current_path)
+        end
+        false
       end
 
       def self.to_s
