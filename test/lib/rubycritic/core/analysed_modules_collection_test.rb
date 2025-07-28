@@ -54,8 +54,10 @@ describe RubyCritic::AnalysedModulesCollection do
 
       it 'registers one AnalysedModule element per existent file' do
         analysed_modules_collection = RubyCritic::AnalysedModulesCollection.new(paths, analysed_modules)
+
         _(analysed_modules_collection.count).must_equal 1
         analysed_module = analysed_modules_collection.first
+
         _(analysed_module.name).must_equal 'Name'
         _(analysed_module.churn).must_equal 2
         _(analysed_module.complexity).must_equal 2

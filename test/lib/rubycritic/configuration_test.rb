@@ -16,11 +16,13 @@ describe RubyCritic::Configuration do
 
     it 'can be set to a relative path' do
       RubyCritic::Config.root = 'foo'
+
       _(RubyCritic::Config.root).must_equal File.expand_path('foo')
     end
 
     it 'can be set to an absolute path' do
       RubyCritic::Config.root = '/foo'
+
       _(RubyCritic::Config.root).must_equal '/foo'
     end
 

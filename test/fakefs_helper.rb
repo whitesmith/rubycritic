@@ -8,9 +8,12 @@ module FakeFS
     # $VERBOSE = nil to suppress warnings when we override flock.
     original_verbose = $VERBOSE
     $VERBOSE = nil
+
+    # rubocop:disable Naming/PredicateMethod
     def flock(*)
       true
     end
+    # rubocop:enable Naming/PredicateMethod
     $VERBOSE = original_verbose
   end
 end

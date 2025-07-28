@@ -8,6 +8,7 @@ module RubyCritic
   module Analyser
     class Attributes
       include Colorize
+
       def initialize(analysed_modules)
         @analysed_modules = analysed_modules
       end

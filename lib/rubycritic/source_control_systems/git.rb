@@ -50,7 +50,7 @@ module RubyCritic
       end
 
       def travel_to_head
-        stash_successful = stash_changes
+        stash_successful = stash_changes?
         yield
       ensure
         travel_to_original_state if stash_successful
@@ -88,7 +88,7 @@ module RubyCritic
 
       private
 
-      def stash_changes
+      def stash_changes?
         stashes_count_before = stashes_count
         git('stash')
         stashes_count_after = stashes_count

@@ -50,6 +50,7 @@ describe RubyCritic::AnalysedModule do
     it 'returns the remediation cost of fixing the analysed_module' do
       smells = [SmellDouble.new(cost: 1), SmellDouble.new(cost: 2)]
       analysed_module = RubyCritic::AnalysedModule.new(smells: smells, complexity: 0)
+
       _(analysed_module.cost).must_equal 3
     end
   end
@@ -58,6 +59,7 @@ describe RubyCritic::AnalysedModule do
     context 'when the file has no methods' do
       it 'returns a placeholder' do
         analysed_module = RubyCritic::AnalysedModule.new(complexity: 0, methods_count: 0)
+
         _(analysed_module.complexity_per_method).must_equal 'N/A'
       end
     end
@@ -65,6 +67,7 @@ describe RubyCritic::AnalysedModule do
     context 'when the file has at least one method' do
       it 'returns the average complexity per method' do
         analysed_module = RubyCritic::AnalysedModule.new(complexity: 10, methods_count: 2)
+
         _(analysed_module.complexity_per_method).must_equal 5
       end
     end
@@ -73,6 +76,7 @@ describe RubyCritic::AnalysedModule do
   describe '#smells?' do
     it 'returns true if the analysed_module has at least one smell' do
       analysed_module = RubyCritic::AnalysedModule.new(smells: [SmellDouble.new])
+
       _(analysed_module.smells?).must_equal true
     end
   end
@@ -82,6 +86,7 @@ describe RubyCritic::AnalysedModule do
       location = RubyCritic::Location.new('./foo', '42')
       smells = [RubyCritic::Smell.new(locations: [location])]
       analysed_module = RubyCritic::AnalysedModule.new(smells: smells)
+
       _(analysed_module.smells_at_location(location)).must_equal smells
     end
   end
