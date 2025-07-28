@@ -21,6 +21,7 @@ module RubyCritic
       end
 
       # :reek:TooManyInstanceVariables
+      # rubocop:disable Metrics/ClassLength
       class Churn
         # :reek:TooManyStatements
         def initialize(churn_after: nil, paths: ['.'])
@@ -48,9 +49,8 @@ module RubyCritic
           @paths.each do |path|
             current_path = File.expand_path(path)
             while current_path != File.dirname(current_path)
-              if Dir.exist?(File.join(current_path, '.git'))
-                return current_path
-              end
+              return current_path if Dir.exist?(File.join(current_path, '.git'))
+
               current_path = File.dirname(current_path)
             end
           end
@@ -86,7 +86,7 @@ module RubyCritic
           absolute_path = File.expand_path(path)
           if absolute_path.start_with?(@git_root)
             # Convert to relative path from git root
-            absolute_path[@git_root.length + 1..-1] || '.'
+            absolute_path[(@git_root.length + 1)..] || '.'
           else
             # If path is not within git root, use as is
             path
@@ -122,15 +122,15 @@ module RubyCritic
 
         # :reek:DuplicateMethodCall
         def filename_for_subdirectory(filename)
-          if @git_root != Dir.pwd
-            filename
-          else
+          if @git_root == Dir.pwd
             git_path = Git.git('rev-parse --show-toplevel')
             cd_path = Dir.pwd
             if cd_path.length > git_path.length
               filename = filename.sub(/^#{Regexp.escape("#{File.basename(cd_path)}/")}/, '')
             end
             [filename]
+          else
+            filename
           end
         end
 
@@ -148,6 +148,7 @@ module RubyCritic
         end
 
         # :reek:TooManyStatements
+        # rubocop:disable Metrics/MethodLength
         def stats(path)
           # Try the path as-is first
           result = @stats.fetch(path, nil)
@@ -156,12 +157,12 @@ module RubyCritic
           # If not found, try converting absolute path to relative path from git root
           absolute_path = File.expand_path(path)
           if absolute_path.start_with?(@git_root)
-            relative_path = absolute_path[@git_root.length + 1..-1]
+            relative_path = absolute_path[(@git_root.length + 1)..]
             return @stats.fetch(relative_path, Stats.new(0))
           end
 
           # If still not found, try converting relative path to absolute path
-          if !path.start_with?('/')
+          unless path.start_with?('/')
             absolute_path = File.expand_path(path, @git_root)
             return @stats.fetch(absolute_path, Stats.new(0))
           end
@@ -169,7 +170,9 @@ module RubyCritic
           # Default fallback
           @stats.fetch(path, Stats.new(0))
         end
+        # rubocop:enable Metrics/MethodLength
       end
+      # rubocop:enable Metrics/ClassLength
     end
   end
 end

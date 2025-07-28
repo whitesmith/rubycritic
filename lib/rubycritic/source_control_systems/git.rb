@@ -39,6 +39,7 @@ module RubyCritic
         current_path = File.expand_path(path)
         while current_path != File.dirname(current_path)
           return true if Dir.exist?(File.join(current_path, '.git'))
+
           current_path = File.dirname(current_path)
         end
         false
