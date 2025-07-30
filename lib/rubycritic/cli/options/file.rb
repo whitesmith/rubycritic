@@ -24,11 +24,11 @@ module RubyCritic
             root: root,
             coverage_path: coverage_path,
             formats: formats,
-            deduplicate_symlinks: deduplicate_symlinks,
+            deduplicate_symlinks: deduplicate_symlinks?,
             paths: paths,
-            suppress_ratings: suppress_ratings,
+            suppress_ratings: suppress_ratings?,
             minimum_score: minimum_score,
-            no_browser: no_browser,
+            no_browser: no_browser?,
             base_branch: base_branch,
             feature_branch: feature_branch,
             threshold_score: threshold_score
@@ -68,16 +68,16 @@ module RubyCritic
           options['threshold_score']
         end
 
-        def deduplicate_symlinks
-          value_for(options['deduplicate_symlinks'])
+        def deduplicate_symlinks?
+          value_for?(options['deduplicate_symlinks'])
         end
 
-        def suppress_ratings
-          value_for(options['suppress_ratings'])
+        def suppress_ratings?
+          value_for?(options['suppress_ratings'])
         end
 
-        def no_browser
-          value_for(options['no_browser'])
+        def no_browser?
+          value_for?(options['no_browser'])
         end
 
         def formats
@@ -96,7 +96,7 @@ module RubyCritic
           options['paths']
         end
 
-        def value_for(value)
+        def value_for?(value)
           value = value.to_s
           value == 'true' unless value.empty?
         end

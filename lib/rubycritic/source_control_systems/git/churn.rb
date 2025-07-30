@@ -20,12 +20,16 @@ module RubyCritic
         end
       end
 
+      # :reek:TooManyInstanceVariables
+      # rubocop:disable Metrics/ClassLength
       class Churn
+        # :reek:TooManyStatements
         def initialize(churn_after: nil, paths: ['.'])
           @churn_after = churn_after
           @paths = Array(paths)
           @date = nil
           @stats = {}
+          @git_root = find_git_root
 
           call
         end
@@ -40,16 +44,32 @@ module RubyCritic
 
         private
 
+        # :reek:DuplicateMethodCall
+        def find_git_root
+          @paths.each do |path|
+            current_path = File.expand_path(path)
+            while current_path != File.dirname(current_path)
+              return current_path if Dir.exist?(File.join(current_path, '.git'))
+
+              current_path = File.dirname(current_path)
+            end
+          end
+          Dir.pwd
+        end
+
         def call
           git_log_commands.each { |log_command| exec_git_command(log_command) }
         end
 
         def exec_git_command(command)
-          Git
-            .git(command)
-            .split("\n")
-            .reject(&:empty?)
-            .each { |line| process_line(line) }
+          # Run git command from the git repository root
+          Dir.chdir(@git_root) do
+            Git
+              .git(command)
+              .split("\n")
+              .reject(&:empty?)
+              .each { |line| process_line(line) }
+          end
         end
 
         def git_log_commands
@@ -57,7 +77,20 @@ module RubyCritic
         end
 
         def git_log_command(path)
-          "log --all --date=iso --follow --format='format:date:%x09%ad' --name-status #{after_clause}#{path}"
+          # Convert absolute paths to relative paths from git root
+          relative_path = make_relative_to_git_root(path)
+          "log --all --date=iso --follow --format='format:date:%x09%ad' --name-status #{after_clause}#{relative_path}"
+        end
+
+        def make_relative_to_git_root(path)
+          absolute_path = File.expand_path(path)
+          if absolute_path.start_with?(@git_root)
+            # Convert to relative path from git root
+            absolute_path[(@git_root.length + 1)..] || '.'
+          else
+            # If path is not within git root, use as is
+            path
+          end
         end
 
         def after_clause
@@ -87,13 +120,18 @@ module RubyCritic
           process_file(to)
         end
 
+        # :reek:DuplicateMethodCall
         def filename_for_subdirectory(filename)
-          git_path = Git.git('rev-parse --show-toplevel')
-          cd_path = Dir.pwd
-          if cd_path.length > git_path.length
-            filename = filename.sub(/^#{Regexp.escape("#{File.basename(cd_path)}/")}/, '')
+          if @git_root == Dir.pwd
+            git_path = Git.git('rev-parse --show-toplevel')
+            cd_path = Dir.pwd
+            if cd_path.length > git_path.length
+              filename = filename.sub(/^#{Regexp.escape("#{File.basename(cd_path)}/")}/, '')
+            end
+            [filename]
+          else
+            filename
           end
-          [filename]
         end
 
         def process_file(filename)
@@ -109,10 +147,32 @@ module RubyCritic
           @renames ||= Renames.new
         end
 
+        # :reek:TooManyStatements
+        # rubocop:disable Metrics/MethodLength
         def stats(path)
+          # Try the path as-is first
+          result = @stats.fetch(path, nil)
+          return result if result
+
+          # If not found, try converting absolute path to relative path from git root
+          absolute_path = File.expand_path(path)
+          if absolute_path.start_with?(@git_root)
+            relative_path = absolute_path[(@git_root.length + 1)..]
+            return @stats.fetch(relative_path, Stats.new(0))
+          end
+
+          # If still not found, try converting relative path to absolute path
+          unless path.start_with?('/')
+            absolute_path = File.expand_path(path, @git_root)
+            return @stats.fetch(absolute_path, Stats.new(0))
+          end
+
+          # Default fallback
           @stats.fetch(path, Stats.new(0))
         end
+        # rubocop:enable Metrics/MethodLength
       end
+      # rubocop:enable Metrics/ClassLength
     end
   end
 end
