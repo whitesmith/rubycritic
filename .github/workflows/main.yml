@@ -54,7 +54,6 @@ jobs:
     needs: pre_job # skip duplicates
     if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental }}
     strategy:
       fail-fast: false
       matrix:
@@ -79,12 +78,12 @@ jobs:
           cache-version: 1
       - name: Run Rubocop
         run: bundle exec rubocop
+        continue-on-error: ${{ matrix.experimental }}
 
   Reek:
     needs: pre_job # skip duplicates
     if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental }}
     strategy:
       fail-fast: false
       matrix:
@@ -109,12 +108,12 @@ jobs:
           cache-version: 1
       - name: Run Reek
         run: bundle exec rake reek
+        continue-on-error: ${{ matrix.experimental }}
 
   Minitest:
     needs: pre_job # skip duplicates
     if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental }}
     strategy:
       fail-fast: false
       matrix:
@@ -129,7 +128,6 @@ jobs:
             experimental: true
           - ruby-version: 'jruby-9.4'
             experimental: true
-
     steps:
       - uses: actions/checkout@v4
       - name: Set up Ruby ${{ matrix.ruby-version }}
@@ -140,6 +138,7 @@ jobs:
           cache-version: 1
       - name: Run Unit tests
         run: bundle exec rake test
+        continue-on-error: ${{ matrix.experimental }}
 
   MarkdownLint:
     needs: pre_job # skip duplicates
