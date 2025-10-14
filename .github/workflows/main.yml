@@ -24,7 +24,6 @@ jobs:
     needs: pre_job # skip duplicates
     if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental }}
     strategy:
       fail-fast: false
       matrix:
@@ -49,6 +48,7 @@ jobs:
           cache-version: 1
       - name: Run Cucumber
         run: bundle exec cucumber features --format progress --color
+        continue-on-error: ${{ matrix.experimental }}
 
   Rubocop:
     needs: pre_job # skip duplicates
