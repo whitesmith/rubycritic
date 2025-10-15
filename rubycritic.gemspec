@@ -49,7 +49,7 @@ Gem::Specification.new do |spec|
   else
     spec.add_development_dependency 'byebug', '~> 12.0', '>= 10.0'
   end
-  spec.add_development_dependency 'cucumber', '~> 10.0.0', '!= 9.0.0'
+  spec.add_development_dependency 'cucumber', '~> 10.1.0', '!= 9.0.0'
   spec.add_development_dependency 'diff-lcs', '~> 1.3'
   spec.add_development_dependency 'fakefs', '~> 3.0.0'
   spec.add_development_dependency 'irb'

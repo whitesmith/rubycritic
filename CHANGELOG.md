@@ -1,5 +1,6 @@
-# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.9.2...main)
+# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.10.0...main)
 
+* [CHANGE] Bump cucumber dependency (by [@faisal][])
 * [CHANGE] Memoize call to `git rev-parse --show-toplevel` for churn calculations (by [@mateusdeap][])
 * [CHANGE] Bump minitest dependency. (by [@faisal][])
 
