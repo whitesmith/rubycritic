@@ -123,7 +123,7 @@ module RubyCritic
         # :reek:DuplicateMethodCall
         def filename_for_subdirectory(filename)
           if @git_root == Dir.pwd
-            git_path = Git.git('rev-parse --show-toplevel')
+            git_path = git_top_level
             cd_path = Dir.pwd
             if cd_path.length > git_path.length
               filename = filename.sub(/^#{Regexp.escape("#{File.basename(cd_path)}/")}/, '')
@@ -132,6 +132,10 @@ module RubyCritic
           else
             filename
           end
+        end
+
+        def git_top_level
+          @git_top_level ||= Git.git('rev-parse --show-toplevel').strip
         end
 
         def process_file(filename)
