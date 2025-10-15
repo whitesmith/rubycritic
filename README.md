@@ -154,6 +154,7 @@ minimum_score: 95 # default is 0
 paths: # Files to analyse. Churn calculation is scoped to these files when using Git SCM.
   - 'app/controllers/'
   - 'app/models/'
+  - 'lib/**'  # Wildcard patterns are supported (excludes tmp directories automatically)
 ```
 
 ### Analyzer Configuration

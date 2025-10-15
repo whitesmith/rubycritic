@@ -26,6 +26,8 @@
 * [CHANGE] Fix some typos (by [@jbampton][])
 * [FEATURE] Add coverage_path configuration option (by [@exoego][])
 
+* [CHANGE] Add support for wildcard entries to the paths option in rubycritic.yml (by [@rishiain][])
+
 # v4.9.0 / 2023-10-18 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.8.1...v4.9.0)
 
 * [CHANGE] Bump aruba, cucumber, fakefs, flog, mdl, minitest, and rubocop dependencies (by [@faisal][])
