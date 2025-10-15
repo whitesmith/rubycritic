@@ -21,9 +21,14 @@ module RubyCritic
       self.no_browser = options[:no_browser]
       self.coverage_path = options[:coverage_path]
       self.threshold_score = options[:threshold_score].to_i
+      setup_paths_for_targets(options) if options[:paths]
       setup_analysis_targets(options)
       setup_version_control(options)
       setup_formats(options)
+    end
+
+    def setup_paths_for_targets(options)
+      options[:paths] = find_directories(options[:paths])
     end
 
     def setup_analysis_targets(options)
@@ -50,6 +55,20 @@ module RubyCritic
     def source_control_present?
       source_control_system &&
         !source_control_system.is_a?(SourceControlSystem::Double)
+    end
+
+    private
+
+    def find_directories(paths)
+      expanded_paths = paths.flat_map do |path|
+        if path.include?('**')
+          search_pattern = File.join(path)
+          Dir.glob(search_pattern).select { |tmp_path| File.directory?(tmp_path) && !tmp_path.start_with?('tmp') }
+        else
+          path
+        end
+      end
+      expanded_paths
     end
   end
 
