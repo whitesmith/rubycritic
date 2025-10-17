@@ -38,6 +38,8 @@ jobs:
             experimental: true
           - ruby-version: 'jruby-9.4'
             experimental: true
+          - ruby-version: 'jruby-10.0'
+            experimental: true
     steps:
       - uses: actions/checkout@v6
       - name: Set up Ruby ${{ matrix.ruby-version }}
@@ -68,6 +70,8 @@ jobs:
           - ruby-version: 'ruby-head'
             experimental: true
           - ruby-version: 'jruby-9.4'
+            experimental: true
+          - ruby-version: 'jruby-10.0'
             experimental: true
     steps:
       - uses: actions/checkout@v6
@@ -100,6 +104,8 @@ jobs:
             experimental: true
           - ruby-version: 'jruby-9.4'
             experimental: true
+          - ruby-version: 'jruby-10.0'
+            experimental: true
     steps:
       - uses: actions/checkout@v6
       - name: Set up Ruby ${{ matrix.ruby-version }}
@@ -130,6 +136,8 @@ jobs:
           - ruby-version: 'ruby-head'
             experimental: true
           - ruby-version: 'jruby-9.4'
+            experimental: true
+          - ruby-version: 'jruby-10.0'
             experimental: true
     steps:
       - uses: actions/checkout@v6
