@@ -1,7 +1,11 @@
-# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.10.0...main)
+# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.11.0...main)
+
+* <INSERT YOUR CHANGES HERE>
+
+# v4.11.0 / 2025-10-15 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.10.0...v4.11.0)
 
 * [CHANGE] Bump cucumber dependency (by [@faisal][])
-* [CHANGE] Memoize call to `git rev-parse --show-toplevel` for churn calculations (by [@mateusdeap][])
+* [CHANGE] Performance improvement for churn calculation: Memoize call to `git rev-parse --show-toplevel` for churn calculations (by [@mateusdeap][])
 * [CHANGE] Bump minitest dependency. (by [@faisal][])
 
 # v4.10.0 / 2025-07-30 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.9.2...v4.10.0)
