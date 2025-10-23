@@ -15,6 +15,8 @@ module RubyCritic
 
       def run
         @analysed_modules.each do |analysed_module|
+          next if Reek.configuration.path_excluded?(analysed_module.pathname)
+
           add_smells_to(analysed_module)
           print green '.'
         end
