@@ -5,6 +5,8 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHORE] Uses prism instead of parser for Ruby 3.4 and above (by [@torresga][] and [@julioalucero][])
+
 # v4.11.0 / 2025-10-15 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.10.0...v4.11.0)
 
 * [CHANGE] Bump cucumber dependency (by [@faisal][])
