@@ -1,14 +1,27 @@
 # frozen_string_literal: true
 
-require 'parser/current'
-require 'rubycritic/analysers/helpers/ast_node'
-
 module RubyCritic
   module Parser
     def self.parse(content)
-      ::Parser::CurrentRuby.parse(content) || AST::EmptyNode.new
+      parser = parser_class
+      require 'rubycritic/analysers/helpers/ast_node'
+      parser.parse(content) || AST::EmptyNode.new
     rescue ::Parser::SyntaxError
       AST::EmptyNode.new
     end
+
+    def self.parser_class
+      return @parser_class if defined?(@parser_class) && @parser_class
+
+      @parser_class =
+        if Gem::Version.new(RUBY_VERSION) <= '3.3'
+          require 'parser/current'
+          ::Parser::CurrentRuby
+        else
+          require 'prism'
+          ::Prism::Translation::ParserCurrent
+        end
+    end
+    private_class_method :parser_class
   end
 end
