@@ -3,18 +3,17 @@
 require 'test_helper'
 require 'rubycritic/analysers_runner'
 require 'rubycritic/generators/lint_report'
-require 'fakefs/safe'
 
 describe RubyCritic::Generator::LintReport do
   describe '#generate_report' do
-    around do |example|
-      capture_output_streams do
-        with_cloned_fs(&example)
-      end
+    before do
+      # Reset Reek configuration between tests
+      # Config is cached and can leak between tests
+      RubyCritic::Reek.instance_variable_set(:@configuration, nil)
     end
 
     it 'report file has data inside' do
-      sample_files = Dir['test/samples/**/*.rb'].reject { |f| File.empty?(f) }
+      sample_files = Dir['test/samples/**/*.rb'].reject { |f| File.empty?(f) || f.include?('excluded') }
       create_analysed_modules_collection
       generate_report
       lines = File.readlines('test/samples/lint.txt').map(&:strip).reject(&:empty?)
