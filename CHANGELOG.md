@@ -5,6 +5,7 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHORE] Sorted cops in .rubocop.yml to make it easier for maintainers to add or modify cop settings, and unified duplicate Metrics/MethodLength settings. (by [@faisal][])
 * [CHANGE] Bump mocha dependency (by [@faisal][])
 * [CHORE] Update CI checkout action to v6 (by [@faisal][]])
 * [CHORE] Uses prism instead of parser for Ruby 3.4 and above (by [@torresga][] and [@julioalucero][])
