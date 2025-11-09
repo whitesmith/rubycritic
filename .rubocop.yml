@@ -13,62 +13,25 @@ AllCops:
     - 'gemfiles/*'
   TargetRubyVersion: 3.2
 
-Metrics/BlockLength:
-  Enabled: false
-
-Metrics/MethodLength:
+Gemspec/DevelopmentDependencies:
   Exclude:
-    - "lib/rubycritic/configuration.rb"
-
-Layout/LineLength:
-  Max: 120
-
-Style/Documentation:
-  Enabled: false
-
-Style/HashSyntax:
-  EnforcedShorthandSyntax: either
-
-Security/MarshalLoad:
-  Enabled: false
-  Include:
-    - 'lib/rubycritic/serializer.rb'
-
-Style/RedundantFreeze:
-  Enabled: false
-  Include:
-    - 'lib/rubycritic/core/smell.rb'
-    - 'lib/rubycritic/generators/json/simple.rb'
-    - 'lib/rubycritic/revision_comparator.rb'
-    - 'lib/rubycritic/source_control_systems/perforce.rb'
-    - 'lib/rubycritic/source_locator.rb'
-    - 'lib/rubycritic/version.rb'
+    - 'rubycritic.gemspec'
 
 Layout/BlockAlignment:
   Enabled: false
   Exclude:
     - 'features/step_definitions/rake_task_steps.rb'
 
-Naming/RescuedExceptionsVariableName:
-  Exclude:
-    - 'lib/rubycritic/analysers/coverage.rb'
-    - 'lib/rubycritic/cli/application.rb'
-    - 'lib/rubycritic/reporter.rb'
-
-Lint/EmptyClass:
-  Exclude:
-    - 'test/lib/rubycritic/reporter_test.rb'
+Layout/LineLength:
+  Max: 120
 
 Lint/ConstantDefinitionInBlock:
   Exclude:
     - 'test/lib/rubycritic/reporter_test.rb'
 
-Style/OpenStructUse:
+Lint/EmptyClass:
   Exclude:
-    - 'test/lib/rubycritic/generators/turbulence_test.rb'
-    - 'test/lib/rubycritic/generators/console_report_test.rb'
-    - 'test/lib/rubycritic/core/analysed_module_test.rb'
-    - 'test/analysers_test_helper.rb'
+    - 'test/lib/rubycritic/reporter_test.rb'
 
 Lint/MissingSuper:
   Exclude:
@@ -81,10 +44,6 @@ Lint/MissingSuper:
     - 'lib/rubycritic/generators/html/code_index.rb'
     - 'lib/rubycritic/generators/html/line.rb'
 
-Gemspec/DevelopmentDependencies:
-  Exclude:
-    - 'rubycritic.gemspec'
-
 Lint/StructNewOverride:
   Exclude:
     - 'lib/rubycritic/source_control_systems/git/churn.rb'
@@ -93,10 +52,47 @@ Metrics/AbcSize:
   Exclude:
     - 'lib/rubycritic/configuration.rb'
 
+Metrics/BlockLength:
+  Enabled: false
+
 Metrics/MethodLength:
   Exclude:
     - 'lib/rubycritic/configuration.rb'
 
+Naming/RescuedExceptionsVariableName:
+  Exclude:
+    - 'lib/rubycritic/analysers/coverage.rb'
+    - 'lib/rubycritic/cli/application.rb'
+    - 'lib/rubycritic/reporter.rb'
+
+Security/MarshalLoad:
+  Enabled: false
+  Include:
+    - 'lib/rubycritic/serializer.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
+
+Style/OpenStructUse:
+  Exclude:
+    - 'test/lib/rubycritic/generators/turbulence_test.rb'
+    - 'test/lib/rubycritic/generators/console_report_test.rb'
+    - 'test/lib/rubycritic/core/analysed_module_test.rb'
+    - 'test/analysers_test_helper.rb'
+
 Style/RedundantAssignment:
   Exclude:
     - 'lib/rubycritic/configuration.rb'
+
+Style/RedundantFreeze:
+  Enabled: false
+  Include:
+    - 'lib/rubycritic/core/smell.rb'
+    - 'lib/rubycritic/generators/json/simple.rb'
+    - 'lib/rubycritic/revision_comparator.rb'
+    - 'lib/rubycritic/source_control_systems/perforce.rb'
+    - 'lib/rubycritic/source_locator.rb'
+    - 'lib/rubycritic/version.rb'
