@@ -1,4 +1,6 @@
 ---
+exclude_paths:
+  - test/samples/reek/excluded.rb
 detectors:
   InstanceVariableAssumption:
     exclude:

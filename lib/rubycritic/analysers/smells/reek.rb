@@ -10,7 +10,7 @@ module RubyCritic
       include Colorize
 
       def initialize(analysed_modules)
-        @analysed_modules = analysed_modules
+        @analysed_modules = analysed_modules.reject { Reek.configuration.path_excluded?(_1.pathname) }
       end
 
       def run
