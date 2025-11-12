@@ -5,6 +5,7 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHANGE] Bump mocha dependency (by [@faisal][])
 * [CHORE] Uses prism instead of parser for Ruby 3.4 and above (by [@torresga][] and [@julioalucero][])
 * [BUGFIX] Respect excluded paths from .reek configuration file during reek analysis (by [@fbuys][])
 
