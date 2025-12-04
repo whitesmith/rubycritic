@@ -15,8 +15,8 @@ jobs:
         uses: fkirc/skip-duplicate-actions@master
         with:
           # All of these options are optional, so you can remove them if you are happy with the defaults
-          concurrent_skipping: 'same_content'
-          skip_after_successful_duplicate: 'true'
+          concurrent_skipping: "same_content"
+          skip_after_successful_duplicate: "true"
           paths_ignore: '["**/README.md", "**/docs/**", "**/CHANGELOG.md"]'
           do_not_skip: '["pull_request", "workflow_dispatch", "schedule"]'
 
@@ -28,18 +28,18 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - '3.1'
-          - '3.2'
-          - '3.3'
-          - '3.4'
+          - "3.1"
+          - "3.2"
+          - "3.3"
+          - "3.4"
         experimental: [false]
         include:
-          - ruby-version: 'ruby-head'
+          - ruby-version: "ruby-head"
             experimental: true
-          - ruby-version: 'jruby-9.4'
+          - ruby-version: "jruby-9.4"
             experimental: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Ruby ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
         with:
@@ -58,18 +58,18 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - '3.1'
-          - '3.2'
-          - '3.3'
-          - '3.4'
+          - "3.1"
+          - "3.2"
+          - "3.3"
+          - "3.4"
         experimental: [false]
         include:
-          - ruby-version: 'ruby-head'
+          - ruby-version: "ruby-head"
             experimental: true
-          - ruby-version: 'jruby-9.4'
+          - ruby-version: "jruby-9.4"
             experimental: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Ruby ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
         with:
@@ -88,18 +88,18 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - '3.1'
-          - '3.2'
-          - '3.3'
-          - '3.4'
+          - "3.1"
+          - "3.2"
+          - "3.3"
+          - "3.4"
         experimental: [false]
         include:
-          - ruby-version: 'ruby-head'
+          - ruby-version: "ruby-head"
             experimental: true
-          - ruby-version: 'jruby-9.4'
+          - ruby-version: "jruby-9.4"
             experimental: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Ruby ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
         with:
@@ -118,18 +118,18 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - '3.1'
-          - '3.2'
-          - '3.3'
-          - '3.4'
+          - "3.1"
+          - "3.2"
+          - "3.3"
+          - "3.4"
         experimental: [false]
         include:
-          - ruby-version: 'ruby-head'
+          - ruby-version: "ruby-head"
             experimental: true
-          - ruby-version: 'jruby-9.4'
+          - ruby-version: "jruby-9.4"
             experimental: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Ruby ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
         with:
@@ -145,11 +145,11 @@ jobs:
     if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.4'
+          ruby-version: "3.4"
           bundler-cache: true
           cache-version: 1
       - name: Run markdownlint
