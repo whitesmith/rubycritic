@@ -5,6 +5,7 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHORE] Update CI checkout action to v6 (by [@faisal][]])
 * [CHORE] Uses prism instead of parser for Ruby 3.4 and above (by [@torresga][] and [@julioalucero][])
 * [BUGFIX] Respect excluded paths from .reek configuration file during reek analysis (by [@fbuys][])
 
