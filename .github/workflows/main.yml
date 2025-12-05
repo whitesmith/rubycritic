@@ -39,13 +39,14 @@ jobs:
           - ruby-version: 'jruby-9.4'
             experimental: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Ruby ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
           cache-version: 1
+        continue-on-error: ${{ matrix.experimental }}
       - name: Run Cucumber
         run: bundle exec cucumber features --format progress --color
         continue-on-error: ${{ matrix.experimental }}
@@ -69,13 +70,14 @@ jobs:
           - ruby-version: 'jruby-9.4'
             experimental: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Ruby ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
           cache-version: 1
+        continue-on-error: ${{ matrix.experimental }}
       - name: Run Rubocop
         run: bundle exec rubocop
         continue-on-error: ${{ matrix.experimental }}
@@ -99,13 +101,14 @@ jobs:
           - ruby-version: 'jruby-9.4'
             experimental: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Ruby ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
           cache-version: 1
+        continue-on-error: ${{ matrix.experimental }}
       - name: Run Reek
         run: bundle exec rake reek
         continue-on-error: ${{ matrix.experimental }}
@@ -129,13 +132,14 @@ jobs:
           - ruby-version: 'jruby-9.4'
             experimental: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Ruby ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
           cache-version: 1
+        continue-on-error: ${{ matrix.experimental }}
       - name: Run Unit tests
         run: bundle exec rake test
         continue-on-error: ${{ matrix.experimental }}
@@ -145,12 +149,14 @@ jobs:
     if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.4'
           bundler-cache: true
           cache-version: 1
+        continue-on-error: ${{ matrix.experimental }}
       - name: Run markdownlint
         run: bundle exec mdl .
+        continue-on-error: ${{ matrix.experimental }}
