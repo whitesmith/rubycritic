@@ -28,7 +28,6 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - '3.1'
           - '3.2'
           - '3.3'
           - '3.4'
@@ -36,7 +35,7 @@ jobs:
         include:
           - ruby-version: 'ruby-head'
             experimental: true
-          - ruby-version: 'jruby-9.4'
+          - ruby-version: 'jruby-10'
             experimental: true
     steps:
       - uses: actions/checkout@v6
@@ -59,7 +58,6 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - '3.1'
           - '3.2'
           - '3.3'
           - '3.4'
@@ -67,7 +65,7 @@ jobs:
         include:
           - ruby-version: 'ruby-head'
             experimental: true
-          - ruby-version: 'jruby-9.4'
+          - ruby-version: 'jruby-10'
             experimental: true
     steps:
       - uses: actions/checkout@v6
@@ -90,7 +88,6 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - '3.1'
           - '3.2'
           - '3.3'
           - '3.4'
@@ -98,7 +95,7 @@ jobs:
         include:
           - ruby-version: 'ruby-head'
             experimental: true
-          - ruby-version: 'jruby-9.4'
+          - ruby-version: 'jruby-10'
             experimental: true
     steps:
       - uses: actions/checkout@v6
@@ -121,7 +118,6 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - '3.1'
           - '3.2'
           - '3.3'
           - '3.4'
@@ -129,7 +125,7 @@ jobs:
         include:
           - ruby-version: 'ruby-head'
             experimental: true
-          - ruby-version: 'jruby-9.4'
+          - ruby-version: 'jruby-10'
             experimental: true
     steps:
       - uses: actions/checkout@v6
