@@ -30,8 +30,8 @@ Gem::Specification.new do |spec|
   spec.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   spec.require_path  = 'lib'
 
-  spec.add_dependency 'flay', '~> 2.13'
-  spec.add_dependency 'flog', '~> 4.7'
+  spec.add_dependency 'flay', '~> 2.13.0'
+  spec.add_dependency 'flog', '~> 4.8.0'
   spec.add_dependency 'launchy', '>= 2.5.2'
   spec.add_dependency 'parser', '>= 3.3.0.5'
   spec.add_dependency 'prism', '>= 1.6.0'
