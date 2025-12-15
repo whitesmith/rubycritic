@@ -11,7 +11,7 @@ module RubyCritic
     }.freeze
 
     def initialize
-      super(DEFAULT_OPTIONS)
+      super(DEFAULT_OPTIONS.clone(freeze: false))
     end
   end
 end
