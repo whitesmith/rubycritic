@@ -32,6 +32,7 @@ jobs:
           - '3.2'
           - '3.3'
           - '3.4'
+          - '4.0'
         experimental: [false]
         include:
           - ruby-version: 'ruby-head'
@@ -63,6 +64,7 @@ jobs:
           - '3.2'
           - '3.3'
           - '3.4'
+          - '4.0'
         experimental: [false]
         include:
           - ruby-version: 'ruby-head'
@@ -94,6 +96,7 @@ jobs:
           - '3.2'
           - '3.3'
           - '3.4'
+          - '4.0'
         experimental: [false]
         include:
           - ruby-version: 'ruby-head'
@@ -125,6 +128,7 @@ jobs:
           - '3.2'
           - '3.3'
           - '3.4'
+          - '4.0'
         experimental: [false]
         include:
           - ruby-version: 'ruby-head'
