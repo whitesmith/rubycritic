@@ -9,6 +9,7 @@
 * [CHORE] Updated README with last supported Ruby versions for the older as well as the latest releases of Rubycritic/Ruby (by [@faisal][])
 * [CHANGE] Drop support for Ruby 3.1.x and JRuby 9.4 (by [@faisal][])
 * [CHANGE] Add CI support for JRuby 10.0 (by [@faisal][])
+* [CHORE] Start testing library with Ruby 4.0 (by [@etagwerker][])
 * [CHANGE] Bump cucumber dependency (by [@faisal][])
 * [BUGFIX] Fixed regression in compatibility with Flog 4.9.0 (by [@faisal][])
 * [CHANGE] Bump mocha dependency (by [@faisal][])
