@@ -5,6 +5,7 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHORE] Start testing library with Ruby 4.0 (by [@etagwerker][])
 * [CHANGE] Bump cucumber dependency (by [@faisal][])
 * [BUGFIX] Fixed regression in compatibility with Flog 4.9.0 (by [@faisal][])
 * [CHANGE] Bump mocha dependency (by [@faisal][])
