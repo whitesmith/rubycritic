@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'test_helper'
+require 'minitest/mock'
 require 'rubycritic/commands/compare'
 require 'rubycritic/cli/options'
 require 'rubycritic/configuration'
