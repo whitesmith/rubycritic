@@ -6,6 +6,7 @@
 * [FEATURE] ...
 
 * [CHANGE] Bump minitest dependency (by [@faisal][])
+* [CHANGE] Drop support for Ruby 3.1.x and JRuby 9.4 (by [@faisal][])
 * [CHANGE] Add CI support for JRuby 10.0 (by [@faisal][])
 * [CHANGE] Bump cucumber dependency (by [@faisal][])
 * [BUGFIX] Fixed regression in compatibility with Flog 4.9.0 (by [@faisal][])
