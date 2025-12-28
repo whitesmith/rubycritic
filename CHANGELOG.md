@@ -5,6 +5,7 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHORE] In RubyCritic::Generator::Html::Line, require cgi/escape rather than cgi, as the latter is removed from Ruby 4.0 (by [@faisal][])
 * [CHORE] Start testing library with Ruby 4.0 (by [@etagwerker][])
 * [CHANGE] Add CI support for JRuby 10.0 (by [@faisal][])
 * [CHANGE] Bump cucumber dependency (by [@faisal][])
