@@ -57,7 +57,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'fakefs', '~> 3.0.0'
   spec.add_development_dependency 'irb'
   spec.add_development_dependency 'mdl', '~> 0.13.0', '>= 0.12.0'
-  spec.add_development_dependency 'minitest', '~> 5.26.0', '>= 5.3.0'
+  spec.add_development_dependency 'minitest', '~> 5.27.0', '>= 5.3.0'
   spec.add_development_dependency 'minitest-around', '~> 0.5.0', '>= 0.4.0'
   spec.add_development_dependency 'mocha', '~> 3.0.0'
   spec.add_development_dependency 'ostruct'
