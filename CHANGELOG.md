@@ -5,6 +5,7 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHORE] Bump fakefs (by [@faisal][])
 * [CHORE] In RubyCritic::Generator::Html::Line, require cgi/escape rather than cgi, as the latter is removed from Ruby 4.0 (by [@faisal][])
 * [CHORE] In RubyCritic::Generator::Html::Line, require cgi/escape rather than cgi, as the latter is removed from Ruby 4.0 (by [@faisal][])
 * [CHORE] Run Markdown linting in CI using Ruby 4.0 (by [@faisal][])
