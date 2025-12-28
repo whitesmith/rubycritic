@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'cgi'
+require 'cgi/escape'
 require 'rubycritic/generators/html/base'
 
 module RubyCritic
