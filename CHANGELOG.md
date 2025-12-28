@@ -6,6 +6,7 @@
 * [FEATURE] ...
 
 * [CHORE] In RubyCritic::Generator::Html::Line, require cgi/escape rather than cgi, as the latter is removed from Ruby 4.0 (by [@faisal][])
+* [CHORE] In RubyCritic::Generator::Html::Line, require cgi/escape rather than cgi, as the latter is removed from Ruby 4.0 (by [@faisal][])
 * [CHORE] Run Markdown linting in CI using Ruby 4.0 (by [@faisal][])
 * [CHORE] Start testing library with Ruby 4.0 (by [@etagwerker][])
 * [CHORE] Sorted cops in .rubocop.yml to make it easier for maintainers to add or modify cop settings, and unified duplicate Metrics/MethodLength settings. (by [@faisal][])
