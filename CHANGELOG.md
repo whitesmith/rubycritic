@@ -5,6 +5,7 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHORE] Updated README with last supported Ruby versions for the older as well as the latest releases of Rubycritic/Ruby (by [@faisal][])
 * [CHANGE] Drop support for Ruby 3.1.x and JRuby 9.4 (by [@faisal][])
 * [CHANGE] Add CI support for JRuby 10.0 (by [@faisal][])
 * [CHANGE] Bump cucumber dependency (by [@faisal][])
