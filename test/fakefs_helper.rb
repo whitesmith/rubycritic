@@ -24,3 +24,16 @@ module FakeFSPatch
   end
 end
 FakeFS::Dir.singleton_class.prepend(FakeFSPatch)
+
+# Patch FakeFS::Pathname to include the path method for Ruby 4.0.0 compatibility
+# This is needed because Reek's configuration internally calls Pathname#== which
+# requires the path method to be present
+module FakeFS
+  class Pathname
+    undef :path
+
+    def path
+      to_s
+    end
+  end
+end
