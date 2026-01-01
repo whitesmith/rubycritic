@@ -244,9 +244,9 @@ RubyCritic is supporting Ruby versions:
 | 2.4 | [v4.7.0](https://github.com/whitesmith/rubycritic/tree/v4.7.0) |
 | 2.5 | [v4.7.0](https://github.com/whitesmith/rubycritic/tree/v4.7.0) |
 | 2.6 | [v4.7.0](https://github.com/whitesmith/rubycritic/tree/v4.7.0) |
-| 2.7 | [v4.9.x](https://github.com/whitesmith/rubycritic/tree/v4.9.1) |
-| 3.0 | latest |
-| 3.1 | latest |
+| 2.7 | [v4.9.1](https://github.com/whitesmith/rubycritic/tree/v4.9.1) |
+| 3.0 | [v4.9.2](https://github.com/whitesmith/rubycritic/tree/v4.9.1) |
+| 3.1 | [v4.12.0](https://github.com/whitesmith/rubycritic/tree/v4.12.0) |
 | 3.2 | latest |
 | 3.3 | latest |
 
