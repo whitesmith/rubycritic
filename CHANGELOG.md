@@ -5,6 +5,7 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHORE] Bump byebug dependency (by [@faisal][])
 * [CHORE] Bump mdl and mocha dependencies (by [@faisal][])
 * [CHORE] Bump minitest dependency, and add minitest-mock dependency (by [@faisal][])
 * [CHORE] Bump fakefs dependency, and drop irb dependency (by [@faisal][])

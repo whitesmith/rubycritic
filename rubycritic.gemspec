@@ -51,7 +51,7 @@ Gem::Specification.new do |spec|
     spec.add_development_dependency 'jar-dependencies', '~> 0.5.5'
     spec.add_development_dependency 'pry-debugger-jruby'
   else
-    spec.add_development_dependency 'byebug', '~> 12.0', '>= 10.0'
+    spec.add_development_dependency 'byebug', '~> 13.0', '>= 10.0'
   end
   spec.add_development_dependency 'cucumber', '~> 10.2.0', '>= 10.1.0'
   spec.add_development_dependency 'diff-lcs', '~> 1.3'
