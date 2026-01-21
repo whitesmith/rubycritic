@@ -3,7 +3,6 @@
 require 'bundler/gem_tasks'
 require 'rake/testtask'
 require 'rubocop/rake_task'
-require 'cucumber/rake/task'
 require 'reek/rake/task'
 require 'rubycritic/rake_task'
 
@@ -13,8 +12,10 @@ Rake::TestTask.new do |task|
   task.pattern = 'test/**/*_test.rb'
 end
 
-Cucumber::Rake::Task.new(:features) do |t|
-  t.cucumber_opts = %w[features --format progress --color]
+Rake::TestTask.new(:spec) do |task|
+  task.libs.push 'lib'
+  task.libs.push 'test'
+  task.pattern = 'test/**/*_spec.rb'
 end
 
 RuboCop::RakeTask.new
@@ -25,4 +26,4 @@ RubyCritic::RakeTask.new do |task|
   task.paths = FileList['lib/**/*.rb']
 end
 
-task default: %i[test features reek rubocop]
+task default: %i[test spec reek rubocop]

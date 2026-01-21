@@ -48,7 +48,7 @@ jobs:
           cache-version: 1
         continue-on-error: ${{ matrix.experimental }}
       - name: Run Cucumber
-        run: bundle exec cucumber features --format progress --color
+        run: bundle exec rake spec
         continue-on-error: ${{ matrix.experimental }}
 
   Rubocop:

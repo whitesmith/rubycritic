@@ -5,6 +5,8 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHANGE] Replace all Cucumber features with Minitest/Spec specs (by [@faisal][])
+
 # v5.0.0 / 2026-01-26 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.12.0...v5.0.0)
 
 * [CHORE] Bump byebug dependency (by [@faisal][])
