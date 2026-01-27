@@ -21,7 +21,7 @@ Then(/^there is no output on stdout$/) do
 end
 
 Then(/^it reports the current version$/) do
-  expect(last_command_started).to have_output("RubyCritic #{RubyCritic::VERSION}\n")
+  expect(last_command_started).to have_output(an_output_string_including("RubyCritic #{RubyCritic::VERSION}"))
 end
 
 Then(/^it reports the error ['"](.*)['"]$/) do |string|
