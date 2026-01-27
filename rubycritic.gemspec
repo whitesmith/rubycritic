@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'flay', '~> 2.13'
   spec.add_dependency 'flog', '~> 4.7'
   spec.add_dependency 'launchy', '>= 2.5.2'
+  spec.add_dependency 'ostruct'
   spec.add_dependency 'parser', '>= 3.3.0.5'
   spec.add_dependency 'prism', '>= 1.6.0'
   spec.add_dependency 'rainbow', '~> 3.1.1'
@@ -50,7 +51,7 @@ Gem::Specification.new do |spec|
     spec.add_development_dependency 'jar-dependencies', '~> 0.5.5'
     spec.add_development_dependency 'pry-debugger-jruby'
   else
-    spec.add_development_dependency 'byebug', '~> 12.0', '>= 10.0'
+    spec.add_development_dependency 'byebug', '~> 13.0', '>= 10.0'
   end
   spec.add_development_dependency 'cucumber', '~> 10.2.0', '>= 10.1.0'
   spec.add_development_dependency 'diff-lcs', '~> 1.3'
@@ -60,7 +61,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest-around', '~> 0.6.0'
   spec.add_development_dependency 'minitest-mock'
   spec.add_development_dependency 'mocha', '~> 3.0.0'
-  spec.add_development_dependency 'ostruct'
   spec.add_development_dependency 'rake', '~> 13.3.0', '>= 11.0.0'
   spec.add_development_dependency 'rdoc'
   spec.add_development_dependency 'rexml', '>= 3.2.0'

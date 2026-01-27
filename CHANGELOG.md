@@ -1,15 +1,23 @@
-# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.11.0...main)
+# main [(unreleased)](https://github.com/whitesmith/rubycritic/compare/v4.12.0...main)
 
 * [CHANGE] ...
 * [BUGFIX] ...
 * [CHORE] ...
 * [FEATURE] ...
 
-* [CHORE] Sorted cops in .rubocop.yml to make it easier for maintainers to add or modify cop settings, and unified duplicate Metrics/MethodLength settings. (by [@faisal][])
-* [CHORE] Updated README with last supported Ruby versions for the older as well as the latest releases of Rubycritic/Ruby (by [@faisal][])
+* [CHORE] Bump byebug dependency (by [@faisal][])
+* [CHORE] Bump mdl and mocha dependencies (by [@faisal][])
+* [CHORE] Bump minitest dependency, and add minitest-mock dependency (by [@faisal][])
+* [CHORE] Bump fakefs dependency, and drop irb dependency (by [@faisal][])
+* [CHORE] In RubyCritic::Generator::Html::Line, require cgi/escape rather than cgi, as the latter is removed from Ruby 4.0 (by [@faisal][])
+* [CHORE] Run Markdown linting in CI using Ruby 4.0 (by [@faisal][])
+* [CHANGE] Sorted cops in .rubocop.yml to make it easier for maintainers to add or modify cop settings, and unified duplicate Metrics/MethodLength settings. (by [@faisal][])
 * [CHANGE] Drop support for Ruby 3.1.x and JRuby 9.4 (by [@faisal][])
 * [CHANGE] Add CI support for JRuby 10.0 (by [@faisal][])
 * [CHORE] Start testing library with Ruby 4.0 (by [@etagwerker][])
+
+# v4.12.0 / 2026-01-01 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.11.0...v4.12.0)
+
 * [CHANGE] Bump cucumber dependency (by [@faisal][])
 * [BUGFIX] Fixed regression in compatibility with Flog 4.9.0 (by [@faisal][])
 * [CHANGE] Bump mocha dependency (by [@faisal][])
