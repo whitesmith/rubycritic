@@ -72,6 +72,13 @@ Style/Documentation:
 Style/HashSyntax:
   EnforcedShorthandSyntax: either
 
+Style/OneClassPerFile:
+  Exclude:
+    - 'lib/rubycritic/analysers/helpers/ast_node.rb'
+    - 'test/analysers_test_helper.rb'
+    - 'test/fakefs_helper.rb'
+    - 'test/test_helper.rb'
+
 Style/OpenStructUse:
   Exclude:
     - 'test/lib/rubycritic/generators/turbulence_test.rb'

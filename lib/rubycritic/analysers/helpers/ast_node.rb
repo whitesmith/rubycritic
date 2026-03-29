@@ -23,9 +23,7 @@ module Parser
       end
 
       def module_names
-        ast_node_children = children.select do |child|
-          child.is_a?(Parser::AST::Node)
-        end
+        ast_node_children = children.grep(Parser::AST::Node)
 
         children_modules = ast_node_children.flat_map(&:module_names)
 
