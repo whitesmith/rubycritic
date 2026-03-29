@@ -57,9 +57,9 @@ describe 'Minimum score' do
   describe 'Prints a message informing the score is below the minimum' do
     it 'prints below minimum message' do
       create_empty_file
-      rubycritic('--minimum-score 100 empty.rb')
+      rubycritic('--minimum-score 101 empty.rb')
 
-      _(last_command_started.stdout).must_include 'Score (0.0) is below the minimum 100'
+      _(last_command_started.stdout).must_include 'Score (100.0) is below the minimum 101.0'
     end
   end
 end

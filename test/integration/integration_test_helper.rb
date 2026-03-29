@@ -6,6 +6,8 @@ require_relative '../../lib/rubycritic'
 require_relative '../../lib/rubycritic/cli/application'
 require_relative '../../lib/rubycritic/commands/status_reporter'
 
+Aruba.configure { |config| config.exit_timeout = 30 }
+
 module IntegrationTestHelper
   include Aruba::Api
 
@@ -57,6 +59,6 @@ module IntegrationTestHelper
   end
 
   def create_empty_file
-    write_file('clean.rb', '')
+    write_file('empty.rb', '')
   end
 end

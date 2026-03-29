@@ -20,7 +20,7 @@ jobs:
           paths_ignore: '["**/README.md", "**/docs/**", "**/CHANGELOG.md"]'
           do_not_skip: '["pull_request", "workflow_dispatch", "schedule"]'
 
-  Features:
+  Specs:
     needs: pre_job # skip duplicates
     if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
     runs-on: ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
           bundler-cache: true
           cache-version: 1
         continue-on-error: ${{ matrix.experimental }}
-      - name: Run Cucumber
+      - name: Run feature specs
         run: bundle exec rake spec
         continue-on-error: ${{ matrix.experimental }}
 
