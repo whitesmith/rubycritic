@@ -45,7 +45,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'tty-which', '~> 0.5.0'
   spec.add_dependency 'virtus', '~> 2.0'
 
-  spec.add_development_dependency 'aruba', '~> 2.3.1', '>= 2.3.1'
   spec.add_development_dependency 'bundler', '>= 2.0.0'
   if RUBY_PLATFORM == 'java'
     spec.add_development_dependency 'jar-dependencies', '~> 0.5.5'
@@ -53,7 +52,7 @@ Gem::Specification.new do |spec|
   else
     spec.add_development_dependency 'byebug', '~> 13.0', '>= 10.0'
   end
-  spec.add_development_dependency 'diff-lcs', '~> 1.3'
+  spec.add_development_dependency 'diff-lcs', '~> 2.0'
   spec.add_development_dependency 'fakefs', '~> 3.2.0'
   spec.add_development_dependency 'mdl', '~> 0.15.0', '>= 0.12.0'
   spec.add_development_dependency 'minitest', '~> 6.0.0'
