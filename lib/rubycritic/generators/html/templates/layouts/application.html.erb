@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,7 @@
 
   <body>
     <header class="navbar navbar-default navbar-fixed-top">
-      <a href="#menu-toggle" class="btn btn-default hidden-lg visible-sm-* hidden-md visible-xs-* pull-left" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <a href="#menu-toggle" class="btn btn-default hidden-lg visible-sm-* hidden-md visible-xs-* pull-left" id="menu-toggle" aria-label="Toggle navigation menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
       <a href="<%= file_path('overview.html') %>"><img src="<%= asset_path('images/logo.png') %>" alt="Ruby Critic Logo" title="Ruby Critic Logo" width="55"><span class="logo">RUBYCRITIC</span></a>
       <% if Config.compare_branches_mode? %>
         <ul class="nav navbar-nav navbar-right">

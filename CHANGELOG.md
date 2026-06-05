@@ -6,6 +6,7 @@
 * [FEATURE] ...
 
 * [CHANGE] Replace all Cucumber features with Minitest/Spec specs (by [@faisal][])
+* [BUGFIX] Add `lang="en"` to the report's `<html>` element, give the menu-toggle anchor an `aria-label`, and make the per-rating summary IDs unique. Fixes 17 WCAG 2.1 AA structural errors on `overview.html`. (by [@MarcusAl][])
 
 # v5.0.0 / 2026-01-26 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.12.0...v5.0.0)
 
@@ -504,3 +505,4 @@
 [@fbuys]: https://github.com/fbuys
 [@exoego]: https://github.com/exoego
 [@raff-s]: https://github.com/raff-s
+[@MarcusAl]: https://github.com/MarcusAl
