@@ -14,6 +14,18 @@ require 'mocha/minitest'
 require 'ostruct'
 require 'diff/lcs'
 
+# On JRuby, Ruby 3.4's bundled_gems require shim can clobber Zeitwerk's
+# implicit-namespace autoloads if a bundled gem (e.g. racc, pulled in by
+# ruby_parser/flog) re-wraps Kernel#require after Zeitwerk is set up. When that
+# happens, reek's deferred load of dry-schema's `Macros` namespace fails with
+# "cannot load such file -- .../dry/schema/macros". Forcing reek's schema to
+# load up front, before any flog/ruby_parser require, sidesteps the ordering
+# issue. The application itself is unaffected because it loads reek before flog.
+if defined?(JRUBY_VERSION)
+  require 'reek'
+  Reek::Configuration::Schema
+end
+
 def context(...)
   describe(...)
 end
