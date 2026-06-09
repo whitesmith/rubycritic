@@ -49,9 +49,9 @@
                     </div>
                     <div class="pull-right Summary_Content col-xs-9 col-sm-9 col-md-9 col-lg-9">
                       <ul class="list-inline">
-                        <li><h4 id="ratingAfileCount"><%= @summary[rating][:files] %></h4><span>files</span></li>
-                        <li><h4 id="ratingAfileCount"><%= @summary[rating][:churns] %></h4><span>churns</span></li>
-                        <li><h4 id="ratingAfileCount"><%= @summary[rating][:smells] %></h4><span>smells</span></li>
+                        <li><h4 id="rating-<%= rating.downcase %>-files"><%= @summary[rating][:files] %></h4><span>files</span></li>
+                        <li><h4 id="rating-<%= rating.downcase %>-churns"><%= @summary[rating][:churns] %></h4><span>churns</span></li>
+                        <li><h4 id="rating-<%= rating.downcase %>-smells"><%= @summary[rating][:smells] %></h4><span>smells</span></li>
                       </ul>
                     </div>
                   </div>
