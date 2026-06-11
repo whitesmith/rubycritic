@@ -13,6 +13,7 @@ require 'minitest/pride'
 require 'mocha/minitest'
 require 'ostruct'
 require 'diff/lcs'
+require 'support/type_check'
 
 def context(...)
   describe(...)
