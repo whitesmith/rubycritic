@@ -5,34 +5,30 @@ require_relative 'integration_test_helper'
 describe 'Command line options' do
   include IntegrationTestHelper
 
-  before do
-    setup_aruba
-  end
-
   describe 'return non-zero status on bad option' do
     it 'fails on bad option' do
-      rubycritic('--no-such-option')
+      result = rubycritic('--no-such-option')
 
-      _(last_command_started.exit_status).must_equal RubyCritic::Command::StatusReporter::SCORE_BELOW_MINIMUM
-      _(last_command_started.stderr).must_include 'Error: invalid option: --no-such-option'
-      _(last_command_started.stdout).must_equal ''
+      _(result.exit_status).must_equal RubyCritic::Command::StatusReporter::SCORE_BELOW_MINIMUM
+      _(result.stderr).must_include 'Error: invalid option: --no-such-option'
+      _(result.stdout).must_equal ''
     end
   end
 
   describe 'display the current version number' do
     it 'shows version' do
-      rubycritic('--version')
+      result = rubycritic('--version')
 
-      _(last_command_started.exit_status).must_equal RubyCritic::Command::StatusReporter::SUCCESS
-      _(last_command_started.stdout).must_include "RubyCritic #{RubyCritic::VERSION}"
+      _(result.exit_status).must_equal RubyCritic::Command::StatusReporter::SUCCESS
+      _(result.stdout).must_include "RubyCritic #{RubyCritic::VERSION}"
     end
   end
 
   describe 'display the help information' do
     it 'shows help' do
-      rubycritic('--help')
+      result = rubycritic('--help')
 
-      _(last_command_started.exit_status).must_equal RubyCritic::Command::StatusReporter::SUCCESS
+      _(result.exit_status).must_equal RubyCritic::Command::StatusReporter::SUCCESS
       expected_help = <<~HELP
         Usage: rubycritic [options] [paths]
             -p, --path [PATH]                Set path where report will be saved (tmp/rubycritic by default)
@@ -67,7 +63,7 @@ describe 'Command line options' do
             -h, --help                       Show this message
 
       HELP
-      _(last_command_started.stdout).must_include expected_help
+      _(result.stdout).must_include expected_help
     end
   end
 end

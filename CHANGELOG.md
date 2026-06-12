@@ -5,6 +5,7 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHANGE] Replace Aruba with direct API calls in specs (by [@faisal][])
 * [CHANGE] Replace all Cucumber features with Minitest/Spec specs (by [@faisal][])
 * [BUGFIX] Add `lang="en"` to the report's `<html>` element, give the menu-toggle anchor an `aria-label`, and make the per-rating summary IDs unique. Fixes 17 WCAG 2.1 AA structural errors on `overview.html`. (by [@MarcusAl][])
 
