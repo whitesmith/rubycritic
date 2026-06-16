@@ -6,6 +6,7 @@
 * [FEATURE] ...
 
 * [CHANGE] Replace Aruba with direct API calls in specs (by [@faisal][])
+* [CHANGE] Replace the unmaintained `virtus` dependency with plain Ruby accessors, dropping its abandoned transitive dependencies (`axiom-types`, `coercible`, `descendants_tracker`, `ice_nine`, and the deprecated `thread_safe`). Also move `ostruct` to a development dependency since it is only used in tests. (by [@pnomolos][])
 * [CHANGE] Replace all Cucumber features with Minitest/Spec specs (by [@faisal][])
 * [BUGFIX] Add `lang="en"` to the report's `<html>` element, give the menu-toggle anchor an `aria-label`, and make the per-rating summary IDs unique. Fixes 17 WCAG 2.1 AA structural errors on `overview.html`. (by [@MarcusAl][])
 
@@ -507,3 +508,4 @@
 [@exoego]: https://github.com/exoego
 [@raff-s]: https://github.com/raff-s
 [@MarcusAl]: https://github.com/MarcusAl
+[@pnomolos]: https://github.com/pnomolos

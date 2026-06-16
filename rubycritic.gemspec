@@ -34,7 +34,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'flay', '~> 2.13'
   spec.add_dependency 'flog', '~> 4.7'
   spec.add_dependency 'launchy', '>= 2.5.2'
-  spec.add_dependency 'ostruct'
   spec.add_dependency 'parser', '>= 3.3.0.5'
   spec.add_dependency 'prism', '>= 1.6.0'
   spec.add_dependency 'rainbow', '~> 3.1.1'
@@ -43,7 +42,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'ruby_parser', '~> 3.21'
   spec.add_dependency 'simplecov', '>= 0.22.0'
   spec.add_dependency 'tty-which', '~> 0.5.0'
-  spec.add_dependency 'virtus', '~> 2.0'
 
   spec.add_development_dependency 'bundler', '>= 2.0.0'
   if RUBY_PLATFORM == 'java'
@@ -59,6 +57,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest-around', '~> 0.6.0'
   spec.add_development_dependency 'minitest-mock'
   spec.add_development_dependency 'mocha', '~> 3.0.0'
+  spec.add_development_dependency 'ostruct'
   spec.add_development_dependency 'rake', '~> 13.3.0', '>= 11.0.0'
   spec.add_development_dependency 'rdoc'
   spec.add_development_dependency 'rexml', '>= 3.2.0'
