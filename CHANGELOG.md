@@ -5,6 +5,8 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHANGE] Loosen MarkdownLint dependency (by [@faisal][])
+* [CHORE] Bump Mocha and Rake dependencies (by [@faisal][])
 * [CHANGE] Replace Aruba with direct API calls in specs (by [@faisal][])
 * [CHANGE] Replace all Cucumber features with Minitest/Spec specs (by [@faisal][])
 * [CHANGE] Make JRuby 10.0 and 10.1 required CI targets, and fix the test suite's gem load order on JRuby (by [@etagwerker][])
