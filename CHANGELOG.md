@@ -7,6 +7,7 @@
 
 * [CHANGE] Replace Aruba with direct API calls in specs (by [@faisal][])
 * [CHANGE] Replace all Cucumber features with Minitest/Spec specs (by [@faisal][])
+* [CHANGE] Make JRuby 10.0 and 10.1 required CI targets, and fix the test suite's gem load order on JRuby (by [@etagwerker][])
 * [BUGFIX] Add `lang="en"` to the report's `<html>` element, give the menu-toggle anchor an `aria-label`, and make the per-rating summary IDs unique. Fixes 17 WCAG 2.1 AA structural errors on `overview.html`. (by [@MarcusAl][])
 
 # v5.0.0 / 2026-01-26 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.12.0...v5.0.0)

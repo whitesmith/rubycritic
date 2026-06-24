@@ -32,11 +32,11 @@ jobs:
           - '3.3'
           - '3.4'
           - '4.0'
+          - 'jruby-10.0'
+          - 'jruby-10.1'
         experimental: [false]
         include:
           - ruby-version: 'ruby-head'
-            experimental: true
-          - ruby-version: 'jruby-10.0'
             experimental: true
     steps:
       - uses: actions/checkout@v6
@@ -63,11 +63,11 @@ jobs:
           - '3.3'
           - '3.4'
           - '4.0'
+          - 'jruby-10.0'
+          - 'jruby-10.1'
         experimental: [false]
         include:
           - ruby-version: 'ruby-head'
-            experimental: true
-          - ruby-version: 'jruby-10.0'
             experimental: true
     steps:
       - uses: actions/checkout@v6
@@ -94,11 +94,11 @@ jobs:
           - '3.3'
           - '3.4'
           - '4.0'
+          - 'jruby-10.0'
+          - 'jruby-10.1'
         experimental: [false]
         include:
           - ruby-version: 'ruby-head'
-            experimental: true
-          - ruby-version: 'jruby-10.0'
             experimental: true
     steps:
       - uses: actions/checkout@v6
@@ -125,11 +125,11 @@ jobs:
           - '3.3'
           - '3.4'
           - '4.0'
+          - 'jruby-10.0'
+          - 'jruby-10.1'
         experimental: [false]
         include:
           - ruby-version: 'ruby-head'
-            experimental: true
-          - ruby-version: 'jruby-10.0'
             experimental: true
     steps:
       - uses: actions/checkout@v6
