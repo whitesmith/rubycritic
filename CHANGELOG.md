@@ -5,6 +5,7 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHANGE] Drop support for Ruby 3.2 (by [@faisal][])
 * [CHANGE] Loosen MarkdownLint dependency (by [@faisal][])
 * [CHORE] Bump Mocha and Rake dependencies (by [@faisal][])
 * [CHANGE] Replace Aruba with direct API calls in specs (by [@faisal][])

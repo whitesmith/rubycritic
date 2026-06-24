@@ -11,7 +11,7 @@ AllCops:
     - 'tmp/**/*'
     - 'vendor/**/*'
     - 'gemfiles/*'
-  TargetRubyVersion: 3.2
+  TargetRubyVersion: 3.3
 
 Gemspec/DevelopmentDependencies:
   Exclude:
