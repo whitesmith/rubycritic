@@ -131,7 +131,7 @@ $ rubycritic --help
 - `lint`
 2. See [custom formatters docs](/docs/formatters.md)
 3. Faster, analyses diffs w.r.t base_branch (default: main), see `-b`
-4. Works only with `-b`, default: 0
+4. Works only with `-b`. Accepts a FLOAT (ex: 0.5), default: 0
 
 You also can use a config file. Just create a `.rubycritic.yml` on your project root path.
 
@@ -144,7 +144,7 @@ mode_ci:
 branch: 'production' # default is main
 path: '/tmp/mycustompath' # Set path where report will be saved (tmp/rubycritic by default)
 coverage_path: '/tmp/coverage' # Set path where SimpleCov coverage will be saved (./coverage by default)
-threshold_score: 10 # default is 0
+maximum_decrease: 0.5 # FLOAT, default is 0.0
 deduplicate_symlinks: true # default is false
 suppress_ratings: true # default is false
 no_browser: true # default is false
