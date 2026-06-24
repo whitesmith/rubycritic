@@ -8,6 +8,8 @@
 * [CHANGE] Replace Aruba with direct API calls in specs (by [@faisal][])
 * [CHANGE] Replace all Cucumber features with Minitest/Spec specs (by [@faisal][])
 * [BUGFIX] Add `lang="en"` to the report's `<html>` element, give the menu-toggle anchor an `aria-label`, and make the per-rating summary IDs unique. Fixes 17 WCAG 2.1 AA structural errors on `overview.html`. (by [@MarcusAl][])
+* [FEATURE] `--maximum-decrease` / `maximum_decrease` now accepts float values (e.g. `0.5`), mirroring how `minimum_score` is handled (by [@siklodi-mariusz][])
+* [CHANGE] Rename the `threshold_score` YAML key to `maximum_decrease` to match the `--maximum-decrease` CLI flag. The old `threshold_score` key still works but emits a deprecation warning; when both are present, `maximum_decrease` wins (by [@siklodi-mariusz][])
 
 # v5.0.0 / 2026-01-26 [(commits)](https://github.com/whitesmith/rubycritic/compare/v4.12.0...v5.0.0)
 
@@ -507,3 +509,4 @@
 [@exoego]: https://github.com/exoego
 [@raff-s]: https://github.com/raff-s
 [@MarcusAl]: https://github.com/MarcusAl
+[@siklodi-mariusz]: https://github.com/siklodi-mariusz
