@@ -81,7 +81,7 @@ module IntegrationTestHelper
 
   private
 
-  # rubocop:disable Metrics/AbcSize
+  # rubocop:disable-next Metrics/AbcSize
   def run_command(command)
     env = { 'PATH' => "#{File.join(GEM_ROOT, 'bin')}#{File::PATH_SEPARATOR}#{ENV.fetch('PATH', '')}" }
     Open3.popen3(env, command) do |stdin, stdout, stderr, wait_thr|
@@ -101,5 +101,4 @@ module IntegrationTestHelper
       return CommandResult.new(out, err, wait_thr.value.exitstatus)
     end
   end
-  # rubocop:enable Metrics/AbcSize
 end
