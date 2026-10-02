@@ -13,6 +13,7 @@ require 'minitest/pride'
 require 'mocha/minitest'
 require 'ostruct'
 require 'diff/lcs'
+require 'support/type_check'
 
 # On JRuby, Ruby 3.4's bundled_gems require shim can clobber Zeitwerk's
 # implicit-namespace autoloads if a bundled gem (e.g. racc, pulled in by

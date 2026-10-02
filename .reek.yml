@@ -92,6 +92,23 @@ detectors:
     - RubyCritic::RakeTask#paths
     - RubyCritic::RakeTask#verbose
     - RubyCritic::RakeTask#fail_on_error
+    - RubyCritic::Smell#context
+    - RubyCritic::Smell#cost
+    - RubyCritic::Smell#locations
+    - RubyCritic::Smell#message
+    - RubyCritic::Smell#score
+    - RubyCritic::Smell#status
+    - RubyCritic::Smell#type
+    - RubyCritic::Smell#analyser
+    - RubyCritic::AnalysedModule#coverage
+    - RubyCritic::AnalysedModule#name
+    - RubyCritic::AnalysedModule#pathname
+    - RubyCritic::AnalysedModule#smells
+    - RubyCritic::AnalysedModule#churn
+    - RubyCritic::AnalysedModule#committed_at
+    - RubyCritic::AnalysedModule#complexity
+    - RubyCritic::AnalysedModule#duplication
+    - RubyCritic::AnalysedModule#methods_count
   DuplicateMethodCall:
     exclude:
     - RubyCritic::Analyser::Churn#run
@@ -113,6 +130,7 @@ detectors:
     - RubyCritic::Reporter#self.report_generator_class
     - RubyCritic::SourceLocator#deduplicate_symlinks
     - RubyCritic::Command::Compare#compare_branches
+    - RubyCritic::AnalysedModule#initialize
   FeatureEnvy:
     exclude:
     - Parser::AST::Node#module_name
@@ -165,6 +183,7 @@ detectors:
     - RubyCritic::SourceLocator#ruby_file?
   TooManyInstanceVariables:
     exclude:
+    - RubyCritic::AnalysedModule
     - RubyCritic::Generator::Html::CodeFile
     - RubyCritic::Generator::Html::Overview
     - RubyCritic::Generator::Html::SmellsIndex

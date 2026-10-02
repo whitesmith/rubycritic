@@ -1,28 +1,22 @@
 # frozen_string_literal: true
 
-require 'virtus'
 require 'rubycritic/core/rating'
 
 module RubyCritic
   class AnalysedModule
-    include Virtus.model
-
     # Complexity is reduced by a factor of 25 when calculating cost
     COMPLEXITY_FACTOR = 25.0
 
-    attribute :coverage, Float, default: 0.0
-    attribute :name
-    attribute :smells_count
-    attribute :file_location
-    attribute :file_name
-    attribute :line_count
-    attribute :pathname
-    attribute :smells, Array, default: []
-    attribute :churn
-    attribute :committed_at
-    attribute :complexity, Float, default: Float::INFINITY
-    attribute :duplication, Integer, default: 0
-    attribute :methods_count
+    attr_accessor :coverage, :name, :pathname, :smells, :churn, :committed_at, :complexity, :duplication, :methods_count
+
+    def initialize(attributes = {})
+      @coverage = 0.0
+      @smells = []
+      @complexity = Float::INFINITY
+      @duplication = 0
+      @methods_count = 0
+      attributes.each { |name, value| public_send("#{name}=", value) }
+    end
 
     def path
       @path ||= pathname.to_s
