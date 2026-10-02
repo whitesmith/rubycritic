@@ -5,8 +5,12 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [CHANGE] Loosen MarkdownLint dependency (by [@faisal][])
+* [CHORE] Bump Mocha and Rake dependencies (by [@faisal][])
 * [CHANGE] Replace Aruba with direct API calls in specs (by [@faisal][])
+* [CHANGE] Replace the unmaintained `virtus` dependency with plain Ruby accessors, dropping its abandoned transitive dependencies (`axiom-types`, `coercible`, `descendants_tracker`, `ice_nine`, and the deprecated `thread_safe`). Also move `ostruct` to a development dependency since it is only used in tests. (by [@pnomolos][])
 * [CHANGE] Replace all Cucumber features with Minitest/Spec specs (by [@faisal][])
+* [CHANGE] Make JRuby 10.0 and 10.1 required CI targets, and fix the test suite's gem load order on JRuby (by [@etagwerker][])
 * [BUGFIX] Add `lang="en"` to the report's `<html>` element, give the menu-toggle anchor an `aria-label`, and make the per-rating summary IDs unique. Fixes 17 WCAG 2.1 AA structural errors on `overview.html`. (by [@MarcusAl][])
 * [FEATURE] `--maximum-decrease` / `maximum_decrease` now accepts float values (e.g. `0.5`), mirroring how `minimum_score` is handled (by [@siklodi-mariusz][])
 * [CHANGE] Rename the `threshold_score` YAML key to `maximum_decrease` to match the `--maximum-decrease` CLI flag. The old `threshold_score` key still works but emits a deprecation warning; when both are present, `maximum_decrease` wins (by [@siklodi-mariusz][])
@@ -510,3 +514,4 @@
 [@raff-s]: https://github.com/raff-s
 [@MarcusAl]: https://github.com/MarcusAl
 [@siklodi-mariusz]: https://github.com/siklodi-mariusz
+[@pnomolos]: https://github.com/pnomolos

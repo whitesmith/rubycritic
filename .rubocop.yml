@@ -54,6 +54,11 @@ Metrics/MethodLength:
   Exclude:
     - 'lib/rubycritic/configuration.rb'
     - 'test/integration/integration_test_helper.rb'
+    - 'test/support/type_check.rb'
+
+Naming/MethodName:
+  Exclude:
+    - 'test/support/type_check.rb'
 
 Naming/RescuedExceptionsVariableName:
   Exclude:
@@ -78,6 +83,7 @@ Style/OneClassPerFile:
     - 'test/analysers_test_helper.rb'
     - 'test/fakefs_helper.rb'
     - 'test/test_helper.rb'
+    - 'test/support/type_check.rb'
 
 Style/OpenStructUse:
   Exclude:

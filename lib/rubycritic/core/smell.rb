@@ -1,20 +1,16 @@
 # frozen_string_literal: true
 
-require 'virtus'
 require 'rubycritic/core/location'
 
 module RubyCritic
   class Smell
-    include Virtus.model
+    attr_accessor :context, :cost, :locations, :message, :score, :status, :type, :analyser
 
-    attribute :context
-    attribute :cost
-    attribute :locations, Array, default: []
-    attribute :message
-    attribute :score
-    attribute :status, Symbol, default: :new
-    attribute :type
-    attribute :analyser
+    def initialize(attributes = {})
+      @locations = []
+      @status = :new
+      attributes.each { |name, value| public_send("#{name}=", value) }
+    end
 
     FLAY_DOCS_URL = 'http://docs.seattlerb.org/flay/'.freeze
     FLOG_DOCS_URL = 'http://docs.seattlerb.org/flog/'.freeze

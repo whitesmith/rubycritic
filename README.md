@@ -252,6 +252,13 @@ RubyCritic is supporting Ruby versions:
 | 3.4 | latest |
 | 4.0 | latest |
 
+RubyCritic also runs on JRuby and is tested against it in CI:
+
+| JRuby version | Targeted Ruby compatibility |
+| --- | --- |
+| 10.0 | 3.4 |
+| 10.1 | 4.0 |
+
 ## Improving RubyCritic
 
 RubyCritic doesn't have to remain a second choice to other code quality analysis services. Together, we can improve it and continue to build on the great code metric tools that are available in the Ruby ecosystem.
