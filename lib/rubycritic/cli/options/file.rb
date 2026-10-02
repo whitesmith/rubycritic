@@ -64,8 +64,21 @@ module RubyCritic
           options['coverage_path']
         end
 
+        # The YAML key is `maximum_decrease` (matching the `--maximum-decrease`
+        # CLI flag). The legacy `threshold_score` key is still honoured for
+        # backward compatibility but is deprecated. When both are present, the
+        # new `maximum_decrease` key takes precedence.
         def threshold_score
-          options['threshold_score']
+          warn_threshold_score_deprecation if options.key?('threshold_score')
+
+          options.fetch('maximum_decrease') { options['threshold_score'] }
+        end
+
+        def warn_threshold_score_deprecation
+          warn(
+            '[DEPRECATION] The `threshold_score` key in .rubycritic.yml is deprecated ' \
+            'and will be removed in a future release. Please use `maximum_decrease` instead.'
+          )
         end
 
         def deduplicate_symlinks?

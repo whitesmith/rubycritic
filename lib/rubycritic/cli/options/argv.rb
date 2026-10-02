@@ -32,7 +32,7 @@ module RubyCritic
               '--maximum-decrease [MAX_DECREASE]',
               'Set a threshold for score difference between two branches (works only with -b)'
             ) do |threshold_score|
-              self.threshold_score = Integer(threshold_score)
+              self.threshold_score = Float(threshold_score)
             end
 
             formats = []

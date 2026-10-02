@@ -98,6 +98,31 @@ describe RubyCritic::Command::Compare do
     end
   end
 
+  describe 'float threshold (maximum_decrease)' do
+    it 'parses a fractional -t value as a float instead of coercing to an integer' do
+      options = ['-b', 'base_branch', '-t', '0.5', 'test/samples/compare_file.rb']
+      options = RubyCritic::Cli::Options.new(options).parse.to_h
+
+      _(options[:threshold_score]).must_equal 0.5
+    end
+
+    it 'respects a fractional threshold when comparing branch scores' do
+      options = ['-b', 'base_branch', '-t', '0.5', 'test/samples/compare_file.rb']
+      options = RubyCritic::Cli::Options.new(options).parse.to_h
+      RubyCritic::Config.set(options)
+      comparison = RubyCritic::Command::Compare.new(options)
+
+      RubyCritic::Config.base_branch_score = 92.31
+      RubyCritic::Config.feature_branch_score = 92.0
+      # difference is 0.31, below the 0.5 threshold -> build must not fail
+      _(comparison.send(:threshold_reached?)).must_equal false
+
+      RubyCritic::Config.feature_branch_score = 91.5
+      # difference is 0.81, above the 0.5 threshold -> build must fail
+      _(comparison.send(:threshold_reached?)).must_equal true
+    end
+  end
+
   describe 'with default options passing two branches' do
     before do
       options = ['-b', 'base_branch', '-t', '10', 'test/samples/compare_file.rb']

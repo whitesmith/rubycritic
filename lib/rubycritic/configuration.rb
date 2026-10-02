@@ -20,7 +20,7 @@ module RubyCritic
       self.open_with = options[:open_with]
       self.no_browser = options[:no_browser]
       self.coverage_path = options[:coverage_path]
-      self.threshold_score = options[:threshold_score].to_i
+      self.threshold_score = options[:threshold_score].to_f
       setup_paths_for_targets(options) if options[:paths]
       setup_analysis_targets(options)
       setup_version_control(options)
