@@ -9,11 +9,10 @@ module FakeFS
     original_verbose = $VERBOSE
     $VERBOSE = nil
 
-    # rubocop:disable Naming/PredicateMethod
+    # rubocop:disable-next Naming/PredicateMethod
     def flock(*)
       true
     end
-    # rubocop:enable Naming/PredicateMethod
     $VERBOSE = original_verbose
   end
 end

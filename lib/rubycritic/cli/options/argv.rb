@@ -5,7 +5,7 @@ require 'optparse'
 module RubyCritic
   module Cli
     class Options
-      # rubocop:disable Metrics/ClassLength
+      # rubocop:disable-next Metrics/ClassLength
       class Argv
         def initialize(argv)
           @argv = argv
@@ -143,7 +143,6 @@ module RubyCritic
           self.feature_branch = SourceControlSystem::Git.current_branch
         end
       end
-      # rubocop:enable Metrics/ClassLength
     end
   end
 end

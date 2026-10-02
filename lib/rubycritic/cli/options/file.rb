@@ -17,7 +17,7 @@ module RubyCritic
           @options = YAML.load_file(filename) if ::File.file?(filename)
         end
 
-        # rubocop:disable Metrics/MethodLength
+        # rubocop:disable-next Metrics/MethodLength
         def to_h
           {
             mode: mode,
@@ -34,7 +34,6 @@ module RubyCritic
             threshold_score: threshold_score
           }
         end
-        # rubocop:enable Metrics/MethodLength
 
         private
 

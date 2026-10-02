@@ -21,7 +21,7 @@ module RubyCritic
       end
 
       # :reek:TooManyInstanceVariables
-      # rubocop:disable Metrics/ClassLength
+      # rubocop:disable-next Metrics/ClassLength
       class Churn
         # :reek:TooManyStatements
         def initialize(churn_after: nil, paths: ['.'])
@@ -152,7 +152,7 @@ module RubyCritic
         end
 
         # :reek:TooManyStatements
-        # rubocop:disable Metrics/MethodLength
+        # rubocop:disable-next Metrics/MethodLength
         def stats(path)
           # Try the path as-is first
           result = @stats.fetch(path, nil)
@@ -174,9 +174,7 @@ module RubyCritic
           # Default fallback
           @stats.fetch(path, Stats.new(0))
         end
-        # rubocop:enable Metrics/MethodLength
       end
-      # rubocop:enable Metrics/ClassLength
     end
   end
 end
