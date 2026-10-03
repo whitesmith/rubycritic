@@ -6,7 +6,7 @@
 * [FEATURE] ...
 
 * [CHANGE] Loosen MarkdownLint dependency (by [@faisal][])
-* [CHORE] Bump Mocha and Rake dependencies (by [@faisal][])
+* [CHORE] Bump Mocha, Rake, and Reek dependencies (by [@faisal][])
 * [CHANGE] Replace Aruba with direct API calls in specs (by [@faisal][])
 * [CHANGE] Replace the unmaintained `virtus` dependency with plain Ruby accessors, dropping its abandoned transitive dependencies (`axiom-types`, `coercible`, `descendants_tracker`, `ice_nine`, and the deprecated `thread_safe`). Also move `ostruct` to a development dependency since it is only used in tests. (by [@pnomolos][])
 * [CHANGE] Replace all Cucumber features with Minitest/Spec specs (by [@faisal][])
