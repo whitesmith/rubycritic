@@ -37,7 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'parser', '>= 3.3.0.5'
   spec.add_dependency 'prism', '>= 1.6.0'
   spec.add_dependency 'rainbow', '~> 3.1.1'
-  spec.add_dependency 'reek', '~> 6.5.0', '< 7.0'
+  spec.add_dependency 'reek', '~> 6.6.0', '< 7.0'
   spec.add_dependency 'rexml'
   spec.add_dependency 'ruby_parser', '~> 3.21'
   spec.add_dependency 'simplecov', '>= 0.22.0'
