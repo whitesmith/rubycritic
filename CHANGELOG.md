@@ -5,6 +5,7 @@
 * [CHORE] ...
 * [FEATURE] ...
 
+* [BUGFIX] Raise `RubyCritic::Error` instead of calling `abort` in compare mode, so `RakeTask` respects `fail_on_error` for these failures and library callers can rescue them (by [@wtn][])
 * [CHANGE] Loosen MarkdownLint dependency (by [@faisal][])
 * [CHORE] Bump Mocha, Rake, and Reek dependencies (by [@faisal][])
 * [CHANGE] Replace Aruba with direct API calls in specs (by [@faisal][])
@@ -516,3 +517,4 @@
 [@MarcusAl]: https://github.com/MarcusAl
 [@siklodi-mariusz]: https://github.com/siklodi-mariusz
 [@pnomolos]: https://github.com/pnomolos
+[@wtn]: https://github.com/wtn

@@ -4,6 +4,7 @@ require 'rubycritic'
 require 'rubycritic/browser'
 require 'rubycritic/cli/options'
 require 'rubycritic/command_factory'
+require 'rubycritic/error'
 
 module RubyCritic
   module Cli
@@ -21,7 +22,7 @@ module RubyCritic
         reporter = RubyCritic::CommandFactory.create(parsed_options).execute
         print(reporter.status_message)
         reporter.status
-      rescue OptionParser::InvalidOption => error
+      rescue OptionParser::InvalidOption, RubyCritic::Error => error
         warn "Error: #{error}"
         STATUS_ERROR
       end

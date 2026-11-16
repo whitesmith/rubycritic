@@ -19,12 +19,6 @@ module RubyCritic
       $VERBOSE = original_verbose
     end
   end
-
-  module Command
-    class Compare
-      def abort(str); end
-    end
-  end
 end
 
 describe RubyCritic::Command::Compare do
@@ -36,16 +30,16 @@ describe RubyCritic::Command::Compare do
 
   describe 'comparing the branches with the compare option' do
     context 'when same branches are compared' do
-      it 'it aborts with the error message' do
+      it 'raises a RubyCritic::Error with the error message' do
         options = ['-b', 'feature_branch']
         options = RubyCritic::Cli::Options.new(options).parse.to_h
         RubyCritic::Config.set(options)
         comparison = RubyCritic::Command::Compare.new(options)
 
-        assert_raises('The branch you are on and are comparing with are the same.
-        Please switch to a different branch or choose a different branch to compare.') do
-          comparison.execute
-        end
+        error = assert_raises(RubyCritic::Error) { comparison.execute }
+        _(error).must_be_kind_of RuntimeError
+        _(error.message).must_equal 'The branch you are on and are comparing with are the same. ' \
+                                    'Please switch to a different branch or choose a different branch to compare.'
       end
     end
   end
@@ -57,7 +51,7 @@ describe RubyCritic::Command::Compare do
     end
 
     context 'when file from feature_branch has a worse score than base_branch' do
-      it 'errors by aborting the process' do
+      it 'raises a RubyCritic::Error without exiting the process' do
         options = ['-b', 'base_branch', '-t', '0', 'test/samples/compare_file.rb']
         options = RubyCritic::Cli::Options.new(options).parse.to_h
         RubyCritic::Config.set(options)
@@ -67,13 +61,16 @@ describe RubyCritic::Command::Compare do
         end
         RubyCritic::SourceControlSystem::Git.stub(:switch_branch, copy_proc) do
           comparison = RubyCritic::Command::Compare.new(options)
-          comparison.expects(:abort).once
+          comparison.expects(:abort).never
 
-          status_reporter = comparison.execute
+          error = nil
 
-          _(status_reporter.score).must_equal RubyCritic::Config.feature_branch_score
-          _(status_reporter.score).wont_equal RubyCritic::Config.base_branch_score
-          _(status_reporter.status_message).must_equal "Score: #{RubyCritic::Config.feature_branch_score}"
+          capture_output_streams do
+            error = assert_raises(RubyCritic::Error) { comparison.execute }
+          end
+
+          _(error.message).must_equal 'The score difference between the two branches is over the threshold.'
+          _(RubyCritic::Config.feature_branch_score).must_be :<, RubyCritic::Config.base_branch_score
         end
       end
     end

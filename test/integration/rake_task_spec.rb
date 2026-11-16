@@ -81,5 +81,24 @@ describe 'Rake task' do
       _(result.stdout).must_include 'Score (93.19) is below the minimum 95'
       _(result.exit_status).must_equal RubyCritic::Command::StatusReporter::SUCCESS
     end
+
+    it 'succeeds when comparing branches fails with uncommitted changes' do
+      create_smelly_file
+      git = 'git -c user.name=test -c user.email=test@example.com -c commit.gpgsign=false'
+      system("#{git} init -q && #{git} checkout -q -b main && #{git} add smelly.rb && #{git} commit -q -m init " \
+             "&& #{git} checkout -q -b feature", exception: true)
+      File.write('smelly.rb', "# dirty\n", mode: 'a')
+
+      result = rake('rubycritic', <<~RUBY)
+        RubyCritic::RakeTask.new do |t|
+          t.paths = FileList['smelly.*']
+          t.fail_on_error = false
+          t.options = '--no-browser -f console -b main'
+        end
+      RUBY
+
+      _(result.exit_status).must_equal RubyCritic::Command::StatusReporter::SUCCESS
+      _(result.stderr).must_include 'Error: Uncommitted changes are present'
+    end
   end
 end
