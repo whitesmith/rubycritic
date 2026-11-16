@@ -10,6 +10,16 @@ describe RubyCritic::SourceControlSystem::Git do
       RubyCritic::SourceControlSystem::Git.expects(:git)
       RubyCritic::SourceControlSystem::Git.switch_branch('_branch_')
     end
+
+    it 'raises a RubyCritic::Error without checking out when there are uncommitted changes' do
+      git = RubyCritic::SourceControlSystem::Git
+      git.stubs(:uncommitted_changes).returns(':100644 100644 abc def M\tfoo.rb')
+      git.expects(:git).never
+      git.expects(:abort).never
+
+      error = assert_raises(RubyCritic::Error) { git.switch_branch('_branch_') }
+      _(error.message).must_include 'Uncommitted changes are present'
+    end
   end
 
   describe '#churn' do

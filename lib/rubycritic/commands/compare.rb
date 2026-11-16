@@ -7,6 +7,7 @@ require 'rubycritic/reporter'
 require 'rubycritic/commands/base'
 require 'rubycritic/commands/default'
 require 'rubycritic/commands/utils/build_number_file'
+require 'rubycritic/error'
 
 module RubyCritic
   module Command
@@ -19,8 +20,8 @@ module RubyCritic
 
       def execute
         if Config.send(:base_branch) == Config.send(:feature_branch)
-          raise('The branch you are on and are comparing with are the same.
-          Please switch to a different branch or choose a different branch to compare.')
+          raise Error, 'The branch you are on and are comparing with are the same. ' \
+                       'Please switch to a different branch or choose a different branch to compare.'
         end
         compare_branches
         status_reporter.score = Config.feature_branch_score
@@ -78,7 +79,7 @@ module RubyCritic
 
         print("Threshold: #{Config.threshold_score}\n")
         print("Difference: #{(Config.base_branch_score - Config.feature_branch_score).abs}\n")
-        abort('The score difference between the two branches is over the threshold.')
+        raise Error, 'The score difference between the two branches is over the threshold.'
       end
 
       def mark_build_fail?

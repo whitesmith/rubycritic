@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'tty/which'
+require 'rubycritic/error'
 require 'rubycritic/source_control_systems/git/churn'
 
 module RubyCritic
@@ -78,7 +79,7 @@ module RubyCritic
 
       def self.switch_branch(branch)
         dirty = !uncommitted_changes.empty?
-        abort("Uncommitted changes are present: #{uncommitted_changes}") if dirty
+        raise Error, "Uncommitted changes are present: #{uncommitted_changes}" if dirty
 
         git("checkout #{branch}")
       end
